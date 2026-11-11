@@ -1,0 +1,994 @@
+=== PDF PAGE 1 ===
+ChromaPrompt
+
+From Disposable Text to Reusable Semantic Deployment
+
+A Technical Note on Placed Chroma Configurations, Chromagents, Chroma Bank, and Visual
+
+Prompting Above Runtime Primitives
+
+Raynor Eissens
+
+DOI: 10.5281/zenodo.19192992
+
+Ambient Era Canon · 2026
+
+⸻
+
+Abstract
+
+This technical note defines ChromaPrompt as a higher-level coordination grammar in which
+
+prompting no longer needs to remain bound to a vertical chatbox or a single textual input stream.
+
+In conventional transformer use, prompts are usually expressed as sentences, paragraphs, or
+
+threads inside chat interfaces. They are linear, transient, and easily lost in the vertical flow of
+
+ongoing interaction. The present note proposes a narrower and more placeable alternative:
+
+prompting can be externalized and arranged through chromas, payload chromas, and
+
+chromagents on a rail or other meaning-bearing surface.
+
+Unlike canvas-bound or cockpit-bound orchestration systems, ChromaPrompt is intended to
+
+extend into lived environments, where placed semantic arrangements may inhabit counters,
+
+desks, thresholds, wearables, vehicle edges, wall surfaces, and other everyday locations.
+
+The claim made here is not that text prompting disappears, nor that multimodal prompting, visual
+
+programming, agent orchestration, or reusable task objects are novel in isolation. The claim is
+
+narrower. It is that the ChromaRail grammar allows prompts to become reusable semantic
+
+deployments rather than disposable text instructions. A prompt may therefore exist as a visible
+
+configuration composed of subject chromas, optional payload-bearing chromas, optional filters
+
+or location-bound chromas, and one or more chromagents that perform active operations such
+
+as search, comparison, planning, monitoring, summarization, or evaluation.
+
+Under this view, prompting becomes visual, portable, configurable, and environmental. A user
+
+may place three shoe-related chromas beside a comparison chromagent. A user may attach
+
+plant photos to a plant-care chromagent on a household rail. A user may place route state,
+
+location state, and a route-evaluation chromagent on a car-edge field. In such cases, the prompt
+
+is no longer only a sentence. It becomes a placed semantic arrangement that can persist, be
+
+reorganized, be unsocketed, be moved back to a mobile bank, and be redeployed in another
+
+=== PDF PAGE 2 ===
+context without needing to be rewritten from zero.
+
+This note also introduces the practical extension of Chroma Bank, unsocketing, redeployment,
+
+and reusable prompt objects. A prompt no longer has to be consumed once and disappear into
+
+scroll history. A chroma or prompt arrangement can be kept, moved, reused, recombined, or
+
+reassigned to a different rail, location, or active chromagent. In this way, prompting shifts from
+
+disposable text toward reusable semantic infrastructure.
+
+This does not replace runtime primitives such as text prompts, tool calls, event streams, model
+
+execution, graph orchestration, or transport protocols. Those remain lower implementation
+
+layers. The contribution here is a semantic reframing: prompting can be treated as a placeable
+
+and composable coordination layer above runtime, where chromas hold semantic state,
+
+chromagents act as active operators, and rails serve as habitats in which those configurations
+
+can remain visible, bounded, and environmentally legible.
+
+⸻
+
+Core Claim
+
+ChromaPrompt names the use of chromas, payload chromas, and chromagents as a visual and
+
+portable prompt arrangement above runtime primitives.
+
+A text prompt asks through sequence.
+
+A chroma prompt arranges through placement.
+
+ChromaRail turns prompting from disposable text into reusable semantic deployment.
+
+⸻
+
+Definitions
+
+Text Prompt
+
+A linear symbolic request expressed inside a chatbox, command field, or textual input stream.
+
+Chroma Prompt
+
+A placed semantic arrangement composed of one or more chromas, optional payload-bearing
+
+chromas, and optional chromagents, such that the arrangement itself functions as the prompt
+
+condition for a human-agent task.
+
+=== PDF PAGE 3 ===
+Chroma
+
+A bounded semantic object with visible state. A chroma is read first through color as the
+
+primary low-symbolic substrate of state, while label, payload, and deeper symbolic content
+
+remain secondary and optional. A chroma may carry identity, presence, relevance, subject
+
+matter, or situational meaning through color, placement, and carry.
+
+Payload Chroma
+
+A chroma that carries optional hidden symbolic depth, such as a product page, photo, note,
+
+route detail, prompt fragment, media object, or other attached content. The visible chroma
+
+remains the public handle; the attachment remains secondary and opens only when needed.
+
+Chromagent
+
+An active operator that works on one or more chromas. A chromagent may search, compare,
+
+evaluate, summarize, plan, monitor, recommend, or otherwise transform a placed semantic
+
+arrangement into new output states.
+
+Rail
+
+A placeable habitat or distributed meaning surface in which chromas and chromagents can be
+
+placed, grouped, moved, and softened into continuity.
+
+Chroma Bank
+
+A storage and redeployment layer in which chromas, payload chromas, and chromagents may
+
+remain available when not actively socketed into a rail or surface.
+
+Unsocketing
+
+The act of removing a chroma or chromagent from an active rail while preserving it as a reusable
+
+semantic object.
+
+Redeployment
+
+The act of placing a previously stored or unsocketed chroma or chromagent into a new
+
+configuration, rail, or context.
+
+⸻
+
+=== PDF PAGE 4 ===
+Color First, Attachment Second
+
+In ChromaPrompt, color is not decoration and not auxiliary metadata. Color is the first readable
+
+substrate of state. A user should be able to recognize a chroma at first glance through chromatic
+
+identity, grouping, and placement before opening any symbolic content.
+
+Attachments remain optional and secondary. A payload, note, image, prompt fragment, or route
+
+detail may deepen a chroma, but should not replace its visible chromatic legibility. In this sense,
+
+ChromaPrompt remains chromatic-first and attachment-second.
+
+In a Chroma Bank, recognition should happen before reading. Chromas should therefore remain
+
+identifiable through color, clustering, and field relation before labels, icons, or symbolic
+
+inspection are required.
+
+⸻
+
+Why This Matters
+
+Prompting in the transformer era remains heavily text-bound. Even when files, images, memory,
+
+and tool calls are involved, the dominant surface grammar is still the sentence inside the
+
+chatbox. This makes prompting:
+
+•
+linear
+
+•
+transient
+
+•
+difficult to revisit at a glance
+
+•
+dependent on scroll position and memory
+
+•
+poorly externalized into lived environment
+
+•
+disposable rather than reusable
+
+ChromaPrompt proposes a higher coordination layer in which prompts can become:
+
+•
+visible
+
+•
+modular
+
+•
+placeable
+
+•
+recombinable
+
+•
+portable
+
+•
+persistent without becoming heavy archive burden
+
+•
+shared across human-readable and agent-readable surfaces
+
+⸻
+
+=== PDF PAGE 5 ===
+Beyond Chat, Canvas, and Cockpit
+
+ChromaPrompt is not limited to a chat interface, a node canvas, or an agent cockpit. Those may
+
+function as transitional authoring environments, but they are not the final habitat of the system.
+
+The deeper aim is environmental deployment: chromas and chromagents should be able to live
+
+on placed rails and meaning surfaces across lived space, including household rails, desk rails,
+
+car-edge fields, wearable bands, wall projections, threshold surfaces, and other ambient
+
+locations.
+
+In this sense, ChromaPrompt is not only a visual arrangement system. It is a grammar for moving
+
+semantic coordination out of the box and into the environment.
+
+⸻
+
+Reusable Prompt Objects
+
+A central extension proposed here is that prompt structures do not need to vanish after use.
+
+Once a chroma has been made, it does not need to be deleted as if it were only a temporary
+
+sentence. It may remain available for reuse.
+
+A reusable prompt object may be:
+
+•
+kept in a Chroma Bank
+
+•
+unsocketed from one rail
+
+•
+returned to a phone or watch
+
+•
+redeployed on another rail
+
+•
+recombined with other chromas
+
+•
+paired with a different chromagent
+
+•
+used in recurring workflows or domestic settings
+
+This differs sharply from ordinary text prompting. A text prompt is usually consumed
+
+by the moment of execution and then buried in scroll history. A chroma prompt can
+
+remain as a semantic object that continues to exist after one execution cycle has
+
+ended.
+
+A prompt is consumed.
+
+A chroma can be kept, moved, reused, and recombined.
+
+⸻
+
+=== PDF PAGE 6 ===
+Object Types
+
+For practical implementation, the system may initially be understood through three object
+
+classes.
+
+1. Plain Chroma
+
+A visible semantic object carrying identity, state, or presence without required hidden depth.
+
+Examples:
+
+•
+plant
+
+•
+coffee
+
+•
+route home
+
+•
+meeting later
+
+•
+departure state
+
+2. Payload Chroma
+
+A plain chroma plus linked symbolic depth.
+
+Examples:
+
+•
+a product chroma linked to a product page
+
+•
+a plant chroma linked to photos
+
+•
+a route chroma linked to route detail
+
+•
+a note chroma linked to text or context
+
+•
+a reminder chroma linked to a deeper action
+
+3. Chromagent
+
+An active operator that works on one or more chromas.
+
+Examples:
+
+•
+compare
+
+•
+search
+
+•
+care
+
+•
+summarize
+
+•
+plan
+
+•
+monitor
+
+•
+recommend
+
+•
+evaluate
+
+=== PDF PAGE 7 ===
+⸻
+
+Sources of Chromas
+
+In practical use, chromas may arise from at least three sources.
+
+A. User-Created Chromas
+
+The user manually creates a chroma through an authoring interface.
+
+Examples:
+
+•
+“plant care”
+
+•
+“shoe A”
+
+•
+“route home”
+
+•
+“research”
+
+This may involve choosing:
+
+•
+color
+
+•
+name or label
+
+•
+type
+
+•
+optional payload
+
+•
+rail or location
+
+B. Derived Chromas
+
+The system converts existing content into one or more chromas.
+
+Examples:
+
+•
+text prompt becomes a prompt chroma
+
+•
+plant photo becomes a plant payload chroma
+
+•
+three product links become three comparison chromas
+
+•
+a route becomes a route chroma
+
+This may appear in the interface as:
+
+Turn this into chroma.
+
+C. Agent-Generated Chromas
+
+A model or service creates chromas from analysis, extraction, grouping, or recommendation.
+
+=== PDF PAGE 8 ===
+Examples:
+
+•
+three suggested products become three chromas
+
+•
+four extracted tasks become four chromas
+
+•
+commuting patterns become a route chroma cluster
+
+•
+clustered summaries become grouped semantic objects
+
+⸻
+
+Authoring Layer
+
+In practical transition phases, the system would likely begin not as pure ambient infrastructure
+
+but as an authoring and orchestration layer.
+
+This may initially appear as:
+
+•
+a Chroma app
+
+•
+a Chroma editor
+
+•
+a Rail composer
+
+•
+a plugin or shell
+
+•
+an OS-level composer
+
+Its functions may include:
+
+•
+creating chromas
+
+•
+attaching payloads
+
+•
+creating or assigning chromagents
+
+•
+selecting rails or surfaces
+
+•
+setting rules
+
+•
+managing visibility
+
+•
+storing objects in a Chroma Bank
+
+•
+unsocketing and redeploying semantic objects
+
+The app is not the habitat.
+
+The app is the forge.
+
+The rail is the habitat.
+
+⸻
+
+Placement of Chromagents
+
+A chromagent may be placed on a rail in several ways.
+
+Drag-and-Drop Placement
+
+=== PDF PAGE 9 ===
+The user creates or selects a chromagent and places it directly beside one or more chromas.
+
+Example:
+
+•
+choose compare chromagent
+
+•
+place beside three shoe chromas
+
+Contextual Placement
+
+The user selects one or more chromas and invokes a command such as:
+
+•
+compare these
+
+•
+monitor this
+
+•
+search around this
+
+•
+care for this
+
+The system then creates or attaches an appropriate chromagent.
+
+Template-Based Placement
+
+The system provides predefined chromagent classes such as:
+
+•
+compare
+
+•
+route
+
+•
+care
+
+•
+calendar
+
+•
+search
+
+•
+draft
+
+The user places these classes into rails as reusable modules.
+
+⸻
+
+Activation Modes
+
+A chromagent does not always need to execute immediately. At least four activation modes are
+
+possible.
+
+1. Passive Mode
+
+The chromagent is placed but idle.
+
+It is visible, available, and semantically present, but does not yet execute.
+
+=== PDF PAGE 10 ===
+2. Arrangement-Triggered Mode
+
+The chromagent executes when a required semantic arrangement is complete.
+
+Example:
+
+•
+at least two shoe chromas present
+
+•
+comparison chromagent present
+
+•
+optional price or location chroma present
+
+When the arrangement is complete, the compare process may begin automatically if
+
+auto mode is enabled.
+
+3. User-Triggered Mode
+
+The chromagent executes only when the user explicitly invokes it.
+
+Examples:
+
+•
+run
+
+•
+compare
+
+•
+refresh
+
+•
+evaluate
+
+•
+update
+
+4. Environment-Triggered Mode
+
+The chromagent executes in response to external events or changing conditions.
+
+Examples:
+
+•
+a new plant photo is added
+
+•
+a route changes
+
+•
+the time of day changes
+
+•
+a sensor update occurs
+
+•
+the user arrives at a specific rail or location
+
+⸻
+
+Input / Output Logic
+
+A chromagent may be modeled through:
+
+•
+input conditions
+
+=== PDF PAGE 11 ===
+•
+execution rule
+
+•
+output rule
+
+Example: Compare Chromagent
+
+Input
+
+•
+minimum of two product chromas
+
+•
+optional price filter chroma
+
+•
+optional location chroma
+
+Execute When
+
+•
+user taps run
+
+or
+
+•
+arrangement complete and auto mode is enabled
+
+Output
+
+•
+ranking chroma
+
+•
+cheapest-store chroma
+
+•
+best-fit chroma
+
+•
+trail of comparison or recent reasoning state
+
+⸻
+
+Example Structures
+
+Comparison Prompt
+
+•
+Chroma 1: shoe model A
+
+•
+Chroma 2: shoe model B
+
+•
+Chroma 3: shoe model C
+
+•
+Chromagent: compare price, fit, and store availability
+
+The prompt is the arrangement, not only the sentence.
+
+Plant-Care Prompt
+
+•
+Chroma: plant identity
+
+•
+Payload chromas: current and past photos
+
+•
+Chromagent: evaluate plant condition and suggest care
+
+The prompt is not lost in chat history. It remains placed and revisitable.
+
+Route Prompt
+
+=== PDF PAGE 12 ===
+•
+Chroma: destination or repeated commute
+
+•
+Chroma: timing or traffic condition
+
+•
+Chromagent: evaluate best path or compare route options
+
+The prompt exists as a field composition rather than only a typed request.
+
+⸻
+
+System Model
+
+A practical implementation may involve at least three system objects.
+
+Chroma Object
+
+•
+id
+
+•
+color
+
+•
+label
+
+•
+category
+
+•
+payload reference (optional)
+
+•
+rail binding or location
+
+•
+state
+
+•
+tags or semantic family
+
+Chromagent Object
+
+•
+id
+
+•
+role
+
+•
+input schema
+
+•
+activation mode
+
+•
+payload access rules
+
+•
+output mode
+
+•
+rail binding
+
+•
+state
+
+Rail Object
+
+•
+id
+
+•
+type
+
+•
+placement context
+
+•
+visible slots or free layout
+
+•
+local rules
+
+•
+linked surfaces
+
+⸻
+
+=== PDF PAGE 13 ===
+Relation to Existing ChromaRail Grammar
+
+ChromaPrompt does not replace ChromaRail, Chromagent, Rail, Trail, or Veil. It extends and
+
+clarifies one of their practical consequences.
+
+•
+Rail remains the habitat in which prompt arrangements can live.
+
+•
+Chroma remains the bounded semantic entity that can carry prompt-relevant
+
+state.
+
+•
+Payload chroma gives a chroma optional hidden depth.
+
+•
+Chromagent remains the active operator that can work on one or more
+
+chromas.
+
+•
+Trail may record prompt evolution, handoff, or recent active transformation.
+
+•
+Veil may preserve softened continuity after the active prompt phase has
+
+passed.
+
+⸻
+
+Prior-Art-Safe Position
+
+This work should be read as a narrow and conservative extension rather than as a broad claim
+
+over all prompting systems, multimodal interfaces, or visual programming traditions.
+
+It does not claim novelty for:
+
+•
+text prompting
+
+•
+multimodal prompting
+
+•
+node systems
+
+•
+visual programming
+
+•
+agent dashboards
+
+•
+orchestration frameworks
+
+•
+reusable saved tasks
+
+•
+content boards or object banks in isolation
+
+The strongest claim retained here is narrower:
+
+ChromaPrompt defines a named semantic extension in which prompt structures become
+
+reusable, placeable semantic arrangements composed of chromas, payload chromas, and
+
+chromagents, intended to operate as a higher-abstraction coordination layer above
+
+conventional runtime primitives in human-agent systems.
+
+⸻
+
+=== PDF PAGE 14 ===
+Implementation Boundary
+
+This note does not claim to replace:
+
+•
+text prompting
+
+•
+tool calls
+
+•
+event streams
+
+•
+model runtime
+
+•
+orchestration frameworks
+
+•
+graph execution
+
+•
+transport protocols
+
+•
+synchronization logic
+
+A chroma prompt may still compile downward into:
+
+•
+text
+
+•
+hidden context
+
+•
+tool calls
+
+•
+event streams
+
+•
+agent graph execution
+
+•
+model runtime
+
+The contribution here is not the lower execution layer.
+
+It is the higher coordination grammar.
+
+⸻
+
+Closing Statement
+
+A prompt does not need to remain a sentence inside a chatbox.
+
+With chromas, prompts become placeable.
+
+With chromagents, prompts become active.
+
+With Chroma Bank, prompts become reusable.
+
+With unsocketing and redeployment, prompts can move through life without being lost.
+
+ChromaRail turns prompting from disposable text into reusable semantic deployment.

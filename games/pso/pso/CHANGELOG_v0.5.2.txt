@@ -1,0 +1,37 @@
+JRPG.WORLD /pso/ · RICO INTELLIGENCE v0.5.2
+
+RICO MAG MATRIX FIX
+===================
+
+Problem fixed
+-------------
+A linked Xbox save already allowed the MAG engine to calculate fourth-evolution possibilities, but Rico only received the automatically selected default endpoint. For Eilaa that was Rukmin. Plural questions such as “which 4th evo MAGs can I make, including handoffs?” could therefore collapse into a single Rukmin plan and incorrectly claim that other holder/class evidence was missing.
+
+What changed
+------------
+- Added a complete rare fourth-evolution route matrix from verified save state.
+- Matrix preserves every legal holder type/gender + Section-ID equation route, not merely one preferred route per MAG.
+- Matrix reachability is independent of one default Lv200 stat template; a legal rare-MAG route is no longer discarded just because that route would require a different final spread.
+- Targeted single-MAG planning still uses the conservative selected-target progression logic.
+- Added VERIFIED_SAVE_MAG_MATRIX deterministic fact block.
+- Rico receives all reachable targets, route variants, holder classes, gender, Section IDs, equality, earliest checkpoint, and whether a route is self / same-ID handoff / alternate-ID handoff.
+- Matrix questions no longer render the giant default Rukmin MAG Lab widget. The matrix is headless intelligence for Rico.
+- Added a hard server instruction: never collapse a matrix request to the default endpoint and never ask for class/Section ID already present in verified save truth.
+- Original Xbox-only save scope remains unchanged.
+
+Golden Eilaa result
+-------------------
+Verified save: Eilaa · RAmarl · Redria · Lv2 · MAG Lv6
+Reachable standard rare fourth-evolution MAGs: 9
+Route variants: 18
+Targets: Bhima, Deva, Diwari, Nidra, Pushan, Rati, Rukmin, Sato, Savitri
+
+Same-Redria examples now explicitly available to Rico:
+- Deva: male Hunter (HUmar/HUcast), Viridia/Bluefull/Redria/Whitill, DEF+DEX = POW+MIND
+- Savitri: female Hunter (HUnewearl/HUcaseal), same group/equality
+- Pushan: male Ranger (RAmar/RAcast), same group/equality
+- Rukmin: female Ranger (RAmarl/RAcaseal), same group/equality; Eilaa can self-evolve this route
+- Nidra: male Force (FOmar/FOnewm), same group/equality
+- Sato: female Force (FOmarl/FOnewearl), same group/equality
+
+No GameCube or Blue Burst save-import UI was added.

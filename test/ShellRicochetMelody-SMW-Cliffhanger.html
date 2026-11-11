@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AgentMelodies · Shell Ricochet · Yoshi Hills</title>
+<style>
+:root{color-scheme:dark;--gold:#ffd37c;--mint:#9be6c7;--rose:#ff978d;--panel:#0e2033;--ink:#eef7ff;--muted:#abc1d8}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(#6fc2ff,#1e3d69 78%);font:15px/1.45 system-ui,sans-serif;color:var(--ink)}
+main{max-width:1120px;margin:auto;padding:18px 14px 36px}h1{font:normal clamp(31px,5vw,56px)/1.04 Georgia,serif;margin:4px 0}h1 em{color:var(--gold)}
+p{margin:6px 0 0;color:#ddf3ff}.eyebrow{font-size:11px;letter-spacing:.22em;color:#fce49c;font-weight:800}
+.shell{border:1px solid #355574;background:#10243ac8;border-radius:18px;overflow:hidden;box-shadow:0 18px 60px #03111e88}
+svg{display:block;width:100%;height:auto;aspect-ratio:16/9;background:linear-gradient(#4092e9,#9bdcff 72%,#bde9ff)}.progress{height:6px;background:#1a3552}.progress div{height:100%;width:0;background:var(--gold)}
+.controls{padding:12px;display:flex;gap:9px;flex-wrap:wrap;align-items:center}button{padding:10px 13px;border-radius:10px;border:1px solid #597594;background:#203d59;color:#eef7ff;font-weight:700;cursor:pointer}
+button.primary{background:var(--gold);color:#162635;border-color:var(--gold)}label{display:flex;align-items:center;gap:6px;color:#d7ebff;font-size:13px}.status{padding:0 14px 14px;color:#a8e8d3;font-size:13px}
+.panels{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;margin-top:14px}.panel{border:1px solid #345574;background:#10243ad9;border-radius:16px;padding:18px}.panel h2{font:normal 24px Georgia,serif;margin:0 0 8px}
+.stats{display:flex;gap:18px;flex-wrap:wrap;margin:8px 0 8px}.stat strong{display:block;font:normal 28px Georgia,serif;color:var(--mint)}.stat small{color:var(--muted)}
+.log{height:160px;overflow:auto;background:#071523;border-radius:9px;padding:10px;white-space:pre-wrap;font:11px/1.7 ui-monospace,Consolas,monospace;color:#cfe4ff}.note{font-size:12px;color:#aac5de;line-height:1.6}
+.pill{display:inline-block;border:1px solid #4d6884;border-radius:999px;padding:4px 8px;font-size:11px;color:#dcecff;margin-right:6px}.good{color:var(--mint)}.bad{color:var(--rose)}
+@media(max-width:760px){.panels{grid-template-columns:1fr}.controls button{flex:1}svg{aspect-ratio:4/3}}
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">AGENTMELODIES · EXPERIMENT D · SVG GAME-WORLD GRAMMAR</div>
+  <h1>Shell <em>Ricochet</em> · Yoshi Hills 🔴🐢</h1>
+  <p>Een rood schild laat de melodie klinken met echte muurcontacten en landingen. Nu in een vrolijke, met de hand getekende Super Mario World-geïnspireerde wereld met ogen in de heuvels, wolkjes, grasranden en blokken.</p>
+  <section class="shell">
+    <svg id="stage" viewBox="0 0 960 540" aria-label="Mario-achtig SVG-platformlevel met een rood schild dat kaatst, door gaten valt en noten speelt">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2d75cd"/>
+          <stop offset="0.58" stop-color="#58b5ed"/>
+          <stop offset="1" stop-color="#8cddf1"/>
+        </linearGradient>
+        <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+          <stop stop-color="#edb472"/><stop offset="1" stop-color="#c57c3e"/>
+        </linearGradient>
+        <linearGradient id="brick" x1="0" y1="0" x2="0" y2="1">
+          <stop stop-color="#ffc37e"/><stop offset="1" stop-color="#c56834"/>
+        </linearGradient>
+        <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+          <stop stop-color="#e4ff80"/><stop offset="0.29" stop-color="#8ee246"/>
+          <stop offset="1" stop-color="#25a84a"/>
+        </linearGradient>
+        <pattern id="earthDots" width="29" height="26" patternUnits="userSpaceOnUse">
+          <rect x="6" y="5" width="4" height="6" rx="1" fill="#f9cd80" opacity=".85"/>
+          <rect x="22" y="18" width="3" height="5" rx="1" fill="#e9a75c"/>
+        </pattern>
+        <pattern id="tileDashes" width="24" height="13" patternUnits="userSpaceOnUse">
+          <rect x="7" y="3" width="6" height="2" rx="1" fill="#e99b53" opacity=".55"/>
+          <rect x="19" y="9" width="3" height="2" rx="1" fill="#f7d18c" opacity=".60"/>
+        </pattern>
+      </defs>
+      <rect id="skyRect" x="-2000" y="-1000" width="5000" height="5500" fill="url(#sky)"/>
+      <g id="bg"></g><g id="world"></g><g id="actors"></g><g id="fx"></g>
+    </svg>
+    <div class="progress"><div id="bar"></div></div>
+    <div class="controls">
+      <button id="play" class="primary">▶ PLAY</button>
+      <button id="reset">↺ RESET</button>
+      <label><input id="loop" type="checkbox"> LOOP</label>
+      <button id="sabotage">⚙ Verplaats één gat</button>
+      <button id="repair">✦ REPAIR</button>
+      <button id="validate">✓ VALIDATE</button>
+      <span id="clock" class="pill">0.00 s</span><span id="gradePill" class="pill">—</span>
+    </div>
+    <div class="status" id="status">Klaar voor de eerste shell-run.</div>
+  </section>
+  <div class="panels">
+    <section class="panel">
+      <h2>Musical proof</h2>
+      <div class="stats">
+        <div class="stat"><strong id="score">0/67</strong><small>Correcte noten</small></div>
+        <div class="stat"><strong id="timing">—</strong><small>Max. timingfout</small></div>
+        <div class="stat"><strong id="events">0</strong><small>Gebeurtenissen</small></div>
+      </div>
+      <p class="note">Alleen twee zichtbare gebeurtenissen maken een noot: <b>wall bounce</b> en <b>ground landing</b>. Geen verborgen MIDI-audio. De achtergrond is een SVG-interpretatie van de Super Mario World-beeldtaal.</p>
+    </section>
+    <section class="panel">
+      <h2>Event log</h2>
+      <div id="log" class="log">Nog geen run uitgevoerd.</div>
+      <p class="note">Sabotage verplaatst één gat zodat een landing verschuift. Repair herstelt de geconstrueerde opstelling.</p>
+    </section>
+  </div>
+</main>
+
+<script>
+'use strict';
+const NOTES = [{"pitch": 98, "time": 0.0, "duration": 0.166667, "velocity": 0.787}, {"pitch": 98, "time": 0.25, "duration": 0.166667, "velocity": 0.787}, {"pitch": 98, "time": 0.5, "duration": 0.166667, "velocity": 0.787}, {"pitch": 86, "time": 0.75, "duration": 0.166667, "velocity": 0.787}, {"pitch": 98, "time": 1.0, "duration": 0.166667, "velocity": 0.787}, {"pitch": 98, "time": 1.25, "duration": 0.166667, "velocity": 0.787}, {"pitch": 98, "time": 1.5, "duration": 0.166667, "velocity": 0.787}, {"pitch": 86, "time": 1.75, "duration": 0.166667, "velocity": 0.787}, {"pitch": 99, "time": 2.0, "duration": 1.0, "velocity": 0.787}, {"pitch": 98, "time": 3.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 3.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 4.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 4.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 4.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 4.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 5.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 5.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 5.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 5.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 6.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 6.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 6.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 6.75, "duration": 0.125, "velocity": 0.787}, {"pitch": 96, "time": 6.875, "duration": 0.125, "velocity": 0.787}, {"pitch": 95, "time": 7.0, "duration": 0.5, "velocity": 0.787}, {"pitch": 93, "time": 7.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 7.754167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 8.004167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 8.254167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 8.504167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 8.754167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 9.004167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 9.254167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 9.504167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 9.754167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 10.004167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 10.254167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 10.504167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 10.754167, "duration": 0.125, "velocity": 0.787}, {"pitch": 95, "time": 10.879167, "duration": 0.125, "velocity": 0.787}, {"pitch": 93, "time": 11.004167, "duration": 0.495833, "velocity": 0.787}, {"pitch": 91, "time": 11.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 11.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 12.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 12.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 12.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 12.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 13.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 13.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 13.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 13.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 14.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 14.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 14.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 14.75, "duration": 0.125, "velocity": 0.787}, {"pitch": 95, "time": 14.875, "duration": 0.125, "velocity": 0.787}, {"pitch": 96, "time": 15.0, "duration": 0.5, "velocity": 0.787}, {"pitch": 100, "time": 15.5, "duration": 0.5, "velocity": 0.787}, {"pitch": 98, "time": 16.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 98, "time": 16.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 98, "time": 16.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 16.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 96, "time": 17.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 96, "time": 17.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 96, "time": 17.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 90, "time": 17.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 91, "time": 18.0, "duration": 1.0, "velocity": 0.787}];
+const PRE = 0.55, VX = 220, G = 14000, DROP_H = 64, TIER_STEP = 64, WORLD_W = 960;
+let VIEW_W = 960, VIEW_H = 540;
+const BASE_X = 430, BASE_Y = 72, SHELL_R = 10, WALL_W = 18, FLOOR_TH = 12, EVENT_TOL = 0.012;
+const stage = document.getElementById('stage'), $ = id => document.getElementById(id), NS='http://www.w3.org/2000/svg';
+const tf = Math.sqrt(2*DROP_H/G);
+function fitStageView(){
+  const mobile = window.matchMedia('(max-width: 760px)').matches;
+  VIEW_W = mobile ? 520 : 960;
+  VIEW_H = mobile ? 390 : 540;
+}
+function svg(tag, attrs, parent){ const n=document.createElementNS(NS, tag); for(const [k,v] of Object.entries(attrs||{})) n.setAttribute(k,v); if(parent) parent.appendChild(n); return n; }
+function pitchName(n){ return ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'][n%12] + (Math.floor(n/12)-1); }
+
+function buildLevel(){
+  const tiers=[]; let x=BASE_X, y=BASE_Y, dir=1;
+  let wallX = x + dir*VX*(PRE + NOTES[0].time);
+  let tier={index:0,y,entryX:x,entryDir:dir,wallX,wallSide:dir>0?'right':'left'};
+  if(NOTES[1]){
+    const dtDrop = NOTES[1].time - NOTES[0].time, runDt=Math.max(0.02, dtDrop-tf), gapTravel=VX*runDt;
+    tier.gapX = wallX - dir*gapTravel; tier.nextLandingX = tier.gapX - dir*VX*tf; tier.nextY = y + TIER_STEP; tiers.push(tier);
+    x=tier.nextLandingX; y=tier.nextY; dir=-dir;
+  } else tiers.push(tier);
+  for(let i=2,tIdx=1;i<NOTES.length;i+=2,tIdx++){
+    const wallDt = NOTES[i].time - NOTES[i-1].time;
+    wallX = x + dir*VX*wallDt;
+    tier={index:tIdx,y,entryX:x,entryDir:dir,wallX,wallSide:dir>0?'right':'left'};
+    if(NOTES[i+1]){
+      const dtDrop=NOTES[i+1].time-NOTES[i].time, runDt=Math.max(0.02, dtDrop-tf), gapTravel=VX*runDt;
+      tier.gapX = wallX - dir*gapTravel; tier.nextLandingX = tier.gapX - dir*VX*tf; tier.nextY=y+TIER_STEP; tiers.push(tier);
+      x=tier.nextLandingX; y=tier.nextY; dir=-dir;
+    } else tiers.push(tier);
+  }
+  return {tiers,maxY:(tiers.at(-1)?.y||BASE_Y)+120,totalTime:PRE+NOTES.at(-1).time+NOTES.at(-1).duration+0.6};
+}
+function computeBounds(level){
+  let minX=Infinity, maxX=-Infinity;
+  for(const tier of level.tiers){
+    const left = Math.min(tier.wallX, tier.gapX ?? tier.wallX+260) - 80;
+    const right = Math.max(tier.wallX, tier.gapX ?? tier.wallX-260) + 80;
+    minX = Math.min(minX, left);
+    maxX = Math.max(maxX, right);
+  }
+  if(!Number.isFinite(minX)){ minX = 0; maxX = VIEW_W; }
+  level.minX = minX;
+  level.maxX = maxX;
+  level.minY = 0;
+  level.maxY = (level.tiers.at(-1)?.y || BASE_Y) + 120;
+  return level;
+}
+const originalLevel = computeBounds(buildLevel()); let level = JSON.parse(JSON.stringify(originalLevel));
+let playing=false, raf=0, last=0, acc=0, t=0, state=null, eventLog=[], bursts=[], ctx=null, voices=[], sabotaged=false, actors={}, currentViewX=0, currentViewY=0;
+let worldG, bgG, fxG;
+
+
+// Each background symbol is drawn as an original SVG element; no image assets or spritesheets.
+function artCloud(g, x, y, scale=1, cheek=false){
+  const c=svg('g',{transform:`translate(${x} ${y}) scale(${scale})`},g);
+  const stroke='#a7e5f2';
+  svg('rect',{x:-53,y:-17,width:104,height:37,rx:19,fill:'#f8ffff',stroke,'stroke-width':3},c);
+  svg('circle',{cx:-23,cy:-19,r:24,fill:'#f8ffff',stroke,'stroke-width':3},c);
+  svg('circle',{cx:19,cy:-23,r:29,fill:'#f8ffff',stroke,'stroke-width':3},c);
+  svg('rect',{x:-47,y:-17,width:92,height:31,rx:15,fill:'#f8ffff'},c);
+  svg('ellipse',{cx:-9,cy:-2,rx:3.1,ry:7.4,fill:'#173b65'},c);
+  svg('ellipse',{cx:7,cy:-2,rx:3.1,ry:7.4,fill:'#173b65'},c);
+  if(cheek){
+    svg('circle',{cx:-26,cy:7,r:3.6,fill:'#f6acb7'},c);
+    svg('circle',{cx:23,cy:7,r:3.6,fill:'#f6acb7'},c);
+  }
+}
+function artHill(g,x,baseY,width,height,tint,eyes=true){
+  const h=svg('g',{transform:`translate(${x} ${baseY})`},g);
+  const w=width, peak=-height;
+  const light=tint==='mint'?'#a1ecd2':tint==='blue'?'#8ac8d2':'#78d482';
+  const dark=tint==='mint'?'#3d9b84':tint==='blue'?'#498aa7':'#3f9c63';
+  // rounded upright mound with flat-ish shoulders, a nostalgic 16-bit silhouette
+  svg('path',{d:`M ${-w/2} 0 L ${-w/2} ${peak+46} Q ${-w/2} ${peak} ${-w/2+48} ${peak} L ${w/2-48} ${peak} Q ${w/2} ${peak} ${w/2} ${peak+46} L ${w/2} 0 Z`,fill:dark,opacity:.28,transform:'translate(7 2)'},h);
+  svg('path',{d:`M ${-w/2} 0 L ${-w/2} ${peak+46} Q ${-w/2} ${peak} ${-w/2+48} ${peak} L ${w/2-48} ${peak} Q ${w/2} ${peak} ${w/2} ${peak+46} L ${w/2} 0 Z`,fill:light,stroke:dark,'stroke-width':3},h);
+  const spots=[[-w*.23,-height*.69],[w*.24,-height*.77],[-w*.29,-height*.35],[w*.29,-height*.33]];
+  spots.forEach(([sx,sy],i)=>svg('ellipse',{cx:sx,cy:sy,rx:i%2?6:8,ry:i%2?13:10,fill:'#e8fff0',opacity:.8},h));
+  if(eyes){
+    svg('ellipse',{cx:-11,cy:-height*.47,rx:4,ry:9.5,fill:'#245a6f'},h);
+    svg('ellipse',{cx:11,cy:-height*.47,rx:4,ry:9.5,fill:'#245a6f'},h);
+  }
+}
+function artBush(g,x,y,scale=1){
+  const b=svg('g',{transform:`translate(${x} ${y}) scale(${scale})`},g);
+  const green='#4acb43',deep='#198f4d';
+  const d='M -57 8 Q -64 -15 -44 -26 Q -36 -42 -15 -30 Q -3 -58 20 -34 Q 41 -44 49 -20 Q 69 -16 61 8 Z';
+  svg('path',{d,fill:deep,transform:'translate(4 5)'},b);
+  svg('path',{d,fill:green,stroke:'#178d43','stroke-width':4},b);
+  for(const x of [-31,1,33]){
+    svg('path',{d:`M ${x} -25 l 4 -5 4 5 -4 5 Z`,fill:'#c4fa5e'},b);
+  }
+}
+function artFlower(g,x,y,scale=1){
+  const f=svg('g',{transform:`translate(${x} ${y}) scale(${scale})`},g);
+  svg('path',{d:'M 0 0 V -22',stroke:'#287e42','stroke-width':3,fill:'none'},f);
+  svg('ellipse',{cx:-6,cy:-6,rx:7,ry:3,fill:'#43b44b',transform:'rotate(30 -6 -6)'},f);
+  for(let i=0;i<5;i++){
+    const a=i*Math.PI*2/5;
+    svg('circle',{cx:Math.cos(a)*9,cy:-24+Math.sin(a)*9,r:7,fill:'#fff6e4',stroke:'#d0e7c1','stroke-width':1},f);
+  }
+  svg('circle',{cx:0,cy:-24,r:7,fill:'#f5bb2c',stroke:'#d58a23','stroke-width':1.5},f);
+}
+function artQuestionBlock(g,x,y,s=27){
+  const a=svg('g',{transform:`translate(${x} ${y})`},g);
+  svg('rect',{x:-s/2+3,y:-s/2+4,width:s,height:s,rx:3,fill:'#995629'},a);
+  svg('rect',{x:-s/2,y:-s/2,width:s,height:s,rx:3,fill:'#ffd15c',stroke:'#af6c26','stroke-width':3},a);
+  svg('path',{d:`M ${-s/2+4} ${s/2-5} V ${-s/2+4} H ${s/2-4}`,fill:'none',stroke:'#fff5a5','stroke-width':2},a);
+  const text=svg('text',{x:0,y:7,'text-anchor':'middle','font-size':23,'font-weight':900,'font-family':'monospace',fill:'#fff8cc',stroke:'#b57b24','stroke-width':.75},a);
+  text.textContent='?';
+}
+function artPipe(g,x,y){
+  const p=svg('g',{transform:`translate(${x} ${y})`},g);
+  svg('rect',{x:-19,y:-35,width:38,height:37,fill:'#2aa34e',stroke:'#145f39','stroke-width':3},p);
+  svg('rect',{x:-23,y:-40,width:46,height:13,rx:2,fill:'#6fe873',stroke:'#145f39','stroke-width':3},p);
+  svg('rect',{x:-14,y:-35,width:7,height:31,fill:'#bbff8d',opacity:.75},p);
+  svg('rect',{x:11,y:-27,width:5,height:28,fill:'#196e3e',opacity:.6},p);
+}
+function artScenery(g){
+  const xLeft=level.minX - 1050, xRight=level.maxX + 1050;
+  const yStart=-470, yEnd=level.maxY+850;
+  // Repeating diorama backgrounds throughout the many stacked shell corridors.
+  for(let zone=0, yy=yStart; yy<yEnd; zone++,yy+=430){
+    const b=svg('g',{opacity:.88},g);
+    const offset=(zone%2)*115;
+    for(let x=xLeft-50+offset,k=0;x<xRight+330;x+=300,k++){
+      artHill(b,x,yy+340,185+(k%3)*15,215+(k%2)*40,(k%3===0?'blue':k%3===1?'mint':'green'), k%3!==0);
+    }
+    for(let x=xLeft+100+offset,k=0;x<xRight+200;x+=470,k++){
+      artCloud(g,x,yy+46+(k%2)*29,.75+(k%3)*.09,k%2===0);
+    }
+    for(let x=xLeft+165+offset,k=0;x<xRight+100;x+=370,k++){
+      artBush(g,x,yy+353,.62+(k%2)*.15);
+    }
+  }
+}
+function drawTurf(g,x,y,w,depth=12){
+  if(w < .4) return;
+  svg('rect',{x,y,width:w,height:depth,fill:'url(#ground)',stroke:'#b57d42','stroke-width':.6},g);
+  svg('rect',{x,y:y+4,width:w,height:Math.max(1,depth-4),fill:'url(#tileDashes)',opacity:.9},g);
+  svg('rect',{x,y:y-1,width:w,height:6,rx:1,fill:'url(#grass)'},g);
+  svg('path',{d:`M ${x} ${y+5} h ${w}`,stroke:'#27863d','stroke-width':1,opacity:.8},g);
+}
+function drawBrickWall(g,x,y,width,height){
+  const w=width;
+  svg('rect',{x,y,width:w,height,rx:3,fill:'url(#brick)',stroke:'#854f32','stroke-width':2},g);
+  svg('path',{d:`M ${x+2} ${y+13} H ${x+w-2} M ${x+2} ${y+26} H ${x+w-2} M ${x+w/2} ${y+1} V ${y+13} M ${x+w*.3} ${y+13} V ${y+26} M ${x+w*.72} ${y+26} V ${y+height-2}`,fill:'none',stroke:'#945733','stroke-width':1.4},g);
+  svg('rect',{x:x+3,y:y+3,width:4,height:5,fill:'#ffe1a2',opacity:.55},g);
+}
+
+function initWorld(){
+  worldG = document.getElementById('world'); worldG.replaceChildren();
+  bgG = document.getElementById('bg'); bgG.replaceChildren();
+  fxG = document.getElementById('fx'); fxG.replaceChildren();
+  document.getElementById('actors').replaceChildren();
+  const lastTier = level.tiers[level.tiers.length-1];
+  const cliffPipeX = Math.max(lastTier.entryX, lastTier.wallX) + 118;
+  level.cliff = {pipeX:cliffPipeX, pipeY:lastTier.y+2, tierIndex:lastTier.index};
+  level.maxX = Math.max(level.maxX, cliffPipeX + 110);
+  const worldLeft = level.minX - 1200;
+  const worldWidth = (level.maxX - level.minX) + 2400;
+  const skyRect = document.getElementById('skyRect');
+  skyRect.setAttribute('x',worldLeft); skyRect.setAttribute('width',worldWidth);
+  skyRect.setAttribute('y',-1000); skyRect.setAttribute('height',level.maxY+2000);
+  artScenery(bgG);
+  const frame=svg('g',{},worldG);
+  for(const tier of level.tiers){
+    const left = Math.min(tier.wallX, tier.gapX ?? tier.wallX+260) - 80;
+    const right = Math.max(tier.wallX, tier.gapX ?? tier.wallX-260) + 80;
+    const isFinalTier = tier.index===level.cliff.tierIndex;
+    const floorLeft=Math.min(left,right,tier.entryX-22), floorRight=Math.max(left,right,tier.entryX+22, isFinalTier ? level.cliff.pipeX+36 : -1e9), gapHalf=16;
+    if(tier.gapX !== undefined){
+      const gx=tier.gapX;
+      drawTurf(frame,floorLeft,tier.y,Math.max(0,gx-gapHalf-floorLeft),FLOOR_TH);
+      drawTurf(frame,gx+gapHalf,tier.y,Math.max(0,floorRight-(gx+gapHalf)),FLOOR_TH);
+      // blue shadow denotes an actual opening: do not bridge the gap with decorative tiles
+      svg('path',{d:`M ${gx-13} ${tier.y+6} q 13 9 26 0`,fill:'none',stroke:'#6cc5ee','stroke-width':2,opacity:.7},frame);
+    } else drawTurf(frame,floorLeft,tier.y,floorRight-floorLeft,FLOOR_TH);
+    drawBrickWall(frame,tier.wallX-WALL_W/2,tier.y-29,WALL_W,41);
+    // Decorative symbols sit above playable geometry. They do not create phantom note events.
+    if(tier.index%5===2){
+      const decX = tier.gapX!==undefined ? (tier.wallX+tier.gapX)/2 : tier.wallX+56;
+      artQuestionBlock(frame,decX,tier.y-66,27);
+    }
+    if(tier.index%7===3){
+      const decorX=tier.gapX!==undefined ? (tier.wallX+tier.gapX)/2 : tier.wallX-50;
+      artFlower(frame,decorX,tier.y-2,.6);
+    }
+  }
+  // Cliffhanger pipe on the last playable tier: the shell enters after the final note.
+  artPipe(frame,level.cliff.pipeX,level.cliff.pipeY);
+  artQuestionBlock(frame,level.cliff.pipeX+54,level.cliff.pipeY-52,24);
+  // Finishing strip: saturated grass, orange dotted earth, and a small green pipe.
+  const bottom = level.maxY + 15;
+  svg('rect',{x:worldLeft,y:bottom,width:worldWidth,height:260,fill:'#c48b51'},worldG);
+  svg('rect',{x:worldLeft,y:bottom,width:worldWidth,height:260,fill:'url(#earthDots)'},worldG);
+  svg('rect',{x:worldLeft,y:bottom-8,width:worldWidth,height:13,fill:'url(#grass)',stroke:'#22783d','stroke-width':3},worldG);
+  artPipe(worldG,level.minX+140,bottom-8);
+  artBush(worldG,level.maxX-110,bottom-3,.7);
+  actors.group = svg('g',{}, document.getElementById('actors'));
+  actors.shell = svg('g',{}, actors.group);
+  svg('ellipse',{cx:0,cy:0,rx:12,ry:10,fill:'#d43f3f',stroke:'#fff2da','stroke-width':2}, actors.shell);
+  svg('ellipse',{cx:0,cy:-1,rx:7,ry:5,fill:'#ff8080',opacity:.5}, actors.shell);
+  svg('ellipse',{cx:-10,cy:3,rx:4,ry:3,fill:'#fff6df'}, actors.shell);
+  svg('ellipse',{cx:10,cy:3,rx:4,ry:3,fill:'#fff6df'}, actors.shell);
+  svg('path',{d:'M -5 -6 Q 0 -1 -4 5 M 5 -6 Q 0 -1 4 5',stroke:'#9f252d','stroke-width':1.6,fill:'none',opacity:.7},actors.shell);
+}
+
+function resetSim(){
+  fitStageView();
+  stopAudio(); playing=false; cancelAnimationFrame(raf); t=0; acc=0; last=0; eventLog=[]; bursts=[]; currentViewX=0; currentViewY=0;
+  const tier0=level.tiers[0];
+  state={tier:0,x:tier0.entryX,y:tier0.y-SHELL_R,vx:tier0.entryDir*VX,vy:0,phase:'toWall',grounded:true,noteIndex:0,done:false,cliffhanger:false,cliffTime:0,shellScale:1,shellOpacity:1};
+  currentViewX=state.x-VIEW_W/2; currentViewY=state.y-VIEW_H*.43;
+  draw(); updatePanels(); $('status').textContent=sabotaged?'Sabotage actief: één gat staat verkeerd.':'Klaar voor de eerste shell-run.';
+}
+function noteFromIndex(i){ const n=NOTES[i]; return {pitch:n.pitch,duration:n.duration,velocity:n.velocity,targetTime:n.time}; }
+function logEvent(kind){
+  const note=noteFromIndex(state.noteIndex);
+  eventLog.push({index:state.noteIndex,kind,time:t-PRE,physicalTime:t,pitch:note.pitch,duration:note.duration,velocity:note.velocity,tier:state.tier});
+  bursts.push({x:state.x,y:state.y,at:t,kind}); playNote(eventLog.at(-1)); state.noteIndex++;
+}
+function playNote(ev){
+  if(!playing) return;
+  try { ctx ??= new (window.AudioContext||window.webkitAudioContext)(); ctx.resume(); } catch(e) { return; }
+  const when=ctx.currentTime+.008, f=440*Math.pow(2,(ev.pitch-69)/12), len=Math.max(.08,Math.min(2,ev.duration));
+  function tone(ratio,type,lvl,end){ const osc=ctx.createOscillator(), gain=ctx.createGain(); osc.type=type; osc.frequency.value=f*ratio; gain.gain.setValueAtTime(.0001,when); gain.gain.exponentialRampToValueAtTime(lvl*ev.velocity*.18,when+.015); gain.gain.exponentialRampToValueAtTime(.0001,when+end); osc.connect(gain); gain.connect(ctx.destination); osc.start(when); osc.stop(when+end+.03); voices.push(osc);}
+  if(ev.kind==='wall'){ tone(1,'triangle',1,len*.65); tone(2,'sine',.22,Math.max(.08,len*.25)); }
+  else { tone(1,'sine',1,len); tone(2,'sine',.16,Math.max(.08,len*.45)); }
+}
+function stopAudio(){ for(const v of voices){ try{v.stop()}catch(e){} } voices=[]; }
+function beginCliffhanger(){
+  if(state.cliffhanger) return;
+  const lastTier = level.tiers[level.tiers.length-1];
+  state.cliffhanger = true;
+  state.phase = 'cliffRun';
+  state.tier = lastTier.index;
+  state.grounded = true;
+  state.vy = 0;
+  state.y = lastTier.y - SHELL_R;
+  state.shellScale = 1;
+  state.shellOpacity = 1;
+  $('status').textContent='Laatste noot gespeeld · de shell rolt naar een pipe...';
+}
+
+// Deterministic continuous collision solver: resolve each wall, gap and landing
+// at its exact sub-frame time, rather than accumulating frame-quantization errors.
+function step(dt){
+  if(state.done) return;
+  let remaining=dt, iterations=0;
+  const EPS=1e-10;
+  while(remaining>EPS && !state.done && iterations++<12){
+    const tier=level.tiers[state.tier];
+    if(state.cliffhanger){
+      if(state.phase==='cliffRun'){
+        const target = level.cliff.pipeX;
+        const travelTime = Math.max(0,(target-state.x)/(state.vx||VX));
+        if(travelTime <= remaining + EPS){
+          const advance = Math.max(0,travelTime);
+          t += advance; remaining -= advance; state.x = target; state.vx = 0; state.phase='cliffSink'; state.cliffTime = 0;
+          $('status').textContent='Cliffhanger · de shell glijdt de pipe in...';
+        } else {
+          state.x += (state.vx||VX) * remaining;
+          t += remaining; remaining = 0;
+        }
+      } else if(state.phase==='cliffSink'){
+        const slice = Math.min(remaining, 0.62 - state.cliffTime);
+        state.cliffTime += slice; t += slice; remaining -= slice;
+        const u = Math.min(1, state.cliffTime / 0.62);
+        state.y = (level.tiers[state.tier].y - SHELL_R) + u*28;
+        state.shellScale = 1 - u*0.45;
+        state.shellOpacity = 1 - u*0.9;
+        if(u >= 1){ state.done = true; }
+      }
+      continue;
+    }
+    if(state.grounded){
+      state.y=tier.y-SHELL_R;
+      if(state.phase==='toWall' || state.phase==='toGap'){
+        const target=state.phase==='toWall' ? tier.wallX : tier.gapX;
+        const travelTime=(target-state.x)/state.vx;
+        if(!Number.isFinite(travelTime) || travelTime< -EPS){
+          // Invalid geometry: cannot silently play target notes.
+          state.done=true;
+          break;
+        }
+        if(travelTime <= remaining + EPS){
+          const advance=Math.max(0,travelTime);
+          t+=advance; remaining-=advance; state.x=target;
+          if(state.phase==='toWall'){
+            logEvent('wall'); state.vx*=-1;
+            state.phase=tier.gapX!==undefined?'toGap':'done';
+            if(state.noteIndex>=NOTES.length){beginCliffhanger(); break;}
+          } else {
+            state.grounded=false; state.vy=0; state.phase='falling';
+          }
+        } else {
+          state.x+=state.vx*remaining;
+          t+=remaining; remaining=0;
+        }
+      } else {t+=remaining;remaining=0;state.done=true;}
+    } else {
+      const nextTier=level.tiers[state.tier+1];
+      if(!nextTier){state.done=true;break;}
+      const dy=nextTier.y-SHELL_R-state.y;
+      const sqrtDisc=Math.sqrt(Math.max(0,state.vy*state.vy+2*G*dy));
+      const landingDt=dy<=0?0:(-state.vy+sqrtDisc)/G;
+      if(landingDt<=remaining+EPS){
+        const advance=Math.max(0,landingDt);
+        t+=advance;remaining-=advance;state.x+=state.vx*advance;
+        state.y=nextTier.y-SHELL_R;state.vy=0;
+        state.grounded=true;state.tier++;state.phase='toWall';
+        logEvent('land');
+        if(state.noteIndex>=NOTES.length){beginCliffhanger(); break;}
+      } else {
+        state.x+=state.vx*remaining;
+        state.y+=state.vy*remaining+0.5*G*remaining*remaining;
+        state.vy+=G*remaining;
+        t+=remaining;remaining=0;
+      }
+    }
+  }
+  bursts=bursts.filter(b=>t-b.at<0.6);
+  if(t>level.totalTime) state.done=true;
+}
+
+function validate(){
+  const checks = NOTES.map((n,i)=>{ const e=eventLog[i]; return !!(e && e.pitch===n.pitch && Math.abs(e.time-n.time)<=EVENT_TOL); });
+  const maxMs = eventLog.length ? Math.max(...eventLog.slice(0,NOTES.length).map((e,i)=>Math.abs((e?.time ?? 999)-NOTES[i].time)*1000)) : null;
+  return {passed:eventLog.length===NOTES.length && checks.every(Boolean), checks, maxMs, good:checks.filter(Boolean).length, actual:eventLog.length};
+}
+function updatePanels(){
+  const v=validate(); $('score').textContent=`${v.good}/67`; $('events').textContent=String(eventLog.length); $('timing').textContent=v.maxMs===null?'—':`${v.maxMs.toFixed(2)} ms`;
+  $('gradePill').textContent = v.passed ? 'PASS' : (eventLog.length?`RUN ${v.good}/67`:'—'); $('gradePill').className='pill ' + (v.passed?'good':(eventLog.length?'bad':''));
+  $('bar').style.width=`${Math.min(100,t/level.totalTime*100)}%`; $('clock').textContent=`${Math.max(0,t-PRE).toFixed(2)} s`;
+  $('log').textContent = eventLog.slice(-18).map(e=>`${e.time.toFixed(3)}s  ${e.kind==='wall'?'WALL ':'LAND '}  ${pitchName(e.pitch).padEnd(4)}  tier-${String(e.tier+1).padStart(2,'0')}`).join('\n') || 'Nog geen run uitgevoerd.';
+}
+function draw(){
+  if(!actors.shell) return;
+  actors.shell.setAttribute('opacity', state.shellOpacity ?? 1);
+  actors.shell.setAttribute('transform', `translate(${state.x.toFixed(2)} ${state.y.toFixed(2)}) rotate(${(t*380)%360}) scale(${(state.shellScale ?? 1).toFixed(3)})`);
+  fxG.replaceChildren();
+  for(const b of bursts){
+    const u=(t-b.at)/0.6, color=b.kind==='wall'?'#ffe67c':'#d3ff9a';
+    svg('circle',{cx:b.x,cy:b.y,r:10+u*28,fill:'none',stroke:color,'stroke-width':3*(1-u),opacity:1-u}, fxG);
+    const n=svg('text',{x:b.x+16+u*10,y:b.y-20-u*17,fill:'#fffbe7','font-family':'Georgia,serif','font-size':23,'font-weight':'bold',stroke:'#247395','stroke-width':.5,opacity:1-u},fxG);
+    n.textContent='♪';
+  }
+  // Compose around the red shell rather than the far-left origin of the level.
+  fitStageView();
+  const wantX = state.x - VIEW_W/2;
+  const wantY = state.y - VIEW_H*0.43;
+  currentViewX += (wantX-currentViewX)*0.24;
+  currentViewY += (wantY-currentViewY)*0.24;
+  stage.setAttribute('viewBox', `${currentViewX.toFixed(2)} ${currentViewY.toFixed(2)} ${VIEW_W} ${VIEW_H}`);
+}
+function frame(now){
+  if(!playing) return; if(!last) last=now; acc += Math.min(0.05,(now-last)/1000); last=now;
+  while(acc >= 1/240){ step(1/240); acc -= 1/240; } draw(); updatePanels();
+  if(state.done){ playing=false; $('play').textContent='▶ PLAY'; const v=validate(); $('status').textContent=v.passed?(state.cliffhanger?'PASS: alle 67 noten zijn uitgespeeld, daarna verdwijnt de shell in een pipe.':'PASS: alle 67 noten ontstaan uit wall-bounces en landingen.'):`Run gestopt: ${v.good}/67 correcte noten uit ${eventLog.length} events.`; if($('loop').checked) start(); return; }
+  raf=requestAnimationFrame(frame);
+}
+function start(){ resetSim(); try{ctx ??= new (window.AudioContext||window.webkitAudioContext)();ctx.resume();}catch(e){} playing=true; $('play').textContent='♫ PLAYING'; $('status').textContent=sabotaged?'Sabotage actief · het schild volgt een fout levelpad.':'Shell onderweg · botsingen maken de melodie.'; requestAnimationFrame(frame); }
+function repair(){ sabotaged=false; level=JSON.parse(JSON.stringify(originalLevel)); initWorld(); resetSim(); }
+function sabotage(){
+  repair(); sabotaged=true;
+  if(level.tiers[2] && level.tiers[2].gapX!==undefined){
+    level.tiers[2].gapX += 34;
+    let dir=1;
+    for(let ti=0; ti<level.tiers.length-1; ti++){
+      const tier=level.tiers[ti], landingX = tier.gapX - dir*VX*tf; tier.nextLandingX=landingX;
+      const nxt=level.tiers[ti+1]; nxt.entryX=landingX; nxt.y = BASE_Y + (ti+1)*TIER_STEP; nxt.entryDir=-dir;
+      const wallNoteIdx=(ti+1)*2, prevLandIdx=wallNoteIdx-1; if(NOTES[wallNoteIdx]) nxt.wallX = nxt.entryX + nxt.entryDir*VX*(NOTES[wallNoteIdx].time-NOTES[prevLandIdx].time);
+      nxt.wallSide=nxt.entryDir>0?'right':'left'; dir=-dir;
+    }
+  }
+  initWorld(); resetSim(); $('status').textContent='Sabotage actief: gat op tier 3 verplaatst.';
+}
+
+$('play').onclick = ()=>{ if(playing){ playing=false; cancelAnimationFrame(raf); $('play').textContent='▶ PLAY'; $('status').textContent='Gepauzeerd.'; } else start(); };
+$('reset').onclick = ()=>repair();
+$('repair').onclick = repair;
+$('sabotage').onclick = sabotage;
+$('validate').onclick = ()=>{
+  playing=false; cancelAnimationFrame(raf); resetSim(); while(!state.done) step(1/240); draw(); updatePanels(); const v=validate();
+  $('status').textContent = v.passed ? `VALIDATE PASS · 67/67 · max ${v.maxMs.toFixed(2)} ms` : `VALIDATE ${sabotaged?'(saboteerd) ':''}FAIL · ${v.good}/67 · max ${(v.maxMs??0).toFixed(2)} ms`;
+  $('play').textContent='▶ PLAY';
+};
+window.addEventListener('resize',()=>{fitStageView();draw();});
+initWorld(); resetSim();
+</script>
+</body></html>

@@ -1,0 +1,5 @@
+v5.3.4 pseudo-3D notes:
+- GlassGallery true 3D zip contains a Three.js/GLB scene, not a drop-in canvas engine.
+- GPTGTA remains HTML5 Canvas for mobile friendliness.
+- The upgrade translates the GlassGallery/PC-GTA insight into 2.5D facade drawing: roof footprint + vertical facade wall + repeated windows + entrance glow.
+- Adds a readable strip-club landmark and stronger destination grammar.

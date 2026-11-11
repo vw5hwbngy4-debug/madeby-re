@@ -1,0 +1,23 @@
+EMERALD v0.1.24.9.2.2.7 — HOENN RELATION STATE
+Date: 2026-09-12
+Baseline: v0.1.24.9.2.2.6
+
+WHY .2.2.7
+The requested handoff called the pass .2.2.3, but .2.2.3-.2.2.6 already exist in the repair chain. This build keeps the proven .2.2.6 baseline and advances monotonically.
+
+RUNTIME
+- Active native Emerald save is relation truth.
+- Friend slots 1-19 scanned by ownerKey.
+- ADD TO MY HOENN / IN MY HOENN ✓ / UPDATE IN MY HOENN / NO SAFE SLOT.
+- Stable comparator ignores recipient-local visit/battle/registration state, merge recency and padding.
+- Same-owner updates/moves reuse existing safe native merger.
+- Registration preserved where safe.
+- Post-write Save Vault re-read is required before ack.
+- Save Vault committed-save lifecycle recomputes relations after save changes/switches.
+- Persistent native battle-result flags no longer re-derive identical outcome events from an unchanged snapshot.
+
+QA
+A-L deterministic relation/mutation/event matrix PASS using real project save fixtures plus controlled native deltas. Fixtures are not shipped.
+
+SERVER
+Backend hardening is required for full restart/reload relation manifests and DB-level request/ack/activity idempotency. Exact live backend source was not present in the supplied files, so a separate honest integration kit is provided instead of pretending an unseen server was patched/deployed.

@@ -1,0 +1,19 @@
+WHEN THE CARRIER IMPROVES ITSELF — PATCH
+
+Target: https://madeby.re/research/
+Date: 2026-09-28
+
+Upload the contents of the patch ZIP into the document root, preserving folders and allowing overwrite.
+
+New article:
+https://madeby.re/research/when-the-carrier-improves-itself/
+
+Also updated:
+- Home selected research
+- Research map intro
+- Selected publications (18 entries)
+- llms.txt
+- sitemap.xml
+- build manifest
+
+No DOI is assigned.

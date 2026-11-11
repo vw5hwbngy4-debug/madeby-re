@@ -1,0 +1,33 @@
+EMERALD v0.1.24.9.2.1 — SPRITE COVERAGE MATRIX
+Date: 2026-09-12
+Base: v0.1.24.9.2 PRACTICAL MOVES + TEAM COVERAGE
+
+GOAL
+Turn whole-party coverage from abbreviation-heavy counts into an immediately readable full-screen Gen III type chart built from the player's actual party sprites.
+
+WHAT CHANGED
+- TEAM OVERVIEW is now a full-screen TEAM COVERAGE matrix with a persistent FIELD back button.
+- Every Gen III attack type gets one row.
+- Every current party member appears as a sprite in BOTH the DEFENSE and OFFENSE cells for every type.
+- DEFENSE sprite states:
+  * ‼ = very weak (4× or worse)
+  * ! = weak
+  * ◆ = resists
+  * Ø = immune
+  * • = neutral
+- OFFENSE sprite states:
+  * ✦ = current move coverage is super-effective
+  * • = a current move hits neutrally
+  * △ = best current hit is resisted
+  * × = no damaging answer in the selected basis
+- Party-slot badges keep duplicate species distinguishable.
+- Top summaries retain Defensive Pressure / Offensive Gaps / One Clean Answer, now as type pills rather than count-heavy rows.
+- Tapping DEFENSE or OFFENSE on a type closes the matrix and hands that exact question to the existing live Coverage Lens / FOCUS workflow.
+- Current moves remain the preferred offensive truth when live move data is available; otherwise the existing typing fallback remains explicit.
+
+PRESERVED
+- v0.1.24.9.2 practical move ranking unchanged.
+- Team Lab render restore unchanged.
+- PokéField CALL / FOCUS / SCATTER / TIER / Coverage Lens unchanged.
+- No emulator writes, save mutation or ROM dependency changes.
+- v0.1.24.9.1.5 remains rollback stable; v0.1.24.9.2 remains the previous feature baseline.

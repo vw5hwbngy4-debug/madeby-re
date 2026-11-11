@@ -1,0 +1,38 @@
+EMERALD v0.1.23 — HOME BRIDGE P0 · SOURCE CAPSULE
+Date: 2026-09-09
+
+PURPOSE
+- Start the Pokémon HOME Bridge without pretending the final HOME hop already exists.
+- Preserve the exact Generation III Pokémon first, then make every later conversion derive from that verified source entity.
+
+NEW
+- DEX Strategy Context now has a HOME action.
+- Owned party and PC-box specimens expose a private transfer reference backed by the exact 80-byte Gen III stored Pokémon record read from the running Emerald session.
+- HOME Bridge verifies the native Gen III checksum before enabling export.
+- DOWNLOAD SOURCE CAPSULE creates one local ZIP containing:
+  * the exact .pk3 source entity;
+  * manifest.json with source/provenance facts and SHA-256;
+  * README.txt describing the current bridge stage.
+- Wild encounters show CATCH IT FIRST rather than pretending an uncaught encounter can be transferred.
+- Eggs show HATCH IT FIRST because the later transfer compiler must not silently invent a non-egg state.
+- No HOME server calls, no HOME tracker fabrication, no save writes.
+
+PRODUCT FLOW
+EMERALD ✓ → EXACT PK3 ✓ → TRANSFER COMPILER (NEXT) → BRIDGE GAME → POKÉMON HOME
+
+WHY THIS BOUNDARY
+- The displayed IV/EV/Hidden Power data is not used to recreate a Pokémon.
+- The source capsule is the original encrypted/shuffled 80-byte Gen III entity exactly as stored by Emerald.
+- Later bridge stages can therefore be audited byte-for-byte against the original specimen.
+
+PKHEX RESEARCH
+- User supplied PKHeX source snapshot ZIP SHA-256:
+  d93a040fcc4960ee9d41b1ed8aa27643e658396e85d8f88917952291be0e7b5e
+- The supplied source confirms EntityConverter uses sequential official-format semantics for PK3 → PK4 → PK5 → PK6.
+- Detailed conversion notes are in HOME_BRIDGE_PKHEX_AUDIT_v0.1.23.txt.
+
+CACHE / VERSION
+- VERSION.txt = 0.1.23
+- New live reader file: pokefield-live-v0.1.23.js
+- New Strategy Pokédex handoff: strategy-pokedex-v0.1.23.js
+- New HOME Bridge core/UI/CSS modules.

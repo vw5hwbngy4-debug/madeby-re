@@ -1,0 +1,20 @@
+EMERALD v0.1.24.8.1 — COMPACT RETURNS TO LIVE
+
+Purpose
+-------
+Make COMPACT a semantic navigation action, not merely a CSS compression toggle.
+
+Behavior
+--------
+- Press COMPACT while in FIELD -> return to LIVE, then show the one-line compact intelligence strip.
+- Press COMPACT while in TEAM LAB -> return to LIVE, then show the one-line compact intelligence strip.
+- Press COMPACT while on TRAINER CARD -> flip back to LIVE, then show the one-line compact intelligence strip.
+- Press COMPACT while in DEX display mode -> normalize to REGULAR mode without recreating the emulator, then show LIVE compact.
+- Press EXPAND while already in compact LIVE -> expand LIVE as before.
+
+Preserved
+---------
+- TRUE POKÉFIELD 386-species spatial field and CALL / FOCUS / SCATTER.
+- Save Vault durable Safari picker and verified save switching.
+- Team Lab, Trainer Card, DEX and live RAM intelligence.
+- Mobile header placement from v0.1.24.8.

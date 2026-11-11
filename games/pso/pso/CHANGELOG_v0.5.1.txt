@@ -1,0 +1,27 @@
+RICO INTELLIGENCE v0.5.1
+========================
+
+This is the consumer integration of the cumulative V0.5 PSO intelligence stack.
+
+CHANGED
+-------
+- Restored the established jrpg.world/pso visual/interaction shell as the baseline.
+- Added one compact optional "LINK XBOX SAVE" control beside the RICO prompt.
+- Original Xbox PSO_CHARACTER / Xbox export ZIP parsing remains browser-local and read-only.
+- Large SAVE MAG COACH, ALL-ID HUNT ROUTER, ACCOUNT ROUTER and GEAR GPS dashboards are no longer permanently visible.
+- Those engines remain mounted headless and supply deterministic facts to RICO when relevant.
+- Generic save-aware questions such as "what should I focus on next?" now receive a concise MAG/save overview plus gear-progression overview.
+- Existing MAG questions may still render the contextual MAG widget inside the answer.
+- Gear, hunt and account questions route to their V0.5 engines without exposing the underlying dashboard.
+- Save-import product scope is explicitly Original Xbox only. No GameCube or Blue Burst save UI is exposed.
+- /pso/ uses its own V0.5 code/data/API while reusing the existing global JRPG.WORLD PSO image/audio asset library.
+- /pso/api/pso.php falls back to the parent JRPG.WORLD private/config.php, so no API key is duplicated.
+
+NOT CHANGED
+-----------
+- Existing JRPG.WORLD header/banner
+- World-tabs navigation
+- Existing PSO memory/banner presentation
+- Main RICO question workflow
+- Existing root /assets library
+- Existing parent private/config.php

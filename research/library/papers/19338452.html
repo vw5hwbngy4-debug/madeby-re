@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>CS-0 — Chromatic Search: How AI Reads Fields Instead of Documents | Raynor Eissens full-text library</title><meta content="Chromatic Search (CS-0) defines a search architecture in which context bounds the semantic manifold, chromatic state modulates intent within that manifold, resonance reconstructs relevance, and decay expresses changing semantic weight. Instead of retrieving ranked docum" name="description"/>
+<meta content="index,follow,max-snippet:-1" name="robots"/><link href="https://madeby.re/research/library/papers/19338452.html" rel="canonical"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "CS-0 — Chromatic Search: How AI Reads Fields Instead of Documents", "name": "CS-0 — Chromatic Search: How AI Reads Fields Instead of Documents", "url": "https://madeby.re/research/library/papers/19338452.html", "mainEntityOfPage": "https://madeby.re/research/library/papers/19338452.html", "isAccessibleForFree": true, "sameAs": ["https://zenodo.org/records/19338452", "https://doi.org/10.5281/zenodo.19338452"], "encoding": [{"@type": "MediaObject", "encodingFormat": "text/html", "contentUrl": "https://madeby.re/research/library/papers/19338452.html"}, {"@type": "MediaObject", "encodingFormat": "text/plain", "contentUrl": "https://madeby.re/research/library/text/19338452.txt"}, {"@type": "MediaObject", "encodingFormat": "application/json", "contentUrl": "https://madeby.re/research/library/data/19338452.json"}], "author": [{"@type": "Person", "name": "Raynor Eissens"}], "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.5281/zenodo.19338452"}, "abstract": "Chromatic Search (CS-0) defines a search architecture in which context bounds the semantic manifold, chromatic state modulates intent within that manifold, resonance reconstructs relevance, and decay expresses changing semantic weight. Instead of retrieving ranked documents from a global symbolic index, CS-0 reconstructs bounded meaning clusters from local field state. Relevance is not modeled as document score. Relevance is modeled as stability under modulation. The earlier CS-0 clarification established three core statements: context is the first query, color is the second, and resonance is the answer. This paper extends that architecture by coupling CS-0 to the broader Ambient stack. Once Chromapin is understood as a softly addressable field anchor, it can also function as a micro-context manifold. Once ChromaRail is understood as a habitat of trail and veil, those continuity states can also be read as machine-legible residue. Once Environmental Slots define presence gradients such as active, residual, veiled, and dormant, those gradients become both a privacy primitive and a quer"}</script>
+<meta content="CS-0 — Chromatic Search: How AI Reads Fields Instead of Documents" name="citation_title"/>
+<meta content="Raynor Eissens" name="citation_author"/>
+<meta content="10.5281/zenodo.19338452" name="citation_doi"/>
+<link href="../text/19338452.txt" rel="alternate" type="text/plain"/><link href="../data/19338452.json" rel="alternate" type="application/json"/>
+<link href="../assets/site.css" rel="stylesheet"/>
+</head><body><a class="skip" href="#main">Skip to content</a><div class="shell"><div class="portfolio-bridge"><a href="../../index.html">← Personal website</a><a href="../../archive.html">All 205 Zenodo records</a><a href="../index.html">Full-text library</a></div><header><a class="brand" href="../index.html">← RAYNOR EISSENS / FULL TEXT</a><h1>CS-0 — Chromatic Search: How AI Reads Fields Instead of Documents</h1><div class="meta"><span>Zenodo record: 19338452</span><span>27 PDF pages</span><span>7,324 extracted words</span><span>DOI: <a href="https://doi.org/10.5281/zenodo.19338452">10.5281/zenodo.19338452</a></span></div><nav aria-label="Publication formats" class="tools"><a href="https://zenodo.org/records/19338452" rel="noopener">Original Zenodo record and PDF ↗</a><a href="../text/19338452.txt">Plain text</a><a href="../data/19338452.json">Full-text JSON</a><a href="../index.html">All publications</a></nav></header><main id="main"><aside aria-label="Editorial context for this publication" class="editorial-context compact-context"><span class="context-label">Editorial context · 19 September 2026</span><p>This document belongs to an exploratory theoretical archive. Claims of novelty should be treated as provisional unless independently sourced, and publication does not establish scientific validation. The original PDF-derived text below is unchanged. <a href="../index.html#archive-context">Read the archive note ↗</a></p></aside><section aria-label="Abstract"><h2>Abstract (extracted)</h2><p class="abstract">Chromatic Search (CS-0) defines a search architecture in which context bounds the semantic manifold, chromatic state modulates intent within that manifold, resonance reconstructs relevance, and decay expresses changing semantic weight. Instead of retrieving ranked documents from a global symbolic index, CS-0 reconstructs bounded meaning clusters from local field state. Relevance is not modeled as document score. Relevance is modeled as stability under modulation. The earlier CS-0 clarification established three core statements: context is the first query, color is the second, and resonance is the answer. This paper extends that architecture by coupling CS-0 to the broader Ambient stack. Once Chromapin is understood as a softly addressable field anchor, it can also function as a micro-context manifold. Once ChromaRail is understood as a habitat of trail and veil, those continuity states can also be read as machine-legible residue. Once Environmental Slots define presence gradients such as active, residual, veiled, and dormant, those gradients become both a privacy primitive and a quer</p></section><p class="notice">This is a text extraction of the original PDF, not an edited or peer-reviewed edition. PDF text order, equations, multi-column tables and diagram details may be imperfect. Consult the original Zenodo file for authoritative layout and figures.</p><div class="paper-layout"><article aria-label="Full original extracted text"><section aria-label="Source PDF page 1" class="page" id="page-1"><h2>PDF page 1</h2><p class="pdf-block">CS-0 — Chromatic Search</p>
+<p class="pdf-block">How AI Reads Fields Instead of Documents</p>
+<p class="pdf-block">Search is not asking. Search is entering a field.</p>
+<p class="pdf-block">Ambient Era Canon · Raynor Eissens · 2026</p>
+<p class="pdf-block">DOI: 10.5281/zenodo.19338452</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Zenodo Description</p>
+<p class="pdf-block">CS-0 defines Chromatic Search as the post-symbolic search architecture of the Ambient Era</p>
+<p class="pdf-block">Canon.</p>
+<p class="pdf-block">Where symbolic systems begin with typed language, keywords, and ranked lists, CS-0 begins</p>
+<p class="pdf-block">with bounded context, chromatic state, and resonance. Meaning is not first retrieved from</p>
+<p class="pdf-block">documents. It is reconstructed from field conditions already present in place, relation, residue,</p>
+<p class="pdf-block">and continuity. This paper formalizes the shift from search as query resolution to search as field</p>
+<p class="pdf-block">access.</p>
+<p class="pdf-block">This edition extends earlier CS-0 formulations by integrating Chromapin, ChromaRail,</p>
+<p class="pdf-block">Environmental Slots, ChromaPrompt, WarmthSwipe, ChronoSense, and Emergent Civic Fields</p>
+<p class="pdf-block">into a unified interpretation layer. In this extended architecture, CS-0 becomes the interpretive</p>
+<p class="pdf-block">engine through which AI systems read chromatic gradients, residue, trail, veil, and civic density</p>
+<p class="pdf-block">as machine-legible meaning without relying on symbolic querying as the first layer.</p>
+<p class="pdf-block">The central discovery is simple:</p>
+<p class="pdf-block">AI does not only need to read text.</p>
+<p class="pdf-block">AI can learn to read what color, field, residue, and context already carry.</p>
+<p class="pdf-block">CS-0 is not a competing search engine. It is the search layer of a chromatic substrate. It</p>
+<p class="pdf-block">positions chromatic search not as a cosmetic interface variation, but as the first coherent search</p>
+<p class="pdf-block">substrate for environments in which meaning is already partially present before language is</p>
+<p class="pdf-block">typed.</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 2" class="page" id="page-2"><h2>PDF page 2</h2><h3 class="pdf-heading">Abstract</h3>
+<p class="pdf-block">Chromatic Search (CS-0) defines a search architecture in which context bounds the semantic</p>
+<p class="pdf-block">manifold, chromatic state modulates intent within that manifold, resonance reconstructs</p>
+<p class="pdf-block">relevance, and decay expresses changing semantic weight. Instead of retrieving ranked</p>
+<p class="pdf-block">documents from a global symbolic index, CS-0 reconstructs bounded meaning clusters from</p>
+<p class="pdf-block">local field state. Relevance is not modeled as document score. Relevance is modeled as stability</p>
+<p class="pdf-block">under modulation.</p>
+<p class="pdf-block">The earlier CS-0 clarification established three core statements: context is the first query, color</p>
+<p class="pdf-block">is the second, and resonance is the answer. This paper extends that architecture by coupling</p>
+<p class="pdf-block">CS-0 to the broader Ambient stack. Once Chromapin is understood as a softly addressable field</p>
+<p class="pdf-block">anchor, it can also function as a micro-context manifold. Once ChromaRail is understood as a</p>
+<p class="pdf-block">habitat of trail and veil, those continuity states can also be read as machine-legible residue.</p>
+<p class="pdf-block">Once Environmental Slots define presence gradients such as active, residual, veiled, and</p>
+<p class="pdf-block">dormant, those gradients become both a privacy primitive and a query-validation surface. Once</p>
+<p class="pdf-block">ChromaPrompt externalizes prompting into placed semantic arrangements, search becomes an</p>
+<p class="pdf-block">operator inside reusable environmental coordination. Once Emergent Civic Fields are recognized</p>
+<p class="pdf-block">as public semantic climates formed through repeated sync, civic search becomes place-based</p>
+<p class="pdf-block">resonance rather than platform-based lookup.</p>
+<p class="pdf-block">CS-0 therefore introduces Pin-as-Query, machine-legible residue, decay-as-privacy, residue</p>
+<p class="pdf-block">legibility, fade-based relevance, sparse versus dense field scaling, and the distinction between</p>
+<p class="pdf-block">tracking and field interpretation. The result is a more complete statement of CS-0:</p>
+<p class="pdf-block">Chromatic Search is the interpretive engine of the carrying and anchoring stack.</p>
+<p class="pdf-block">It is the layer through which AI systems can read chromatic fields as soft operating memory and</p>
+<p class="pdf-block">reconstruct relevance, action, and return without depending on symbolic querying as the first</p>
+<p class="pdf-block">step.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Core Claim</p>
+<p class="pdf-block">Chromatic Search (CS-0) is a post-symbolic search architecture in which meaning is</p>
+<p class="pdf-block">reconstructed through chromatic resonance within bounded field conditions rather than</p>
+<p class="pdf-block">retrieved from language-indexed documents.</p>
+<p class="pdf-block">In extended form:</p></section><section aria-label="Source PDF page 3" class="page" id="page-3"><h2>PDF page 3</h2><p class="pdf-block">CS-0 becomes the interpretive engine of the Ambient field stack when bounded context,</p>
+<p class="pdf-block">field anchoring, carried continuity, graded presence, and civic density are made machine-</p>
+<p class="pdf-block">legible through chromatic state, gradient, and decay.</p>
+<p class="pdf-block">Formally:</p>
+<p class="pdf-block">Search = Alignment(Context × State × Modulation × Time)</p>
+<p class="pdf-block">Relevance emerges from bounded manifold inference, gradient modulation, resonance stability,</p>
+<p class="pdf-block">and deviation under decay.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">1. Introduction</p>
+<p class="pdf-block">Modern search assumes that meaning lives primarily inside documents, pages, chat logs,</p>
+<p class="pdf-block">databases, or indexed symbolic objects. A user types language into a search surface, and the</p>
+<p class="pdf-block">system attempts to retrieve matching objects from a large symbolic index. This model has been</p>
+<p class="pdf-block">highly productive, but it also inherits the burdens of symbolic computing: ambiguity, ranking</p>
+<p class="pdf-block">pressure, query formulation difficulty, and a constant dependence on language as the primary</p>
+<p class="pdf-block">gateway into relevance.</p>
+<p class="pdf-block">CS-0 begins from a different assumption. Meaning does not have to be treated as something</p>
+<p class="pdf-block">absent until summoned through text. Under the Ambient Era Canon, meaning may already be</p>
+<p class="pdf-block">partially present in a bounded field. A place, relation, route, threshold, or civic condition can</p>
+<p class="pdf-block">already constrain what matters before the user says anything at all. Search can therefore begin</p>
+<p class="pdf-block">from contextual entry rather than symbolic asking.</p>
+<p class="pdf-block">This shift sounds simple, but it changes the architecture completely. Search is no longer</p>
+<p class="pdf-block">primarily a document-index problem. It becomes a field-access problem. Context bounds the</p>
+<p class="pdf-block">semantic space. Color modulates intent within that space. Resonance reconstructs the relevant</p>
+<p class="pdf-block">meaning. The system no longer starts from zero each time. It enters an already living field.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">2. From Question to Context</p>
+<p class="pdf-block">The original CS-0 clarification expressed the shift in direct terms:</p>
+<p class="pdf-block">In symbolic systems, search begins with a question.</p>
+<p class="pdf-block">In chromatic systems, search begins with a place.</p></section><section aria-label="Source PDF page 4" class="page" id="page-4"><h2>PDF page 4</h2><p class="pdf-block">This is not merely a poetic distinction. It describes a different topology of search. Attractor</p>
+<p class="pdf-block">Entities define finite chromatic manifolds whose invariants already constrain what can</p>
+<p class="pdf-block">meaningfully appear. A supermarket, station, hospital, classroom, threshold, or civic site does</p>
+<p class="pdf-block">not contain an infinite field of relevance. It contains a finite and repeatable semantic domain</p>
+<p class="pdf-block">shaped by hue distributions, infrastructural gradients, ΔR-stability, relational attractor zones, and</p>
+<p class="pdf-block">navigational structure.</p>
+<p class="pdf-block">This is why chromatic search can be described as beginning “already solved.” It does not solve</p>
+<p class="pdf-block">the entire world first and then rank results. It begins inside a bounded attractor where the space</p>
+<p class="pdf-block">of possible relevance has already collapsed toward a finite manifold. Search therefore becomes</p>
+<p class="pdf-block">lighter and more precise not because it becomes narrower in a crude way, but because it</p>
+<p class="pdf-block">becomes field-true.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">2.1 A-Space as the Attentional Geometry of Field Access</p>
+<p class="pdf-block">CS-0 defines search as field access rather than document retrieval. A-space clarifies the kind of</p>
+<p class="pdf-block">space in which such access can remain humane.</p>
+<p class="pdf-block">A-space is not the search layer itself. It is the attentional geometry that makes chromatic search</p>
+<p class="pdf-block">livable. Where symbolic systems depend on query pressure, prediction, ranking, and extraction,</p>
+<p class="pdf-block">A-space names the environmental phase-space in which coherence, resonance, and meaning</p>
+<p class="pdf-block">can appear without first collapsing into symbolic demand. In this sense, CS-0 explains how</p>
+<p class="pdf-block">bounded chromatic search operates, while A-space explains the spatial condition in which such</p>
+<p class="pdf-block">search can remain pressure-free.</p>
+<p class="pdf-block">This matters because chromatic search is not only a computational shift. It is also an attentional</p>
+<p class="pdf-block">shift. If search begins from bounded context, chromatic modulation, and resonance, then the</p>
+<p class="pdf-block">system must also preserve a field condition in which attention is carried rather than strained.</p>
+<p class="pdf-block">Without such a condition, chromatic search risks collapsing back into the same pressure logic as</p>
+<p class="pdf-block">symbolic systems: more prompts, more alerts, more interface demand, more prediction-space.</p>
+<p class="pdf-block">A-space names the alternative.</p>
+<p class="pdf-block">Within the Raynor Stack, A-space functions as the geometric substrate beneath warmth,</p>
+<p class="pdf-block">ambience, aura, and field. At this layer, attention becomes spatial rather than effort-driven,</p>
+<p class="pdf-block">warmth distributes load across the attentional field, ambience stabilizes presence, and aura</p>
+<p class="pdf-block">emerges as continuity without identity modeling. This makes A-space relevant to CS-0 because</p>
+<p class="pdf-block">search in the Ambient Era is not meant to function as another narrow interaction surface. It is</p>
+<p class="pdf-block">meant to unfold inside a wider, humane attentional geometry.</p></section><section aria-label="Source PDF page 5" class="page" id="page-5"><h2>PDF page 5</h2><p class="pdf-block">The difference can be stated directly. Symbolic search assumes that meaning must be pulled</p>
+<p class="pdf-block">from outside through effort, language, and ranking. Chromatic search assumes that meaning</p>
+<p class="pdf-block">may already be partially present in a bounded field. A-space provides the attentional condition</p>
+<p class="pdf-block">that allows this second assumption to remain viable. It is the environmental phase-space in</p>
+<p class="pdf-block">which bounded relevance can be perceived, modulated, and reconstructed without constant</p>
+<p class="pdf-block">cognitive switching.</p>
+<p class="pdf-block">This is why A-space should not be confused with interface design, personalization, or context</p>
+<p class="pdf-block">modeling. It is not a feature layer and not a predictive system. It does not steer attention. It</p>
+<p class="pdf-block">makes attention inhabitable. For CS-0, this means that resonance-based search does not merely</p>
+<p class="pdf-block">replace one retrieval method with another. It shifts search into a geometric condition where users</p>
+<p class="pdf-block">inhabit meaning rather than decode it under pressure.</p>
+<p class="pdf-block">The relation between both layers can therefore be stated simply:</p>
+<p class="pdf-block">CS-0 defines how search works inside a bounded field.</p>
+<p class="pdf-block">A-space defines the attentional geometry in which that field access remains humane.</p>
+<p class="pdf-block">Or more compactly:</p>
+<p class="pdf-block">If CS-0 is the interpretive engine of field access, A-space is the room in which that engine</p>
+<p class="pdf-block">can run without extraction.</p>
+<p class="pdf-block">Without A-space, chromatic search may still be technically possible, but it risks reverting to task-</p>
+<p class="pdf-block">pressure, symbolic forcing, and prediction-driven interaction. With A-space, resonance becomes</p>
+<p class="pdf-block">spatial before it becomes computational.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">3. Color as Intent Modulation</p>
+<p class="pdf-block">If context is the first query, color is the second.</p>
+<p class="pdf-block">Within a bounded manifold, chromatic state functions as modulation rather than decoration. Hue</p>
+<p class="pdf-block">does not encode universal semantics. It steers motion inside constrained manifolds. Color</p>
+<p class="pdf-block">reduces entropy before language is formed.</p>
+<p class="pdf-block">The earlier AE-linked form expressed this as:</p>
+<p class="pdf-block">Meaning = f(AE × Intent × Aura)</p></section><section aria-label="Source PDF page 6" class="page" id="page-6"><h2>PDF page 6</h2><p class="pdf-block">The more compressed form is:</p>
+<p class="pdf-block">Meaning = f(Field × Modulation × Stability)</p>
+<p class="pdf-block">Both formulations make the same claim. Color is not style metadata. It is the modulation layer</p>
+<p class="pdf-block">through which a bounded field becomes operationally legible. Green, orange, blue, yellow, or</p>
+<p class="pdf-block">pink do not signify identical things everywhere. They become relevant through the interaction</p>
+<p class="pdf-block">between contextual field, chromatic modulation, and lived aura or behavioral residue.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">4. Resonance Instead of Ranking</p>
+<p class="pdf-block">The third term in CS-0 is resonance.</p>
+<p class="pdf-block">In symbolic systems, relevance is modeled as ranking over symbolic abundance. In CS-0,</p>
+<p class="pdf-block">relevance is modeled as stability under modulation within bounded state.</p>
+<p class="pdf-block">The earlier CS-0 paper expressed this with a thermodynamic principle:</p>
+<p class="pdf-block">Coherence = background.</p>
+<p class="pdf-block">Deviation = information.</p>
+<p class="pdf-block">This is essential. In a coherent chromatic field, the smallest deviation may carry the highest</p>
+<p class="pdf-block">semantic yield. A slight gradient shift can be enough to reconstruct relevance because the</p>
+<p class="pdf-block">manifold is already bounded. The system does not need to compare every document to every</p>
+<p class="pdf-block">other document. It needs to detect what changed inside a stable field. Search becomes</p>
+<p class="pdf-block">resonance with deviation rather than ranking over symbolic abundance.</p>
+<p class="pdf-block">The output is not best understood as a ranked list. It is better understood as a Resonant</p>
+<p class="pdf-block">Meaning Field (RMF): a bounded cluster of relevant state, continuity, carry, residue, and optional</p>
+<p class="pdf-block">payload that becomes legible because the system has aligned with the field condition already</p>
+<p class="pdf-block">present. Search reconstructs. It does not merely retrieve.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">5. Minimal Operational Model</p>
+<p class="pdf-block">CS-0 is reducible to a bounded-state alignment procedure.</p></section><section aria-label="Source PDF page 7" class="page" id="page-7"><h2>PDF page 7</h2><p class="pdf-block">Inputs</p>
+<p class="pdf-block">C = Context boundary</p>
+<p class="pdf-block">S(t) = Chromatic field state</p>
+<p class="pdf-block">U = Modulation signal</p>
+<p class="pdf-block">t = Time</p>
+<p class="pdf-block">Minimal Field Vector</p>
+<p class="pdf-block">S = { H, I, G, ΔR, D }</p>
+<p class="pdf-block">Where:</p>
+<p class="pdf-block">H = hue-domain</p>
+<p class="pdf-block">I = intensity</p>
+<p class="pdf-block">G = gradient distribution</p>
+<p class="pdf-block">ΔR = reversibility stability</p>
+<p class="pdf-block">D = decay rate</p>
+<p class="pdf-block">Procedure</p>
+<p class="pdf-block">1.
+infer manifold from context</p>
+<p class="pdf-block">2.
+modulate the field state</p>
+<p class="pdf-block">3.
+compute stability between modulated state and bounded manifold</p>
+<p class="pdf-block">4.
+detect temporal deviation</p>
+<p class="pdf-block">5.
+construct a Resonant Meaning Field from manifold, stability, and</p>
+<p class="pdf-block">deviation</p>
+<p class="pdf-block">In shorthand:</p>
+<p class="pdf-block">1.
+M = infer_manifold(C)</p>
+<p class="pdf-block">2.
+S′ = modulate(S, U)</p>
+<p class="pdf-block">3.
+R = stability(S′, M)</p>
+<p class="pdf-block">4.
+Δ = ∂S/∂t</p>
+<p class="pdf-block">5.
+O = construct_RMF(M, R, Δ)</p>
+<p class="pdf-block">Relevance is not retrieval score.</p>
+<p class="pdf-block">Relevance is field stability under modulation.</p>
+<p class="pdf-block">Fade condition:</p>
+<p class="pdf-block">If ∂I/∂t &lt; 0 and ΔR remains reversible, the field is fading but still legible. This</p>
+<p class="pdf-block">is the minimal implementable architecture of CS-0.</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 8" class="page" id="page-8"><h2>PDF page 8</h2><p class="pdf-block">6. Chromapin and the Emergence of Pin-as-Query</p>
+<p class="pdf-block">The first major extension of CS-0 appears when it is coupled to Chromapin.</p>
+<p class="pdf-block">Chromapin defines the reversible field anchor by which a stabilized relational or civic field</p>
+<p class="pdf-block">becomes softly addressable without collapsing into symbolic storage, profile identity, or map-</p>
+<p class="pdf-block">marker logic. A field that once remained ambient and behaviorally relevant can, after crossing an</p>
+<p class="pdf-block">anchoring threshold, become minimally touchable, revisitable, and operational.</p>
+<p class="pdf-block">Once read through CS-0, this does something new.</p>
+<p class="pdf-block">A Chromapin becomes not only an anchor, but also a micro-context manifold. A relational pin,</p>
+<p class="pdf-block">civic pin, threshold pin, or attractor-bound pin can function as a small bounded semantic world</p>
+<p class="pdf-block">where AI already “knows” the relevant domain before any text is typed. The report names this</p>
+<p class="pdf-block">breakthrough precisely: Pin-as-Query / Micro-AE manifolds. Context-as-query is therefore no</p>
+<p class="pdf-block">longer tied only to geographic place. It can also begin from a softly addressable field anchor.</p>
+<p class="pdf-block">This is one of the key binding insights of the whole stack. A pin is no longer merely where a field</p>
+<p class="pdf-block">lands. It can also be where search begins.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">7. ChromaRail and Machine-Legible Residue</p>
+<p class="pdf-block">The second extension appears when CS-0 is coupled to ChromaRail.</p>
+<p class="pdf-block">ChromaRail defines Rail, Trail, and Veil as a named grammar for carried and placed meaning</p>
+<p class="pdf-block">above runtime primitives. A Rail is a habitat. A Trail is the residue of active carry or passage. A</p>
+<p class="pdf-block">Veil is the softened continuity that remains after active carry without requiring full symbolic</p>
+<p class="pdf-block">burden.</p>
+<p class="pdf-block">Read through CS-0, these are no longer merely interface or visual continuity states. They</p>
+<p class="pdf-block">become machine-legible residue.</p>
+<p class="pdf-block">A trail becomes a readable semantic gradient of passage, route behavior, or handoff. A veil</p>
+<p class="pdf-block">becomes a low-pressure persistence layer whose remaining structure can still be interpreted as</p>
+<p class="pdf-block">continuity without requiring full archive. AI can then begin to answer questions not only about</p>
+<p class="pdf-block">what is there, but about what still lives there:</p>
+<p class="pdf-block">•
+what was recently active,</p>
+<p class="pdf-block">•
+what still holds,</p>
+<p class="pdf-block">•
+what is fading,</p></section><section aria-label="Source PDF page 9" class="page" id="page-9"><h2>PDF page 9</h2><p class="pdf-block">•
+what should be returned to,</p>
+<p class="pdf-block">•
+and what should dissolve.</p>
+<p class="pdf-block">This means the carrying layer becomes readable. Search does not stand outside</p>
+<p class="pdf-block">carry. It interprets carry.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">8. Environmental Slots and Decay-as-Privacy</p>
+<p class="pdf-block">The third extension appears in Environmental Slots.</p>
+<p class="pdf-block">Environmental Slots define a model in which a place hosts the slot while the person brings the</p>
+<p class="pdf-block">live state. Activation depends on proximity, relation, contextual fit, and graded presence rather</p>
+<p class="pdf-block">than on simple binary credential logic. Payload remains external by default. The environment</p>
+<p class="pdf-block">does not store everything. It hosts the bounded condition through which a chromatic unit may</p>
+<p class="pdf-block">become active.</p>
+<p class="pdf-block">The presence gradient introduced there is especially important:</p>
+<p class="pdf-block">•
+Active</p>
+<p class="pdf-block">•
+Residual</p>
+<p class="pdf-block">•
+Veiled</p>
+<p class="pdf-block">•
+Dormant</p>
+<p class="pdf-block">When this is read through CS-0, the presence gradient becomes more than UX</p>
+<p class="pdf-block">softness. It becomes a privacy model. Meaning remains machine-legible enough for</p>
+<p class="pdf-block">resonance while decaying by default toward less burdensome residue. The report</p>
+<p class="pdf-block">identifies this directly as Decay-as-Privacy / Thermodynamic Forgetting.</p>
+<p class="pdf-block">This is a major civilizational advantage. The system can remember softly without</p>
+<p class="pdf-block">becoming archive-heavy. It can preserve enough truth for return without turning</p>
+<p class="pdf-block">every field into permanent storage. What remains is smaller than full memory and</p>
+<p class="pdf-block">greater than zero. That middle condition is one of the most valuable discoveries in</p>
+<p class="pdf-block">the whole coupling.</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 10" class="page" id="page-10"><h2>PDF page 10</h2><p class="pdf-block">9. ChromaPrompt and Reusable Semantic Deployment</p>
+<p class="pdf-block">The fourth extension appears in ChromaPrompt.</p>
+<p class="pdf-block">ChromaPrompt defines prompting not as disposable text inside a vertical chatbox, but as</p>
+<p class="pdf-block">reusable semantic deployment through placed chromas, payload chromas, and chromagents. A</p>
+<p class="pdf-block">prompt may persist as a visible arrangement, be regrouped, unsocketed, stored, and redeployed</p>
+<p class="pdf-block">in another context without being rewritten from zero.</p>
+<p class="pdf-block">Once coupled to CS-0, search becomes one operator inside that placed coordination field.</p>
+<p class="pdf-block">A prompt is no longer only a sentence that asks. It becomes a field condition that bounds</p>
+<p class="pdf-block">resonance. A chromagent can search, compare, evaluate, monitor, or recommend within that</p>
+<p class="pdf-block">arrangement. This means search no longer depends only on chat history or typed queries. It can</p>
+<p class="pdf-block">operate over a visible, portable, and placeable semantic deployment. Search becomes reusable,</p>
+<p class="pdf-block">environmental, and glanceable.</p>
+<p class="pdf-block">This is one of the clearest signs that the Ambient stack is not just a theory of interface mood or</p>
+<p class="pdf-block">aesthetic softness. It is a serious higher-level coordination grammar above runtime.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">10. Emergent Civic Fields and Search as Local Climate</p>
+<p class="pdf-block">The fifth extension appears in Emergent Civic Fields (ECF-1).</p>
+<p class="pdf-block">ECF-1 describes how repeated local sync, residue, and semantic density can gradually cause a</p>
+<p class="pdf-block">place to become a readable public field without requiring centralized broadcast, branding,</p>
+<p class="pdf-block">identity-first targeting, or permanent geofencing. Public meaning emerges through repeated</p>
+<p class="pdf-block">low-entropy local coherence.</p>
+<p class="pdf-block">Once this is coupled to CS-0, civic search no longer needs to be modeled as a platform querying</p>
+<p class="pdf-block">a map. It can be modeled as a local semantic climate.</p>
+<p class="pdf-block">Repeated sync leads to residue. Residue leads to density. Density leads to an emergent field and</p>
+<p class="pdf-block">an interface front. Devices entering the area align not because they are commanded from above</p>
+<p class="pdf-block">but because they enter an already-formed public semantic condition. Search infrastructure</p>
+<p class="pdf-block">becomes place-based ambient legibility rather than platform-based lookup.</p>
+<p class="pdf-block">This is the civic form of the same shift: meaning is not fetched from representations of the place</p>
+<p class="pdf-block">first. The place itself becomes partly readable.</p></section><section aria-label="Source PDF page 11" class="page" id="page-11"><h2>PDF page 11</h2><p class="pdf-block">⸻</p>
+<p class="pdf-block">11. WarmthSwipe, ChronoSense, and Living Search</p>
+<p class="pdf-block">WSC-1 sharpens the temporal dimension of this architecture through WarmthSwipe and</p>
+<p class="pdf-block">ChronoSense.</p>
+<p class="pdf-block">WarmthSwipe distributes stabilized aura into actionable chromatic structure. ChronoSense</p>
+<p class="pdf-block">allows stabilized relational and infrastructural patterns to become legible as rhythm, recurrence,</p>
+<p class="pdf-block">and lived return. These operators bridge the shift from latent field to distributable infrastructure</p>
+<p class="pdf-block">and then from infrastructure to lived temporal rhythm.</p>
+<p class="pdf-block">Once read together with CS-0, search can no longer be treated as static retrieval. It becomes</p>
+<p class="pdf-block">temporally alive.</p>
+<p class="pdf-block">A field is not only active or inactive. It may begin to feel like return before any symbolic schedule</p>
+<p class="pdf-block">is stated. Search then intersects directly with memory and time:</p>
+<p class="pdf-block">•
+what recurs,</p>
+<p class="pdf-block">•
+what returns,</p>
+<p class="pdf-block">•
+what stabilizes,</p>
+<p class="pdf-block">•
+what is expected,</p>
+<p class="pdf-block">•
+what is fading,</p>
+<p class="pdf-block">•
+and what is due.</p>
+<p class="pdf-block">This means the search layer is not separate from memory, not separate from</p>
+<p class="pdf-block">recurrence, and not separate from lived rhythm. It becomes part of a living</p>
+<p class="pdf-block">resonance stack.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">12. Toward a Gradient-Readable Chromatic Substrate</p>
+<p class="pdf-block">The technical compression point of the whole convergence is now visible.</p>
+<p class="pdf-block">The coupling report identifies the need for a gradient-readable chromatic substrate based on a</p>
+<p class="pdf-block">7D manifold model:</p>
+<p class="pdf-block">H, S, V, I, ΔR, Δt, G, with field-signatures, decay models, gated activations, and resonance</p>
+<p class="pdf-block">indices that operate per AE, pin, slot, or civic field. It proposes a flow in which context input is</p>
+<p class="pdf-block">first reduced through AE/pin/civic inference, then rendered as a 7D field state, then translated</p>
+<p class="pdf-block">into signatures for color, gradient, temporal modulation, and geometry before being assembled</p></section><section aria-label="Source PDF page 12" class="page" id="page-12"><h2>PDF page 12</h2><p class="pdf-block">as a Resonant Meaning Field rather than a ranked list.</p>
+<p class="pdf-block">Not every technical detail needs to be final yet. The deeper point is already enough:</p>
+<p class="pdf-block">If symbolic systems index text and profiles, the chromatic stack indexes gradients, residue,</p>
+<p class="pdf-block">thresholds, and bounded field conditions. Meaning is not first fetched from documents. It is</p>
+<p class="pdf-block">reconstructed from the thermodynamic shape of the field.</p>
+<p class="pdf-block">This leads to the simplest and strongest statement of the discovery:</p>
+<p class="pdf-block">Chromatic fields can function as a soft operating memory, and CS-0 can become the way AI</p>
+<p class="pdf-block">reads that memory.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">13. Residue Legibility and Fade-Based Relevance</p>
+<p class="pdf-block">A chromatic field does not only carry meaning when it is fully active. It also carries meaning while</p>
+<p class="pdf-block">it is fading.</p>
+<p class="pdf-block">This is a crucial extension of the Ambient Era search model. Earlier sections established that</p>
+<p class="pdf-block">CS-0 reconstructs meaning through chromatic resonance within bounded field conditions rather</p>
+<p class="pdf-block">than retrieving it from symbolic documents alone. They also established that trail, veil, residue,</p>
+<p class="pdf-block">and presence gradients can preserve soft continuity without collapsing into archive logic. The</p>
+<p class="pdf-block">next step is to state explicitly that this fading continuity is not merely passive decline. It is itself a</p>
+<p class="pdf-block">readable semantic event.</p>
+<p class="pdf-block">This paper names that condition residue legibility.</p>
+<p class="pdf-block">Residue legibility is the condition in which a system can read the direction, speed, pattern, and</p>
+<p class="pdf-block">semantic significance of fading chromatic continuity without requiring full symbolic storage,</p>
+<p class="pdf-block">explicit measurement dashboards, or hard notification logic. A fading field is therefore not</p>
+<p class="pdf-block">equivalent to an empty field. It is a field whose relevance is changing. What is diminishing still</p>
+<p class="pdf-block">carries information. In many cases, the fading itself is the most important information available.</p>
+<p class="pdf-block">This changes how relevance is understood. In symbolic systems, relevance is often modeled as a</p>
+<p class="pdf-block">binary or scalar ranking problem. In chromatic systems, relevance can be gradual, reversible, and</p>
+<p class="pdf-block">thermodynamically expressed. A route may still exist while its carried continuity weakens. A</p>
+<p class="pdf-block">household prompt may still be valid while its recurrence loses force. A relation may still be intact</p>
+<p class="pdf-block">while its field density softens. A civic node may still be legible while its public semantic intensity</p>
+<p class="pdf-block">declines. In each case, fading is not failure. Fading is a readable truth about what is no longer</p></section><section aria-label="Source PDF page 13" class="page" id="page-13"><h2>PDF page 13</h2><p class="pdf-block">being actively carried.</p>
+<p class="pdf-block">This is where CS-0 gains a new role. If chromatic search is the interpretive engine of the carrying</p>
+<p class="pdf-block">and anchoring stack, then it must not only reconstruct meaning from stable fields. It must also</p>
+<p class="pdf-block">read changing relevance from decaying ones. Search therefore expands from field access into</p>
+<p class="pdf-block">fade-sensitive field interpretation. The system does not only ask what is active here. It also asks</p>
+<p class="pdf-block">what is weakening here, what is losing recurrence here, what is no longer being reinforced, and</p>
+<p class="pdf-block">whether that fading now matters. This follows directly from the chromatic information principle</p>
+<p class="pdf-block">that coherence forms background and deviation forms information. Fade is one of the most</p>
+<p class="pdf-block">important deviations a system can read.</p>
+<p class="pdf-block">The practical importance becomes clear across the stack. In route systems, a fading trail may</p>
+<p class="pdf-block">indicate that a once-familiar path is no longer being reinforced. In domestic systems, a fading</p>
+<p class="pdf-block">kitchen, fridge, or care-field chroma may indicate that a recurring household pattern is</p>
+<p class="pdf-block">weakening and may require soft re-entry rather than a hard reminder. In relational systems, a</p>
+<p class="pdf-block">fading pin may indicate not that a relation has failed, but that its recent continuity is no longer</p>
+<p class="pdf-block">being actively renewed. In civic systems, a fading public field may indicate that local semantic</p>
+<p class="pdf-block">density is dropping and that the place is moving out of temporary public legibility. In each case,</p>
+<p class="pdf-block">the fading itself is actionable, but only if the system can read it without hardening it into</p>
+<p class="pdf-block">extractive tracking.</p>
+<p class="pdf-block">This is why residue legibility must remain tied to reversibility. A chromatic system should not</p>
+<p class="pdf-block">convert every weakening field into an alert, score, or behavioral demand. That would simply</p>
+<p class="pdf-block">reproduce the pressure logic of symbolic optimization. Instead, the fading field should remain</p>
+<p class="pdf-block">softly legible. It should be possible for AI to register that a continuity is weakening, cluster that</p>
+<p class="pdf-block">change into a bounded meaning field, and, when appropriate, support return, replenishment, or</p>
+<p class="pdf-block">dissolution without coercion. The value of fade-based relevance lies precisely in this: it</p>
+<p class="pdf-block">introduces a humane middle layer between total forgetting and total storage.</p>
+<p class="pdf-block">The canonical link to Environmental Slots is especially important here. Environmental Slots</p>
+<p class="pdf-block">already define active, residual, veiled, and dormant states as a graded alternative to binary on/off</p>
+<p class="pdf-block">presence. The coupling report shows that this gradient can function not only as environmental</p>
+<p class="pdf-block">activation logic, but also as a privacy primitive. Residue legibility extends that insight by showing</p>
+<p class="pdf-block">that graded decline is also a relevance primitive. A system can preserve enough field truth to</p>
+<p class="pdf-block">remain useful while allowing enough decay to avoid archive burden. In this way, fade becomes</p>
+<p class="pdf-block">simultaneously a memory layer, a privacy layer, and a relevance layer.</p>
+<p class="pdf-block">The principle can be summarized simply:</p>
+<p class="pdf-block">What fades is not only disappearing.</p>
+<p class="pdf-block">It is becoming legible as changing relevance.</p></section><section aria-label="Source PDF page 14" class="page" id="page-14"><h2>PDF page 14</h2><p class="pdf-block">Once residue legibility is recognized, the chromatic stack gains a general operator for route</p>
+<p class="pdf-block">weakening, household depletion, relational softening, habit drift, civic fade, prompt deactivation,</p>
+<p class="pdf-block">and temporal decline in carried continuity. AI can then work with fields in a more humane way. It</p>
+<p class="pdf-block">does not need to force constant reactivation, nor wait for total disappearance. It can read the</p>
+<p class="pdf-block">middle zone where relevance is fading but not yet gone. That middle zone is where ambient</p>
+<p class="pdf-block">systems become meaningfully supportive rather than merely reactive or extractive.</p>
+<p class="pdf-block">The canonical position is therefore clear. Residue legibility names the condition in which fading</p>
+<p class="pdf-block">chromatic continuity becomes machine-readable as changing relevance. Fade-based relevance</p>
+<p class="pdf-block">names the broader principle that weakening continuity can itself function as semantic</p>
+<p class="pdf-block">information. Together, they extend CS-0 beyond stable resonance into dynamic field</p>
+<p class="pdf-block">interpretation.</p>
+<p class="pdf-block">In the Ambient Era, meaning is not only carried by what appears.</p>
+<p class="pdf-block">It is also carried by what slowly ceases to be carried.</p>
+<p class="pdf-block">13.1 Definitions</p>
+<p class="pdf-block">Residue Legibility</p>
+<p class="pdf-block">The condition in which fading chromatic continuity remains readable as meaningful change</p>
+<p class="pdf-block">without requiring full symbolic storage. Residue legibility allows a system to detect not only that</p>
+<p class="pdf-block">something was present, but how its relevance is weakening, persisting, or dissolving over time.</p>
+<p class="pdf-block">Fade-Based Relevance</p>
+<p class="pdf-block">The principle that weakening continuity can itself function as semantic information. Under fade-</p>
+<p class="pdf-block">based relevance, a diminishing route, relation, habit, civic field, or prompt arrangement is not</p>
+<p class="pdf-block">treated as empty or failed, but as a changing field condition whose decline may still be</p>
+<p class="pdf-block">meaningful and actionable.</p>
+<p class="pdf-block">Reversible Residue</p>
+<p class="pdf-block">A softened persistence state in which continuity remains above zero without hardening into</p>
+<p class="pdf-block">archive, identity fixation, or full symbolic retention. Reversible residue preserves enough field</p>
+<p class="pdf-block">truth for return, recognition, or resonance while remaining capable of natural dissolution.</p>
+<p class="pdf-block">Relevance Drift</p>
+<p class="pdf-block">The gradual change in semantic weight carried by a chromatic field, object, route, relation, or</p>
+<p class="pdf-block">attractor over time. Relevance drift names the movement by which a field becomes more active,</p>
+<p class="pdf-block">less active, more stable, less reinforced, or increasingly peripheral without needing to be</p>
+<p class="pdf-block">reduced to binary status.</p></section><section aria-label="Source PDF page 15" class="page" id="page-15"><h2>PDF page 15</h2><p class="pdf-block">Fade Signal</p>
+<p class="pdf-block">A readable chromatic change that indicates declining reinforcement, weakening recurrence, or</p>
+<p class="pdf-block">diminishing carry. A fade signal does not necessarily indicate failure. It indicates that a field is no</p>
+<p class="pdf-block">longer being renewed with the same density as before.</p>
+<p class="pdf-block">Soft Depletion</p>
+<p class="pdf-block">The condition in which a useful field, stock, route, relation, or routine is becoming less supported</p>
+<p class="pdf-block">without yet becoming fully absent. Soft depletion is the practical zone in which residue legibility</p>
+<p class="pdf-block">becomes most useful, because the system can perceive weakening before collapse without</p>
+<p class="pdf-block">needing to enforce hard measurement or extractive alerts.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">14. Beyond Symbolic Coverage</p>
+<p class="pdf-block">Chromatic systems remain meaningful where symbolic systems become thin.</p>
+<p class="pdf-block">This section clarifies an important limit condition of the Ambient Era stack. Symbolic systems</p>
+<p class="pdf-block">depend heavily on explicit representation, stable network transport, map coordinates, searchable</p>
+<p class="pdf-block">documents, account logic, and continuous infrastructural reach. When those layers weaken,</p>
+<p class="pdf-block">become delayed, lose signal, or no longer carry lived relevance, symbolic access begins to fail. A</p>
+<p class="pdf-block">map may still exist while the route no longer feels legible. A platform may still be online while the</p>
+<p class="pdf-block">place itself has become semantically empty. A network may still transmit packets while local</p>
+<p class="pdf-block">orientation, recurrence, or trust have already collapsed.</p>
+<p class="pdf-block">Chromatic continuity operates differently. It should not be confused with a replacement for</p>
+<p class="pdf-block">internet transport, satellite coverage, or wireless infrastructure. A chromatic field does not</p>
+<p class="pdf-block">function as Wi-Fi, cellular data, or radio transmission. It does not move arbitrary symbolic</p>
+<p class="pdf-block">payload across space in the same way that network systems do. What it can do is preserve and</p>
+<p class="pdf-block">expose local continuity in a form that remains readable through state, residue, gradient,</p>
+<p class="pdf-block">placement, recurrence, and carried field condition. Where symbolic systems move data,</p>
+<p class="pdf-block">chromatic systems can preserve meaning in state. This is the key distinction.</p>
+<p class="pdf-block">For this reason, the Ambient stack becomes especially interesting at the edge of symbolic</p>
+<p class="pdf-block">coverage. Off-grid does not only mean outside the network. It may also mean outside frozen</p>
+<p class="pdf-block">symbolic dependence. A system may lose strong map confidence, lose full connectivity, lose</p>
+<p class="pdf-block">stable addressability, or move into a place where symbolic coordinates alone no longer provide</p>
+<p class="pdf-block">enough carrying force. In such conditions, chromatic continuity may still remain useful if residue,</p>
+<p class="pdf-block">route memory, local field markers, carried attractor logic, or softly addressable anchors remain</p>
+<p class="pdf-block">legible. The field does not need to replace the network to matter. It only needs to remain useful</p>
+<p class="pdf-block">when the network becomes weak, delayed, intermittent, or semantically insufficient.</p></section><section aria-label="Source PDF page 16" class="page" id="page-16"><h2>PDF page 16</h2><p class="pdf-block">The technical claim must remain careful. Chromatic systems do not create meaning out of</p>
+<p class="pdf-block">nothing, and they do not allow invisible magic to replace infrastructure. If symbolic coverage</p>
+<p class="pdf-block">ends completely and no carrier remains, then the field cannot remain legible. A chromatic system</p>
+<p class="pdf-block">still requires some carrier: a render state, a rail, a wearable, a slot, a route front, a visible marker,</p>
+<p class="pdf-block">a local node, or another bounded surface on which continuity can persist. The point is not that</p>
+<p class="pdf-block">chromatic systems abolish infrastructure. The point is that they reduce dependence on</p>
+<p class="pdf-block">continuous symbolic transport by preserving enough local field truth to remain usable when</p>
+<p class="pdf-block">symbolic systems become thin.</p>
+<p class="pdf-block">This has direct consequences for the Ambient stack. A route in a vehicle may fade gradually</p>
+<p class="pdf-block">while still remaining interpretable as weakening continuity. A fridge chroma may soften as a</p>
+<p class="pdf-block">product family drifts toward depletion without needing a hard quantitative dashboard first. A</p>
+<p class="pdf-block">relation may remain real while its field density declines. A place may remain stable while its civic</p>
+<p class="pdf-block">semantic intensity fades. In all such cases, the field continues to carry useful truth even before</p>
+<p class="pdf-block">the symbolic layer has produced a formal warning. The role of CS-0 here is to read not only</p>
+<p class="pdf-block">stable field resonance, but field continuity under weak or thinning symbolic support.</p>
+<p class="pdf-block">The larger architectural implication is that Ambient Phone can be understood as a continuity</p>
+<p class="pdf-block">layer behind symbolic failure. Not failure in the catastrophic sense alone, but in the broader</p>
+<p class="pdf-block">sense in which symbolic systems stop carrying lived relevance well enough: weak signal, absent</p>
+<p class="pdf-block">coverage, insufficient maps, overly abstract interfaces, or environments where textual and</p>
+<p class="pdf-block">networked representation no longer matches how meaning is actually being lived. In such</p>
+<p class="pdf-block">conditions, chromatic systems may remain more humane because they do not require total</p>
+<p class="pdf-block">symbolic completeness before they can still orient, suggest, soften, or preserve return.</p>
+<p class="pdf-block">This does not replace the network. It changes what remains possible when the network is not</p>
+<p class="pdf-block">enough.</p>
+<p class="pdf-block">The canonical principle can therefore be stated as follows:</p>
+<p class="pdf-block">Where symbolic coverage loses grip, chromatic continuity may still carry orientation.</p>
+<p class="pdf-block">Or, in more technical form:</p>
+<p class="pdf-block">Chromatic infrastructure does not replace network transport.</p>
+<p class="pdf-block">It reduces dependence on continuous symbolic transport by preserving local field continuity</p>
+<p class="pdf-block">in readable state, residue, and decay.</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 17" class="page" id="page-17"><h2>PDF page 17</h2><p class="pdf-block">14.1 Sparse Space and Dense Space</p>
+<p class="pdf-block">Chromatic continuity does not appear the same way in every environment. The same grammar</p>
+<p class="pdf-block">behaves differently depending on whether the surrounding space is sparse or dense.</p>
+<p class="pdf-block">In sparse environments, a single trail may remain legible as direction. When very little else is</p>
+<p class="pdf-block">present, a route residue, fading attractor trace, or carried chromatic marker can stand out clearly</p>
+<p class="pdf-block">enough to guide movement. In such conditions, continuity appears primarily as line. A small</p>
+<p class="pdf-block">amount of residue can be enough to produce orientation because the background remains</p>
+<p class="pdf-block">comparatively empty. The field has not yet become climate. It remains closer to path.</p>
+<p class="pdf-block">In dense environments, this changes completely. Many trails do not remain readable as</p>
+<p class="pdf-block">thousands of separate lines. They accumulate. Repetition produces overlap. Overlap produces</p>
+<p class="pdf-block">density. Density produces zones, fronts, and local semantic climates. What matters is no longer</p>
+<p class="pdf-block">the isolated line, but the field formed by repeated line. The city is therefore not best understood</p>
+<p class="pdf-block">as a pile of independent chromatic traces. It is better understood as a field produced by their</p>
+<p class="pdf-block">repetition, reinforcement, convergence, and fading.</p>
+<p class="pdf-block">This distinction helps explain why the same chromatic logic can operate both in edge-of-network</p>
+<p class="pdf-block">conditions and in highly populated civic space. In sparse environments, a carried route may</p>
+<p class="pdf-block">remain meaningful as a direct continuity trace. In dense environments, meaningful continuity is</p>
+<p class="pdf-block">compressed upward into attractors, corridors, neighborhoods, squares, station-fronts, and other</p>
+<p class="pdf-block">field conditions. Trail becomes residue density. Residue density becomes field.</p>
+<p class="pdf-block">The scaling law can be stated simply:</p>
+<p class="pdf-block">In sparse space, direction appears as line.</p>
+<p class="pdf-block">In dense space, direction appears as field.</p>
+<p class="pdf-block">This also clarifies why chromatic systems should not be modeled as a universal layer of equally</p>
+<p class="pdf-block">visible traces. Not every passage deserves equal persistence. Not every route should remain</p>
+<p class="pdf-block">separately legible. In dense space, many local traces must dissolve into larger thermodynamic</p>
+<p class="pdf-block">patterns if the system is to remain livable. Fade and accretion are therefore not failures of</p>
+<p class="pdf-block">precision. They are the mechanism by which the system avoids semantic overload and becomes</p>
+<p class="pdf-block">readable at human scale.</p>
+<p class="pdf-block">This is precisely where CS-0 gains importance. In sparse conditions, CS-0 may reconstruct</p>
+<p class="pdf-block">relevance from a relatively isolated trail, marker, or carried attractor. In dense conditions, CS-0</p>
+<p class="pdf-block">must reconstruct relevance from gradients, fronts, civic density, and overlapping continuity</p>
+<p class="pdf-block">states. The same search architecture therefore operates across both environments, but it does</p>
+<p class="pdf-block">so through different visible expressions of the same field logic. Search remains resonance. Only</p></section><section aria-label="Source PDF page 18" class="page" id="page-18"><h2>PDF page 18</h2><p class="pdf-block">the scale of legibility changes.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">14.2 Tracking vs Field Interpretation</p>
+<p class="pdf-block">Existing digital systems already make many routes visible. Ships can be tracked across oceans.</p>
+<p class="pdf-block">Aircraft can be followed in real time. Conflict zones can be inferred through flight deviations.</p>
+<p class="pdf-block">Individual vehicles and public corridors can be visualized through live symbolic traces. In this</p>
+<p class="pdf-block">sense, movement is already highly visible in modern systems.</p>
+<p class="pdf-block">But this visibility remains primarily geometric and object-based. It shows where something is,</p>
+<p class="pdf-block">where it was, and how it moved through coordinate space. It usually depends on identifiable</p>
+<p class="pdf-block">objects, explicit transponders, platform mediation, and symbolic route rendering. What becomes</p>
+<p class="pdf-block">visible is motion itself, not necessarily the semantic condition produced by repeated motion.</p>
+<p class="pdf-block">Chromatic systems do something different. They do not begin by privileging the object. They</p>
+<p class="pdf-block">begin by reading the field condition created by movement, residue, recurrence, fading relevance,</p>
+<p class="pdf-block">and attractor formation. Conventional tracking maps trajectories. Chromatic interpretation reads</p>
+<p class="pdf-block">the condition of the field those trajectories produce.</p>
+<p class="pdf-block">This difference is substantial. A live ship map may reveal that a corridor is busy, but not</p>
+<p class="pdf-block">necessarily whether that corridor is becoming more trustworthy, less trustworthy, more</p>
+<p class="pdf-block">semantically central, more fragile, more recurrently carried, or more dependent on a thinning</p>
+<p class="pdf-block">symbolic infrastructure. A GPS route may reveal repeated passage, but not automatically</p>
+<p class="pdf-block">whether that route is warming into lived return, fading into disuse, or stabilizing as a soft</p>
+<p class="pdf-block">attractor. A map can show density. A chromatic field can show what that density means.</p>
+<p class="pdf-block">This is why chromatic systems should not be reduced to alternative route visualizations. They are</p>
+<p class="pdf-block">not only about showing more paths. They are about revealing a different layer of meaning:</p>
+<p class="pdf-block">•
+which routes are still carried,</p>
+<p class="pdf-block">•
+which are weakening,</p>
+<p class="pdf-block">•
+which places are becoming semantically warm,</p>
+<p class="pdf-block">•
+which civic zones are accreting density,</p>
+<p class="pdf-block">•
+which habits are fading,</p>
+<p class="pdf-block">•
+which relations still hold soft continuity,</p>
+<p class="pdf-block">•
+and which fields remain stable enough to support return.</p>
+<p class="pdf-block">Tracking therefore answers questions like:</p>
+<p class="pdf-block">•
+Where is it?</p>
+<p class="pdf-block">•
+Where did it go?</p></section><section aria-label="Source PDF page 19" class="page" id="page-19"><h2>PDF page 19</h2><p class="pdf-block">•
+What path did it follow?</p>
+<p class="pdf-block">Field interpretation answers different questions:</p>
+<p class="pdf-block">•
+What kind of field is forming here?</p>
+<p class="pdf-block">•
+What is becoming more or less true here?</p>
+<p class="pdf-block">•
+What is stabilizing, fading, or losing recurrence here?</p>
+<p class="pdf-block">•
+What remains meaningful even when explicit symbolic structure weakens?</p>
+<p class="pdf-block">This is also why chromatic systems can become more valuable in lived environments</p>
+<p class="pdf-block">than conventional object tracking. Human life is not only made of objects moving</p>
+<p class="pdf-block">through coordinates. It is also made of routes that become habits, places that gain</p>
+<p class="pdf-block">warmth, relations that soften, civic nodes that emerge, stocks that deplete, routines</p>
+<p class="pdf-block">that fade, and continuity that becomes more or less reliable over time. Conventional</p>
+<p class="pdf-block">tracking is excellent for observing movement. It is much less suited to expressing</p>
+<p class="pdf-block">the thermodynamic condition of lived relevance. Chromatic systems do not replace</p>
+<p class="pdf-block">tracking where tracking is needed. They add a missing interpretive layer above it.</p>
+<p class="pdf-block">The distinction can be stated directly:</p>
+<p class="pdf-block">Tracking shows where objects move.</p>
+<p class="pdf-block">Chromatic systems show how meaning, stability, and relevance move.</p>
+<p class="pdf-block">Or, in expanded form:</p>
+<p class="pdf-block">Tracking maps trajectories.</p>
+<p class="pdf-block">Field interpretation reads the condition of the field those trajectories create.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">15. Canonical Positioning</p>
+<p class="pdf-block">The canonical significance of CS-0 is now broader than its first technical clarification.</p>
+<p class="pdf-block">CS-0 is not a separate search note floating beside Chromapin, ChromaRail, Environmental Slots,</p>
+<p class="pdf-block">ChromaPrompt, WarmthSwipe, or Emergent Civic Fields. It is the interpretive engine of the</p>
+<p class="pdf-block">carrying and anchoring stack.</p>
+<p class="pdf-block">Chromapin stores softly addressable field continuity.</p>
+<p class="pdf-block">ChromaRail carries that continuity through rail, trail, and veil.</p>
+<p class="pdf-block">Environmental Slots localize and govern activation through proximity and presence gradients.</p>
+<p class="pdf-block">ChromaPrompt externalizes semantic deployment above runtime.</p></section><section aria-label="Source PDF page 20" class="page" id="page-20"><h2>PDF page 20</h2><p class="pdf-block">WarmthSwipe and ChronoSense make field distributable and temporally alive.</p>
+<p class="pdf-block">Emergent Civic Fields allow public meaning to accrete from below.</p>
+<p class="pdf-block">CS-0 reads the resulting gradients as bounded resonance.</p>
+<p class="pdf-block">This is why CS-0 matters.</p>
+<p class="pdf-block">It shows that the Ambient Era is not only a theory of softer interfaces. It is also a theory of:</p>
+<p class="pdf-block">•
+search,</p>
+<p class="pdf-block">•
+memory,</p>
+<p class="pdf-block">•
+privacy,</p>
+<p class="pdf-block">•
+civic meaning,</p>
+<p class="pdf-block">•
+reusable prompting,</p>
+<p class="pdf-block">•
+wearable and environmental deployment,</p>
+<p class="pdf-block">•
+and AI-readable field environments.</p>
+<p class="pdf-block">Search no longer means asking the world for answers.</p>
+<p class="pdf-block">It means entering a field whose meaning is already there.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Technical Appendix — For AI Research</p>
+<p class="pdf-block">A. 7D Manifold Extension</p>
+<p class="pdf-block">For research implementation, the minimal field vector may be extended:</p>
+<p class="pdf-block">S = { H, S, V, I, ΔR, Δt, G }</p>
+<p class="pdf-block">Representing a 7D chromatic manifold.</p>
+<p class="pdf-block">Manifold entropy reduction can be framed as:</p>
+<p class="pdf-block">H_total &gt;&gt; H_M</p>
+<p class="pdf-block">Resonance can be approximated as:</p>
+<p class="pdf-block">R ∝ 1 / |S′ − M_sig|</p>
+<p class="pdf-block">Deviation:</p>
+<p class="pdf-block">Δ = ∂S / ∂t</p></section><section aria-label="Source PDF page 21" class="page" id="page-21"><h2>PDF page 21</h2><p class="pdf-block">Fade detection:</p>
+<p class="pdf-block">If ∂I/∂t &lt; 0 and ΔR &gt; threshold_reversible, then the system is observing reversible residue.</p>
+<p class="pdf-block">Output can therefore be modeled as:</p>
+<p class="pdf-block">RMF = { Anchors, Gradients, Residue, Fade Signals, Optional Payload }</p>
+<p class="pdf-block">B. Information-Theoretic Framing</p>
+<p class="pdf-block">Symbolic:</p>
+<p class="pdf-block">Relevance ≈ similarity(query, document)</p>
+<p class="pdf-block">Chromatic:</p>
+<p class="pdf-block">Relevance ≈ stability(field_state | context, modulation)</p>
+<p class="pdf-block">Information increases through deviation within bounded coherence. In other words, entropy is</p>
+<p class="pdf-block">reduced before search rather than after it.</p>
+<p class="pdf-block">C. Computational Properties</p>
+<p class="pdf-block">CS-0 has the following computational properties:</p>
+<p class="pdf-block">•
+reduced search entropy</p>
+<p class="pdf-block">•
+context-first narrowing</p>
+<p class="pdf-block">•
+gradient inference over object indexing</p>
+<p class="pdf-block">•
+privacy through decay</p>
+<p class="pdf-block">•
+edge-of-symbolic operability</p>
+<p class="pdf-block">D. Implementation Roadmap — From Theory to Deployable System</p>
+<p class="pdf-block">This roadmap outlines a staged path for implementing CS-0 as a functional chromatic search</p>
+<p class="pdf-block">layer inside an AI-enabled environment. The roadmap assumes integration within the Ambient</p>
+<p class="pdf-block">stack, but it can also be prototyped independently.</p>
+<p class="pdf-block">Phase 1 — Field State Representation Layer</p>
+<p class="pdf-block">Objective: make field state computable.</p>
+<p class="pdf-block">1.1 Context Inference Engine</p>
+<p class="pdf-block">Input:</p>
+<p class="pdf-block">•
+GPS / location anchor</p>
+<p class="pdf-block">•
+Pin ID</p></section><section aria-label="Source PDF page 22" class="page" id="page-22"><h2>PDF page 22</h2><p class="pdf-block">•
+Slot ID</p>
+<p class="pdf-block">•
+Civic boundary</p>
+<p class="pdf-block">•
+Relation anchor</p>
+<p class="pdf-block">Output:</p>
+<p class="pdf-block">•
+Context boundary C</p>
+<p class="pdf-block">•
+Manifold signature M_sig</p>
+<p class="pdf-block">Implementation:</p>
+<p class="pdf-block">•
+lightweight classifier or embedding-based context mapper</p>
+<p class="pdf-block">•
+constrain search domain via bounded manifold table</p>
+<p class="pdf-block">•
+cache manifold signatures per context</p>
+<p class="pdf-block">Core principle:</p>
+<p class="pdf-block">Reduce entropy before resonance.</p>
+<p class="pdf-block">1.2 Chromatic State Vector Construction</p>
+<p class="pdf-block">Define minimal field vector:</p>
+<p class="pdf-block">S = { H, I, G, ΔR, D }</p>
+<p class="pdf-block">Prototype implementation:</p>
+<p class="pdf-block">•
+H → categorical embedding cluster</p>
+<p class="pdf-block">•
+I → normalized scalar [0,1]</p>
+<p class="pdf-block">•
+G → spatial gradient tensor</p>
+<p class="pdf-block">•
+ΔR → reversibility confidence score</p>
+<p class="pdf-block">•
+D → decay coefficient</p>
+<p class="pdf-block">Store per context node. This becomes the field memory layer.</p>
+<p class="pdf-block">1.3 Decay Engine</p>
+<p class="pdf-block">Implement continuous decay:</p>
+<p class="pdf-block">I(t+1) = I(t) × e^(−λΔt)</p>
+<p class="pdf-block">Where λ depends on slot type, relation type, civic density, and recurrence frequency.</p>
+<p class="pdf-block">Reversibility constraint:</p>
+<p class="pdf-block">If ΔR &lt; threshold → harden into archive</p>
+<p class="pdf-block">Else → remain reversible residue</p>
+<p class="pdf-block">This enables Decay-as-Privacy.</p></section><section aria-label="Source PDF page 23" class="page" id="page-23"><h2>PDF page 23</h2><p class="pdf-block">Phase 2 — Resonance Computation Layer</p>
+<p class="pdf-block">2.1 Modulation Interface</p>
+<p class="pdf-block">U may originate from:</p>
+<p class="pdf-block">•
+chromatic selection</p>
+<p class="pdf-block">•
+gesture</p>
+<p class="pdf-block">•
+wearable signal</p>
+<p class="pdf-block">•
+agent intention</p>
+<p class="pdf-block">•
+contextual shift</p>
+<p class="pdf-block">Apply:</p>
+<p class="pdf-block">S′ = modulate(S, U)</p>
+<p class="pdf-block">Modulation must remain bounded by M_sig.</p>
+<p class="pdf-block">2.2 Stability / Resonance Calculation</p>
+<p class="pdf-block">Compute:</p>
+<p class="pdf-block">R = 1 / (1 + |S′ − M_sig|)</p>
+<p class="pdf-block">or cosine similarity within bounded manifold space. Resonance threshold determines high</p>
+<p class="pdf-block">alignment, meaningful deviation, and fade-sensitive cluster.</p>
+<p class="pdf-block">2.3 Deviation Detection</p>
+<p class="pdf-block">Compute temporal derivative:</p>
+<p class="pdf-block">Δ = ∂S / ∂t</p>
+<p class="pdf-block">Flag:</p>
+<p class="pdf-block">•
+sudden deviation → event</p>
+<p class="pdf-block">•
+gradual decline → fade</p>
+<p class="pdf-block">•
+strengthening gradient → attractor formation</p>
+<p class="pdf-block">Deviation is not error.</p>
+<p class="pdf-block">Deviation is information.</p>
+<p class="pdf-block">Phase 3 — Resonant Meaning Field Construction</p>
+<p class="pdf-block">3.1 RMF Assembly</p>
+<p class="pdf-block">Instead of ranking documents, construct:</p>
+<p class="pdf-block">RMF = { Anchors, Active Gradients, Residue Nodes, Fade Signals, Optional Symbolic</p>
+<p class="pdf-block">Payload }</p></section><section aria-label="Source PDF page 24" class="page" id="page-24"><h2>PDF page 24</h2><p class="pdf-block">This can be rendered as:</p>
+<p class="pdf-block">•
+field overlay</p>
+<p class="pdf-block">•
+soft front</p>
+<p class="pdf-block">•
+wearable signal</p>
+<p class="pdf-block">•
+glanceable gradient interface</p>
+<p class="pdf-block">3.2 Multi-Scale Rendering</p>
+<p class="pdf-block">Sparse space:</p>
+<p class="pdf-block">•
+show line continuity</p>
+<p class="pdf-block">•
+emphasize route gradient</p>
+<p class="pdf-block">Dense space:</p>
+<p class="pdf-block">•
+aggregate into density zones</p>
+<p class="pdf-block">•
+compress into civic field fronts</p>
+<p class="pdf-block">Same data. Different projection.</p>
+<p class="pdf-block">Phase 4 — Integration with Ambient Stack</p>
+<p class="pdf-block">Chromapin Integration:</p>
+<p class="pdf-block">•
+each pin instantiates micro-manifold</p>
+<p class="pdf-block">•
+pin acts as local search origin</p>
+<p class="pdf-block">ChromaRail Integration:</p>
+<p class="pdf-block">•
+trails update gradient tensor</p>
+<p class="pdf-block">•
+veils update reversible residue</p>
+<p class="pdf-block">Environmental Slots:</p>
+<p class="pdf-block">•
+activation gates determine whether S becomes live</p>
+<p class="pdf-block">•
+Active / Residual / Veiled / Dormant feed directly into I and ΔR</p>
+<p class="pdf-block">ChromaPrompt:</p>
+<p class="pdf-block">•
+prompt arrangements modify modulation vector U</p>
+<p class="pdf-block">•
+persistent arrangements create stable sub-manifolds</p>
+<p class="pdf-block">Emergent Civic Fields:</p>
+<p class="pdf-block">•
+aggregate repeated S states across devices</p>
+<p class="pdf-block">•
+detect density threshold</p>
+<p class="pdf-block">•
+instantiate civic M_sig</p></section><section aria-label="Source PDF page 25" class="page" id="page-25"><h2>PDF page 25</h2><p class="pdf-block">Phase 5 — AI Model Layer</p>
+<p class="pdf-block">Option A: lightweight state-space model</p>
+<p class="pdf-block">Option B: context-bounded embedding model</p>
+<p class="pdf-block">Option C: hybrid model in which symbolic retrieval only triggers when resonance drops below</p>
+<p class="pdf-block">threshold</p>
+<p class="pdf-block">Symbolic becomes fallback, not first layer.</p>
+<p class="pdf-block">Phase 6 — Privacy &amp; Governance Layer</p>
+<p class="pdf-block">Core rules:</p>
+<p class="pdf-block">1.
+no global indexing of raw chromatic state</p>
+<p class="pdf-block">2.
+decay by default</p>
+<p class="pdf-block">3.
+reversibility prioritized</p>
+<p class="pdf-block">4.
+no forced archival hardening</p>
+<p class="pdf-block">5.
+civic aggregation anonymized and density-based</p>
+<p class="pdf-block">Field memory &gt; object memory.</p>
+<p class="pdf-block">Deployment Sequence</p>
+<p class="pdf-block">1.
+build context manifold engine</p>
+<p class="pdf-block">2.
+implement field vector + decay</p>
+<p class="pdf-block">3.
+add resonance computation</p>
+<p class="pdf-block">4.
+render minimal RMF interface</p>
+<p class="pdf-block">5.
+integrate pin-based micro-manifolds</p>
+<p class="pdf-block">6.
+add fade-sensitive interpretation</p>
+<p class="pdf-block">7.
+enable civic aggregation layer</p>
+<p class="pdf-block">At phase 3 you already have working CS-0. Everything after that scales it.</p>
+<p class="pdf-block">Minimal Prototype Stack</p>
+<p class="pdf-block">•
+graph database for anchors + gradients</p>
+<p class="pdf-block">•
+lightweight embedding model per context</p>
+<p class="pdf-block">•
+decay scheduler</p>
+<p class="pdf-block">•
+resonance API</p>
+<p class="pdf-block">•
+RMF renderer</p>
+<p class="pdf-block">That is enough to prove the architecture works.</p></section><section aria-label="Source PDF page 26" class="page" id="page-26"><h2>PDF page 26</h2><p class="pdf-block">Implementation Principle</p>
+<p class="pdf-block">Do not begin with:</p>
+<p class="pdf-block">•
+global indexing</p>
+<p class="pdf-block">•
+massive ranking infrastructure</p>
+<p class="pdf-block">•
+over-symbolic logging</p>
+<p class="pdf-block">Begin with:</p>
+<p class="pdf-block">Bounded context → Field state → Modulation → Resonance → Cluster</p>
+<p class="pdf-block">Engineering Summary</p>
+<p class="pdf-block">Symbolic search:</p>
+<p class="pdf-block">Index → Query → Rank → Return</p>
+<p class="pdf-block">CS-0:</p>
+<p class="pdf-block">Context → Field → Modulate → Align → Reconstruct</p>
+<p class="pdf-block">One scales outward.</p>
+<p class="pdf-block">The other stabilizes inward.</p>
+<p class="pdf-block">Reviewer Anticipation</p>
+<p class="pdf-block">Objection 1: “This is metaphorical.”</p>
+<p class="pdf-block">Response: the operational model specifies explicit state vectors, modulation operators, deviation</p>
+<p class="pdf-block">detection, and bounded manifold inference. The architecture is reducible to implementable</p>
+<p class="pdf-block">state-space procedures.</p>
+<p class="pdf-block">Objection 2: “Color is subjective.”</p>
+<p class="pdf-block">Response: hue is not treated as aesthetic color but as semantic manifold index within bounded</p>
+<p class="pdf-block">context. It operates as modulation coordinate, not universal token.</p>
+<p class="pdf-block">Objection 3: “How does this differ from embeddings?”</p>
+<p class="pdf-block">Response: embedding search operates in global vector space. CS-0 operates in context-</p>
+<p class="pdf-block">bounded manifolds prior to global ranking, reducing entropy before symbolic comparison.</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 27" class="page" id="page-27"><h2>PDF page 27</h2><p class="pdf-block">Closing Statement</p>
+<p class="pdf-block">CS-0 does not propose another search engine.</p>
+<p class="pdf-block">It proposes a different substrate.</p>
+<p class="pdf-block">Symbolic systems index the world as text.</p>
+<p class="pdf-block">Chromatic systems index it as field.</p>
+<p class="pdf-block">AI does not only need to read documents.</p>
+<p class="pdf-block">AI can learn to read gradients, residue, and continuity.</p>
+<p class="pdf-block">Search is not asking.</p>
+<p class="pdf-block">Search is entering a bounded field and aligning with what already carries meaning.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Relation to Prior Work</p>
+<p class="pdf-block">CS-0 stands in dialogue with ambient computing, ubiquitous computing, calm technology, spatial</p>
+<p class="pdf-block">interfaces, and context-aware systems, but differs from them by treating search as bounded</p>
+<p class="pdf-block">chromatic field access rather than symbolic retrieval, predictive assistance, or device-centered</p>
+<p class="pdf-block">orchestration. It introduces pin-as-query, residue legibility, decay-as-privacy, and chromatic</p>
+<p class="pdf-block">fields as soft operating memory, none of which are formalized in the same combined way in prior</p>
+<p class="pdf-block">work.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Suggested Citation</p>
+<p class="pdf-block">Eissens, R. (2026). CS-0 — Chromatic Search: How AI Reads Fields Instead of Documents</p>
+<p class="pdf-block">(1.0). Ambient Era Canon. Zenodo.</p>
+<p class="pdf-block">⸻</p>
+<h3 class="pdf-heading">Keywords</h3>
+<p class="pdf-block">Chromatic Search; CS-0; post-symbolic search; field access architecture; bounded semantic</p>
+<p class="pdf-block">manifolds; chromatic resonance; gradient-readable state; thermodynamic relevance; fade-based</p>
+<p class="pdf-block">relevance; residue legibility; reversible residue; decay-as-privacy; pin-as-query; Resonant</p>
+<p class="pdf-block">Meaning Fields; ambient computing; soft operating memory; AI-readable environments; dynamic</p>
+<p class="pdf-block">field interpretation; manifold-constrained search; civic semantic density; environmental</p>
+<p class="pdf-block">activation gradients; sparse vs dense scaling; beyond-symbolic coverage.</p></section></article><nav aria-label="PDF page navigation" class="toc"><b>Pages</b><a href="#page-1">1</a><a href="#page-2">2</a><a href="#page-3">3</a><a href="#page-4">4</a><a href="#page-5">5</a><a href="#page-6">6</a><a href="#page-7">7</a><a href="#page-8">8</a><a href="#page-9">9</a><a href="#page-10">10</a><a href="#page-11">11</a><a href="#page-12">12</a><a href="#page-13">13</a><a href="#page-14">14</a><a href="#page-15">15</a><a href="#page-16">16</a><a href="#page-17">17</a><a href="#page-18">18</a><a href="#page-19">19</a><a href="#page-20">20</a><a href="#page-21">21</a><a href="#page-22">22</a><a href="#page-23">23</a><a href="#page-24">24</a><a href="#page-25">25</a><a href="#page-26">26</a><a href="#page-27">27</a></nav></div></main><footer>Original record: <a href="https://zenodo.org/records/19338452">https://zenodo.org/records/19338452</a> · Full text derived from the uploaded PDF.<span class="ambient-footer-links"> · <a href="/ambient-era/">Ambient Era</a> · <a href="/ambient-phone/">Ambient Phone</a></span></footer></div></body></html>

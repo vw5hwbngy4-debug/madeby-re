@@ -1,0 +1,5338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>o-vvv-o — The internet got a shovel 🪏</title>
+
+<meta name="description" content="o-vvv-o lets you bury thoughts, links, notes and messages in a playable field. The internet got a shovel.">
+
+<link rel="icon" href="./favicon.svg?v=2" type="image/svg+xml">
+<link rel="shortcut icon" href="./favicon.svg?v=2" type="image/svg+xml">
+<meta name="theme-color" content="#8b4513">
+
+<meta property="og:title" content="o-vvv-o — The internet got a shovel.">
+<meta property="og:description" content="Bury your thoughts, links, notes and messages.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://madeby.re/games/o-vvv-o/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>o-vvv-o · Bury your thoughts · Hybrid Mobile/Desktop</title>
+<meta name="description" content="Bury your thoughts in a tiny field. Copy text, dig a hole, hide it as a sparkle, and dig it up later.">
+<meta property="og:title" content="o-vvv-o · Bury your thoughts">
+<meta property="og:description" content="Copy text, dig a hole, bury it as a sparkle, and recover it later.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://madeby.re/games/o-vvv-o">
+<meta property="og:image" content="./assets/og-bury-field.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="o-vvv-o · Bury your thoughts">
+<meta name="twitter:description" content="Copy text, dig a hole, bury it as a sparkle, and recover it later.">
+<meta name="twitter:image" content="./assets/og-bury-field.jpg">
+<style>
+:root{
+  --grid:7;
+  --rain-x:50%;
+  --rain-y:50%;
+  --rain-radius:0%;
+  --card-top:#f3dfac;
+  --card-mid:#d0aa68;
+  --card-bottom:#9b6734;
+  --card-border:#5a4732;
+  --card-text:#271505;
+  --card-muted:rgba(39,21,5,.66);
+  --card-line:rgba(83,47,19,.28);
+  --danger:#e88970;
+  --danger-shadow:#8d3b2f;
+}
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+body{
+  margin:0;
+  min-height:100vh;
+  min-height:100svh;
+  background:#111;
+  color:#fff;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow:hidden;
+}
+.shell{
+  min-height:100svh;
+  width:100vw;
+  padding:calc(10px + env(safe-area-inset-top)) 12px calc(12px + env(safe-area-inset-bottom));
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+.top{
+  width:min(100%,560px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:900;
+}
+#glyph{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-weight:1000;
+  font-size:clamp(22px,7vw,42px);
+  white-space:nowrap;
+  user-select:none;
+  -webkit-user-select:none;
+}
+#message{
+  font-weight:850;
+  opacity:.86;
+  min-height:24px;
+  text-align:right;
+  font-size:clamp(14px,4vw,22px);
+}
+.board-wrap{
+  position:relative;
+  width:min(calc(100vw - 24px), calc(100svh - 300px), 448px);
+  aspect-ratio:1/1;
+  image-rendering:pixelated;
+  border:4px solid #5a4732;
+  box-shadow:0 18px 40px rgba(0,0,0,.35);
+  background:#000;
+  flex:0 0 auto;
+  overflow:hidden;
+}
+#board{
+  position:absolute;
+  inset:0;
+  display:grid;
+  grid-template-columns:repeat(var(--grid),1fr);
+  grid-template-rows:repeat(var(--grid),1fr);
+}
+.tile{
+  width:100%;
+  height:100%;
+  background-size:100% 100%,100% 100%;
+  background-position:center;
+  background-repeat:no-repeat;
+  image-rendering:pixelated;
+}
+/* No visible adjacent target outlines; digging still works by adjacency. */
+#player{
+  position:absolute;
+  width:calc(100% / var(--grid));
+  height:calc(100% / var(--grid));
+  left:0;
+  top:0;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  image-rendering:pixelated;
+  transition:left .12s linear,top .12s linear;
+  pointer-events:none;
+  z-index:5;
+  filter:drop-shadow(0 5px 0 rgba(0,0,0,.28));
+}
+#player.stressShake{
+  animation:stressShake .16s linear infinite;
+}
+@keyframes stressShake{
+  0%{transform:translateX(0)}
+  25%{transform:translateX(-2px)}
+  50%{transform:translateX(2px)}
+  75%{transform:translateX(-1px)}
+  100%{transform:translateX(0)}
+}
+#weatherTint{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:6;
+  opacity:0;
+  background:linear-gradient(180deg,rgba(75,108,160,.24),rgba(38,45,74,.18));
+  mix-blend-mode:multiply;
+  transition:opacity 1.4s ease;
+  clip-path:circle(var(--rain-radius) at var(--rain-x) var(--rain-y));
+}
+#rainLayer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:7;
+  opacity:0;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  image-rendering:pixelated;
+  transition:opacity .8s ease;
+  clip-path:circle(var(--rain-radius) at var(--rain-x) var(--rain-y));
+}
+.raining #weatherTint{opacity:1}
+.rainLocked{
+  --rain-radius:180%;
+}
+.raining #rainLayer{
+  opacity:1;
+  animation:rainPulse 2.2s linear infinite;
+}
+@keyframes rainPulse{
+  0%{filter:brightness(1)}
+  50%{filter:brightness(1.18)}
+  100%{filter:brightness(1)}
+}
+.raining .board-wrap{box-shadow:0 18px 42px rgba(20,35,70,.45)}
+.controls{
+  display:grid;
+  grid-template-columns:repeat(3,min(19vw,72px));
+  grid-template-rows:repeat(3,min(13vw,56px));
+  gap:8px;
+  flex:0 0 auto;
+}
+button{
+  border:0;
+  border-radius:18px;
+  font-weight:1000;
+  font-size:clamp(18px,5vw,24px);
+  line-height:1;
+  background:#f2dfb0;
+  color:#1a1208;
+  box-shadow:0 5px 0 #8e7442;
+  touch-action:manipulation;
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-touch-callout:none;
+}
+button:active{transform:translateY(4px);box-shadow:0 1px 0 #8e7442}
+.dig{background:#ffb457;box-shadow:0 5px 0 #a65b20;font-size:clamp(14px,4vw,18px)}
+.dig.pasteReady{background:#d77a25;color:#fff2d0;box-shadow:0 5px 0 #7a3b16;filter:saturate(1.18) brightness(.96)}
+.hint{
+  display:none;
+}
+
+/* Bury JSON additions */
+.actionBar{
+  position:fixed;
+  z-index:30;
+  left:50%;
+  bottom:calc(10px + env(safe-area-inset-bottom));
+  transform:translateX(-50%);
+  width:min(94vw,560px);
+  display:flex;
+  gap:7px;
+  justify-content:center;
+  pointer-events:auto;
+}
+.miniAction{
+  flex:1;
+  min-height:34px;
+  border-radius:13px;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  box-shadow:0 4px 0 #7d6335;
+  background:#f2dfb0;
+  color:#1a1208;
+}
+.miniAction:active{transform:translateY(3px);box-shadow:0 1px 0 #7d6335}
+#gem{display:none}
+.gemTrail{
+  position:absolute;
+  width:calc(100% / var(--grid) * .42);
+  height:calc(100% / var(--grid) * .42);
+  left:0;
+  top:0;
+  z-index:4;
+  pointer-events:none;
+  transform:translate(54%,42%);
+  filter:drop-shadow(0 3px 0 rgba(0,0,0,.22));
+  transition:left .12s linear,top .12s linear;
+}
+.gemTrail:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,#fff7bd 0%,#68f1ff 28%,#6d73ff 58%,#ff8cff 100%);
+  clip-path:polygon(50% 0%,88% 28%,72% 100%,28% 100%,12% 28%);
+  animation:gemPulse .9s ease-in-out infinite alternate;
+}
+.gemTrail:nth-of-type(2):before{filter:hue-rotate(45deg)}
+.gemTrail:nth-of-type(3):before{filter:hue-rotate(95deg)}
+.gemTrail:nth-of-type(4):before{filter:hue-rotate(145deg)}
+.gemTrail:nth-of-type(5):before{filter:hue-rotate(210deg)}
+@keyframes gemPulse{from{filter:brightness(1)}to{filter:brightness(1.35)}}
+.sparkle{
+  position:absolute;
+  width:calc(100% / var(--grid) * .72);
+  height:calc(100% / var(--grid) * .72);
+  z-index:9;
+  pointer-events:auto;
+  transform:translate(18%,12%);
+  display:grid;
+  place-items:center;
+  color:#bff6ff;
+  font-size:34px;
+  font-weight:1000;
+  text-shadow:
+    0 0 4px rgba(4,20,32,.9),
+    0 0 10px #bff6ff,
+    0 0 18px #7eefff,
+    0 0 26px #4ebdff;
+  filter:drop-shadow(0 0 5px rgba(30,220,255,.45));
+  animation:sparklePulse 1.05s ease-in-out infinite alternate;
+}
+@keyframes sparklePulse{
+  from{opacity:.78;transform:translate(20%,8%) scale(.94)}
+  to{opacity:1;transform:translate(20%,8%) scale(1.12)}
+}
+
+/* Aura color organization for sparkles */
+.sparkle.aura-green{color:#64f0b2;text-shadow:0 0 4px rgba(3,28,18,.92),0 0 10px #64f0b2,0 0 18px #2adf91,0 0 28px #10a878;filter:drop-shadow(0 0 8px rgba(42,223,145,.62))}
+.sparkle.aura-blue{color:#bfe6ff;text-shadow:0 0 4px rgba(4,20,32,.9),0 0 10px #bfe6ff,0 0 18px #7abaff,0 0 28px #4e8dff;filter:drop-shadow(0 0 7px rgba(90,150,255,.55))}
+.sparkle.aura-purple{color:#e7c6ff;text-shadow:0 0 4px rgba(30,8,48,.9),0 0 10px #e7c6ff,0 0 18px #c27cff,0 0 28px #8d4eff;filter:drop-shadow(0 0 7px rgba(170,90,255,.55))}
+.sparkle.aura-gold{color:#fff0a8;text-shadow:0 0 4px rgba(44,28,4,.9),0 0 10px #fff0a8,0 0 18px #ffd66a,0 0 28px #ffa93a;filter:drop-shadow(0 0 7px rgba(255,194,80,.58))}
+.sparkle.aura-red{color:#ffc0b8;text-shadow:0 0 4px rgba(44,8,4,.9),0 0 10px #ffc0b8,0 0 18px #ff7a70,0 0 28px #ff4338;filter:drop-shadow(0 0 7px rgba(255,80,70,.55))}
+.sparkle.aura-pink{color:#ffd0ee;text-shadow:0 0 4px rgba(44,4,28,.9),0 0 10px #ffd0ee,0 0 18px #ff86ca,0 0 28px #ff4ba8;filter:drop-shadow(0 0 7px rgba(255,90,180,.55))}
+.sparkle.aura-white{color:#fffdf2;text-shadow:0 0 4px rgba(20,20,18,.9),0 0 10px #fffdf2,0 0 18px #ffffff,0 0 28px #d8f3ff;filter:drop-shadow(0 0 7px rgba(255,255,255,.55))}
+.auraPickerWrap{position:relative;z-index:2;margin:10px 0 0;padding:10px 12px;border-radius:14px;background:rgba(255,245,208,.55);border:1px solid rgba(123,81,37,.28);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
+.auraPickerLabel{display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:900;color:#2a1403;font-size:14px}
+.auraPickerSelect{max-width:72%;border:1px solid rgba(123,81,37,.35);border-radius:999px;background:#fff5d3;color:#2a1403;font-weight:850;padding:8px 10px;font:inherit;outline:none}
+.auraPickerHint{margin-top:7px;color:#6f4d24;font-size:12px;font-weight:700;line-height:1.25}
+.buryBubble{
+  position:absolute;
+  z-index:18;
+  min-width:54px;
+  height:30px;
+  padding:0 10px;
+  border:0;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  font-size:11px;
+  font-weight:1000;
+  letter-spacing:.08em;
+  color:#241305;
+  background:linear-gradient(180deg,#ffd07a,#e37b2b);
+  box-shadow:0 4px 0 #7a3b16,0 0 16px rgba(255,170,70,.35);
+  transform:translate(8%,-30%);
+  cursor:pointer;
+  pointer-events:auto;
+  user-select:none;
+  -webkit-user-select:none;
+  image-rendering:auto;
+  animation:buryBubblePulse .8s ease-in-out infinite alternate;
+}
+.buryBubble.ctrlv{
+  min-width:70px;
+  background:linear-gradient(180deg,#d8f4ff,#64c9e9);
+  box-shadow:0 4px 0 #2b7790,0 0 16px rgba(84,205,240,.35);
+}
+
+.buryBubble.mobileBury{
+  min-width:34px;
+  width:34px;
+  height:34px;
+  padding:0;
+  font-size:18px;
+  letter-spacing:0;
+  border-radius:50%;
+}
+
+@media (pointer:coarse){
+  .buryBubble.mobileBury{display:none!important;}
+}
+
+@keyframes buryBubblePulse{
+  from{filter:brightness(.96);transform:translate(8%,-30%) scale(.98)}
+  to{filter:brightness(1.08);transform:translate(8%,-30%) scale(1.04)}
+}
+
+.mobileQuestionBubble{
+  position:absolute;
+  z-index:18;
+  width:26px;
+  height:26px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  font-size:17px;
+  font-weight:1000;
+  color:#fff7c8;
+  background:rgba(35,22,10,.72);
+  border:2px solid rgba(255,229,145,.78);
+  box-shadow:0 3px 0 rgba(40,18,5,.55),0 0 10px rgba(255,221,124,.25);
+  transform:translate(56%,-18%);
+  pointer-events:auto;
+  user-select:none;
+  -webkit-user-select:none;
+  animation:mobileQuestionPulse .72s ease-in-out infinite alternate;
+}
+@keyframes mobileQuestionPulse{
+  from{filter:brightness(.96);transform:translate(56%,-18%) scale(.96)}
+  to{filter:brightness(1.12);transform:translate(56%,-18%) scale(1.05)}
+}
+
+.pcQuestionBubble{
+  cursor:pointer;
+}
+
+.treasureBurst{
+  position:absolute;
+  z-index:24;
+  width:1px;
+  height:1px;
+  left:0;
+  top:0;
+  pointer-events:none;
+  transform:translate(50%,-10%);
+}
+.treasureBit{
+  position:absolute;
+  left:0;
+  top:0;
+  width:12px;
+  height:12px;
+  display:grid;
+  place-items:center;
+  font-size:12px;
+  line-height:1;
+  opacity:0;
+  transform:translate(0,0) scale(.45);
+  animation:treasurePop .95s ease-out forwards;
+  filter:drop-shadow(0 2px 0 rgba(50,20,0,.22));
+}
+@keyframes treasurePop{
+  0%{opacity:0;transform:translate(0,0) scale(.35)}
+  18%{opacity:1}
+  78%{opacity:1}
+  100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(1.12) rotate(var(--rot))}
+}
+
+.tile.hasBurial{
+  cursor:pointer;
+}
+.overlay{
+  position:fixed;
+  inset:0;
+  z-index:80;
+  background:rgba(9,6,3,.62);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+.overlay.show{display:flex}
+.buryCard{
+  position:relative;
+  width:min(94vw,520px);
+  max-height:82svh;
+  border:4px solid var(--card-border);
+  border-radius:24px;
+  background:
+    linear-gradient(180deg,var(--card-top),var(--card-mid) 58%,var(--card-bottom)),
+    radial-gradient(circle at 50% 110%,rgba(72,38,14,.28),transparent 62%);
+  color:var(--card-text);
+  box-shadow:0 26px 70px rgba(0,0,0,.55), inset 0 0 0 2px rgba(255,240,180,.45);
+  overflow:hidden;
+}
+.buryCard:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,241,187,.16),rgba(78,42,17,.18));
+  mix-blend-mode:multiply;
+  z-index:0;
+}
+.buryHead,.buryText,.buryFoot{position:relative;z-index:1;}
+.buryHead{
+  padding:14px 16px 8px;
+  text-align:center;
+  border-bottom:2px solid var(--card-line);
+}
+.buryHead h2{
+  margin:0;
+  font-size:24px;
+  line-height:.95;
+  letter-spacing:-.045em;
+}
+.buryHead p{
+  margin:6px 0 0;
+  font-size:11px;
+  font-weight:900;
+  opacity:.66;
+  color:var(--card-text);
+}
+.buryText{
+  padding:14px 16px;
+  max-height:52svh;
+  overflow:auto;
+  white-space:pre-wrap;
+  font-family:Georgia,serif;
+  font-size:15px;
+  line-height:1.28;
+  font-weight:700;
+}
+.buryFoot{
+  padding:10px 12px 14px;
+  display:flex;
+  gap:8px;
+}
+.buryFoot button{
+  flex:1;
+  min-height:42px;
+  font-size:12px;
+  border-radius:15px;
+}
+.dangerBtn{background:#e88970;box-shadow:0 5px 0 #8d3b2f}
+.toast{
+  position:fixed;
+  z-index:100;
+  left:50%;
+  bottom:calc(58px + env(safe-area-inset-bottom));
+  transform:translateX(-50%) translateY(8px);
+  opacity:0;
+  pointer-events:none;
+  padding:9px 13px;
+  border-radius:999px;
+  background:rgba(0,0,0,.72);
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  transition:.16s ease;
+  white-space:nowrap;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+body.carrying .actionBar{filter:drop-shadow(0 0 12px rgba(126,239,255,.18))}
+
+
+/* H0.3 clipboard burial */
+.actionBar{display:none!important}
+.clipHint{
+  width:min(92vw,560px);
+  text-align:center;
+  font-size:clamp(10px,2.9vw,12px);
+  line-height:1.2;
+  font-weight:850;
+  opacity:.48;
+  margin-top:-4px;
+  margin-bottom:calc(2px + env(safe-area-inset-bottom));
+  pointer-events:none;
+}
+.buryHead h2{font-size:clamp(22px,7vw,34px)}
+.buryText{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  font-size:clamp(15px,4.3vw,20px)!important;
+  line-height:1.38!important;
+  font-weight:650!important;
+}
+.buryText .summaryLine{
+  display:block;
+  font-weight:900;
+  margin-bottom:12px;
+}
+.buryFoot button{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+#pasteSink{position:fixed;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+
+/* V14 cheerful opened boards */
+.overlay{
+  background:rgba(9,6,3,.42);
+}
+.buryCard{
+  border-color:#7b5125;
+  background:
+    linear-gradient(180deg,#fff2bd 0%,#f5cf79 54%,#c98738 100%),
+    radial-gradient(circle at 50% 115%,rgba(130,73,24,.25),transparent 64%);
+  color:#2a1403;
+  box-shadow:0 26px 70px rgba(0,0,0,.50), inset 0 0 0 3px rgba(255,247,204,.65);
+}
+.buryCard:before{
+  background:linear-gradient(180deg,rgba(255,248,209,.22),rgba(176,99,30,.10));
+  mix-blend-mode:normal;
+}
+.buryHead{border-bottom-color:rgba(123,81,37,.34)}
+.buryHead p{color:#6f4d24;opacity:1}
+.buryFoot button{
+  background:#ffe8a8;
+  color:#2a1403;
+  box-shadow:0 5px 0 #8f6a34;
+}
+.buryFoot button:active{box-shadow:0 1px 0 #8f6a34}
+.buryFoot .dangerBtn{
+  background:#f08a72;
+  color:#2a1403;
+  box-shadow:0 5px 0 #923b2e;
+}
+.buryFoot .dangerBtn:active{box-shadow:0 1px 0 #923b2e}
+
+
+
+
+/* Quiet game footer navigation */
+.clipHint{
+  pointer-events:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  opacity:.42;
+  transition:opacity .18s ease, filter .18s ease;
+}
+.clipHint:hover,
+.clipHint:focus-within{
+  opacity:.86;
+}
+.clipHint a{
+  color:rgba(255,255,255,.78);
+  text-decoration:none;
+  font-weight:950;
+  letter-spacing:.02em;
+}
+.clipHint a:active{
+  opacity:1;
+  transform:translateY(1px);
+}
+.footerAvatar{
+  width:24px;
+  height:24px;
+  border-radius:999px;
+  object-fit:cover;
+  opacity:.28;
+  filter:grayscale(1) brightness(1.15);
+  transform:translateY(1px);
+  transition:opacity .18s ease, filter .18s ease, transform .18s ease;
+}
+.clipHint:hover .footerAvatar,
+.clipHint:focus-within .footerAvatar{
+  opacity:.88;
+  filter:none;
+}
+.footerNotify{
+  display:none;
+  min-width:18px;
+  height:18px;
+  padding:0 5px;
+  border-radius:999px;
+  align-items:center;
+  justify-content:center;
+  background:#e74b4b;
+  color:#fff;
+  font-size:10px;
+  font-weight:1000;
+  box-shadow:0 2px 0 rgba(0,0,0,.35);
+}
+.footerNotify.show{display:inline-flex}
+
+/* o-vvv-o Chest v1: buried persistent storage */
+.fieldChest{
+  position:absolute;
+  width:calc(100% / var(--grid));
+  height:calc(100% / var(--grid));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:clamp(24px,7vw,40px);
+  z-index:11;
+  pointer-events:auto;
+  cursor:pointer;
+  touch-action:manipulation;
+  transform:translate(-50%,-50%);
+  filter:drop-shadow(0 4px 0 rgba(0,0,0,.35)) drop-shadow(0 0 9px rgba(255,232,150,.35));
+  animation:chestBreathe 1.8s ease-in-out infinite;
+}
+@keyframes chestBreathe{
+  0%,100%{transform:translate(-50%,-50%) scale(1)}
+  50%{transform:translate(-50%,-54%) scale(1.04)}
+}
+.chestGrid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+  margin-top:10px;
+}
+.chestSlot{
+  min-height:62px;
+  border:2px dashed rgba(83,47,19,.34);
+  border-radius:14px;
+  background:rgba(255,246,210,.34);
+  color:#2a1707;
+  padding:7px;
+  font-size:11px;
+  font-weight:850;
+  overflow:hidden;
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  touch-action:manipulation;
+}
+.chestSlot.empty{opacity:.45}
+.chestSlot.empty:after{content:""}
+.chestSlot.hasItem{background:rgba(255,250,222,.58);border-style:solid}
+.chestSparkle{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  font-size:28px;
+  filter:drop-shadow(0 2px 0 rgba(0,0,0,.25)) drop-shadow(0 0 9px rgba(255,235,140,.62));
+}
+.chestSparkle.aura-green{filter:drop-shadow(0 2px 0 rgba(0,0,0,.25)) drop-shadow(0 0 10px rgba(42,223,145,.92));color:#64f0b2}
+.chestSparkle.aura-blue{filter:drop-shadow(0 2px 0 rgba(0,0,0,.25)) drop-shadow(0 0 10px rgba(92,171,255,.9))}
+.chestSparkle.aura-purple,.chestSparkle.aura-violet{filter:drop-shadow(0 2px 0 rgba(0,0,0,.25)) drop-shadow(0 0 10px rgba(190,124,255,.9))}
+.chestSparkle.aura-gold,.chestSparkle.aura-yellow{filter:drop-shadow(0 2px 0 rgba(0,0,0,.25)) drop-shadow(0 0 10px rgba(255,202,74,.95))}
+.chestSparkle.aura-red{filter:drop-shadow(0 2px 0 rgba(0,0,0,.25)) drop-shadow(0 0 10px rgba(255,92,92,.9))}
+.chestHelp{
+  margin-top:8px;
+  color:rgba(39,21,5,.68);
+  font-size:12px;
+  font-weight:800;
+}
+.buryFoot .storeBtn{
+  background:#bda987;
+  color:rgba(36,20,7,.55);
+  box-shadow:inset 0 3px 8px rgba(83,52,18,.32);
+  border:1px solid rgba(80,48,17,.22);
+}
+.buryFoot .storeBtn.storeChestLocked{
+  background:#bda987 !important;
+  color:rgba(36,20,7,.50) !important;
+  box-shadow:inset 0 3px 8px rgba(83,52,18,.34) !important;
+  opacity:.72;
+}
+.buryFoot .storeBtn.storeChestReady{
+  background:linear-gradient(180deg,#b87333 0%,#8b4a1f 100%) !important;
+  color:#fff3cf !important;
+  box-shadow:0 5px 0 #4f2b12, 0 0 0 2px rgba(255,229,170,.22) inset, 0 0 14px rgba(184,115,51,.28) !important;
+  opacity:1;
+  transform:none;
+}
+.buryFoot .storeBtn.storeChestReady:active{
+  transform:translateY(4px);
+  box-shadow:0 1px 0 #4f2b12, 0 0 0 2px rgba(255,229,170,.18) inset !important;
+}
+
+.sparkle.friendSparkle{
+  color:#ffb0a8;
+  text-shadow:
+    0 0 4px rgba(36,6,5,.95),
+    0 0 10px #ff8f86,
+    0 0 18px #ff4b4b,
+    0 0 28px #ff2323;
+  filter:drop-shadow(0 0 6px rgba(255,54,54,.55));
+}
+
+
+/* Jip-en-Janneke field message onboarding */
+.clipHint{
+  opacity:.56!important;
+  pointer-events:auto!important;
+  gap:9px!important;
+}
+.clipHint .sendFieldLink{
+  color:rgba(255,255,255,.82);
+  text-decoration:none;
+  font-weight:1000;
+  letter-spacing:.04em;
+}
+.clipHint .sendFieldLink:hover,
+.clipHint .sendFieldLink:focus{
+  opacity:1;
+}
+.footerAvatarLink{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  border-radius:999px;
+  text-decoration:none;
+}
+.footerAvatarLink .footerAvatar{
+  opacity:.34;
+}
+.footerAvatarLink:hover .footerAvatar,
+.footerAvatarLink:focus .footerAvatar{
+  opacity:.9;
+  filter:none;
+}
+
+/* Clear footer social controls */
+.footerLoginLink,
+.footerMessageLink{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:28px;
+  border-radius:999px;
+  padding:6px 10px;
+  text-decoration:none;
+  font-size:10px;
+  line-height:1;
+  font-weight:1000;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  background:rgba(255,255,255,.07);
+  color:rgba(255,255,255,.78);
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 3px 0 rgba(0,0,0,.28);
+}
+.footerLoginLink.isLoggedIn{
+  color:#ffe8ad;
+  border-color:rgba(255,214,145,.24);
+}
+.footerMessageLink{
+  position:relative;
+  width:32px;
+  height:32px;
+  padding:0;
+  font-size:15px;
+}
+.footerMessageLink.hasMessages{
+  color:#fff;
+  background:rgba(120,18,18,.34);
+  border-color:rgba(255,90,90,.58);
+  box-shadow:0 0 0 2px rgba(255,60,60,.18),0 0 18px rgba(255,45,45,.42),0 3px 0 rgba(80,0,0,.48);
+  animation:messagePulse .85s ease-in-out infinite alternate;
+}
+.footerMessageBadge{
+  position:absolute;
+  top:-7px;
+  right:-8px;
+  display:none;
+  min-width:18px;
+  height:18px;
+  padding:0 5px;
+  border-radius:999px;
+  align-items:center;
+  justify-content:center;
+  background:#e74b4b;
+  color:#fff;
+  font-size:10px;
+  font-weight:1000;
+  box-shadow:0 2px 0 rgba(0,0,0,.40);
+}
+.footerMessageBadge.show{display:inline-flex}
+@keyframes messagePulse{
+  from{filter:brightness(.92);transform:translateY(0) scale(.98)}
+  to{filter:brightness(1.18);transform:translateY(-1px) scale(1.04)}
+}
+to{filter:brightness(1.25)}
+}
+.burylinkArrow{
+  position:absolute;
+  z-index:19;
+  pointer-events:none;
+  transform:translate(-18%,-92%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:2px;
+  animation:redArrowHover .72s ease-in-out infinite alternate;
+}
+.burylinkArrow .arrowText{
+  background:#f0493e;
+  color:#fff;
+  font-size:10px;
+  line-height:1.08;
+  font-weight:1000;
+  padding:6px 8px;
+  border-radius:9px;
+  box-shadow:0 3px 0 #8f1f1a,0 0 16px rgba(240,73,62,.38);
+  max-width:128px;
+  text-align:center;
+  white-space:normal;
+}
+.burylinkArrow .arrowIcon{
+  color:#f0493e;
+  font-size:28px;
+  line-height:1;
+  text-shadow:0 2px 0 #8f1f1a,0 0 14px rgba(240,73,62,.45);
+}
+@keyframes redArrowHover{
+  from{transform:translate(-18%,-96%)}
+  to{transform:translate(-18%,-82%)}
+}
+@media (prefers-reduced-motion: reduce){
+  .burylinkArrow{animation:none}
+}
+
+
+/* Brown hyperlink recovery card */
+.recoveredLinkCard{
+  display:grid;
+  gap:12px;
+  padding:14px;
+  border-radius:18px;
+  background:rgba(90,54,22,.14);
+  border:2px solid rgba(120,74,28,.22);
+  white-space:normal;
+}
+.recoveredLinkBadge{
+  display:inline-flex;
+  width:max-content;
+  align-items:center;
+  gap:6px;
+  padding:6px 9px;
+  border-radius:999px;
+  background:rgba(89,54,24,.18);
+  border:1px solid rgba(89,54,24,.24);
+  color:#5a3516;
+  font-size:11px;
+  font-weight:1000;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.recoveredLinkTitle{
+  font-size:22px;
+  line-height:1.05;
+  font-weight:1000;
+  color:#2a1403;
+}
+.recoveredLinkUrl{
+  padding:10px 11px;
+  border-radius:13px;
+  background:rgba(255,255,255,.28);
+  border:1px solid rgba(123,81,37,.18);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:12px;
+  line-height:1.25;
+  font-weight:900;
+  color:#5b3514;
+  overflow-wrap:anywhere;
+}
+.recoveredLinkActions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+.recoveredLinkBtn{
+  min-height:42px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:1000;
+  background:#ffe8a8;
+  color:#2a1403;
+  box-shadow:0 5px 0 #8f6a34;
+}
+.recoveredLinkBtn.blue{
+  background:#dff0ff;
+  color:#11385f;
+  box-shadow:0 5px 0 #3a6f9a;
+}
+
+.recoveredNoteText{
+  padding:12px 13px;
+  border-radius:16px;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(123,81,37,.16);
+  color:#2a1403;
+  font-size:16px;
+  line-height:1.32;
+  font-weight:800;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+}
+.recoveredLinksLabel{
+  font-size:12px;
+  font-weight:1000;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#6f4d24;
+}
+@media(max-width:420px){
+  .recoveredLinkActions{grid-template-columns:1fr}
+}
+
+.openedPostcard{position:relative;border-radius:20px;overflow:hidden;min-height:320px;background:#000;box-shadow:0 14px 34px rgba(0,0,0,.30)}
+.openedPostcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.04) brightness(.82)}
+.openedPostcard:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.20),rgba(0,0,0,.05) 42%,rgba(0,0,0,.42));z-index:1}
+.openedPostcardText{position:relative;z-index:2;min-height:320px;display:flex;align-items:center;justify-content:center;padding:24px;color:#fff;font:900 clamp(24px,7vw,48px)/1.06 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.045em;text-align:center;text-shadow:0 3px 0 rgba(0,0,0,.58),0 0 18px rgba(0,0,0,.82);white-space:pre-wrap}
+
+
+/* === o-vvv-o Buried Chat UI v1 === */
+.buriedChatButton{
+  display:none;
+  position:fixed;
+  right:12px;
+  top:calc(58px + env(safe-area-inset-top));
+  z-index:80;
+  width:auto;
+  min-width:118px;
+  min-height:46px;
+  padding:0 14px;
+  border-radius:999px;
+  border:2px solid rgba(255,216,148,.26);
+  background:linear-gradient(180deg,#8a5524,#4a2910);
+  color:#fff4d3;
+  font-size:13px;
+  font-weight:1000;
+  letter-spacing:.05em;
+  box-shadow:0 6px 0 #2a1508,0 16px 34px rgba(0,0,0,.32);
+}
+.buriedChatButton:active{transform:translateY(4px);box-shadow:0 2px 0 #2a1508}
+
+/* Message/chat layer: only show for logged-in users, and never on top of opened sparkles/notices. */
+body.buried-chat-logged-in .buriedChatButton{display:block}
+body.overlay-open .buriedChatButton,
+body.overlay-open .buriedRail{display:none!important;pointer-events:none!important}
+
+
+.buriedRail{
+  position:fixed;
+  left:12px;
+  right:12px;
+  top:calc(8px + env(safe-area-inset-top));
+  z-index:79;
+  min-height:58px;
+  border-radius:19px;
+  border:2px solid rgba(255,216,148,.24);
+  background:
+    radial-gradient(circle at 18% 0%,rgba(255,216,148,.24),transparent 46%),
+    linear-gradient(180deg,#7c4b1e,#3b210d);
+  box-shadow:0 12px 34px rgba(0,0,0,.36),inset 0 1px 0 rgba(255,255,255,.08);
+  display:none;
+  align-items:center;
+  gap:10px;
+  padding:8px 132px 8px 10px;
+  color:#fff6dd;
+}
+body.buried-chat-has-status .buriedRail{display:flex}
+.buriedRailAvatar{
+  width:40px;
+  height:40px;
+  border-radius:999px;
+  object-fit:cover;
+  border:2px solid rgba(255,244,211,.42);
+  background:#2b1608;
+  flex:0 0 auto;
+}
+.buriedRailText{min-width:0;text-align:left;line-height:1.1}
+.buriedRailText strong{
+  display:block;
+  font-size:13px;
+  font-weight:1000;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.buriedRailText small{
+  display:block;
+  margin-top:4px;
+  color:#f5c77d;
+  font-size:11px;
+  font-weight:900;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.buriedRailPull{
+  margin-left:auto;
+  color:#ffe2a5;
+  font-size:20px;
+  font-weight:1000;
+}
+
+.buriedPanel{
+  position:fixed;
+  inset:auto 10px calc(10px + env(safe-area-inset-bottom));
+  z-index:120;
+  border-radius:28px;
+  border:2px solid rgba(255,216,148,.22);
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,216,148,.15),transparent 34%),
+    linear-gradient(180deg,#3d240f,#160b04);
+  box-shadow:0 28px 92px rgba(0,0,0,.72);
+  color:#fff4d3;
+  transform:translateY(calc(100% + 22px));
+  opacity:0;
+  pointer-events:none;
+  transition:.22s cubic-bezier(.2,.9,.2,1);
+  overflow:hidden;
+  max-height:82svh;
+}
+body.buried-chat-open .buriedPanel{
+  transform:translateY(0);
+  opacity:1;
+  pointer-events:auto;
+}
+.buriedPanelHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 14px 10px;
+  border-bottom:1px solid rgba(255,216,148,.14);
+}
+.buriedPanelHead strong{
+  font-size:18px;
+  font-weight:1000;
+}
+.buriedClose{
+  width:38px;
+  height:38px;
+  border-radius:999px;
+  border:1px solid rgba(255,216,148,.20);
+  background:rgba(255,255,255,.08);
+  color:#fff4d3;
+  font-size:24px;
+  box-shadow:none;
+  margin:0;
+  min-height:0;
+}
+.buriedTabs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  padding:10px 12px;
+}
+.buriedTab{
+  min-height:42px;
+  margin:0;
+  border-radius:16px;
+  box-shadow:none;
+  background:rgba(255,255,255,.08);
+  color:#f4d6a0;
+  font-size:13px;
+  letter-spacing:.02em;
+}
+.buriedTab.active{
+  background:linear-gradient(180deg,#f2c16e,#ad6b28);
+  color:#241204;
+}
+.buriedComposer,.buriedHistory{
+  padding:0 12px 14px;
+}
+.buriedFriendList{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:4px 2px 10px;
+  scrollbar-width:none;
+}
+.buriedFriendList::-webkit-scrollbar{display:none}
+.buriedFriend{
+  flex:0 0 auto;
+  width:74px;
+  min-height:86px;
+  border-radius:18px;
+  border:1px solid rgba(255,216,148,.18);
+  background:rgba(255,255,255,.07);
+  color:#fff4d3;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  padding:7px 5px;
+  font-size:11px;
+  font-weight:900;
+}
+.buriedFriend.selected{
+  border-color:#f2c16e;
+  background:rgba(242,193,110,.18);
+  box-shadow:0 0 0 2px rgba(242,193,110,.12);
+}
+.buriedFriend img{
+  width:42px;
+  height:42px;
+  object-fit:cover;
+  border-radius:999px;
+}
+.buriedField{
+  width:100%;
+  min-height:96px;
+  resize:vertical;
+  border-radius:20px;
+  border:1px solid rgba(255,216,148,.20);
+  background:rgba(0,0,0,.28);
+  color:#fff8e7;
+  outline:none;
+  padding:13px;
+  font:15px/1.35 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+.buriedField::placeholder{color:rgba(255,244,211,.45)}
+.buriedSend{
+  width:100%;
+  min-height:58px;
+  margin-top:10px;
+  border-radius:20px;
+  background:linear-gradient(180deg,#f2c16e,#ad6b28);
+  color:#241204;
+  font-size:19px;
+  font-weight:1000;
+  letter-spacing:.08em;
+  box-shadow:0 6px 0 #5a3212;
+}
+.buriedStatusLine{
+  min-height:20px;
+  margin-top:8px;
+  color:#f5c77d;
+  font-size:12px;
+  font-weight:850;
+  text-align:center;
+}
+.buriedHistory{
+  display:none;
+}
+body.buried-chat-tab-history .buriedComposer{display:none}
+body.buried-chat-tab-history .buriedHistory{display:block}
+.buriedThread{
+  height:min(52svh,520px);
+  overflow:auto;
+  padding:8px 2px 84px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.buriedMsg{
+  display:flex;
+  align-items:flex-end;
+  gap:8px;
+}
+.buriedMsg.right{
+  justify-content:flex-end;
+}
+.buriedMsg.right .buriedMsgAvatar{order:2}
+.buriedMsgAvatar{
+  width:30px;
+  height:30px;
+  border-radius:999px;
+  object-fit:cover;
+  background:#281407;
+  border:1px solid rgba(255,216,148,.24);
+}
+.buriedBubble{
+  max-width:78%;
+  padding:10px 12px;
+  border-radius:19px;
+  background:rgba(255,255,255,.10);
+  color:#fff8e7;
+  font-size:14px;
+  line-height:1.25;
+  text-align:left;
+  box-shadow:0 10px 26px rgba(0,0,0,.18);
+}
+.buriedMsg.right .buriedBubble{
+  background:linear-gradient(180deg,#9a5f25,#633814);
+}
+.buriedBubble small{
+  display:block;
+  margin-top:5px;
+  color:rgba(255,232,188,.60);
+  font-size:10px;
+  font-weight:900;
+}
+.buriedReplyRow{
+  position:absolute;
+  left:12px;
+  right:12px;
+  bottom:12px;
+  display:flex;
+  gap:8px;
+  padding-top:10px;
+  background:linear-gradient(180deg,rgba(22,11,4,0),#160b04 40%);
+}
+.buriedReplyRow input{
+  flex:1;
+  min-width:0;
+  min-height:48px;
+  border-radius:16px;
+  border:1px solid rgba(255,216,148,.20);
+  background:rgba(0,0,0,.30);
+  color:#fff8e7;
+  padding:0 12px;
+  font-size:14px;
+}
+.buriedReplyRow button{
+  width:94px;
+  min-height:48px;
+  margin:0;
+  border-radius:16px;
+  font-size:13px;
+  background:linear-gradient(180deg,#f2c16e,#ad6b28);
+  color:#241204;
+  box-shadow:0 4px 0 #5a3212;
+}
+@media(min-width:760px){
+  .buriedPanel{
+    left:50%;
+    right:auto;
+    width:min(680px,calc(100vw - 40px));
+    transform:translateX(-50%) translateY(calc(100% + 22px));
+  }
+  body.buried-chat-open .buriedPanel{
+    transform:translateX(-50%) translateY(0);
+  }
+}
+@media(max-width:460px){
+  .buriedRail{padding-right:118px}
+  .buriedChatButton{min-width:104px;font-size:12px;right:10px}
+}
+
+
+/* Patch 2: notification rail polish */
+.buriedRail[data-mode="notice"]{
+  animation:railNoticeDrop .18s ease-out both;
+}
+@keyframes railNoticeDrop{
+  from{opacity:0;transform:translateY(-8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.footerAvatarLink.hasMessages,
+.footerAvatarLink.hasMessages .footerAvatar{
+  box-shadow:none!important;
+  animation:none!important;
+}
+
+
+/* Patch 3: field refresh / clean soil */
+.fieldRefreshBtn{
+  position:fixed;
+  left:12px;
+  bottom:calc(58px + env(safe-area-inset-bottom));
+  z-index:75;
+  min-height:42px;
+  padding:0 13px;
+  border-radius:999px;
+  border:2px solid rgba(255,216,148,.22);
+  background:linear-gradient(180deg,#9f6b2c,#4a2910);
+  color:#fff4d3;
+  font-size:12px;
+  font-weight:1000;
+  letter-spacing:.05em;
+  box-shadow:0 5px 0 #2a1508,0 12px 26px rgba(0,0,0,.30);
+  display:none;
+}
+body.field-needs-refresh .fieldRefreshBtn{
+  display:block;
+  animation:fieldRefreshPulse .9s ease-in-out infinite alternate;
+}
+@keyframes fieldRefreshPulse{
+  from{filter:brightness(.96);transform:translateY(0)}
+  to{filter:brightness(1.12);transform:translateY(-1px)}
+}
+
+
+/* Green Notice Board — fixed editable field sparkle */
+.noticeSparkle{
+  position:absolute;
+  width:calc(100% / var(--grid) * .72);
+  height:calc(100% / var(--grid) * .72);
+  z-index:80;
+  pointer-events:auto;
+  transform:translate(18%,12%);
+  display:grid;
+  place-items:center;
+  color:#b8ffb8;
+  font-size:36px;
+  font-weight:1000;
+  text-shadow:
+    0 0 4px rgba(4,32,12,.95),
+    0 0 10px #b8ffb8,
+    0 0 18px #5cff7e,
+    0 0 28px #1aff5f;
+  filter:drop-shadow(0 0 7px rgba(35,255,95,.55));
+  animation:noticeSparklePulse 1.05s ease-in-out infinite alternate;
+}
+@keyframes noticeSparklePulse{
+  from{opacity:.86;transform:translate(18%,12%) scale(.96)}
+  to{opacity:1;transform:translate(18%,12%) scale(1.16)}
+}
+.noticeCard{
+  display:grid;
+  gap:12px;
+  padding:14px;
+  border-radius:18px;
+  background:rgba(25,90,38,.14);
+  border:2px solid rgba(54,150,72,.26);
+  white-space:normal;
+}
+.noticeBadge{
+  display:inline-flex;
+  width:max-content;
+  align-items:center;
+  gap:6px;
+  padding:6px 9px;
+  border-radius:999px;
+  background:rgba(39,128,54,.18);
+  border:1px solid rgba(39,128,54,.24);
+  color:#276f32;
+  font-size:11px;
+  font-weight:1000;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.noticeTitle{
+  font-size:24px;
+  line-height:1.05;
+  font-weight:1000;
+  color:#143d1c;
+}
+.noticeBody{
+  padding:12px 13px;
+  border-radius:16px;
+  background:rgba(255,255,255,.30);
+  border:1px solid rgba(39,128,54,.16);
+  color:#183b1f;
+  font-size:16px;
+  line-height:1.35;
+  font-weight:800;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+}
+.noticeActions{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:8px;
+}
+.noticeBtn{
+  min-height:44px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:1000;
+  background:linear-gradient(#8a5a2f,#5b351b);
+  color:#fff3cf;
+  border:1px solid rgba(255,226,154,.45);
+  box-shadow:0 5px 0 #2f1a0d, 0 10px 18px rgba(61,31,10,.28);
+  text-shadow:0 1px 0 rgba(0,0,0,.35);
+}
+
+
+/* EXTREME guided arrow visibility fix */
+.burylinkArrow{
+  position:absolute!important;
+  z-index:9999!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  pointer-events:none!important;
+  transform:translate(-8%, -120%)!important;
+}
+.burylinkArrow .arrowText{
+  display:block!important;
+  background:#ff3b30!important;
+  color:#fff!important;
+  padding:6px 7px!important;
+  border-radius:9px!important;
+  font-size:10.5px!important;
+  font-weight:1000!important;
+  line-height:1.05!important;
+  text-align:center!important;
+  box-shadow:0 4px 18px rgba(0,0,0,.35)!important;
+}
+.burylinkArrow .arrowIcon{
+  display:block!important;
+  color:#ff3b30!important;
+  font-size:34px!important;
+  line-height:1!important;
+  margin-top:-6px!important;
+}
+
+
+/* Cleaner guided arrow behavior */
+.burylinkArrow{
+  transform:translate(calc(-15% - 9px), calc(-45% - 7px))!important;
+}
+
+/* Hide helper arrows while overlays/windows are open */
+.buryOverlay.show ~ .burylinkArrow,
+body.modal-open .burylinkArrow,
+body.overlay-open .burylinkArrow{
+  display:none!important;
+}
+
+
+
+/* Soft helper marker patch: no hard red global push */
+.burylinkArrow{
+  z-index:18!important;
+  opacity:.72!important;
+  animation:none!important;
+  transform:translate(calc(-10% - 6px), calc(-40% - 4px))!important;
+}
+.burylinkArrow .arrowText{
+  background:rgba(91,55,30,.76)!important;
+  color:#ffe2aa!important;
+  padding:4px 7px!important;
+  border-radius:999px!important;
+  font-size:8.5px!important;
+  font-weight:900!important;
+  line-height:1!important;
+  letter-spacing:.02em!important;
+  text-transform:lowercase!important;
+  box-shadow:0 2px 8px rgba(0,0,0,.24)!important;
+}
+.burylinkArrow .arrowIcon{
+  color:#d79a52!important;
+  font-size:17px!important;
+  line-height:1!important;
+  margin-top:-2px!important;
+  text-shadow:0 1px 4px rgba(0,0,0,.35)!important;
+}
+
+
+
+/* Patch v2: keep opened memory actions visible */
+.buryCard{
+  display:flex!important;
+  flex-direction:column!important;
+  max-height:min(82svh,720px)!important;
+}
+.buryText{
+  flex:1 1 auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  overflow:auto!important;
+  -webkit-overflow-scrolling:touch;
+}
+.auraPickerWrap{
+  flex:0 0 auto!important;
+}
+.buryFoot{
+  flex:0 0 auto!important;
+  position:sticky!important;
+  bottom:0!important;
+  z-index:5!important;
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+  background:linear-gradient(180deg,rgba(245,207,121,.88),rgba(201,135,56,.98));
+  border-top:1px solid rgba(123,81,37,.24);
+}
+.buryFoot button{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+}
+
+/* Noticeboard flat readability patch v3: one board, no nested card-in-card feeling. */
+.buriedRail[data-mode="notice"] .buriedText,
+.buriedText.noticeDirectText{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  padding:8px 10px 18px !important;
+}
+.noticeCard{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  padding:0 !important;
+}
+.noticeBadge,.noticeTitle{
+  display:none !important;
+}
+.noticeBody,.noticeDirectBody{
+  padding:0 !important;
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  color:#17431f !important;
+  font-size:17px !important;
+  line-height:1.42 !important;
+  font-weight:850 !important;
+  white-space:pre-wrap !important;
+  overflow-wrap:anywhere !important;
+}
+.noticeActionsFlat{
+  margin-top:16px !important;
+}
+
+.noticeBtn:active{
+  transform:translateY(3px);
+  box-shadow:0 2px 0 #2f1a0d, 0 6px 12px rgba(61,31,10,.22);
+}
+.noticeActionsFlat .noticeBtn{
+  background:linear-gradient(#8a5a2f,#5b351b) !important;
+  color:#fff3cf !important;
+  border:1px solid rgba(255,226,154,.45) !important;
+  box-shadow:0 5px 0 #2f1a0d, 0 10px 18px rgba(61,31,10,.28) !important;
+}
+
+
+</style>
+  <link rel="alternate" type="application/json" href="./state.json" title="ASCII Face Routing State JSON">
+  <link rel="alternate" type="application/json" href="./route.json" title="ASCII Face Routing Route JSON">
+  <link rel="help" href="./llms.txt" title="LLMs.txt">
+  <link rel="canonical" href="https://madeby.re/games/o-vvv-o/">
+
+<!-- GitHub Pages static preservation edition: localStorage only; no PHP/database/account backend. -->
+</head>
+<body>
+<main class="shell">
+  <div class="top"><div id="glyph">o-vvv-o</div><div id="message">Bury your thoughts.</div></div>
+<div class="board-wrap" id="wrap">
+    <div id="board"></div>
+    <div id="player"></div>
+    <div id="gemLayer"></div>
+    <div id="weatherTint"></div>
+    <div id="rainLayer"></div>
+  </div>
+
+  <div class="controls">
+    <div></div><button onclick="move(0,-1)">▲</button><div></div>
+    <button onclick="move(-1,0)">◀</button><button id="digBtn" class="dig" onclick="digButton()">DIG</button><button onclick="move(1,0)">▶</button>
+    <div></div><button onclick="move(0,1)">▼</button><div></div>
+  </div>
+  <div class="hint">Keyboard: arrows/WASD move · Space digs forward · Tap adjacent tile to dig.</div>
+<div class="clipHint" id="clipHint">
+    
+    <a class="sendFieldLink" href="./bury/">🪏 BROWN LINK 🪏</a>
+    
+    
+  </div>
+
+</main>
+
+<div class="overlay" id="buryOverlay"><div class="buryCard"><div class="buryHead"><h2 id="buryTitle">Buried Memory</h2><p id="buryMeta">Recovered from the sand</p></div><div class="buryText" id="buryText"></div><div class="buryFoot"><button id="closeOverlayBtn">Close</button><button id="copyBuriedBtn">Copy</button><button class="storeBtn" id="storeChestBtn">Store 🗃️</button><button class="dangerBtn" id="deleteBuriedBtn">Delete</button></div></div></div><div class="toast" id="toast"></div><textarea id="pasteSink" aria-label="paste sink"></textarea>
+
+<script>
+
+const AS="./assets/";
+const OVVVO_STANDALONE = true;
+const IS_MOBILE = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (window.matchMedia && window.matchMedia("(pointer:coarse)").matches);
+const USER_LETTER = localStorage.getItem("ovvvo_user_letter") || (() => {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const letter = letters[Math.floor(Math.random() * letters.length)];
+  localStorage.setItem("ovvvo_user_letter", letter);
+  return letter;
+})();
+
+const AZ_PREFIX = {
+  I:"025", H:"026", J:"027", K:"028", O:"029", X:"030", Y:"031", N:"032", L:"033", Z:"034",
+  M:"035", W:"036", V:"037", A:"038", C:"039", T:"040", U:"041", B:"042", Q:"043", F:"044",
+  G:"045", P:"046", R:"047", E:"048", D:"049", S:"050"
+};
+
+const SPR={
+ sand:AS+"beach-sand-01-plain.png",
+ grassA:AS+"beach-sand-09-grass_corner.png",
+ grassB:AS+"beach-sand-15-mixed.png",
+ beachTiles:[
+   AS+"beach-sand-01-plain.png",
+   AS+"beach-sand-02-plain.png",
+   AS+"beach-sand-03-plain.png",
+   AS+"beach-sand-04-plain.png",
+   AS+"beach-sand-05-grass_edge_bottom.png",
+   AS+"beach-sand-06-grass_edge_bottom.png",
+   AS+"beach-sand-07-grass_edge_bottom.png",
+   AS+"beach-sand-08-grass_edge_bottom.png",
+   AS+"beach-sand-09-grass_corner.png",
+   AS+"beach-sand-10-grass_corner.png",
+   AS+"beach-sand-11-tufts.png",
+   AS+"beach-sand-12-tufts.png",
+   AS+"beach-sand-13-seaweed.png",
+   AS+"beach-sand-14-seaweed.png",
+   AS+"beach-sand-15-mixed.png",
+   AS+"beach-sand-16-mixed.png",
+   AS+"beach-sand-17-tufts.png",
+   AS+"beach-sand-18-plain.png",
+   AS+"beach-sand-19-grass_corner.png",
+   AS+"beach-sand-20-mixed.png"
+ ],
+
+ small:AS+"hole-small.png",
+ big:AS+"hole-big.png",
+ smallFill:[AS+"small_hole_fill_16bit_1.png",AS+"small_hole_fill_16bit_2.png",AS+"small_hole_fill_16bit_3.png",AS+"small_hole_fill_16bit_4.png",AS+"small_hole_fill_16bit_5.png"],
+ smallDrain:[AS+"small_hole_drain_16bit_1.png",AS+"small_hole_drain_16bit_2.png",AS+"small_hole_drain_16bit_3.png",AS+"small_hole_drain_16bit_4.png",AS+"small_hole_drain_16bit_5.png"],
+ bigFill:[AS+"big_hole_fill_16bit_1.png",AS+"big_hole_fill_16bit_2.png",AS+"big_hole_fill_16bit_3.png",AS+"big_hole_fill_16bit_4.png",AS+"big_hole_fill_16bit_5.png"],
+ bigDrain:[AS+"big_hole_drain_16bit_1.png",AS+"big_hole_drain_16bit_2.png",AS+"big_hole_drain_16bit_3.png",AS+"big_hole_drain_16bit_4.png",AS+"big_hole_drain_16bit_5.png"],
+
+ frontStand:AS+"015_metal_digger_front_alpha_64.png",
+ front1:AS+"008_walk_front_1.png",
+ front2:AS+"010_walk_front_2.png",
+
+ backStand:AS+(AZ_PREFIX[USER_LETTER]||"038")+"_"+USER_LETTER+".png",
+ back1:AS+(AZ_PREFIX[USER_LETTER]||"038")+"_"+USER_LETTER+".png",
+ back2:AS+(AZ_PREFIX[USER_LETTER]||"038")+"_"+USER_LETTER+".png",
+
+ leftStand:AS+"017_walking_left_1.png",
+ left1:AS+"017_walking_left_1.png",
+ left2:AS+"021_walking_left_2.png",
+
+ rightStand:AS+"006_walking_right_1.png",
+ right1:AS+"006_walking_right_1.png",
+ right2:AS+"009_walking_right_2.png",
+
+ digFront:AS+"018_dig_front.png",
+ digBack:AS+"018_dig_front.png",
+ digLeftSmall:AS+"007_dig_small_hole_left.png",
+ digLeftBig:AS+"016_dig_big_hole_left.png",
+ digRightSmall:AS+"000_dig_small_hole_right.png",
+ digRightBig:AS+"002_dig_big_hole_right.png",
+ digLeft:AS+"007_dig_small_hole_left.png",
+ digRight:AS+"000_dig_small_hole_right.png",
+
+ retrieve1:AS+"019_retrieve_gem_on_tile_frame_1.png",
+ retrieve2:AS+"023_retrieve_gem_on_tile_frame_2.png",
+ retrieve3:AS+"022_retrieve_gem_on_tile_frame_3.png",
+ retrieveLeft1:AS+"019_retrieve_gem_on_tile_frame_1.png",
+ retrieveLeft2:AS+"023_retrieve_gem_on_tile_frame_2.png",
+ retrieveLeft3:AS+"022_retrieve_gem_on_tile_frame_3.png",
+ retrieveRight1:AS+"019_retrieve_gem_on_tile_frame_1.png",
+ retrieveRight2:AS+"023_retrieve_gem_on_tile_frame_2.png",
+ retrieveRight3:AS+"022_retrieve_gem_on_tile_frame_3.png",
+
+ carryFrontStand:AS+"003_front_standing_with_gem_closedvisor.png",
+ carryFront1:AS+"013_walking_front_with_gem_closedvisor_1.png",
+ carryFront2:AS+"014_walking_front_with_gem_closedvisor_2.png",
+ carryLeft:AS+"001_walking_left_with_gem_closedvisor.png",
+ carryRight:AS+"020_walking_right_with_gem_closedvisor.png",
+
+ sleep1:AS+"005_sleeping1.png",
+ sleep2:AS+"004_sleeping2.png",
+
+ stressFront:AS+"011_panic_front.png",
+ stressBack:AS+"011_panic_front.png",
+ stressLeft:AS+"024_panic_left.png",
+ stressRight:AS+"012_panic_right.png",
+
+ plant:AS+"plant_alpha_64_darker.png",
+
+ rain1:AS+"rain-soft-alpha-1.png",
+ rain2:AS+"rain-soft-alpha-2.png",
+ rain3:AS+"rain-soft-alpha-3.png",
+ rain4:AS+"rain-soft-alpha-4.png"
+};
+
+const BIOMES={
+  beach:[
+    "beach-sand-01-plain.png","beach-sand-01-plain.png","beach-sand-01-plain.png",
+    "beach-sand-02-plain.png","beach-sand-02-plain.png","beach-sand-02-plain.png",
+    "beach-sand-03-plain.png","beach-sand-03-plain.png","beach-sand-03-plain.png",
+    "beach-sand-04-plain.png","beach-sand-04-plain.png","beach-sand-04-plain.png",
+    "beach-sand-18-plain.png","beach-sand-18-plain.png","beach-sand-18-plain.png",
+    "beach-sand-15-mixed.png","beach-sand-16-mixed.png","beach-sand-20-mixed.png",
+    "beach-sand-05-grass_edge_bottom.png","beach-sand-06-grass_edge_bottom.png",
+    "beach-sand-07-grass_edge_bottom.png","beach-sand-08-grass_edge_bottom.png",
+    "beach-sand-09-grass_corner.png","beach-sand-10-grass_corner.png",
+    "beach-sand-11-tufts.png","beach-sand-12-tufts.png",
+    "beach-sand-13-seaweed.png","beach-sand-14-seaweed.png",
+    "beach-sand-17-tufts.png","beach-sand-19-grass_corner.png"
+  ],
+  forest:[
+    "forest-01.png","forest-01.png",
+    "forest-02.png","forest-02.png",
+    "forest-03.png","forest-04.png","forest-05.png"
+  ],
+  grassland:[
+    "grasland-01.png","grasland-01.png",
+    "grasland-02.png","grasland-02.png",
+    "grasland-03.png","grasland-04.png","grasland-05.png"
+  ],
+  shortGrass:[
+    "kort-gras-01.png","kort-gras-01.png",
+    "kort-gras-02.png","kort-gras-02.png",
+    "kort-gras-03.png","kort-gras-04.png","kort-gras-05.png"
+  ],
+  tallGrass:[
+    "hoog-gras-01.png","hoog-gras-01.png",
+    "hoog-gras-02.png","hoog-gras-02.png",
+    "hoog-gras-03.png","hoog-gras-04.png","hoog-gras-05.png"
+  ],
+  farmland:[
+    "akkergrond-01.png","akkergrond-01.png",
+    "akkergrond-02.png","akkergrond-02.png",
+    "akkergrond-03.png","akkergrond-04.png","akkergrond-05.png"
+  ],
+  moonBeach:[
+    "maanstrand-01.png","maanstrand-01.png",
+    "maanstrand-02.png","maanstrand-02.png",
+    "maanstrand-03.png","maanstrand-04.png","maanstrand-05.png"
+  ],
+  moonLandscape:[
+    "maanlandschap-01.png","maanlandschap-01.png",
+    "maanlandschap-02.png","maanlandschap-02.png",
+    "maanlandschap-03.png","maanlandschap-04.png","maanlandschap-05.png",
+    "maanlandschap-06.png","maanlandschap-07.png","maanlandschap-08.png","maanlandschap-09.png","maanlandschap-10.png"
+  ],
+  starLandscape:[
+    "sterrenlandschap-01.png","sterrenlandschap-01.png",
+    "sterrenlandschap-02.png","sterrenlandschap-02.png",
+    "sterrenlandschap-03.png","sterrenlandschap-04.png","sterrenlandschap-05.png",
+    "sterrenlandschap-06.png","sterrenlandschap-07.png","sterrenlandschap-08.png","sterrenlandschap-09.png","sterrenlandschap-10.png"
+  ],
+  candy:[
+    "suikerspin-01.png","suikerspin-01.png",
+    "suikerspin-02.png","suikerspin-02.png",
+    "suikerspin-03.png","suikerspin-04.png","suikerspin-05.png"
+  ],
+  desert:[
+    "woestijn-01.png","woestijn-01.png",
+    "woestijn-02.png","woestijn-02.png",
+    "woestijn-03.png","woestijn-04.png","woestijn-05.png"
+  ],
+  orangeDesert:[
+    "oranje-woestijnzand-01.png","oranje-woestijnzand-01.png",
+    "oranje-woestijnzand-02.png","oranje-woestijnzand-02.png",
+    "oranje-woestijnzand-03.png","oranje-woestijnzand-04.png","oranje-woestijnzand-05.png"
+  ],
+  redDesert:[
+    "rood-woestijnzand-01.png","rood-woestijnzand-01.png",
+    "rood-woestijnzand-02.png","rood-woestijnzand-02.png",
+    "rood-woestijnzand-03.png","rood-woestijnzand-04.png","rood-woestijnzand-05.png"
+  ],
+  yellowDesert:[
+    "geel-woestijnzand-01.png","geel-woestijnzand-01.png",
+    "geel-woestijnzand-02.png","geel-woestijnzand-02.png",
+    "geel-woestijnzand-03.png","geel-woestijnzand-04.png","geel-woestijnzand-05.png"
+  ]
+};
+
+const BIOME_LABELS={
+  beach:"Beach field",
+  forest:"Forest field",
+  grassland:"Grassland field",
+  shortGrass:"Short grass field",
+  tallGrass:"Tall grass field",
+  farmland:"Farmland field",
+  moonBeach:"Moon beach",
+  moonLandscape:"Moon landscape",
+  starLandscape:"Star landscape",
+  candy:"Cotton-candy field",
+  desert:"Desert field",
+  orangeDesert:"Orange desert",
+  redDesert:"Red desert",
+  yellowDesert:"Yellow desert"
+};
+
+const BIOME_THEMES={
+  beach:{top:"#f3dfac", mid:"#c49a58", bottom:"#7a4d24", border:"#5a3a1f", text:"#271505", line:"rgba(88,55,28,.34)", danger:"#d98262", dangerShadow:"#743421"},
+  forest:{top:"#d6d3a0", mid:"#8a7b48", bottom:"#4f321d", border:"#3a2819", text:"#211407", line:"rgba(70,45,25,.36)", danger:"#b8644f", dangerShadow:"#623024"},
+  grassland:{top:"#dfe4a7", mid:"#9b8e4f", bottom:"#60411f", border:"#45301b", text:"#201406", line:"rgba(69,48,27,.35)", danger:"#c97055", dangerShadow:"#6d3525"},
+  shortGrass:{top:"#e1e8b0", mid:"#a28e53", bottom:"#62411f", border:"#46311b", text:"#201406", line:"rgba(70,49,27,.35)", danger:"#c97055", dangerShadow:"#6d3525"},
+  tallGrass:{top:"#d1d99c", mid:"#847447", bottom:"#49321e", border:"#342518", text:"#1e1307", line:"rgba(52,37,24,.38)", danger:"#b96050", dangerShadow:"#653027"},
+  farmland:{top:"#e5c999", mid:"#a07042", bottom:"#65401f", border:"#4b2f18", text:"#241304", line:"rgba(75,47,24,.34)", danger:"#d88360", dangerShadow:"#7a3a25"},
+  moonBeach:{top:"#d2cec0", mid:"#96886d", bottom:"#5d4126", border:"#44311f", text:"#201408", line:"rgba(68,49,31,.35)", danger:"#b86d65", dangerShadow:"#633734"},
+  moonLandscape:{top:"#d6d5cc", mid:"#8e8777", bottom:"#4f3d2a", border:"#3d3124", text:"#1f150a", line:"rgba(61,49,36,.36)", danger:"#aa6d62", dangerShadow:"#5d352e"},
+  starLandscape:{top:"#b9b3d6", mid:"#675b87", bottom:"#3b261f", border:"#2c221c", text:"#170d08", line:"rgba(44,34,28,.38)", danger:"#b76a76", dangerShadow:"#613039"},
+  candy:{top:"#f3c9da", mid:"#bd8e86", bottom:"#704325", border:"#56311f", text:"#251006", line:"rgba(86,49,31,.34)", danger:"#df817a", dangerShadow:"#7b3732"},
+  desert:{top:"#f1d890", mid:"#c59b4f", bottom:"#8a5d26", border:"#5f421f", text:"#271605", line:"rgba(95,66,31,.34)", danger:"#e08653", dangerShadow:"#824226"},
+  orangeDesert:{top:"#ffd18f", mid:"#d78742", bottom:"#8f421f", border:"#6b321a", text:"#2b1204", line:"rgba(107,50,26,.34)", danger:"#e86f4d", dangerShadow:"#843221"},
+  redDesert:{top:"#d99a78", mid:"#a9543b", bottom:"#64281f", border:"#461d17", text:"#230907", line:"rgba(70,29,23,.38)", danger:"#d86659", dangerShadow:"#6d241f"},
+  yellowDesert:{top:"#ffe79a", mid:"#d7b653", bottom:"#94742b", border:"#6a5522", text:"#2c2106", line:"rgba(106,85,34,.34)", danger:"#e58c56", dangerShadow:"#804728"}
+};
+
+function applyBiomeTheme(key){
+  // Opened memory boards should stay cheerful and readable on every biome.
+  // The field can be dark/forest/night; the recovered note stays warm like a bright treasure card.
+  const root=document.documentElement;
+  root.style.setProperty("--card-top","#fff0b5");
+  root.style.setProperty("--card-mid","#f4c66e");
+  root.style.setProperty("--card-bottom","#c27a2e");
+  root.style.setProperty("--card-border","#7b5125");
+  root.style.setProperty("--card-text","#2a1403");
+  root.style.setProperty("--card-line","rgba(123,81,37,.34)");
+  root.style.setProperty("--danger","#f08a72");
+  root.style.setProperty("--danger-shadow","#923b2e");
+}
+
+const BIOME_KEYS=Object.keys(BIOMES);
+function todayKey(){
+  const d=new Date();
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+function chooseDailyBiome(){
+  const today=todayKey();
+  const savedDate=localStorage.getItem("ovvvo_biome_date");
+  const savedBiome=localStorage.getItem("ovvvo_current_biome");
+
+  if(savedDate===today && savedBiome && BIOMES[savedBiome]){
+    return savedBiome;
+  }
+
+  const key=BIOME_KEYS[Math.floor(Math.random()*BIOME_KEYS.length)];
+  localStorage.setItem("ovvvo_biome_date", today);
+  localStorage.setItem("ovvvo_current_biome", key);
+  return key;
+}
+const currentBiome=chooseDailyBiome();
+const CURRENT_TILE_POOL=(BIOMES[currentBiome]||BIOMES.beach).map(name=>AS+name);
+
+const N=7, board=document.getElementById("board"), playerEl=document.getElementById("player"), msg=document.getElementById("message"), glyph=document.getElementById("glyph");
+const digBtn=document.getElementById("digBtn");
+const rainLayer=document.getElementById("rainLayer");
+const gemLayer=document.getElementById("gemLayer"), toastEl=document.getElementById("toast");
+const buryOverlay=document.getElementById("buryOverlay"), buryTitle=document.getElementById("buryTitle"), buryMeta=document.getElementById("buryMeta"), buryText=document.getElementById("buryText");
+let tiles=[], p={x:3,y:3,dir:"front"}, walkTimer=null, idleTimer=null;
+let carriedGems=[], burials=[], activeBurialId=null, activeChestItemIndex=null, trailPositions=[];
+let clipboardBuffer="", clipboardBufferAt=0, lastPasteText="";
+let pendingBuryTile=null, buryBubbleEl=null;
+let idleSleepTimer=null, sleepAnimTimer=null, stressTimer=null, isSleeping=false, isStressed=false;
+let isRaining=false, rainTimer=null, rainAudioTimer=null, rainGrowTimer=null;
+let isActionLocked=false, actionLockTimer=null;
+let rainRadius=0, rainLocked=false;
+let autoRainStopTimer=null, autoRainStartTimer=null, weatherLoopTimer=null, glyphPressTimer=null;
+let audioCtx=null;
+let holeWaterTimer=null;
+let currentUser=null, serverMode=false, serverSyncDone=false, notificationCount=0;
+const SERVER_LOCAL_KEY="loadmysave_bury_artifacts";
+const CHEST_KEY="ovvvo_chest_v1";
+let chestState=null;
+let chestServerLoaded=false;
+let chestSaveTimer=null;
+const OVVVO_E2EE_ENABLED=false;
+const OVVVO_E2EE_MASTER_KEY_STORAGE="ovvvo_e2ee_master_key_v1";
+
+
+const FIELD_STATE_KEY="ovvvo_persistent_field_state_v1";
+function getFieldSnapshot(){
+  return {
+    version:1,
+    biome:currentBiome,
+    player:{x:p.x,y:p.y,dir:p.dir},
+    tiles:tiles.map(t=>({
+      x:+t.dataset.x,
+      y:+t.dataset.y,
+      base:t.dataset.base || "tile0",
+      state:t.dataset.state || "ground",
+      water:t.dataset.water || "0",
+      waterMode:t.dataset.waterMode || ""
+    }))
+  };
+}
+function saveFieldState(){
+  if(!tiles || !tiles.length) return;
+  try{localStorage.setItem(FIELD_STATE_KEY, JSON.stringify(getFieldSnapshot()))}
+  catch(e){}
+}
+function loadFieldState(){
+  try{
+    const state=JSON.parse(localStorage.getItem(FIELD_STATE_KEY)||"null");
+    if(!state || !Array.isArray(state.tiles)) return null;
+    return state;
+  }catch(e){return null}
+}
+function applyFieldState(state){
+  if(!state || !Array.isArray(state.tiles)) return false;
+  const byPos=new Map(state.tiles.map(t=>[`${t.x},${t.y}`,t]));
+  tiles.forEach(t=>{
+    const saved=byPos.get(`${t.dataset.x},${t.dataset.y}`);
+    if(!saved) return;
+    t.dataset.base=saved.base || t.dataset.base || "tile0";
+    t.dataset.state=saved.state || "ground";
+    t.dataset.water=saved.water || "0";
+    t.dataset.waterMode=saved.waterMode || "";
+    paint(t);
+  });
+  if(state.player && Number.isFinite(+state.player.x) && Number.isFinite(+state.player.y)){
+    p.x=Math.max(0,Math.min(N-1,+state.player.x));
+    p.y=Math.max(0,Math.min(N-1,+state.player.y));
+    p.dir=state.player.dir || p.dir || "front";
+  }
+  return true;
+}
+
+
+function preloadActionSprites(){
+  const preload=(value)=>{
+    if(Array.isArray(value)){
+      value.forEach(preload);
+      return;
+    }
+    if(typeof value === "string" && value.endsWith(".png")){
+      const img=new Image();
+      img.src=value;
+    }
+  };
+  Object.values(SPR).forEach(preload);
+  CURRENT_TILE_POOL.forEach(preload);
+}
+
+function ensureAudio(){
+  try{
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    if(audioCtx.state === "suspended") audioCtx.resume();
+  }catch(e){}
+}
+
+function noiseBurst(duration=.12, filterFreq=850, gainValue=.42){
+  ensureAudio();
+  if(!audioCtx) return;
+
+  const length = Math.max(1, Math.floor(audioCtx.sampleRate * duration));
+  const buffer = audioCtx.createBuffer(1, length, audioCtx.sampleRate);
+  const data = buffer.getChannelData(0);
+
+  for(let i=0;i<length;i++){
+    const fade = 1 - (i / length);
+    data[i] = (Math.random() * 2 - 1) * fade;
+  }
+
+  const source = audioCtx.createBufferSource();
+  const filter = audioCtx.createBiquadFilter();
+  const gain = audioCtx.createGain();
+
+  filter.type = "lowpass";
+  filter.frequency.setValueAtTime(filterFreq, audioCtx.currentTime);
+
+  gain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(gainValue, audioCtx.currentTime + .01);
+  gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+
+  source.buffer = buffer;
+  source.connect(filter).connect(gain).connect(audioCtx.destination);
+  source.start(audioCtx.currentTime);
+  source.stop(audioCtx.currentTime + duration + .03);
+}
+
+function tone(freq=170, duration=.06, type="triangle", gainValue=.08, slideTo=null){
+  ensureAudio();
+  if(!audioCtx) return;
+
+  const now = audioCtx.currentTime;
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+
+  osc.type = type;
+  osc.frequency.setValueAtTime(freq, now);
+  if(slideTo) osc.frequency.exponentialRampToValueAtTime(slideTo, now + duration);
+
+  gain.gain.setValueAtTime(0.0001, now);
+  gain.gain.exponentialRampToValueAtTime(gainValue, now + .008);
+  gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+  osc.connect(gain).connect(audioCtx.destination);
+  osc.start(now);
+  osc.stop(now + duration + .02);
+}
+
+function digSound(stage="small"){
+  ensureAudio();
+
+  if(stage === "small"){
+    noiseBurst(.105, 1050, .36);
+    tone(210, .045, "triangle", .045, 155);
+  }else if(stage === "big"){
+    noiseBurst(.16, 680, .48);
+    tone(105, .075, "sawtooth", .06, 70);
+    setTimeout(()=>noiseBurst(.07, 520, .22), 55);
+  }else{
+    noiseBurst(.08, 900, .24);
+  }
+}
+
+function rewardSound(){
+  ensureAudio();
+  tone(520, .06, "sine", .055, 760);
+  setTimeout(()=>tone(860, .07, "sine", .045, 1120), 75);
+}
+
+
+let rainNoiseNode=null;
+let rainGainNode=null;
+
+function startRainNoise(){
+  ensureAudio();
+  if(!audioCtx || rainNoiseNode) return;
+
+  const bufferSize = 2 * audioCtx.sampleRate;
+  const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+  const output = noiseBuffer.getChannelData(0);
+
+  let lastOut = 0;
+  for(let i=0;i<bufferSize;i++){
+    const white = Math.random() * 2 - 1;
+    output[i] = (lastOut + (0.02 * white)) / 1.02;
+    lastOut = output[i];
+    output[i] *= 3.2;
+  }
+
+  const whiteNoise = audioCtx.createBufferSource();
+  whiteNoise.buffer = noiseBuffer;
+  whiteNoise.loop = true;
+
+  const filter = audioCtx.createBiquadFilter();
+  filter.type = "lowpass";
+  filter.frequency.value = 1400;
+
+  rainGainNode = audioCtx.createGain();
+  rainGainNode.gain.value = 0.028;
+
+  whiteNoise.connect(filter);
+  filter.connect(rainGainNode);
+  rainGainNode.connect(audioCtx.destination);
+
+  whiteNoise.start(0);
+  rainNoiseNode = whiteNoise;
+}
+
+function stopRainNoise(){
+  if(rainNoiseNode){
+    try{ rainNoiseNode.stop(); }catch(e){}
+    rainNoiseNode.disconnect();
+    rainNoiseNode = null;
+  }
+  if(rainGainNode){
+    rainGainNode.disconnect();
+    rainGainNode = null;
+  }
+}
+
+function setRainRadius(value){
+  rainRadius = value;
+  document.documentElement.style.setProperty("--rain-radius", rainRadius + "%");
+}
+
+function setRainCenter(x,y){
+  document.documentElement.style.setProperty("--rain-x", x + "%");
+  document.documentElement.style.setProperty("--rain-y", y + "%");
+}
+
+function randomRainFrontStart(){
+  // Rain front may start outside the field, like weather drifting in.
+  const side = Math.floor(Math.random() * 8);
+  if(side === 0) return {x:-22, y:Math.random()*100};       // left
+  if(side === 1) return {x:122, y:Math.random()*100};       // right
+  if(side === 2) return {x:Math.random()*100, y:-22};       // top
+  if(side === 3) return {x:Math.random()*100, y:122};       // bottom
+  if(side === 4) return {x:-18, y:-18};                     // top-left
+  if(side === 5) return {x:118, y:-18};                     // top-right
+  if(side === 6) return {x:-18, y:118};                     // bottom-left
+  return {x:118, y:118};                                    // bottom-right
+}
+
+function beginRainRadiusGrowth(){
+  clearInterval(rainGrowTimer);
+  rainLocked=false;
+  document.body.classList.remove("rainLocked");
+
+  const start = randomRainFrontStart();
+  setRainCenter(start.x, start.y);
+  setRainRadius(10);
+
+  rainGrowTimer=setInterval(()=>{
+    if(!isRaining) return;
+    const next = rainRadius + 4.2;
+    setRainRadius(next);
+
+    if(next >= 135){
+      clearInterval(rainGrowTimer);
+      rainGrowTimer=null;
+      rainLocked=true;
+      document.body.classList.add("rainLocked");
+      setRainRadius(180);
+      animateHoleWater(true);
+      say("Wet.");
+      face("o-vv-o");
+    }
+  },520);
+}
+
+function startRain(){
+  clearTimeout(weatherLoopTimer);
+  clearTimeout(autoRainStartTimer);
+  if(isRaining) return;
+  isRaining=true;
+  document.body.classList.add("raining");
+  say("Rain starts falling.");
+  face("o-vv-o");
+  rainStressReaction();
+
+  const frames=[SPR.rain1,SPR.rain2,SPR.rain3,SPR.rain4];
+  let i=0;
+  rainLayer.style.backgroundImage=`url("${frames[0]}")`;
+  rainLayer.style.backgroundSize="cover";
+  rainTimer=setInterval(()=>{
+    rainLayer.style.backgroundImage=`url("${frames[i%frames.length]}")`;
+    i++;
+  },90);
+
+  startRainNoise();
+  beginRainRadiusGrowth();
+
+  clearTimeout(autoRainStopTimer);
+  const duration = 45000 + Math.random() * 45000; // 45-90 sec
+  autoRainStopTimer = setTimeout(()=>{
+    if(isRaining) stopRain();
+  }, duration);
+}
+
+function stopRain(){
+  if(!isRaining) return;
+  isRaining=false;
+  document.body.classList.remove("raining");
+  clearInterval(rainTimer);
+  clearInterval(rainAudioTimer);
+  clearInterval(rainGrowTimer);
+  clearTimeout(autoRainStopTimer);
+  stopRainNoise();
+  rainTimer=null;
+  rainAudioTimer=null;
+  rainGrowTimer=null;
+  rainLocked=false;
+  document.body.classList.remove("rainLocked");
+  setRainRadius(0);
+  if(tiles.some(t => (t.dataset.state==="small" || t.dataset.state==="big") && parseInt(t.dataset.water||"0",10)>0)){
+    animateHoleWater(false);
+  }
+  say("Dry.");
+  face("o-vvv-o");
+  scheduleNextWeather();
+}
+
+function toggleRain(){
+  ensureAudio();
+  if(isRaining) stopRain();
+  else startRain();
+}
+
+
+
+function wakeBurrower(){
+  clearTimeout(idleSleepTimer);
+  clearInterval(sleepAnimTimer);
+  sleepAnimTimer=null;
+  if(!isStressed) playerEl.classList.remove("stressShake");
+
+  if(isSleeping){
+    isSleeping=false;
+    say("Awake.");
+    face("o-vvv-o");
+  }
+
+  drawPlayer();
+  scheduleSleep();
+}
+
+function scheduleSleep(){
+  clearTimeout(idleSleepTimer);
+  idleSleepTimer=setTimeout(startSleep, 8500);
+}
+
+function startSleep(){
+  if(isSleeping || isStressed) return;
+  isSleeping=true;
+  say("Zzz...");
+  face("o---o");
+
+  let i=0;
+  const frames=[SPR.sleep1, SPR.sleep2];
+  playerEl.style.backgroundImage=`url("${frames[0]}")`;
+
+  clearInterval(sleepAnimTimer);
+  sleepAnimTimer=setInterval(()=>{
+    playerEl.style.backgroundImage=`url("${frames[i%2]}")`;
+    i++;
+  }, 650);
+}
+
+
+function toast(t){
+  toastEl.textContent=t;
+  toastEl.classList.add("show");
+  setTimeout(()=>toastEl.classList.remove("show"),1300);
+}
+async function copyText(text){
+  try{await navigator.clipboard.writeText(text)}
+  catch(e){const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove()}
+}
+function plainTextFromClipboardHtml(html){
+  html = String(html || "");
+  if(!html.trim()) return "";
+  try{
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    return (doc.body && doc.body.innerText ? doc.body.innerText : html).trim();
+  }catch(e){
+    return html.replace(/<br\s*\/?\>/gi,"\n").replace(/<[^>]+>/g," ").replace(/&nbsp;/g," ").trim();
+  }
+}
+function normalizeClipboardCandidate(value){
+  return String(value || "")
+    .replace(/\u0000/g,"")
+    .replace(/\r\n/g,"\n")
+    .trim();
+}
+async function readText(){
+  let best = "";
+
+  // Robust iOS/GPT/Brownlink clipboard read:
+  // Some copy buttons expose URL lists or HTML before plain text.
+  // We check text/plain, text/uri-list, text/html, then normal readText().
+  try{
+    if(navigator.clipboard && navigator.clipboard.read){
+      const items = await navigator.clipboard.read();
+      for(const item of items){
+        const types = item.types || [];
+        if(types.includes("text/plain")){
+          const blob = await item.getType("text/plain");
+          const txt = normalizeClipboardCandidate(await blob.text());
+          if(txt) best = txt;
+        }
+        if(!best && types.includes("text/uri-list")){
+          const blob = await item.getType("text/uri-list");
+          const txt = normalizeClipboardCandidate(await blob.text());
+          if(txt) best = txt.split("\n").filter(line=>line.trim() && !line.trim().startsWith("#")).join("\n").trim();
+        }
+        if(!best && types.includes("text/html")){
+          const blob = await item.getType("text/html");
+          const txt = normalizeClipboardCandidate(plainTextFromClipboardHtml(await blob.text()));
+          if(txt) best = txt;
+        }
+      }
+    }
+  }catch(e){}
+
+  try{
+    const fresh = normalizeClipboardCandidate(await navigator.clipboard.readText());
+    if(fresh) best = fresh;
+  }catch(e){}
+
+  if(best){
+    clipboardBuffer = best;
+    clipboardBufferAt = Date.now();
+    return clipboardBuffer;
+  }
+
+  // Paste-event fallback only. Long enough to dig a hole after copying,
+  // short enough to avoid the old stale-sparkle bug.
+  if(clipboardBuffer && Date.now() - (clipboardBufferAt || 0) < 30000){
+    return clipboardBuffer;
+  }
+
+  return "";
+}
+
+function ovvvoChatIsTyping(){
+  const active = document.activeElement;
+  if(!active) return false;
+
+  if(
+    active.tagName === "INPUT" ||
+    active.tagName === "TEXTAREA" ||
+    active.tagName === "SELECT" ||
+    active.isContentEditable
+  ){
+    return true;
+  }
+
+  if(active.closest && active.closest(".buriedPanel")){
+    return true;
+  }
+
+  return document.body.classList.contains("buried-chat-open");
+}
+
+function focusPasteSink(e){
+  if(IS_MOBILE) return;
+  if(e && e.target && e.target.closest && e.target.closest(".buriedPanel, .buriedRail, .buriedChatButton")) return;
+  if(ovvvoChatIsTyping()) return;
+  const sink=document.getElementById("pasteSink");
+  if(!sink) return;
+  try{sink.focus({preventScroll:true});}catch(e){try{sink.focus();}catch(_){} }
+}
+function acceptPastedText(raw){
+  raw=(raw||"").trim();
+  if(!raw) return false;
+  if(raw===lastPasteText && carriedGems.some(g=>((g.fullText||g.artifact?.fullText||"").trim()===raw))){
+    say("Loaded.");
+    return true;
+  }
+  clipboardBuffer=raw;
+  clipboardBufferAt=Date.now();
+  lastPasteText=raw;
+  addCarriedGem(makeClipboardArtifact(raw));
+  say("Loaded.");
+  toast("Loaded");
+  return true;
+}
+function buryContract(){return "";}
+const MAX_CARRIED_GEMS=5;
+function addCarriedGem(obj){
+  carriedGems.unshift(obj);
+  carriedGems=carriedGems.slice(0,MAX_CARRIED_GEMS);
+  document.body.classList.toggle("carrying", carriedGems.length>0);
+  seedTrailPositions();
+  saveCarry();
+  renderGemTrail();
+  say("Loaded.");
+  face("0-vvv-0");
+  rewardSound();
+}
+function setCarriedMemory(obj){ addCarriedGem(obj); }
+function clearFirstCarriedGem(){
+  carriedGems.shift();
+  document.body.classList.toggle("carrying", carriedGems.length>0);
+  saveCarry();
+  renderGemTrail();
+}
+function seedTrailPositions(){
+  const base={x:p.x,y:p.y};
+  while(trailPositions.length<MAX_CARRIED_GEMS+2) trailPositions.push({...base});
+}
+function stepTrail(oldX,oldY){
+  trailPositions.unshift({x:oldX,y:oldY});
+  trailPositions=trailPositions.slice(0,MAX_CARRIED_GEMS+2);
+  renderGemTrail();
+}
+function updateGem(){ renderGemTrail(); }
+function renderGemTrail(){
+  if(!gemLayer) return;
+  gemLayer.innerHTML="";
+  carriedGems.forEach((gem,i)=>{
+    const pos=trailPositions[i+1] || trailPositions[i] || {x:p.x,y:p.y};
+    const el=document.createElement("div");
+    el.className="gemTrail";
+    el.style.left=(pos.x*100/N)+"%";
+    el.style.top=(pos.y*100/N)+"%";
+    el.title=gem.title||"Memory gem";
+    gemLayer.appendChild(el);
+  });
+}
+function makeClipboardArtifact(raw){
+  raw=(raw||"").trim();
+  const firstLine = raw.split(/\n+/).map(s=>s.trim()).find(Boolean) || "Clipboard Memory";
+  const title = firstLine.length > 42 ? firstLine.slice(0,39).trim()+"..." : firstLine;
+  return {
+    format:"loadmysave-bury-plain-1.0",
+    title:title || "Clipboard Memory",
+    kind:"clipboard",
+    summary:"",
+    fullText:raw,
+    tags:[],
+    aura:"none",
+    auraColor:"none",
+    createdAt:new Date().toISOString().slice(0,10)
+  };
+}
+
+const AURA_OPTIONS = ["none","green","blue","purple","gold","red","pink","white"];
+const AURA_LABELS = {
+  none:"Default · classic blue sparkle",
+  green:"Mint green · ideas / notes",
+  blue:"Deep blue · links / research",
+  purple:"Purple · creative",
+  gold:"Gold · important",
+  red:"Red · urgent",
+  pink:"Pink · personal",
+  white:"White · clear / finished"
+};
+function cleanAura(value){
+  const v=String(value||"none").toLowerCase().trim();
+  return AURA_OPTIONS.includes(v) ? v : "none";
+}
+function getArtifactAura(a){
+  // Aura is a visual/semantic layer and must survive decrypt, rain repaint,
+  // chest-found field cleanup, and server/local re-render cycles.
+  // Prefer explicit runtime override first, then all known persisted column names.
+  return cleanAura(a?.auraOverride || a?.aura || a?.auraColor || a?.aura_color || a?.sparkleAura || "none");
+}
+function setArtifactAura(a,aura){
+  if(!a) return a;
+  const v=cleanAura(aura);
+  a.aura=v;
+  a.auraColor=v;
+  a.auraOverride=v;
+  a.aura_color=v;
+  return a;
+}
+
+function auraVisualSpec(aura){
+  const v=cleanAura(aura);
+  const specs={
+    green:{color:"#64f0b2",shadow:"0 0 4px rgba(3,28,18,.92),0 0 10px #64f0b2,0 0 18px #2adf91,0 0 28px #10a878",filter:"drop-shadow(0 0 8px rgba(42,223,145,.78))"},
+    blue:{color:"#63b8ff",shadow:"0 0 4px rgba(4,20,42,.95),0 0 10px #63b8ff,0 0 18px #278cff,0 0 30px #006dff",filter:"drop-shadow(0 0 8px rgba(40,130,255,.82))"},
+    purple:{color:"#e7c6ff",shadow:"0 0 4px rgba(30,8,48,.9),0 0 10px #e7c6ff,0 0 18px #c27cff,0 0 28px #8d4eff",filter:"drop-shadow(0 0 7px rgba(170,90,255,.75))"},
+    gold:{color:"#fff0a8",shadow:"0 0 4px rgba(44,28,4,.9),0 0 10px #fff0a8,0 0 18px #ffd66a,0 0 28px #ffa93a",filter:"drop-shadow(0 0 7px rgba(255,194,80,.75))"},
+    red:{color:"#ffc0b8",shadow:"0 0 4px rgba(44,8,4,.9),0 0 10px #ffc0b8,0 0 18px #ff7a70,0 0 28px #ff4338",filter:"drop-shadow(0 0 7px rgba(255,80,70,.75))"},
+    pink:{color:"#ffd0ee",shadow:"0 0 4px rgba(44,4,28,.9),0 0 10px #ffd0ee,0 0 18px #ff86ca,0 0 28px #ff4ba8",filter:"drop-shadow(0 0 7px rgba(255,90,180,.75))"},
+    white:{color:"#fffdf2",shadow:"0 0 4px rgba(20,20,18,.9),0 0 10px #fffdf2,0 0 18px #ffffff,0 0 28px #d8f3ff",filter:"drop-shadow(0 0 7px rgba(255,255,255,.75))"}
+  };
+  return specs[v] || null;
+}
+function applyAuraVisual(el,aura,baseFilter=""){
+  const v=cleanAura(aura);
+  el.dataset.aura=v;
+  AURA_OPTIONS.forEach(opt=>el.classList.remove("aura-"+opt));
+  if(v!=="none") el.classList.add("aura-"+v);
+  const spec=auraVisualSpec(v);
+  if(spec){
+    el.style.color=spec.color;
+    el.style.textShadow=spec.shadow;
+    el.style.filter=(baseFilter ? baseFilter+" " : "")+spec.filter;
+  }else{
+    // Default/no-aura sparkles are still blue in the o-vvv-o grammar.
+    // This prevents chest inventory items from falling back to black text.
+    if(el && el.classList && el.classList.contains("chestSparkle")){
+      el.style.color="#bfe6ff";
+      el.style.textShadow="0 0 4px rgba(4,20,32,.9),0 0 10px #bfe6ff,0 0 18px #7abaff,0 0 26px #4e8dff";
+      el.style.filter=(baseFilter ? baseFilter+" " : "")+"drop-shadow(0 0 7px rgba(90,150,255,.68))";
+    }else{
+      el.style.color="";
+      el.style.textShadow="";
+      el.style.filter=baseFilter || "";
+    }
+  }
+}
+function getBurialAura(b){
+  if(!b) return "none";
+  const candidates=[
+    b.auraOverride,b.aura,b.auraColor,b.aura_color,b.sparkleAura,
+    b.artifact && b.artifact.auraOverride,
+    b.artifact && b.artifact.aura,
+    b.artifact && b.artifact.auraColor,
+    b.artifact && b.artifact.aura_color,
+    b.artifact && b.artifact.sparkleAura
+  ];
+  for(const c of candidates){
+    const v=cleanAura(c);
+    if(v!=="none") return v;
+  }
+  return "none";
+}
+function syncBurialAura(b,aura){
+  if(!b) return "none";
+  const v=cleanAura(aura || getBurialAura(b));
+  b.aura=v;
+  b.auraColor=v;
+  b.auraOverride=v;
+  if(b.artifact){
+    setArtifactAura(b.artifact,v);
+    b.artifact.auraOverride=v;
+  }
+  return v;
+}
+function syncChestItemAura(item){
+  if(!item) return "none";
+  const artifact=chestItemArtifact(item);
+  const candidates=[
+    item.auraOverride,item.aura,item.auraColor,item.aura_color,item.sparkleAura,
+    artifact && artifact.auraOverride,
+    artifact && artifact.aura,
+    artifact && artifact.auraColor,
+    artifact && artifact.aura_color,
+    artifact && artifact.sparkleAura
+  ];
+  let v="none";
+  for(const c of candidates){
+    const cleaned=cleanAura(c);
+    if(cleaned!=="none"){ v=cleaned; break; }
+  }
+  item.aura=v;
+  item.auraColor=v;
+  item.auraOverride=v;
+  if(artifact){
+    setArtifactAura(artifact,v);
+    artifact.auraOverride=v;
+  }
+  return v;
+}
+function canEditAura(b){
+  return !!b && b.source !== "friend";
+}
+
+function localOnlyBurials(){
+  return burials.filter(b=>!b.serverId && b.source!=="friend");
+}
+function redArtifactFlags(extra={}){
+  return {
+    sparkleColor:"red",
+    residueType:"friend-postcard",
+    wasFriendMessage:true,
+    kind:"friend-postcard",
+    ...extra
+  };
+}
+function artifactIsRed(a){
+  if(!a) return false;
+  return a.sparkleColor === "red"
+    || a.residueType === "friend-postcard"
+    || a.wasFriendMessage === true
+    || a.kind === "friend-postcard"
+    || a.kind === "friend-message"
+    || a.kind === "postcard-friend";
+}
+function markArtifactRed(a, extra={}){
+  return {...(a || {}), ...redArtifactFlags(extra)};
+}
+function normalizeLocalBurial(b){
+  if(!b) return null;
+  const a=b.artifact || {};
+  const isRed = artifactIsRed(a) || b.sparkleColor === "red" || b.residueType === "friend-postcard" || b.wasFriendMessage === true;
+  let artifact={
+    title:a.title || b.title || "Buried Memory",
+    fullText:a.fullText || b.body || "",
+    createdAt:a.createdAt || (b.buriedAt ? String(b.buriedAt).slice(0,10) : new Date().toISOString().slice(0,10)),
+    postcard:a.postcard || b.postcard || null,
+    kind:a.kind || b.kind || "local",
+    deliveryMode:a.deliveryMode || a.delivery_mode || a.mode || b.deliveryMode || b.delivery_mode || b.mode || null,
+    delivery_mode:a.delivery_mode || a.deliveryMode || a.mode || b.delivery_mode || b.deliveryMode || b.mode || null,
+    mode:a.mode || a.deliveryMode || a.delivery_mode || b.mode || b.deliveryMode || b.delivery_mode || null,
+    hiddenTreasure:!!(a.hiddenTreasure || b.hiddenTreasure),
+    guideArrow:a.guideArrow,
+    renderArrow:a.renderArrow,
+    aura:getArtifactAura(a)
+  };
+  setArtifactAura(artifact, artifact.aura);
+  if(isRed) artifact = markArtifactRed(artifact);
+  return {
+    ...b,
+    source:b.source || "local",
+    found:!!b.found,
+    openedOnce:!!b.openedOnce,
+    x:Number(b.x),
+    y:Number(b.y),
+    artifact
+  };
+}
+function normalizeServerBurial(row){
+  if(!row) return null;
+  const isRed = row.sparkleColor === "red" || row.sparkle_color === "red" || row.residueType === "friend-postcard" || row.residue_type === "friend-postcard" || row.wasFriendMessage === true || Number(row.was_friend_message || 0) === 1 || row.kind === "friend-postcard";
+  const box=e2eeBoxFromRow(row);
+  const rowAura=cleanAura(row.aura || row.auraColor || row.aura_color || "none");
+  let artifact=box ? e2eeArtifactPlaceholder(box, row.title || "Encrypted sparkle", rowAura) : {
+    title:row.title || "Buried Memory",
+    fullText:row.body || "",
+    createdAt:row.created_at ? String(row.created_at).slice(0,10) : "server",
+    postcard:row.postcard || null,
+    kind:row.kind || "local",
+    aura:rowAura,
+    auraColor:rowAura
+  };
+  artifact.createdAt=artifact.createdAt || (row.created_at ? String(row.created_at).slice(0,10) : "server");
+  setArtifactAura(artifact, rowAura !== "none" ? rowAura : getArtifactAura(artifact));
+  artifact.auraOverride=getArtifactAura(artifact);
+  if(isRed) artifact = markArtifactRed(artifact);
+  return {
+    id:"s_"+row.id,
+    serverId:Number(row.id),
+    source:"own",
+    found:!!row.found,
+    openedOnce:!!row.openedOnce,
+    x:Number(row.x),
+    y:Number(row.y),
+    artifact,
+    aura:rowAura,
+    auraColor:rowAura,
+    auraOverride:rowAura,
+    buriedAt:row.created_at || null
+  };
+}
+function normalizeFriendMessage(row){
+  if(!row) return null;
+  const sender=row.sender_username || row.sender || row.from_username || "Friend";
+  const found = Number(row.found || 0) === 1;
+  return {
+    id:"m_"+row.id,
+    messageId:Number(row.id),
+    serverId:Number(row.id),
+    source:"friend",
+    found,
+    openedOnce:false,
+    x:Number(row.x),
+    y:Number(row.y),
+    artifact:markArtifactRed({
+      title:row.title || "Friend postcard",
+      fullText:row.body || row.text || row.message || "",
+      createdAt:row.created_at ? String(row.created_at).slice(0,10) : "friend",
+      postcard:row.postcard || null,
+      sender
+    }),
+    buriedAt:row.created_at || null
+  };
+}
+async function fetchJSON(url, options={}){
+  if(typeof OVVVO_STANDALONE !== "undefined" && OVVVO_STANDALONE && String(url).startsWith("/")){
+    throw new Error("Standalone build: server endpoint disabled: " + url);
+  }
+  const res=await fetch(url,{credentials:"same-origin",...options});
+  const text=await res.text();
+  let data={};
+  try{data=JSON.parse(text)}catch(e){throw new Error("Bad JSON from "+url)}
+  if(!res.ok || data.ok===false) throw new Error(data.error || ("Request failed: "+url));
+  return data;
+}
+async function postJSON(url, payload){
+  return fetchJSON(url,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify(payload||{})
+  });
+}
+
+function e2eeB64Url(bytes){
+  let bin="";
+  bytes.forEach(b=>bin+=String.fromCharCode(b));
+  return btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/g,"");
+}
+function e2eeBytesFromB64Url(s){
+  s=String(s||"").replace(/-/g,"+").replace(/_/g,"/");
+  while(s.length%4) s+="=";
+  const bin=atob(s);
+  const out=new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++) out[i]=bin.charCodeAt(i);
+  return out;
+}
+function e2eeRandomKey(){
+  const raw=new Uint8Array(32);
+  crypto.getRandomValues(raw);
+  return e2eeB64Url(raw);
+}
+function e2eeHasCrypto(){
+  return !!(window.crypto && crypto.subtle && window.TextEncoder && window.TextDecoder);
+}
+function e2eeKeyId(raw){
+  return "k_"+String(raw||"").slice(0,10);
+}
+async function e2eeGetMasterKeyRaw(){
+  let raw=localStorage.getItem(OVVVO_E2EE_MASTER_KEY_STORAGE);
+  if(!raw){
+    raw=e2eeRandomKey();
+    localStorage.setItem(OVVVO_E2EE_MASTER_KEY_STORAGE, raw);
+  }
+  return raw;
+}
+async function e2eeImportKey(raw){
+  return crypto.subtle.importKey("raw", e2eeBytesFromB64Url(raw), {name:"AES-GCM"}, false, ["encrypt","decrypt"]);
+}
+async function e2eeEncryptObject(obj, rawKey){
+  if(!e2eeHasCrypto()) throw new Error("WebCrypto unavailable");
+  const raw=rawKey || await e2eeGetMasterKeyRaw();
+  const iv=new Uint8Array(12);
+  crypto.getRandomValues(iv);
+  const key=await e2eeImportKey(raw);
+  const plain=new TextEncoder().encode(JSON.stringify(obj||{}));
+  const cipher=await crypto.subtle.encrypt({name:"AES-GCM", iv}, key, plain);
+  return {
+    version:"e2ee-v1",
+    alg:"AES-GCM-256",
+    iv:e2eeB64Url(iv),
+    ciphertext:e2eeB64Url(new Uint8Array(cipher)),
+    key_id:e2eeKeyId(raw)
+  };
+}
+async function e2eeDecryptObject(box, rawKey){
+  if(!box || !box.ciphertext || !box.iv) throw new Error("Missing encrypted payload");
+  const raw=rawKey || await e2eeGetMasterKeyRaw();
+  const key=await e2eeImportKey(raw);
+  const plain=await crypto.subtle.decrypt({name:"AES-GCM", iv:e2eeBytesFromB64Url(box.iv)}, key, e2eeBytesFromB64Url(box.ciphertext));
+  return JSON.parse(new TextDecoder().decode(plain));
+}
+function e2eeBoxFromRow(row){
+  if(!OVVVO_E2EE_ENABLED) return null;
+  if(!row) return null;
+  if(row.payload_json){
+    try{
+      const j=typeof row.payload_json==="string" ? JSON.parse(row.payload_json) : row.payload_json;
+      if(j && j.ciphertext && j.iv) return j;
+    }catch(e){}
+  }
+  if(row.ciphertext && row.iv){
+    return {version:row.encryption_mode || "e2ee-v1", alg:row.encryption_alg || "AES-GCM-256", ciphertext:row.ciphertext, iv:row.iv, key_id:row.key_id || null};
+  }
+  return null;
+}
+function e2eeArtifactPlaceholder(box, title="Encrypted sparkle", aura="none"){
+  const stableAura=cleanAura(aura || "none");
+  return {
+    title,
+    fullText:"🔒 Encrypted sparkle. This browser needs the local key to read it.",
+    createdAt:new Date().toISOString().slice(0,10),
+    kind:"e2ee-local",
+    aura:stableAura,
+    auraColor:stableAura,
+    auraOverride:stableAura,
+    e2ee:box,
+    encrypted:true,
+    decrypted:false
+  };
+}
+async function e2eeEnsureArtifactDecrypted(artifact){
+  if(!artifact || !artifact.e2ee || artifact.decrypted) return artifact;
+  try{
+    const persistedAura=getArtifactAura(artifact);
+    const payload=await e2eeDecryptObject(artifact.e2ee);
+    const keep={e2ee:artifact.e2ee, encrypted:true, decrypted:true};
+    Object.assign(artifact, payload, keep);
+    if(!artifact.fullText && artifact.body) artifact.fullText=artifact.body;
+    if(!artifact.title) artifact.title="Encrypted sparkle";
+    // Aura is a mutable organization layer. The DB aura column is newer than the encrypted payload,
+    // so keep the row/local aura instead of letting old ciphertext reset it to "none".
+    setArtifactAura(artifact, persistedAura !== "none" ? persistedAura : getArtifactAura(artifact));
+    artifact.auraOverride=getArtifactAura(artifact);
+  }catch(e){
+    artifact.fullText="Legacy private sparkle. This was saved during the E2EE test and this browser does not have the old key. New sparkles now save in reliable readable mode.";
+    artifact.title=artifact.title || "Encrypted sparkle";
+  }
+  return artifact;
+}
+function e2eePrivacyText(){
+  return "Privacy: new account sparkles and chest saves are end-to-end encrypted in your browser. The server stores encrypted data only. Friend account messages are legacy/plain unless sent as an encrypted Brownlink.";
+}
+
+function mergeBurialLists(localList, ownServerList, friendList){
+  const used=new Set();
+  const merged=[];
+  [...friendList, ...ownServerList, ...localList].forEach(b=>{
+    if(!b || Number.isNaN(b.x) || Number.isNaN(b.y)) return;
+    const key=b.x+","+b.y;
+    if(used.has(key)) return;
+    used.add(key);
+    merged.push(b);
+  });
+  return merged;
+}
+async function loadCurrentUser(){
+  try{
+    const data=await fetchJSON("/o-vvv-o/me.php");
+    currentUser=data.user || null;
+    serverMode=!!currentUser;
+  }catch(e){
+    currentUser=null;
+    serverMode=false;
+  }
+  updateAccountOrb();
+  return currentUser;
+}
+function updateAccountOrb(){
+  const footerAvatar=document.getElementById("footerAvatar");
+  const footerAvatarLink=document.getElementById("footerAvatarLink");
+  const footerNotify=document.getElementById("footerNotify");
+  const footerMessageLink=document.getElementById("footerMessageLink");
+  const footerMessageBadge=document.getElementById("footerMessageBadge");
+  const footerLoginLink=document.getElementById("footerLoginLink");
+
+  const avatar = (currentUser && currentUser.avatar) ? currentUser.avatar : "01_avatar_tight.png";
+  if(footerAvatar) footerAvatar.src = "./assets/" + avatar;
+
+  if(footerLoginLink){
+    if(currentUser){
+      footerLoginLink.textContent="Logout";
+      footerLoginLink.href="./logout.php";
+      footerLoginLink.classList.add("isLoggedIn");
+    }else{
+      footerLoginLink.textContent="Login";
+      footerLoginLink.href="./login.php";
+      footerLoginLink.classList.remove("isLoggedIn");
+    }
+  }
+
+  const hasMessages = notificationCount > 0;
+  const badgeText = notificationCount>99 ? "99+" : String(notificationCount);
+
+  if(footerNotify){
+    if(hasMessages){
+      footerNotify.textContent=badgeText;
+      footerNotify.classList.add("show");
+    }else{
+      footerNotify.classList.remove("show");
+    }
+  }
+
+  if(footerMessageLink){
+    footerMessageLink.classList.toggle("hasMessages", hasMessages);
+    footerMessageLink.title = hasMessages ? "A friend buried something for you" : "messages";
+    footerMessageLink.href = "./account/?tab=messages";
+  }
+  if(footerAvatarLink){
+    // Patch 2: avatar stays identity, not an alarm light.
+    footerAvatarLink.classList.remove("hasMessages");
+    footerAvatarLink.href = "./account/?tab=public";
+    footerAvatarLink.title = "public profile";
+  }
+  if(footerMessageBadge){
+    if(hasMessages){
+      footerMessageBadge.textContent=badgeText;
+      footerMessageBadge.classList.add("show");
+    }else{
+      footerMessageBadge.classList.remove("show");
+    }
+  }
+}
+async function syncServerBurials(){
+  await loadCurrentUser();
+  if(!serverMode){
+    renderBurials();
+    return;
+  }
+  await loadServerChest();
+
+  let own=[];
+  let friend=[];
+  try{
+    const data=await fetchJSON("/o-vvv-o/load_burials.php");
+    own=(data.burials||[]).map(normalizeServerBurial).filter(Boolean);
+  }catch(e){
+    say("Server burials unavailable.");
+  }
+
+  try{
+    const data=await fetchJSON("/o-vvv-o/get_field.php");
+    const rows=data.messages || data.buried_messages || data.burials || [];
+    friend=rows.map(normalizeFriendMessage).filter(Boolean).filter(b=>!Number.isNaN(b.x)&&!Number.isNaN(b.y));
+  }catch(e){
+    // Friend field endpoint may not exist yet; keep own server burials working.
+    friend=[];
+  }
+
+  const previousNotificationCount = notificationCount;
+  notificationCount=friend.filter(b=>!b.found).length;
+  const local=burials.map(normalizeLocalBurial).filter(Boolean).filter(b=>b.source==="local");
+  burials=mergeBurialLists(local, own, friend);
+  serverSyncDone=true;
+  updateAccountOrb();
+  saveBurials();
+  renderBurials();
+
+  if(notificationCount>0 && notificationCount>previousNotificationCount){
+    say(notificationCount+" buried message"+(notificationCount===1?"":"s")+" arrived. Find "+(notificationCount===1?"it":"them")+".");
+    if(window.BuriedChat && typeof window.BuriedChat.notifyIncoming === "function"){
+      window.BuriedChat.notifyIncoming(notificationCount);
+    }
+  }
+}
+async function saveServerBurialPayload(x,y,artifact){
+  const plainBody=artifact?.fullText || "";
+  const red = artifactIsRed(artifact);
+  let payload={
+    x,y,
+    title:artifact?.title || titleFromBody(plainBody),
+    body:plainBody,
+    kind:red ? "friend-postcard" : (artifact?.kind || "local"),
+    postcard:artifact?.postcard || null,
+    aura:red ? "none" : getArtifactAura(artifact),
+    auraColor:red ? "none" : getArtifactAura(artifact),
+    sparkleColor:red ? "red" : (artifact?.sparkleColor || null),
+    residueType:red ? "friend-postcard" : (artifact?.residueType || null),
+    wasFriendMessage:red || artifact?.wasFriendMessage === true ? 1 : 0
+  };
+
+  if(OVVVO_E2EE_ENABLED && !red && plainBody && e2eeHasCrypto()){
+    const encryptedPayload={
+      title:payload.title,
+      fullText:plainBody,
+      createdAt:new Date().toISOString().slice(0,10),
+      kind:payload.kind || "local",
+      postcard:payload.postcard || null,
+      aura:payload.aura || "none",
+      auraColor:payload.aura || "none"
+    };
+    const box=await e2eeEncryptObject(encryptedPayload);
+    payload={
+      ...payload,
+      title:"Encrypted sparkle",
+      body:"[encrypted sparkle]",
+      kind:"e2ee-local",
+      encryption_mode:"e2ee-v1",
+      encryption_alg:"AES-GCM-256",
+      ciphertext:box.ciphertext,
+      iv:box.iv,
+      key_id:box.key_id,
+      payload_json:JSON.stringify(box)
+    };
+  }
+
+  const data=await postJSON("/o-vvv-o/save_burial.php", payload);
+  const row={
+    id:data.burial?.id,
+    x,y,
+    title:data.burial?.title || payload.title,
+    body:payload.body,
+    kind:payload.kind,
+    postcard:payload.postcard,
+    aura:payload.aura,
+    auraColor:payload.aura,
+    sparkleColor:payload.sparkleColor,
+    residueType:payload.residueType,
+    wasFriendMessage:payload.wasFriendMessage,
+    encryption_mode:payload.encryption_mode || null,
+    encryption_alg:payload.encryption_alg || null,
+    ciphertext:payload.ciphertext || null,
+    iv:payload.iv || null,
+    key_id:payload.key_id || null,
+    payload_json:payload.payload_json || null,
+    created_at:new Date().toISOString()
+  };
+  return normalizeServerBurial(row);
+}
+function titleFromBody(body){
+  const first=String(body||"").split(/\n+/).map(s=>s.trim()).find(Boolean) || "Buried Memory";
+  return first.length>42 ? first.slice(0,39).trim()+"..." : first;
+}
+async function markFriendMessageFound(b){
+  if(!b || b.source!=="friend" || !b.messageId || b.found) return;
+  try{
+    await postJSON("/o-vvv-o/mark_found.php",{id:b.messageId, message_id:b.messageId});
+    b.found = true;
+    b.markedFound = true;
+    b.artifact = markArtifactRed(b.artifact || {});
+    notificationCount = Math.max(0, notificationCount - 1);
+    updateAccountOrb();
+  }catch(e){}
+}
+
+function saveBurials(){
+  localStorage.setItem(SERVER_LOCAL_KEY, JSON.stringify(localOnlyBurials()));
+  localStorage.setItem("loadmysave_bury_carried_gems", JSON.stringify(carriedGems));
+}
+function saveCarry(){
+  localStorage.setItem("loadmysave_bury_carried_gems", JSON.stringify(carriedGems));
+}
+function loadBurials(){
+  try{
+    burials=(JSON.parse(localStorage.getItem(SERVER_LOCAL_KEY)||"[]")||[])
+      .map(normalizeLocalBurial)
+      .filter(Boolean);
+  }
+  catch(e){burials=[]}
+  try{carriedGems=JSON.parse(localStorage.getItem("loadmysave_bury_carried_gems")||"[]")||[]}
+  catch(e){carriedGems=[]}
+  document.body.classList.toggle("carrying", carriedGems.length>0);
+}
+
+function chestRandomPosition(){
+  const blocked=new Set([`${FIELD_NOTICE_POS.x},${FIELD_NOTICE_POS.y}`, `${p.x},${p.y}`]);
+  burials.forEach(b=>blocked.add(`${b.x},${b.y}`));
+  const options=[];
+  for(let y=0;y<N;y++){
+    for(let x=0;x<N;x++){
+      if(!blocked.has(`${x},${y}`)) options.push({x,y});
+    }
+  }
+  return options.length ? options[Math.floor(Math.random()*options.length)] : {x:1,y:1};
+}
+function normalizeChestState(raw){
+  const state=raw && typeof raw === "object" ? raw : {};
+  const items=Array.isArray(state.items) ? state.items : [];
+  const x=Number.isFinite(+state.x) ? Math.max(0,Math.min(N-1,+state.x)) : null;
+  const y=Number.isFinite(+state.y) ? Math.max(0,Math.min(N-1,+state.y)) : null;
+  return {
+    version:1,
+    discovered:!!state.discovered,
+    buried:state.buried !== false,
+    x:x,
+    y:y,
+    items:items.slice(0,48)
+  };
+}
+function loadChest(){
+  try{chestState=normalizeChestState(JSON.parse(localStorage.getItem(CHEST_KEY)||"null"));}
+  catch(e){chestState=normalizeChestState(null);}
+  if(chestState.x===null || chestState.y===null){
+    const pos=chestRandomPosition();
+    chestState.x=pos.x; chestState.y=pos.y;
+  }
+  saveChest();
+}
+function saveChest(){
+  if(!chestState) return;
+  try{localStorage.setItem(CHEST_KEY, JSON.stringify(chestState));}catch(e){}
+  scheduleServerChestSave();
+}
+function chestItemStableKey(item){
+  if(!item) return "";
+  const a=chestItemArtifact(item);
+  return String(item.originalBurialId || item.serverId || item.id || a.id || a.url || a.fullText || a.text || JSON.stringify(item)).slice(0,600);
+}
+function mergeChestStates(localState, serverState){
+  const local=normalizeChestState(localState);
+  const server=normalizeChestState(serverState);
+  const out={...local};
+  out.discovered=!!(local.discovered || server.discovered);
+  out.buried=(local.buried===false || server.buried===false) ? false : true;
+  out.x=Number.isFinite(+local.x) ? local.x : server.x;
+  out.y=Number.isFinite(+local.y) ? local.y : server.y;
+  const seen=new Set();
+  out.items=[];
+  [...(server.items||[]), ...(local.items||[])].forEach(item=>{
+    const key=chestItemStableKey(item);
+    if(!key || seen.has(key)) return;
+    seen.add(key);
+    out.items.push(item);
+  });
+  out.items=out.items.slice(0,48);
+  if(out.x===null || out.y===null){
+    const pos=chestRandomPosition();
+    out.x=pos.x; out.y=pos.y;
+  }
+  return out;
+}
+async function e2eeEncryptChestForServer(chest){
+  const safe=normalizeChestState(JSON.parse(JSON.stringify(chest || normalizeChestState(null))));
+  const box=await e2eeEncryptObject(safe);
+  return {version:1, e2ee:true, encryption_mode:"e2ee-v1", ...box};
+}
+async function e2eeDecryptChestFromServer(chest){
+  if(chest && chest.e2ee && chest.ciphertext && chest.iv){
+    return normalizeChestState(await e2eeDecryptObject(chest));
+  }
+  return normalizeChestState(chest);
+}
+async function loadServerChest(){
+  if(!serverMode || !currentUser) return;
+  try{
+    const localSnapshot=chestState ? JSON.parse(JSON.stringify(chestState)) : normalizeChestState(null);
+    const data=await fetchJSON("/o-vvv-o/load_chest.php");
+    const serverChest=await e2eeDecryptChestFromServer(data.chest || null);
+    chestState=mergeChestStates(localSnapshot, serverChest);
+    chestServerLoaded=true;
+    try{localStorage.setItem(CHEST_KEY, JSON.stringify(chestState));}catch(e){}
+    renderChest();
+    scheduleServerChestSave();
+  }catch(e){
+    chestServerLoaded=false;
+  }
+}
+function scheduleServerChestSave(){
+  if(!serverMode || !currentUser || !chestState) return;
+  clearTimeout(chestSaveTimer);
+  chestSaveTimer=setTimeout(async ()=>{
+    try{
+      const chestPayload=OVVVO_E2EE_ENABLED && e2eeHasCrypto() ? await e2eeEncryptChestForServer(chestState) : chestState;
+      await postJSON("/o-vvv-o/save_chest.php", {chest:chestPayload});
+    }catch(e){}
+  }, 350);
+}
+function chestEmoji(){
+  return chestState && chestState.items && chestState.items.length ? "🪎" : "🗃️";
+}
+function chestDockPosition(){
+  return {
+    x: Math.min(N-1, (FIELD_NOTICE_POS && Number.isFinite(+FIELD_NOTICE_POS.x) ? +FIELD_NOTICE_POS.x : 0) + 1),
+    y: Math.max(0, Math.min(N-1, FIELD_NOTICE_POS && Number.isFinite(+FIELD_NOTICE_POS.y) ? +FIELD_NOTICE_POS.y : 0))
+  };
+}
+function moveChestToNoticeDock(){
+  if(!chestState) return;
+  const pos=chestDockPosition();
+  chestState.x=pos.x;
+  chestState.y=pos.y;
+}
+function chestIsUsable(){
+  return !!(chestState && chestState.discovered && !chestState.buried);
+}
+function renderChest(){
+  document.querySelectorAll(".fieldChest").forEach(el=>el.remove());
+  if(!chestState || !chestState.discovered || chestState.buried) return;
+  const wrap=document.getElementById("wrap");
+  if(!wrap) return;
+  const el=document.createElement("div");
+  moveChestToNoticeDock();
+  el.className="fieldChest";
+  el.textContent=chestEmoji();
+  el.title=chestState.items.length ? "Tap to open stored sparkle chest" : "Tap to open empty chest";
+  el.setAttribute("role", "button");
+  el.setAttribute("aria-label", el.title);
+  el.addEventListener("click", (ev)=>{
+    ev.preventDefault();
+    ev.stopPropagation();
+    openChest();
+  });
+  el.addEventListener("touchend", (ev)=>{
+    ev.preventDefault();
+    ev.stopPropagation();
+    openChest();
+  }, {passive:false});
+  el.style.left=((chestState.x+.5)*100/N)+"%";
+  el.style.top=((chestState.y+.5)*100/N)+"%";
+  wrap.appendChild(el);
+}
+function chestAt(x,y){
+  return !!(chestState && chestState.x===x && chestState.y===y);
+}
+function tryDigChest(x,y){
+  if(!chestAt(x,y)) return false;
+
+  // Physical Chest v1.4:
+  // Finding the chest now cleans the dug-up field immediately.
+  // This prevents the player from needing a New Field right after hunting for the chest.
+  // A manual New Field can still bury the chest again later.
+  if(!chestState.discovered || chestState.buried){
+    chestState.discovered=true;
+    chestState.buried=false;
+    moveChestToNoticeDock();
+    cleanFieldAfterChestFound();
+    saveChest();
+    // Re-render all sparkles after the soil cleanup.
+    // Without this, existing DOM nodes can visually fall back to the default blue sparkle
+    // even while their metadata/database aura still says purple/green/gold/etc.
+    renderBurials();
+    say("You found your chest. The field is clean again.");
+    toast("Chest found · field cleaned");
+    face("0-vvv-0");
+    rewardSound();
+    if(typeof triggerFriendCelebration === "function") triggerFriendCelebration(x,y);
+    return true;
+  }
+
+  if(carriedGems && carriedGems.length){
+    storeCarriedGemInChest();
+    return true;
+  }
+
+  openChest();
+  return true;
+}
+function chestItemPreview(item){
+  const text=String(item?.artifact?.fullText || item?.artifact?.title || item?.text || "Stored sparkle").trim();
+  return text.length>58 ? text.slice(0,55).trim()+"..." : (text || "Stored sparkle");
+}
+function chestItemAura(item){
+  return syncChestItemAura(item);
+}
+function chestSparkleNode(item){
+  const span=document.createElement("span");
+  span.className="chestSparkle";
+  span.textContent="✦";
+  span.title=chestItemPreview(item);
+  applyAuraVisual(span, chestItemAura(item), "drop-shadow(0 2px 0 rgba(0,0,0,.25))");
+  return span;
+}
+function renderChestGrid(){
+  const wrap=document.createElement("div");
+  wrap.className="chestGrid";
+  const items=(chestState && chestState.items) ? chestState.items : [];
+  const total=Math.max(8, Math.ceil(Math.max(items.length,1)/4)*4);
+  for(let i=0;i<Math.min(total,48);i++){
+    const slot=document.createElement("div");
+    const item=items[i];
+    slot.className="chestSlot"+(item?" hasItem":" empty");
+    slot.textContent="";
+    if(item){
+      slot.appendChild(chestSparkleNode(item));
+      slot.setAttribute("aria-label", "Stored sparkle. Tap to read. Longpress to lift out.");
+    }else{
+      slot.setAttribute("aria-label", "Empty chest slot. Carry a sparkle, then tap or longpress to place it here.");
+    }
+    slot.dataset.slot=String(i);
+
+    let holdTimer=null;
+    let held=false;
+    const startHold=(ev)=>{
+      held=false;
+      holdTimer=setTimeout(()=>{
+        held=true;
+        if(item){
+          liftChestItem(i);
+        }else if(carriedGems && carriedGems.length){
+          storeCarriedGemInChest();
+          openChest();
+        }else{
+          toast("Carry a sparkle first");
+        }
+      },520);
+    };
+    const cancelHold=()=>{
+      if(holdTimer){clearTimeout(holdTimer); holdTimer=null;}
+    };
+    slot.addEventListener("pointerdown", startHold);
+    slot.addEventListener("pointerup", cancelHold);
+    slot.addEventListener("pointerleave", cancelHold);
+    slot.addEventListener("pointercancel", cancelHold);
+    slot.addEventListener("contextmenu", ev=>{
+      ev.preventDefault();
+      if(item) liftChestItem(i);
+      else if(carriedGems && carriedGems.length){storeCarriedGemInChest(); openChest();}
+    });
+    slot.addEventListener("click", ev=>{
+      if(held){ held=false; return; }
+      if(item) openChestItem(i);
+      else if(carriedGems && carriedGems.length){
+        storeCarriedGemInChest();
+        openChest();
+      }
+    });
+
+    wrap.appendChild(slot);
+  }
+  return wrap;
+}
+function chestItemArtifact(item){
+  return item && item.artifact ? item.artifact : (item || {});
+}
+async function openChestItem(i){
+  if(!chestState || !chestState.items || !chestState.items[i]) return;
+  activeBurialId=null;
+  activeChestItemIndex=i;
+  const item=chestState.items[i];
+  const artifact=await e2eeEnsureArtifactDecrypted(chestItemArtifact(item));
+  item.artifact=artifact;
+  saveChest();
+  const text=String(artifact.fullText || artifact.text || artifact.url || artifact.payload || chestItemPreview(item) || "").trim();
+  buryTitle.textContent="✨ Stored Sparkle";
+  buryMeta.textContent="inside chest · use Take Out to put it on your back";
+  buryText.textContent=text || "Stored sparkle";
+  document.body.classList.add("overlay-open");
+  buryOverlay.classList.add("show");
+  const copyBtn=document.getElementById("copyBuriedBtn");
+  const delBtn=document.getElementById("deleteBuriedBtn");
+  const storeBtn=document.getElementById("storeChestBtn");
+  if(copyBtn){copyBtn.style.setProperty("display","block","important"); copyBtn.disabled=false;}
+  if(delBtn){
+    delBtn.style.setProperty("display","block","important");
+    delBtn.disabled=false;
+    delBtn.textContent="Take Out";
+    delBtn.title="Lift this sparkle out of the chest onto your back";
+    delBtn.onclick=()=>{
+      if(activeChestItemIndex!=null) liftChestItem(activeChestItemIndex);
+      activeChestItemIndex=null;
+    };
+  }
+  if(storeBtn) storeBtn.style.setProperty("display","none","important");
+}
+function liftChestItem(i){
+  if(!chestState || !chestState.items || !chestState.items[i]) return false;
+  const item=chestState.items.splice(i,1)[0];
+  const aura=syncChestItemAura(item);
+  const artifact=JSON.parse(JSON.stringify(chestItemArtifact(item)));
+  setArtifactAura(artifact, aura);
+  artifact.auraOverride=aura;
+  addCarriedGem(artifact);
+  saveChest();
+  renderChest();
+  saveBurials();
+  say("Sparkle lifted from chest.");
+  toast("Sparkle is on your back");
+  rewardSound();
+  openChest();
+  return true;
+}
+function openChest(){
+  if(!chestState) loadChest();
+  activeBurialId=null;
+  activeChestItemIndex=null;
+  buryTitle.textContent=chestEmoji()+" Chest";
+  buryMeta.textContent=chestState.items.length ? (chestState.items.length+" stored sparkle"+(chestState.items.length===1?"":"s")) : "empty storage chest";
+  buryText.innerHTML="";
+  const help=document.createElement("div");
+  help.className="chestHelp";
+  help.textContent="Tap a sparkle to read it. In the sparkle view, use Take Out to lift it onto your back. Carry a sparkle here, then tap an empty slot to place it inside. Field resets bury the chest again, but the items stay safe.";
+  buryText.appendChild(help);
+  buryText.appendChild(renderChestGrid());
+  const old=document.getElementById("auraPickerWrap");
+  if(old) old.remove();
+  document.body.classList.add("overlay-open");
+  buryOverlay.classList.add("show");
+  const copyBtn=document.getElementById("copyBuriedBtn");
+  const delBtn=document.getElementById("deleteBuriedBtn");
+  const storeBtn=document.getElementById("storeChestBtn");
+  if(copyBtn) copyBtn.style.setProperty("display","none","important");
+  if(delBtn){
+    delBtn.style.setProperty("display","none","important");
+    delBtn.textContent="Delete";
+    delBtn.title="";
+    delBtn.onclick=deleteBurial;
+  }
+  if(storeBtn) storeBtn.style.setProperty("display","none","important");
+}
+function updateStoreChestButtonState(storeBtn){
+  if(!storeBtn) return;
+  const ready=!!(activeBurialId && chestIsUsable());
+  storeBtn.style.setProperty("display","block","important");
+  storeBtn.disabled=!ready;
+  storeBtn.classList.toggle("storeChestReady", ready);
+  storeBtn.classList.toggle("storeChestLocked", !ready);
+  storeBtn.textContent=ready ? "Store 🪎" : "Store 🗃️";
+  storeBtn.title=ready ? "Store this sparkle in your chest" : "Find your chest first";
+}
+
+function showBurialButtons(){
+  activeChestItemIndex=null;
+  const copyBtn=document.getElementById("copyBuriedBtn");
+  const delBtn=document.getElementById("deleteBuriedBtn");
+  const storeBtn=document.getElementById("storeChestBtn");
+  if(delBtn){delBtn.textContent="Delete"; delBtn.title="Delete this buried sparkle"; delBtn.onclick=deleteBurial;}
+  if(copyBtn) copyBtn.style.display="block";
+  if(delBtn) delBtn.style.setProperty("display","block","important");
+  updateStoreChestButtonState(storeBtn);
+}
+async function storeActiveBurialInChest(){
+  if(!activeBurialId) return;
+  if(!chestState) loadChest();
+  if(!chestIsUsable()){
+    toast("Find your chest first");
+    say("Find your chest first.");
+    return;
+  }
+  const b=burials.find(x=>x.id===activeBurialId);
+  if(!b) return;
+  const storedArtifact=JSON.parse(JSON.stringify(b.artifact || {}));
+  const storedAura=syncBurialAura(b, getBurialAura(b));
+  setArtifactAura(storedArtifact, storedAura);
+  storedArtifact.auraOverride=storedAura;
+  const stored={
+    id:"chest_"+Date.now()+"_"+Math.random().toString(36).slice(2,7),
+    storedAt:new Date().toISOString(),
+    source:b.source || "local",
+    aura:storedAura,
+    auraColor:storedAura,
+    auraOverride:storedAura,
+    artifact:storedArtifact
+  };
+  syncChestItemAura(stored);
+
+  // Try to remove the live/server copy first so account fields do not refill with old messages.
+  if(b.serverId && b.source==="own"){
+    try{await postJSON("/o-vvv-o/delete_burial.php",{id:b.serverId});}
+    catch(e){toast("Could not store yet"); return;}
+  }
+  if(b.messageId && b.source==="friend"){
+    try{await postJSON("/o-vvv-o/delete_message.php",{id:b.messageId, message_id:b.messageId});}
+    catch(e){toast("Could not store yet"); return;}
+  }
+
+  chestState.items.unshift(stored);
+  chestState.discovered=true;
+  chestState.buried=false;
+  saveChest();
+  burials=burials.filter(item=>item.id!==activeBurialId);
+  saveBurials();
+  closeBurial();
+  renderBurials();
+  renderChest();
+  say("Stored in chest.");
+  toast("Stored in chest");
+  rewardSound();
+}
+function storeCarriedGemInChest(){
+  if(!chestState) loadChest();
+  if(!chestIsUsable()){
+    say("Find your chest first.");
+    toast("Find your chest first");
+    return false;
+  }
+  if(!carriedGems || !carriedGems.length){
+    openChest();
+    return false;
+  }
+
+  const artifact=JSON.parse(JSON.stringify(carriedGems[0] || {}));
+  const carriedAura=cleanAura(getArtifactAura(artifact));
+  setArtifactAura(artifact, carriedAura);
+  artifact.auraOverride=carriedAura;
+  const stored={
+    id:"chest_"+Date.now()+"_"+Math.random().toString(36).slice(2,7),
+    storedAt:new Date().toISOString(),
+    source:artifact.source || "carried",
+    aura:carriedAura,
+    auraColor:carriedAura,
+    auraOverride:carriedAura,
+    artifact
+  };
+  syncChestItemAura(stored);
+
+  chestState.items.unshift(stored);
+  chestState.items=chestState.items.slice(0,48);
+  saveChest();
+  clearFirstCarriedGem();
+  renderChest();
+  saveBurials();
+  say("Stored in chest.");
+  toast("Stored in chest");
+  rewardSound();
+  if(typeof triggerFriendCelebration === "function") triggerFriendCelebration(chestState.x, chestState.y);
+  return true;
+}
+
+
+function cleanFieldAfterChestFound(){
+  if(!tiles || !tiles.length) return;
+
+  // CHEST FOUND = same field, clean soil.
+  // Do not change biome and do not rebury the chest.
+  // Existing sparkles/messages stay where they are; only holes/water are reset.
+  tiles.forEach(t => {
+    t.dataset.base = base();
+    t.dataset.state = "ground";
+    t.dataset.water = "0";
+    t.dataset.waterMode = "";
+    paint(t);
+  });
+
+  document.body.classList.remove("field-needs-refresh");
+  saveFieldState();
+}
+
+function reburyChestForNewField(){
+  if(!chestState) loadChest();
+  const pos=chestRandomPosition();
+  chestState.x=pos.x;
+  chestState.y=pos.y;
+  chestState.buried=true;
+  // Keep discovered=true so returning players know it exists after first discovery.
+  chestState.discovered=!!chestState.discovered;
+  saveChest();
+  renderChest();
+}
+
+function decodeBuryToken(token){
+  try{
+    token = String(token || "").replace(/-/g, "+").replace(/_/g, "/");
+    while(token.length % 4) token += "=";
+    const binary = atob(token);
+    const bytes = Uint8Array.from(binary, c => c.charCodeAt(0));
+    return JSON.parse(new TextDecoder().decode(bytes));
+  }catch(e){
+    return null;
+  }
+}
+
+function importBrownHyperlinkFromURL(){
+  const params = new URLSearchParams(window.location.search);
+  const token = params.get("bury") || params.get("brown") || params.get("link");
+  if(!token) return false;
+
+  const artifact = decodeBuryToken(token);
+  const urlMode = params.get("mode") || params.get("delivery") || params.get("deliveryMode");
+  if(artifact && urlMode === "hidden"){
+    artifact.deliveryMode = "hidden";
+    artifact.delivery_mode = "hidden";
+    artifact.mode = "hidden";
+    artifact.hiddenTreasure = true;
+    artifact.guideArrow = false;
+    artifact.renderArrow = false;
+    artifact.kind = "hidden-brown-hyperlink";
+  }
+  if(!artifact || !(artifact.fullText || artifact.url || artifact.payload)){
+    say("Brown link unreadable.");
+    return false;
+  }
+
+  const stableId = "brown_" + String(artifact.id || token.slice(0,18)).replace(/[^a-zA-Z0-9_-]/g,"").slice(0,24);
+  if(burials.some(b => b.id === stableId)){
+    say("This buried message is already in the field.");
+    return true;
+  }
+
+  const used = new Set(burials.map(b => b.x + "," + b.y));
+  const options = [];
+  const fallbackOptions = [];
+  function hasFreeAdjacentTile(x,y){
+    return [[1,0],[-1,0],[0,1],[0,-1]].some(([dx,dy])=>{
+      const ax=x+dx, ay=y+dy;
+      if(ax<0||ax>=N||ay<0||ay>=N) return false;
+      if(ax===p.x && ay===p.y) return false;
+      if(used.has(ax+","+ay)) return false;
+      return true;
+    });
+  }
+  for(let y=0;y<N;y++){
+    for(let x=0;x<N;x++){
+      if(x===p.x && y===p.y) continue;
+      if(used.has(x+","+y)) continue;
+      if(!hasFreeAdjacentTile(x,y)) continue;
+      // Guided brown links must spawn at least 2 tiles from the edge so the red helper label is never clipped.
+      // New users naturally try to walk onto the sparkle; keeping it away
+      // from edges guarantees the red helper label fits on screen and room remains to stand beside it and DIG.
+      if(x>=2 && x<=N-3 && y>=2 && y<=N-3) options.push({x,y});
+      else fallbackOptions.push({x,y});
+    }
+  }
+  const spawnPool = options.length ? options : fallbackOptions;
+  const spot = spawnPool.length ? spawnPool[Math.floor(Math.random()*spawnPool.length)] : {x:Math.floor(N/2),y:Math.floor(N/2)};
+
+  const imported = {
+    id: stableId,
+    source: "local",
+    x: spot.x,
+    y: spot.y,
+    artifact: {
+      title: artifact.title || "Brown Hyperlink",
+      fullText: artifact.fullText || artifact.url || artifact.payload || "",
+      createdAt: artifact.createdAt || new Date().toISOString().slice(0,10),
+      kind: artifact.kind || "brown-hyperlink",
+      deliveryMode: artifact.deliveryMode || artifact.delivery_mode || artifact.mode || (artifact.hiddenTreasure ? "hidden" : "guided"),
+      delivery_mode: artifact.delivery_mode || artifact.deliveryMode || artifact.mode || (artifact.hiddenTreasure ? "hidden" : "guided"),
+      mode: artifact.mode || artifact.deliveryMode || artifact.delivery_mode || (artifact.hiddenTreasure ? "hidden" : "guided"),
+      hiddenTreasure: !!artifact.hiddenTreasure,
+      guideArrow: artifact.guideArrow !== false,
+      renderArrow: artifact.renderArrow !== false
+    },
+    buriedAt: new Date().toISOString()
+  };
+
+  burials.push(imported);
+  saveBurials();
+
+  try{
+    const clean = window.location.origin + window.location.pathname;
+    history.replaceState(null, "", clean);
+  }catch(e){}
+
+  say((artifactIsHiddenTreasure(artifact)) ? 'Hidden treasure buried. Dig around softly.' : 'Message landed. Follow the soft marker.');
+  face("0-vvv-0");
+  return true;
+}
+function tileKey(x,y){return x+","+y}
+function findBurial(x,y){return burials.find(b=>b.x===x&&b.y===y)}
+function artifactIsHiddenTreasure(a){
+  if(!a) return false;
+  return a.deliveryMode === "hidden"
+    || a.delivery_mode === "hidden"
+    || a.mode === "hidden"
+    || a.hiddenTreasure === true
+    || a.guideArrow === false
+    || a.renderArrow === false
+    || a.kind === "hidden-brown-hyperlink"
+    || a.kind === "brown-hidden";
+}
+function artifactShowsHelperArrow(a){
+  if(!a) return false;
+  if(artifactIsHiddenTreasure(a)) return false;
+  return a.kind === "brown-hyperlink";
+}
+function playLockedPlayerFrames(frames, frameMs=190, done=null){
+  clearTimeout(actionLockTimer);
+  clearInterval(walkTimer);
+  clearInterval(sleepAnimTimer);
+  isSleeping=false;
+  isActionLocked=true;
+
+  let i=0;
+  function showNext(){
+    if(i >= frames.length){
+      isActionLocked=false;
+      if(typeof done === "function") done();
+      return;
+    }
+    playerEl.style.backgroundImage=`url("${frames[i]}")`;
+    i++;
+    actionLockTimer=setTimeout(showNext, frameMs);
+  }
+  showNext();
+}
+
+function retrieveFramesForTile(x,y){
+  // Sparkle pickup is intentionally side-readable.
+  // If the sparkle is left/right of the burrower, use the matching 3-frame set.
+  // If it is above/below, choose by current facing; fallback to right.
+  if(x < p.x) return [SPR.retrieveLeft1, SPR.retrieveLeft2, SPR.retrieveLeft3];
+  if(x > p.x) return [SPR.retrieveRight1, SPR.retrieveRight2, SPR.retrieveRight3];
+  if(p.dir === "left") return [SPR.retrieveLeft1, SPR.retrieveLeft2, SPR.retrieveLeft3];
+  return [SPR.retrieveRight1, SPR.retrieveRight2, SPR.retrieveRight3];
+}
+
+function triggerTreasureCelebration(x,y){
+  const wrap=document.getElementById("wrap");
+  if(!wrap) return;
+  const burst=document.createElement("div");
+  burst.className="treasureBurst";
+  burst.style.left=(x*100/N)+"%";
+  burst.style.top=(y*100/N)+"%";
+  const bits=["✦","✧","✹","✺","✦","✧","✹","✺","✦","✧","✹","✺"];
+  bits.forEach((char,i)=>{
+    const bit=document.createElement("span");
+    bit.className="treasureBit";
+    bit.textContent=char;
+    const angle=(-110 + i*20) * Math.PI/180;
+    const dist=24 + (i%4)*8;
+    bit.style.setProperty("--tx", Math.round(Math.cos(angle)*dist)+"px");
+    bit.style.setProperty("--ty", Math.round(Math.sin(angle)*dist-14)+"px");
+    bit.style.setProperty("--rot", ((i%2?1:-1)*(80+i*9))+"deg");
+    bit.style.animationDelay=(i*0.025)+"s";
+    burst.appendChild(bit);
+  });
+  wrap.appendChild(burst);
+  setTimeout(()=>burst.remove(),1250);
+}
+
+async function unburyFromTile(x,y){
+  const b=findBurial(x,y);
+  if(!b) return false;
+
+  // Private friend postcard loop:
+  // 1) Hidden until the correct tile is dug.
+  // 2) Correct dig reveals a red sparkle only; it does NOT open the message yet.
+  // 3) First DIG on red sparkle opens it.
+  // 4) Second DIG picks it up so it can be carried/reburied.
+  if(b.source === "friend" && !b.found){
+    await markFriendMessageFound(b);
+    say("You found a red sparkle.");
+    face("0-vvv-0");
+    triggerTreasureCelebration(x,y);
+    rewardSound();
+    renderBurials();
+    return true;
+  }
+
+  // Hidden brown links: no arrow/sparkle at first.
+  // Correct DIG only reveals the sparkle; the next DIG opens it.
+  if(b.artifact && artifactIsHiddenTreasure(b.artifact) && !b.found){
+    b.found = true;
+    saveBurials();
+    say("You found a hidden sparkle.");
+    face("0-vvv-0");
+    triggerTreasureCelebration(x,y);
+    rewardSound();
+    renderBurials();
+    return true;
+  }
+
+  if(!b.openedOnce){
+    b.openedOnce = true;
+    saveBurials();
+    await openBurial(b.id);
+    say("Message opened. DIG again to pick it up.");
+    face("0-vvv-0");
+    rewardSound();
+    renderBurials();
+    return true;
+  }
+
+  playLockedPlayerFrames(retrieveFramesForTile(x,y), 160, async ()=>{
+    if(b.serverId && b.source === "own"){
+      try{
+        await postJSON("/o-vvv-o/delete_burial.php", {id:b.serverId});
+      }catch(e){
+        say("Server pickup failed.");
+        toast("Not picked up");
+        return;
+      }
+    }
+
+    if(b.messageId && b.source === "friend"){
+      try{
+        await postJSON("/o-vvv-o/delete_message.php", {id:b.messageId, message_id:b.messageId});
+      }catch(e){
+        say("Server pickup failed.");
+        toast("Not picked up");
+        return;
+      }
+    }
+
+    const carriedArtifact = (b.source === "friend" || artifactIsRed(b.artifact)) ? markArtifactRed(b.artifact || {}) : (b.artifact || {});
+    addCarriedGem(carriedArtifact);
+    burials = burials.filter(item => item.id !== b.id);
+    saveBurials();
+    renderBurials();
+    say("Picked up. Carry it somewhere new.");
+    face("0-vvv-0");
+    rewardSound();
+  });
+
+  return true;
+}
+
+function renderBurials(){
+  document.querySelectorAll(".sparkle,.burylinkArrow").forEach(s=>s.remove());
+  renderChest();
+  tiles.forEach(t=>t.classList.remove("hasBurial"));
+  burials.forEach(b=>{
+    // Friend postcards and hidden brown links are invisible until the exact tile is dug.
+    if(b.source === "friend" && !b.found) return;
+    if(b.artifact && artifactIsHiddenTreasure(b.artifact) && !b.found) return;
+    const t=getTile(b.x,b.y);
+    if(!t) return;
+    t.classList.add("hasBurial");
+    const red = b.source === "friend" || artifactIsRed(b.artifact);
+    const aura = red ? "none" : syncBurialAura(b, getBurialAura(b));
+    const sp=document.createElement("div");
+    sp.className="sparkle"+(red ? " friendSparkle" : "");
+    sp.textContent="✦";
+    if(!red) applyAuraVisual(sp, aura);
+    else sp.dataset.aura="friend";
+    sp.style.left=(b.x*100/N)+"%";
+    sp.style.top=(b.y*100/N)+"%";
+    sp.title=red ? "Friend postcard" : "Buried memory";
+    sp.onclick=(e)=>{e.stopPropagation();openBurial(b.id)};
+    document.getElementById("wrap").appendChild(sp);
+
+    const shouldShowArrow = (
+      b &&
+      b.artifact &&
+      !artifactIsHiddenTreasure(b.artifact) &&
+      !b.openedOnce &&
+      String(b.id || "").startsWith("brown_")
+    );
+
+    if(shouldShowArrow){
+      const arrow=document.createElement("div");
+      arrow.className="burylinkArrow";
+      arrow.style.left=(b.x*100/N)+"%";
+      arrow.style.top=(b.y*100/N)+"%";
+      arrow.innerHTML='<div class="arrowText">open message</div><div class="arrowIcon">⌄</div>';
+      document.getElementById("wrap").appendChild(arrow);
+    }
+  });
+}
+async function buryIntoTile(x,y){
+  const t=getTile(x,y);
+  if(!t || !carriedGems.length){return false}
+  if(t.dataset.state!=="big"){say("Make a big hole first.");face("o-vv-o");return false}
+  if(findBurial(x,y)){say("Something is already buried there.");face("o-vv-o");return false}
+
+  const artifact=artifactIsRed(carriedGems[0]) ? markArtifactRed(carriedGems[0]) : setArtifactAura(carriedGems[0], getArtifactAura(carriedGems[0]));
+  let b=null;
+
+  if(serverMode){
+    say("Saving to field...");
+    try{
+      b=await saveServerBurialPayload(x,y,artifact);
+    }catch(e){
+      say("Server save failed.");
+      face("o-vv-o");
+      toast("Not saved");
+      return false;
+    }
+  }else{
+    b={id:"b_"+Date.now(),source:"local",x,y,artifact,buriedAt:new Date().toISOString()};
+  }
+
+  burials.push(b);
+  saveBurials();
+  clearFirstCarriedGem();
+  t.dataset.state="ground";
+  t.dataset.water="0";
+  paint(t);
+  saveFieldState();
+  renderBurials();
+  say(serverMode ? "Saved on server." : "Buried.");
+  face("0-vvv-0");
+  rewardSound();
+  return true;
+}
+function normalizeRecoveredUrl(rawUrl){
+  let url = String(rawUrl || '').trim().replace(/[),.;!?]+$/,'');
+  if(/^www\./i.test(url)) url = 'https://' + url;
+  try{
+    const u = new URL(url);
+    if(!/^https?:$/.test(u.protocol)) return null;
+    return u.href;
+  }catch(e){
+    return null;
+  }
+}
+function urlsFromText(text){
+  const raw = String(text || '');
+  const matches = raw.match(/https?:\/\/[^\s<>'"]+|www\.[^\s<>'"]+/ig) || [];
+  const seen = new Set();
+  const urls = [];
+  matches.forEach(m=>{
+    const url = normalizeRecoveredUrl(m);
+    if(url && !seen.has(url)){
+      seen.add(url);
+      urls.push(url);
+    }
+  });
+  return urls;
+}
+function stripUrlsFromText(text){
+  return String(text || '')
+    .replace(/https?:\/\/[^\s<>'"]+|www\.[^\s<>'"]+/ig,'')
+    .replace(/[ \t]+\n/g,'\n')
+    .replace(/\n{3,}/g,'\n\n')
+    .trim();
+}
+function isOnlyLinkText(text){
+  const rest = stripUrlsFromText(text).replace(/[\s,.;:!?()\[\]{}\-–—_]+/g,'').trim();
+  return rest.length === 0;
+}
+function makeRecoveredLinkActions(urls, singularLabel='Open blue link'){
+  const wrap = document.createElement('div');
+  wrap.className = 'recoveredLinkActions';
+
+  urls.slice(0,4).forEach((url,idx)=>{
+    const open = document.createElement('a');
+    open.className = 'recoveredLinkBtn blue';
+    open.href = url;
+    open.target = '_blank';
+    open.rel = 'noopener noreferrer';
+    open.textContent = urls.length === 1 ? singularLabel : ('Open link ' + (idx + 1));
+    wrap.appendChild(open);
+  });
+
+  const copy = document.createElement('button');
+  copy.type = 'button';
+  copy.className = 'recoveredLinkBtn';
+  copy.textContent = urls.length === 1 ? 'Copy link' : 'Copy links';
+  copy.onclick = async()=>{
+    await copyText(urls.join('\n'));
+    toast(urls.length === 1 ? 'Link copied' : 'Links copied');
+  };
+  wrap.appendChild(copy);
+  return wrap;
+}
+function renderRecoveredBrownLink(url, originalText){
+  buryText.innerHTML = '';
+  const card = document.createElement('div');
+  card.className = 'recoveredLinkCard';
+
+  const badge = document.createElement('div');
+  badge.className = 'recoveredLinkBadge';
+  badge.textContent = '🟫 Recovered Brown Link';
+
+  const title = document.createElement('div');
+  title.className = 'recoveredLinkTitle';
+  title.textContent = 'This buried link has been recovered.';
+
+  const note = document.createElement('div');
+  note.textContent = 'Brown links do not open immediately. You found it first; now you can choose to open the blue link.';
+
+  const urlBox = document.createElement('div');
+  urlBox.className = 'recoveredLinkUrl';
+  urlBox.textContent = url;
+
+  card.appendChild(badge);
+  card.appendChild(title);
+  card.appendChild(note);
+  card.appendChild(urlBox);
+  card.appendChild(makeRecoveredLinkActions([url]));
+  buryText.appendChild(card);
+}
+function renderRecoveredNoteWithLinks(originalText, urls){
+  buryText.innerHTML = '';
+  const card = document.createElement('div');
+  card.className = 'recoveredLinkCard';
+
+  const badge = document.createElement('div');
+  badge.className = 'recoveredLinkBadge';
+  badge.textContent = '🟫 Recovered note + link';
+
+  const title = document.createElement('div');
+  title.className = 'recoveredLinkTitle';
+  title.textContent = 'This buried note has recovered link' + (urls.length === 1 ? '.' : 's.');
+
+  const noteText = document.createElement('div');
+  noteText.className = 'recoveredNoteText';
+  const cleanText = stripUrlsFromText(originalText);
+  noteText.textContent = cleanText || 'A link was buried with this note.';
+
+  const label = document.createElement('div');
+  label.className = 'recoveredLinksLabel';
+  label.textContent = urls.length === 1 ? 'Recovered link' : 'Recovered links';
+
+  urls.slice(0,4).forEach(url=>{
+    const urlBox = document.createElement('div');
+    urlBox.className = 'recoveredLinkUrl';
+    urlBox.textContent = url;
+    card.appendChild(urlBox);
+  });
+
+  card.insertBefore(badge, card.firstChild);
+  card.appendChild(title);
+  card.appendChild(noteText);
+  card.appendChild(label);
+  card.appendChild(makeRecoveredLinkActions(urls, 'Open recovered link'));
+  buryText.appendChild(card);
+}
+
+function renderAuraPicker(b){
+  const old=document.getElementById("auraPickerWrap");
+  if(old) old.remove();
+  if(!b || !buryText || !canEditAura(b) || artifactIsRed(b.artifact)) return;
+
+  const wrap=document.createElement("div");
+  wrap.id="auraPickerWrap";
+  wrap.className="auraPickerWrap";
+
+  const label=document.createElement("label");
+  label.className="auraPickerLabel";
+  label.textContent="Aura";
+
+  const select=document.createElement("select");
+  select.className="auraPickerSelect";
+  select.setAttribute("aria-label","Choose sparkle aura color");
+  const current=getBurialAura(b);
+  AURA_OPTIONS.forEach(v=>{
+    const option=document.createElement("option");
+    option.value=v;
+    option.textContent=AURA_LABELS[v] || v;
+    if(v===current) option.selected=true;
+    select.appendChild(option);
+  });
+
+  const hint=document.createElement("div");
+  hint.className="auraPickerHint";
+  hint.textContent="Use aura colors to group sparkles that belong together.";
+
+  select.addEventListener("change", async ()=>{
+    const aura=cleanAura(select.value);
+
+    // Aura is mutable. Do not let an older auraOverride keep winning after
+    // the user changes pink -> gold, deep blue -> red, etc. Keep every known
+    // aura field in sync before saving or repainting.
+    syncBurialAura(b, aura);
+    if(b.artifact) setArtifactAura(b.artifact, aura);
+
+    saveBurials();
+    renderBurials();
+    toast(aura==="none" ? "Aura cleared" : "Aura saved");
+
+    if(b.serverId && b.source==="own"){
+      try{
+        await postJSON("/o-vvv-o/update_burial_aura.php", {id:b.serverId, aura});
+        syncBurialAura(b, aura);
+      }catch(e){
+        toast("Aura saved locally");
+      }
+    }
+  });
+
+  label.appendChild(select);
+  wrap.appendChild(label);
+  wrap.appendChild(hint);
+  buryText.parentNode.insertBefore(wrap, buryText.nextSibling);
+}
+
+function restoreBurialActionBar(){
+  const foot=document.querySelector(".buryFoot");
+  if(!foot) return;
+  foot.style.display="flex";
+  foot.style.visibility="visible";
+  foot.style.opacity="1";
+  ["closeOverlayBtn","copyBuriedBtn","storeChestBtn","deleteBuriedBtn"].forEach(id=>{
+    const btn=document.getElementById(id);
+    if(btn){
+      btn.style.display = "block";
+      btn.style.visibility="visible";
+      btn.style.opacity="1";
+      if(id==="storeChestBtn"){
+        updateStoreChestButtonState(btn);
+      }else{
+        btn.disabled=false;
+      }
+      if(id==="deleteBuriedBtn"){
+        btn.textContent="Delete";
+        btn.title="Delete this sparkle";
+        btn.onclick=deleteBurial;
+      }
+    }
+  });
+}
+
+async function openBurial(id){
+  const b=burials.find(x=>x.id===id);
+  if(!b) return;
+  b.openedOnce = true;
+  saveBurials();
+  renderBurials();
+  activeBurialId=id;
+  showBurialButtons();
+  let a=b.artifact||{};
+  a=await e2eeEnsureArtifactDecrypted(a);
+  b.artifact=a;
+  saveBurials();
+  buryTitle.textContent=a.title||"Buried Memory";
+  buryMeta.textContent=(b.source==="friend" ? ("from "+(a.sender||"friend")) : "buried text")+" · "+(a.createdAt||"unknown");
+  renderAuraPicker(b);
+  if(a.postcard){
+    buryText.innerHTML = '<div class="openedPostcard"><img src="./mariohead/postcards/'+String(a.postcard).replace(/[^a-zA-Z0-9_.-]/g,'')+'" alt=""><div class="openedPostcardText"></div></div>';
+    const txt = buryText.querySelector('.openedPostcardText');
+    if(txt) txt.textContent = a.fullText || '';
+  }else{
+    const recoveredUrls = urlsFromText(a.fullText || '');
+    if(recoveredUrls.length){
+      const onlyLink = isOnlyLinkText(a.fullText || '');
+      if(onlyLink){
+        buryTitle.textContent = a.title && a.title !== (a.fullText || '') ? a.title : 'Recovered Brown Link';
+        buryMeta.textContent = 'brown link · recovered from the field';
+        renderRecoveredBrownLink(recoveredUrls[0], a.fullText || '');
+      }else{
+        buryTitle.textContent = a.title && a.title !== (a.fullText || '') ? a.title : 'Recovered Note';
+        buryMeta.textContent = 'note with recovered link · recovered from the field';
+        renderRecoveredNoteWithLinks(a.fullText || '', recoveredUrls);
+      }
+    }else{
+      buryText.textContent=a.fullText||"";
+    }
+  }
+  document.body.classList.add("overlay-open");
+  buryOverlay.classList.add("show");
+  restoreBurialActionBar();
+}
+function closeBurial(){
+  const old=document.getElementById("auraPickerWrap");
+  if(old) old.remove();
+
+  // If a stored sparkle was opened from inside the chest, Close returns to the chest grid,
+  // not all the way back to the field. The user is still "inside" the chest context.
+  if(activeChestItemIndex!=null){
+    activeChestItemIndex=null;
+    activeBurialId=null;
+    openChest();
+    return;
+  }
+
+  document.body.classList.remove("overlay-open");
+  buryOverlay.classList.remove("show");
+  showBurialButtons();
+  activeBurialId=null;
+  activeChestItemIndex=null;
+}
+async function deleteBurial(){
+  if(!activeBurialId) return;
+  const b=burials.find(x=>x.id===activeBurialId);
+  if(!b) return;
+
+  if(b.serverId && b.source==="own"){
+    try{
+      await postJSON("/o-vvv-o/delete_burial.php",{id:b.serverId});
+    }catch(e){
+      say("Server delete failed.");
+      toast("Not deleted");
+      return;
+    }
+  }
+
+  if(b.messageId && b.source==="friend"){
+    try{
+      await postJSON("/o-vvv-o/delete_message.php",{id:b.messageId, message_id:b.messageId});
+    }catch(e){
+      say("Server delete failed.");
+      toast("Not deleted");
+      return;
+    }
+  }
+
+  burials=burials.filter(item=>item.id!==activeBurialId);
+  saveBurials();
+  closeBurial();
+  renderBurials();
+  say("The memory sinks away.");
+  face("o-vv-o");
+}
+
+function setDigButtonMode(mode){
+  if(!digBtn) return;
+  digBtn.classList.remove("pasteReady");
+  digBtn.textContent="DIG";
+}
+function bubblePosition(x,y){
+  return {left:(x*100/N)+"%", top:(y*100/N)+"%"};
+}
+function showBuryBubble(x,y,label="🪏"){
+  clearBuryBubble(false);
+  pendingBuryTile={x,y};
+  const wrap=document.getElementById("wrap");
+  const pos=bubblePosition(x,y);
+
+  // First armed state shows a shovel only when there is something to bury.
+  // No question mark: empty clipboard means no icon.
+  if(label!=="CTRL+V"){
+    const q=document.createElement("div");
+    q.className="mobileQuestionBubble pcQuestionBubble shovelBubble";
+    q.textContent=label || "🪏";
+    q.style.left=pos.left;
+    q.style.top=pos.top;
+    q.onclick=(e)=>{e.preventDefault();e.stopPropagation();handleBuryBubbleClick();};
+    q.oncontextmenu=(e)=>{e.preventDefault();e.stopPropagation();handleBuryBubbleClick();};
+    q.ontouchstart=(e)=>{e.stopPropagation();};
+    wrap.appendChild(q);
+    buryBubbleEl=q;
+    return;
+  }
+
+  const b=document.createElement("button");
+  b.type="button";
+  b.className="buryBubble ctrlv";
+  b.textContent="CTRL+V";
+  b.style.left=pos.left;
+  b.style.top=pos.top;
+  b.onclick=(e)=>{e.preventDefault();e.stopPropagation();handleBuryBubbleClick();};
+  b.oncontextmenu=(e)=>{e.preventDefault();e.stopPropagation();handleBuryBubbleClick();};
+  wrap.appendChild(b);
+  buryBubbleEl=b;
+  if(!IS_MOBILE) focusPasteSink();
+}
+function clearBuryBubble(clearPending=true){
+  if(buryBubbleEl){buryBubbleEl.remove();buryBubbleEl=null;}
+  if(clearPending) pendingBuryTile=null;
+  setDigButtonMode("dig");
+}
+async function armPasteForTile(x,y){
+  const t=getTile(x,y);
+  if(!t || t.dataset.state!=="big") return false;
+
+  const raw = await readText();
+  if(!raw || !raw.trim()){
+    clearBuryBubble(false);
+    pendingBuryTile=null;
+    face("0-vvv-0");
+    return false;
+  }
+
+  showBuryBubble(x,y,"🪏");
+  face("0-vvv-0");
+  return true;
+}
+async function handleBuryBubbleClick(){
+  if(!pendingBuryTile) return false;
+  if(carriedGems.length) return await maybeBuryPending();
+
+  if(IS_MOBILE){
+    const raw=await readText();
+    if(raw.trim()) return buryRawIntoPending(raw);
+    // Keep the quiet mobile rhythm: no Loaded/CTRL+V/keyboard state.
+    face("0-vvv-0");
+    return false;
+  }
+
+  const loaded=await tryLoadClipboardGemSilently(true);
+  if(loaded) return await maybeBuryPending();
+  if(pendingBuryTile) showBuryBubble(pendingBuryTile.x,pendingBuryTile.y,"CTRL+V");
+  focusPasteSink();
+  face("0-vvv-0");
+  return false;
+}
+function buryBubbleIsArmed(){
+  return !!(pendingBuryTile && (IS_MOBILE || buryBubbleEl));
+}
+async function confirmArmedBury(){
+  if(!buryBubbleIsArmed()) return false;
+  await handleBuryBubbleClick();
+  return true;
+}
+function clearPendingPaste(){clearBuryBubble(true);}
+function maybeBuryPending(){
+  if(!pendingBuryTile || !carriedGems.length) return false;
+  const {x,y}=pendingBuryTile;
+  clearBuryBubble(true);
+  return buryIntoTile(x,y);
+}
+async function buryRawIntoPending(raw){
+  raw=(raw||"").trim();
+  if(!pendingBuryTile || !raw) return false;
+  const {x,y}=pendingBuryTile;
+  const t=getTile(x,y);
+  if(!t || t.dataset.state!=="big") return false;
+  if(findBurial(x,y)) return false;
+
+  const artifact=makeClipboardArtifact(raw);
+  let b=null;
+
+  if(serverMode){
+    say("Saving to field...");
+    try{
+      b=await saveServerBurialPayload(x,y,artifact);
+    }catch(e){
+      say("Server save failed.");
+      face("o-vv-o");
+      toast("Not saved");
+      return false;
+    }
+  }else{
+    b={id:"b_"+Date.now(),source:"local",x,y,artifact,buriedAt:new Date().toISOString()};
+  }
+
+  burials.push(b);
+  saveBurials();
+  t.dataset.state="ground";
+  t.dataset.water="0";
+  paint(t);
+  saveFieldState();
+  clearBuryBubble(true);
+  renderBurials();
+  clipboardBuffer=raw;
+  clipboardBufferAt=Date.now();
+  lastPasteText=raw;
+  say(serverMode ? "Saved on server." : "Buried.");
+  face("0-vvv-0");
+  rewardSound();
+  return true;
+}
+
+function base(){
+  return "tile" + Math.floor(Math.random() * CURRENT_TILE_POOL.length);
+}
+
+function addTileContextMenu(t,x,y){
+  t.addEventListener("contextmenu", async e=>{
+    e.preventDefault();
+    focusPasteSink();
+    if(!near(x,y)){say("Near."); return;}
+    if(findBurial(x,y)){await unburyFromTile(x,y); return;}
+    const tile=getTile(x,y);
+    if(tile && tile.dataset.state==="big" && carriedGems.length){await buryIntoTile(x,y); clearPendingPaste(); return;}
+    if(tile && tile.dataset.state==="big"){await armPasteForTile(x,y); return;}
+    await digTile(x,y);
+  });
+}
+function animateHoleWater(fill=true){
+  clearInterval(holeWaterTimer);
+  let step=fill ? 1 : 5;
+  holeWaterTimer=setInterval(()=>{
+    let active=false;
+    tiles.forEach(t=>{
+      if(t.dataset.state!=="small" && t.dataset.state!=="big") return;
+      active=true;
+      t.dataset.waterMode=fill ? "fill" : "drain";
+      t.dataset.water=String(step);
+      paint(t);
+    });
+    if(!active){clearInterval(holeWaterTimer); holeWaterTimer=null; return;}
+    if(fill){
+      if(step>=5){
+        tiles.forEach(t=>{if(t.dataset.state==="small"||t.dataset.state==="big"){t.dataset.water="5";t.dataset.waterMode="fill";paint(t);}});
+        saveFieldState();
+        clearInterval(holeWaterTimer); holeWaterTimer=null; return;
+      }
+      step++;
+    }else{
+      if(step<=0){
+        tiles.forEach(t=>{if(t.dataset.state==="small"||t.dataset.state==="big"){t.dataset.water="0";t.dataset.waterMode="";paint(t);}});
+        saveFieldState();
+        clearInterval(holeWaterTimer); holeWaterTimer=null; return;
+      }
+      step--;
+    }
+  },180);
+}
+
+function makeBoard(){
+  const savedFieldState=loadFieldState();
+  board.innerHTML="";tiles=[];
+  for(let y=0;y<N;y++){
+    for(let x=0;x<N;x++){
+      let t=document.createElement("div");
+      t.className="tile";
+      t.dataset.x=x;t.dataset.y=y;
+      t.dataset.base=base();
+      t.dataset.state="ground";
+      t.dataset.water="0";
+      t.dataset.waterMode="";
+      t.onclick=()=>tapTile(x,y);
+      addTileContextMenu(t,x,y);
+      board.appendChild(t);tiles.push(t);paint(t);
+    }
+  }
+  applyFieldState(savedFieldState);
+  seedTrailPositions();drawPlayer();targets();renderBurials();renderGemTrail();
+  saveFieldState();
+}
+function baseImg(t){
+  const key=t.dataset.base || "tile0";
+  if(key.startsWith("tile")){
+    const idx=parseInt(key.replace("tile",""),10);
+    return CURRENT_TILE_POOL[(Number.isFinite(idx)?idx:0) % CURRENT_TILE_POOL.length];
+  }
+  return CURRENT_TILE_POOL[0] || SPR.sand;
+}
+function getTile(x,y){return tiles.find(t=>+t.dataset.x===x&&+t.dataset.y===y)}
+function holeFrame(t){
+  const state=t.dataset.state;
+  const water=Math.max(0, Math.min(5, parseInt(t.dataset.water||"0",10) || 0));
+  const mode=t.dataset.waterMode || "fill";
+  if(state==="small"){
+    if(water<=0) return SPR.small;
+    return mode==="drain" ? SPR.smallDrain[5-water] : SPR.smallFill[water-1];
+  }
+  if(state==="big"){
+    if(water<=0) return SPR.big;
+    return mode==="drain" ? SPR.bigDrain[5-water] : SPR.bigFill[water-1];
+  }
+  return null;
+}
+function paint(t){
+  const h=holeFrame(t);
+  if(h){
+    t.style.backgroundImage=`url("${h}"), url("${baseImg(t)}")`;
+  }else{
+    t.style.backgroundImage=`url("${baseImg(t)}")`;
+  }
+}
+function near(x,y){return Math.abs(x-p.x)+Math.abs(y-p.y)===1}
+function targets(){
+  tiles.forEach(t=>t.classList.remove("target"));
+  [[1,0],[-1,0],[0,1],[0,-1]].forEach(([dx,dy])=>{
+    let t=getTile(p.x+dx,p.y+dy);if(t)t.classList.add("target");
+  });
+}
+function dir(dx,dy){if(dx>0)return"right";if(dx<0)return"left";if(dy<0)return"back";return"front"}
+function hasCarry(){return carriedGems && carriedGems.length>0}
+function stand(){
+  if(hasCarry()){
+    if(p.dir==="left") return SPR.carryLeft;
+    if(p.dir==="right") return SPR.carryRight;
+    if(p.dir==="front") return SPR.carryFrontStand;
+  }
+  return p.dir==="back"?SPR.backStand:p.dir==="left"?SPR.leftStand:p.dir==="right"?SPR.rightStand:SPR.frontStand;
+}
+function walk(){
+  if(hasCarry()){
+    if(p.dir==="left") return [SPR.carryLeft,SPR.carryLeft];
+    if(p.dir==="right") return [SPR.carryRight,SPR.carryRight];
+    if(p.dir==="front") return [SPR.carryFront1,SPR.carryFront2];
+  }
+  return p.dir==="back"?[SPR.back1,SPR.back2]:p.dir==="left"?[SPR.left1,SPR.left2]:p.dir==="right"?[SPR.right1,SPR.right2]:[SPR.front1,SPR.front2];
+}
+function digSpriteForTile(t){
+  const state = t ? t.dataset.state : "ground";
+  if(p.dir==="left") return state==="small" ? SPR.digLeftBig : SPR.digLeftSmall;
+  if(p.dir==="right") return state==="small" ? SPR.digRightBig : SPR.digRightSmall;
+  return SPR.digFront;
+}
+function digSprite(){return digSpriteForTile(null)}
+function stressSprite(){
+  return p.dir==="back"?SPR.stressBack:p.dir==="left"?SPR.stressLeft:p.dir==="right"?SPR.stressRight:SPR.stressFront;
+}
+function safeSetPlayerSprite(url, fallback){
+  // Prevent ghosting: keep a visible fallback if Safari has not loaded the stress PNG yet.
+  const img = new Image();
+  img.onload = () => {
+    if(isStressed){
+      playerEl.style.backgroundImage = `url("${url}")`;
+    }
+  };
+  img.onerror = () => {
+    playerEl.style.backgroundImage = `url("${fallback}")`;
+  };
+  img.src = url;
+  playerEl.style.backgroundImage = `url("${fallback}")`;
+}
+function rainStressReaction(){
+  clearTimeout(stressTimer);
+  clearTimeout(idleSleepTimer);
+  clearInterval(sleepAnimTimer);
+  sleepAnimTimer=null;
+  if(!isStressed) playerEl.classList.remove("stressShake");
+
+  if(isSleeping){
+    isSleeping=false;
+  }
+
+  isStressed=true;
+  playerEl.classList.add("stressShake");
+  safeSetPlayerSprite(stressSprite(), stand());
+  face("0-vvv-0");
+
+  stressTimer=setTimeout(()=>{
+    isStressed=false;
+    playerEl.classList.remove("stressShake");
+    drawPlayer();
+    scheduleSleep();
+  }, 2000);
+}
+function drawPlayer(){
+  playerEl.style.left=(p.x*100/N)+"%";
+  playerEl.style.top=(p.y*100/N)+"%";
+  updateGem();
+  if(isActionLocked) return;
+  if(isStressed){
+    safeSetPlayerSprite(stressSprite(), stand());
+  }else if(!isSleeping){
+    playerEl.style.backgroundImage=`url("${stand()}")`;
+  }
+}
+function animWalk(){
+  if(isActionLocked) return;
+  clearInterval(walkTimer);
+
+  if(isStressed){
+    playerEl.style.backgroundImage=`url("${stressSprite()}")`;
+    walkTimer=setInterval(()=>{
+      playerEl.style.backgroundImage=`url("${stressSprite()}")`;
+    },90);
+  }else{
+    let f=walk(),i=0;
+    walkTimer=setInterval(()=>{playerEl.style.backgroundImage=`url("${f[i%2]}")`;i++},90);
+  }
+
+  setTimeout(()=>{
+    clearInterval(walkTimer);
+    walkTimer=null;
+    drawPlayer();
+    scheduleSleep();
+  },260);
+}
+function move(dx,dy){
+  clearPendingPaste();
+  if(isSleeping) wakeBurrower();
+  else scheduleSleep();
+  let ox=p.x, oy=p.y;
+  let nx=p.x+dx,ny=p.y+dy;p.dir=dir(dx,dy);
+  if(isStressed) safeSetPlayerSprite(stressSprite(), stand());
+  if(nx<0||nx>=N||ny<0||ny>=N){drawPlayer();say("Edge of the little field.");return}
+  if(findBurial(nx,ny)){
+    drawPlayer();
+    say("Stand next to the sparkle and tap DIG.");
+    face("o-vv-o");
+    return;
+  }
+  p.x=nx;p.y=ny;stepTrail(ox,oy);animWalk();targets();saveFieldState();say("Step step.");face("o-vvv-o");
+}
+async function tapTile(x,y){
+  if(IS_MOBILE && pendingBuryTile && pendingBuryTile.x===x && pendingBuryTile.y===y){
+    await confirmArmedBury();
+    return;
+  }
+  clearPendingPaste();
+  const buried=findBurial(x,y);
+  if(buried){
+    if((buried.source === "friend" && !buried.found) || (buried.artifact && artifactIsHiddenTreasure(buried.artifact) && !buried.found)){
+      // Hidden objects must be found by DIG, not by tapping.
+    }else{
+      openBurial(buried.id);
+      return;
+    }
+  }
+  if(isSleeping) wakeBurrower();
+  else scheduleSleep();
+  if(x===p.x&&y===p.y){say("That is o-vvv-o.");face("o-vv-o");return}
+  if(!near(x,y)){say("Stand next to a tile to dig it.");face("o-vvvo");return}
+  p.dir=dir(x-p.x,y-p.y);await await digTile(x,y);
+}
+async function tryLoadClipboardGemSilently(quiet=false){
+  const raw=await readText();
+  if(!raw.trim()){if(!quiet) say("Empty."); return false;}
+  return acceptPastedText(raw);
+}
+
+function visibleSparkleExistsOnPlayerTile(){
+  // Exact rule only:
+  // if the player is standing on the same tile as a visible .sparkle, DIG opens it.
+  const wrap = document.getElementById("wrap");
+  if(!wrap) return null;
+
+  const expectedLeft = (p.x * 100 / N) + "%";
+  const expectedTop = (p.y * 100 / N) + "%";
+
+  const sparkles = [...wrap.querySelectorAll(".sparkle")];
+
+  const el = sparkles.find(sp =>
+    sp.style.left === expectedLeft &&
+    sp.style.top === expectedTop
+  );
+
+  if(!el) return null;
+
+  return findBurial(p.x, p.y) || null;
+}
+
+async function openSparkleIfStandingOnIt(){
+  const b = visibleSparkleExistsOnPlayerTile();
+  if(!b) return false;
+  await openBurial(b.id);
+  return true;
+}
+
+
+/* === Same-tile sparkle DIG interceptor ===
+   Exact behavior:
+   If the DIG button is pressed while the player stands on a visible sparkle tile,
+   open that sparkle and block the normal forward-dig action.
+*/
+function ovvvoVisibleSparkleOnPlayerTile(){
+  const b = findBurial(p.x, p.y);
+  if(!b) return null;
+
+  // Only visible sparkles. Hidden messages remain hidden.
+  if(b.source === "friend" && !b.found) return null;
+  if(b.artifact && artifactIsHiddenTreasure(b.artifact) && !b.found) return null;
+
+  return b;
+}
+
+async function ovvvoOpenVisibleSparkleOnPlayerTile(){
+  const b = ovvvoVisibleSparkleOnPlayerTile();
+  if(!b) return false;
+  await openBurial(b.id);
+  return true;
+}
+
+document.addEventListener("click", async function(e){
+  const btn = e.target && e.target.closest && e.target.closest("#digBtn");
+  if(!btn) return;
+
+  if(await ovvvoOpenVisibleSparkleOnPlayerTile()){
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    e.stopPropagation();
+  }
+}, true);
+
+document.addEventListener("touchend", async function(e){
+  const btn = e.target && e.target.closest && e.target.closest("#digBtn");
+  if(!btn) return;
+
+  if(await ovvvoOpenVisibleSparkleOnPlayerTile()){
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    e.stopPropagation();
+  }
+}, true);
+
+
+/* Green Notice Board — fixed editable field sparkle
+   Edit /notice.json in Hostinger to update the text/links.
+   This is intentionally file-based: no public editor, no account UI.
+*/
+let fieldNoticeData = null;
+const FIELD_NOTICE_POS = {x:0, y:0};
+const DEFAULT_FIELD_NOTICE = {
+  enabled:true,
+  title:"🌱 Field Notice",
+  body:"Welcome to o-vvv-o. \ud83c\udf31\n\nThis is a small field for notes, links and memories. Think of it like Apple Notes or Stickies, but spatial: your notes live as sparkles in the field.\n\nHow to use it:\n\u2022 Copy text or a link.\n\u2022 Walk to a spot in the field.\n\u2022 Press DIG three times.\n\u2022 If something can be buried, the \ud83e\ude8f shovel appears. Tap it to bury your note as a sparkle.\n\u2022 Walk to a sparkle and press DIG to read it again.\n\nBrown Links:\nUse Brown Link to make a shareable link. You can share something directly with friends or hide it in the field for someone to discover.\n\nAura colors:\nGive sparkles an aura color to organize them. Colors are for your own memory: ideas, links, personal notes, projects, reminders, or anything you choose. You can change the aura later.\n\nChest:\nDig up your chest to store sparkles safely. \ud83d\uddc3\ufe0f means empty. \ud83e\ude8e means it holds stored sparkles. Field resets may bury the chest again, but the items inside stay safe.\n\nPrivacy:\nNew account sparkles and chest saves are encrypted in your browser before they touch the server. The server stores encrypted data, not your readable note text.\n\n- - -\n\nField log / recent updates:\n\u2022 Clipboard reading improved for GPT, Apple Notes and Brownlinks.\n\u2022 The old question mark was removed.\n\u2022 \ud83e\ude8f now means: something can be buried here.\n\u2022 Hidden Brownlinks are detected more reliably.\n\u2022 Close, Copy and Delete are back in message views.\n\u2022 Aura colors were added for sparkle organization.\n\u2022 Aura colors can now be changed after choosing one.\n\u2022 Field and chest sparkles now keep their true aura color.\n\u2022 The chest was added as physical storage.\n\u2022 Chest items show as sparkles, not text.\n\u2022 Tap a chest sparkle to read it; Take Out appears in the detail view.\n\u2022 The chest can be opened by tapping it.\n\u2022 Finding the chest cleans the field holes.\n\u2022 Rain drain direction was fixed.\n\u2022 The message pill no longer covers open info boxes.\n\u2022 The noticeboard was flattened and made easier to read.\n\nThis field is alive and being improved gently. \ud83d\udc9b",
+  links:[{"label": "\ud83e\ude8f Make a Brown Link", "url": "./bury/"}, {"label": "Back to field", "url": "./"}]
+};
+
+async function loadFieldNotice(){
+  fieldNoticeData = DEFAULT_FIELD_NOTICE;
+  try{
+    const res = await fetch("./notice.json?ts=" + Date.now(), {cache:"no-store"});
+    if(res.ok){
+      const data = await res.json();
+      fieldNoticeData = data && data.enabled !== false ? data : DEFAULT_FIELD_NOTICE;
+    }
+  }catch(e){
+    fieldNoticeData = DEFAULT_FIELD_NOTICE;
+  }
+  renderNoticeSparkle();
+}
+
+function renderNoticeSparkle(){
+  document.querySelectorAll(".noticeSparkle").forEach(s=>s.remove());
+  if(!fieldNoticeData || fieldNoticeData.enabled === false) return;
+
+  const wrap = document.getElementById("wrap");
+  if(!wrap) return;
+
+  const sp = document.createElement("div");
+  sp.className = "noticeSparkle";
+  sp.setAttribute("aria-label", "Open field notice");
+  sp.textContent = "✦";
+  sp.style.left = (FIELD_NOTICE_POS.x * 100 / N) + "%";
+  sp.style.top = (FIELD_NOTICE_POS.y * 100 / N) + "%";
+  sp.title = fieldNoticeData.title || "Field Notice";
+  sp.onclick = e => {
+    e.stopPropagation();
+    openFieldNotice();
+  };
+  wrap.appendChild(sp);
+}
+
+function openFieldNotice(){
+  try{ rewardSound(); }catch(e){}
+  const data = fieldNoticeData || {};
+  activeBurialId = null;
+  buryTitle.textContent = data.title || "🌱 Field Notice";
+  buryMeta.textContent = "green sparkle · field guide";
+  const oldAuraPicker=document.getElementById("auraPickerWrap");
+  if(oldAuraPicker) oldAuraPicker.remove();
+
+  // Noticeboard should feel like one playful board, not a window inside a window.
+  buryText.innerHTML = "";
+  buryText.classList.add("noticeDirectText");
+
+  const body = document.createElement("div");
+  body.className = "noticeDirectBody";
+  body.textContent = data.body || "Edit notice.json to update this field notice.";
+  buryText.appendChild(body);
+
+  const links = Array.isArray(data.links) ? data.links : [];
+  if(links.length){
+    const actions = document.createElement("div");
+    actions.className = "noticeActions noticeActionsFlat";
+    links.forEach(link=>{
+      if(!link || !link.url) return;
+      const a = document.createElement("a");
+      a.className = "noticeBtn";
+      a.href = link.url;
+      a.target = "_self";
+      a.rel = "noopener";
+      a.textContent = link.label || "Open";
+      actions.appendChild(a);
+    });
+    buryText.appendChild(actions);
+  }
+
+  document.body.classList.add("overlay-open");
+  buryOverlay.classList.add("show");
+  restoreBurialActionBar();
+}
+
+async function openNoticeIfStandingOnIt(){
+  if(!fieldNoticeData || fieldNoticeData.enabled === false) return false;
+  if(p.x !== FIELD_NOTICE_POS.x || p.y !== FIELD_NOTICE_POS.y) return false;
+  openFieldNotice();
+  return true;
+}
+
+async function digButton(){
+  if(isSleeping) wakeBurrower();
+  else scheduleSleep();
+
+  // Green notice board: stand on fixed green sparkle + DIG = open notice.
+  if(await openNoticeIfStandingOnIt()) return;
+
+  // Exact behavior: standing on visible sparkle + DIG = open/read.
+  if(await ovvvoOpenVisibleSparkleOnPlayerTile()) return;
+
+  // Only this: standing on a visible sparkle + DIG = open/read.
+  if(await openSparkleIfStandingOnIt()) return;
+
+  // If the local BURY bubble is armed, the next DIG/Space confirms it.
+  // This keeps the PC loop as satisfying as mobile: dig, dig, dig, confirm.
+  if(await confirmArmedBury()) return;
+
+  let dx=p.dir==="right"?1:p.dir==="left"?-1:0;
+  let dy=p.dir==="front"?1:p.dir==="back"?-1:0;
+  let x=p.x+dx,y=p.y+dy;
+
+  if(x<0||x>=N||y<0||y>=N){
+    say("Edge.");
+    face("o-vvvo");
+    return;
+  }
+
+  await digTile(x,y);
+}
+async function digForward(){
+  if(isSleeping) wakeBurrower();
+  else scheduleSleep();
+
+  let dx=p.dir==="right"?1:p.dir==="left"?-1:0,dy=p.dir==="front"?1:p.dir==="back"?-1:0,x=p.x+dx,y=p.y+dy;
+  if(x<0||x>=N||y<0||y>=N){say("Nothing to dig there.");face("o-vvvo");return}
+  await digTile(x,y);
+}
+async function digTile(x,y){
+  let t=getTile(x,y);if(!t)return;
+  if(tryDigChest(x,y)) return;
+  const buried=findBurial(x,y);
+  if(buried){
+    if(x < p.x) p.dir="left";
+    else if(x > p.x) p.dir="right";
+    digSound("big");
+    await unburyFromTile(x,y);
+    clearPendingPaste();
+    return;
+  }
+  if(carriedGems.length && t.dataset.state==="big"){
+    digSound("big");
+    await buryIntoTile(x,y);
+    clearPendingPaste();
+    return;
+  }
+
+  if(t.dataset.state==="big"){
+    digSound("tap");
+    await armPasteForTile(x,y);
+    return;
+  }
+
+  if(t.dataset.state==="small") digSound("big");
+  else digSound("small");
+
+  playerEl.style.backgroundImage=`url("${digSpriteForTile(t)}")`;face("o-vvvv-o");
+  setTimeout(()=>{
+    if(t.dataset.state==="small"){
+      t.dataset.state="big";t.dataset.water=rainLocked?"5":"0";t.dataset.waterMode=rainLocked?"fill":"";paint(t);
+      saveFieldState();
+      say("Big hole.");face("o-vvv-o");
+    }else{
+      t.dataset.state="small";t.dataset.water=rainLocked?"5":"0";t.dataset.waterMode=rainLocked?"fill":"";paint(t);
+      saveFieldState();
+      say("Small hole.");face("o-vvv-o")
+    }
+    drawPlayer();
+  },220);
+}
+function say(t){msg.textContent=t}
+function face(t){glyph.textContent=t;clearTimeout(idleTimer);idleTimer=setTimeout(()=>glyph.textContent="o-vvv-o",1300)}
+document.querySelectorAll("button").forEach(btn=>{
+  btn.addEventListener("click", e => e.currentTarget.blur());
+});
+
+
+const pasteSink=document.getElementById("pasteSink");
+[document.body, document.getElementById("wrap"), board, pasteSink].forEach(el=>{
+  if(!el) return;
+  el.addEventListener("paste", e=>{
+    const text=e.clipboardData?.getData("text") || "";
+    if(acceptPastedText(text)){ maybeBuryPending(); e.preventDefault(); }
+  });
+});
+if(!IS_MOBILE){
+  document.addEventListener("pointerdown", focusPasteSink, true);
+  document.addEventListener("click", focusPasteSink, true);
+  document.addEventListener("visibilitychange", ()=>{if(!document.hidden) setTimeout(focusPasteSink,40);});
+}
+
+document.addEventListener("keydown",async e=>{
+  let k=e.key.toLowerCase();
+
+  // Buried Chat typing guard:
+  // while the message panel/input is active, keyboard belongs to typing, not digging.
+  if(ovvvoChatIsTyping()){
+    return;
+  }
+
+  if(!IS_MOBILE && (e.ctrlKey||e.metaKey) && k==="v"){
+    focusPasteSink();
+    return;
+  }
+
+  // Armed BURY state: Space/Enter/DIG confirms instead of digging again.
+  // Esc cancels, movement cancels softly so the player never gets trapped.
+  if(buryBubbleIsArmed()){
+    if(k===" "||k==="enter"){
+      e.preventDefault();
+      await confirmArmedBury();
+      return;
+    }
+    if(k==="escape"){
+      e.preventDefault();
+      clearPendingPaste();
+      say("Ready.");
+      return;
+    }
+    if(k==="arrowup"||k==="w"||k==="arrowdown"||k==="s"||k==="arrowleft"||k==="a"||k==="arrowright"||k==="d"){
+      clearPendingPaste();
+    }
+  }
+
+  if(k==="arrowup"||k==="w")move(0,-1);
+  if(k==="arrowdown"||k==="s")move(0,1);
+  if(k==="arrowleft"||k==="a")move(-1,0);
+  if(k==="arrowright"||k==="d")move(1,0);
+  if(k===" "||k==="enter"){e.preventDefault();digButton()}
+});
+
+/* Patch 3: clean/reset field soil while preserving buried messages */
+function countDugTiles(){
+  if(!tiles || !tiles.length) return 0;
+  return tiles.filter(t => {
+    const s = t.dataset.state || "ground";
+    return s === "small" || s === "big";
+  }).length;
+}
+
+function checkFieldRefreshNeed(){
+  const dug = countDugTiles();
+
+  // 7x7 grid = 49 tiles. Around half-dug starts to feel exhausted in playtests.
+  // Keep this as a soft affordance: it shows NEW FIELD, but does not force refresh.
+  const needs = dug >= 24;
+
+  document.body.classList.toggle("field-needs-refresh", needs);
+  return needs;
+}
+
+
+function chooseDifferentBiome(){
+  const options = BIOME_KEYS.filter(k => k !== currentBiome && BIOMES[k]);
+  if(!options.length) return currentBiome;
+  return options[Math.floor(Math.random() * options.length)];
+}
+
+function refreshFieldSoil(){
+  if(!tiles || !tiles.length) return;
+
+  // NEW FIELD = new biome + clean soil.
+  // Do not rely only on reload/localStorage removal; reset the live tiles first too.
+  const nextBiome = chooseDifferentBiome();
+
+  localStorage.setItem("ovvvo_biome_date", todayKey());
+  localStorage.setItem("ovvvo_current_biome", nextBiome);
+
+  // Clear every known field-state key used by older builds.
+  localStorage.removeItem(FIELD_STATE_KEY);
+  localStorage.removeItem("ovvvo_persistent_field_state_v1");
+
+  tiles.forEach(t => {
+    t.dataset.base = base();
+    t.dataset.state = "ground";
+    t.dataset.water = "0";
+    t.dataset.waterMode = "";
+    paint(t);
+  });
+
+  p.x = 3;
+  p.y = 3;
+  p.dir = "front";
+  trailPositions = [];
+  seedTrailPositions();
+  drawPlayer();
+  renderGemTrail();
+  reburyChestForNewField();
+
+  // Save the clean state before reload so old holes cannot come back.
+  saveFieldState();
+
+  document.body.classList.remove("field-needs-refresh");
+
+  say("New field...");
+  face("o-vvv-o");
+  toast("New biome");
+
+  setTimeout(()=>location.reload(), 180);
+}
+
+function scheduleNextWeather(){
+  clearTimeout(weatherLoopTimer);
+  clearTimeout(autoRainStartTimer);
+
+  // Weather can happen at any moment. Shorter for prototype feel.
+  const delay = 25000 + Math.random() * 95000; // 25-120 sec
+
+  weatherLoopTimer = setTimeout(()=>{
+    if(isRaining){
+      scheduleNextWeather();
+      return;
+    }
+
+    const chance = 0.42;
+    if(Math.random() < chance){
+      startRain();
+    }else{
+      const dryLines = [
+        "The field is dry for now.",
+        currentBiome.includes("Desert") || currentBiome==="desert" ? "The desert waits." : "The sand waits.",
+        "No clouds yet.",
+        "The air feels still.",
+        "The ground is listening."
+      ];
+      say(dryLines[Math.floor(Math.random() * dryLines.length)]);
+      scheduleNextWeather();
+    }
+  }, delay);
+}
+
+function maybeAutoWeather(){
+  // Initial quick check, then continuous weather loop.
+  clearTimeout(autoRainStartTimer);
+  const firstChance = 0.38;
+
+  if(Math.random() < firstChance){
+    const delay = 1600 + Math.random() * 4200;
+    autoRainStartTimer = setTimeout(()=>{
+      if(!isRaining) startRain();
+    }, delay);
+  }else{
+    say("The field is dry for now.");
+  }
+
+  scheduleNextWeather();
+}
+
+glyph.style.cursor="pointer";
+glyph.addEventListener("click", ()=>{
+  window.location.href="https://madeby.re/games/o-vvv-o/emotions";
+});
+loadBurials();
+loadChest();
+importBrownHyperlinkFromURL();
+
+
+document.getElementById("closeOverlayBtn").onclick=closeBurial;
+document.getElementById("copyBuriedBtn").onclick=async()=>{
+  if(activeChestItemIndex!=null && chestState && chestState.items && chestState.items[activeChestItemIndex]){
+    const a=chestItemArtifact(chestState.items[activeChestItemIndex]);
+    await copyText(a.fullText || a.text || a.url || a.payload || chestItemPreview(chestState.items[activeChestItemIndex]) || "");
+    toast("Copied");
+    return;
+  }
+  const b=burials.find(x=>x.id===activeBurialId);
+  if(!b) return;
+  await copyText(b.artifact?.fullText || "");
+  toast("Copied");
+};
+document.getElementById("deleteBuriedBtn").onclick=deleteBurial;
+const storeChestBtn=document.getElementById("storeChestBtn");
+if(storeChestBtn) storeChestBtn.onclick=storeActiveBurialInChest;
+buryOverlay.addEventListener("click",e=>{if(e.target===buryOverlay)closeBurial()});
+
+preloadActionSprites();
+applyBiomeTheme(currentBiome);
+makeBoard();
+loadFieldNotice();
+checkFieldRefreshNeed();
+syncServerBurials();
+renderChest();
+setDigButtonMode("dig");
+say(BIOME_LABELS[currentBiome] || "New field.");
+scheduleSleep();
+maybeAutoWeather();
+if(!IS_MOBILE) setTimeout(focusPasteSink,120);
+
+// Patch 2: lightweight auto-refresh for incoming buried messages.
+// This prevents the UI from only waking up after pressing Messages/back.
+setInterval(()=>{
+  if(typeof syncServerBurials === "function" && !document.body.classList.contains("buried-chat-open")){
+    syncServerBurials();
+  }
+}, 15000);
+
+
+// Patch 3: keep refresh affordance in sync with digging.
+setInterval(()=>{
+  if(typeof checkFieldRefreshNeed === "function") checkFieldRefreshNeed();
+}, 2500);
+
+window.addEventListener("pagehide", saveFieldState);
+
+</script>
+
+<!-- === o-vvv-o Buried Chat UI v1 === -->
+<div id="buriedRail" class="buriedRail" onclick="BuriedChat.openHistory()">
+  <img id="buriedRailAvatar" class="buriedRailAvatar" src="./assets/01_avatar_tight.png" alt="">
+  <div class="buriedRailText">
+    <strong id="buriedRailTitle">No buried chat yet</strong>
+    <small id="buriedRailStatus">Tap MESSAGE to start</small>
+  </div>
+  <div class="buriedRailPull">⌄</div>
+</div>
+
+<button id="buriedChatButton" class="buriedChatButton" type="button" onclick="BuriedChat.openComposer()">🪏 MESSAGE</button>
+
+
+<button id="fieldRefreshBtn" class="fieldRefreshBtn" type="button" onclick="refreshFieldSoil()">🌱 NEW FIELD</button>
+
+<section id="buriedPanel" class="buriedPanel" aria-label="Buried chat panel">
+  <div class="buriedPanelHead">
+    <strong>Buried Chat</strong>
+    <button class="buriedClose" type="button" onclick="BuriedChat.close()">×</button>
+  </div>
+
+  <div class="buriedTabs">
+    <button id="buriedTabCompose" class="buriedTab active" type="button" onclick="BuriedChat.setTab('compose')">Send</button>
+    <button id="buriedTabHistory" class="buriedTab" type="button" onclick="BuriedChat.setTab('history')">Thread</button>
+  </div>
+
+  <div class="buriedComposer">
+    <div id="buriedFriendList" class="buriedFriendList"></div>
+    <textarea id="buriedMessageText" class="buriedField" placeholder="Type a buried message..."></textarea>
+    <button class="buriedSend" type="button" onclick="BuriedChat.send()">BURY</button>
+    <div id="buriedStatusLine" class="buriedStatusLine">Choose a friend, type, bury.</div>
+  </div>
+
+  <div class="buriedHistory">
+    <div id="buriedThread" class="buriedThread"></div>
+    <div class="buriedReplyRow">
+      <input id="buriedReplyText" placeholder="Type chat reply...">
+      <button type="button" onclick="BuriedChat.reply()">CHAT</button>
+    </div>
+  </div>
+</section>
+
+
+<script>
+/* === o-vvv-o Buried Chat UI v1 === */
+window.BuriedChat = (function(){
+  const state = {
+    me:null,
+    friends:[],
+    selected:null,
+    thread:[]
+  };
+
+  const $ = id => document.getElementById(id);
+  const avatarUrl = a => './assets/' + (a || '01_avatar_tight.png');
+
+  let railTimer = null;
+
+  function toastLine(msg){
+    const el = $('buriedStatusLine');
+    if(el) el.textContent = msg;
+  }
+
+  function showRailNotification({avatar, title, status, sticky=false, openHistoryOnTap=true}){
+    if(!state.me) return;
+    clearTimeout(railTimer);
+    document.body.classList.add('buried-chat-has-status');
+
+    const rail = $('buriedRail');
+    if(rail) rail.dataset.mode = sticky ? 'sticky' : 'notice';
+
+    if($('buriedRailAvatar')) $('buriedRailAvatar').src = avatarUrl(avatar);
+    if($('buriedRailTitle')) $('buriedRailTitle').textContent = title || 'Buried notification';
+    if($('buriedRailStatus')) $('buriedRailStatus').textContent = status || '';
+
+    if(rail){
+      rail.onclick = openHistoryOnTap ? () => openHistory() : null;
+    }
+
+    // Patch 2: top rail is a notification, not a permanent pinned message.
+    // Sticky just means it stays a bit longer.
+    const delay = sticky ? 8500 : 4200;
+    railTimer = setTimeout(()=>{
+      if(document.body.classList.contains('buried-chat-open')){
+        railTimer = setTimeout(()=>document.body.classList.remove('buried-chat-has-status'), 1800);
+        return;
+      }
+      document.body.classList.remove('buried-chat-has-status');
+    }, delay);
+  }
+
+  function hideRailNotification(){
+    clearTimeout(railTimer);
+    document.body.classList.remove('buried-chat-has-status');
+  }
+
+  async function api(url, opts){
+    const r = await fetch(url, opts || {});
+    const j = await r.json().catch(()=>({ok:false,error:'Bad JSON'}));
+    if(!j.ok) throw new Error(j.error || 'Request failed');
+    return j;
+  }
+
+  async function init(){
+    try{
+      const data = await api('/o-vvv-o/friends_api.php');
+      state.me = data.user;
+      state.friends = data.friends || [];
+      document.body.classList.toggle('buried-chat-logged-in', !!state.me);
+      renderFriends();
+      const saved = localStorage.getItem('ovvvo_selected_friend_id');
+      if(saved){
+        const f = state.friends.find(x => String(x.id) === String(saved));
+        if(f) selectFriend(f.id, false);
+      }
+    }catch(e){
+      document.body.classList.remove('buried-chat-logged-in');
+      console.warn('BuriedChat init failed', e);
+      toastLine('Login needed for buried chat.');
+    }
+  }
+
+  function renderFriends(){
+    const list = $('buriedFriendList');
+    if(!list) return;
+    list.innerHTML = '';
+
+    if(!state.friends.length){
+      list.innerHTML = '<div style="color:#f5c77d;font-weight:900;padding:10px">No friends yet. Add a friend first.</div>';
+      return;
+    }
+
+    state.friends.forEach(f=>{
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'buriedFriend';
+      btn.dataset.friendId = f.id;
+      btn.innerHTML = `
+        <img src="${avatarUrl(f.avatar)}" alt="">
+        <span>${escapeHtml(f.username)}</span>
+      `;
+      btn.onclick = () => selectFriend(f.id, true);
+      list.appendChild(btn);
+    });
+  }
+
+  function selectFriend(friendId, openThread){
+    const f = state.friends.find(x => String(x.id) === String(friendId));
+    if(!f) return;
+
+    state.selected = f;
+    localStorage.setItem('ovvvo_selected_friend_id', f.id);
+
+    document.querySelectorAll('.buriedFriend').forEach(btn=>{
+      btn.classList.toggle('selected', String(btn.dataset.friendId) === String(f.id));
+    });
+
+    toastLine('Selected ' + f.username + '. Type a message and bury it.');
+    loadThread().then(()=>{
+      updateRailFromThread();
+      if(openThread) setTab('compose');
+    });
+  }
+
+  async function loadThread(){
+    if(!state.selected) return;
+    try{
+      const data = await api('/o-vvv-o/get_thread.php?friend_id=' + encodeURIComponent(state.selected.id));
+      state.thread = data.messages || [];
+      renderThread();
+      updateRailFromThread();
+    }catch(e){
+      console.warn(e);
+      toastLine(e.message);
+    }
+  }
+
+  async function send(){
+    if(!state.selected){
+      toastLine('Choose a friend first.');
+      return;
+    }
+    const text = ($('buriedMessageText')?.value || '').trim();
+    if(!text){
+      toastLine('Type a message first.');
+      return;
+    }
+
+    try{
+      const data = await api('/o-vvv-o/send_message.php', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          friend_id:state.selected.id,
+          text:text
+        })
+      });
+      $('buriedMessageText').value = '';
+      toastLine('Buried for ' + state.selected.username + ' · awaiting dig.');
+      await loadThread();
+
+      showRailNotification({
+        avatar: state.selected.avatar,
+        title: 'Buried for ' + state.selected.username,
+        status: 'awaiting dig / reply',
+        sticky: false,
+        openHistoryOnTap: true
+      });
+
+      close();
+    }catch(e){
+      toastLine(e.message);
+    }
+  }
+
+  async function reply(){
+    if(!state.selected){
+      toastLine('Choose a friend first.');
+      return;
+    }
+    const text = ($('buriedReplyText')?.value || '').trim();
+    if(!text) return;
+
+    try{
+      await api('/o-vvv-o/reply_message.php', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          friend_id:state.selected.id,
+          text:text
+        })
+      });
+      $('buriedReplyText').value = '';
+      await loadThread();
+
+      showRailNotification({
+        avatar: state.selected.avatar,
+        title: 'Reply sent to ' + state.selected.username,
+        status: 'thread chat · not buried',
+        sticky: false,
+        openHistoryOnTap: true
+      });
+
+      close();
+    }catch(e){
+      toastLine(e.message);
+    }
+  }
+
+  function renderThread(){
+    const wrap = $('buriedThread');
+    if(!wrap) return;
+    wrap.innerHTML = '';
+
+    if(!state.selected){
+      wrap.innerHTML = '<div style="color:#f5c77d;text-align:center;font-weight:900;padding:20px">Choose a friend first.</div>';
+      return;
+    }
+
+    if(!state.thread.length){
+      wrap.innerHTML = '<div style="color:#f5c77d;text-align:center;font-weight:900;padding:20px">No buried messages with '+escapeHtml(state.selected.username)+' yet.</div>';
+      return;
+    }
+
+    state.thread.forEach(m=>{
+      const mine = state.me && String(m.sender_id) === String(state.me.id);
+      const row = document.createElement('div');
+      row.className = 'buriedMsg ' + (mine ? 'left' : 'right');
+      const av = mine ? (state.me.avatar || '01_avatar_tight.png') : (m.sender_avatar || state.selected.avatar);
+      row.innerHTML = `
+        <img class="buriedMsgAvatar" src="${avatarUrl(av)}" alt="">
+        <div class="buriedBubble">
+          ${escapeHtml(m.body || '')}
+          <small>${mine ? 'you' : escapeHtml(m.sender_username || state.selected.username)} · ${escapeHtml(m.message_state || 'buried')}</small>
+        </div>
+      `;
+      wrap.appendChild(row);
+    });
+
+    wrap.scrollTop = wrap.scrollHeight;
+  }
+
+  function updateRailFromThread(){
+    if(!state.selected) return;
+
+    if(!state.thread.length){
+      return;
+    }
+
+    const last = state.thread[state.thread.length - 1];
+    const mine = state.me && String(last.sender_id) === String(state.me.id);
+
+    // The top rail is now mainly a notification surface.
+    // Own sent messages do not stay pinned there; incoming friend messages do.
+    if(mine){
+      return;
+    }
+
+    showRailNotification({
+      avatar: last.sender_avatar || state.selected.avatar,
+      title: last.body || last.title || 'Buried message',
+      status: 'from ' + state.selected.username + ' · tap to open thread',
+      sticky: true,
+      openHistoryOnTap: true
+    });
+  }
+
+  function setTab(tab){
+    document.body.classList.toggle('buried-chat-tab-history', tab === 'history');
+    $('buriedTabCompose')?.classList.toggle('active', tab !== 'history');
+    $('buriedTabHistory')?.classList.toggle('active', tab === 'history');
+    if(tab === 'history') loadThread();
+  }
+
+  function openComposer(){
+    if(!state.me){
+      toastLine('Login needed for buried chat.');
+      return;
+    }
+    document.body.classList.add('buried-chat-open');
+    setTab('compose');
+    if(!state.friends.length) init();
+  }
+
+  function openHistory(){
+    if(!state.me){
+      toastLine('Login needed for buried chat.');
+      return;
+    }
+    document.body.classList.add('buried-chat-open');
+    setTab('history');
+  }
+
+  function close(){
+    document.body.classList.remove('buried-chat-open');
+  }
+
+  function escapeHtml(s){
+    return String(s ?? '').replace(/[&<>"']/g, ch => ({
+      '&':'&amp;',
+      '<':'&lt;',
+      '>':'&gt;',
+      '"':'&quot;',
+      "'":'&#039;'
+    }[ch]));
+  }
+
+  function notifyIncoming(count){
+    showRailNotification({
+      avatar: state.selected ? state.selected.avatar : '01_avatar_tight.png',
+      title: count + ' buried message' + (count === 1 ? '' : 's') + ' arrived',
+      status: 'open the field and dig',
+      sticky: true,
+      openHistoryOnTap: false
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+
+  return {init, openComposer, openHistory, close, setTab, send, reply, selectFriend, loadThread, notifyIncoming, hideRailNotification};
+})();
+</script>
+
+
+<section id="ascii-face-routing-root-field" aria-label="ASCII Face Routing root field" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+  <h2>ASCII Face Routing Root Field</h2>
+  <p>o-vvv-o is the ROOT_FIELD state in ASCII Face Routing: root field, main creature, neutral home state, and grave game world.</p>
+  <p>Core loop: o-vvv-o.com -> ovvv-o.com -> 0-vvv-0.com -> o-mmm-o.com -> u-vvv-u.com -> o-vvvo.com -> o-vvv-o.com.</p>
+  <p>Machine-readable files: /state.json, /route.json, /llms.txt, /ascii-face-routing/.</p>
+</section>
+
+</body>
+</html>

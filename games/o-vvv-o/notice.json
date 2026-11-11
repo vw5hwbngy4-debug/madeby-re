@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "title": "🌱 Field Notice",
+  "body": "Welcome to o-vvv-o. 🌱\n\nThis is a small field for notes, links and memories. Think of it like Apple Notes or Stickies, but spatial: your notes live as sparkles in the field.\n\nHow to use it:\n• Copy text or a link.\n• Walk to a spot in the field.\n• Press DIG three times.\n• If something can be buried, the 🪏 shovel appears. Tap it to bury your note as a sparkle.\n• Walk to a sparkle and press DIG to read it again.\n\nBrown Links:\nUse Brown Link to make a shareable link. You can share something directly with friends or hide it in the field for someone to discover.\n\nAura colors:\nGive sparkles an aura color to organize them. Colors are for your own memory: ideas, links, personal notes, projects, reminders, or anything you choose. You can change the aura later.\n\nChest:\nDig up your chest to store sparkles safely. 🗃️ means empty. 🪎 means it holds stored sparkles. Field resets may bury the chest again, but the items inside stay safe.\n\nPrivacy:\nReliable mode is active. Normal sparkles and chest items stay readable after Safari reset, private mode, or device changes.\n\n- - -\n\nField log / recent updates:\n• Clipboard reading improved for GPT, Apple Notes and Brownlinks.\n• The old question mark was removed.\n• 🪏 now means: something can be buried here.\n• Hidden Brownlinks are detected more reliably.\n• Close, Copy and Delete are back in message views.\n• Aura colors were added for sparkle organization.\n• Aura colors can now be changed after choosing one.\n• Field and chest sparkles now keep their true aura color.\n• The chest was added as physical storage.\n• Chest items show as sparkles, not text.\n• Tap a chest sparkle to read it; Take Out appears in the detail view.\n• The chest can be opened by tapping it.\n• Finding the chest cleans the field holes.\n• Rain drain direction was fixed.\n• The message pill no longer covers open info boxes.\n• The noticeboard was flattened and made easier to read.\n• E2EE keys are now account-tied instead of only browser-tied.\n\n• E2EE was softened into reliable account storage so saved sparkles do not become unreadable when browser keys disappear.\n\n• Reliable mode restored: new sparkles and chest-items no longer depend on browser-only encryption keys.
+
+This field is alive and being improved gently. 💛",
+  "links": [
+    {
+      "label": "🪏 Make a Brown Link",
+      "url": "/o-vvv-o/bury"
+    },
+    {
+      "label": "Back to field",
+      "url": "/"
+    }
+  ]
+}

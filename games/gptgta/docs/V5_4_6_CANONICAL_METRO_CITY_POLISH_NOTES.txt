@@ -1,0 +1,7 @@
+v5.4.6 notes:
+- Base: v5.4.5 edge-facade build.
+- Pulled forward the usable layered/metro logic from the v5.4.3/v5.4.4 line.
+- Main fix: metro is now a real two-step layer flow: stairs -> platform -> train.
+- Edge building facades remain wall-like; doors and visible props are grounded on the street-facing side.
+- Two horizontal flyover corridors are represented in the road graph as upper-level traffic segments.
+- Node syntax check passed.

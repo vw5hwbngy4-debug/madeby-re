@@ -1,0 +1,40 @@
+EMERALD v0.1.11 — NATIVE mGBA SAVE MIRROR
+
+ARCHITECTURE RESET
+------------------
+mGBA owns the cartridge-save path. Save Vault mirrors the active mGBA save.
+
+The v0.1.10.x line forced every ROM load through:
+  /data/saves/JRPG_WORLD_EMERALD_BPEE_REV0.sav
+That changed mGBA's normal routing and could make a valid old save invisible to Emerald, producing NEW GAME while another valid .sav existed.
+
+v0.1.11 removes that override.
+
+BEHAVIOR
+--------
+- loadGame(gamePath, saveName) is forwarded with the original arguments unchanged.
+- when no explicit saveName is supplied, mGBA derives its normal path: /data/saves/<ROM basename>.sav
+- Save Vault never assigns M.saveName.
+- server SAVE 1 is mirrored into the native path mGBA will use immediately before boot.
+- automatic capture only uploads the active mGBA save, never a different .sav chosen by highest counter.
+- when there is no server save and exactly one valid Emerald .sav exists locally, it can be reattached to the native ROM path without changing mGBA routing.
+- SAVE 1 import writes to the currently active mGBA path when a ROM is selected; otherwise it stays server-side and is applied on the next ROM load.
+- 128 KiB and 128 KiB + 16-byte mGBA RTC saves remain supported.
+- the old canonical path is treated as legacy data only and is never forced as the runtime path.
+
+UNCHANGED
+---------
+- Save Vault auth/UI
+- append-only server snapshots
+- Hostinger Node backend API/schema
+- backend v0.1.2 remains compatible; no backend redeploy is required.
+- PokéField live decoder and Trainer Card behavior remain on their proven v0.1.9 modules.
+
+EXPECTED TEST
+-------------
+1. Deploy the full-site zip.
+2. Sign in.
+3. Load Emerald.
+4. LOCAL SAVE DIAGNOSTICS must show ACTIVE mGBA PATH matching the ROM basename, not JRPG_WORLD_EMERALD_BPEE_REV0.sav.
+5. A valid old save should produce CONTINUE after reload.
+6. In-game SAVE should yield 14 Emerald signature sectors / section IDs 0-13 and mirror to SAVE 1.

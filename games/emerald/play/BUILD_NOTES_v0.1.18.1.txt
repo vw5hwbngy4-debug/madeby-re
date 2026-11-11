@@ -1,0 +1,20 @@
+EMERALD v0.1.18.1 — DISPLAY HOTFIX
+Date: 2026-09-09
+
+FIXES
+1. Presentation toggle now uses action labels consistently:
+   - compact view -> EXPAND
+   - expanded view -> COMPACT
+   The internal state remains compact / expanded and aria-expanded remains semantic.
+
+2. Desktop live panel height now follows expanded DETAILS content.
+   The Trainer Card stage previously measured an absolutely positioned face. Opening
+   DETAILS could increase #pf-primary while the stage retained its old height, causing
+   text/card borders to continue over the page while the black panel background stopped.
+   v0.1.18.1 observes #pf-primary directly and remeasures on <details> toggle.
+
+3. VERSION/cache-busting updated to 0.1.18.1.
+
+SCOPE
+No emulator, save decoding, IV/EV logic, Trainer Card data, My Field logic or keyboard
+mappings changed.

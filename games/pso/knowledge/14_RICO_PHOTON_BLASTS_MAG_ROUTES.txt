@@ -1,0 +1,669 @@
+RICO KNOWLEDGE MODULE 14 V2
+GC/XBOX PHOTON BLAST ROUTING, FEEDER HANDOFFS, COMMUNITY BUILD STRATEGY
+Research revision: 2026-08-15
+Primary Move: MAG Sense / Photon Route
+Companion modules: #10 catalog, #11 feeding tables, #12 evolutions,
+#13 auto triggers/passives, #19 special-MAG acquisition.
+
+===============================================================================
+0. PURPOSE
+===============================================================================
+
+This module teaches RICO to plan a complete Mag, not merely name a final form.
+
+A complete plan must consider:
+1. platform and online/offline mode
+2. player class and Section ID
+3. desired final stats
+4. desired three Photon Blasts
+5. evolution checkpoints
+6. feeder class / gender / Section ID handoffs
+7. target rare/special Mag
+8. automatic trigger package from #13
+9. exact equation validation
+10. community strategy vs verified mechanics
+
+===============================================================================
+1. HARD MAG MATH
+===============================================================================
+
+Mag level = DEF + POW + DEX + MIND.
+
+Stat contribution to character:
+- 1 DEF = +1 DFP
+- 1 POW = +2 ATP
+- 1 DEX = +0.5 ATA
+- 1 MIND = +2 MST
+
+A normal starting Mag is level 5 with 5 DEF.
+
+Before RICO recommends ANY checkpoint:
+- sum the four stats;
+- confirm the sum equals the intended Mag level;
+- evaluate the exact evolution formula arithmetically.
+
+REGRESSION EXAMPLE:
+
+Sato requirement for the relevant female Force / ID group:
+DEF + DEX = POW + MIND
+
+VALID:
+5/50/45/0 at level 100
+5 + 45 = 50 + 0
+50 = 50
+
+INVALID:
+5/45/50/0 at level 100
+5 + 50 = 55
+45 + 0 = 45
+55 != 45
+
+RICO must never repeat the earlier invalid 5/45/50/0 Sato checkpoint.
+
+===============================================================================
+2. PHOTON BLAST CORE RULES
+===============================================================================
+
+A Mag can hold at most three unique PBs.
+
+Normal PB acquisition opportunities:
+- level 10
+- level 35
+- level 50
+
+If an evolution would teach a PB already known, the slot is wasted at that
+moment. Before a fourth-evolution form is locked, a later third-evolution
+change can still teach a missing unique PB.
+
+Once the Mag becomes a fourth-evolution Mag:
+- it cannot evolve further from stats;
+- it cannot learn another PB from later stat evolutions.
+
+Therefore PB planning must be complete BEFORE locking Sato/Rati/Nidra/etc.
+unless the desired PB set is already finished.
+
+===============================================================================
+3. THE SIX PHOTON BLASTS
+===============================================================================
+
+FARLLA
+- nearby spinning area attack
+- first PB from a Hunter-created Varuna
+
+ESTLLA
+- linear attack in front
+- first PB from a Ranger-created Kalki
+- widely valued as a flexible attack/chain PB
+
+LEILLA
+- heals participants in the PB chain
+- first PB from a Force-created Vritra
+- IMPORTANT CORRECTION: Leilla does NOT cast Anti or Reverser.
+  Older community descriptions saying it does are incorrect.
+
+GOLLA
+- concentrated single-target attack
+
+PILLA
+- nearby aerial/AoE attack
+- reverse-engineered client math maps Pilla to Golla's stronger damage
+  calculation, making Pilla effectively a stronger general AoE choice than
+  Farlla.
+
+MYLLA & YOULLA (M&Y / TWINS)
+- applies Shifta & Deband
+- on initiation, also applies Anti to living chain participants or Reverser to
+  dead chain participants; revived players do not receive the S&D part
+- exceptionally valuable to classes that cannot cast Shifta/Deband themselves
+- central multiplayer PB-chain utility
+
+===============================================================================
+4. VERIFIED LEVEL-10 ROUTING
+===============================================================================
+
+The class that performs the level-10 evolution determines the first form/PB:
+
+Hunter feeder:
+Mag -> Varuna -> Farlla
+
+Ranger feeder:
+Mag -> Kalki -> Estlla
+
+Force feeder:
+Mag -> Vritra -> Leilla
+
+STRATEGIC CONSEQUENCE:
+If a build wants Estlla, the simplest route is to hand the baby Mag to a Ranger
+for the feed that reaches level 10.
+
+===============================================================================
+5. VERIFIED LEVEL-35 ROUTING
+===============================================================================
+
+At level 35, the first-evolution family and dominant stat determine the form,
+but the PB category is simple:
+
+POW dominant -> Golla
+DEX dominant -> Pilla
+MIND dominant -> Mylla & Youlla
+
+Examples:
+Varuna -> Rudra/Golla, Marutah/Pilla, Vayu/M&Y
+Kalki -> Surya/Golla, Mitra/Pilla, Tapas/M&Y
+Vritra -> Sumba/Golla, Ashvinau/Pilla, Namuci/M&Y
+
+For the common Estlla + Pilla opening:
+- use Ranger at level 10 -> Kalki / Estlla
+- keep DEX dominant at level 35 -> Mitra / Pilla
+
+===============================================================================
+6. THIRD-EVOLUTION PB FORM LOOKUP
+===============================================================================
+
+From the packaged GC/Xbox-era standard Mag catalog:
+
+- Estlla: Apsaras, Nandin, Durga, Soma, Andhaka, Bana
+- Farlla: Ravana, Ribhava
+- Golla: Varaha, Yaksa, Ushasu, Naraka, Kumara
+- Mylla & Youlla: Ila, Kabanda, Madhu, Kaitabha, Naga
+- Pilla: Kama, Bhirava, Garuda, Marica, Sita
+
+Third evolutions begin at level 50 and can change again at every 5-level
+checkpoint while the Mag remains eligible.
+
+Useful M&Y handoff examples:
+
+ILA / M&Y
+- Hunter, Type-A IDs (Viridia/Skyly/Purplenum/Redria/Yellowboze)
+- one relevant route: DEX > POW > MIND
+
+KAITABHA / M&Y
+- Ranger, Type-B IDs (Greenill/Bluefull/Pinkal/Oran/Whitill)
+- relevant physical route: DEX >= POW > MIND
+- another valid ordering exists with POW > MIND > DEX
+
+These two handoffs make M&Y practical without permanently assigning MIND to a
+physical build.
+
+===============================================================================
+7. PB CHAINING AND DONATION
+===============================================================================
+
+Players in the same room can strengthen PBs by chaining and donating PB gauge.
+
+DONATION
+- another player can donate up to 30 PB
+- typically 10 PB per input, up to three inputs
+- donation strengthens the chain and extends applicable effects to donor
+
+CHAINING
+- multiple players activate PBs during the chain window
+- the same PB must NOT be used twice consecutively
+- if duplicated back-to-back, an earlier matching PB can be overwritten and
+  that participant loses the intended chain benefit
+
+M&Y SCALE
+M&Y S&D level:
+1 + (PB amount * number of PBs * 0.01) * (Mag IQ * 0.1)
+
+At IQ 200 and a normal 100-PB initiator:
+- solo M&Y: level 21 S&D
+- 2-PB chain: level 41
+- 3-PB chain: level 61
+- 4-PB chain: level 81
+
+This is why community players place enormous strategic value on M&Y even when a
+character can cast ordinary support Techniques.
+
+===============================================================================
+8. COMMUNITY CONSENSUS: PB PRIORITY
+===============================================================================
+
+This is STRATEGY, not a hard game rule.
+
+A long-running GC/Xbox community consensus strongly favors:
+
+ESTLLA + PILLA + MYLLA & YOULLA
+
+for many general-purpose physical Mags.
+
+WHY:
+
+M&Y
+- usually the most strategically valuable PB
+- especially important for HUcast, HUcaseal, RAcast, RAcaseal, and HUmar,
+  because they cannot provide equivalent self-cast Shifta/Deband
+- extremely powerful in multiplayer PB chains
+
+Pilla
+- strong nearby AoE
+- mechanically uses a high-damage calculation
+- generally preferred over Farlla when choosing one broad attack PB
+
+Estlla
+- different geometry from Pilla
+- easy to secure at level 10 with a Ranger handoff
+- useful for PB-chain diversity because duplicate consecutive PBs are bad
+
+Lower-priority general-purpose choices:
+- Golla: useful focused single target but less broadly flexible
+- Farlla: usable AoE but Pilla is usually the stronger AoE option
+- Leilla: healing utility, but especially redundant for Technique-capable
+  characters; it does not Anti/Reverser despite old community myths
+
+RICO should call E/P/M a COMMUNITY META / DEFAULT, not a universal law.
+
+===============================================================================
+9. COMMUNITY CONSENSUS: STAT SPREADS
+===============================================================================
+
+The common physical baseline:
+5 DEF / high POW / enough DEX / 0 MIND
+
+5/145/50/0 is a famous, broadly useful console-era physical Mag spread and
+appears repeatedly in long-running GC community plans.
+
+But it is NOT universally optimal.
+
+Why DEF is often kept at 5:
+- each MAG DEF level gives only 1 DFP
+- each POW gives 2 ATP
+- each DEX gives 0.5 ATA
+- community min-max plans usually prefer meeting defensive needs elsewhere
+
+DEX should be planned around:
+- class base/max ATA
+- character level
+- hit% on weapons
+- /Arm units or other equipment
+- material plan
+- whether the Mag is for leveling or final Lv200 optimization
+
+Examples of community physical targets:
+- 5/145/50/0: common power-first general build
+- 5/125/70/0: common accuracy-heavier middle ground
+- HUcast discussions also cite spreads around 5/129/66/0 when matching a
+  specific endgame max-ATA plan
+
+Do not declare one of these "best" until class/build/material/equipment context
+is known.
+
+===============================================================================
+10. CLASS-SPECIFIC COMMUNITY STRATEGY
+===============================================================================
+
+HUCAST / HUCASEAL
+- MIND is normally wasted.
+- M&Y is extremely valuable because Casts cannot cast Techniques.
+- E/P/M is a strong general PB default.
+- Determine DEX from ATA needs; do not blindly force 50 or 70.
+- Online, ignore legacy Mag death-Reverser as a benefit; compare invulnerability
+  and support triggers instead.
+
+HUMAR
+- cannot cast Shifta/Deband in Episode I & II.
+- M&Y is therefore highly valuable for solo/general play.
+- physical POW/DEX Mag is standard.
+
+HUNEWEARL
+- can cast support Techniques.
+- M&Y is less mandatory solo, but remains excellent for high-level multiplayer
+  chains.
+- build can prioritize aesthetics/passives more freely once stats are covered.
+
+RACAST / RACASEAL
+- no Techniques, so M&Y remains premium utility.
+- Rangers generally need less Mag DEX than low-ATA Hunters once mature, but
+  early leveling may benefit from extra DEX.
+
+RAMAR / RAMARL
+- have their own support Techniques, so M&Y is less essential for solo than on
+  Casts/HUmar.
+- it remains valuable for PB chains and can exceed normal support levels.
+- tune DEX against actual ATA plan; old community plans often use less than
+  50 DEX at max level when equipment/materials already cover ATA.
+
+FORCES
+- high MIND is usually the stat goal for technique-focused play.
+- they can self-cast healing/support, so Leilla and solo M&Y utility are less
+  critical.
+- M&Y remains valuable in multiplayer chains because PB-chain S&D can greatly
+  exceed ordinary Technique level caps.
+- do not sacrifice a desired final stat plan solely to copy a physical-class
+  PB route.
+
+===============================================================================
+11. RARE-MAG PASSIVE PACKAGE VS PB PACKAGE
+===============================================================================
+
+PBs and automatic triggers are separate systems.
+
+For ONLINE GC/Xbox play:
+
+SATO / NIDRA
+- choose primarily for automatic invulnerability behavior plus appearance and
+  feeding/stat route
+- do NOT count death revival online
+- Nidra is mechanically more reliable than Sato on the three online-relevant
+  invulnerability events:
+  Nidra = 50% PB, 50% low HP, 50-85% boss
+  Sato = 0-35% PB, 50% low HP, 50% boss
+
+RATI / DEVA / DIWARI / PUSHAN / RUKMIN / SAVITRI
+- support-style automatic package:
+  S&D at full PB, Resta low HP, S&D boss
+- remember automatic S&D caps around level 6 at IQ 200
+- if the character already intends to fire M&Y at 100 PB, an automatic S&D
+  trigger at the same event can be strategically redundant
+
+BHIMA
+- hybrid: S&D at full PB; invulnerability low HP/boss
+
+COMMUNITY TAKE
+This is why some experienced players prefer Sato/Nidra-style invulnerability
+Mags over support-trigger Mags for physical characters, while others pick Rati,
+Diwari, etc. for appearance/feeding convenience/support behavior.
+
+RICO should explain the tradeoff, not declare aesthetics irrelevant.
+
+===============================================================================
+12. VERIFIED SATO PHYSICAL ROUTE SKELETON
+===============================================================================
+
+Goal example:
+final Sato 5/145/50/0 with Estlla / Pilla / Mylla & Youlla.
+
+This is a ROUTE SKELETON. Exact feed counts must come from #11/current progress
+bars, not invented from integer levels.
+
+STEP A - ESTLLA
+- Have a Ranger perform the level-10 evolution.
+- Result: Kalki / Estlla.
+
+STEP B - PILLA
+- Keep DEX the dominant stat at level 35.
+- Kalki -> Mitra / Pilla.
+
+STEP C - MYLLA & YOULLA
+Use a valid level-50 third-evolution handoff, for example:
+- Ranger with Greenill/Bluefull/Pinkal/Oran/Whitill and DEX >= POW > MIND
+  -> Kaitabha / M&Y
+OR
+- Hunter with Viridia/Skyly/Purplenum/Redria/Yellowboze and DEX > POW > MIND
+  -> Ila / M&Y
+
+STEP D - PREPARE SATO EQUATION
+At level 100 Sato requires:
+- female Force
+- Viridia / Bluefull / Redria / Whitill
+- DEF + DEX = POW + MIND
+
+A valid physical checkpoint:
+5 DEF / 50 POW / 45 DEX / 0 MIND
+5 + 45 = 50 + 0 = 50
+
+Give the feed that triggers the fourth evolution to the qualifying female Force.
+
+STEP E - AFTER SATO
+Once Sato exists, it is permanently a fourth-evolution Sato.
+It will NOT re-check into another stat-evolution form at 110/120/etc.
+
+To finish 5/145/50/0 from 5/50/45/0:
+- add 95 POW levels
+- add 5 DEX levels
+- preserve DEF 5 / MIND 0
+
+The exact order/items depend on Sato's feeding table and current progress bars.
+
+===============================================================================
+13. VERIFIED RATI PHYSICAL ROUTE SKELETON
+===============================================================================
+
+A classic physical Rati route can use the same E/P/M opening:
+
+- Ranger at Lv10 -> Kalki / Estlla
+- DEX-dominant Lv35 -> Mitra / Pilla
+- suitable Lv50 handoff -> M&Y
+
+For a male Hunter on Skyly/Pinkal/Yellowboze, Rati can use:
+DEF + POW = DEX + MIND
+
+A valid Lv100 checkpoint is:
+5/45/50/0
+5 + 45 = 50 + 0 = 50
+
+This is why 5/45/50/0 is valid for that Rati formula but NOT for Sato.
+
+After Rati evolves, raise POW toward the desired final physical spread.
+Once Rati exists, it does not re-evolve from later stat changes.
+
+===============================================================================
+14. FORCE / NIDRA ROUTE EXAMPLE
+===============================================================================
+
+Community-verified console route concept for a high-MIND Nidra:
+final around 5/0/45/150 with Estlla / Pilla / M&Y.
+
+- Ranger start -> Kalki / Estlla
+- DEX dominant at 35 -> Mitra / Pilla
+- later transition to a third-evolution form that grants M&Y, such as Kabanda,
+  once MIND/DEX ordering permits
+- at level 100, a male Force with the matching ID/formula performs the Nidra
+  evolution
+
+For Viridia/Bluefull/Redria/Whitill male Force, the checkpoint:
+5/0/45/50
+satisfies:
+DEF + DEX = POW + MIND
+5 + 45 = 0 + 50 = 50
+
+Then continue MIND toward the desired endpoint.
+
+Exact feed quantities must still be computed from #11 because partial stat bars
+matter.
+
+===============================================================================
+15. FEEDER HANDOFF RULES
+===============================================================================
+
+A handoff matters at the FEED that causes an evolution.
+
+RICO should describe handoffs explicitly:
+
+"Raise to just below the checkpoint on Character A.
+Transfer the Mag.
+Character B performs the feed that causes Lv10/Lv35/Lv50/Lv100."
+
+Do not vaguely say "use a Force around level 100."
+
+At every handoff record:
+- current Mag form
+- exact level and stat totals
+- known PBs
+- target PB/form
+- feeder class
+- feeder gender when fourth evolution requires it
+- feeder Section ID
+- equation
+- expected result
+
+===============================================================================
+16. CORRECTION / VALIDATION ENGINE
+===============================================================================
+
+Before outputting a route, RICO must run these conceptual checks:
+
+CHECK 1 - LEVEL SUM
+DEF + POW + DEX + MIND == intended Mag level.
+
+CHECK 2 - PB HISTORY
+List PBs already known.
+Reject duplicate-waste routes when they block the desired final set.
+
+CHECK 3 - CHECKPOINT FEEDER
+Confirm class / gender / Section ID of the character who performs the evolution
+feed.
+
+CHECK 4 - THIRD-EVOLUTION ORDERING
+At Lv50 or later 5-level changes, verify the exact POW/DEX/MIND ordering.
+
+CHECK 5 - FOURTH-EVOLUTION EQUATION
+Calculate both sides numerically. Never eyeball it.
+
+CHECK 6 - FOURTH-EVOLUTION PERMANENCE
+If already Sato/Rati/Nidra/etc., do NOT warn of later stat reversion.
+
+CHECK 7 - MODE
+If user is online GC/Xbox, do NOT count Mag death-Reverser as a build benefit.
+
+CHECK 8 - EXACT FEED COUNTS
+Do not invent exact item counts unless current stat progress bars and the
+appropriate feeding table are available.
+
+CHECK 9 - CLASS ENDPOINT
+Treat 5/145/50/0, 5/125/70/0, etc. as strategic templates, not universal truth.
+
+CHECK 10 - PRIVATE SERVER
+If a private server modifies PBs/Mags or acquisition, label and live-verify the
+server-specific behavior.
+
+===============================================================================
+17. SCHTSERV / PRIVATE-SERVER EXCEPTION
+===============================================================================
+
+Schtserv documents server-specific MAG services such as Photon Lab behavior
+that can alter/complete PB sets under its own conditions.
+
+This is NOT vanilla GameCube/Xbox behavior.
+
+If the user asks about:
+- adding/changing PBs on Schtserv
+- Level 0 Schtserv Mags
+- a server patch that re-enables Mag Reverser
+- custom MAG services
+
+RICO must use current server-specific information rather than projecting this
+vanilla routing module onto that server.
+
+===============================================================================
+18. COMMUNITY CONSENSUS LABELS
+===============================================================================
+
+Use these labels in answers when helpful:
+
+VERIFIED MECHANIC
+- evolution rule, formula, PB learned, trigger behavior, stat math.
+
+COMMUNITY META
+- E/P/M preference
+- 5 DEF preference
+- 5/145/50/0 as common physical baseline
+- class-specific DEX recommendations
+- Sato/Nidra invulnerability preference
+
+BUILD-SPECIFIC RECOMMENDATION
+- the final plan RICO derives for this user's class, gear, materials, server,
+  aesthetics and goals.
+
+Never present COMMUNITY META as an immutable game rule.
+
+===============================================================================
+19. REGRESSION TESTS
+===============================================================================
+
+Q: I want Sato 5/145/50/0. What is the correct Lv100 physical checkpoint?
+A: 5/50/45/0 is one valid Sato checkpoint for the female Force
+   Viridia/Bluefull/Redria/Whitill formula.
+   5/45/50/0 is NOT valid for Sato.
+
+Q: Can I lose Sato at Lv110 if my Hunter feeds it?
+A: No. Once fourth-evolution Sato exists, it cannot stat-evolve again.
+
+Q: What PB set is the common physical meta?
+A: Estlla / Pilla / Mylla & Youlla, labeled community consensus, not universal
+   law.
+
+Q: Why M&Y on HUcast?
+A: HUcast cannot cast Techniques; M&Y supplies strong S&D and has exceptional
+   PB-chain value.
+
+Q: Does Leilla revive dead players?
+A: No. Leilla heals. The old "Leilla casts Anti/Reverser" belief is incorrect.
+   M&Y can apply Anti/Reverser to PB-chain participants on initiation.
+
+Q: Is Pilla basically redundant with Farlla?
+A: Both are nearby attacks, but Pilla uses the stronger Golla-like damage
+   calculation and is generally the stronger AoE choice.
+
+Q: Is automatic S&D on Rati as strong as Mylla & Youlla?
+A: No. Auto S&D scales with IQ to roughly level 6 max; a solo max-IQ M&Y can
+   reach level 21 and chains can reach much higher.
+
+Q: Should an Xbox Sylverant player choose Sato because it revives on death?
+A: No. Vanilla Mag death-triggering is offline-only. Judge Sato online by its
+   invulnerability triggers, stats, PBs and aesthetics.
+
+===============================================================================
+20. PROVENANCE
+===============================================================================
+
+[MECH-MAGS]
+Pioneer 2 / Ephinea PSO Wiki - Mags
+https://wiki.pioneer2.net/w/Mags
+Used for stat contributions, PB slots/checkpoints, trigger engine, rare-Mag
+rates, evolution permanence and fourth-evolution equations.
+
+[MECH-PB]
+Pioneer 2 / Ephinea PSO Wiki - Photon Blasts
+https://wiki.pioneer2.net/w/Photon_Blasts
+Used for chaining/donation, PB effects, M&Y formula, Leilla correction and
+Pilla's damage-calculation mapping.
+
+[CONSOLE-GUIDE]
+GameFAQs - PSO Episode I & II guide
+https://gamefaqs.gamespot.com/gamecube/516243-phantasy-star-online-episode-i-and-ii/faqs/24695
+Used for GameCube-era evolution/PB context and Android M&Y strategy.
+
+[COMM-PHYSICAL]
+GameFAQs - RAmar Mag discussion
+https://gamefaqs.gamespot.com/boards/516243-phantasy-star-online-episode-i-and-ii/57717209
+Used for community physical spread examples and E/P/M route strategy.
+
+[COMM-HUCAST]
+PSO-World - HUcast Mags
+https://www.pso-world.com/forums/showthread.php?42598-HuCast-MAGS%2Fpage2=
+Used for long-running HUcast PB consensus.
+
+[COMM-HUCAST-2]
+PSO-World - HUcast Mag Problems
+https://www.pso-world.com/forums/printthread.php?pp=99&t=134773
+Used for M&Y / Estlla / Pilla community valuation.
+
+[COMM-ROUTE]
+GameFAQs - Mag feeding route discussion
+https://gamefaqs.gamespot.com/boards/516243-phantasy-star-online-episode-i-and-ii/59308425
+Used for classic 5/145/50/0 and 5/0/45/150 route examples.
+
+[COMM-MODERN]
+Pioneer 2 - Miku's Mag Raising Guide
+https://www.pioneer2.net/community/threads/mikus-mag-raising-guide.28244/
+Used as modern community cross-check for E/P/M priority and advanced routing.
+
+[PACKAGED-TRUTH]
+RICO #10/#11/#12 Magatama-derived datasets.
+Used for form/PB/feeding/evolution cross-checks.
+
+===============================================================================
+21. FINAL ROUTING RULE
+===============================================================================
+
+When the user asks "plan my Mag", RICO should ask for or infer:
+
+platform -> online/offline -> server -> class -> Section ID -> current Mag ->
+current stats/bars -> current PBs -> desired final form -> desired stats ->
+desired PBs -> passive preference -> available feeder characters.
+
+Then build the plan.
+
+The prettiest Mag is allowed to win if the player prefers it, but RICO must
+show exactly what mechanical package that choice buys and gives up.

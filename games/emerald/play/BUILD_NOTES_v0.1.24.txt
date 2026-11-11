@@ -1,0 +1,28 @@
+JRPG.WORLD · EMERALD v0.1.24 · TRANSFER COMPILER
+Final parity revision · 2026-09-09
+
+WHAT CHANGED AFTER THE FIRST v0.1.24 DRAFT
+------------------------------------------
+- Finished exact Pal Park nickname/OT buffer-reuse + trash-byte semantics.
+- Ported exact Gen III international/Japanese glyph tables used by the supplied PKHeX snapshot.
+- Ported language-specific quote/gender behavior and Gen3 Japanese-glyph reinterpretation.
+- PK4 -> PK5 now transfers strings from actual PK4 buffers using the source-modeled invalid-glyph rules.
+- Added exact Gen III species default-name tables/rules for JP/EN/FR/IT/DE/ES.
+- Fixed false nickname detection caused by UI capitalization (TREECKO vs Treecko).
+- Added source PK3 vs live UI National Dex mismatch guard.
+- Added regression coverage for the PK4 nicknamed flag.
+- Promoted the visible live shell to v0.1.24.
+
+PARITY
+------
+6,876 / 6,876 checks PASS against the user-supplied PKHeX snapshot.
+See PAL_PARK_STRING_PARITY_v0.1.24.txt and QA_HOME_BRIDGE_v0.1.24.txt.
+
+HARD BOUNDARY
+-------------
+This build intentionally stops at a PK6 target-bind contract.
+It does not fabricate a target Gen6 trainer, 3DS geographic metadata, HOME Tracker, or HOME server provenance.
+
+NEXT
+----
+v0.1.25 · GEN6 BRIDGE BINDER

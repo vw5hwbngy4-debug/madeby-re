@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../teamlab-v0.1.20.css"><style>html,body{margin:0;background:#071018;font-family:system-ui}#pokefield-live-panel{width:min(1120px,calc(100% - 24px));margin:12px auto;background:#050b11;padding:10px;border-radius:14px}.opf-nav{display:flex;gap:6px;margin-bottom:8px}.opf-nav button{padding:8px;border:1px solid #284c50;background:#0c2025;color:#dffff7;border-radius:8px}</style></head><body>
+<aside id="pokefield-live-panel"><nav class="opf-nav"><button data-mode="live">LIVE</button><button data-mode="field">MY FIELD</button><button data-mode="trainer">TRAINER CARD</button></nav><section id="owned-pokefield"></section></aside>
+<script>
+globalThis.JRPGWorldEmeraldState={version:'0.1.20',selectedParty:0,party:[
+ {dexNo:252,species:'Treecko',level:5,nature:'Timid',ability:'Overgrow',ivs:{hp:31,atk:5,def:20,spa:30,spd:25,spe:31},evs:{hp:0,atk:0,def:0,spa:0,spd:0,spe:0},hiddenPower:{type:'Ice',power:70},ivTotal:142,evTotal:0,personality:101,otId:1,moves:[{name:'Pound'},{name:'Leer'}]},
+ {dexNo:290,species:'Nincada',level:14,nature:'Adamant',ability:'Compound Eyes',ivs:{hp:22,atk:31,def:25,spa:4,spd:20,spe:27},evs:{hp:0,atk:8,def:0,spa:0,spd:0,spe:4},hiddenPower:{type:'Ghost',power:67},ivTotal:129,evTotal:12,personality:102,otId:1,moves:[{name:'Scratch'}]},
+ {dexNo:270,species:'Lotad',level:12,nature:'Modest',ability:'Swift Swim',ivs:{hp:25,atk:3,def:22,spa:31,spd:29,spe:28},evs:{hp:0,atk:0,def:0,spa:4,spd:0,spe:5},hiddenPower:{type:'Electric',power:68},ivTotal:138,evTotal:9,personality:103,otId:1,moves:[{name:'Absorb'}]}
+]};
+</script>
+<script src="../teamlab-engine-v0.1.20.js"></script><script type="module" src="../teamlab-v0.1.20.js"></script>
+<script>setTimeout(()=>document.querySelector('[data-mode=teamlab]')?.click(),900);</script>
+</body></html>

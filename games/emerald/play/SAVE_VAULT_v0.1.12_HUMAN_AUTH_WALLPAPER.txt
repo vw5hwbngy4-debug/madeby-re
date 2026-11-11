@@ -1,0 +1,12 @@
+EMERALD v0.1.12 — HUMAN AUTH + SAVE VAULT WALLPAPER
+
+Base: v0.1.11 native mGBA save mirror (working save baseline).
+
+Changes:
+- Supplied vertical Save Vault artwork is now the full-screen pre-game sign-in background.
+- OPEN SAVE VAULT now uses the site UI style instead of a native browser button.
+- Sign-in and create-account copy is shorter and more human.
+- Removed the auth marketing pills and SERVER MASTER COPY explainer.
+- Removed duplicated auth kickers/copy while keeping useful field requirements.
+- Existing Save Vault auth hero/banner is retained.
+- Save routing, native mGBA ownership, RTC handling, server upload/restore and database behavior are unchanged from v0.1.11.

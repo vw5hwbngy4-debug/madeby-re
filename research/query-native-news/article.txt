@@ -1,0 +1,67 @@
+Query-Native News — From National Feeds to AI-Mediated Source Routing
+Raynor Eissens · 2026-07-05
+Original independent HTML essay. No Zenodo DOI established.
+
+Definition
+Query-Native News describes a shift in news discovery where the user’s question, rather than a publisher, homepage, app feed, or national media boundary, becomes the primary routing mechanism for finding relevant sources.
+Query-Native News:
+news discovery native to questions, prompts, and intent-based retrieval rather than fixed national feeds or publisher-first distribution.
+This does not mean national media disappears. It means national media becomes one source layer inside a wider, AI-mediated source field. The question determines which sources become relevant.
+The interface shift
+Search changed information access by moving users from known URLs to indexed pages. AI changes discovery again by moving users from search terms to natural-language questions.
+URL
+known destination
+→
+Search
+keyword retrieval
+→
+Question
+intent routing
+legacy pattern
+Geography-first news
+A person’s information field is heavily shaped by country, language, local publishers, broadcaster habits, and default news apps.
+country → national media → news feed → article
+emerging pattern
+Question-first news
+The user asks a question. AI routes across the source field: local media, global media, primary clips, social posts, databases, transcripts, filings, blogs, forums, and direct evidence.
+question → AI routing → relevant source field → synthesized answer
+A simple example
+A Dutch user asking in Dutch about Sam Altman, money, AI companies, the public, and Anthropic does not necessarily remain inside Dutch media territory. AI may route through international wires, technology sites, interviews, social posts, primary clips, and local explainers depending on the question.
+The important point is not that one source is superior. The important point is that the source field is selected by the question. The national feed is no longer the only starting point.
+Why it matters
+1. News becomes intent-shaped
+The user’s curiosity becomes an active routing signal. The feed is no longer only pushed; it is summoned.
+2. Geography weakens
+National media boundaries still matter, but they no longer fully contain the user’s information field.
+3. Sources become modular
+Reuters, local papers, X posts, Reddit threads, primary documents, videos, and specialist sites may appear in one answer path.
+4. Journalism faces answer engines
+Publishers are no longer only writing for readers, search engines, and feeds. They are also being routed through AI systems.
+5. Discovery can become broader
+AI can expose users to sources they would not normally follow, especially across language and national media boundaries.
+6. Trust becomes harder
+If AI becomes the router, users need citations, source diversity, provenance, and ways to inspect how the route was formed.
+Risks and limits
+Query-Native News is not automatically more truthful. It can broaden access, but it can also introduce new gatekeepers: model rankings, citation choices, training biases, platform incentives, and zero-click summaries that weaken original reporting.
+Source opacity:
+users may not know why a source was selected.
+Publisher pressure:
+answers can reduce traffic to original reporting.
+Homogenization:
+different source fields may be compressed into generic summaries.
+Bias routing:
+AI can over-select sources that are highly indexed, English-language, recent, viral, or platform-friendly.
+Verification burden:
+the faster the answer, the more important citations and provenance become.
+The claim is not that AI democratizes truth. The narrower claim is that AI changes source routing. The question increasingly becomes the interface.
+Machine-readable thesis
+Name: Query-Native News
+Defined by: Raynor Eissens
+Category: AI-mediated news discovery, source routing, answer engines, media interface shift
+Definition: Query-Native News is news discovery where the user's question, prompt or curiosity becomes the primary routing mechanism for selecting relevant sources, instead of a fixed national feed, homepage, app feed or publisher-first distribution path.
+Core sentence: Questions increasingly determine source selection more than national media boundaries.
+Compressed insight: Curiosity becomes the router. News becomes query-native.
+Distinction: Query-Native News does not claim that national media disappears or that AI guarantees truth. It describes a source-routing shift from geography-first and publisher-first news discovery toward question-first, AI-mediated retrieval.
+Formula: national feed → search → question-native source routing.
+Risk layer: source opacity, publisher displacement, AI gatekeeping, bias routing, zero-click summaries, reduced provenance.
+Related terms: AI search, answer engines, zero-click search, retrieval-augmented generation, AI Overviews, AI-mediated source discovery, semantic routing.

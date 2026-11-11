@@ -1,0 +1,1 @@
+v5.3.5 applies good older GitHub chopper ideas to the latest v5.3.4 pseudo-3D build: rotor blur, altitude toggle, rooftop landing/falling, molotov drops, darker building shadows, and cleaner canal/water logic.

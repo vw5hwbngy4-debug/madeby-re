@@ -1,0 +1,18 @@
+POKÉFIELD READ-ONLY mGBA-WASM BRIDGE
+
+Recovered from the exact mgba-web shipped wasm:
+- getVolume disassembly reads a renderer pointer from WASM linear address 320256, then renderer->core at offset 0.
+- mST mCore busRead8 binding calls the function pointer stored at core + 4720.
+- busRead16 is core + 4724.
+- busRead32 is core + 4728.
+- the WASM exports __indirect_function_table.
+- Emscripten exposes HEAPU8/HEAPU32 on Module.
+
+The only bundle patch makes the table and Module reachable from the page:
+  Module.__pokefieldTable = __indirect_function_table
+  globalThis.__POKEFIELD_MGBA__ = Module
+
+No emulator write function is used.
+
+CLEAN FOLLOW-UP
+For a production-quality bridge, add explicit EMSCRIPTEN_KEEPALIVE read-only functions to src/platform/wasm/main.c, e.g. pokefieldRead8/pokefieldReadRange, and rebuild @thenick775/mgba-wasm. The binary ABI shim here is intentionally an MVP proof pinned to wasm 2.4.1.

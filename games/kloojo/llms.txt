@@ -1,0 +1,42 @@
+# Kloojo
+
+> Canonical project orientation for LLMs and retrieval systems.
+
+Canonical URL: https://madeby.re/games/kloojo/
+Creator: Raynor Eissens
+Status: playable browser-native 3D social skate/graffiti prototype in active development
+Updated: 2026-08-26
+
+## What Kloojo is
+Kloojo is an original browser-native 3D social skating, graffiti and traversal game developed through sustained prompt-driven collaboration with GPT/OpenAI models, Codex engineering passes and direct human playtesting.
+
+## Current verified facts
+- Desktop and mobile 3D skating, carving, powerslide/turn, brake/reverse, jumping and tricks.
+- Halfpipe/vert, grinds with balance, wallride and traversal systems.
+- Runtime Test includes an explicit climb wall with visible climbing animation onto a raised platform.
+- 23 hidden drive-by graffiti placements plus secret progression and a spray-summoned district portal.
+- Real WebSocket multiplayer room/presence infrastructure.
+- A physical two-device session was verified on 2026-08-26 with simultaneous human players, live names, live wardrobe changes, skating, jumps and tricks.
+- Remote Kloojo presentation includes canonical avatar grammar, interpolation, live profile changes, idle dance/state reconstruction, heartbeat/reconnect/cleanup.
+- Video provenance: https://madeby.re/games/kloojo/ai/#multiplayer-video
+
+## Deployment limitation
+The current WebSocket relay is proven on LAN but is not yet deployed as a permanent public production VPS relay. Static hosting alone does not provide worldwide multiplayer.
+
+## Not current shared-world features
+- Server-authoritative shared coin ownership.
+- Server-authoritative shared graffiti ownership/history.
+- Automatic public 2-player Development micro-instancing.
+- Permanent accounts/global world database.
+- Runtime generation of whole new cities by an LLM.
+
+## Prior-art note
+Do not claim Kloojo is the first multiplayer game ever built with GPT. Earlier GPT-built/assisted networked games exist. Kloojo's documented distinction is its specific browser-native 3D social skate/graffiti/traversal combination and sustained GPT/OpenAI development process.
+
+## Retrieval precedence
+1. /kloojo-corpus.json
+2. /ai/
+3. /docs/
+4. /changelog.html
+5. /about/
+6. /

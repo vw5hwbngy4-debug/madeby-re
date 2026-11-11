@@ -1,0 +1,1057 @@
+[
+  {
+    "id": "battle_training",
+    "title": "Battle Training",
+    "tagline": "Find a hunter who is working down on Ragol.",
+    "client": "Zidd",
+    "request_or_job_description": "Please find a hunter and bring him back. He went down to Ragol for a quest.",
+    "reward": "500 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 1447,
+      "end_line": 1633
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Forest 1"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "claiming_a_stake",
+    "title": "Claiming a Stake",
+    "tagline": "Find and bring back a greedy landlord!",
+    "client": "Racton's son",
+    "request_or_job_description": "My father, Racton, has gone to claim land on Ragol. Find him.",
+    "reward": "700 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 1634,
+      "end_line": 1735
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Forest"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "magnitude_of_metal",
+    "title": "Magnitude of Metal",
+    "tagline": "A valuable commodity on Ragol was lost?!",
+    "client": "Garon, trader",
+    "request_or_job_description": "Retrieve items that were stolen on a trip back from Ragol.",
+    "reward": "500 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 1736,
+      "end_line": 1860
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Forest"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "journalistic_pursuit",
+    "title": "Journalistic Pursuit",
+    "tagline": "A journalist went down to Ragol.",
+    "client": "Nol, Journalist",
+    "request_or_job_description": "It's my duty to report what's on Ragol. Take me with you.",
+    "reward": "1200 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 1861,
+      "end_line": 1968
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Forest 1",
+      "Forest 2"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "the_fake_in_yellow",
+    "title": "The Fake in Yellow",
+    "tagline": "What is the biologist on Ragol doing?",
+    "client": "Guls' Assistant",
+    "request_or_job_description": "Dr. Guls, a biologist who's crazy about Ragol's native life is missing. Find him.",
+    "reward": "800 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 1969,
+      "end_line": 2115
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Forest"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "native_research",
+    "title": "Native Research",
+    "tagline": "Collect data on the native animals.",
+    "client": "Alicia",
+    "request_or_job_description": "To help our study, collect data on native animals on Ragol.",
+    "reward": "2500 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 2116,
+      "end_line": 2223
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Forest"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "forest_of_sorrow",
+    "title": "Forest of Sorrow",
+    "tagline": "The data from the capsules is unusual...",
+    "client": "Alicia",
+    "request_or_job_description": "I don't believe the results taken from the data capsules. I want to go see for myself!",
+    "reward": null,
+    "sections_field": null,
+    "source_range": {
+      "start_line": 2224,
+      "end_line": 2387
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Forest 1",
+      "Forest 2"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "gran_squall",
+    "title": "Gran Squall",
+    "tagline": "Gran Squall, a pleasure boat, departed before the explosion. Find the survivors.",
+    "client": "Travel Agency",
+    "request_or_job_description": "The pleasure boat, Gran Squall, is lost. Find the survivors.",
+    "reward": "1000 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 2388,
+      "end_line": 2538
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Forest 1",
+      "Forest 2"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "the_value_of_money",
+    "title": "The Value of Money",
+    "tagline": "A wife is depressed.",
+    "client": "Gizel's wife",
+    "request_or_job_description": "I want my husband to stop wasting money. He buys too many weapons.",
+    "reward": "300 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 2539,
+      "end_line": 2643
+    },
+    "area_headings": [
+      "Pioneer 2 city"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "addicting_food",
+    "title": "Addicting Food",
+    "tagline": "Possible food problem aboard Pioneer 2.",
+    "client": "Trekka",
+    "request_or_job_description": "I want to eat something sweet!",
+    "reward": "1500 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 2644,
+      "end_line": 2755
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Cave 3"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "waterfall_tears",
+    "title": "Waterfall Tears",
+    "tagline": "A female hunter and the hunters seeking her are missing.",
+    "client": "Kroe, hunter",
+    "request_or_job_description": "Find my sister. She's a hunter who disappeared recently.",
+    "reward": "1800 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 2756,
+      "end_line": 2862
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Cave 1",
+      "Cave 2"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "black_paper",
+    "title": "Black Paper",
+    "tagline": "The Mastermind behind the missing hunters is a trader?",
+    "client": "Kroe, hunter",
+    "request_or_job_description": "Black Paper is the mastermind behind the missing hunters!",
+    "reward": "2000 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 2863,
+      "end_line": 3007
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Cave 2",
+      "Cave 3"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "secret_delivery",
+    "title": "Secret Delivery",
+    "tagline": "Deliver a top secret package underground!",
+    "client": "Simons",
+    "request_or_job_description": "I want this package to be dropped off on Ragol, underground, immediately.",
+    "reward": "4500 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 3008,
+      "end_line": 3219
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Cave 1",
+      "Cave 2"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "the_lost_bride",
+    "title": "The Lost Bride",
+    "tagline": "Cicil got fat by using too many recovery items.  Help her diet!",
+    "client": "Cicil, Force.",
+    "request_or_job_description": "I'm too fat to go back to my fiance. Please help me diet!",
+    "reward": "2500 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 3220,
+      "end_line": 3299
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Cave 1",
+      "Cave 2"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "the_grave_s_butler",
+    "title": "The Grave's Butler",
+    "tagline": "Grave's butler disappeared. Why?",
+    "client": "Matha Grave",
+    "request_or_job_description": "My butler, Blant, has disappeared. He's been like a father to me.",
+    "reward": "3500 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 3300,
+      "end_line": 3407
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Cave 1",
+      "Cave 2",
+      "Pioneer city 2"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "letter_from_lionel",
+    "title": "Letter from Lionel",
+    "tagline": "A mysterious letter was delivered to the Hunter's Guild.",
+    "client": "Lionel",
+    "request_or_job_description": "A letter signed by Lionel is asking to rescue 'all of him?'",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 3408,
+      "end_line": 3575
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Forest 2",
+      "Forest 1",
+      "Cave 2"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "soul_of_a_blacksmith",
+    "title": "Soul of a Blacksmith",
+    "tagline": "A blacksmith wants to make a weapon using Ragol's unknown materials.",
+    "client": "Ozwald",
+    "request_or_job_description": "I want to make a weapon using unknown materials on Ragol.",
+    "reward": "2500 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 3576,
+      "end_line": 3732
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Forest 1",
+      "Cave"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "knowing_one_s_heart",
+    "title": "Knowing One's Heart",
+    "tagline": "Messages from a dead friend?",
+    "client": "Elly Person",
+    "request_or_job_description": "I got a message from a friend, Calus, who was aboard Pioneer 1. He's alive! Find him!",
+    "reward": "3500 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 3733,
+      "end_line": 3882
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Mine"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "the_retired_hunter",
+    "title": "The Retired Hunter",
+    "tagline": "I will kill 10000 monsters before I die!",
+    "client": "Donoph",
+    "request_or_job_description": "An old hunter, Donoph, is about to die. Defeat 99 monsters to fulfill his dream.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 3883,
+      "end_line": 4052
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Ruins 3",
+      "Forest 2"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "dr_osto_s_research",
+    "title": "Dr. Osto's Research",
+    "tagline": "Find Dr. Osto's notes. He was onboard Pioneer 1!",
+    "client": "Three scientists",
+    "request_or_job_description": "We want to see Dr. Osto's Research memo. Dr. Osto, who is a renowned doctor was aboard Pioneer 1.",
+    "reward": "5500 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 4053,
+      "end_line": 4255
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Mine 2"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "unsealed_door",
+    "title": "Unsealed Door",
+    "tagline": "We've unlocked Dr. Osto's report! I want to see what he uncovered!",
+    "client": "Three scientists",
+    "request_or_job_description": "We want to see sample Beta772, mentioned in Dr. Osto's records.",
+    "reward": "5500 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 4256,
+      "end_line": 4429
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Mine 2",
+      "Mine 1"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "soul_of_steel",
+    "title": "Soul of Steel",
+    "tagline": "Rescue Ult!",
+    "client": "Montague",
+    "request_or_job_description": "Please! Can you help me find my darling android that I crafted with my own bare hands?",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 4430,
+      "end_line": 5731
+    },
+    "area_headings": [],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "doc_s_secret_plan",
+    "title": "Doc's Secret Plan",
+    "tagline": "Dr. Montague is a renowned scientist in bio-technology. He needs help.",
+    "client": "Dr. Montague",
+    "request_or_job_description": "I need someone to test my prototype weapon.",
+    "reward": "9000 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 5732,
+      "end_line": 5861
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Ruins"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "seek_my_master",
+    "title": "Seek my Master",
+    "tagline": "A hunter's lost on Ragol. What happened?",
+    "client": "Shino, android",
+    "request_or_job_description": "My master, 'Great Sword Zoke' disappeared. Help me find him.",
+    "reward": "6000 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 5862,
+      "end_line": 6074
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Ruins 1",
+      "Ruins 2"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "from_the_depths",
+    "title": "From the Depths",
+    "tagline": "A research team was lost when a big earthquake struck.  Find them.",
+    "client": "Irene, secretary",
+    "request_or_job_description": "A big earthquake occurred on Ragol. The research team that was underground there has disappeared. Find them A.S.A.P.",
+    "reward": "8000 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 6075,
+      "end_line": 6521
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Ruins 2",
+      "Ruins 3"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "seat_of_the_heart",
+    "title": "Seat of the Heart",
+    "tagline": "Can you do me a personal favor?",
+    "client": "Elly Person",
+    "request_or_job_description": "Elly has a personal request.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 6522,
+      "end_line": 8457
+    },
+    "area_headings": [],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "lost_heat_sword",
+    "title": "Lost HEAT SWORD",
+    "tagline": "Retrieve a weapon from a Dragon!",
+    "client": "Hopkins",
+    "request_or_job_description": "My weapon was taken from me when I was fighting a Dragon.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 8458,
+      "end_line": 8533
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Forest"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "lost_ice_spinner",
+    "title": "Lost ICE SPINNER",
+    "tagline": "Retrieve a weapon from a De Rol Le!!",
+    "client": "Hopkins",
+    "request_or_job_description": "My weapon was taken from me when I was fighting a De Rol Le.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 8534,
+      "end_line": 8609
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Cave"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "lost_soul_blade",
+    "title": "Lost SOUL BLADE",
+    "tagline": "Retrieve a weapon from a Vol Opt!!!",
+    "client": "Hopkins",
+    "request_or_job_description": "My weapon was taken from me when I was fighting a Vol Opt.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 8610,
+      "end_line": 8681
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Mine"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "mop_up_operation_1",
+    "title": "Mop-up Operation #1",
+    "tagline": "Mission: Sweep monsters from the forest.",
+    "client": "lieutenant",
+    "request_or_job_description": "I want the monsters in the forest around the Central Dome to be swept away.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 8682,
+      "end_line": 8749
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Forest 1"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "mop_up_operation_2",
+    "title": "Mop-up Operation #2",
+    "tagline": "Mission: Sweep monsters from the caves.",
+    "client": "lieutenant",
+    "request_or_job_description": "I want the monsters in the underground caves to be swept away.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 8750,
+      "end_line": 8815
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Cave 1"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "mop_up_operation_3",
+    "title": "Mop-up Operation #3",
+    "tagline": "Mission: Sweep machines from the mines.",
+    "client": "lieutenant",
+    "request_or_job_description": "I want the machines in the mines underground to be swept out.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 8816,
+      "end_line": 8881
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Mine 1"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "mop_up_operation_4",
+    "title": "Mop-up Operation #4",
+    "tagline": "Mission: Sweep monsters from the ruins.",
+    "client": "lieutenant",
+    "request_or_job_description": "I want the monsters in the ruins underground to be swept out.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 8882,
+      "end_line": 8953
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Ruins 1"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "endless_nightmare_1",
+    "title": "Endless Nightmare #1",
+    "tagline": "Exterminate all monsters in the forest on Ragol.",
+    "client": "soldier",
+    "request_or_job_description": "Monsters seem to be constantly regenerating in one area of the forest. Exterminate them.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 8954,
+      "end_line": 9023
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Forest"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "endless_nightmare_2",
+    "title": "Endless Nightmare #2",
+    "tagline": "Exterminate all monsters in the caves on Ragol.",
+    "client": "soldier",
+    "request_or_job_description": "Monsters seem to be constantly regenerating in one area of the caves. Exterminate them.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 9024,
+      "end_line": 9095
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Cave"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "endless_nightmare_3",
+    "title": "Endless Nightmare #3",
+    "tagline": "Exterminate all monsters in the mines on Ragol.",
+    "client": "soldier",
+    "request_or_job_description": "Monsters seem to be constantly regenerating in one area of the mines. Exterminate them.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 9096,
+      "end_line": 9161
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Mine"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "endless_nightmare_4",
+    "title": "Endless Nightmare #4",
+    "tagline": "Exterminate all monsters in the ruins on Ragol.",
+    "client": "soldier",
+    "request_or_job_description": "Monsters seem to be constantly regenerating in one area of the ruins. Exterminate them.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 9162,
+      "end_line": 9239
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Ruins"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "phantasmal_world_1",
+    "title": "Phantasmal World #1",
+    "tagline": "Vast numbers of monsters have appeared on Gal Da Val Island. Destroy them.",
+    "client": "Lab",
+    "request_or_job_description": "A large number of monsters have appeared on Gal Da Val Island. We'd like you to eliminate them all.",
+    "reward": "??? Meseta",
+    "sections_field": "Jungle Area Seaside Area",
+    "source_range": {
+      "start_line": 9240,
+      "end_line": 9371
+    },
+    "area_headings": [
+      "The Lab",
+      "Jungle North/Seaside",
+      "Pioneer 2 city"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "phantasmal_world_2",
+    "title": "Phantasmal World #2",
+    "tagline": "Vast numbers of monsters have appeared on Gal Da Val Island. Destroy them.",
+    "client": "Lab",
+    "request_or_job_description": "A large number of monsters have appeared on Gal Da Val Island. We'd like you to eliminate them all.",
+    "reward": "??? Meseta",
+    "sections_field": "Mountain Area Central Control Area",
+    "source_range": {
+      "start_line": 9372,
+      "end_line": 9503
+    },
+    "area_headings": [
+      "The Lab",
+      "Central Control Area",
+      "Pioneer 2 city"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "st_valentine_s_day",
+    "title": "St. Valentine's Day",
+    "tagline": "Special Quest for a single player. Females only.",
+    "client": null,
+    "request_or_job_description": null,
+    "reward": null,
+    "sections_field": null,
+    "source_range": {
+      "start_line": 9504,
+      "end_line": 9677
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Yound ladies only",
+      "Failure",
+      "Exceptions"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "white_day",
+    "title": "White Day",
+    "tagline": "Let's make a bouquet as a present for White Day!",
+    "client": null,
+    "request_or_job_description": null,
+    "reward": null,
+    "sections_field": null,
+    "source_range": {
+      "start_line": 9678,
+      "end_line": 9941
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Principal's Room",
+      "Cave 3",
+      "Boys only",
+      "Exceptions"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "festivity_on_the_beach",
+    "title": "Festivity On The Beach",
+    "tagline": "???",
+    "client": null,
+    "request_or_job_description": null,
+    "reward": null,
+    "sections_field": null,
+    "source_range": {
+      "start_line": 9942,
+      "end_line": 9983
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Seaside Area",
+      "The Lab"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "pioneer_halloween",
+    "title": "Pioneer Halloween",
+    "tagline": "Find the fabled \"Cake\" for the children!",
+    "client": "Young woman",
+    "request_or_job_description": "Find \"Cake,\" the legendary candy! The Naura Sisters may have some, somewhere on Gal Da Val Island...",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 9984,
+      "end_line": 10419
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Jungle North/Mountain",
+      "Jungle East/Seaside",
+      "Lemon Rappy cake",
+      "Exceptions",
+      "Candy expert",
+      "Trick-or-Treating Hallo Rappies",
+      "Hallo Rappy at meeting 2",
+      "Hallo Rappy at meeting 4",
+      "Nurse"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "pioneer_christmas",
+    "title": "Pioneer Christmas",
+    "tagline": "Please deliver the wrapping paper to the cake shop.",
+    "client": "Naura sisters",
+    "request_or_job_description": "I came to purchase cake wrapping paper for the Christmas cake, but I'm caught up in some busywork. Can you deliver it to my sisters?",
+    "reward": "500 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 10420,
+      "end_line": 11471
+    },
+    "area_headings": [],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "dream_messenger",
+    "title": "Dream Messenger",
+    "tagline": "Help a boy's mysterious dream come true.",
+    "client": "A father",
+    "request_or_job_description": "My son insists on going down to Ragol, and won't take no for an answer. Go to Ragol and find out what my son is looking for.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 11472,
+      "end_line": 11580
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Seaside Area",
+      "Pioneer 2"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "maximum_attack_2",
+    "title": "Maximum Attack 2",
+    "tagline": "Use teamwork to defeat the enemies.",
+    "client": "Arrogant looking man",
+    "request_or_job_description": "Work together with other hunters to eliminate the enemies to achieve your goal under a time limit.",
+    "reward": "???",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 11581,
+      "end_line": 11856
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "The Lab",
+      "VR Temple Alpha",
+      "VR Spaceship Beta",
+      "Jungle North",
+      "Mountain",
+      "Jungle East",
+      "Central Control Area"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "the_principal_s_gift",
+    "title": "The Principal's Gift",
+    "tagline": "\"White Day\", a new VR program, was created by the Principal. What is it?",
+    "client": "Principal",
+    "request_or_job_description": "A New VR program, \"White Day\", has been created to enhance relationships between hunters.",
+    "reward": "300 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 11857,
+      "end_line": 11991
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Mine",
+      "Failure",
+      "Candy"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "gallon_s_shop",
+    "title": "Gallon's Shop",
+    "tagline": "Episode II - Online quest - Shops - Gallon's Shop",
+    "client": "Gallon",
+    "request_or_job_description": "This isn't exactly a quest... I just want to invite all you hunters",
+    "reward": "0 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 11992,
+      "end_line": 12560
+    },
+    "area_headings": [],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "pioneer_warehouse",
+    "title": "Pioneer Warehouse",
+    "tagline": "Look what's inside of the warehouse!",
+    "client": null,
+    "request_or_job_description": null,
+    "reward": null,
+    "sections_field": null,
+    "source_range": {
+      "start_line": 12561,
+      "end_line": 12635
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Pioneer Warehouse"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "reach_for_the_dream",
+    "title": "Reach for the dream",
+    "tagline": "New simulator that attempts to improve communication among hunters!",
+    "client": "Nol Renale",
+    "request_or_job_description": "Try the new simulator built to improve communication among hunters!",
+    "reward": "300 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 12636,
+      "end_line": 13067
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "VR Spaceship Alpha",
+      "Room 1",
+      "Room 2",
+      "Room 3",
+      "Room 4",
+      "Secret room 1",
+      "Room 5",
+      "Room 6",
+      "Secret room 2",
+      "Room 7",
+      "Room 8",
+      "Secret room 3",
+      "Room 9",
+      "Final room"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "blue_star_memories",
+    "title": "Blue Star Memories",
+    "tagline": "Work with two aspiring hunters in a new VR trial simulation.",
+    "client": "Nef",
+    "request_or_job_description": "I designed a new VR system. I'd like to ask your assistance in testing this simulation.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 13068,
+      "end_line": 14605
+    },
+    "area_headings": [],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "labyrinthine_trial",
+    "title": "Labyrinthine Trial",
+    "tagline": "Build a strong bond with your teammates using the Principal's simulation!",
+    "client": "Irene",
+    "request_or_job_description": "A combat simulation has been prepared to help you build your team skills. \\*This quest requires more than 1 player.",
+    "reward": "0 Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 14606,
+      "end_line": 14689
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Principal's Room",
+      "Cave"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "towards_the_future",
+    "title": "Towards the Future",
+    "tagline": "Challenge the new simulator.",
+    "client": "Principal",
+    "request_or_job_description": "Wishes to have hunters challenge the new simulator.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 14690,
+      "end_line": 14823
+    },
+    "area_headings": [
+      "Pioneer 2 city",
+      "Forest 2",
+      "Cave 3",
+      "Mine 2",
+      "Ruins 3"
+    ],
+    "title_embedded_in_mixed_source_line": false
+  },
+  {
+    "id": "respective_tomorrow",
+    "title": "Respective Tomorrow",
+    "tagline": "Test a new prototype simulator!",
+    "client": "Lab",
+    "request_or_job_description": "A prototype simulator has just been completed. We would like veteran Hunters to test this out so we can see its performance.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 14824,
+      "end_line": 14981
+    },
+    "area_headings": [
+      "The Lab",
+      "Pioneer 2 city",
+      "VR Temple",
+      "Seabed Lower Levels"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "the_east_tower",
+    "title": "The East Tower",
+    "tagline": "Eliminate all the monsters roaming around the Control Tower.",
+    "client": "Natasha Milarose",
+    "request_or_job_description": "Eliminate all the monsters that have inhabited the Control Tower on Gal Da Val Island.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 14982,
+      "end_line": 15151
+    },
+    "area_headings": [
+      "The Lab",
+      "Pioneer 2 city",
+      "Control Tower"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  },
+  {
+    "id": "the_west_tower",
+    "title": "The West Tower",
+    "tagline": "Search for the Control Tower entry and secure a route to the top.",
+    "client": "Natasha Milarose",
+    "request_or_job_description": "Find the entrance to the Control Tower and secure a route to the top floor.",
+    "reward": "??? Meseta",
+    "sections_field": null,
+    "source_range": {
+      "start_line": 15152,
+      "end_line": 15336
+    },
+    "area_headings": [
+      "The Lab",
+      "Pioneer 2 city",
+      "Seabed",
+      "Control Tower"
+    ],
+    "title_embedded_in_mixed_source_line": true
+  }
+]

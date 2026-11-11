@@ -1,0 +1,26 @@
+EMERALD v0.1.24.8.2 TRANSFER TRUTH UI — QA
+
+PASS node --check transfer-files-v0.1.24.8.2.js
+PASS node --check transfer-compiler-v0.1.24.8.2.js
+PASS node --check strategy-pokedex-v0.1.24.8.2.js
+PASS node --check pokefield-live-v0.1.24.8.2.js
+PASS v0.1.24.8.2 transfer compiler: 24/24 permutations + PK4/PK5 crypto/checksum + truthful local ZIP
+PASS active transfer css
+PASS active transfer ui
+PASS active truthful compiler
+PASS active strategy handoff
+PASS old home ui inactive
+PASS button renamed transfer
+PASS new event only
+PASS no future route cards
+PASS truth boundary visible
+PASS stale send-to-switch cleanup
+PASS mobile full viewport
+PASS scroll lock
+PASS build label bumped
+PASS UI truth/full-screen checks 13/13
+PASS TRUE PokéField preserved
+PASS Save Vault durable picker preserved
+PASS Compact/live presentation preserved
+PASS Trainer Card preserved
+PASS Team Lab preserved

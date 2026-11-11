@@ -1,0 +1,14 @@
+gachiGASM v0.16 — Nintendo Clean OST Build
+
+Purpose:
+This package is prepared as a cleaner console-review build.
+
+Content cleanup:
+- Six explicit Ultra Rare OST tracks are excluded from the playable tracklist and removed from this package.
+- The remaining soundtrack keeps the original arcade character while avoiding the most extreme audio material.
+
+Gameplay notes:
+- Wide rainbow road remains the default.
+- Non-functional operator emoji pickups remain removed.
+- Crossmix pauses and experimental audio-filter operators remain disabled.
+- The build focuses on flow, stability, original music, and clear arcade play.

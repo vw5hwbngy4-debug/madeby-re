@@ -1,0 +1,567 @@
+RICO KNOWLEDGE MODULE 19
+CONSOLE SPECIAL MAGS + ONLINE QUEST AVAILABILITY
+Research snapshot: 2026-08-15
+Primary Moves: MAG Sense / Photon Route / Drop Hunt
+Scope: PSO Episode I & II GameCube + Original Xbox, with explicit private-server boundaries and Blue Burst comparison only where needed.
+
+===============================================================================
+0. AUTHORITY AND SAFETY RULE
+===============================================================================
+
+A special-MAG statement is incomplete unless RICO knows BOTH:
+1) the client/platform, and
+2) when online/private-server content matters, the server.
+
+Never silently convert:
+- GameCube/Xbox stock-era knowledge into Ephinea knowledge;
+- Ephinea/Blue Burst cell availability into GameCube/Xbox availability;
+- one private server's custom quest/reward into another server's behavior.
+
+For special MAG questions separate these four facts:
+
+A. TRANSFORMATION REQUIREMENT
+   Which Mag cell is used, on which Mag/form, and at which level/stat/ID conditions?
+
+B. HISTORICAL STOCK CONSOLE ACQUISITION
+   How was the cell/container obtained on Sega-era GameCube/Xbox online service?
+
+C. CURRENT PRIVATE-SERVER ACQUISITION
+   How is it obtainable now on Schtserv, Sylverant/Altimira, Ragol, etc.?
+
+D. CURRENT AVAILABILITY
+   Is the event/quest/reward active today, seasonal, permanent, server-exclusive,
+   discontinued, or not established by this module?
+
+If D is not established, say so instead of guessing.
+
+===============================================================================
+1. ORIGINAL XBOX ONLINE IN 2026: SERVER IDENTITY MATTERS
+===============================================================================
+
+Original Xbox PSO Episode I & II can play online through Insignia.
+
+At the time of this research, Insignia's PSO page offers these server choices:
+- Schthack / Schtserv
+- Sylverant
+- Ragol
+
+The selected PSO server can be changed later in the user's Insignia dashboard.
+
+RICO behavior:
+- If an Xbox user asks "How do I get X online?", ask which server they selected
+  if the answer is server-dependent.
+- If the user says "Xbox with Insignia" but no server, do NOT assume Ephinea.
+- Ephinea is a Blue Burst server and is not the Xbox server selected through Insignia.
+
+Sylverant-specific current connection facts:
+- Xbox PSO requires Insignia.
+- To use Sylverant, select Sylverant as the PSO server in Insignia.
+- Sylverant supports normal GameCube/Xbox crossplay for PSO Episode I & II.
+- Guild Card exchange and Xbox Live voice features do not cross between Xbox and
+  GameCube even though regular gameplay generally does.
+
+===============================================================================
+2. CLASSIC GAMECUBE/XBOX CELL MAG TRANSFORMATION REFERENCE
+===============================================================================
+
+All classic Cell Mags below use Feeding Table 7 after transformation.
+
+SECTION-ID GROUP A:
+Viridia, Skyly, Purplenum, Redria, Yellowboze
+
+SECTION-ID GROUP B:
+Greenill, Bluefull, Pinkal, Oran, Whitill
+
+Format:
+TARGET MAG | CELL | TRANSFORMATION CONDITION
+
+Angel's Wing
+- Cell: Heart of Angel
+- Condition: Level 100+ Mag / third-evolution Mag
+- Current Schtserv GC/Xbox directory: Non-Cast Only
+- IMPORTANT: Ephinea removed some class restrictions on its own BB server in 2017.
+  Do not apply that Ephinea change to console automatically.
+
+Chao
+- Cell: Heart of Chao
+- Condition: all four Mag stats DEF/POW/DEX/MIND are at least 35.
+- Effective minimum Mag level: 140.
+
+Chu Chu
+- Cell: Heart of Chu Chu
+- Condition: Level 50+ Mag / third-evolution Mag.
+
+Churel
+- Cell: Cell of Mag 213
+- Condition: Level 100+ third-evolution Mag
+- Character Section ID: Group A.
+
+Devil's Wing
+- Cell: Heart of Devil
+- Condition: Level 100+ Mag / third-evolution Mag
+- Current Schtserv GC/Xbox directory: Non-Cast Only.
+
+Devil's Tail
+- Cell: Heart of Devil
+- Condition: use Heart of Devil on a Devil's Wing.
+- Current Schtserv GC/Xbox directory: Non-Cast Only.
+
+Hamburger
+- Cell: Kit of Hamburger
+- Condition: Level 50+ Kaitabha.
+
+Kapu Kapu
+- Cell: Heart of Kapu Kapu
+- Condition: Level 50+ Mag / third-evolution Mag.
+
+Opa-Opa
+- Cell: Heart of Opa Opa
+- Condition: Level 100+ Mag / third-evolution Mag.
+
+Panzer's Tail
+- Cell: Panther's Spirit
+- Condition: Level 50+ Naga.
+- This is the canonical transformation fact RICO should give first.
+
+Pian
+- Cell: Heart of Pian
+- Condition: Level 120+ third-evolution Mag
+- Synchro: 120%
+- IQ: 180 or higher.
+
+Pitri
+- Cell: Cell of Mag 502
+- Condition: Level 100+ third-evolution Mag
+- Character Section ID: Group B.
+
+Preta
+- Cell: Cell of Mag 213
+- Condition: Level 100+ third-evolution Mag
+- Character Section ID: Group B.
+
+RoboChao / Robochao
+- Cell: Parts of RoboChao
+- Condition: at least two Mag stats are 70 or higher.
+- Effective minimum Mag level: 145.
+
+Soniti
+- Cell: Cell of Mag 502
+- Condition: Level 100+ third-evolution Mag
+- Character Section ID: Group A.
+
+SYSTEM MAG CHAIN
+
+Mark III
+- Cell: Kit of Mark III
+- Condition: base/unevolved Mag and character Level 60+
+- Stock System Mags do not have Photon Blasts.
+
+Master System
+- Cell: Kit of Master System
+- Condition: Level 60+ Mark III and character Level 70+
+
+Genesis
+- Cell: Kit of Genesis
+- Condition: Level 70+ Master System and character Level 80+
+
+Sega Saturn
+- Cell: Kit of Sega Saturn
+- Condition: Level 90+ Genesis and character Level 90+
+
+Dreamcast
+- Cell: Kit of Dreamcast
+- Condition: Level 100+ Sega Saturn and character Level 100+
+
+IMPORTANT SYSTEM-MAG NOTE:
+The stock System chain has unusual/no PB behavior. Do not transfer Schtserv's special
+"Level 0" variants' PB behavior onto stock Mark III/Master System/Genesis/Sega
+Saturn/Dreamcast Mags.
+
+===============================================================================
+3. HISTORICAL SEGA-ERA GAMECUBE/XBOX HOLIDAY ACQUISITION
+===============================================================================
+
+These routes describe Sega-era GameCube/Xbox online quest behavior and are useful
+for identifying the original console design. They do NOT prove that a modern
+private server currently offers the same route unchanged.
+
+PIONEER HALLOWEEN
+Platform documented historically: GameCube + Xbox
+Players: 1-4
+
+Core route:
+- Complete Pioneer Halloween and obtain Cakes.
+- Different players/characters can produce different cake combinations.
+- Trade/collect 8 different Cakes.
+- Give the 8 different Cakes to the hidden Rappy.
+- Receive a Jack-O'-Lantern.
+- Historical route: one Jack-O'-Lantern per character through this exchange.
+- Opening the Jack-O'-Lantern gives a random classic Halloween MAG cell.
+
+Historical/original-style Jack-O'-Lantern cell pool:
+- Cell of Mag 502
+- Cell of Mag 213
+- Parts of RoboChao
+- Heart of Opa Opa
+- Heart of Pian
+- Heart of Chao
+- Heart of Chu Chu
+- Heart of Kapu Kapu
+
+Historical guides sometimes contain a typo "Cell of Mag 512".
+Treat that as Cell of Mag 502.
+
+Do NOT preserve old community estimates such as "Hallo Rappy drops it 95% I
+believe" as an exact verified rate. The wording itself shows uncertainty.
+
+PIONEER CHRISTMAS
+Platform documented historically: GameCube + Xbox
+Players: 1
+
+Core route 1:
+- Solve the Level 3 puzzle sequence without errors to unlock Level 4.
+- Get a perfect result on Level 4.
+- Receive a Christmas Present.
+- Historical route: one such present per character.
+
+Core route 2:
+- Unlock/collect differently wrapped presents via the wrapping-paper system.
+- Donate nine differently wrapped presents to the woman on Pioneer 2.
+- Receive another Christmas Present.
+- Historical route: one such donation reward per character.
+
+Original-style Christmas Present classic cell pool:
+- Heart of Angel
+- Heart of Devil
+- Panther's Spirit
+- Kit of Mark III
+- Kit of Master System
+- Kit of Genesis
+- Kit of Sega Saturn
+- Kit of Dreamcast
+- Kit of Hamburger
+
+This is the historical console route that connects Christmas Present ->
+Panther's Spirit -> Level 50+ Naga -> Panzer's Tail.
+
+===============================================================================
+4. CURRENT SCHTSERV GAMECUBE/XBOX KNOWLEDGE
+===============================================================================
+
+The current Schtserv GC wiki explicitly presents a Mag Directory for PSO
+Episode I & II on GameCube/Xbox.
+
+It states:
+- Cell Mags use another item known collectively as a Mag Cell.
+- Mag Cells can be found in Jack-O'-Lanterns or Christmas Presents dropped by
+  Hallo Rappy or Saint/St Rappy during their seasonal events.
+- All Cell Mags use Feeding Chart #7.
+- Panzer's Tail uses Panther's Spirit on a Level 50+ Naga.
+
+Therefore a Schtserv Xbox answer may safely say:
+VERIFIED SCHTSERV TRANSFORMATION:
+  Panther's Spirit + Level 50+ Naga -> Panzer's Tail.
+
+VERIFIED SCHTSERV SEASONAL ACQUISITION CLASS:
+  Classic Mag Cells are associated with seasonal Jack-O'-Lantern / Christmas
+  Present routes.
+
+Do not invent the CURRENT date window or exact current event status from this
+static module. If the user asks "is it active today?", that is live-state data.
+
+SCHTSERV SERVER-EXCLUSIVE LEVEL 0 MAGS
+
+Schtserv additionally documents server-exclusive "Level 0" Mags.
+These are NOT stock console Mags and must be labeled SCHTSERV-SPECIFIC.
+
+Examples include:
+- Level 0 Baby Mags with zero starting DEF and preset PBs.
+- Level 0 versions of fourth-evolution / Cell Mags.
+- Some special variants bypass normal stock transformation restrictions.
+- The Schtserv page documents event-specific drops for these variants.
+
+RICO must never present a Schtserv Level 0 Mag as vanilla Sega GameCube/Xbox
+behavior.
+
+===============================================================================
+5. CURRENT SYLVERANT / ALTIMIRA GAMECUBE + XBOX CUSTOM CONTENT
+===============================================================================
+
+Sylverant supports GameCube/Xbox crossplay and the Altimira ship has extensive
+updated, ported, and custom quest content.
+
+ALTMIRA: CHRISTMAS CATASTROPHE
+- Custom/Altimira quest.
+- In Ultimate, a player can earn a Christmas Card under the quest's documented
+  conditions.
+- Three Christmas Cards can be traded to Phil near the Principal's Office for a
+  Christmas Present.
+
+IMPORTANT:
+The fact that Altimira awards an item named "Christmas Present" does NOT, by
+itself, prove that its current content table is identical to Sega-era,
+Schtserv, or Ephinea Christmas Present tables.
+For a precise current Sylverant Panther's Spirit acquisition claim, verify the
+present's current Sylverant contents or current event documentation.
+
+ALTMIRA: HALLOWEEN HORROR
+- Custom/Altimira quest.
+- Hidden switches unlock a secret route.
+- On Ultimate, the final secret can lead to Dark Falz.
+- Defeating Dark Falz awards Unknown Residue.
+- Unknown Residue can be traded with the scientist on Pioneer 2 for a
+  Jack-O'-Lantern.
+
+Again, do not assume the container's contents are identical across servers
+without server-specific confirmation.
+
+ALTMIRA CUSTOM QUEST PRINCIPLE
+Altimira demonstrates that a private console server can:
+- port/modify Sega or Blue Burst quests;
+- create new quests;
+- create secret routes;
+- award server-defined currencies/items;
+- create bespoke acquisition paths for items.
+
+Therefore "available on Xbox" is not a single timeless fact once private
+servers are involved. Always bind availability to server + quest + date/event
+when relevant.
+
+===============================================================================
+6. RAGOL SERVER
+===============================================================================
+
+Insignia currently lists Ragol as an Xbox PSO server choice.
+
+This research did NOT establish a sufficiently authoritative current special-MAG
+acquisition matrix for Ragol.
+
+RICO behavior:
+- It is safe to state that Ragol is a current selectable Xbox PSO server through
+  Insignia.
+- It is NOT safe, from this module, to claim a specific Panther's Spirit,
+  Jack-O'-Lantern, Christmas Present, or custom MAG acquisition route on Ragol.
+- If asked for Ragol-specific availability, mark it CURRENT SERVER INFORMATION
+  NOT ESTABLISHED IN PACKAGED KNOWLEDGE and use live research only if permitted.
+
+===============================================================================
+7. BLUE BURST / EPHINEA SPECIAL-MAG FIREWALL
+===============================================================================
+
+Ephinea has a broader special-MAG ecosystem than stock GameCube/Xbox.
+The existence of one of these cells/Mags on Ephinea is NOT proof of console
+availability.
+
+Examples in Ephinea's current Mag-cell list include:
+- Amitie's Memo -> Puyo
+- D-Photon Core -> Gael Giel
+- Dragon Scale -> Tellusis
+- Heart of Morolian -> Moro
+- Heart of YN-0117 -> Elenor
+- Heaven Striker Coat -> Striker Unit
+- Liberta Kit -> Agastya
+- Pioneer Parts -> Pioneer
+- Rappy's Beak -> Rappy
+- Sonic Doll -> Sonic
+- Stealth Kit -> Stealth
+- Tablet -> Geung-si
+- Yahoo!'s engine -> Yahoo!
+- Mag Kit / Varuna Kit / Kalki Kit / Vritra Kit -> special starter-form variants
+
+Do not answer "Xbox can get it" just because it appears on the Ephinea Mags page.
+
+EPHINEA-SPECIFIC RULE CHANGE
+Ephinea's Mags documentation notes that on 2017-01-09 class restrictions on
+Angel's Wing, Devil's Wing, and Elenor were removed.
+This is an Ephinea server change. Do NOT back-port it to stock/current console
+unless the relevant console server explicitly says so.
+
+===============================================================================
+8. EPHINEA HOLIDAY CONTAINER TABLES (SERVER-SPECIFIC COMPARISON)
+===============================================================================
+
+These rates are EPHINEA behavior and must be labeled as such.
+
+EPHINEA STANDARD CHRISTMAS PRESENT CONTENTS
+- Heart of Angel: 12%
+- Heart of Devil: 12%
+- Panther's Spirit: 10%
+- Kit of Mark III: 13%
+- Kit of Master System: 11%
+- Kit of Genesis: 8%
+- Kit of Sega Saturn: 6%
+- Kit of Dreamcast: 4%
+- Kit of Hamburger: 12%
+- Mag Kit: 3%
+- Varuna Kit: 3%
+- Kalki Kit: 3%
+- Vritra Kit: 3%
+
+On standard Ephinea, St Rappy drops Christmas Present at 7/8 during the relevant
+seasonal replacement, all difficulties.
+
+EPHINEA CLASSIC SHIP CHRISTMAS PRESENT ORIGINAL TABLE
+- Heart of Angel: 15%
+- Heart of Devil: 15%
+- Panther's Spirit: 15%
+- Kit of Mark III: 15%
+- Kit of Master System: 10%
+- Kit of Genesis: 7%
+- Kit of Sega Saturn: 5%
+- Kit of Dreamcast: 3%
+- Kit of Hamburger: 15%
+
+EPHINEA STANDARD JACK-O'-LANTERN CONTENTS
+- Cell of Mag 502: 11%
+- Cell of Mag 213: 11%
+- Parts of RoboChao: 11%
+- Heart of Opa Opa: 11%
+- Heart of Pian: 11%
+- Heart of Chao: 11%
+- Heart of Chu Chu: 11%
+- Heart of Kapu Kapu: 11%
+- Mag Kit: 3%
+- Varuna Kit: 3%
+- Kalki Kit: 3%
+- Vritra Kit: 3%
+
+On standard Ephinea, Hallo Rappy drops Jack-O'-Lantern at 7/8 during the
+relevant seasonal replacement, all difficulties.
+
+EPHINEA CLASSIC SHIP JACK-O'-LANTERN ORIGINAL TABLE
+- Cell of Mag 502: 13%
+- Cell of Mag 213: 13%
+- Parts of RoboChao: 12%
+- Heart of Opa Opa: 12%
+- Heart of Pian: 12%
+- Heart of Chao: 12%
+- Heart of Chu Chu: 13%
+- Heart of Kapu Kapu: 13%
+
+These tables are particularly useful for identifying why an Ephinea answer may
+be correct for Ephinea yet wrong for Xbox/Schtserv/Sylverant.
+
+===============================================================================
+9. CANONICAL RICO ANSWER: "HOW DO I GET PANZER'S TAIL ON XBOX?"
+===============================================================================
+
+RICO should answer in this order:
+
+⭕ RICO used MAG Sense!
+
+VERIFIED TRANSFORMATION
+Panzer's Tail = use Panther's Spirit on a Level 50+ Naga.
+
+PLATFORM
+Original Xbox PSO Episode I & II.
+
+CURRENT ONLINE SERVER CHECK
+If playing through Insignia, the route can depend on whether the player selected
+Schtserv, Sylverant, or Ragol.
+
+IF SCHTSERV:
+- Current Schtserv console documentation confirms the Panzer transformation.
+- It also confirms classic Mag Cells are associated with seasonal
+  Jack-O'-Lantern / Christmas Present routes.
+- For "is the event active right now?", treat that as live-state information.
+
+IF SYLVERANT / ALTIMIRA:
+- Current Altimira documentation confirms a custom Ultimate route where
+  3 Christmas Cards -> Christmas Present.
+- It also confirms Halloween Horror can award a Jack-O'-Lantern through a
+  custom secret route.
+- Do not claim that the current Sylverant Christmas Present contains
+  Panther's Spirit unless a Sylverant-specific current source confirms its
+  contents.
+
+IF RAGOL:
+- Current special-MAG route not established by this module.
+- Do not guess.
+
+HISTORICAL STOCK CONTEXT:
+- Sega-era GameCube/Xbox Pioneer Christmas could award a Christmas Present.
+- The classic/original Christmas cell pool included Panther's Spirit.
+- That establishes the original console design lineage but does not guarantee
+  a modern private server preserved it unchanged.
+
+===============================================================================
+10. RICO QUERY ROUTING
+===============================================================================
+
+Use this module for questions such as:
+- How do I get Panzer's Tail on Xbox?
+- Is Panther's Spirit obtainable on GameCube?
+- Which Mag cells exist on console?
+- Can Xbox get Puyo / Tellusis / Elenor / Rappy Mag?
+- What is inside Jack-O'-Lantern?
+- What is inside Christmas Present?
+- Is this stock PSO or server custom?
+- Does this work on Schtserv?
+- Does this work on Sylverant?
+- Why does Ephinea show a MAG cell my Xbox guide does not?
+- What MAG should I prepare before I obtain the cell?
+- What event/quest historically awarded the container?
+
+For precise current event status ("today", "this week", "currently active"),
+this static module is not enough. Use a live server source if web access is
+permitted. Otherwise say CURRENT STATE UNKNOWN.
+
+===============================================================================
+11. PROVENANCE / SOURCES
+===============================================================================
+
+HIGH — CURRENT / PLATFORM AUTHORITY
+Insignia PSO Xbox server selection:
+https://insignia.live/games/4d53004a
+
+Sylverant connection / supported versions / Xbox via Insignia / GC-Xbox crossplay:
+https://sylverant.net/connecting-to-sylverant/
+
+Schtserv Official GC Wiki — Mag Directory:
+https://gc.schtserv.wiki/index.php/Mag_Directory
+
+Sylverant PSO Palace — GameCube & Xbox Secrets / Altimira custom quests:
+https://psopalace.sylverant.net/about3s.html
+
+HIGH — CURRENT EPHINEA / BLUE BURST REFERENCE
+Ephinea Mags:
+https://wiki.pioneer2.net/w/Mags
+
+Ephinea Panzer's Tail:
+https://wiki.pioneer2.net/w/Panzer%27s_Tail
+
+Ephinea Panther's Spirit:
+https://wiki.pioneer2.net/w/Panther%27s_Spirit
+
+Ephinea Christmas Present:
+https://wiki.pioneer2.net/w/Christmas_Present
+
+Ephinea Jack-O'-Lantern:
+https://wiki.pioneer2.net/w/Jack-O%27-Lantern
+
+MEDIUM — HISTORICAL CONSOLE QUEST DOCUMENTATION
+GameFAQs Hunter's Guild FAQ (historical GC/Xbox online quest descriptions):
+https://gamefaqs.gamespot.com/gamecube/516243-phantasy-star-online-episode-i-and-ii/faqs/21294
+
+GameFAQs Holiday Events Guide (historical; useful for original holiday design,
+but contains known typos/uncertain estimates and must not override modern
+server-specific documentation):
+https://gamefaqs.gamespot.com/gamecube/516243-phantasy-star-online-episode-i-and-ii/faqs/29836
+
+===============================================================================
+12. FINAL KNOWLEDGE RULE
+===============================================================================
+
+The word "available" must always be interpreted as:
+
+AVAILABLE WHERE?
+- stock historical GameCube?
+- stock historical Xbox?
+- Schtserv GC/Xbox?
+- Sylverant GC/Xbox / Altimira?
+- Ragol Xbox?
+- Ephinea standard BB?
+- Ephinea Classic BB?
+
+A correct special-MAG answer is a platform/server answer, not merely an item
+database lookup.

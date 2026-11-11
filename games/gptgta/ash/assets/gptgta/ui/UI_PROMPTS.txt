@@ -1,0 +1,12 @@
+
+Generate retro GTA HUD:
+- minimap
+- wanted stars
+- money counter
+- ammo counter
+- health bar
+- mission complete
+- busted screen
+- wasted screen
+
+Late-90s arcade UI.

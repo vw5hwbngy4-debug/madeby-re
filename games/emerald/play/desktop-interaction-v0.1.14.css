@@ -1,0 +1,109 @@
+/* JRPG.WORLD Emerald v0.1.14 — desktop interaction repair.
+   Desktop only. Mobile layout and Save Vault behavior are intentionally untouched. */
+
+@media (min-width: 960px) {
+  /* COMPACT now has real desktop semantics instead of only changing the button label. */
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) {
+    padding: 7px 10px 8px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-status,
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-kicker,
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) #pf-owned-drawer,
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-tech,
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-explainer,
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) #pf-desktop-idle {
+    display: none !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-card {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 2px 0 0 !important;
+    padding: 6px 8px !important;
+    border-radius: 10px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-title {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    gap: 6px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-sprite {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-name {
+    font-size: 13px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-sub {
+    margin-top: 0 !important;
+    font-size: 8px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-signal {
+    padding: 3px 5px !important;
+    font-size: 7px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-held-item,
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-breed-note,
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-grid,
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-hp,
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-ev-quick,
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-detail,
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .tc-live-actions,
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-passport-badges {
+    display: none !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-compact-facts {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex-wrap: wrap !important;
+    gap: 3px 7px !important;
+    margin: 0 0 0 auto !important;
+    padding: 0 !important;
+    border-top: 0 !important;
+    color: #aeb8c6 !important;
+    font-size: 7.5px !important;
+    font-weight: 850 !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-compact-perfect {
+    color: #72f0a9 !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-compact-item {
+    color: #ffe19a !important;
+  }
+
+  /* Compact with no active Pokémon should be a small header/update strip, never a black second screen. */
+  body.pf-mobile-first #pokefield-live-panel.pf-compact:not(.tc-showing-card) #tc-stage:has(#pf-primary:empty) {
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Trainer Card owns the secondary screen while it is open. The same header control becomes LIVE. */
+  body.pf-mobile-first #pokefield-live-panel.tc-showing-card #pf-compact-toggle {
+    display: none !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel.tc-showing-card .tc-header-button {
+    border-color: rgba(114,240,169,.42) !important;
+    background: rgba(114,240,169,.10) !important;
+    color: #8dffba !important;
+  }
+
+  /* Remove inherited minimums around the 3D stage so JS can shrink it exactly to live content again. */
+  body.pf-mobile-first #pokefield-live-panel .tc-stage,
+  body.pf-mobile-first #pokefield-live-panel .tc-flipper {
+    min-height: 0 !important;
+  }
+}

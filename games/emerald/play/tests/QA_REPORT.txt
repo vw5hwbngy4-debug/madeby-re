@@ -1,0 +1,31 @@
+JRPG.WORLD EMERALD v0.1.7 — TRAINER CARD MVP QA
+2026-09-06
+
+PASS
+- JavaScript syntax: pokefield-live-v0.1.7.js
+- JavaScript syntax: trainer-card-v0.1.7.js
+- JavaScript syntax: desktop-ux-v0.1.6.2.js
+- Decoder QA: 24/24 encrypted Gen III substructure permutations
+- Decoder QA: checksum corruption rejection
+- Decoder QA: IV/EV decode
+- Decoder QA: Hidden Power
+- Decoder QA: National mapping
+- Decoder QA: Gen III gender boundaries
+- mGBA WASM hash unchanged from canonical v0.1.6.2 baseline
+- mGBA JS bundle hash unchanged from canonical v0.1.6.2 baseline
+- iOS audio bundle hash unchanged from canonical v0.1.6.2 baseline
+- base emulator CSS hash unchanged from canonical v0.1.6.2 baseline
+- desktop v0.1.6.2 CSS/JS hashes unchanged
+- Emerald live dex hash unchanged
+- index references all new v0.1.7 Trainer Card assets
+- Trainer Card data storage is browser-local only; no fetch/XHR/network posting code exists in trainer-card-v0.1.7.js
+
+ADDITIVE RUNTIME CHANGE
+- Live reader now publishes a decoded, read-only product state after normal DOM rendering.
+- This bridge does not expose mGBA write APIs and does not modify decryption/checksum/IV/EV/HP logic.
+
+NOT DEVICE-PASSED IN THIS BUILD ENVIRONMENT
+- Real iPhone flip animation / Web Share file sheet
+- Real desktop visual layout with live mGBA gameplay
+The container Chromium process cannot complete rendering in this environment, so these remain device QA rather than falsely marked PASS.
+- Provenance rule: WILD records can be saved as finds but cannot be placed on the Trainer Card until represented as OWNED/EGG data.

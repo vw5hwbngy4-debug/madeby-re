@@ -1,0 +1,10 @@
+EMERALD v0.1.24.8.4 · ADV STAB AXIS
+
+- Gen III type-based Physical/Special STAB evaluation.
+- Best species STAB fit compares STAB-adjusted BP against the relevant base offensive stat.
+- Accuracy plus major two-turn/recharge tempo costs are included; this remains a transparent heuristic, not a target-specific damage calc.
+- Hidden Power is treated specially: species ceiling can surface a legal same-type Hidden Power 70 when TM10 is in the family movepool; exact specimens only use their actual IV-derived Hidden Power.
+- Strategy snapshot replaces NEXT STAB with BEST STAB FIT.
+- Team Lab adds GEN III STAB AXIS with Physical vs Special alternatives.
+- True PokéField adds STAB AXIS CALL and BEST/PHYS/SPEC STAB tier ranks.
+- Example sanity target: Salamence species ceiling = Hidden Power Flying 70 (Physical), ahead of Dragon Claw 80 (Special) on neutral raw pressure because ATK 135 > SP.ATK 110.

@@ -1,0 +1,52 @@
+EMERALD v0.1.24.9.2 — PRACTICAL MOVES + TEAM COVERAGE
+Date: 2026-09-12
+Base: v0.1.24.9.1.5 TEAM LAB RENDER RESTORE (known-good stable)
+
+GOAL
+- Keep every v0.1.24.9.1.5 Team Lab recovery and v0.1.24.9.1.2 PokéField Focus/keyboard fix.
+- Stop raw-BP STAB ranking from presenting conditional or unreliable moves as ordinary best choices.
+- Add a whole-party coverage read so Coverage is not limited to one type at a time.
+
+PRACTICAL MOVE RANKING
+- New engine: teamlab-engine-v0.1.24.9.2.js.
+- Accuracy reliability is deliberately non-linear (accuracy ^ 1.5) for ranking only.
+  This is not a damage formula. It models the competitive cost of losing a turn to a miss.
+- Major default condition/tempo penalties:
+  * Dream Eater: sleeping-target gate.
+  * Hyper Beam / recharge effects: recharge-turn cost.
+  * Solar Beam / Razor Wind / Sky Attack: default charge-turn cost.
+  * semi-invulnerable two-turn attacks: two-turn commitment.
+  * Future Sight / Doom Desire effect family: delayed-damage cost.
+  * Focus Punch: interruption risk.
+  * Explosion / Self-Destruct: user-faints trade cost.
+- These moves remain legal, visible and inspectable. They are NOT blacklisted.
+- STAB UI now says PRACTICAL rather than implying raw BP is universally best.
+- High-risk / conditional STAB candidates remain visible with their reason.
+
+EXPECTED REGRESSION EXAMPLES
+- Milotic: practical Water STAB => Surf; Hydro Pump remains a lower-reliability option.
+- Lugia: practical physical STAB => Aeroblast; practical special STAB => Psychic; Dream Eater remains conditional.
+- Claydol: practical overall STAB => Earthquake; practical special STAB => Psychic.
+
+TEAM COVERAGE
+- Coverage picker now exposes TEAM OVERVIEW before the existing DEFENSE / OFFENSE type lens.
+- If a live Emerald party exists, Team Overview uses the actual party, including duplicate species as separate specimens.
+- Defensive view computes every Gen III attack type at once with ability-aware weakness/resist/immunity counts.
+- Offensive view uses CURRENT PARTY MOVES when decoded; otherwise it falls back visibly to typing only.
+- Summary surfaces:
+  * DEFENSIVE PRESSURE
+  * OFFENSIVE GAPS
+  * ONE-ANSWER TYPES
+- Each type row shows DEF (weak/resist/immune) and ATK (super-effective / neutral+) simultaneously.
+- Tap DEF or ATK on any type to hand that exact team/type question into the existing Coverage Lens / Focus workflow.
+
+SAFETY / SCOPE
+- No emulator writes added.
+- No save mutation added.
+- No ROM dependency changed.
+- Team Lab render-recovery and race-proof behavior preserved.
+- v0.1.24.9.1.5 remains the stable rollback package.
+
+HANDOFF
+- Team Lab's OPEN COVERAGE IN FIELD button now opens TEAM OVERVIEW directly.
+- Normal PokéField Coverage still retains the existing single-type DEFENSE / OFFENSE lens.

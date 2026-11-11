@@ -1,0 +1,241 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#093a3a"><title>AgentMelodies · Dancing Leaves · Bounce Lab v2</title>
+<style>
+:root{color-scheme:dark;--bg:#071f2a;--panel:#12383c;--edge:#3c7466;--mint:#95f3bc;--gold:#ffe19b;--txt:#f1fbe9;--muted:#b2d1c2}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 40% -20%,#246f57,#0d3340 55%,#071a27);color:var(--txt);font:14px/1.45 system-ui,-apple-system,sans-serif}main{max-width:1330px;margin:auto;padding:19px 15px 40px}header{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:12px;margin-bottom:16px}h1{font:normal clamp(36px,5vw,61px)/1.05 Georgia,serif;letter-spacing:-.035em;margin:4px 0 8px}h1 em{color:var(--gold)}h2{font:normal 25px Georgia,serif;margin:0 0 10px}p{color:var(--muted);margin:0}.eyebrow{font-size:11px;letter-spacing:.19em;color:#8cedb5;font-weight:800}.tag{border:1px solid #629a7d;color:#d6f7d6;border-radius:24px;padding:7px 12px;font-size:12px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 326px;gap:14px;align-items:start}.card{background:#113840e8;border:1px solid var(--edge);border-radius:17px;overflow:hidden;box-shadow:0 12px 45px #001a2090}.stage{position:relative;overflow:hidden;background:#16ba69}.stage canvas{width:100%;aspect-ratio:690 / 565;display:block;touch-action:none;cursor:grab}.stage-label{position:absolute;top:12px;left:12px;display:flex;flex-wrap:wrap;gap:7px;pointer-events:none}.stage-label span{padding:5px 8px;border-radius:8px;border:1px solid #acffca66;background:#063f4de3;color:#f4ffe8;font-size:11px}.bar{height:5px;background:#1d5550}.bar i{display:block;height:100%;background:linear-gradient(90deg,#69edaa,#f3c87e);width:0}.transport{display:flex;gap:7px;flex-wrap:wrap;padding:12px}button{background:#205d5f;color:#e5fff2;border:1px solid #539883;border-radius:9px;font:700 12px/1.2 system-ui;cursor:pointer;padding:10px 12px}button.primary{background:#f6d590;color:#1b3435;border-color:#f6d590}button:disabled{opacity:.45}button:hover:not(:disabled){filter:brightness(1.15)}.status{min-height:27px;color:#c3edcc;font-size:12px;padding:0 13px 12px}.editor{padding:15px;display:flex;flex-direction:column;gap:12px;max-height:790px;overflow-y:auto}.part{border-bottom:1px solid #39716a;padding-bottom:12px}.part:last-child{border-bottom:0}.control{display:flex;justify-content:space-between;align-items:center;gap:7px;margin:7px 0 5px;color:#e2f3dd;font-size:12px}.value{font:normal 20px Georgia,serif;color:var(--gold)}input[type=range]{width:100%;accent-color:#f8d693;cursor:pointer}select{width:100%;padding:9px;background:#194e50;border:1px solid #578d80;border-radius:9px;color:#f5ffe9;font:inherit}label{font-size:12px;color:#cde7d9}.hint{font-size:11px;color:#a9d6c4;line-height:1.5}.row{display:flex;gap:7px;flex-wrap:wrap;align-items:center}.row button{flex:1}.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.seg{padding:9px 5px;white-space:normal;min-height:47px}.seg.active{background:#e0c988;color:#173f37;border-color:#ffe7aa}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin-top:14px}.stat{padding:13px;background:#123b42;border:1px solid #3b7568;border-radius:12px}.stat b{display:block;font:normal clamp(24px,2.6vw,35px) Georgia,serif;color:#ffdf95}.stat small{color:#a7cebd}.results{display:grid;grid-template-columns:1.2fr 1fr;gap:13px;margin-top:13px}.section{padding:16px}.scores{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:12px 0}.scorecard{border:1px solid #497b73;border-radius:12px;padding:12px;background:#143b43;text-align:center}.scorecard b{display:block;font:normal 29px Georgia;color:#ffe095}.scorecard small{color:#a9d8c4}.scorecard strong{font-size:12px}.notes{display:flex;gap:2px;align-items:flex-end;overflow-x:auto;min-height:84px;margin:12px 0}.note{min-width:10px;flex:0 0 10px;background:#2b5755;border:1px solid #508274;border-radius:3px}.note.yes{background:#78e6a8}.note.near{background:#ecbc77}.legend{color:#b7dccb;font-size:11px}.log{height:150px;overflow:auto;white-space:pre-wrap;background:#092c33;color:#c5f0d8;padding:11px;font:11px/1.55 ui-monospace,monospace;border-radius:9px}.foot{color:#afcfc0;font-size:12px;line-height:1.65;margin-top:14px}.muted{color:#b6d6c7}.pill{padding:6px 8px;background:#0c5450;border-radius:7px;color:#bdf1cd;font-size:12px}.hidden{display:none!important}@media(max-width:1050px){.layout{grid-template-columns:1fr}.editor{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;max-height:none;overflow:visible}.editor>h2,.editor>.full{grid-column:1/-1}.results{grid-template-columns:1fr 1fr}}@media(max-width:650px){main{padding:12px 9px 28px}.layout,.results{grid-template-columns:1fr}.editor{display:flex;max-height:none;overflow:visible}.grid{grid-template-columns:repeat(2,1fr)}.tag{display:none}.transport{gap:5px}.transport button{font-size:11px;padding:9px}}
+</style></head><body><main><header><div><div class="eyebrow">AGENTMELODIES · BOUNCE LAB · EXPERIMENT 02</div><h1>Dancing <em>Leaves</em> 🌿</h1><p>Dezelfde 67 Mario-noten. Drie soorten bladeren. Échte botsingen en een eerlijke vergelijking.</p></div><span class="tag">Geen MIDI-playback · 8 bladeren · 78 lanceringen</span></header>
+<div class="layout"><section class="card"><div class="stage"><canvas id="scene" width="690" height="565" aria-label="Interactieve Hanenbow-kaatstuin met acht stilstaande, zwaaiende en terugverende bladeren"></canvas><div class="stage-label"><span id="clock">0.00 s</span><span>FYSICA 180 Hz</span><span id="modeBadge">Gemengde dans</span></div></div><div class="bar"><i id="progress"></i></div><div class="transport"><button class="primary" id="play">▶ PLAY</button><button id="pause">Ⅱ PAUZE</button><button id="single">↗ 1 BEESTJE</button><button id="repair">✦ REPAIR</button><button id="compare">±5° TEST</button><button id="export">↓ JSON</button></div><div class="status" id="status" role="status">Klaar. De bladeren bewegen volgens natuurkundige regels.</div></section>
+<section class="card editor"><h2>Garden controls</h2><div class="part full"><div class="control"><span>Drie bewegingsvormen</span><span class="pill" id="currentMode">Gemengd</span></div><div class="three"><button class="seg" data-mode="static">🍃 Vast</button><button class="seg" data-mode="sway">〰️ Zwaai</button><button class="seg" data-mode="spring">↩️ Veer</button></div><p class="hint" style="margin-top:7px">Dit verandert de geselecteerde bladmodus, niet de MIDI. Een veer beweegt pas na een botsing.</p></div>
+<div class="part"><div class="control"><label for="leaf">Geselecteerd blad</label><span id="leafCount">8 bladeren</span></div><select id="leaf"></select><div class="control"><label for="angle">Rusthoek</label><span class="value" id="angleV">0°</span></div><input type="range" id="angle" min="-180" max="360" step="1"><div class="row"><button id="minus">−5°</button><button id="plus">+5°</button></div></div>
+<div class="part"><div class="control"><label for="tuning">Grondtoon</label><span id="tuningV">D7</span></div><input type="range" id="tuning" min="78" max="104" step="1"><div class="hint">Raakpunt verschuift de toon met maximaal ±2 halve tonen.</div></div>
+<div class="part"><div class="control"><label for="amp">Uitslag / veergrens</label><span id="ampV">24°</span></div><input type="range" id="amp" min="0" max="55" step="1"><div class="control"><label for="freq">Zwaaifrequentie</label><span id="freqV">0.75 Hz</span></div><input type="range" id="freq" min="0.15" max="2.2" step="0.05"><div class="control"><label for="phase">Zwaaifase</label><span id="phaseV">0°</span></div><input type="range" id="phase" min="0" max="360" step="5"><div class="hint">Frequentie en fase gelden alleen bij Zwaai; de botsingsimpuls veroorzaakt Veer-beweging.</div></div>
+<div class="part"><div class="control"><label for="springK">Veerstijfheid</label><span id="springKV">24</span></div><input type="range" id="springK" min="5" max="55" step="1"><div class="control"><label for="springD">Demping</label><span id="springDV">7</span></div><input type="range" id="springD" min="1" max="16" step="0.5"></div>
+<div class="part"><div class="control"><label for="launcher">Afvuurhoek</label><span id="launcherV">62°</span></div><input type="range" id="launcher" min="20" max="160" step="1"><div class="control"><label for="speed">Afvuursnelheid</label><span id="speedV">340 px/s</span></div><input type="range" id="speed" min="220" max="480" step="5"><div class="hint">78 organismen, 0.25 s tussen de lanceringen, in alle vergelijkingsproeven identiek.</div></div>
+<div class="part full"><h2 style="font-size:22px">Solverwedstrijd</h2><p class="hint">Elk regime: 8 bladeren, 78 lanceringen, 48 voorstellen, identieke random seed en scorefunctie. Kies een winnaar om de echte beweging te bekijken.</p><div class="row" style="margin-top:10px"><button class="primary" id="bestStatic">▶ VASTE WINNAAR</button><button class="primary" id="bestSway">▶ ZWAAI WINNAAR</button><button class="primary" id="bestSpring">▶ VEER WINNAAR</button></div><div class="row" style="margin-top:7px"><button id="loadMixed">✿ GEMENGDE TUIN</button><button id="baseline">↺ BASISOPSTELLING</button></div></div>
+</section></div>
+<div class="grid"><div class="stat"><b id="exact">0 / 67</b><small>Juiste Mario-noten ±90 ms</small></div><div class="stat"><b id="hits">0</b><small>Echte bladcontacten</small></div><div class="stat"><b id="missed">67</b><small>Doelnoten gemist</small></div><div class="stat"><b id="extras">0</b><small>Extra bladmuzieknoten</small></div></div>
+<div class="results"><section class="card section"><h2>Solver · Statisch vs. dansend</h2><p class="muted" style="font-size:12px">Rechtstreeks gemeten met dezelfde geometriebegroting, lanceerreeks en 48 kandidaatwijzigingen per regime. Alle scores zijn opnieuw met 180 Hz doorgerekend.</p><div class="scores"><div class="scorecard"><strong>🍃 VAST</strong><b id="scoreStatic">—</b><small id="baseStatic">basis —</small></div><div class="scorecard"><strong>〰️ ZWAAI</strong><b id="scoreSway">—</b><small id="baseSway">basis —</small></div><div class="scorecard"><strong>↩️ VEER</strong><b id="scoreSpring">—</b><small id="baseSpring">basis —</small></div></div><p id="winner" class="hint"></p><h2 style="margin-top:19px">Mario-score</h2><div id="notes" class="notes"></div><div class="legend">🟩 Noot en timing juist · 🟨 Bijna · Donker: niet gevonden</div><p class="hint" style="margin-top:9px">SCORE: de eerste werkelijke bladtreffer bepaalt t=0. Botsingen krijgen uitsluitend hun toon via blad + raakpunt. De Mario-noten zijn nooit ingevoerd in de bewegingsfysica of audioplayer.</p></section>
+<section class="card section"><h2>Collision proof</h2><p class="muted" style="font-size:12px;margin-bottom:10px">Ieder geluid correspondeert met een daadwerkelijk berekende bladbotsing. De zichtbare bladdans volgt dezelfde simulatie.</p><div class="log" id="log"></div><div id="comparison" class="hint" style="margin-top:11px">Draai een blad en vergelijk de nieuwe baan met de oorspronkelijke.</div><h2 style="font-size:21px;margin-top:18px">Wat deze proef bewijst</h2><p class="hint" id="proof">Een bewegend oppervlak kaatst anders dan een stilstaand blad. Springende bladeren krijgen hun beweging uit botsingsimpulsen.</p></section></div>
+<p class="foot"><strong>Onderzoeksstatus:</strong> eigen Hanenbow-geïnspireerde fysica; geen emulatie van Nintendo's originele reflectiecode. Bewegende oppervlakken worden per vaste tijdstap benaderd met relatieve botsingssnelheid. De solver is een kleine stochastische zoekproef, geen bewijs dat alle melodieën geometrisch oplosbaar zijn. De oorspronkelijke 67-notenbron is dezelfde als in de eerdere AgentMelodies Mario-prototypes.</p></main>
+<script>
+'use strict';
+const W=690,H=565,WATER=502,DT=1/180,G=295,R=6,REST=.88,DURATION=20.7,COUNT=78;
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const rad=a=>a*Math.PI/180,deg=a=>a*180/Math.PI;
+const copy=x=>JSON.parse(JSON.stringify(x));
+const TARGET=[{"pitch":98,"time":0.0,"duration":0.166667,"velocity":0.787},{"pitch":98,"time":0.25,"duration":0.166667,"velocity":0.787},{"pitch":98,"time":0.5,"duration":0.166667,"velocity":0.787},{"pitch":86,"time":0.75,"duration":0.166667,"velocity":0.787},{"pitch":98,"time":1.0,"duration":0.166667,"velocity":0.787},{"pitch":98,"time":1.25,"duration":0.166667,"velocity":0.787},{"pitch":98,"time":1.5,"duration":0.166667,"velocity":0.787},{"pitch":86,"time":1.75,"duration":0.166667,"velocity":0.787},{"pitch":99,"time":2.0,"duration":1.0,"velocity":0.787},{"pitch":98,"time":3.0,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":3.75,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":4.0,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":4.25,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":4.5,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":4.75,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":5.0,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":5.25,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":5.5,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":5.75,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":6.0,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":6.25,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":6.5,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":6.75,"duration":0.125,"velocity":0.787},{"pitch":96,"time":6.875,"duration":0.125,"velocity":0.787},{"pitch":95,"time":7.0,"duration":0.5,"velocity":0.787},{"pitch":93,"time":7.5,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":7.754167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":8.004167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":8.254167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":8.504167,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":8.754167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":9.004167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":9.254167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":9.504167,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":9.754167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":10.004167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":10.254167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":10.504167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":10.754167,"duration":0.125,"velocity":0.787},{"pitch":95,"time":10.879167,"duration":0.125,"velocity":0.787},{"pitch":93,"time":11.004167,"duration":0.495833,"velocity":0.787},{"pitch":91,"time":11.5,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":11.75,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":12.0,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":12.25,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":12.5,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":12.75,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":13.0,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":13.25,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":13.5,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":13.75,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":14.0,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":14.25,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":14.5,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":14.75,"duration":0.125,"velocity":0.787},{"pitch":95,"time":14.875,"duration":0.125,"velocity":0.787},{"pitch":96,"time":15.0,"duration":0.5,"velocity":0.787},{"pitch":100,"time":15.5,"duration":0.5,"velocity":0.787},{"pitch":98,"time":16.0,"duration":0.1875,"velocity":0.787},{"pitch":98,"time":16.25,"duration":0.1875,"velocity":0.787},{"pitch":98,"time":16.5,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":16.75,"duration":0.1875,"velocity":0.787},{"pitch":96,"time":17.0,"duration":0.1875,"velocity":0.787},{"pitch":96,"time":17.25,"duration":0.1875,"velocity":0.787},{"pitch":96,"time":17.5,"duration":0.1875,"velocity":0.787},{"pitch":90,"time":17.75,"duration":0.1875,"velocity":0.787},{"pitch":91,"time":18.0,"duration":1.0,"velocity":0.787}];
+const DEFAULT={launcher:{x:108,y:486,angle:62,speed:340,sway:15,period:3.2,rate:0.25},leaves:[
+{id:1,x:273,y:166,len:133,angle:163,tuning:98,mode:'static',amp:20,freq:.75,phase:0,springK:24,springD:7},
+{id:2,x:394,y:169,len:140,angle:17,tuning:95,mode:'sway',amp:24,freq:.68,phase:0.9,springK:24,springD:7},
+{id:3,x:260,y:302,len:150,angle:163,tuning:86,mode:'spring',amp:25,freq:.8,phase:0,springK:24,springD:7},
+{id:4,x:403,y:303,len:147,angle:17,tuning:93,mode:'sway',amp:19,freq:1.14,phase:2.3,springK:24,springD:7},
+{id:5,x:251,y:424,len:132,angle:7,tuning:99,mode:'spring',amp:28,freq:.8,phase:0,springK:24,springD:7},
+{id:6,x:405,y:424,len:147,angle:25,tuning:96,mode:'sway',amp:17,freq:.58,phase:4.1,springK:24,springD:7},
+{id:7,x:171,y:264,len:87,angle:-20,tuning:91,mode:'static',amp:20,freq:.8,phase:0,springK:24,springD:7},
+{id:8,x:492,y:260,len:92,angle:28,tuning:100,mode:'spring',amp:25,freq:.8,phase:0,springK:24,springD:7}
+]};
+function segment(l,angle){let c=Math.cos(rad(angle))*l.len*.5,s=Math.sin(rad(angle))*l.len*.5;return {ax:l.x-c,ay:l.y-s,bx:l.x+c,by:l.y+s};}
+const dot=(x,y,a,b)=>x*a+y*b;
+function segmentHit(px,py,dx,dy,l,r){
+ let sx=l.bx-l.ax,sy=l.by-l.ay,len=Math.hypot(sx,sy),ux=sx/len,uy=sy/len,nx=-uy,ny=ux;
+ let d0=dot(px-l.ax,py-l.ay,nx,ny),dn=dot(dx,dy,nx,ny),best=null;
+ function consider(t,normalX,normalY,u){if(t>=-1e-8&&t<=1+1e-8&&(!best||t<best.t)&&dot(dx,dy,normalX,normalY)<-1e-10)best={t:clamp(t,0,1),nx:normalX,ny:normalY,u:clamp(u,0,1)};}
+ if(Math.abs(dn)>1e-10)for(let sign of [-1,1]){let t=(sign*r-d0)/dn;if(t<0||t>1)continue;let k=dot(px+t*dx-l.ax,py+t*dy-l.ay,ux,uy);if(k>=0&&k<=len)consider(t,nx*sign,ny*sign,k/len);}
+ let A=dx*dx+dy*dy;if(A>1e-12)for(const end of [[l.ax,l.ay,0],[l.bx,l.by,1]]){let ox=px-end[0],oy=py-end[1],B=2*dot(ox,oy,dx,dy),C=ox*ox+oy*oy-r*r,disc=B*B-4*A*C;if(disc<0)continue;let t=(-B-Math.sqrt(disc))/(2*A);if(t<0||t>1)continue;let vx=ox+t*dx,vy=oy+t*dy,mag=Math.hypot(vx,vy);if(mag>1e-9)consider(t,vx/mag,vy/mag,end[2]);}
+ return best;
+}
+function leafState(l,t,spring){let mode=l.mode||'static',angle=l.angle,omega=0;
+ if(mode==='sway'){let phase=2*Math.PI*(l.freq??.8)*t+(l.phase||0);angle+=(l.amp||0)*Math.sin(phase);omega=(l.amp||0)*2*Math.PI*(l.freq??.8)*Math.cos(phase);}
+ else if(mode==='spring'&&spring){angle+=spring.offset;omega=spring.omega;}
+ let seg=segment(l,angle);return {...seg,id:l.id,x:l.x,y:l.y,len:l.len,angle,omega,l,mode};
+}
+function launchVector(cfg,t){let c=cfg.launcher,a=c.angle+c.sway*Math.sin(2*Math.PI*t/c.period);return {x:c.x,y:c.y,vx:Math.cos(rad(a))*c.speed,vy:-Math.sin(rad(a))*c.speed};}
+function hitPitch(l,u){return clamp(l.tuning+clamp(Math.floor(u*5),0,4)-2,36,108);}
+function simulate(cfg,opts={}){
+ const duration=opts.duration??DURATION,dt=opts.dt??DT,launchCount=opts.launchCount??COUNT,detailed=opts.detailed!==false;
+ const states=cfg.leaves.map(()=>({offset:0,omega:0})),balls=[],tracks=[],events=[],walls=[],waters=[],poses=cfg.leaves.map(()=>[]);
+ let emitted=0,maxTouches=opts.maxTouches??28;
+ const steps=Math.ceil(duration/dt);
+ for(let step=0;step<steps;step++){
+  const t=step*dt,stepDt=Math.min(dt,duration-t),mid=t+stepDt*.5;
+  while(emitted<launchCount&&emitted*cfg.launcher.rate<=t+1e-8){let born=emitted*cfg.launcher.rate,p=launchVector(cfg,born);let b={...p,id:++emitted,born,dead:duration,touches:0,cooldown:-1,points:detailed?[[p.x,p.y,born]]:null};balls.push(b);if(detailed)tracks.push(b);}
+  for(let i=0;i<cfg.leaves.length;i++){
+    const l=cfg.leaves[i],s=states[i];if(l.mode==='spring'){
+      // Damped spring, explicit semi-implicit Euler. offset and omega in degrees.
+      let acc=-(l.springK??24)*s.offset-(l.springD??7)*s.omega;
+      s.omega=clamp(s.omega+acc*stepDt,-200,200);s.offset=clamp(s.offset+s.omega*stepDt,-Math.max(2,l.amp??25),Math.max(2,l.amp??25));
+      if((s.offset<=-(l.amp??25)&&s.omega<0)||(s.offset>=(l.amp??25)&&s.omega>0))s.omega*=-.28;
+    }
+  }
+  const geometry=cfg.leaves.map((l,i)=>leafState(l,mid,states[i]));
+  if(detailed&&step%3===0)for(let j=0;j<geometry.length;j++)poses[j].push([mid,geometry[j].angle]);
+  for(const b of balls){if(b.dead<duration||t<b.born)continue;
+   b.vy+=G*stepDt;let remain=stepDt,passed=0,sub=0;
+   while(remain>1e-7&&sub++<3){
+    const dx=b.vx*remain,dy=b.vy*remain;let best=null;
+    const tryHit=(hit,type,leaf=null,li=-1,svx=0,svy=0)=>{if(hit&&hit.t>=0&&hit.t<=1&&(!best||hit.t<best.hit.t))best={hit,type,leaf,li,svx,svy};};
+    for(let j=0;j<geometry.length;j++){
+     let l=geometry[j];if(b.cooldown===l.id&&t-b.lastHitTime<.018)continue;
+     // Rotate around the center: local leaf velocity at the nearby contact point.
+     let nearest=clamp(dot(b.x-l.ax,b.y-l.ay,l.bx-l.ax,l.by-l.ay)/(l.len*l.len),0,1),qx=l.ax+nearest*(l.bx-l.ax)-l.x,qy=l.ay+nearest*(l.by-l.ay)-l.y;
+     let om=rad(l.omega),svx=-om*qy,svy=om*qx;
+     // Continuous relative swept-circle collision against the segment at mid-step.
+     let hit=segmentHit(b.x,b.y,dx-svx*remain,dy-svy*remain,l,R);
+     tryHit(hit,'leaf',l,j,svx,svy);
+    }
+    if(dx<0)tryHit({t:(R-b.x)/dx,nx:1,ny:0,u:0},'wall');
+    if(dx>0)tryHit({t:(W-R-b.x)/dx,nx:-1,ny:0,u:0},'wall');
+    if(dy<0)tryHit({t:(R-b.y)/dy,nx:0,ny:1,u:0},'wall');
+    if(dy>0)tryHit({t:(WATER-R-b.y)/dy,nx:0,ny:-1,u:0},'water');
+    if(!best||best.hit.t<0||best.hit.t>1){b.x+=dx;b.y+=dy;break;}
+    let fraction=best.hit.t,impactTime=t+passed+fraction*remain;
+    b.x+=dx*fraction;b.y+=dy*fraction;
+    if(best.type==='water'){if(detailed)waters.push({time:impactTime,ball:b.id,x:b.x,y:b.y});b.dead=impactTime;break;}
+    if(best.type==='leaf'){
+     let l=best.leaf,ev={time:impactTime,ball:b.id,leaf:l.id,u:best.hit.u,pitch:hitPitch(l.l,best.hit.u),x:b.x,y:b.y,angle:l.angle,mode:l.mode};events.push(ev);
+     b.cooldown=l.id;b.lastHitTime=impactTime;
+    }else if(detailed)walls.push({time:impactTime,ball:b.id,x:b.x,y:b.y});
+    let {nx,ny}=best.hit,vrelx=b.vx-best.svx,vrely=b.vy-best.svy,vn=dot(vrelx,vrely,nx,ny);
+    if(vn<0){b.vx-=(1+REST)*vn*nx;b.vy-=(1+REST)*vn*ny;
+     if(best.type==='leaf'&&best.leaf.mode==='spring'){
+      let l=best.leaf,u=best.hit.u-.5;
+      // Equal-and-opposite angular recoil, clamped by the leaf's spring stop.
+      let torque=clamp(-(1+REST)*vn*u*0.40,-95,95);
+      states[best.li].omega=clamp(states[best.li].omega+torque,-190,190);
+     }
+    }
+    let vlen=Math.hypot(b.vx,b.vy);if(vlen>710){b.vx*=710/vlen;b.vy*=710/vlen;}
+    b.x+=nx*.25;b.y+=ny*.25;passed+=fraction*remain;remain*=1-fraction;
+    b.touches++;if(b.touches>maxTouches){b.dead=impactTime;break;}
+    if(fraction<.00001){passed+=.00008;remain=Math.max(0,remain-.00008);}
+   }
+   if(detailed&&step%3===0&&b.points)b.points.push([b.x,b.y,t+stepDt]);
+   if(b.y>WATER+8||b.x<-25||b.x>W+25)b.dead=Math.min(b.dead,t+stepDt);
+  }
+ }
+ events.sort((a,b)=>a.time-b.time||a.ball-b.ball||a.leaf-b.leaf);
+ const first=events.length?events[0].time:0;
+ let heat=new Map();for(const e of events){e.musicalTime=e.time-first;e.heat=(heat.get(e.leaf)||0)+1;heat.set(e.leaf,e.heat);}
+ return {events,tracks:detailed?tracks:[],poses:detailed?poses:[],walls,waters,duration,launchCount:emitted,settings:copy(cfg)};
+}
+// Match one-to-one within 90ms and same MIDI pitch, identical for every treatment.
+function judge(events,goal=67){const targets=TARGET.slice(0,goal),byTime=[...events].sort((a,b)=>a.musicalTime-b.musicalTime),matches=Array(targets.length).fill(null),used=new Set();
+ // Time-ordered nearest candidate. Run augmenting matching so repetitive notes don't steal one another.
+ const candidates=targets.map(t=>byTime.map((e,j)=>({j,d:Math.abs(e.musicalTime-t.time),p:e.pitch})).filter(x=>x.p===t.pitch&&x.d<=.09).sort((a,b)=>a.d-b.d).map(x=>x.j));
+ const owner=Array(byTime.length).fill(-1);
+ function assign(i,seen){for(const j of candidates[i]){if(seen.has(j))continue;seen.add(j);if(owner[j]===-1||assign(owner[j],seen)){owner[j]=i;return true;}}return false;}
+ for(let i=0;i<targets.length;i++)assign(i,new Set());
+ for(let j=0;j<owner.length;j++)if(owner[j]>=0)matches[owner[j]]={event:byTime[j],error:Math.abs(byTime[j].musicalTime-targets[owner[j]].time)};
+ const exact=matches.filter(Boolean).length,extras=byTime.length-exact,missing=targets.length-exact;
+ let soft=0,near=Array(targets.length).fill(false);
+ for(let i=0;i<targets.length;i++){
+  let min=1e9;for(const e of byTime){let d=Math.abs(e.musicalTime-targets[i].time),p=Math.abs(e.pitch-targets[i].pitch);if(d<.35&&p<=5)min=Math.min(min,d/.35+p/6);if(d<.25&&p===0)near[i]=true;}
+  if(min<1e9)soft+=Math.max(0,1-min);
+ }
+ // Optimize melodic matches first, then reduce stray impacts.
+ return {exact,missing,extras,matches,near,soft,objective:exact*110+soft*11-extras*.9+Math.min(events.length,goal)*.6};
+}
+function rngFactory(seed){let n=seed>>>0;return ()=>{n^=n<<13;n^=n>>>17;n^=n<<5;return (n>>>0)/4294967296;};}
+function treatment(base,mode){let c=copy(base);c.leaves.forEach((l,i)=>{l.mode=mode==='mixed'?(['static','sway','spring'][i%3]):mode;});return c;}
+function mutate(base,rng,mode){let c=copy(base),p=rng(),leaf=c.leaves[Math.floor(rng()*c.leaves.length)];
+ if(p<.18)leaf.angle=Math.round(leaf.angle+(rng()-.5)*74);
+ else if(p<.33){leaf.x=clamp(Math.round(leaf.x+(rng()-.5)*85),35,W-35);leaf.y=clamp(Math.round(leaf.y+(rng()-.5)*85),60,WATER-30);}
+ else if(p<.50)leaf.tuning=clamp(leaf.tuning+Math.round((rng()-.5)*12),78,104);
+ else if(p<.62)c.launcher.angle=clamp(Math.round(c.launcher.angle+(rng()-.5)*32),20,160);
+ else if(p<.72)c.launcher.speed=clamp(Math.round(c.launcher.speed+(rng()-.5)*95),220,480);
+ else if(p<.79)c.launcher.sway=clamp(Math.round(c.launcher.sway+(rng()-.5)*17),0,35);
+ else if(mode==='sway'){
+  if(p<.86)leaf.amp=clamp(Math.round(leaf.amp+(rng()-.5)*24),0,55);
+  else if(p<.94)leaf.freq=clamp(Math.round((leaf.freq+(rng()-.5)*.44)*100)/100,.15,2.2);
+  else leaf.phase=(leaf.phase+(rng()-.5)*2+2*Math.PI)%(2*Math.PI);
+ }else if(mode==='spring'){
+  if(p<.89)leaf.springK=clamp(Math.round(leaf.springK+(rng()-.5)*16),5,55);
+  else if(p<.96)leaf.springD=clamp(Math.round((leaf.springD+(rng()-.5)*4)*10)/10,1,16);
+  else leaf.amp=clamp(Math.round(leaf.amp+(rng()-.5)*15),5,55);
+ }else leaf.angle+=Math.round((rng()-.5)*12);
+ return c;
+}
+function optimize(base,mode,iterations=80,seed=2823,onProgress){let rng=rngFactory(seed),bestCfg=treatment(base,mode),curCfg=copy(bestCfg);
+ const evaluate=c=>{let events=simulate(c,{detailed:false}).events;return judge(events,67);};
+ let best=evaluate(bestCfg),cur=best,history=[{iteration:0,exact:best.exact,extras:best.extras}];
+ for(let i=1;i<=iterations;i++){
+  let next=mutate(i%13===0?bestCfg:curCfg,rng,mode),v=evaluate(next);
+  if(v.objective>best.objective){best=v;bestCfg=copy(next);history.push({iteration:i,exact:best.exact,extras:best.extras});}
+  let temp=.7*(1-i/iterations)+.08;
+  if(v.objective>cur.objective||rng()<Math.exp((v.objective-cur.objective)/(temp*7))){cur=v;curCfg=next;}
+  if(i%20===0){curCfg=copy(bestCfg);cur=best;}
+  if(onProgress)onProgress({i,mode,best});
+ }
+ return {mode,iterations,seed,config:bestCfg,score:best,history};
+}
+
+'use strict';
+const $=id=>document.getElementById(id),canvas=$('scene'),g=canvas.getContext('2d');
+const TRIALS={"created":"2026-10-24","results":[{"mode":"static","budget":{"leaves":8,"organisms":78,"interval":0.25,"iterations":48,"seed":20261024,"physicsStep":0.005555555555555556,"scoreToleranceMs":90},"baseline":{"exact":4,"contacts":161,"extras":157},"optimized":{"exact":12,"contacts":266,"extras":254,"missing":55,"soft":34.97963523522607},"config":{"launcher":{"x":108,"y":486,"angle":62,"speed":403,"sway":18,"period":3.2,"rate":0.25},"leaves":[{"id":1,"x":273,"y":166,"len":133,"angle":188,"tuning":102,"mode":"static","amp":20,"freq":0.75,"phase":0,"springK":24,"springD":7},{"id":2,"x":394,"y":169,"len":140,"angle":33,"tuning":100,"mode":"static","amp":24,"freq":0.68,"phase":0.9,"springK":24,"springD":7},{"id":3,"x":260,"y":302,"len":150,"angle":163,"tuning":86,"mode":"static","amp":25,"freq":0.8,"phase":0,"springK":24,"springD":7},{"id":4,"x":403,"y":303,"len":147,"angle":71,"tuning":93,"mode":"static","amp":19,"freq":1.14,"phase":2.3,"springK":24,"springD":7},{"id":5,"x":251,"y":424,"len":132,"angle":7,"tuning":99,"mode":"static","amp":28,"freq":0.8,"phase":0,"springK":24,"springD":7},{"id":6,"x":405,"y":424,"len":147,"angle":25,"tuning":96,"mode":"static","amp":17,"freq":0.58,"phase":4.1,"springK":24,"springD":7},{"id":7,"x":171,"y":264,"len":87,"angle":-30,"tuning":86,"mode":"static","amp":20,"freq":0.8,"phase":0,"springK":24,"springD":7},{"id":8,"x":492,"y":260,"len":92,"angle":28,"tuning":102,"mode":"static","amp":25,"freq":0.8,"phase":0,"springK":24,"springD":7}]},"history":[{"iteration":0,"exact":4,"extras":157},{"iteration":8,"exact":4,"extras":164},{"iteration":11,"exact":9,"extras":162},{"iteration":21,"exact":10,"extras":159},{"iteration":33,"exact":11,"extras":194},{"iteration":38,"exact":11,"extras":194},{"iteration":45,"exact":12,"extras":254}],"timeMs":16725},{"mode":"sway","budget":{"leaves":8,"organisms":78,"interval":0.25,"iterations":48,"seed":20261024,"physicsStep":0.005555555555555556,"scoreToleranceMs":90},"baseline":{"exact":4,"contacts":201,"extras":197},"optimized":{"exact":10,"contacts":134,"extras":124,"missing":57,"soft":28.164470488028414},"config":{"launcher":{"x":108,"y":486,"angle":62,"speed":340,"sway":23,"period":3.2,"rate":0.25},"leaves":[{"id":1,"x":302,"y":206,"len":133,"angle":163,"tuning":98,"mode":"sway","amp":20,"freq":0.75,"phase":0,"springK":24,"springD":7},{"id":2,"x":394,"y":169,"len":140,"angle":17,"tuning":95,"mode":"sway","amp":24,"freq":0.68,"phase":0.9,"springK":24,"springD":7},{"id":3,"x":260,"y":302,"len":150,"angle":177,"tuning":86,"mode":"sway","amp":25,"freq":0.8,"phase":0,"springK":24,"springD":7},{"id":4,"x":403,"y":303,"len":147,"angle":17,"tuning":93,"mode":"sway","amp":19,"freq":1.14,"phase":2.3,"springK":24,"springD":7},{"id":5,"x":251,"y":424,"len":132,"angle":7,"tuning":99,"mode":"sway","amp":28,"freq":0.8,"phase":0,"springK":24,"springD":7},{"id":6,"x":405,"y":424,"len":147,"angle":24,"tuning":96,"mode":"sway","amp":17,"freq":0.58,"phase":4.579172879364341,"springK":24,"springD":7},{"id":7,"x":171,"y":264,"len":87,"angle":-20,"tuning":91,"mode":"sway","amp":20,"freq":0.65,"phase":5.4498262212248605,"springK":24,"springD":7},{"id":8,"x":492,"y":260,"len":92,"angle":28,"tuning":100,"mode":"sway","amp":25,"freq":0.8,"phase":0,"springK":24,"springD":7}]},"history":[{"iteration":0,"exact":4,"extras":197},{"iteration":1,"exact":7,"extras":141},{"iteration":2,"exact":7,"extras":132},{"iteration":5,"exact":9,"extras":126},{"iteration":7,"exact":9,"extras":127},{"iteration":17,"exact":9,"extras":133},{"iteration":30,"exact":9,"extras":129},{"iteration":32,"exact":10,"extras":124}],"timeMs":33068},{"mode":"spring","budget":{"leaves":8,"organisms":78,"interval":0.25,"iterations":48,"seed":20261024,"physicsStep":0.005555555555555556,"scoreToleranceMs":90},"baseline":{"exact":5,"contacts":183,"extras":178},"optimized":{"exact":12,"contacts":165,"extras":153,"missing":55,"soft":28.891773205500236},"config":{"launcher":{"x":108,"y":486,"angle":62,"speed":367,"sway":15,"period":3.2,"rate":0.25},"leaves":[{"id":1,"x":273,"y":166,"len":133,"angle":171,"tuning":102,"mode":"spring","amp":20,"freq":0.75,"phase":0,"springK":24,"springD":7},{"id":2,"x":394,"y":169,"len":140,"angle":27,"tuning":97,"mode":"spring","amp":24,"freq":0.68,"phase":0.9,"springK":24,"springD":7},{"id":3,"x":260,"y":302,"len":150,"angle":163,"tuning":86,"mode":"spring","amp":25,"freq":0.8,"phase":0,"springK":24,"springD":7},{"id":4,"x":403,"y":303,"len":147,"angle":53,"tuning":93,"mode":"spring","amp":18,"freq":1.14,"phase":2.3,"springK":24,"springD":7},{"id":5,"x":251,"y":424,"len":132,"angle":7,"tuning":99,"mode":"spring","amp":28,"freq":0.8,"phase":0,"springK":25,"springD":7},{"id":6,"x":398,"y":388,"len":147,"angle":28,"tuning":96,"mode":"spring","amp":17,"freq":0.58,"phase":4.1,"springK":24,"springD":7},{"id":7,"x":171,"y":264,"len":87,"angle":2,"tuning":91,"mode":"spring","amp":20,"freq":0.8,"phase":0,"springK":24,"springD":7},{"id":8,"x":492,"y":260,"len":92,"angle":28,"tuning":102,"mode":"spring","amp":25,"freq":0.8,"phase":0,"springK":25,"springD":8}]},"history":[{"iteration":0,"exact":5,"extras":178},{"iteration":9,"exact":5,"extras":183},{"iteration":20,"exact":6,"extras":193},{"iteration":35,"exact":11,"extras":124},{"iteration":48,"exact":12,"extras":153}],"timeMs":50799}],"elapsedMs":50799};
+let config=copy(DEFAULT),saved=copy(DEFAULT),selected=3,run=null,result=null,ctx=null,voices=[],playing=false,paused=false,started=0,elapsed=0,raf=0;
+const pitchName=n=>['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'][((n%12)+12)%12]+(Math.floor(n/12)-1);
+function status(s){$('status').textContent=s;}
+function stop(){playing=false;paused=false;cancelAnimationFrame(raf);for(let v of voices)try{v.stop()}catch{}voices=[];$('play').textContent='▶ PLAY';$('pause').textContent='Ⅱ PAUZE';if(ctx&&ctx.state==='suspended')ctx.resume().catch(()=>{});}
+function currentLeaf(){return config.leaves.find(l=>l.id===selected)||config.leaves[0];}
+function renderControls(){let l=currentLeaf();selected=l.id;$('leaf').replaceChildren();for(const leaf of config.leaves){let o=document.createElement('option');o.value=leaf.id;o.textContent='🍃 Blad '+leaf.id+' · '+({'static':'Vast','sway':'Zwaai','spring':'Veer'}[leaf.mode]||'Vast');$('leaf').appendChild(o);} $('leaf').value=selected;
+ for(const [key,field] of [['angle','angle'],['tuning','tuning'],['amp','amp'],['freq','freq'],['phase','phase'],['springK','springK'],['springD','springD']])$(''+key).value=key==='phase'?Math.round(((l.phase||0)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)*180/Math.PI):l[field];
+ $('angleV').textContent=Math.round(l.angle)+'°';$('tuningV').textContent=pitchName(l.tuning);$('ampV').textContent=l.amp+'°';$('freqV').textContent=l.freq.toFixed(2)+' Hz';$('phaseV').textContent=Math.round((l.phase||0)*180/Math.PI)%360+'°';$('springKV').textContent=l.springK;$('springDV').textContent=l.springD;
+ $('launcher').value=config.launcher.angle;$('speed').value=config.launcher.speed;$('launcherV').textContent=config.launcher.angle+'°';$('speedV').textContent=config.launcher.speed+' px/s';
+ const desc={static:'Vast',sway:'Zwaai',spring:'Veer'};$('currentMode').textContent=desc[l.mode];for(const b of document.querySelectorAll('.seg'))b.classList.toggle('active',b.dataset.mode===l.mode);
+ const regimes=new Set(config.leaves.map(l=>l.mode));$('modeBadge').textContent=regimes.size===1?desc[[...regimes][0]]+' · alle bladeren':'Gemengde dans';
+}
+function rebuild(msg){stop();run=simulate(config);result=judge(run.events,67);elapsed=0;renderControls();refreshScore();draw(0);if(msg)status(msg);}
+function refreshScore(){if(!run)return;$('exact').textContent=result.exact+' / 67';$('hits').textContent=run.events.length;$('missed').textContent=result.missing;$('extras').textContent=result.extras;
+ $('notes').replaceChildren();TARGET.forEach((n,i)=>{let d=document.createElement('div');d.className='note'+(result.matches[i]?' yes':result.near[i]?' near':'');d.style.height=(24+Math.min(38,Math.max(0,(n.pitch-79)*1.35)))+'px';d.title=`${i+1} ${pitchName(n.pitch)} @${n.time}s ${result.matches[i]?'goed':'gemist'}`;$('notes').append(d);});
+ $('log').textContent=run.events.slice(0,125).map(e=>`${e.musicalTime.toFixed(3).padStart(7)}s · ${pitchName(e.pitch).padEnd(4)} · blad ${e.leaf} ${e.mode.padEnd(6)} · ${Math.round(e.angle)}° · organisme ${e.ball}`).join('\n')||'Geen bladbotsingen.';
+ $('progress').style.width='0%';$('clock').textContent='0.00 s';
+}
+function renderComparison(){let a=TRIALS.results;for(let r of a){let n=r.mode[0].toUpperCase()+r.mode.slice(1);$('score'+n).textContent=r.optimized.exact+'/67';$('base'+n).textContent='basis '+r.baseline.exact+'/67 · '+r.optimized.contacts+' hits';}
+ let max=Math.max(...a.map(r=>r.optimized.exact)),tops=a.filter(r=>r.optimized.exact===max).map(r=>({static:'vaste',sway:'zwaaiende',spring:'terugverende'}[r.mode]));$('winner').textContent=`Beste in deze 48-voorstellenproef: ${tops.join(' en ')} bladeren (${max}/67). Dit is geen algemene overwinning van deze bewegingsvorm.`;}
+function poseAt(series,t){if(!series||!series.length)return 0;let lo=0,hi=series.length-1;while(lo<hi){let m=(lo+hi+1)>>1;if(series[m][0]<=t)lo=m;else hi=m-1;}let a=series[lo],b=series[Math.min(lo+1,series.length-1)];let w=b[0]===a[0]?0:clamp((t-a[0])/(b[0]-a[0]),0,1);return a[1]+(b[1]-a[1])*w;}
+function pointAt(points,t){if(!points||!points.length||t<points[0][2])return null;let lo=0,hi=points.length-1;while(lo<hi){let m=(lo+hi+1)>>1;if(points[m][2]<=t)lo=m;else hi=m-1;}let a=points[lo],b=points[Math.min(lo+1,points.length-1)];let w=b[2]===a[2]?0:clamp((t-a[2])/(b[2]-a[2]),0,1);return {x:a[0]+(b[0]-a[0])*w,y:a[1]+(b[1]-a[1])*w};}
+function draw(t){if(!run)return;g.clearRect(0,0,W,H);let bg=g.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#10d36a');bg.addColorStop(.6,'#64cd31');bg.addColorStop(1,'#1078b3');g.fillStyle=bg;g.fillRect(0,0,W,H);
+ let halo=g.createRadialGradient(335,275,45,335,275,330);halo.addColorStop(0,'#f5ff5466');halo.addColorStop(1,'#e4e33118');g.fillStyle=halo;g.beginPath();g.ellipse(345,273,265,250,0,0,7);g.fill();
+ g.save();g.beginPath();g.ellipse(343,273,265,246,0,0,7);g.clip();
+ for(let i=0;i<58;i++){let x=15+i*131%W,y=15+i*117%WATER,r=2+i%6*2;g.strokeStyle='#d8fff066';g.lineWidth=1.4;g.beginPath();g.arc(x,y+Math.sin(t*1.4+i)*3,r,0,7);g.stroke();}
+ g.fillStyle='#975321';g.beginPath();g.moveTo(296,WATER);g.bezierCurveTo(318,408,296,220,321,94);g.quadraticCurveTo(329,32,336,87);g.bezierCurveTo(358,245,340,427,381,WATER);g.closePath();g.fill();
+ g.strokeStyle='#834018';g.lineWidth=5;g.beginPath();g.moveTo(322,365);g.quadraticCurveTo(300,310,259,303);g.moveTo(339,281);g.quadraticCurveTo(370,278,406,301);g.moveTo(326,192);g.lineTo(273,165);g.moveTo(340,190);g.lineTo(398,167);g.stroke();
+ for(let i=0;i<config.leaves.length;i++){let l=config.leaves[i],angle=poseAt(run.poses[i],t),heat=0;for(const e of run.events){if(e.time>t)break;if(e.leaf===l.id)heat++;}
+ let hue=clamp(112-heat*11,7,112);g.save();g.translate(l.x,l.y);g.rotate(rad(angle));g.shadowColor=heat?'#ffe36baa':'#deff97bb';g.shadowBlur=12;
+ let grad=g.createLinearGradient(0,-23,0,25);grad.addColorStop(0,`hsl(${hue} 98% 67%)`);grad.addColorStop(1,`hsl(${clamp(hue-19,5,105)} 95% 44%)`);g.fillStyle=grad;g.strokeStyle=l.id===selected?'#fff3b2':'#ddffa1';g.lineWidth=l.id===selected?3:1.2;
+ g.beginPath();g.moveTo(-l.len/2,0);g.bezierCurveTo(-l.len*.17,-35,l.len*.21,-29,l.len/2,0);g.bezierCurveTo(l.len*.17,31,-l.len*.18,34,-l.len/2,0);g.closePath();g.fill();g.stroke();g.shadowBlur=0;g.strokeStyle='#eeffc3';g.lineWidth=2;g.beginPath();g.moveTo(-l.len/2+4,0);g.lineTo(l.len/2-4,0);g.stroke();g.restore();
+ if(l.id===selected){g.fillStyle='#fff8dc';g.textAlign='center';g.font='bold 13px system-ui';g.fillText(Math.round(angle)+'° · '+pitchName(l.tuning),l.x,l.y+43);g.textAlign='left';}
+ }
+ let la=config.launcher,launchAngle=la.angle+la.sway*Math.sin(2*Math.PI*t/la.period);g.save();g.translate(la.x,la.y+14);g.rotate(-rad(launchAngle));g.fillStyle='#ffe76b';g.strokeStyle='#fff8bf';g.lineWidth=2;g.beginPath();g.ellipse(0,0,39,12,0,0,7);g.fill();g.stroke();g.restore();
+ for(let tr of run.tracks){if(tr.born>t)break;g.beginPath();let first=true;for(const [x,y,at] of tr.points){if(at>t)break;if(first){g.moveTo(x,y);first=false;}else g.lineTo(x,y);}g.strokeStyle='#fff4f27b';g.lineWidth=1.35;g.stroke();}
+ for(const e of run.events){let age=t-e.time;if(age<0||age>.35)continue;g.strokeStyle=`rgba(255,237,120,${1-age/.35})`;g.lineWidth=3;g.beginPath();g.arc(e.x,e.y,8+age*40,0,7);g.stroke();}
+ for(let tr of run.tracks){if(t<tr.born||t>tr.dead)continue;let p=pointAt(tr.points,t);if(!p)continue;g.save();g.translate(p.x,p.y);g.shadowColor='#fc39bc';g.shadowBlur=10;g.fillStyle='#f629b4';g.strokeStyle='#ffd0ee';g.lineWidth=2;g.beginPath();g.arc(0,0,7.5,0,7);g.fill();g.stroke();g.shadowBlur=0;g.fillStyle='#fff';g.beginPath();g.arc(2.7,-2.8,2.2,0,7);g.fill();g.fillStyle='#edee63';g.beginPath();g.ellipse(-12,6,9,3,-.7,0,7);g.fill();g.restore();}
+ g.restore();g.fillStyle='#078abe';g.fillRect(0,WATER,W,H-WATER);g.fillStyle='#52b2cb77';g.fillRect(0,WATER+17,W,14);g.strokeStyle='#a9fff0';g.lineWidth=2;g.beginPath();g.moveTo(0,WATER);for(let x=0;x<=W;x+=5)g.lineTo(x,WATER+2*Math.sin(.05*x+t*3));g.stroke();
+ g.fillStyle='#f2ffed';g.font='bold 16px system-ui';g.fillText('MARIO · DANCING LEAVES',18,81);g.font='12px system-ui';g.fillText('BEWEGENDE BOTSINGEN · GEEN MIDI-SPELER',18,99);g.font='12px monospace';g.fillText('Bladcontacten: '+run.events.filter(e=>e.time<=t).length,18,H-18);
+}
+function tone(e,at){let f=440*Math.pow(2,(e.pitch-69)/12),len=.19+Math.min(.2,(e.heat||1)*.008);for(const [ratio,type,volume] of [[1,'sine',.078],[2,'sine',.015],[3.01,'triangle',.003]]){let osc=ctx.createOscillator(),gain=ctx.createGain();osc.type=type;osc.frequency.value=f*ratio;gain.gain.setValueAtTime(.0001,at);gain.gain.exponentialRampToValueAtTime(volume,at+.009);gain.gain.exponentialRampToValueAtTime(.0001,at+len);osc.connect(gain);gain.connect(ctx.destination);osc.start(at);osc.stop(at+len+.025);voices.push(osc);}}
+function play(prepared=false){if(!prepared&&run.duration!==DURATION)rebuild();stop();try{ctx??=new(window.AudioContext||window.webkitAudioContext)();ctx.resume();let base=ctx.currentTime+.15;for(const e of run.events)tone(e,base+e.time);}catch(e){status('Audiofout: '+e.message);}
+ playing=true;paused=false;elapsed=0;started=performance.now()+150;$('play').textContent='♫ SPEELT';status('Roze organismen kaatsen tegen bewegende bladeren. Alle geluiden komen uit botsingen.');raf=requestAnimationFrame(frame);}
+function frame(now){if(!playing||paused)return;elapsed=clamp((now-started)/1000,0,run.duration);draw(elapsed);$('clock').textContent=elapsed.toFixed(2)+' s';$('progress').style.width=(100*elapsed/run.duration)+'%';if(elapsed<run.duration)raf=requestAnimationFrame(frame);else{stop();status(`Uitgespeeld · ${run.events.length} botsingen · ${result.exact}/67 Mario-noten.`);}}
+function pause(){if(!playing)return;if(!paused){paused=true;elapsed=clamp((performance.now()-started)/1000,0,run.duration);cancelAnimationFrame(raf);if(ctx)ctx.suspend();$('pause').textContent='▶ VERDER';status('Gepauzeerd.');}else{paused=false;started=performance.now()-elapsed*1000;if(ctx)ctx.resume();$('pause').textContent='Ⅱ PAUZE';raf=requestAnimationFrame(frame);}}
+function leafEdit(field,v){let l=currentLeaf();l[field]=v;rebuild('Blad '+l.id+' aangepast; nieuwe botsingen berekend.');}
+function loadMode(mode,optimized){let item=TRIALS.results.find(x=>x.mode===mode);config=optimized?copy(item.config):treatment(DEFAULT,mode);saved=copy(config);rebuild(`${optimized?'48-voorstellen-winnaar':'Basisopstelling'} ${mode} geladen. Score ${result.exact}/67.`);}
+function changeAngle(d){leafEdit('angle',currentLeaf().angle+d);}
+$('play').onclick=()=>play();$('pause').onclick=pause;$('single').onclick=()=>{stop();run=simulate(config,{duration:5.2,launchCount:1});result=judge(run.events,67);refreshScore();draw(0);play(true);};
+$('repair').onclick=()=>{config=copy(saved);rebuild('REPAIR: dezelfde bladopstelling opnieuw fysisch doorgerekend.');};
+$('compare').onclick=()=>{stop();let base=run.events,alt=copy(config),l=alt.leaves.find(l=>l.id===selected);l.angle+=5;let newEvents=simulate(alt,{detailed:false}).events;let i=0;for(;i<Math.max(base.length,newEvents.length);i++){let a=base[i],b=newEvents[i];if(!a||!b||a.leaf!==b.leaf||a.pitch!==b.pitch||Math.abs(a.time-b.time)>.01)break;}let score=judge(newEvents,67);$('comparison').textContent=`+5° blad ${selected}: ${base.length} → ${newEvents.length} bladcontacten. Mario ${result.exact}/67 → ${score.exact}/67. Eerste verschil: botsing ${i+1}. Beide banen opnieuw berekend.`;status('Hoekvergelijking voltooid; de huidige tuin blijft intact.');};
+$('export').onclick=()=>{let data={schema:'agentmelodies-bounce-lab-v2',config,collisionEvents:run.events.map(e=>({time:e.time,ball:e.ball,leaf:e.leaf,u:e.u,pitch:e.pitch,angle:e.angle,mode:e.mode})),score:{exact:result.exact,missing:result.missing,extras:result.extras},comparison:TRIALS.results.map(r=>({mode:r.mode,budget:r.budget,baseline:r.baseline,optimized:r.optimized})),physics:{step:DT,gravity:G,restitution:REST,ballRadius:R}};let url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='AgentMelodies-BounceLab-v2.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+$('leaf').onchange=e=>{selected=Number(e.target.value);renderControls();draw(elapsed);};
+for(const b of document.querySelectorAll('[data-mode]'))b.onclick=()=>leafEdit('mode',b.dataset.mode);
+for(const [id,field,transform] of [['angle','angle',Number],['tuning','tuning',Number],['amp','amp',Number],['freq','freq',Number],['phase','phase',v=>rad(Number(v))],['springK','springK',Number],['springD','springD',Number]])$(id).onchange=e=>leafEdit(field,transform(e.target.value));
+$('minus').onclick=()=>changeAngle(-5);$('plus').onclick=()=>changeAngle(5);
+for(const [id,field] of [['launcher','angle'],['speed','speed']])$(id).onchange=e=>{config.launcher[field]=Number(e.target.value);rebuild('Lancering gewijzigd, hele tuin opnieuw berekend.');};
+$('bestStatic').onclick=()=>loadMode('static',true);$('bestSway').onclick=()=>loadMode('sway',true);$('bestSpring').onclick=()=>loadMode('spring',true);
+$('loadMixed').onclick=()=>{config=copy(DEFAULT);saved=copy(config);rebuild('Gemengde dansopstelling hersteld.');};$('baseline').onclick=()=>loadMode('static',false);
+let dragging=false;function coord(e){let b=canvas.getBoundingClientRect();return{x:(e.clientX-b.left)*W/b.width,y:(e.clientY-b.top)*H/b.height};}
+canvas.addEventListener('pointerdown',e=>{let p=coord(e),list=config.leaves.map(l=>({l,d:Math.hypot(l.x-p.x,l.y-p.y)})).sort((a,b)=>a.d-b.d);if(!list.length||list[0].d>80)return;selected=list[0].l.id;dragging=true;canvas.setPointerCapture(e.pointerId);renderControls();draw(elapsed);});
+canvas.addEventListener('pointermove',e=>{if(!dragging)return;let l=currentLeaf(),p=coord(e);l.angle=Math.round(deg(Math.atan2(p.y-l.y,p.x-l.x)));$('angleV').textContent=l.angle+'°';// Rebuild on release to avoid continuous 400ms simulations.
+ draw(elapsed);});
+canvas.addEventListener('pointerup',()=>{if(!dragging)return;dragging=false;rebuild('Blad gedraaid; fysica opnieuw berekend.');});canvas.addEventListener('pointercancel',()=>{dragging=false;});
+window.__bounceLabV2={simulate,judge,treatment,optimize,leafState,DEFAULT,TARGET,TRIALS,getRun:()=>run,getConfig:()=>copy(config),setConfig:c=>{config=copy(c);rebuild();}};
+renderComparison();rebuild('Dancing Leaves v2 gereed. Kies een solverwinnaar of verander zelf de bladhoeken.');
+
+</script></body></html>

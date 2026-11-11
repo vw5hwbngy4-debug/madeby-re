@@ -1,0 +1,13 @@
+Ash District v0.11 — Firepath Road
+
+- Extended the north forest road from Ember Camp to Skyspine Tower so the transition feels more like a journey.
+- Removed the mobile BAG button to stop overlap and reduce UI clutter. Inventory remains available through I/B on keyboard and through the Stash context in town.
+- Added first active skill: Firepath. Press F on desktop or PATH on mobile, then sprint to leave burning ground behind the character.
+- Level-ups now grant Firepath skill points. Press PATH/F or spend points in the stash/inventory skill panel.
+- Cleaned mobile button layout: FIRE, PATH, SWAP only. Molotov remains on Q for desktop for now.
+- Kept camp NPCs dialogue-only; no buy/sell context restored.
+
+Known limitations:
+- Firepath is the only active skill.
+- Inventory still exists for stash/loadout, but mobile no longer has a direct bag button.
+- Skyspine Tower is still a transition/corridor marker, not a full indoor dungeon yet.

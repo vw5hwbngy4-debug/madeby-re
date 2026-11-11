@@ -1,0 +1,478 @@
+=== PDF PAGE 1 ===
+Object-Bound Agentic Interfaces
+
+Receiver-First Spatial Inventories for Post-Smartphone Computing
+
+DOI: 10.5281/zenodo.19500161
+
+Raynor Eissens · Ambient Era Canon · 2026
+
+⸻
+
+Abstract
+
+This paper introduces Object-Bound Agentic Interfaces (OBAI): a post-smartphone interface
+
+paradigm in which physical objects function as primary interface anchors, activating spatially
+
+bound inventories that contain app shortcuts, dynamic state signals, and agent-generated
+
+outputs.
+
+In contrast to app-centric and chat-centric interaction models, OBAI operates under a receiver-
+
+first logic:
+
+object → receive → generate
+
+AI output is not immediately generated in abstract interfaces, but is instead triggered by
+
+interaction with a real-world object, and may be persistently placed back into that object’s
+
+spatial inventory.
+
+This paper argues that existing AR systems, object recognition tools, and spatial computing
+
+platforms provide partial precedents, but do not implement:
+
+•
+unified object-bound inventories
+
+•
+persistent, fading state layers
+
+•
+integration of apps and agent outputs
+
+•
+autonomous agentic “landing” of outputs into object-specific contexts
+
+OBAI defines a new interface primitive:
+
+the object as a living, persistent, spatial interface container
+
+⸻
+
+=== PDF PAGE 2 ===
+Canonical Definition
+
+Object-Bound Agentic Interfaces are spatial computing systems in which physical objects act as
+
+persistent interface anchors that activate object-specific inventories containing app shortcuts,
+
+chromatic state signals, and agent-generated outputs, with generation occurring only after
+
+object-based reception.
+
+⸻
+
+Core Principle
+
+Traditional model:
+
+input → generate → display
+
+Object-Bound model:
+
+object → receive → contextualize → generate → land
+
+The object is not the target of output.
+
+The object is the condition for output.
+
+⸻
+
+Problem Statement
+
+Contemporary AI and interface systems exhibit three dominant limitations:
+
+1.
+Interface detachment
+
+Interaction occurs in abstract containers (apps, chats, dashboards)
+
+disconnected from physical context.
+
+2.
+Immediate generation bias
+
+AI generates output without environmental grounding, leading to
+
+overload, irrelevance, or instability.
+
+3.
+Non-persistent contextualization
+
+Outputs are ephemeral and not anchored to meaningful real-world
+
+structures.
+
+Existing systems increase capability, but lack situated coherence.
+
+As identified in prior work, intelligence without environmental support
+
+leads to pressure accumulation and instability  .
+
+⸻
+
+=== PDF PAGE 3 ===
+Proposed Architecture
+
+OBAI introduces a three-layer system:
+
+1. Object Layer (Receiver Layer)
+
+Physical objects act as:
+
+•
+entry points
+
+•
+contextual anchors
+
+•
+identity surfaces
+
+Examples:
+
+•
+PlayStation → gaming context
+
+•
+refrigerator → consumption/logistics
+
+•
+plant → care/temporal cycle
+
+•
+bag → movement/preparation
+
+⸻
+
+2. Spatial Inventory Layer
+
+Each object activates a dedicated inventory interface containing:
+
+•
+app shortcuts (object-relevant utilities)
+
+•
+chromatic state markers (living signals, fading over time)
+
+•
+contextual actions
+
+•
+agent-generated outputs
+
+This inventory is:
+
+•
+spatially anchored
+
+•
+persistent
+
+•
+dynamically evolving
+
+⸻
+
+=== PDF PAGE 4 ===
+3. Agentic Layer
+
+Agents operate as:
+
+•
+detectors (events, updates, signals)
+
+•
+interpreters (context relevance)
+
+•
+producers (outputs, suggestions, actions)
+
+Crucially:
+
+Agents do not output globally.
+
+They land outputs into object-specific inventories.
+
+⸻
+
+Interaction Model
+
+Minimal loop:
+
+scan → reveal → select → generate → land → fade
+
+Expanded:
+
+1.
+User observes or scans object
+
+2.
+Object activates spatial inventory
+
+3.
+User selects or inspects chroma/app
+
+4.
+AI generates context-specific output
+
+5.
+Output is placed back into inventory
+
+6.
+State decays over time (fade / afterfield)
+
+This extends the ARC-1 logic of field-first interaction and afterfield
+
+decay into a general interface paradigm  .
+
+⸻
+
+=== PDF PAGE 5 ===
+Receiver-First Logic
+
+The defining inversion:
+
+Generation is not primary.
+
+Reception is primary.
+
+AI output is:
+
+•
+delayed until context exists
+
+•
+grounded in object presence
+
+•
+spatially returned to that context
+
+This resolves:
+
+•
+interface overload
+
+•
+notification drift
+
+•
+context fragmentation
+
+⸻
+
+Relation to Prior Art
+
+Closest precedents include:
+
+•
+object-centric AR interaction systems
+
+•
+spatial UI anchored to surfaces
+
+•
+multimodal AI with contextual outputs
+
+However, no identified system combines:
+
+•
+persistent object-bound inventories
+
+•
+app + agent unification
+
+•
+autonomous output landing
+
+•
+receiver-first generation logic
+
+Thus:
+
+Partial prior art only.
+
+The novelty lies in the integration and structural coupling of these elements.
+
+⸻
+
+=== PDF PAGE 6 ===
+System Properties
+
+OBAI systems exhibit:
+
+•
+situated intelligence
+
+•
+persistent context memory
+
+•
+low-symbolic signaling (chroma, fade, presence)
+
+•
+environmental UI distribution
+
+•
+non-intrusive output delivery
+
+⸻
+
+Conceptual Shift
+
+From:
+
+•
+app-centric computing
+
+•
+feed-based interaction
+
+•
+notification systems
+
+•
+chat-based AI
+
+To:
+
+•
+object-centric computing
+
+•
+environment-bound interaction
+
+•
+ambient state signaling
+
+•
+agentic contextual landing
+
+⸻
+
+Example
+
+Object: PlayStation
+
+Inventory contains:
+
+•
+game shortcuts
+
+•
+friend presence indicators
+
+•
+agent-generated recommendations
+
+•
+call actions
+
+•
+live chromatic states
+
+Agent detects new JRPG →
+
+lands result as chroma →
+
+user opens →
+
+=== PDF PAGE 7 ===
+content generated on demand
+
+No global notification required.
+
+⸻
+
+Relation to Reasoning Systems
+
+OBAI operates as an interface layer.
+
+It may be supported by underlying reasoning systems such as structured routing architectures
+
+(e.g. operator-based reasoning stacks) that refine output prior to externalization  .
+
+However, OBAI itself defines:
+
+where output appears, not how reasoning is performed.
+
+⸻
+
+Why It Matters
+
+As AI becomes agentic, persistent, and ambient:
+
+•
+output volume increases
+
+•
+context fragmentation increases
+
+•
+user overload increases
+
+OBAI introduces:
+
+environment as interface
+
+object as anchor
+
+presence as filter
+
+This transforms AI from:
+
+a system that produces outputs
+
+into:
+
+a system that places meaning where it belongs
+
+⸻
+
+=== PDF PAGE 8 ===
+Conclusion
+
+Object-Bound Agentic Interfaces define a new interface primitive:
+
+the physical object as a living, spatial, persistent interface
+
+They resolve key limitations in current AI interaction models by:
+
+•
+grounding output in context
+
+•
+delaying generation until reception
+
+•
+distributing interaction across the environment
+
+The result is a system where:
+
+interfaces are not opened
+
+but
+
+revealed in place
+
+⸻
+
+Keywords
+
+object-bound interface, spatial computing, agentic AI, ambient interface, AR interaction,
+
+receiver-first systems, contextual AI, chromatic interface, spatial inventory, post-smartphone UI,
+
+ambient era
+
+⸻
+
+One-Sentence Version
+
+Physical objects become the primary interface, and AI outputs land where they are needed
+
+instead of appearing everywhere.

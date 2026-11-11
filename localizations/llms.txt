@@ -1,0 +1,10 @@
+# Localizations · Raynor Eissens
+Canonical: https://madeby.re/localizations/
+
+Published fan-localization archives:
+- Xenosaga I+II DS Dutch v1.0.17 — primary personal build, browser-local BPS patcher.
+- Xenosaga I+II DS English v1.0.
+- Phantasy Star Nova Complete English Text Build v1.0.
+- Gloria Union English v0.25.
+
+All projects are independent fan works. Original commercial game data is not distributed as a substitute for legally obtained copies.

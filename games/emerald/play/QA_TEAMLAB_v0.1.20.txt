@@ -1,0 +1,34 @@
+TEAM LAB v0.1.20 QA
+2026-09-09
+
+PASS
+- teamlab-engine-v0.1.20.js syntax
+- teamlab-v0.1.20.js syntax
+- pokefield-live-v0.1.20.js syntax
+- trainer-card-v0.1.14.js syntax
+- presentation-v0.1.18.2.js syntax
+- tests/teamlab-v0.1.20.cjs
+- tests/ev-coach-v0.1.19.cjs
+- tests/owned-polish-v0.1.18.cjs
+- tests/passport-polish-v0.1.18.cjs
+- decoder-test-v0.1.9.js with browser-like location shim
+- index local src/href existence check
+
+TEAMLAB REGRESSION ASSERTIONS
+- 386 species / 355 moves / 101 tactical atlas species
+- every evolution target resolves
+- full family move access stored for all 386 species
+- no modern Drizzle Pelipper / Poison Heal Breloom / Drought Torkoal leakage
+- Treecko -> Grovyle Lv16 -> Sceptile Lv36 path
+- Nincada -> Ninjask + Shedinja Lv20 branches
+- Sceptile future Leaf Blade route resolves naturally through Grovyle Lv29
+- Sceptile Substitute resolves to the Lilycove one-time Emerald tutor
+- Leech Seed resolves as a Treecko egg route with direct compatible father suggestions
+- specimen Hidden Power uses exact IV-derived type/power and Gen III type category
+- Ninjask Baton Pass / Swords Dance capability detected
+- corrected 101 HP Substitute Lv100 formula
+- Gen III type immunities / effectiveness sanity checks
+- pair-fit, Team Fabric, structural candidates and next-slot candidate functions return inspectable results
+
+BROWSER NOTE
+A dedicated headless-Chromium screenshot harness was attempted in this container, but Chromium did not terminate reliably in the sandbox. No visual-browser PASS is claimed from that harness. Runtime JS syntax, deterministic engine behavior and existing regression suites pass.

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Emerald | Diagnostiek</title>
+<style>html{background:#081611;color:#e7fff4;font:16px/1.55 system-ui}main{max-width:740px;margin:24px auto;padding:20px}h1{font-size:1.5rem}section{background:#11261e;border:1px solid #466d55;border-radius:14px;margin:12px 0;padding:14px;overflow-wrap:anywhere}.ok{color:#83edb9}.bad{color:#ffb6a4}.pending{color:#e8d68a}a{color:#a8e6ff}code{font-size:.83em}p{margin:.5em 0}</style></head><body><main><h1>🌿 Emerald diagnostiek</h1><p>Deze controle leest geen account, ROM of save. Er wordt niets naar een testdienst verzonden.</p>
+<section><strong>Browserisolatie</strong><div id="isolation" class="pending">Controleren…</div></section>
+<section><strong>mGBA-bestanden</strong><div id="assets" class="pending">Controleren…</div></section>
+<section><strong>API vanuit deze pagina</strong><div id="api" class="pending">Controleren…</div></section>
+<section><strong>Vervolg</strong><p id="advice">Een ogenblik…</p><p><a href="./?v=0.4.5.3">Terug naar Emerald</a></p></section>
+<script>
+const $=id=>document.getElementById(id);
+const iso=globalThis.crossOriginIsolated===true;
+$('isolation').className=iso?'ok':'bad';
+$('isolation').textContent='crossOriginIsolated: '+String(globalThis.crossOriginIsolated)+' | SharedArrayBuffer: '+(typeof SharedArrayBuffer)+' | Origin: '+location.origin;
+$('advice').textContent=iso?'Browserisolatie is ingeschakeld. Als de game alsnog hangt, controleer de bestandstests en stuur een screenshot van dit scherm.':'Browserisolatie ontbreekt. Controleer of play/.htaccess op de server aanwezig is en of Hostinger COOP: same-origin en COEP: require-corp op /play/ terugstuurt.';
+async function check(label,url){
+ const ctl=new AbortController();const timer=setTimeout(()=>ctl.abort(),10000);
+ try{const r=await fetch(url,{cache:'no-store',signal:ctl.signal});if(r.body)r.body.cancel().catch(()=>{});return label+': HTTP '+r.status+' | MIME '+(r.headers.get('content-type')||'(ontbreekt)')+(r.ok?' ✓':' ✗')}
+ catch(e){return label+': VERZOEK MISLUKT ('+String(e?.name||'fout')+'). Controleer netwerk/CORS.'}
+ finally{clearTimeout(timer)}
+}
+(async()=>{
+ const a=await Promise.all([check('WASM','./assets/mgba-2tQpynw2.wasm'),check('Worker','./assets/mgba-9Quf3WhR.js'),check('Game JS','./assets/index-PF016-audio.js')]);
+ $('assets').textContent=a.join('\n');$('assets').style.whiteSpace='pre-wrap';$('assets').className=a.every(x=>x.includes('✓'))?'ok':'bad';
+ const api=await check('Save Vault status (CORS)','https://emerald-api.madeby.re/api/vault?action=status');$('api').textContent=api;$('api').className=api.includes('✓')?'ok':'bad';
+})();
+</script></main></body></html>

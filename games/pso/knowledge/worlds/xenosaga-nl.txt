@@ -1,0 +1,126 @@
+WORLD: Xenosaga I+II DS Nederlands
+EXPERT SCOPE: translation release, patching, validation, technical and currently packaged site knowledge. Narrative/script answers must not be invented if the full extracted game script is not present in this bundle.
+
+### README.md
+# Xenosaga I+II DS — Nederlandse vertaling v1.0.17
+
+Static deployment package for `https://xenosaga.wolken.page/xenosaga-nederlands/`.
+
+Primary and only patch on this site: **Complete Dutch Translation v1.0.17 Final**.
+The English project lives separately at `https://xenosaga.wolken.page/xenosaga/` and in `Xenosaga-I-II-DS-English`.
+
+The browser patcher verifies the clean Japanese source SHA-256 locally, verifies the Dutch BPS, applies it in a Web Worker, verifies the generated ROM SHA-256, and only then enables the local download. The user's ROM is never uploaded.
+
+## Canonical hashes
+
+Source ROM SHA-256: `938d07521cfc937d179402e85c8b0b43f3e929a494838ff1455b29126b56d356`
+
+Dutch v1.0.17 BPS SHA-256: `8c102caaff764de32ca677d7de9cfb7622041a8c1f5001a5be60d55498783ae9`
+
+Dutch v1.0.17 output SHA-256: `ab4b66928073ff6caa61dc0c4f2fcbafa0150a69f003133d252c3737efb26a0b`
+
+GitHub: https://github.com/vw5hwbngy4-debug/Xenosaga-I-II-DS-Dutch
+
+### LINKS_VERIFIED.txt
+NL canonical: https://xenosaga.wolken.page/xenosaga-nederlands/
+EN toggle target: https://xenosaga.wolken.page/xenosaga/
+Old xenosaga-eng references: 0
+
+### HOSTINGER_DEPLOYMENT.md
+# Hostinger deployment
+
+Deploy the contents of this directory to the document root of `xenosaga-nederlands.wolken.page`.
+
+Do not deploy this Dutch package to `xenosaga.wolken.page`; that hostname is reserved for the English project.
+
+After upload, purge Hostinger/cache/CDN caches and hard-refresh the browser. The HTML references versioned 2026-09-05 CSS/JS filenames to avoid stale assets.
+
+### KNOWN_ISSUES.md
+# QA status / Known Issues — Dutch v1.0.17
+
+No known translation/UI defect remains in the currently tested title, options, opening dialogue, status and battle flows shown on the release site.
+
+The final BPS is source-gated, structurally validated and round-trip verified. A complete start-to-finish human playthrough of every route is a separate certification milestone and is not claimed solely from these targeted runtime checks.
+
+If a new runtime issue appears, report the screen/scene, visible text, approximate story location and whether progression is blocked.
+
+### PATCHING.md
+# Patching — Dutch v1.0.17
+
+1. Open `https://xenosaga.wolken.page/xenosaga-nederlands/`.
+2. Select the exact clean Japanese Xenosaga I+II Nintendo DS ROM.
+3. The browser verifies the source SHA-256 locally.
+4. The site loads and verifies `assets/patch/Xenosaga_I_II_DS_Dutch_v1.0.17.bps`.
+5. BPS is applied locally in a Web Worker.
+6. The generated ROM SHA-256 must match the canonical target.
+7. Only then is the local download enabled.
+
+No ROM bytes are sent to a server.
+
+Source SHA-256: `938d07521cfc937d179402e85c8b0b43f3e929a494838ff1455b29126b56d356`
+
+Patch SHA-256: `8c102caaff764de32ca677d7de9cfb7622041a8c1f5001a5be60d55498783ae9`
+
+Expected output SHA-256: `ab4b66928073ff6caa61dc0c4f2fcbafa0150a69f003133d252c3737efb26a0b`
+
+### RELEASE_MANIFEST.md
+# Release Manifest — Dutch v1.0.17 Final
+
+- Project: Xenosaga I+II DS — Complete Dutch Translation
+- Release: v1.0.17 Final
+- Website: https://xenosaga.wolken.page/xenosaga-nederlands/
+- GitHub: https://github.com/vw5hwbngy4-debug/Xenosaga-I-II-DS-Dutch
+- Platform: Nintendo DS
+- Supported source: Xenosaga I+II (Japan), game code AXSJ
+
+## Canonical artifacts
+
+- Clean source size: 67,108,864 bytes
+- Clean source SHA-256: `938d07521cfc937d179402e85c8b0b43f3e929a494838ff1455b29126b56d356`
+- Dutch BPS: `Xenosaga_I_II_DS_Dutch_v1.0.17.bps`
+- Dutch BPS size: 59,264,764 bytes
+- Dutch BPS SHA-256: `8c102caaff764de32ca677d7de9cfb7622041a8c1f5001a5be60d55498783ae9`
+- Expected Dutch output SHA-256: `ab4b66928073ff6caa61dc0c4f2fcbafa0150a69f003133d252c3737efb26a0b`
+
+## Final runtime QA fixes
+
+- Clean Dutch title menu
+- Options UI without previous line artifacts
+- Character/status UI cleanup
+- First dialogue box no longer shows duplicate/pre-rendered overflow text
+- Battle attack-type sprites: F = Fysiek, E = Ether
+- Earlier cold-boot/location fixes retained
+
+The supplied screenshots are runtime proof for these specific fixes. A full start-to-finish human playthrough is a separate certification state.
+
+### TECHNICAL_RECORD.md
+# Technical Record — Dutch v1.0.17
+
+The Dutch localization covers the catalogued story/event text, choices, speaker/meta, database/system text and graphical UI work developed during the project. Runtime QA then exposed several display paths that required direct renderer or graphics-level fixes.
+
+## Final visible fixes
+
+- Dutch title/menu graphics cleaned
+- Options and status graphics cleaned
+- First textbox duplicate/overflow artifact removed at the active entrypoint
+- Battle attack-type glyphs traced to the battle status spritebank rather than the general font
+- `btss000.NCGR` visible type cells replaced with `F` for Fysiek and `E` for Ether
+
+Final target SHA-256: `ab4b66928073ff6caa61dc0c4f2fcbafa0150a69f003133d252c3737efb26a0b`
+
+BPS SHA-256: `8c102caaff764de32ca677d7de9cfb7622041a8c1f5001a5be60d55498783ae9`
+
+### VALIDATION_REPORT.md
+# Validation Report — Dutch v1.0.17 website release
+
+- Dutch v1.0.17 BPS present: PASS
+- BPS size 59,264,764 bytes: PASS
+- BPS SHA-256 `8c102caaff764de32ca677d7de9cfb7622041a8c1f5001a5be60d55498783ae9`: PASS
+- Clean source SHA-256 `938d07521cfc937d179402e85c8b0b43f3e929a494838ff1455b29126b56d356`: PASS
+- Expected target SHA-256 `ab4b66928073ff6caa61dc0c4f2fcbafa0150a69f003133d252c3737efb26a0b`: PASS
+- BPS round-trip byte-identical to target: PASS
+- Dutch-only patch selector: PASS
+- English patch removed from Dutch site: PASS
+- Source / patch / output hash gates: PASS
+- No ROM upload endpoint: PASS
+- `.nds` files in public site package: 0

@@ -1,0 +1,33 @@
+/* Emerald v0.1.24.8.6 · APP CALM · SINGLE SURFACE
+   One navigation choice = one visual surface. Shared strategy state stays internal. */
+
+/* The old shared specimen rail visually leaked one Pokémon into every tab. */
+#pokefield-live-panel #spx-context{display:none!important}
+
+/* DEX may add a small analytical lens, but only inside LIVE. */
+#pokefield-live-panel #spx-live-snapshot{margin:8px 0 10px!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+#pokefield-live-panel.tpf-show #spx-live-snapshot,
+#pokefield-live-panel.tl-show #spx-live-snapshot,
+#pokefield-live-panel.tc-showing-card #spx-live-snapshot{display:none!important}
+#pokefield-live-panel #spx-live-snapshot article{padding:9px 10px!important}
+
+/* Exactly one content surface owns the area below the four-way nav. */
+#pokefield-live-panel.tpf-show #teamlab{display:none!important}
+#pokefield-live-panel.tl-show #true-pokefield{display:none!important}
+#pokefield-live-panel.tl-show #tc-stage{display:none!important}
+#pokefield-live-panel.tpf-show #tc-stage{display:none!important}
+
+/* Team Lab STAB axis: no repeated full BEST STAB card. The winning split card gets one quiet badge. */
+#teamlab .tl-stab-is-best{border-color:rgba(255,180,79,.34);background:rgba(74,47,15,.16)}
+#teamlab .tl-stab-fit{font-size:8px;letter-spacing:.1em;border-radius:999px;padding:4px 7px;border:1px solid rgba(255,180,79,.45);color:#ffd28f;background:rgba(95,58,16,.24)}
+
+/* Reduce the feeling of stacked menus on phones. */
+@media(max-width:959px){
+  #pokefield-live-panel .tpf-nav{margin-top:8px!important;margin-bottom:8px!important}
+  #pokefield-live-panel #spx-live-snapshot{gap:6px!important}
+  #pokefield-live-panel #spx-live-snapshot b{font-size:9px!important}
+  #pokefield-live-panel #spx-live-snapshot span{font-size:7px!important}
+}
+@media(max-width:430px){
+  #pokefield-live-panel #spx-live-snapshot{grid-template-columns:1fr 1fr!important}
+}

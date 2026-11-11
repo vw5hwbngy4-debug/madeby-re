@@ -1,0 +1,23 @@
+JRPG.WORLD EMERALD — SAFARI AUDIO RECOVERY HOTFIX v0.1.7.4
+
+Reproduction:
+- Run Emerald in iPhone Safari.
+- Background/switch away from Safari.
+- Return to the game.
+- Previous TAP TO RESTORE SOUND could report Web Audio as running while mGBA/SDL remained silent.
+
+Fix:
+- Backgrounding now arms recovery and pauses SDL audio into a known state.
+- Foreground/focus/pageshow events never clear recovery without a real user gesture.
+- First A/B/D-pad/system-button gesture after return performs a hard audio wake automatically.
+- The green recovery button performs the same hard wake.
+- Hard wake resumes Web Audio inside the gesture, sends an inaudible one-sample unlock pulse, then forces an SDL pause/resume edge and restores the existing game volume.
+- The recovery button no longer races the global pointer capture handler.
+
+No-regression scope:
+- mGBA JS/WASM bundle unchanged.
+- ROM/runtime core unchanged.
+- live RAM bridge and Gen III decoder unchanged.
+- Trainer Card v0.1.7.3 unchanged.
+- desktop keyboard v0.1.7.2 unchanged.
+- save persistence unchanged.

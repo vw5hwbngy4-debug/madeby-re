@@ -1,0 +1,26 @@
+:root{--hoenn-shell-h:48px}
+body.hoenn-play-inside{padding-top:calc(var(--hoenn-shell-h) + env(safe-area-inset-top,0px));min-height:100dvh}
+body.hoenn-play-inside #root{min-height:calc(100dvh - var(--hoenn-shell-h) - env(safe-area-inset-top,0px))}
+body.hoenn-play-inside .app-container{min-height:calc(100dvh - var(--hoenn-shell-h) - env(safe-area-inset-top,0px))}
+#hoenn-play-shell{position:fixed;z-index:90000;top:0;left:0;right:0;height:calc(var(--hoenn-shell-h) + env(safe-area-inset-top,0px));padding:env(safe-area-inset-top,0px) 12px 0;background:rgba(249,246,218,.97);border-bottom:3px solid #173f36;color:#173f36;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;box-shadow:0 5px 18px rgba(5,25,20,.16);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+#hoenn-play-shell *{box-sizing:border-box}
+#hoenn-play-shell .hps-brand{min-width:0;display:flex;align-items:center;gap:9px;color:#173f36;text-decoration:none;font-weight:900;letter-spacing:.02em;white-space:nowrap}
+#hoenn-play-shell .hps-orb{position:relative;width:27px;height:27px;border:4px solid #173f36;border-radius:50%;background:linear-gradient(#ef716b 0 45%,#f9f6da 45% 55%,#f9f6da 55%);flex:0 0 auto}
+#hoenn-play-shell .hps-orb:after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;border:3px solid #173f36;border-radius:50%;background:#f9f6da;transform:translate(-50%,-50%)}
+#hoenn-play-shell .hps-brand b{overflow:hidden;text-overflow:ellipsis;font-size:12px}
+#hoenn-play-shell .hps-brand small{margin-left:5px;color:#4d766a;font-size:8px;font-weight:800}
+#hoenn-play-shell nav{display:flex;align-items:center;gap:4px}
+#hoenn-play-shell nav a{min-height:33px;padding:0 9px;border:2px solid transparent;border-radius:9px;color:#173f36;text-decoration:none;display:flex;align-items:center;gap:5px;font-size:9px;font-weight:900;letter-spacing:.05em}
+#hoenn-play-shell nav a[aria-current="page"]{border-color:#173f36;background:#fff8d7}
+#hoenn-play-shell nav i{font-style:normal;color:#329162}
+#hoenn-legacy-transfer{position:fixed;z-index:89999;top:calc(var(--hoenn-shell-h) + env(safe-area-inset-top,0px) + 9px);left:50%;width:min(520px,calc(100% - 20px));transform:translateX(-50%);padding:11px;border:2px solid #173f36;border-radius:13px;background:rgba(255,248,215,.98);box-shadow:0 9px 28px rgba(3,20,15,.25);color:#173f36;font:700 11px/1.35 system-ui,-apple-system,sans-serif;touch-action:manipulation}
+#hoenn-legacy-transfer[hidden]{display:none}
+#hoenn-legacy-transfer b{display:block;margin-bottom:3px;font-size:12px}
+#hoenn-legacy-transfer p{margin:0;color:#45665e}
+#hoenn-legacy-transfer .hlt-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+#hoenn-legacy-transfer button{flex:1 1 130px;min-height:36px;border:2px solid #173f36;border-radius:8px;padding:0 11px;background:#ccefc0;color:#173f36;font:900 9px/1 ui-monospace,SFMono-Regular,monospace;letter-spacing:.04em}
+#hoenn-legacy-transfer button[data-dismiss]{background:#fffdf0}
+#hoenn-legacy-transfer[data-state="ok"]{background:#dff4d7}
+#hoenn-legacy-transfer[data-state="bad"]{background:#ffe0d6}
+body:has(.fullscreen-mode) #hoenn-play-shell,body:has(.fullscreen-mode) #hoenn-legacy-transfer{display:none!important}
+@media(max-width:560px){:root{--hoenn-shell-h:44px}#hoenn-play-shell{padding-left:8px;padding-right:8px}#hoenn-play-shell .hps-brand small{display:none}#hoenn-play-shell .hps-brand b{font-size:10px}#hoenn-play-shell nav a{padding:0 7px;font-size:8px}#hoenn-play-shell nav a span{display:none}#hoenn-legacy-transfer{font-size:10px}}

@@ -1,0 +1,4 @@
+v5.3.9 notes:
+- Camera zoom is tied to helicopter altVis.
+- HIGH altitude target zoom is about 66%, giving a wider aerial view.
+- Camera scaling is applied only during rendering, keeping gameplay coordinates stable.

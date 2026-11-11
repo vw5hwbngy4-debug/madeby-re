@@ -1,0 +1,15 @@
+# Hostinger/PHP runtime files are not executable on GitHub Pages and may
+# contain server-only configuration. The untouched Hostinger ZIP is the backup.
+**/*.php
+**/.htaccess
+**/private/**
+
+# Historical deployment notes that may contain setup credentials.
+games/pso/PRIVATE_CONFIG_SETUP.txt
+games/emerald/play/SERVER_SAVE_VAULT_*.txt
+games/emerald/play/NODE_SAVE_VAULT_CLIENT_*.txt
+
+# Local/editor noise.
+.DS_Store
+Thumbs.db
+

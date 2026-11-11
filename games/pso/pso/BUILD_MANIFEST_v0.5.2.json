@@ -1,0 +1,18 @@
+{
+  "release": "JRPG.WORLD PSO RICO Intelligence v0.5.2",
+  "focus": "RICO MAG MATRIX FIX",
+  "target": "https://madeby.re/games/pso/pso/",
+  "file_count": 55,
+  "uncompressed_bytes": 12459355,
+  "tests": {
+    "pass": 71,
+    "fail": 0
+  },
+  "smoke_checks": 10,
+  "xbox_save_import_only": true,
+  "mag_matrix": {
+    "golden_reachable_targets": 9,
+    "golden_route_variants": 18,
+    "fact_payload_bytes": 7044
+  }
+}

@@ -1,0 +1,33 @@
+JRPG.WORLD /pso/ — RICO INTELLIGENCE v0.5.1
+
+PURPOSE
+-------
+Preserve the existing jrpg.world/pso consumer UX and move the cumulative V0.5
+MAG / Hunt / Account / Gear intelligence behind RICO.
+
+VISIBLE CHANGE
+--------------
+One compact optional ORIGINAL XBOX save link next to the RICO prompt.
+No GameCube or Blue Burst save UI.
+No permanent MAG/Hunt/Account/Gear dashboards.
+
+DEPLOY
+------
+1. Back up the existing public_html/pso folder.
+2. Replace/merge the CONTENTS of this package into public_html/pso.
+3. Do not delete public_html/assets, public_html/private, or the rest of JRPG.WORLD.
+4. Visit https://madeby.re/games/pso/pso/smoke-check.html and expect 9/9.
+5. Visit https://madeby.re/games/pso/pso/.
+6. Test RICO without a save.
+7. Link the known Original Xbox save. Expected golden identity:
+   Eilaa · RAmarl · Redria · Lv2
+   MAG Lv6 · 5.14 / 0.30 / 1.20 / 0.00
+8. Ask: "Can I equip Frozen Shooter?"
+9. Ask: "Using my linked save, what should I focus on next?"
+
+SECURITY
+--------
+The raw Xbox save stays browser-local/read-only.
+Only structured verified player state and deterministic facts go to RICO.
+This package contains no OpenAI API key; /pso/api/pso.php reuses the parent
+JRPG.WORLD private/config.php.

@@ -1,0 +1,28 @@
+EMERALD v0.1.24.8 — TRUE POKÉFIELD MERGE QA
+
+PASS — JavaScript syntax:
+  true-pokefield-v0.1.24.8.js
+  true-pokefield-projection-v0.1.24.8.js
+  pokefield-live-v0.1.24.8.js
+  mobile-ux-v0.1.24.8.js
+  teamlab-v0.1.24.8.js
+
+PASS — canonical Team Lab species dataset contains 386 species records.
+PASS — normal sprite directory contains 386 Gen III PNGs.
+PASS — authentic donor projection SHA-256 parity checked.
+PASS — donor projection returns 386 positioned cells in Poké Ball mode.
+PASS — CALL / FOCUS / SCATTER controller paths present.
+PASS — numeric IV input uses number + numeric mobile keyboard hints.
+PASS — full population is 386 species, not owned-only records.
+PASS — owned / party / shiny state is attached as semantic cell metadata.
+PASS — vertical SS/S/A/B/C RANK bands present.
+PASS — four-way LIVE / FIELD / TEAM LAB / TRAINER CARD navigation compatibility restored.
+PASS — POKÉFIELD mobile header/action rows are separated to prevent text/control overlap.
+PASS — DEX mobile reparent + desktop restore logic present.
+PASS — explicit SVG viewport height present for iOS Safari.
+PASS — Save Vault v0.1.13.5 remains loaded.
+PASS — VERSION.txt = 0.1.24.8.
+
+NOTE
+A full Mobile Safari + mGBA/WASM interaction render cannot be executed in this container.
+The build therefore still requires the real-device visual/gesture pass after deployment.

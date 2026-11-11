@@ -1,0 +1,42 @@
+JRPG.WORLD EMERALD v0.1.15 — DESKTOP KEYBOARD QA
+=================================================
+
+PUBLIC DESKTOP MAP
+------------------
+Arrow keys -> D-pad
+Z          -> SELECT (registered Key Item shortcut in Emerald when applicable)
+X          -> B
+C          -> A
+Q          -> L
+W          -> R
+Enter      -> START
+Numpad Enter -> START
+
+DESIGN RULE
+-----------
+The face-button row is spatial:
+  Z   X   C
+ SEL  B   A
+
+This fixes the old desktop map where Z triggered A even though the GBA A button
+is physically to the right of B. Shift/Space and literal A/B aliases are no
+longer game controls, removing hidden/ambiguous desktop bindings.
+
+STATIC CHECKS
+-------------
+- No KeyZ -> A binding: PASS
+- No KeyA -> A alias: PASS
+- No KeyB -> B alias: PASS
+- No Shift -> Select binding: PASS
+- No Space -> Select binding: PASS
+- KeyZ -> Select: PASS
+- KeyX -> B: PASS
+- KeyC -> A: PASS
+- Enter -> Start: PASS
+- Arrow D-pad unchanged: PASS
+- Q/W shoulder buttons unchanged: PASS
+
+SAVE / DECODER BOUNDARY
+-----------------------
+No Save Vault, mGBA save routing, RTC handling, RAM decoder, Trainer Card data,
+or Pokémon parsing logic was changed in this pass.

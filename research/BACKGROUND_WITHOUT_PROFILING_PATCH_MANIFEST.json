@@ -1,0 +1,26 @@
+{
+  "patch": "background-without-profiling",
+  "date": "2026-10-01",
+  "canonical": "https://madeby.re/research/background-without-profiling/",
+  "new_files": [
+    "background-without-profiling/index.html",
+    "background-without-profiling/article.css",
+    "background-without-profiling/article.txt",
+    "background-without-profiling/article.json"
+  ],
+  "updated_files": [
+    "index.html",
+    "papers.html",
+    "research.html",
+    "concepts.html",
+    "llms.txt",
+    "sitemap.xml",
+    "build-manifest-final.json"
+  ],
+  "notes": [
+    "Independent web article; no DOI assigned.",
+    "Machine-readable plain text and JSON included.",
+    "Explicit novelty boundary: conceptual/governance layer distinction, not a claim of new storage, identity, memory, or cryptographic primitives.",
+    "Public-facing copy contains no conversational or generation-process metadata."
+  ]
+}

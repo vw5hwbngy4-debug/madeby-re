@@ -1,0 +1,17 @@
+EMERALD v0.1.24.9.1.2 — FIELD SEARCH KEYBOARD GUARD
+
+Fixes a Mobile Safari input leak in PokéField CALL → POKÉMON search.
+
+Observed regression:
+- the search box receives focus but typed virtual-keyboard keys are also seen by the emulator
+- Emerald reacts to those keys, e.g. opening/navigating the in-game Pokédex
+- search text can fail to enter normally
+
+Fix:
+- keyboard events are allowed to reach PokéField input/select/textarea editors normally
+- at the PokéField picker boundary, keydown/keyup/keypress bubbling is stopped before the emulator's global keyboard listener
+- the Pokémon search input also has a direct target-level propagation guard as defense-in-depth
+- no preventDefault() is used, so Mobile Safari keeps its normal text-entry behavior
+- applies to Pokémon search and numeric PokéField picker inputs
+
+Cumulative base: v0.1.24.9.1.1 TEAM LAB STATE SYNC.

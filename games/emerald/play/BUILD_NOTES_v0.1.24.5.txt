@@ -1,0 +1,14 @@
+EMERALD v0.1.24.5 — SAVE SWITCH + MOBILE FLOW
+
+Fixes from user mobile test:
+- Save Vault button no longer overlays the GBA/game viewport. It docks in the PokéField header below the game.
+- Expanded mode no longer creates its own bounded inner scroll surface. iPhone/Safari uses the normal page scroll again.
+- Mobile still starts Compact on each fresh page load.
+- Durable Safari .sav picker from v0.1.24.3 remains intact.
+- Save switching is now transaction-like: capture current active save, download requested slot, stage it on an isolated mGBA save path, restart Emerald against that exact file, verify active path + SHA-256, then commit the server slot swap.
+- Switching SAVE 2/3 swaps the old active SAVE 1 back into that source slot, so choosing a save no longer destroys the previous active save.
+- If an older build already produced duplicate SAVE 1/SAVE 2 content, the Vault detects duplicate hashes and exposes PREVIOUS SAVES recovery so an earlier active snapshot can be recovered into an empty slot.
+- Trainer Card still uses the v0.1.24.4 single-entry/toggle navigation model.
+
+Important recovery note:
+Existing account data damaged only at the visible-slot level by v0.1.24.4 should still have append-only historical snapshots on the Save Vault server. Open PREVIOUS SAVES / duplicate recovery and recover the earlier distinct snapshot into SAVE 3 before switching.

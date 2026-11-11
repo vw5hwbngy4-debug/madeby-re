@@ -1,0 +1,22 @@
+<!doctype html><meta charset="utf-8"><title>v0.1.24.9.2 browser smoke</title>
+<script src="../teamlab-engine-v0.1.24.9.2.js"></script>
+<div id="pokefield-live-panel"><div id="pf-updates"></div></div><pre id="result">WAIT</pre>
+<script>
+globalThis.JRPGWorldEmeraldState={party:[
+ {dexNo:350,species:'Milotic',ability:'Marvel Scale',moves:[{name:'Surf'},{name:'Ice Beam'},{name:'Recover'},{name:'Toxic'}],hiddenPower:{type:'Dark',power:70},ivTotal:186},
+ {dexNo:373,species:'Salamence',ability:'Intimidate',moves:[{name:'Dragon Claw'},{name:'Earthquake'},{name:'Rock Slide'},{name:'Dragon Dance'}],hiddenPower:{type:'Flying',power:70},ivTotal:180},
+ {dexNo:376,species:'Metagross',ability:'Clear Body',moves:[{name:'Meteor Mash'},{name:'Earthquake'},{name:'Rock Slide'},{name:'Explosion'}],hiddenPower:{type:'Bug',power:60},ivTotal:170}
+],boxes:[]};
+setTimeout(()=>{
+ try{
+  document.querySelector('.tpf-nav [data-mode="field"]')?.click();
+  document.querySelector('#tpf-coverage-badge')?.click();
+  const team=[...document.querySelectorAll('#tpf-picker-grid button')].find(b=>b.textContent.includes('TEAM OVERVIEW'));
+  team?.click();
+  const text=document.querySelector('#tpf-picker-grid')?.textContent||'';
+  const ok=text.includes('DEFENSIVE PRESSURE')&&text.includes('OFFENSIVE GAPS')&&text.includes('CURRENT MOVES')&&text.includes('Water')&&text.includes('Electric');
+  document.body.dataset.pass=String(ok);document.querySelector('#result').textContent=(ok?'PASS':'FAIL')+'\n'+text;
+ }catch(e){document.body.dataset.pass='false';document.querySelector('#result').textContent='ERROR '+e.stack;}
+},1800);
+</script>
+<script type="module" src="../true-pokefield-v0.1.24.9.2.js"></script>

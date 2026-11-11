@@ -1,0 +1,15 @@
+Ash District portable v0.2
+
+Changed:
+- Rebuilt package as a standalone direct-start ARPG.
+- Removed visible legacy branding and mode-selection text.
+- Root index.html now starts the game immediately.
+- Flattened selected asset files into public_html/assets/ for portability.
+- Added R restart support.
+- Zombies now move freely through the district instead of being stopped by building collision.
+- Kept core ARPG loop: waves, loot, rarity, inventory, loadout equipment, XP, levels, safe zone, mobile controls.
+
+Known limitations:
+- Interiors are not a separate dungeon layer yet.
+- Zombies use direct chase AI rather than pathfinding.
+- Equipment comparison is simple; tap/click equips directly.

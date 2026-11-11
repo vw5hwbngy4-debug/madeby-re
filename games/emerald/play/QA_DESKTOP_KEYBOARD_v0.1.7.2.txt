@@ -1,0 +1,33 @@
+JRPG.WORLD EMERALD v0.1.7.2 — DESKTOP KEYBOARD QA
+=================================================
+
+Static adapter test: PASS
+- Arrow keys -> D-pad
+- A / Z -> GBA A
+- B / X -> GBA B
+- Q -> L
+- W -> R
+- Enter / Numpad Enter / C -> Start
+- Space / Left Shift / Right Shift -> Select
+- repeated keydown does not duplicate buttonPress
+- two aliases for one GBA button remain held until both aliases release
+
+Decoder regression: PASS 24/24
+
+Byte-for-byte unchanged from v0.1.7.1:
+- mGBA JS wrapper
+- mGBA WASM
+- upstream React/audio emulator bundle
+- live RAM/decoder bridge
+- trainer card v0.1.7.1 JS/CSS
+- Emerald live dex
+- decoder test
+- desktop CSS
+
+Manual browser test requested after install:
+1. Open a fresh desktop session / hard refresh.
+2. At trainer naming, navigate with arrows.
+3. Press Enter (or C) to invoke Start and reach name confirmation.
+4. Press A (or Z) to confirm YES.
+5. Press Space where Select is required.
+6. Confirm no page scroll or browser action occurs for mapped game keys.

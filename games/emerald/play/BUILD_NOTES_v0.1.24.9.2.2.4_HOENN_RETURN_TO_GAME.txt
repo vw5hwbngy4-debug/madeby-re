@@ -1,0 +1,17 @@
+EMERALD v0.1.24.9.2.2.4 — HOENN RETURN TO GAME HOTFIX
+2026-09-12
+
+PURPOSE
+The v0.1.24.9.2.2.3 middle HOENN console button works, but its Hoenn panel covers the physical console controls once opened. This patch adds an explicit, persistent way back to the live Emerald surface.
+
+CHANGES
+- Added a large sticky BACK TO GAME button inside the Emerald · MadeBy panel.
+- Kept the existing X close button and made the Hoenn panel header sticky so the X remains reachable while scrolling.
+- Both close affordances use the same closeHoenn() path.
+- HOENN remains on the center console/Menu control between SELECT and START.
+- No MutationObserver or DOM polling added.
+- No emulator start/load code changed.
+- No Save Vault ownership, save load, save mutation, SRAM, ROM, mGBA or PokéField runtime code changed.
+
+REGRESSION INTENT
+This patch is presentation/event wiring only. It is deliberately based on the known-good v0.1.24.9.2.2.3 save/runtime build.

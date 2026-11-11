@@ -1,0 +1,22 @@
+Ash District v0.7 — Music and SFX Pass
+
+- Added public_html/audio with the supplied bgmusic.mp3 and SFX files.
+- Added looping background music with Safari/iOS-safe user-gesture unlock.
+- Added TAP FOR SOUND / MUSIC ON / MUTED button.
+- Added weapon sounds:
+  - pistol.mp3 for pistol shots
+  - uzi.mp3 for Uzi fire
+  - pistol.mp3 as a temporary shotgun fallback
+  - melee_attack.mp3 for blunt melee
+  - knive.mp3 for machete/katana/fire axe style melee
+- Added zombie sounds:
+  - zombie_growl.mp3 for nearby roaming packs
+  - zombie_killed_sound.mp3 for normal deaths
+  - zombie_leader_killed_sound.mp3 for leader deaths
+- Added big_explosion.mp3 for molotov/fire explosion events.
+- Added light music ducking on explosions and leader kills so impact sounds read better.
+
+Known limits:
+- There is no dedicated shotgun sound in the supplied pack, so shotgun currently uses pistol.mp3 at a heavier volume/throttle.
+- Browser autoplay policies mean music starts after first interaction, not before.
+- No footstep or UI click sounds yet.

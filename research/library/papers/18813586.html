@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>AFS-1 ↔ Finance / Payments Mapping: Thermodynamic Authorization Without Identity | Raynor Eissens full-text library</title><meta content="This document defines the canonical mapping between AFS-1 (Aura Field Security) and existing financial and payment systems. It demonstrates how payment, authorization, and settlement can occur without identity objects, accounts, credentials, or tokens, while remaining c" name="description"/>
+<meta content="index,follow,max-snippet:-1" name="robots"/><link href="https://madeby.re/research/library/papers/18813586.html" rel="canonical"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "AFS-1 ↔ Finance / Payments Mapping: Thermodynamic Authorization Without Identity", "name": "AFS-1 ↔ Finance / Payments Mapping: Thermodynamic Authorization Without Identity", "url": "https://madeby.re/research/library/papers/18813586.html", "mainEntityOfPage": "https://madeby.re/research/library/papers/18813586.html", "isAccessibleForFree": true, "sameAs": "https://zenodo.org/records/18813586", "encoding": [{"@type": "MediaObject", "encodingFormat": "text/html", "contentUrl": "https://madeby.re/research/library/papers/18813586.html"}, {"@type": "MediaObject", "encodingFormat": "text/plain", "contentUrl": "https://madeby.re/research/library/text/18813586.txt"}, {"@type": "MediaObject", "encodingFormat": "application/json", "contentUrl": "https://madeby.re/research/library/data/18813586.json"}], "author": [{"@type": "Person", "name": "Raynor Eissens"}], "abstract": "This document defines the canonical mapping between AFS-1 (Aura Field Security) and existing financial and payment systems. It demonstrates how payment, authorization, and settlement can occur without identity objects, accounts, credentials, or tokens, while remaining compatible with current financial infrastructure (banks, card networks, merchants, regulators). AFS-1 replaces identity-based authorization with thermodynamic coherence confirmation, while leaving monetary settlement and accounting unchanged. This separation allows Ambient OS payments to integrate with legacy finance without modifying money itself. ⸻ 1. Separation Principle AFS-1.F1 — Authorization–Settlement Separation AFS-1 governs authorization only. Traditional financial systems govern settlement only. • Authorization: thermodynamic coherence (AFS-1 / CIR-1) • Settlement: ledger-based accounting (banks, PSPs, networks) AFS-1 never replaces money. AFS-1 replaces the identity and credential layer that precedes settlement. ⸻ 2. Replacement Matrix Traditional Payment Replaced by AFS-1? Canonical Layer Replacement PIN / "}</script>
+<meta content="AFS-1 ↔ Finance / Payments Mapping: Thermodynamic Authorization Without Identity" name="citation_title"/>
+<meta content="Raynor Eissens" name="citation_author"/>
+<link href="../text/18813586.txt" rel="alternate" type="text/plain"/><link href="../data/18813586.json" rel="alternate" type="application/json"/>
+<link href="../assets/site.css" rel="stylesheet"/>
+</head><body><a class="skip" href="#main">Skip to content</a><div class="shell"><div class="portfolio-bridge"><a href="../../index.html">← Personal website</a><a href="../../archive.html">All 205 Zenodo records</a><a href="../index.html">Full-text library</a></div><header><a class="brand" href="../index.html">← RAYNOR EISSENS / FULL TEXT</a><h1>AFS-1 ↔ Finance / Payments Mapping: Thermodynamic Authorization Without Identity</h1><div class="meta"><span>Zenodo record: 18813586</span><span>12 PDF pages</span><span>1,447 extracted words</span></div><nav aria-label="Publication formats" class="tools"><a href="https://zenodo.org/records/18813586" rel="noopener">Original Zenodo record and PDF ↗</a><a href="../text/18813586.txt">Plain text</a><a href="../data/18813586.json">Full-text JSON</a><a href="../index.html">All publications</a></nav></header><main id="main"><aside aria-label="Editorial context for this publication" class="editorial-context compact-context"><span class="context-label">Editorial context · 19 September 2026</span><p>This document belongs to an exploratory theoretical archive. Claims of novelty should be treated as provisional unless independently sourced, and publication does not establish scientific validation. The original PDF-derived text below is unchanged. <a href="../index.html#archive-context">Read the archive note ↗</a></p></aside><section aria-label="Abstract"><h2>Abstract (extracted)</h2><p class="abstract">This document defines the canonical mapping between AFS-1 (Aura Field Security) and existing financial and payment systems. It demonstrates how payment, authorization, and settlement can occur without identity objects, accounts, credentials, or tokens, while remaining compatible with current financial infrastructure (banks, card networks, merchants, regulators). AFS-1 replaces identity-based authorization with thermodynamic coherence confirmation, while leaving monetary settlement and accounting unchanged. This separation allows Ambient OS payments to integrate with legacy finance without modifying money itself. ⸻ 1. Separation Principle AFS-1.F1 — Authorization–Settlement Separation AFS-1 governs authorization only. Traditional financial systems govern settlement only. • Authorization: thermodynamic coherence (AFS-1 / CIR-1) • Settlement: ledger-based accounting (banks, PSPs, networks) AFS-1 never replaces money. AFS-1 replaces the identity and credential layer that precedes settlement. ⸻ 2. Replacement Matrix Traditional Payment Replaced by AFS-1? Canonical Layer Replacement PIN / </p></section><p class="notice">This is a text extraction of the original PDF, not an edited or peer-reviewed edition. PDF text order, equations, multi-column tables and diagram details may be imperfect. Consult the original Zenodo file for authoritative layout and figures.</p><div class="paper-layout"><article aria-label="Full original extracted text"><section aria-label="Source PDF page 1" class="page" id="page-1"><h2>PDF page 1</h2><p class="pdf-block">AFS-1 ↔ Finance / Payments Mapping</p>
+<p class="pdf-block">Thermodynamic Settlement Without Identity</p>
+<p class="pdf-block">Ambient Era Canon · Finance &amp; Settlement Interface</p>
+<p class="pdf-block">Raynor Eissens</p>
+<p class="pdf-block">Zenodo Edition · 2026</p>
+<p class="pdf-block">⸻</p>
+<h3 class="pdf-heading">Abstract</h3>
+<p class="pdf-block">This document defines the canonical mapping between AFS-1 (Aura Field Security) and existing</p>
+<p class="pdf-block">financial and payment systems.</p>
+<p class="pdf-block">It demonstrates how payment, authorization, and settlement can occur without identity objects,</p>
+<p class="pdf-block">accounts, credentials, or tokens, while remaining compatible with current financial</p>
+<p class="pdf-block">infrastructure (banks, card networks, merchants, regulators).</p>
+<p class="pdf-block">AFS-1 replaces identity-based authorization with thermodynamic coherence confirmation,</p>
+<p class="pdf-block">while leaving monetary settlement and accounting unchanged. This separation allows Ambient</p>
+<p class="pdf-block">OS payments to integrate with legacy finance without modifying money itself.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">1. Separation Principle</p>
+<p class="pdf-block">AFS-1.F1 — Authorization–Settlement Separation</p>
+<p class="pdf-block">AFS-1 governs authorization only.</p>
+<p class="pdf-block">Traditional financial systems govern settlement only.</p>
+<p class="pdf-block">•
+Authorization: thermodynamic coherence (AFS-1 / CIR-1)</p>
+<p class="pdf-block">•
+Settlement: ledger-based accounting (banks, PSPs, networks)</p>
+<p class="pdf-block">AFS-1 never replaces money.</p>
+<p class="pdf-block">AFS-1 replaces the identity and credential layer that precedes settlement.</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 2" class="page" id="page-2"><h2>PDF page 2</h2><p class="pdf-block">2. Replacement Matrix</p>
+<p class="pdf-block">Traditional Payment 
+Layer</p>
+<p class="pdf-block">Replaced by AFS-1?
+Canonical 
+Replacement</p>
+<p class="pdf-block">PIN / password
+Yes
+Live Aura coherence</p>
+<p class="pdf-block">Card number / token
+Yes
+CFS-bound field 
+command</p>
+<p class="pdf-block">Yes
+T(t) × C × ΔR</p>
+<p class="pdf-block">Biometric (Face ID, 
+fingerprint)</p>
+<p class="pdf-block">Account identity
+Yes
+CIR-1 (momentary 
+resolution)</p>
+<p class="pdf-block">Yes
+ΔR collapse</p>
+<p class="pdf-block">Fraud scoring / 
+inference</p>
+<p class="pdf-block">Ledger / settlement
+No
+Existing financial rails</p>
+<p class="pdf-block">AFS-1 touches nothing below authorization.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">3. Canonical Payment Mapping</p>
+<p class="pdf-block">3.1 Roles</p>
+<p class="pdf-block">Finance Role
+Ambient OS Role</p>
+<p class="pdf-block">Merchant terminal
+Ambient Broadcast Entity (ABE)</p>
+<p class="pdf-block">Payment request
+CFS (Chromatic Field State)</p>
+<p class="pdf-block">Card / wallet
+AP₁ device</p>
+<p class="pdf-block">User authorization
+CIR-1 coherence</p>
+<p class="pdf-block">Auth response
+Field confirmation</p>
+<p class="pdf-block">Settlement
+Unchanged</p>
+<p class="pdf-block">⸻</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 2; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/18813586-p2.webp"/><figcaption>Visual reference for page 2. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 3" class="page" id="page-3"><h2>PDF page 3</h2><p class="pdf-block">3.2 Authorization Mapping</p>
+<p class="pdf-block">Traditional flow:</p>
+<p class="pdf-block">User → credential → issuer → approve/deny</p>
+<p class="pdf-block">AFS-1 flow:</p>
+<p class="pdf-block">User → live Aura coherence → approve/deny</p>
+<p class="pdf-block">No intermediary identity verification exists.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">4. AFS-1 Payment Event (Mapped)</p>
+<p class="pdf-block">Phase
+Ambient OS
+Finance Interpretation</p>
+<p class="pdf-block">Initiation
+X-gesture (AXL-1)
+User intent to pay</p>
+<p class="pdf-block">Context
+Purple Context State
+Secure payment mode</p>
+<p class="pdf-block">Verification
+A(t) ↔ CFS inside TW-1 Authorization check</p>
+<p class="pdf-block">Success
+CIR-1 confirmed
+“Authorized”</p>
+<p class="pdf-block">Failure
+ΔR collapse
+“Not authorized”</p>
+<p class="pdf-block">Post-event
+ΔR → 0
+Session closed</p>
+<p class="pdf-block">From the finance side, this is indistinguishable from a normal authorization response.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">5. No Identity, Still Compliant</p>
+<p class="pdf-block">AFS-1.F2 — Identity Abstraction Rule</p>
+<p class="pdf-block">Financial systems do not require identity at the authorization boundary.</p>
+<p class="pdf-block">They require only a binary authorization result.</p>
+<p class="pdf-block">AFS-1 provides:</p>
+<p class="pdf-block">•
+ Yes / No authorization</p>
+<p class="pdf-block">•
+✘ No name</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 3; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/18813586-p3.webp"/><figcaption>Visual reference for page 3. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 4" class="page" id="page-4"><h2>PDF page 4</h2><p class="pdf-block">•
+✘ No account identity</p>
+<p class="pdf-block">•
+✘ No biometric data</p>
+<p class="pdf-block">This is stronger privacy than existing standards (PCI DSS, PSD2), not weaker.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">6. Fraud and Risk Mapping</p>
+<p class="pdf-block">Traditional systems:</p>
+<p class="pdf-block">•
+Detect fraud after identity is presented</p>
+<p class="pdf-block">•
+Rely on inference, history, and scoring</p>
+<p class="pdf-block">AFS-1:</p>
+<p class="pdf-block">•
+Prevents fraud before authorization</p>
+<p class="pdf-block">•
+Fraud attempts collapse ΔR inside TW-1</p>
+<p class="pdf-block">•
+No post-hoc risk model needed</p>
+<p class="pdf-block">Fraud Vector
+Traditional
+AFS-1</p>
+<p class="pdf-block">Stolen device
+Risk scoring
+Deterministic rejection</p>
+<p class="pdf-block">Replay attack
+Token invalidation
+Impossible (TW-1)</p>
+<p class="pdf-block">Social engineering
+User error
+ΔR collapse</p>
+<p class="pdf-block">Account takeover
+Detection lag
+No account exists</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">7. First-Use and Unbanked Compatibility</p>
+<p class="pdf-block">AFS-1 authorization:</p>
+<p class="pdf-block">•
+Does not depend on prior transaction history</p>
+<p class="pdf-block">•
+Does not depend on stored identity</p>
+<p class="pdf-block">•
+Does not depend on device age</p>
+<p class="pdf-block">This enables:</p>
+<p class="pdf-block">•
+First-use payments</p>
+<p class="pdf-block">•
+Guest payments</p>
+<p class="pdf-block">•
+Shared-device environments</p>
+<p class="pdf-block">•
+Reduced onboarding friction</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 4; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/18813586-p4.webp"/><figcaption>Visual reference for page 4. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 5" class="page" id="page-5"><h2>PDF page 5</h2><p class="pdf-block">Banking relationship begins after authorization, not before.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">8. Regulatory Interpretation</p>
+<p class="pdf-block">AFS-1 maps cleanly to regulation because:</p>
+<p class="pdf-block">•
+No personal data is processed or stored</p>
+<p class="pdf-block">•
+No biometric identifiers are retained</p>
+<p class="pdf-block">•
+No profiling or inference occurs</p>
+<p class="pdf-block">AFS-1 therefore:</p>
+<p class="pdf-block">•
+Reduces GDPR surface area</p>
+<p class="pdf-block">•
+Simplifies PSD2 strong customer authentication</p>
+<p class="pdf-block">•
+Eliminates biometric data liability</p>
+<p class="pdf-block">AFS-1 is privacy-by-architecture, not policy.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">9. Settlement Neutrality</p>
+<p class="pdf-block">After AFS-1 authorization:</p>
+<p class="pdf-block">•
+Merchant submits a normal settlement request</p>
+<p class="pdf-block">•
+Issuer clears funds normally</p>
+<p class="pdf-block">•
+Accounting, tax, AML, reporting remain unchanged</p>
+<p class="pdf-block">AFS-1 introduces zero change to money, only to permission.</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 6" class="page" id="page-6"><h2>PDF page 6</h2><p class="pdf-block">10. Canonical Summary</p>
+<p class="pdf-block">AFS-1 replaces identity-based authorization with thermodynamic</p>
+<p class="pdf-block">coherence while leaving financial settlement untouched.</p>
+<p class="pdf-block">This makes AFS-1:</p>
+<p class="pdf-block">•
+Deployable without monetary reform</p>
+<p class="pdf-block">•
+Compatible with existing rails</p>
+<p class="pdf-block">•
+Safer than credential-based systems</p>
+<p class="pdf-block">•
+Radically simpler</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">11. Minimal Canon Form</p>
+<p class="pdf-block">Money settles in ledgers; permission settles in fields.</p>
+<p class="pdf-block">⸻</p>
+<h3 class="pdf-heading">Keywords</h3>
+<p class="pdf-block">AFS-1 finance mapping, payment authorization without identity, thermodynamic payment,</p>
+<p class="pdf-block">Ambient OS finance, post-credential payments, settlement neutrality</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Citation</p>
+<p class="pdf-block">Eissens, R. (2026). AFS-1 ↔ Finance / Payments Mapping: Thermodynamic Settlement</p>
+<p class="pdf-block">Without Identity. Ambient Era Canon. Zenodo.</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 7" class="page" id="page-7"><h2>PDF page 7</h2><p class="pdf-block">Appendix A — PSD2 &amp; PCI DSS Comparison</p>
+<p class="pdf-block">Regulatory Alignment of AFS-1 Aura Field Security</p>
+<p class="pdf-block">Ambient Era Canon · Finance &amp; Compliance Appendix</p>
+<p class="pdf-block">Raynor Eissens</p>
+<p class="pdf-block">Zenodo Edition · 2026</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">A.1 Purpose of This Appendix</p>
+<p class="pdf-block">This appendix demonstrates how AFS-1 (Aura Field Security) aligns with, exceeds, or renders</p>
+<p class="pdf-block">obsolete the functional requirements of PSD2 Strong Customer Authentication (SCA) and PCI</p>
+<p class="pdf-block">DSS, without introducing identity storage, credentials, or biometrics.</p>
+<p class="pdf-block">The comparison is functional, not symbolic: it maps what regulators require to what AFS-1</p>
+<p class="pdf-block">enforces thermodynamically.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">A.2 PSD2 Strong Customer Authentication (SCA)</p>
+<p class="pdf-block">PSD2 Requirement (Summary)</p>
+<p class="pdf-block">PSD2 requires at least two independent factors from:</p>
+<p class="pdf-block">1.
+Something the user knows</p>
+<p class="pdf-block">2.
+Something the user has</p>
+<p class="pdf-block">3.
+Something the user is</p>
+<p class="pdf-block">Factors must be:</p>
+<p class="pdf-block">•
+Independent</p>
+<p class="pdf-block">•
+Resistant to replay</p>
+<p class="pdf-block">•
+Bound to the transaction</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">AFS-1 Mapping</p>
+<p class="pdf-block">AFS-1 does not implement factors.</p></section><section aria-label="Source PDF page 8" class="page" id="page-8"><h2>PDF page 8</h2><p class="pdf-block">It implements a single thermodynamic resolution that subsumes all three categories.</p>
+<p class="pdf-block">PSD2 Factor Category
+Traditional Meaning
+AFS-1 Equivalent</p>
+<p class="pdf-block">Something you know
+PIN / password
+Not applicable</p>
+<p class="pdf-block">Something you have
+Card / phone
+Presence-only (non-
+authorizing)</p>
+<p class="pdf-block">Something you are
+Biometrics
+Live Aura field A(t)</p>
+<p class="pdf-block">Independence
+Separate channels
+Orthogonal 
+thermodynamic 
+variables</p>
+<p class="pdf-block">Transaction binding
+Dynamic linking
+CFS-bound coherence</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Why AFS-1 Exceeds PSD2</p>
+<p class="pdf-block">•
+Independence</p>
+<p class="pdf-block">T(t), C, and ΔR are physically independent dimensions, not correlated secrets.</p>
+<p class="pdf-block">•
+Dynamic Linking</p>
+<p class="pdf-block">Coherence occurs only against the current CFS, inherently binding authorization to</p>
+<p class="pdf-block">amount, merchant, and moment.</p>
+<p class="pdf-block">•
+Replay Resistance</p>
+<p class="pdf-block">TW-1 is time-variant and non-repeatable by construction.</p>
+<h3 class="pdf-heading">Conclusion:</h3>
+<p class="pdf-block">AFS-1 satisfies the intent of SCA more strongly than factor-based systems, without using factors</p>
+<p class="pdf-block">at all.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Regulatory Interpretation</p>
+<p class="pdf-block">AFS-1 qualifies as Strong Customer Authentication by physical impossibility, not by</p>
+<p class="pdf-block">combinatorial factors.</p>
+<p class="pdf-block">No downgrade, exemption, or fallback is required.</p>
+<p class="pdf-block">⸻</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 8; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/18813586-p8.webp"/><figcaption>Visual reference for page 8. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 9" class="page" id="page-9"><h2>PDF page 9</h2><p class="pdf-block">A.3 PCI DSS (Payment Card Industry Data Security Standard)</p>
+<p class="pdf-block">PCI DSS Scope (Summary)</p>
+<p class="pdf-block">PCI DSS exists to protect:</p>
+<p class="pdf-block">•
+Cardholder data</p>
+<p class="pdf-block">•
+Authentication data</p>
+<p class="pdf-block">•
+Stored credentials</p>
+<p class="pdf-block">It mandates:</p>
+<p class="pdf-block">•
+Data minimization</p>
+<p class="pdf-block">•
+Secure storage</p>
+<p class="pdf-block">•
+Secure transmission</p>
+<p class="pdf-block">•
+Breach containment</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">AFS-1 Mapping</p>
+<p class="pdf-block">AFS-1 eliminates the entire protected data class.</p>
+<p class="pdf-block">PCI DSS Concern
+Traditional System
+AFS-1</p>
+<p class="pdf-block">Card numbers
+Stored / tokenized
+Do not exist</p>
+<p class="pdf-block">Authentication data
+PINs, CVV
+Do not exist</p>
+<p class="pdf-block">Biometrics
+Sometimes stored
+Do not exist</p>
+<p class="pdf-block">Secure storage
+Required
+Not applicable</p>
+<p class="pdf-block">Secure transmission
+Required
+Not applicable</p>
+<p class="pdf-block">Breach surface
+Large
+Zero</p>
+<p class="pdf-block">⸻</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 9; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/18813586-p9.webp"/><figcaption>Visual reference for page 9. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 10" class="page" id="page-10"><h2>PDF page 10</h2><p class="pdf-block">PCI DSS Scope Reduction</p>
+<p class="pdf-block">Because AFS-1:</p>
+<p class="pdf-block">•
+Stores no credentials</p>
+<p class="pdf-block">•
+Transmits no identity data</p>
+<p class="pdf-block">•
+Generates no authentication artifacts</p>
+<p class="pdf-block">AFS-1-enabled terminals and devices fall largely outside PCI DSS scope, except for</p>
+<p class="pdf-block">settlement interfaces that remain unchanged.</p>
+<p class="pdf-block">This is scope elimination, not scope reduction.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">A.4 Privacy &amp; GDPR Alignment</p>
+<p class="pdf-block">AFS-1 processes:</p>
+<p class="pdf-block">•
+No personal data</p>
+<p class="pdf-block">•
+No biometric identifiers</p>
+<p class="pdf-block">•
+No persistent identifiers</p>
+<p class="pdf-block">Aura fields:</p>
+<p class="pdf-block">•
+Are live-only</p>
+<p class="pdf-block">•
+Are non-recordable</p>
+<p class="pdf-block">•
+Never leave the local field interaction</p>
+<p class="pdf-block">Regulatory consequence:</p>
+<p class="pdf-block">•
+No lawful basis required for storage (nothing stored)</p>
+<p class="pdf-block">•
+No consent flow required for processing (no personal data)</p>
+<p class="pdf-block">•
+No right-to-erasure surface (nothing retained)</p>
+<p class="pdf-block">AFS-1 is GDPR-neutral by architecture.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">A.5 Fraud, Liability, and Audit</p></section><section aria-label="Source PDF page 11" class="page" id="page-11"><h2>PDF page 11</h2><p class="pdf-block">Fraud Prevention</p>
+<p class="pdf-block">Traditional:</p>
+<p class="pdf-block">•
+Detect fraud after authorization</p>
+<p class="pdf-block">•
+Rely on behavioral inference</p>
+<p class="pdf-block">AFS-1:</p>
+<p class="pdf-block">•
+Prevents fraud before authorization</p>
+<p class="pdf-block">•
+Fraud attempts fail thermodynamically (ΔR collapse)</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Audit Trail</p>
+<p class="pdf-block">AFS-1 provides:</p>
+<p class="pdf-block">•
+Binary authorization outcome</p>
+<p class="pdf-block">•
+Standard settlement records (unchanged)</p>
+<p class="pdf-block">AFS-1 does not provide:</p>
+<p class="pdf-block">•
+Identity logs</p>
+<p class="pdf-block">•
+Authentication transcripts</p>
+<p class="pdf-block">•
+Behavioral traces</p>
+<p class="pdf-block">Audit remains possible at the financial layer, not the identity layer.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">A.6 Compliance Summary Table</p>
+<p class="pdf-block">Domain
+Traditional Systems
+AFS-1</p>
+<p class="pdf-block">PSD2 SCA
+Factor-based
+Field-based</p>
+<p class="pdf-block">Replay resistance
+Cryptographic
+Thermodynamic</p>
+<p class="pdf-block">Identity storage
+Required
+Prohibited</p>
+<p class="pdf-block">PCI DSS scope
+Broad
+Minimal</p>
+<p class="pdf-block">Biometric liability
+High
+None</p>
+<p class="pdf-block">GDPR exposure
+High
+Near-zero</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 11; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/18813586-p11.webp"/><figcaption>Visual reference for page 11. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 12" class="page" id="page-12"><h2>PDF page 12</h2><p class="pdf-block">⸻</p>
+<p class="pdf-block">A.7 Canonical Compliance Statement</p>
+<p class="pdf-block">AFS-1 meets or exceeds the functional security objectives of PSD2 and PCI DSS</p>
+<p class="pdf-block">while eliminating identity data, credentials, and biometric storage entirely.</p>
+<p class="pdf-block">This is compliance through architectural impossibility, not policy enforcement.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">A.8 Minimal Regulator-Facing Summary</p>
+<p class="pdf-block">AFS-1 replaces identity verification with live thermodynamic coherence.</p>
+<p class="pdf-block">No identity data exists to protect, leak, or misuse.</p>
+<p class="pdf-block">Payment settlement remains unchanged.</p>
+<p class="pdf-block">⸻</p>
+<h3 class="pdf-heading">Keywords</h3>
+<p class="pdf-block">PSD2, PCI DSS, AFS-1 compliance, payment security without identity, strong customer</p>
+<p class="pdf-block">authentication, privacy-by-architecture, Ambient OS finance</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Citation</p>
+<p class="pdf-block">Eissens, R. (2026). Appendix A — PSD2 &amp; PCI DSS Comparison: Regulatory Alignment of</p>
+<p class="pdf-block">AFS-1 Aura Field Security. Ambient Era Canon. Zenodo.</p></section></article><nav aria-label="PDF page navigation" class="toc"><b>Pages</b><a href="#page-1">1</a><a href="#page-2">2</a><a href="#page-3">3</a><a href="#page-4">4</a><a href="#page-5">5</a><a href="#page-6">6</a><a href="#page-7">7</a><a href="#page-8">8</a><a href="#page-9">9</a><a href="#page-10">10</a><a href="#page-11">11</a><a href="#page-12">12</a></nav></div></main><footer>Original record: <a href="https://zenodo.org/records/18813586">https://zenodo.org/records/18813586</a> · Full text derived from the uploaded PDF.<span class="ambient-footer-links"> · <a href="/ambient-era/">Ambient Era</a> · <a href="/ambient-phone/">Ambient Phone</a></span></footer></div></body></html>

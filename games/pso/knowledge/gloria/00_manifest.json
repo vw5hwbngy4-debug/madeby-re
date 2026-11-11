@@ -1,0 +1,110 @@
+{
+  "pack_name": "Gloria_Union_JRPG_WORLD_Expert_v1",
+  "created_utc": "2026-09-06T16:14:47.184412+00:00",
+  "game": "Gloria Union",
+  "platform": "Android",
+  "localization_build": "GloriaUnion-English-v0.25",
+  "source_only": true,
+  "external_web_research_used": false,
+  "counts": {
+    "dialogue_records": 8661,
+    "stage_packs": 51,
+    "shared_script_library_records": 1485,
+    "rag_chunks": 422,
+    "data_bin_entries": 10692,
+    "data_bin_files": 10584,
+    "data1_bin_entries": 532,
+    "data1_bin_files": 511,
+    "native_gameplay_symbols": 4003,
+    "item_parameter_records": 263,
+    "character_initial_parameter_records": 589,
+    "card_asset_ids": 54
+  },
+  "sources": [
+    {
+      "name": "GLORIA_UNION_DATA1_TRANSLATION_SCOUT.zip",
+      "size_bytes": 2308467,
+      "sha256": "b9dc0ae47f08747c2d7429d4d3da78542c487e71885ae3b34f7abbc4ac50511e"
+    },
+    {
+      "name": "gloria_all_messages.zip",
+      "size_bytes": 717563,
+      "sha256": "214de3dd0c26d59ad7e037f7a0bde446c84f600c47ae5b755421715ac88a1ba4"
+    },
+    {
+      "name": "gloria_data1_extract.py",
+      "size_bytes": 7263,
+      "sha256": "be7defbc687156f265499f29f284147056999289c05e04b1d59d31d67babb1d6"
+    },
+    {
+      "name": "GLORIA_UNION_DATA1_TECHNICAL_AUDIT.md",
+      "size_bytes": 4398,
+      "sha256": "dbf0ed30846864837a09858c94682c01353b0b1f04e88a51d67337d55aea766d"
+    },
+    {
+      "name": "file_structure.txt",
+      "size_bytes": 506191,
+      "sha256": "a5bb9dd1cdfb65cd173d46961ab71a83e4acd3db63b42a3e14c8622e7de41289"
+    },
+    {
+      "name": "GloriaUnion-English-v0.25.zip.001",
+      "size_bytes": 209715200,
+      "sha256": "9e91288ab2f87b9002d188de2dc62ff359ec964a2a8ff73e2e9add3b6d5d99a4"
+    },
+    {
+      "name": "GloriaUnion-English-v0.25.zip.002",
+      "size_bytes": 209715200,
+      "sha256": "964e259cb2c42cc937688ad11586447d6b90020f97749937004cbf003f100959"
+    },
+    {
+      "name": "GloriaUnion-English-v0.25.zip.003",
+      "size_bytes": 209715200,
+      "sha256": "f6fac2b8d5c56f15ff9a125d48c91f3cdd28e1af9a9db97aea33479de5d7df5b"
+    },
+    {
+      "name": "GloriaUnion-English-v0.25.zip.004",
+      "size_bytes": 35859011,
+      "sha256": "6bf26685771b334c0ff9b6842b78158fc7e04627a159289a65b98ed0be1e5d7c"
+    },
+    {
+      "name": "GloriaUnion-English-v0.25.apk",
+      "size_bytes": 675207299,
+      "sha256": "57f01f5de4e603ed33c69d926f853ec65d0ff06f7d165eaecc6c56d484e65d19"
+    },
+    {
+      "name": "gloria_data.bin",
+      "size_bytes": 591461576,
+      "sha256": "ed80df0400ce852dd81907ff87eb43170744712af81551adf2a7ed56bcf874bd"
+    },
+    {
+      "name": "gloria_data1.bin",
+      "size_bytes": 33100160,
+      "sha256": "2d8048786dd02599054580b7aa5d8ffefe80354e0a6274e8ffd89f852e411172"
+    },
+    {
+      "name": "libapp.so",
+      "size_bytes": 9634160,
+      "sha256": "c295ec5f61a7d013682d202578e6542672e67a495e975e1e9d67db180e3a0137"
+    }
+  ],
+  "files": [
+    "00_manifest.json",
+    "01_dialogue_multilingual.json",
+    "02_stage_index.json",
+    "03_rag_chunks.json",
+    "04_battle_messages.json",
+    "05_resource_manifest_data1.json",
+    "06_stage_scripts.json",
+    "07_resource_manifest_data.json",
+    "08_assets_index.json",
+    "09_native_gameplay_symbols.json",
+    "10_parameter_tables.json",
+    "11_technical_formats.json",
+    "12_project_tree.json",
+    "13_expert_profile.json"
+  ],
+  "integrity_notes": [
+    "All 8,661 original and v0.25 ScriptMsg records aligned on stage_pack/member/index; voice, Japanese and Traditional Chinese fields matched exactly.",
+    "Unknown binary fields are explicitly labeled unknown; no values are guessed into named gameplay fields."
+  ]
+}

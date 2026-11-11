@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>GTAGPT v4A Rooftop Collision Test</title>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" name="viewport"/>
+<style>
+html,body{margin:0;width:100%;height:100%;background:#090909;overflow:hidden;touch-action:none;overscroll-behavior:none;font-family:monospace;color:white}
+#game{position:fixed;inset:0;width:100vw;height:100vh;image-rendering:pixelated;image-rendering:crisp-edges;background:#222}
+.panel{position:fixed;background:rgba(0,0,0,.66);border:2px solid #f4b642;color:#fff3a0;padding:6px 8px;font-size:12px;line-height:1.25;pointer-events:none}
+#stats{left:calc(10px + env(safe-area-inset-left));top:calc(10px + env(safe-area-inset-top));min-width:140px}
+#mini{right:calc(10px + env(safe-area-inset-right));top:calc(10px + env(safe-area-inset-top));width:72px;height:72px}
+#msg{left:50%;transform:translateX(-50%);bottom:calc(120px + env(safe-area-inset-bottom));width:min(84vw,450px);text-align:center}
+#stickBase{position:fixed;left:24px;bottom:calc(28px + env(safe-area-inset-bottom));width:112px;height:112px;border-radius:50%;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.25);pointer-events:auto}
+#stickKnob{position:absolute;left:35px;top:35px;width:42px;height:42px;border-radius:50%;background:rgba(255,220,90,.75);border:2px solid rgba(0,0,0,.5)}
+.btn{position:fixed;width:76px;height:76px;border-radius:50%;background:rgba(244,182,66,.22);border:2px solid rgba(244,182,66,.8);color:#fff3a0;display:grid;place-items:center;font-weight:bold;font-size:14px;pointer-events:auto;user-select:none}
+#btnE{right:24px;bottom:calc(28px + env(safe-area-inset-bottom))}
+#btnBoost{right:112px;bottom:calc(100px + env(safe-area-inset-bottom));width:66px;height:66px;font-size:11px}
+#title{position:fixed;left:50%;top:calc(8px + env(safe-area-inset-top));transform:translateX(-50%);background:rgba(0,0,0,.55);border:1px solid #555;padding:4px 8px;font-size:11px;color:#ddd;pointer-events:none}
+</style>
+<link href="https://madeby.re/games/gptgta/version/v4/v4.html" rel="canonical"/><meta content="https://madeby.re/games/gptgta/version/v4/v4.html" property="og:url"/><meta content="GPTGTA" name="madeby:game"/></head>
+<body>
+<canvas id="game"></canvas>
+<div class="panel" id="stats">$001250<br/>CAR: none<br/>ZONE: city</div>
+<div class="panel" id="mini"></div>
+<div class="panel" id="msg">v4A: roofs, trees and water block driving.</div>
+<div id="stickBase"><div id="stickKnob"></div></div>
+<div class="btn" id="btnBoost">BOOST</div>
+<div class="btn" id="btnE">ENTER</div>
+<div id="title">GTAGPT v4A · rooftop/collision test</div>
+<script>
+const GPTGTA_ASSET_BASE='/gptgta/assets/gptgta/';
+const ASSETS = {"player": "gta_topdown_characters/player/player_idle.png", "sedan": "vehicles/sedan/sedan_clean.png", "taxi": "vehicles/taxi/taxi_clean.png", "police": "vehicles/police_car/police_car_clean.png", "van": "vehicles/van/van_clean.png", "ambulance": "vehicles/ambulance/ambulance_clean.png", "motorcycle": "vehicles/motorcycle/motorcycle_clean.png"};
+const canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
+ctx.imageSmoothingEnabled=false;
+let W=0,H=0,DPR=1;
+function resize(){DPR=Math.min(devicePixelRatio||1,2);W=innerWidth|0;H=innerHeight|0;canvas.width=(W*DPR)|0;canvas.height=(H*DPR)|0;canvas.style.width=W+'px';canvas.style.height=H+'px';ctx.setTransform(DPR,0,0,DPR,0,0);ctx.imageSmoothingEnabled=false}
+addEventListener('resize',resize);resize();
+
+function imgLoad(src){return new Promise(res=>{if(!src)return res(null);let i=new Image();i.onload=()=>res(i);i.onerror=()=>res(null);i.src=(src && !/^(?:https?:|data:|\/)/.test(src)) ? GPTGTA_ASSET_BASE+src : src;})}
+const imgs={};
+const TILE=32, MW=46, MH=34;
+
+const LEGEND={
+ G:"grass", R:"road", S:"sidewalk", W:"water", B:"bridge",
+ T:"roof_tar", O:"roof_office", I:"roof_industrial", L:"roof_luxury",
+ A:"alley", P:"park", X:"tree", C:"clutter"
+};
+
+const rows = [
+"GGGGGGGGGGGGGGGGWWWWWWWWWWWWWWGGGGGGGGGGGG",
+"GGGXXXXXGGGGGGGGWWWWWWWWWWWWWWGGGPPPPPPGGG",
+"GGGXPPSXGGGGSSSSBBBBBBBBBBBBBBSSSPPXXPPPGG",
+"GGGXPPSXGGGGSRRRRRRRRRRRRRRRRRSSSPPPPPPGGG",
+"GGGGSSSSSSSSSRRRRRRRRRRRRRRRRRSSSSSSSSGGGG",
+"GGGGSAAAASSSSRRRTTTTTTSSOOOORRSSAAAAASGGGG",
+"GGGGSAAAASSSSRRRTTTTTTSSOOOORRSSAAAAASGGGG",
+"GGGGSAAAASSSSRRRTTTTTTSSOOOORRSSAAAAASGGGG",
+"GGGGSSSSSSSSSRRRSSSSSSSSSSSSRRSSSSSSSSGGGG",
+"GGGGGGGGGGGSSRRRSSLLLLLLSSSSRRRSSGGGGGGGGG",
+"GGGIIIIIIIGSSRRRSSLLLLLLSSSSRRRSSGTTTTTGGG",
+"GGGIIIIIIIGSSRRRSSLLLLLLSSSSRRRSSGTTTTTGGG",
+"GGGIIIIIIIGSSRRRSSSSSSSSSSSSRRRSSGTTTTTGGG",
+"GGGGSSSSSSSSSRRRRRRRRRRRRRRRRRRSSSSSSSSGGG",
+"WWWWWWWWWWSSSRRRRRRRRRRRRRRRRRRSSWWWWWWWWW",
+"WWWWWWWWWWSSSBBBBBBBBBBBBBBBBBBBSSWWWWWWWWW",
+"WWWWWWWWWWSSSRRRRRRRRRRRRRRRRRRSSWWWWWWWWW",
+"GGGGSSSSSSSSSRRRSSSSSSSSSSSSRRRSSSSSSSSGGG",
+"GGGGOOOOOGSSRRRSSSAAAAAASSSSRRRGGXXXXSSGGG",
+"GGGGOOOOOGSSRRRSSSAAAAAASSSSRRRGGXPPXSSGGG",
+"GGGGOOOOOGSSRRRSSSAAAAAASSSSRRRGGXXXXSSGGG",
+"GGGGSSSSSSSSSRRRSSSSSSSSSSSSRRRSSSSSSSSGGG",
+"GGGGGGGGGGGSSRRRRRRRRRRRRRRRRRSSGGGGGGGGGG",
+"GGGPPPPPPGGGSSRRRRRRRRRRRRRRRSSGGGLLLLLGGG",
+"GGGPPXXPPGGGSSRRRSSSSSSSSSSSRRSSGGGLLLLLGGG",
+"GGGPPPPPPGGGSSRRRSSAAAAAASSSRRSSGGGLLLLLGGG",
+"GGGGSSSSSSSSSRRRSSAAAAAASSSRRRSSSSSSSSSGGG",
+"GGGGSRRRRRRRRRRRSSSSSSSSSSSRRRRRRRRRRSSGGG",
+"GGGGSRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRSSGGG",
+"GGGGSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSGGG",
+"GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+"GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+"GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+"GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
+];
+
+function tileAt(tx,ty){ if(tx<0||ty<0||ty>=rows.length||tx>=rows[ty].length)return "G"; return rows[ty][tx]; }
+function isSolidCode(c){return ["W","T","O","I","L","X","C"].includes(c)}
+function isWalkCode(c){return ["S","B","A","P"].includes(c)}
+function isDriveCode(c){return ["R","B","A"].includes(c)}
+function rnd(n){let x=Math.sin(n*999.123)*10000;return x-Math.floor(x)}
+function overlap(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
+
+const handling={
+ sedan:{name:"SEDAN",accel:0.442,reverse:0.286,max:4.615,reverseMax:2.405,friction:.90,hp:100,color:"#3d8cff",w:25,h:38},
+ taxi:{name:"TAXI",accel:0.507,reverse:0.312,max:5.135,reverseMax:2.535,friction:.895,hp:95,color:"#ffd23d",w:25,h:38},
+ police:{name:"POLICE",accel:0.546,reverse:0.325,max:5.525,reverseMax:2.73,friction:.90,hp:105,color:"#465dff",w:25,h:38},
+ van:{name:"VAN",accel:0.351,reverse:0.234,max:3.965,reverseMax:1.885,friction:.91,hp:130,color:"#b8b8d0",w:29,h:42},
+ ambulance:{name:"AMBULANCE",accel:0.416,reverse:0.26,max:4.745,reverseMax:2.145,friction:.905,hp:125,color:"#f0f0f0",w:29,h:42},
+ motorcycle:{name:"BIKE",accel:0.624,reverse:0.234,max:6.24,reverseMax:1.755,friction:.875,hp:55,color:"#d03a3a",w:16,h:30}
+};
+
+let world={props:[],peds:[],cars:[]};
+const player={x:14*TILE,y:27*TILE,w:18,h:22,speed:1.6675,inCar:false,wanted:0,money:1250,angle:0};
+let activeCar=null, cam={x:0,y:0}, msg="v4A: drive into roofs/water/trees to test collision.";
+let input={x:0,y:0,boost:false,enter:false};
+
+function quantizeAngle(dx,dy,current){if(Math.hypot(dx,dy)<.08)return current;let a=Math.atan2(dx,-dy),step=Math.PI/4;return Math.round(a/step)*step}
+function forwardVector(angle){return {x:Math.sin(angle),y:-Math.cos(angle)}}
+function dot(ax,ay,bx,by){return ax*bx+ay*by}
+function createCar(type,x,y,angle=0){const h=handling[type]||handling.sedan;return {type,x,y,w:h.w,h:h.h,vx:0,vy:0,angle,hp:h.hp,maxHp:h.hp,damageFlash:0}}
+
+function rectHitsTile(nx,ny,w,h){ 
+ const pts=[[nx,ny],[nx+w,ny],[nx,ny+h],[nx+w,ny+h],[nx+w/2,ny+h/2]];
+ for(const [px,py] of pts){let tx=Math.floor(px/TILE),ty=Math.floor(py/TILE);if(isSolidCode(tileAt(tx,ty)))return tileAt(tx,ty);}
+ return null;
+}
+function solidProps(nx,ny,w,h){let b={x:nx,y:ny,w,h};for(const p of world.props)if(overlap(b,p))return p;return null}
+function hitCar(nx,ny,w,h,self){let b={x:nx,y:ny,w,h};for(const c of world.cars)if(c!==self&&c.hp>0&&overlap(b,c))return c;return null}
+function solidAny(nx,ny,w,h){return rectHitsTile(nx,ny,w,h)||solidProps(nx,ny,w,h)}
+function applyDamage(c,amount){if(!c)return;c.hp=Math.max(0,c.hp-amount);c.damageFlash=8;if(c.hp<=0){c.vx=0;c.vy=0;msg=(handling[c.type]?.name||"CAR")+" destroyed."}}
+
+function sidewalkPoint(seed){let tries=0,tx=4,ty=4;while(tries<300){tx=2+(rnd(seed+tries*5)*(MW-4)|0);ty=2+(rnd(seed+tries*7)*(MH-4)|0);let c=tileAt(tx,ty);if(isWalkCode(c))break;tries++}return {x:tx*TILE+8,y:ty*TILE+8}}
+function roadPoint(seed){let tries=0,tx=4,ty=4;while(tries<300){tx=2+(rnd(seed+tries*5)*(MW-4)|0);ty=2+(rnd(seed+tries*7)*(MH-4)|0);let c=tileAt(tx,ty);if(isDriveCode(c))break;tries++}return {x:tx*TILE+2,y:ty*TILE+2}}
+
+function init(){
+ // static props from tile C and decorative blockers
+ for(let y=0;y<MH;y++)for(let x=0;x<MW;x++){if(tileAt(x,y)==="C")world.props.push({x:x*TILE+8,y:y*TILE+8,w:16,h:16,type:"clutter"})}
+ for(let i=0;i<42;i++){let p=sidewalkPoint(i+20);world.peds.push({x:p.x,y:p.y,w:14,h:18,dead:false,angle:0,t:i*10,goal:sidewalkPoint(i+1000)})}
+ const types=["sedan","taxi","van","police","ambulance","motorcycle","sedan","taxi","van","sedan","police","motorcycle"];
+ for(let i=0;i<types.length;i++){let p=roadPoint(i+50);let tx=Math.floor(p.x/TILE),ty=Math.floor(p.y/TILE);let angle=(tileAt(tx+1,ty)==="R"||tileAt(tx-1,ty)==="R")?Math.PI/2:0;world.cars.push(createCar(types[i],p.x,p.y,angle))}
+ activeCar=world.cars[0];activeCar.x=15*TILE;activeCar.y=27*TILE;activeCar.angle=Math.PI/2;
+}
+
+function doEnter(){
+ if(player.inCar){player.inCar=false;player.x=activeCar.x+activeCar.w+8;player.y=activeCar.y+6;msg="On foot.";return}
+ let nearest=null,best=99999;for(const c of world.cars){if(c.hp<=0)continue;let d=Math.hypot((player.x+9)-(c.x+c.w/2),(player.y+11)-(c.y+c.h/2));if(d<best){best=d;nearest=c}}
+ if(nearest&&best<54){activeCar=nearest;player.inCar=true;msg="Stole "+handling[activeCar.type].name+". Test roof/water collision."} else msg="Move closer to a car.";
+}
+
+function updateCar(c,controlled){
+ const h=handling[c.type]||handling.sedan;
+ if(controlled){
+  const f=forwardVector(c.angle), throttle=dot(input.x,input.y,f.x,f.y), mag=Math.hypot(input.x,input.y);
+  if(mag>.12&&throttle>=-.15)c.angle=quantizeAngle(input.x,input.y,c.angle);
+  if(throttle>=0){const boost=input.boost?1.45:1;c.vx=c.vx*h.friction+input.x*h.accel*boost;c.vy=c.vy*h.friction+input.y*h.accel*boost;const max=h.max*boost;c.vx=Math.max(-max,Math.min(max,c.vx));c.vy=Math.max(-max,Math.min(max,c.vy));}
+  else {c.vx=c.vx*h.friction-f.x*h.reverse;c.vy=c.vy*h.friction-f.y*h.reverse;const s=Math.hypot(c.vx,c.vy);if(s>h.reverseMax){c.vx=c.vx/s*h.reverseMax;c.vy=c.vy/s*h.reverseMax}}
+ } else {c.vx*=.93;c.vy*=.93}
+ let speed=Math.hypot(c.vx,c.vy), nx=c.x+c.vx, ny=c.y+c.vy;
+ let bx=solidAny(nx,c.y,c.w,c.h), cx=hitCar(nx,c.y,c.w,c.h,c);
+ if(!bx&&!cx)c.x=nx;else{if(speed>1.1)applyDamage(c,Math.round(speed*5));if(cx)applyDamage(cx,Math.round(speed*3));c.vx*=-.38;msg="Blocked: roof/water/tree collision."}
+ let by=solidAny(c.x,ny,c.w,c.h), cy=hitCar(c.x,ny,c.w,c.h,c);
+ if(!by&&!cy)c.y=ny;else{if(speed>1.1)applyDamage(c,Math.round(speed*5));if(cy)applyDamage(cy,Math.round(speed*3));c.vy*=-.38;msg="Blocked: roof/water/tree collision."}
+ if(c.damageFlash>0)c.damageFlash--;
+}
+
+function updatePeds(){
+ for(const p of world.peds){if(p.dead)continue;p.t++;if(!p.goal||Math.hypot(p.goal.x-p.x,p.goal.y-p.y)<8||p.t%260===0)p.goal=sidewalkPoint(p.t+p.x+p.y);
+ let dx=p.goal.x-p.x,dy=p.goal.y-p.y,l=Math.hypot(dx,dy)||1;dx=dx/l*.42;dy=dy/l*.42;
+ let tx=Math.floor((p.x+dx+7)/TILE),ty=Math.floor((p.y+dy+9)/TILE);
+ if(isWalkCode(tileAt(tx,ty))){p.x+=dx;p.y+=dy;p.angle=quantizeAngle(dx,dy,p.angle)}else p.goal=sidewalkPoint(p.t+(p.x|0)*3+(p.y|0)*5);
+ }
+}
+
+function update(){
+ if(input.enter){input.enter=false;doEnter()}
+ for(const c of world.cars)updateCar(c,player.inCar&&c===activeCar);
+ if(player.inCar&&activeCar){player.x=activeCar.x+5;player.y=activeCar.y+8;player.angle=activeCar.angle;for(const p of world.peds)if(!p.dead&&overlap({x:activeCar.x,y:activeCar.y,w:activeCar.w,h:activeCar.h},p)){p.dead=true;player.wanted=Math.min(6,player.wanted+1);msg="WANTED! Pedestrian hit.";if(Math.hypot(activeCar.vx,activeCar.vy)>1.3)applyDamage(activeCar,2)}}
+ else {let dx=input.x,dy=input.y,l=Math.hypot(dx,dy)||1;if(l>1){dx/=l;dy/=l}player.angle=quantizeAngle(dx,dy,player.angle);dx*=player.speed;dy*=player.speed;if(!solidAny(player.x+dx,player.y,player.w,player.h))player.x+=dx;if(!solidAny(player.x,player.y+dy,player.w,player.h))player.y+=dy}
+ updatePeds();
+ let target=player.inCar?activeCar:player;cam.x+=((target.x+target.w/2-W/2)-cam.x)*.12;cam.y+=((target.y+target.h/2-H/2)-cam.y)*.12;
+ let code=tileAt(Math.floor(target.x/TILE),Math.floor(target.y/TILE)), zone=LEGEND[code]||"city";
+ let carLine=player.inCar?handling[activeCar.type].name+" HP "+activeCar.hp+"/"+activeCar.maxHp:"none";
+ document.getElementById('stats').innerHTML='$'+String(player.money).padStart(6,'0')+'<br>CAR: '+carLine+'<br>ZONE: '+zone;
+ document.getElementById('msg').textContent=msg;
+}
+
+function drawRoof(sx,sy,c){
+ let base=c==="T"?"#5b5b58":c==="O"?"#4b5662":c==="I"?"#5a5048":"#7e6957";
+ ctx.fillStyle=base;ctx.fillRect(sx,sy,TILE,TILE);
+ ctx.fillStyle="rgba(0,0,0,.18)";ctx.fillRect(sx,sy+24,TILE,8);ctx.fillRect(sx+24,sy,8,TILE);
+ ctx.strokeStyle=c==="L"?"#d7bb77":"#2a2a2a";ctx.strokeRect(sx+2,sy+2,TILE-4,TILE-4);
+ if((sx+sy)%96===0){ctx.fillStyle="#9aa4aa";ctx.fillRect(sx+9,sy+9,14,10)}
+}
+function drawTile(tx,ty,sx,sy){
+ const c=tileAt(tx,ty);
+ if(c==="R"){ctx.fillStyle="#565656";ctx.fillRect(sx,sy,TILE,TILE);ctx.fillStyle="#e8d46c";if(tileAt(tx-1,ty)==="R"||tileAt(tx+1,ty)==="R")ctx.fillRect(sx,sy+15,TILE,2);if(tileAt(tx,ty-1)==="R"||tileAt(tx,ty+1)==="R")ctx.fillRect(sx+15,sy,2,TILE);}
+ else if(c==="S"){ctx.fillStyle="#8a8a82";ctx.fillRect(sx,sy,TILE,TILE);ctx.strokeStyle="#74746f";ctx.strokeRect(sx+1,sy+1,TILE-2,TILE-2)}
+ else if(c==="A"){ctx.fillStyle="#383838";ctx.fillRect(sx,sy,TILE,TILE);ctx.fillStyle="#2b2b2b";ctx.fillRect(sx+4,sy+4,24,24)}
+ else if(c==="B"){ctx.fillStyle="#7a6b55";ctx.fillRect(sx,sy,TILE,TILE);ctx.fillStyle="#473c2e";ctx.fillRect(sx,sy+4,TILE,3);ctx.fillRect(sx,sy+25,TILE,3)}
+ else if(c==="W"){ctx.fillStyle="#178ca0";ctx.fillRect(sx,sy,TILE,TILE);ctx.fillStyle="rgba(180,245,255,.45)";for(let i=0;i<3;i++)ctx.fillRect(sx+4+i*10,sy+8+(tx+ty+i)%12,7,2)}
+ else if(["T","O","I","L"].includes(c))drawRoof(sx,sy,c);
+ else if(c==="X"){ctx.fillStyle="#3b7a43";ctx.fillRect(sx,sy,TILE,TILE);ctx.fillStyle="#6ac35d";ctx.beginPath();ctx.arc(sx+16,sy+14,13,0,Math.PI*2);ctx.fill();ctx.fillStyle="#7a4f2d";ctx.fillRect(sx+13,sy+18,6,10)}
+ else if(c==="P"){ctx.fillStyle="#4e944a";ctx.fillRect(sx,sy,TILE,TILE);ctx.fillStyle="#72bd64";if((tx+ty)%2)ctx.fillRect(sx+4,sy+4,8,8)}
+ else {ctx.fillStyle="#3b7a43";ctx.fillRect(sx,sy,TILE,TILE);ctx.fillStyle="#2c5d34";if((tx+ty)%2===0)ctx.fillRect(sx+2,sy+2,4,4)}
+}
+
+function sprite(img,x,y,w,h,color,label,angle=0,flash=0){const cx=Math.round(x+w/2),cy=Math.round(y+h/2);ctx.save();ctx.translate(cx,cy);ctx.rotate(angle);ctx.fillStyle='rgba(0,0,0,.35)';ctx.fillRect(Math.round(-w/2+2),Math.round(h/2-5),w,5);if(img)ctx.drawImage(img,Math.round(-w/2),Math.round(-h/2),w,h);else{ctx.fillStyle=color;ctx.fillRect(Math.round(-w/2),Math.round(-h/2),w,h);if(label){ctx.fillStyle='#111';ctx.fillText(label,Math.round(-w/2+4),Math.round(-h/2+13))}}ctx.fillStyle='rgba(255,240,120,.95)';ctx.fillRect(-3,Math.round(-h/2),6,4);if(flash>0){ctx.fillStyle='rgba(255,60,60,.45)';ctx.fillRect(Math.round(-w/2),Math.round(-h/2),w,h)}ctx.restore()}
+function drawPed(p){if(p.dead){ctx.fillStyle='#991111';ctx.fillRect(Math.round(p.x),Math.round(p.y+10),16,6);return}sprite(null,p.x,p.y,14,18,'#74d878','',p.angle);ctx.save();ctx.translate(Math.round(p.x+7),Math.round(p.y+9));ctx.rotate(p.angle);ctx.fillStyle='#e0b48c';ctx.fillRect(-4,-9,8,8);ctx.restore()}
+function drawCar(c){const img=imgs[c.type]||imgs.sedan,h=handling[c.type]||handling.sedan;if(c.hp<=0)sprite(null,c.x,c.y,c.w,c.h,'#303030','',c.angle,0);else{sprite(img,c.x,c.y,c.w,c.h,h.color,c.type==="police"?"P":(c.type==="taxi"?"T":""),c.angle,c.damageFlash);if(c.hp<c.maxHp*.45){ctx.fillStyle='rgba(90,90,90,.55)';ctx.beginPath();ctx.arc(c.x+c.w/2,c.y+c.h/2,6,0,Math.PI*2);ctx.fill()}}}
+
+function draw(){
+ ctx.clearRect(0,0,W,H);ctx.save();ctx.translate(-Math.floor(cam.x),-Math.floor(cam.y));
+ let sx=Math.floor(cam.x/TILE)-1,sy=Math.floor(cam.y/TILE)-1,ex=sx+Math.ceil(W/TILE)+3,ey=sy+Math.ceil(H/TILE)+3;
+ for(let y=sy;y<ey;y++)for(let x=sx;x<ex;x++)if(x>=0&&y>=0&&x<MW&&y<MH)drawTile(x,y,x*TILE,y*TILE);
+ for(const p of world.props){ctx.fillStyle='#7b6a50';ctx.fillRect(Math.round(p.x),Math.round(p.y),p.w,p.h);ctx.fillStyle='#222';ctx.fillRect(Math.round(p.x+2),Math.round(p.y+2),p.w-4,2)}
+ for(const c of world.cars)drawCar(c);for(const p of world.peds)drawPed(p);if(!player.inCar)sprite(imgs.player,player.x,player.y,player.w,player.h,'#4c8cff','',player.angle);
+ ctx.restore();
+ for(let i=0;i<6;i++){ctx.fillStyle=i<player.wanted?'#ffe05a':'#444';ctx.beginPath();let cx=182+i*18,cy=24;for(let k=0;k<5;k++){let a=-Math.PI/2+k*Math.PI*2/5,x=cx+Math.cos(a)*7,y=cy+Math.sin(a)*7;if(k===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)}ctx.closePath();ctx.fill()}
+ let miniX=W-86,miniY=18;ctx.fillStyle='#555';ctx.fillRect(miniX,miniY,58,58);ctx.fillStyle='#ff4444';let target=player.inCar?activeCar:player;ctx.fillRect(miniX+(target.x/(MW*TILE))*58-2,miniY+(target.y/(MH*TILE))*58-2,4,4);
+}
+
+function loop(){update();draw();requestAnimationFrame(loop)}
+
+const base=document.getElementById('stickBase'),knob=document.getElementById('stickKnob');let activeStick=null;
+function setStick(clientX,clientY){const r=base.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;let dx=clientX-cx,dy=clientY-cy,dist=Math.hypot(dx,dy),max=42;if(dist>max){dx=dx/dist*max;dy=dy/dist*max}input.x=dx/max;input.y=dy/max;knob.style.left=(35+dx)+'px';knob.style.top=(35+dy)+'px'}
+function resetStick(){input.x=0;input.y=0;knob.style.left='35px';knob.style.top='35px'}
+base.addEventListener('touchstart',e=>{activeStick=e.changedTouches[0].identifier;setStick(e.changedTouches[0].clientX,e.changedTouches[0].clientY);e.preventDefault()},{passive:false});
+base.addEventListener('touchmove',e=>{for(const t of e.changedTouches)if(t.identifier===activeStick)setStick(t.clientX,t.clientY);e.preventDefault()},{passive:false});
+base.addEventListener('touchend',e=>{for(const t of e.changedTouches)if(t.identifier===activeStick){activeStick=null;resetStick()}e.preventDefault()},{passive:false});
+base.addEventListener('touchcancel',()=>{activeStick=null;resetStick()});
+document.getElementById('btnE').addEventListener('touchstart',e=>{input.enter=true;e.preventDefault()},{passive:false});
+document.getElementById('btnBoost').addEventListener('touchstart',e=>{input.boost=true;e.preventDefault()},{passive:false});
+document.getElementById('btnBoost').addEventListener('touchend',e=>{input.boost=false;e.preventDefault()},{passive:false});
+document.getElementById('btnBoost').addEventListener('touchcancel',()=>input.boost=false);
+
+async function boot(){for(const [k,v] of Object.entries(ASSETS))imgs[k]=await imgLoad(v);init();loop()}
+boot();
+</script>
+</body>
+</html>

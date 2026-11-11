@@ -1,0 +1,262 @@
+/* JRPG.WORLD Emerald v0.1.9 — Specimen Passport + compact live mode */
+#pokefield-live-panel .pf-head-actions {
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:6px;
+  min-width:0;
+}
+#pokefield-live-panel .pf-compact-toggle {
+  appearance:none;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:999px;
+  background:rgba(255,255,255,.055);
+  color:#cfd7e3;
+  min-height:28px;
+  padding:5px 9px;
+  font:900 8px/1 system-ui,-apple-system,sans-serif;
+  letter-spacing:.09em;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+#pokefield-live-panel .pf-compact-toggle[aria-pressed="true"] {
+  border-color:rgba(114,240,169,.38);
+  background:rgba(114,240,169,.10);
+  color:#8dffba;
+}
+#pokefield-live-panel .pf-held-item {
+  display:inline-flex;
+  align-items:center;
+  max-width:100%;
+  margin-top:5px;
+  padding:3px 7px;
+  border:1px solid rgba(255,209,102,.30);
+  border-radius:999px;
+  background:rgba(255,209,102,.09);
+  color:#ffe19a;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.035em;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#pokefield-live-panel .pf-compact-facts { display:none; }
+
+@media (max-width: 959px) {
+  #pokefield-live-panel .pf-head { gap:6px; }
+  #pokefield-live-panel .pf-head-actions { gap:4px; }
+  #pokefield-live-panel .pf-compact-toggle { min-height:26px; padding:4px 7px; font-size:7px; }
+  #pokefield-live-panel .pf-held-item { margin-top:4px; padding:3px 6px; font-size:8px; }
+
+  /* Compact means the game becomes dominant again: one intelligence strip, no tall dashboard. */
+  #pokefield-live-panel.pf-compact {
+    padding:8px 9px;
+    margin-bottom:8px;
+  }
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-status,
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-kicker,
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) #pf-owned-drawer,
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-tech,
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-explainer {
+    display:none !important;
+  }
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-card {
+    margin:2px 0 0;
+    padding:7px 8px;
+    border-radius:11px;
+  }
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-title { gap:7px; }
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-sprite { width:38px; height:38px; }
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-name { font-size:14px; }
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-sub { margin-top:0; font-size:8.5px; }
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-signal { padding:4px 6px; font-size:8px; }
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-held-item,
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-breed-note,
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-grid,
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-hp,
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-ev-quick,
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-detail,
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .tc-live-actions {
+    display:none !important;
+  }
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-compact-facts {
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:4px 8px;
+    margin-top:6px;
+    padding-top:5px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#aeb8c6;
+    font-size:7.5px;
+    font-weight:850;
+    letter-spacing:.025em;
+  }
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-compact-perfect { color:#72f0a9; }
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-compact-item { color:#ffe19a; }
+  #pokefield-live-panel.tc-showing-card #pf-compact-toggle { display:none; }
+}
+
+
+/* v0.1.8.1 — tiny public development trail */
+#pokefield-live-panel .pf-updates {
+  margin:0 0 7px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:9px;
+  background:rgba(255,255,255,.025);
+  overflow:hidden;
+}
+#pokefield-live-panel .pf-updates > summary {
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  min-height:28px;
+  padding:6px 8px;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  color:#9aa7b7;
+  font-size:8px;
+  letter-spacing:.055em;
+  user-select:none;
+}
+#pokefield-live-panel .pf-updates > summary::-webkit-details-marker { display:none; }
+#pokefield-live-panel .pf-updates > summary strong {
+  color:#aeb8c7;
+  font-size:8px;
+  font-weight:850;
+  white-space:nowrap;
+}
+#pokefield-live-panel .pf-updates > summary small {
+  margin-left:auto;
+  color:#6f7a89;
+  font-size:7px;
+  font-weight:850;
+  letter-spacing:.09em;
+}
+#pokefield-live-panel .pf-updates > summary small::after { content:' ▾'; }
+#pokefield-live-panel .pf-updates[open] > summary small::after { content:' ▴'; }
+#pokefield-live-panel .pf-update-dot {
+  width:6px;
+  height:6px;
+  flex:0 0 auto;
+  border-radius:50%;
+  background:#72f0a9;
+  box-shadow:0 0 0 2px rgba(114,240,169,.10);
+}
+#pokefield-live-panel .pf-update-list {
+  display:grid;
+  gap:0;
+  padding:0 8px 5px;
+  border-top:1px solid rgba(255,255,255,.055);
+}
+#pokefield-live-panel .pf-update-list > div {
+  display:grid;
+  grid-template-columns:58px 1fr;
+  gap:7px;
+  padding:5px 1px;
+  border-bottom:1px solid rgba(255,255,255,.045);
+  color:#8994a4;
+  font-size:8px;
+  line-height:1.25;
+}
+#pokefield-live-panel .pf-update-list > div:last-child { border-bottom:0; }
+#pokefield-live-panel .pf-update-list b { color:#b5bfcc; font-weight:900; }
+
+@media (max-width: 959px) {
+  #pokefield-live-panel .pf-updates { margin-bottom:6px; }
+  #pokefield-live-panel .pf-updates > summary { min-height:25px; padding:5px 7px; font-size:7px; }
+  #pokefield-live-panel .pf-updates > summary strong { font-size:7px; }
+  #pokefield-live-panel .pf-updates > summary small { font-size:6.5px; }
+  #pokefield-live-panel .pf-update-list { padding:0 7px 4px; }
+  #pokefield-live-panel .pf-update-list > div { grid-template-columns:53px 1fr; font-size:7px; padding:4px 1px; }
+
+  /* In compact mode the closed update row remains visible, but never turns into extra dead height. */
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-updates:not([open]) { margin-bottom:5px; }
+}
+
+
+/* v0.1.9 — Specimen Passport: PID/shiny, friendship, Pokérus, provenance, condition and ribbons */
+#pokefield-live-panel .pf-passport-badges {
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px;
+  margin-top:5px;
+}
+#pokefield-live-panel .pf-passport-badges > span,
+#pokefield-live-panel .pf-ribbons > span {
+  display:inline-flex;
+  align-items:center;
+  border:1px solid rgba(183,169,255,.22);
+  border-radius:999px;
+  background:rgba(183,169,255,.08);
+  color:#d8ceff;
+  padding:3px 6px;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.025em;
+}
+#pokefield-live-panel .pf-passport {
+  display:grid;
+  gap:6px;
+  margin-top:8px;
+}
+#pokefield-live-panel .pf-passport section {
+  padding:8px;
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:10px;
+  background:rgba(255,255,255,.025);
+}
+#pokefield-live-panel .pf-passport h4 {
+  margin:0 0 5px;
+  color:#8f9caf;
+  font-size:7px;
+  font-weight:950;
+  letter-spacing:.12em;
+}
+#pokefield-live-panel .pf-passport p {
+  margin:0;
+  color:#b8c2cf;
+  font-size:9px;
+  line-height:1.45;
+}
+#pokefield-live-panel .pf-condition-grid {
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:3px;
+}
+#pokefield-live-panel .pf-condition-grid span {
+  min-width:0;
+  padding:5px 2px;
+  border-radius:7px;
+  background:rgba(255,255,255,.035);
+  text-align:center;
+}
+#pokefield-live-panel .pf-condition-grid b {
+  display:block;
+  color:#eef3f9;
+  font-size:11px;
+}
+#pokefield-live-panel .pf-condition-grid small {
+  display:block;
+  margin-top:2px;
+  color:#778496;
+  font-size:6.5px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#pokefield-live-panel .pf-ribbons {
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px;
+}
+@media (max-width:959px) {
+  #pokefield-live-panel .pf-passport { gap:5px; }
+  #pokefield-live-panel .pf-passport section { padding:7px; }
+  #pokefield-live-panel .pf-passport p { font-size:8px; }
+  #pokefield-live-panel .pf-condition-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  #pokefield-live-panel .pf-passport-badges > span,
+  #pokefield-live-panel .pf-ribbons > span { font-size:7px; padding:3px 5px; }
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card) .pf-passport-badges { display:none !important; }
+}

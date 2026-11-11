@@ -1,0 +1,15 @@
+EMERALD v0.1.24.8.6 · APP CALM · SINGLE SURFACE
+
+Purpose
+- Stop shared Pokémon context from visually leaking into LIVE / FIELD / TEAM LAB / TRAINER CARD.
+- Make each navigation category own exactly one content surface.
+- Remove duplicate full BEST STAB rendering inside Team Lab.
+
+Changes
+1. Shared Strategy Context specimen rail is now state-only and never rendered as global chrome.
+2. DEX LIVE keeps a small two-card analytical lens only inside LIVE: ADV POSITION + ADV LENS.
+3. FIELD remains pure True PokéField. No persistent selected-Salamence rail above it.
+4. TEAM LAB remains the single home of full STAB-axis analysis.
+5. TEAM LAB no longer renders the overall best STAB as a full card and then repeats it under Physical/Special. The winning Physical/Special card receives a BEST FIT badge instead.
+6. TRAINER CARD remains presentation-only.
+7. All v0.1.24.8.5.1 tier focus handoff, v0.1.24.8.4 STAB axis, v0.1.24.8.3.2 return/transfer back, save vault and True PokéField behavior are retained.

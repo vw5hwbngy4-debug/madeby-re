@@ -1,0 +1,5 @@
+v5.4.0 South Island Metro Expansion
+
+This build adds the first second-island/world expansion: a South Island beach district separated by sea, reachable through a moving metro train or chopper. The metro is a fixed-path train entity with station stops and Enter-to-board/exit behavior.
+
+Known scope: this is a first playable transit pass, not a full subway network. Traffic is still primarily in Main City; South Island is designed as a lower-density destination zone.

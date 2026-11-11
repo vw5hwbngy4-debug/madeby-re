@@ -1,0 +1,26 @@
+{
+  "release": "JRPG.WORLD PSO RICO Intelligence v0.5.3",
+  "focus": "Ragol Link v0.1.3 public download + GitHub release surface",
+  "target": "https://madeby.re/games/pso/pso/",
+  "file_count": 716,
+  "ragol_link": {
+    "version": "v0.1.3",
+    "site_download": "https://madeby.re/games/pso/pso/downloads/Ragol-Link-Windows.zip",
+    "github_release": "https://github.com/vw5hwbngy4-debug/Ragol-Link/releases/tag/v0.1.3",
+    "sha256": "73f68dca5a2be921fc700bdcdc0f1080b1ec0d4c12a954c3b340695aef2262f7",
+    "windows_11_tested": true,
+    "original_xbox_only": true,
+    "unsigned": true,
+    "read_only_xbox_device": true
+  },
+  "qa": {
+    "pass": 12,
+    "fail": 0
+  },
+  "scope_guard": {
+    "core_rico_engine_behavior_changed": false,
+    "save_parser_behavior_changed": false,
+    "hunt_account_gear_modules_changed": false,
+    "legacy_local_file_import_retained": true
+  }
+}

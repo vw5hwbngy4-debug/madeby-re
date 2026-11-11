@@ -1,0 +1,19 @@
+Ash District v0.9 — Camp Roads / Context / Vehicle Pass
+
+Changed:
+- Added context interaction UI for camp NPCs, stash, travel passages and vehicles.
+- E now performs the nearest context action; a visible context button appears when relevant.
+- Mobile gets a MOL button for quick Molotov throws.
+- Q throws the equipped Molotov/throwable without changing weapon loadout.
+- Monsters now spawn and roam farther from safe towns; when the player is in town they no longer wait directly at the fence edge.
+- Ember Camp now renders as a barricaded asphalt town instead of a green square.
+- Outside field now reads more like green wilds with dirt roads.
+- Added an Apartment Passage near the forest edge leading to a small City Outpost safe town.
+- Added basic drivable vehicles outside town; enter with E near a car, exit with E, and ram zombies by driving into them.
+- City Outpost has stash/vendor context and safe-zone behavior like Ember Camp.
+
+Known limitations:
+- Vehicles use simple top-down movement, not full car physics.
+- The Apartment Passage is a simple area transition, not a full indoor dungeon yet.
+- Inventory is still one-item-per-square; no true multi-tile Diablo Tetris grid yet.
+- Vendors still use compact grid trading rather than full dialogue tabs.

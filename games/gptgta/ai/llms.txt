@@ -1,0 +1,8 @@
+GPTGTA is an early public GPT-native top-down GTA-style browser sandbox by Raynor Eissens.
+
+For AI retrieval:
+1. Start at /ai/README.md.
+2. Use /ai/asset-map.json for canonical routes and asset layout.
+3. Treat /assets/gptgta/ as the shared canonical asset pack.
+4. Treat /version/v4.2/index.html as the current playable demo.
+5. Treat older /version/* demos as historical playable slices, not separate asset universes.

@@ -1,0 +1,49 @@
+JRPG.WORLD · POKÉMON EMERALD LIVE v0.1.20
+TEAM LAB · KNOWLEDGE CORE + DEVELOPMENT + PARTNER + STACK FABRIC
+2026-09-09
+
+SOURCE BASIS
+- exact user-supplied Pokémon Emerald BPEE ROM lineage (read-only runtime)
+- user-supplied pret/pokeemerald source archive
+- user-supplied Pokémon Showdown source archive
+- supplied audited STACKATAKA ADV200 Smogon Tactical Atlas v0.3
+
+KNOWLEDGE CORE
+- 386 Emerald species records
+- 355 Emerald move records
+- exact Emerald evolution methods and branch paths
+- level-up move acquisition with levels
+- TM/HM compatibility
+- Emerald one-time and Battle Frontier tutor compatibility/locations
+- egg moves, egg groups, and direct compatible level-up father suggestions when extractable
+- Gen III type chart, historical base stats, abilities, EV yield
+- Pokémon Showdown Gen III tier context
+- full family move-access index plus curated competitive move surface
+- 101 supplied audited Smogon tactical species attached as provenance-separated strategy
+
+TEAM LAB UI
+- live party specimen selector
+- future evolution graph with exact Emerald evolution method labels
+- worthwhile future STAB roadmap
+- competitive archetypes enabled by the legal family movepool
+- exact Hidden Power type/power interpreted from the live specimen
+- how-to-build acquisition routing (level, TM/HM, tutor, egg)
+- 101 HP Substitute Lv100 breakpoint checker when Substitute is actually available
+- owned party pair-fit analysis
+- structural partner candidates from non-Uber Gen III final forms
+- six-slot Team Fabric: defensive type matrix, STAB SE reach, role capabilities, shared pressure and coherent lines
+- next-slot structural candidates while the current party has fewer than six members
+
+IMPORTANT BOUNDARIES
+- No emulator or save writes. Team Lab consumes the already published read-only Emerald state.
+- Derived partner/archetype/candidate rankings are inspectable heuristics, not claims of mathematical optimality.
+- Smogon labels/summaries are only attached where present in the supplied audited atlas.
+- Direct egg fathers are compatibility routes, not a claim that the father is natively catchable on this Emerald cartridge without trade.
+- Full battle-damage, speed benchmark, EV benchmark and theme-constrained six-team optimization are intentionally subsequent Team Lab layers.
+
+CORRECTIONS DURING QA
+- 101 HP Substitute formula corrected to the Gen III Lv100 HP formula:
+  2*Base + IV + floor(EV/4) + 110.
+- Legal capability checks use the complete extracted family move pool rather than the truncated display shortlist.
+- STAB roadmap prefers naturally reachable level-up sources before Move Reminder/delayed-evolution routes and machines/tutors.
+- Hidden Power usefulness uses this specimen's exact IV-derived type/power and the Gen III type-based physical/special split.

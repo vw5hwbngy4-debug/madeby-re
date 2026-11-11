@@ -1,0 +1,14 @@
+JRPG.WORLD /pso/ · RAGOL LINK ALPHA 2
+
+ADDED
+- ragol-link-bridge.js
+- automatic localhost handoff from the Direct Xbox USB Reader
+- SHA-256 integrity check in browser before linking
+- automatic call into the existing verified Xbox save linker
+- compact retry notice if browser local-network permission is blocked
+
+SECURITY
+- bridge URL token stays in URL fragment and is not sent to JRPG.WORLD server
+- localhost server binds only to 127.0.0.1
+- CORS restricted to jrpg.world
+- raw save is decoded in the browser and is still not uploaded to RICO

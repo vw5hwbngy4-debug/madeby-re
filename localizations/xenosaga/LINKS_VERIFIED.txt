@@ -1,0 +1,3 @@
+EN canonical: https://madeby.re/localizations/xenosaga/
+NL toggle target: https://madeby.re/localizations/#xenosaga-dutch
+Old xenosaga-eng references: 0

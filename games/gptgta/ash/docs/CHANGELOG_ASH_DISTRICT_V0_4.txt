@@ -1,0 +1,17 @@
+Ash District v0.4 — Direction, Loadout, Depot
+
+Changed
+- Fixed attack aiming so keyboard/space and mobile FIRE use the survivor's current movement/aim direction instead of a stale pointer position.
+- Shotgun pellets now resolve from the same stable aim angle as other weapons.
+- Zoomed out a little further: desktop ~0.68x, mobile ~0.60x.
+- Slowed zombies further. Walkers are now slow walkers, runners remain distinct but less frantic, brutes/bosses are heavy and slower.
+- Expanded equipment into Diablo-like slots: Weapon, Off-hand, Vest, Gloves, Boots, Ring I, Ring II, Necklace, Throwable.
+- Loot now rolls slot-specific armor/accessory items with prefixes, suffixes, power, comparison text, and stat lines.
+- Added depot stash UI beside the bag.
+- Added a homebase safe zone with green ground and stash/depot label. Zombies do not enter and cannot damage the player inside.
+- Added a simple skills panel with skill points gained on level-up: Weapon Mastery, Endurance, Scavenger.
+
+Known limitations
+- Off-hand is present as a future slot, but off-hand items are not yet generated.
+- Building interiors are not implemented yet.
+- Stash is runtime-only; persistent saving is not implemented yet.

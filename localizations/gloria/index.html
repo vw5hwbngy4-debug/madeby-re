@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Gloria Union English Fan Translation v0.25 | Wolken</title>
+  <meta name="description" content="Download the Gloria Union: Twin Fates in Blue Ocean Full English Fan Translation v0.25, watch gameplay, verify SHA-256 hashes and open the GitHub release.">
+  <link rel="canonical" href="https://madeby.re/localizations/gloria/">
+  <meta name="theme-color" content="#050505">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gloria Union — Full English Fan Translation v0.25">
+  <meta property="og:description" content="English fan translation patch for Gloria Union: Twin Fates in Blue Ocean. Download, gameplay video, checksums and GitHub release.">
+  <meta property="og:url" content="https://madeby.re/localizations/gloria/">
+  <meta property="og:image" content="https://i.ytimg.com/vi/CZmIZ-Ljark/maxresdefault.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gloria Union — Full English Fan Translation v0.25">
+  <meta name="twitter:description" content="Download the patch, watch gameplay and verify the release.">
+  <meta name="twitter:image" content="https://i.ytimg.com/vi/CZmIZ-Ljark/maxresdefault.jpg">
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Gloria Union: Twin Fates in Blue Ocean — Full English Fan Translation v0.25", "url": "https://madeby.re/localizations/gloria/", "applicationCategory": "GameApplication", "operatingSystem": "Windows patcher for Android APK", "softwareVersion": "0.25", "description": "Unofficial English fan translation patch for Gloria Union: Twin Fates in Blue Ocean. Includes a Windows/Python 3 patcher that verifies the supported original Android APK before patching.", "downloadUrl": "https://madeby.re/localizations/gloria/downloads/GloriaUnion-English-v0.25-Patch-Windows.zip", "sameAs": ["https://github.com/vw5hwbngy4-debug/gloria-union-english/releases/tag/v0.25", "https://www.youtube.com/watch?v=CZmIZ-Ljark"]}</script>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050505;
+      --panel: #0b0b0b;
+      --panel2: #101010;
+      --line: #242424;
+      --text: #f4f4f4;
+      --muted: #919191;
+      --faint: #5e5e5e;
+      --accent: #d7d7d7;
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      background:
+        radial-gradient(circle at 82% 0%, rgba(255,255,255,.055), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a { color: inherit; }
+    .shell {
+      width: min(1060px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: max(30px, env(safe-area-inset-top)) 0 max(56px, env(safe-area-inset-bottom));
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: clamp(58px, 10vw, 104px);
+      font: 700 12px/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .topbar a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .topbar a:hover { color: white; }
+
+    .hero { max-width: 900px; margin-bottom: 42px; }
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font: 700 12px/1.2 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(43px, 8vw, 88px);
+      line-height: .93;
+      letter-spacing: -.065em;
+      font-weight: 820;
+      max-width: 920px;
+    }
+    .subtitle {
+      margin: 24px 0 0;
+      max-width: 760px;
+      color: #c9c9c9;
+      font-size: clamp(18px, 2.8vw, 26px);
+      line-height: 1.42;
+      letter-spacing: -.02em;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 30px 0 0;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: #f1f1f1;
+      color: #050505;
+      text-decoration: none;
+      font-weight: 760;
+      font-size: 14px;
+    }
+    .button.secondary {
+      background: transparent;
+      color: var(--text);
+    }
+    .button:hover { transform: translateY(-1px); }
+    .file-note {
+      margin-top: 11px;
+      color: var(--faint);
+      font: 11px/1.5 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .video-wrap {
+      margin: clamp(46px, 8vw, 86px) 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #000;
+      box-shadow: 0 28px 90px rgba(0,0,0,.35);
+    }
+    .video-ratio {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+    iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font: 11px/1.45 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: linear-gradient(180deg, var(--panel2), var(--panel));
+      padding: clamp(20px, 4vw, 30px);
+    }
+    .card h2 {
+      margin: 0 0 17px;
+      font-size: 18px;
+      line-height: 1.1;
+      letter-spacing: -.025em;
+    }
+    .card p, .card li {
+      color: #b8b8b8;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .card ol, .card ul {
+      margin: 0;
+      padding-left: 21px;
+    }
+    .card li + li { margin-top: 7px; }
+
+    .hash {
+      margin-top: 12px;
+      padding: 12px;
+      border: 1px solid #1f1f1f;
+      border-radius: 8px;
+      background: #070707;
+      overflow-wrap: anywhere;
+      color: #aaa;
+      font: 10.5px/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    .label {
+      display: block;
+      margin-bottom: 4px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .release {
+      margin-top: clamp(42px, 7vw, 72px);
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+    .release h2 {
+      margin: 0 0 12px;
+      font-size: clamp(24px, 4vw, 36px);
+      letter-spacing: -.045em;
+    }
+    .release p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .release-links {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .text-link {
+      color: #ddd;
+      text-underline-offset: 4px;
+    }
+
+    footer {
+      margin-top: 76px;
+      padding-top: 22px;
+      border-top: 1px solid #181818;
+      color: #555;
+      font: 10.5px/1.6 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 28px, 1060px); }
+      .grid { grid-template-columns: 1fr; }
+      .topbar { margin-bottom: 54px; }
+      .video-caption { display: block; }
+      .video-caption span + span { display: block; margin-top: 5px; }
+      .button { flex: 1 1 100%; }
+      h1 { font-size: clamp(42px, 15vw, 66px); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shell">
+    <nav class="topbar" aria-label="Site navigation">
+      <a href="https://madeby.re/localizations/">← localizations.madeby.re</a>
+      <span>GLORIA / v0.25</span>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">English fan translation · Android</p>
+        <h1>Gloria Union:<br>Twin Fates in Blue Ocean</h1>
+        <p class="subtitle">
+          Full English Fan Translation v0.25. A verified patch workflow for the Android release,
+          with gameplay proof, checksums and the public GitHub release collected in one place.
+        </p>
+
+        <div class="actions">
+          <a class="button" href="./downloads/GloriaUnion-English-v0.25-Patch-Windows.zip" download>
+            Download Windows patch
+          </a>
+          <a class="button secondary" href="https://github.com/vw5hwbngy4-debug/gloria-union-english/releases/tag/v0.25" target="_blank" rel="noopener">
+            GitHub Release v0.25
+          </a>
+          <a class="button secondary" href="https://www.youtube.com/watch?v=CZmIZ-Ljark" target="_blank" rel="noopener">
+            Watch on YouTube
+          </a>
+        </div>
+        <div class="file-note">
+          GloriaUnion-English-v0.25-Patch-Windows.zip · 53.5 MB · SHA-256 d281e2665065dd3d114d3997625923de3c9e8277aa4bbad76f081e7d57819e76
+        </div>
+      </section>
+
+      <section class="video-wrap" aria-label="Gameplay video">
+        <div class="video-ratio">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/CZmIZ-Ljark?rel=0"
+            title="Gloria Union: Twin Fates in Blue Ocean | Full English Fan Translation v0.25"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-caption">
+          <span>Gloria Union: Twin Fates in Blue Ocean | Full English Fan Translation v0.25</span>
+          <span>Gameplay proof</span>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>How to patch</h2>
+          <ol>
+            <li>Extract every file from the downloaded ZIP into one folder.</li>
+            <li>Double-click <strong>PATCH_WINDOWS.bat</strong>.</li>
+            <li>Drag the exact supported original Gloria Union APK into the window and press Enter.</li>
+            <li>Wait for both SHA-256 verification steps to finish.</li>
+            <li>The English APK is created beside the original as <strong>GloriaUnion-English-v0.25.apk</strong>.</li>
+          </ol>
+          <p>The original APK is never modified. Windows and Python 3 are required.</p>
+        </article>
+
+        <article class="card">
+          <h2>Release integrity</h2>
+          <p>The patcher verifies the supported original before applying the translation.</p>
+
+          <div class="hash">
+            <span class="label">Supported original APK</span>
+            Size: 714,729,597 bytes<br>
+            SHA-256: e10783d344c7a2fb8c229d224d20953946f1c91caac7eaa87fa7ce1fa9829c5e
+          </div>
+
+          <div class="hash">
+            <span class="label">Expected English APK</span>
+            Size: 675,207,299 bytes<br>
+            SHA-256: 57f01f5de4e603ed33c69d926f853ec65d0ff06f7d165eaecc6c56d484e65d19
+          </div>
+
+          <div class="hash">
+            <span class="label">v0.25 patch package</span>
+            SHA-256: d281e2665065dd3d114d3997625923de3c9e8277aa4bbad76f081e7d57819e76
+          </div>
+
+          <div class="hash">
+            <span class="label">.gupatch payload</span>
+            SHA-256: df8c8f50a4c0f72e5ddc5ae60c6d48359baef0d5b627ad679befe01f2fc33d05
+          </div>
+        </article>
+      </section>
+
+      <section class="release">
+        <h2>Public release</h2>
+        <p>
+          The translation is distributed as a patch only. Original game files are not included.
+          Use the GitHub release for public release notes and the embedded video above for runtime footage.
+        </p>
+        <div class="release-links">
+          <a class="text-link" href="https://github.com/vw5hwbngy4-debug/gloria-union-english/releases/tag/v0.25" target="_blank" rel="noopener">GitHub → v0.25 release</a>
+          <a class="text-link" href="https://www.youtube.com/watch?v=CZmIZ-Ljark" target="_blank" rel="noopener">YouTube → gameplay video</a>
+          <a class="text-link" href="./downloads/SHA256SUMS-v0.25.txt">SHA256SUMS-v0.25.txt</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Unofficial fan translation. Original game files are not included.<br>
+      localizations.madeby.re/gloria · Gloria Union English Fan Translation v0.25
+    </footer>
+  </div>
+</body>
+</html>

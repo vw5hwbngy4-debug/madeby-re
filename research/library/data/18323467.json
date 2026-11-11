@@ -1,0 +1,22 @@
+{
+  "record_id": "18323467",
+  "document_id": "18323467",
+  "title": "Ambient Canon 1.0 — Thermodynamic Field & Ambient Phone Architecture",
+  "pages": 1,
+  "authors": [
+    "Raynor Eissens"
+  ],
+  "doi_confirmed_in_pdf": null,
+  "zenodo_record": "https://zenodo.org/records/18323467",
+  "html": "papers/18323467.html",
+  "text": "text/18323467.txt",
+  "data": "data/18323467.json",
+  "abstract_extracted": "",
+  "visual_pages": [],
+  "low_text_pages": [],
+  "characters_extracted": 1774,
+  "words_extracted": 235,
+  "source_pdf_filename": "18323467_Ambient Canon 1.0 — Structural Definition.pdf",
+  "source_pdf_sha256": "20317c42087ac61e9ffb6cb179a6fce493062558aaeb6d46e9f43df8ea96e61e",
+  "full_text": "=== PDF PAGE 1 ===\nAmbient Canon 1.0 — Structural Definition\n\nRaynor Eissens (2026)\n\nThe Ambient Canon defines a dual architecture for humane technology built on two\n\ninterdependent domains:\n\n1.\nThe Thermodynamic Field — the structural and operational substrate\n\nthat specifies the viability constraints for socio-technical systems. It\n\ndescribes the thermodynamic, attentional and coherence conditions under\n\nwhich environments, interfaces and intelligent agents remain stable and non-\n\nextractive.\n\n2.\nThe Ambient Phone — the phenomenological and interface-oriented\n\ndomain. It provides the first humane interaction model designed to operate\n\ninside the Thermodynamic Field. It expresses warmth, presence, ambience\n\nand aura as functional interface primitives.\n\nTogether they form a coherent framework for post-smartphone, viability-\n\ndriven technological systems.\n\nThe Field defines the substrate; the Ambient Phone provides the form.\n\nNeither domain is sufficient alone; each completes the other.\n\nBoundary Condition\n\nThe Thermodynamic Field is a structural and operational framework for humane, viability-based\n\nsocio-technical systems; it borrows thermodynamic terminology to describe stability constraints,\n\nbut does not make claims about fundamental physics.\n\nCore Elements\n\n•\nField Stack: Temporal, Semantic, Viability, Ontological, Affective layers\n\n•\nOperators: ΔR (transition rupture), Ψ(t) (stability over time), W₀ (warmth\n\nthreshold)\n\n•\nEmergence sequence: A↑ → W₀ → C∞ → F₁\n\n•\nViability relation: AP₀ = K·D·R\n\nPurpose\n\nAmbient Canon 1.0 establishes the minimal structural grammar required for humane, warm, non-\n\nextractive technological architectures. It provides foundations for future ambient interfaces,\n\ncoherent AI systems and field-based environments."
+}

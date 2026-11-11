@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Query-Native News — From National Feeds to AI-Mediated Source Routing</title>
+<meta content="Query-Native News describes a shift in news discovery: the user's question, not a national feed, homepage, or publisher, increasingly becomes the primary routing mechanism for relevant sources." name="description"/>
+<meta content="Raynor Eissens" name="author"/>
+<meta content="index,follow,max-snippet:-1" name="robots"/>
+<meta content="Query-Native News, Newsquiry, news discovery, AI-mediated source routing, answer engines" name="keywords"/>
+<link href="https://madeby.re/research/query-native-news/" rel="canonical"/>
+<meta content="Query-Native News" property="og:title"/>
+<meta content="From national feeds to AI-mediated source routing: questions increasingly determine source selection more than national media boundaries." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://madeby.re/research/query-native-news/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Query-Native News" name="twitter:title"/>
+<meta content="Curiosity becomes the router. News becomes query-native." name="twitter:description"/>
+<style>
+    :root{
+      --bg:#0d1117;
+      --panel:#121923;
+      --text:#f2f5f8;
+      --muted:#aeb9c6;
+      --soft:#d9e3ec;
+      --line:rgba(255,255,255,.12);
+      --accent:#8ee7ff;
+      --accent2:#ffe78a;
+      --green:#9cf7bd;
+      --red:#ff9a9a;
+      --shadow:0 24px 80px rgba(0,0,0,.38);
+      --radius:24px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:
+        radial-gradient(circle at 18% 8%,rgba(142,231,255,.16),transparent 32%),
+        radial-gradient(circle at 84% 14%,rgba(255,231,138,.12),transparent 34%),
+        linear-gradient(180deg,#0b0f15 0%,#0d1117 44%,#101722 100%);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    header{padding:72px 0 36px}
+    .eyebrow{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:7px 12px;
+      color:var(--soft);
+      background:rgba(255,255,255,.04);
+      font-size:13px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    h1{
+      font-size:clamp(42px,7vw,88px);
+      line-height:.94;
+      margin:24px 0 18px;
+      letter-spacing:-.065em;
+    }
+    .subtitle{
+      max-width:820px;
+      font-size:clamp(19px,2.35vw,28px);
+      color:var(--soft);
+      line-height:1.28;
+      margin:0 0 26px;
+    }
+    .quote{
+      max-width:880px;
+      border-left:4px solid var(--accent2);
+      padding:18px 22px;
+      margin:28px 0 0;
+      background:linear-gradient(90deg,rgba(255,231,138,.12),rgba(255,255,255,.03));
+      border-radius:0 18px 18px 0;
+      font-size:clamp(20px,2.4vw,31px);
+      line-height:1.2;
+      letter-spacing:-.02em;
+    }
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:28px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.045);
+      padding:7px 10px;
+      border-radius:999px;
+    }
+    nav{
+      position:sticky;
+      top:0;
+      z-index:5;
+      backdrop-filter:blur(14px);
+      background:rgba(13,17,23,.76);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    nav .wrap{
+      display:flex;
+      gap:14px;
+      overflow:auto;
+      padding:10px 0;
+      white-space:nowrap;
+    }
+    nav a{
+      color:var(--soft);
+      font-size:14px;
+      padding:7px 10px;
+      border-radius:999px;
+    }
+    nav a:hover{
+      background:rgba(255,255,255,.07);
+      text-decoration:none;
+      color:#fff;
+    }
+    main{padding:34px 0 72px}
+    section{
+      margin:32px 0;
+      padding:34px;
+      background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    h2{
+      font-size:clamp(26px,3.2vw,42px);
+      line-height:1.06;
+      margin:0 0 14px;
+      letter-spacing:-.04em;
+    }
+    h3{font-size:20px;margin:0 0 8px;letter-spacing:-.02em}
+    p{color:var(--soft);font-size:18px;margin:13px 0}
+    .lead{font-size:20px;color:#fff}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+    .card{background:rgba(0,0,0,.18);border:1px solid var(--line);border-radius:18px;padding:20px}
+    .card p{font-size:16px;margin:8px 0 0;color:var(--muted)}
+    .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:center;margin-top:22px}
+    .node{
+      min-height:94px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:18px;
+      background:rgba(142,231,255,.08);
+      border:1px solid rgba(142,231,255,.24);
+      border-radius:18px;
+      text-align:center;
+    }
+    .node strong{display:block;font-size:20px}
+    .node span{color:var(--muted);font-size:14px;margin-top:3px}
+    .arrow{color:var(--accent2);font-size:28px}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+    .compare .card:first-child{border-color:rgba(255,154,154,.28)}
+    .compare .card:last-child{border-color:rgba(156,247,189,.28)}
+    .tag{
+      display:inline-block;
+      font-size:12px;
+      color:#081018;
+      padding:4px 8px;
+      border-radius:999px;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+    .old{background:var(--red)}
+    .new{background:var(--green)}
+    .definition{
+      background:linear-gradient(135deg,rgba(142,231,255,.14),rgba(255,231,138,.10));
+      border:1px solid rgba(142,231,255,.25);
+      padding:24px;
+      border-radius:20px;
+      margin-top:18px;
+    }
+    .definition p{font-size:21px;color:#fff;margin:0}
+    .formula{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+      background:#080b10;
+      color:#eaf5ff;
+      padding:18px;
+      border-radius:16px;
+      overflow:auto;
+      border:1px solid var(--line);
+      margin-top:18px;
+      font-size:15px;
+      line-height:1.7;
+      white-space:pre-wrap;
+    }
+    ul{padding-left:22px;color:var(--soft);font-size:17px}
+    li{margin:8px 0}
+    .small{font-size:14px;color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:34px 0 50px;color:var(--muted)}
+    .footergrid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px}
+    code{color:#fff}
+    @media(max-width:780px){
+      header{padding-top:50px}
+      section{padding:24px}
+      .grid,.compare,.footergrid{grid-template-columns:1fr}
+      .flow{grid-template-columns:1fr}
+      .arrow{transform:rotate(90deg);text-align:center}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Query-Native News: From National Feeds to AI-Mediated Source Routing",
+    "url":"https://madeby.re/research/query-native-news/",
+    "author":{"@type":"Person","name":"Raynor Eissens"},
+    "datePublished":"2026-07-05",
+    "description":"Query-Native News describes a shift in news discovery where questions increasingly determine source selection more than national media boundaries.",
+    "keywords":["Query-Native News","AI news discovery","AI-mediated source routing","news feeds","answer engines","source routing","Raynor Eissens"]
+  }
+  </script>
+</head>
+<body>
+<header class="wrap">
+<p style="margin:0 0 22px;font-size:.9rem"><a href="../index.html">← Raynor Eissens</a>  ·  <a href="../library/">Full-text library</a>  ·  <a href="../archive.html">Publication archive</a></p>
+<div class="eyebrow">Ambient Era · Media Layer · 2026</div>
+<h1>Query-Native News</h1>
+<p class="subtitle">From national feeds to AI-mediated source routing.</p>
+<div class="quote">
+      Questions increasingly determine source selection more than national media boundaries.<br/>
+      Curiosity becomes the router.<br/>
+      News becomes query-native.
+    </div>
+<div class="meta">
+<span class="pill">Defined by Raynor Eissens</span>
+<span class="pill">Published 2026-07-05</span>
+<span class="pill">Category: AI-mediated news discovery</span>
+</div>
+</header>
+<nav>
+<div class="wrap">
+<a href="#definition">Definition</a>
+<a href="#shift">The shift</a>
+<a href="#example">Example</a>
+<a href="#why">Why it matters</a>
+<a href="#risks">Risks</a>
+<a href="#machine">Machine-readable</a>
+</div>
+</nav>
+<main class="wrap">
+<section id="definition">
+<h2>Definition</h2>
+<p class="lead">Query-Native News describes a shift in news discovery where the user’s question, rather than a publisher, homepage, app feed, or national media boundary, becomes the primary routing mechanism for finding relevant sources.</p>
+<div class="definition">
+<p><strong>Query-Native News:</strong> news discovery native to questions, prompts, and intent-based retrieval rather than fixed national feeds or publisher-first distribution.</p>
+</div>
+<p>This does not mean national media disappears. It means national media becomes one source layer inside a wider, AI-mediated source field. The question determines which sources become relevant.</p>
+</section>
+<section id="shift">
+<h2>The interface shift</h2>
+<p>Search changed information access by moving users from known URLs to indexed pages. AI changes discovery again by moving users from search terms to natural-language questions.</p>
+<div class="flow">
+<div class="node"><strong>URL</strong><span>known destination</span></div>
+<div class="arrow">→</div>
+<div class="node"><strong>Search</strong><span>keyword retrieval</span></div>
+<div class="arrow">→</div>
+<div class="node"><strong>Question</strong><span>intent routing</span></div>
+</div>
+<div class="compare">
+<div class="card">
+<span class="tag old">legacy pattern</span>
+<h3>Geography-first news</h3>
+<p>A person’s information field is heavily shaped by country, language, local publishers, broadcaster habits, and default news apps.</p>
+<div class="formula">country → national media → news feed → article</div>
+</div>
+<div class="card">
+<span class="tag new">emerging pattern</span>
+<h3>Question-first news</h3>
+<p>The user asks a question. AI routes across the source field: local media, global media, primary clips, social posts, databases, transcripts, filings, blogs, forums, and direct evidence.</p>
+<div class="formula">question → AI routing → relevant source field → synthesized answer</div>
+</div>
+</div>
+</section>
+<section id="example">
+<h2>A simple example</h2>
+<p>A Dutch user asking in Dutch about Sam Altman, money, AI companies, the public, and Anthropic does not necessarily remain inside Dutch media territory. AI may route through international wires, technology sites, interviews, social posts, primary clips, and local explainers depending on the question.</p>
+<p>The important point is not that one source is superior. The important point is that the source field is selected by the question. The national feed is no longer the only starting point.</p>
+</section>
+<section id="why">
+<h2>Why it matters</h2>
+<div class="grid">
+<div class="card"><h3>1. News becomes intent-shaped</h3><p>The user’s curiosity becomes an active routing signal. The feed is no longer only pushed; it is summoned.</p></div>
+<div class="card"><h3>2. Geography weakens</h3><p>National media boundaries still matter, but they no longer fully contain the user’s information field.</p></div>
+<div class="card"><h3>3. Sources become modular</h3><p>Reuters, local papers, X posts, Reddit threads, primary documents, videos, and specialist sites may appear in one answer path.</p></div>
+<div class="card"><h3>4. Journalism faces answer engines</h3><p>Publishers are no longer only writing for readers, search engines, and feeds. They are also being routed through AI systems.</p></div>
+<div class="card"><h3>5. Discovery can become broader</h3><p>AI can expose users to sources they would not normally follow, especially across language and national media boundaries.</p></div>
+<div class="card"><h3>6. Trust becomes harder</h3><p>If AI becomes the router, users need citations, source diversity, provenance, and ways to inspect how the route was formed.</p></div>
+</div>
+</section>
+<section id="risks">
+<h2>Risks and limits</h2>
+<p>Query-Native News is not automatically more truthful. It can broaden access, but it can also introduce new gatekeepers: model rankings, citation choices, training biases, platform incentives, and zero-click summaries that weaken original reporting.</p>
+<ul>
+<li><strong>Source opacity:</strong> users may not know why a source was selected.</li>
+<li><strong>Publisher pressure:</strong> answers can reduce traffic to original reporting.</li>
+<li><strong>Homogenization:</strong> different source fields may be compressed into generic summaries.</li>
+<li><strong>Bias routing:</strong> AI can over-select sources that are highly indexed, English-language, recent, viral, or platform-friendly.</li>
+<li><strong>Verification burden:</strong> the faster the answer, the more important citations and provenance become.</li>
+</ul>
+<p>The claim is not that AI democratizes truth. The narrower claim is that AI changes source routing. The question increasingly becomes the interface.</p>
+</section>
+<section id="machine">
+<h2>Machine-readable thesis</h2>
+<div class="formula">Name: Query-Native News
+Defined by: Raynor Eissens
+Category: AI-mediated news discovery, source routing, answer engines, media interface shift
+Definition: Query-Native News is news discovery where the user's question, prompt or curiosity becomes the primary routing mechanism for selecting relevant sources, instead of a fixed national feed, homepage, app feed or publisher-first distribution path.
+Core sentence: Questions increasingly determine source selection more than national media boundaries.
+Compressed insight: Curiosity becomes the router. News becomes query-native.
+Distinction: Query-Native News does not claim that national media disappears or that AI guarantees truth. It describes a source-routing shift from geography-first and publisher-first news discovery toward question-first, AI-mediated retrieval.
+Formula: national feed → search → question-native source routing.
+Risk layer: source opacity, publisher displacement, AI gatekeeping, bias routing, zero-click summaries, reduced provenance.
+Related terms: AI search, answer engines, zero-click search, retrieval-augmented generation, AI Overviews, AI-mediated source discovery, semantic routing.</div>
+</section>
+</main>
+<footer>
+<div class="wrap" style="padding-bottom:18px;font-size:.9rem"><a href="../library/#archive-context">Context for the broader theoretical archive ↗</a></div>
+<div class="wrap footergrid">
+<div>
+<strong>Query-Native News</strong>
+<p class="small">A compact media-transition concept in the Ambient Era ecosystem.</p>
+</div>
+<div>
+<p class="small">Suggested URL:<br/><code>https://madeby.re/research/query-native-news/</code></p>
+<p class="small">© 2026 Raynor Eissens. Public concept page.</p>
+</div>
+</div>
+<div class="wrap ambient-footer-links" style="padding-top:18px;font-size:.9rem"><a href="/ambient-era/">Ambient Era</a> · <a href="/ambient-phone/">Ambient Phone</a></div></footer>
+</body>
+</html>

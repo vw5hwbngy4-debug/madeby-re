@@ -1,0 +1,47 @@
+JRPG.WORLD Emerald — QA SAVE VAULT v0.1.13.4
+Date: 2026-09-12
+
+TARGET BUG
+On iPhone, selecting a .sav from Files could return to a Save Vault that still showed SAVE 2 / SAVE 3 as EMPTY with no import status at all.
+
+ROOT-CAUSE ASSERTION
+PASS — active slot DOM is rebuilt by renderAll().
+PASS — v0.1.13.3 used per-card <input type=file> nodes inside that rebuilt DOM.
+PASS — import handling depended on a delegated modal change listener.
+PASS — replacing the original input while the native iOS Files sheet is open can detach it from the modal, so its eventual change event cannot reach the delegated listener.
+
+PATCH ASSERTIONS
+PASS — active v0.1.13.4 contains no data-import transient file inputs.
+PASS — one persistent #sv-import-file-global is appended outside the slot-card DOM.
+PASS — IMPORT buttons store target slot state before opening the native picker.
+PASS — persistent picker owns its own direct change listener.
+PASS — selected File is captured independently of later Save Vault re-renders.
+PASS — upload is round-trip checked through action=download with SHA-256 equality.
+PASS — successful import additionally requires the slot to appear in refreshed action=list data.
+PASS — exact failure reason remains visible in the slot card.
+
+SUPPLIED SAVE TEST
+File: EMERALD-with-STEPHEN-base(2).sav
+Bytes: 131072
+Emerald parser: PASS
+Trainer metadata: EMERALD
+Trainer ID: 31415
+Play time: 999:59:59
+Save counter: 1659
+This proves the supplied file passes the same structural parser used by the browser client.
+
+STATIC TESTS
+PASS — node --check save-vault-v0.1.13.4.js
+PASS — node --check pokefield-live-v0.1.24.3.js
+PASS — index.html points to save-vault-v0.1.13.4.js?v=0.1.13.4
+PASS — index.html points to pokefield-live-v0.1.24.3.js?v=0.1.24.3
+PASS — VERSION.txt = 0.1.24.3
+
+REAL-DEVICE EXPECTED FLOW
+1. Open SAVE VAULT.
+2. In SAVE 2 tap IMPORT .SAV.
+3. Select EMERALD-with-STEPHEN-base(2).sav.
+4. Slot must show READING -> VALID -> UPLOADING -> SERVER STORED / VERIFYING -> IMPORTED.
+5. SAVE 2 must redraw as a populated save card.
+6. Tap USE THIS SAVE.
+7. The v0.1.24.1 hard-activation path should stop the old core, swap verified bytes, and restart Emerald.

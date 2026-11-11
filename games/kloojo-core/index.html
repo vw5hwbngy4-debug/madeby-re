@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" data-kloojo-zone="development">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>Kloojo Core</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<script>window.KLOOJO_BOOT_DIAG={stage:'boot'};</script>
+
+<div id="start" class="start">
+  <div class="brand">KLOOJO</div>
+  <div class="core">CHALLENGE CORE</div>
+  <button id="enter" type="button">PLAY</button>
+</div>
+<div id="kysBoot" aria-hidden="true"></div>
+
+<div id="hud" aria-hidden="true">
+  <div class="topline"><span id="zone">DEVELOPMENT ZONE</span><span><b id="score">0</b> PTS</span><span><b id="speed">0</b> KM/H</span></div>
+  <div id="comboText">FREE SKATE</div><div id="trickText">BUILD A LINE</div>
+  <div class="counts"><span>COIN <b id="coinCount">0</b>/<b id="coinTotal">0</b></span><span>BAG <b id="bagCount">0</b>/<b id="bagTotal">0</b></span><span id="graffitiCounterIcon">TAG <b id="graffitiCount">0</b>/<b id="graffitiTotal">0</b></span></div>
+  <div id="message"></div>
+  <div id="balanceWrap"><div id="balanceNeedle"></div><span id="balanceLabel">GRIND BALANCE</span></div>
+</div>
+
+<div id="mobile" aria-label="touch controls">
+  <div id="stickBase"><div id="stick"></div></div>
+  <div id="lookPad"></div>
+  <button id="jumpBtn" class="action" type="button">JUMP</button>
+  <button id="sprayBtn" class="action" type="button">SPRAY</button>
+  <button id="boostBtn" class="action" type="button">TURN</button>
+</div>
+
+<script type="module" src="./core/kloojo-kernel.js"></script>
+</body>
+</html>

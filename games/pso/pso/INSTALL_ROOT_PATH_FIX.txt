@@ -1,0 +1,39 @@
+PSO.MADEBY.RE.PAGE | ROOT + /PSO/ COMPATIBILITY FIX
+Build: wolken-root-route-20260917-v1
+
+WHY: the prior root index.html redirected to /pso/, but the user reports
+that the physical pso/ folder is absent from the Hostinger file manager and
+that /pso/ still displays an old JRPG.WORLD navigation page. We cannot infer
+which live document root or Hostinger rewrite is active from the ZIP alone.
+
+THIS ZIP: full standalone PSO website; replaces root index.html redirect
+with the same clean PSO page as pso/index.html, and physically supplies
+pso/ (including all scripts, PHP endpoints, files and Windows download).
+Ragol Link 0.1.4 still opens /pso/?ragol=1#port=...&token=... : keep it.
+No changes to your installed Windows app are needed.
+
+INSTALL (back up your current website first):
+1. In Hostinger open the website games.madeby.re/pso, and find its actual
+   DOCUMENT ROOT. The correct folder is the one whose index.html is served
+   at https://madeby.re/games/pso/ . It is NOT necessarily named public_html.
+2. Upload THIS ZIP to that document root; EXTRACT CONTENTS there, NOT into
+   a new container folder. Overwrite matching files but do not delete your
+   existing private/config.php or secrets.
+3. After extraction the SAME document root must contain index.html,
+   DEPLOY_PROOF.txt, DEPLOY_CHECK.html, assets/, private/, AND pso/.
+   Inside pso/ you must see index.html, app.js, api/, downloads/, etc.
+4. Visit https://madeby.re/games/pso/DEPLOY_CHECK.html?version=wolken-root-route-20260917-v1
+   All checks should say PASS. The php health endpoint can report missing
+   configuration; an HTTP status indicates the path is reachable.
+5. Open https://madeby.re/games/pso/?version=wolken-root-route-20260917-v1 and
+   https://madeby.re/games/pso/pso/?version=wolken-root-route-20260917-v1. Both should show PSO
+   WITHOUT the JRPG.WORLD top navigation. Run the Windows Ragol Link again.
+
+IF DEPLOY_PROOF is 404, or /pso/ still shows the old navigation:
+You likely extracted into the wrong document root, or Hostinger has an
+existing rewrite/redirect/CDN cache taking precedence. Stop; do NOT delete
+JRPG.WORLD. Check games.madeby.re/pso domain's document root and the .htaccess
+files or Hostinger redirects applying to it. Do not blindly replace .htaccess.
+
+This bundle does not contain an OpenAI key, a database backup or a real
+private/config.php. Your existing private configuration remains intact.

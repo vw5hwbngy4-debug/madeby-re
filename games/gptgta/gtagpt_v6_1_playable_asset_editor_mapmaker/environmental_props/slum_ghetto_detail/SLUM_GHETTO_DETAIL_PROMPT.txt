@@ -1,0 +1,13 @@
+Create a transparent PNG spritesheet of top-down slum / rough neighborhood detail props.
+
+Sheet rules:
+- 32x32 cells
+- transparent background
+- gritty but readable
+- not too detailed
+
+Assets:
+graffiti wall chunks, broken fencing, mattress piles, shopping carts, burning barrels, loose trash, boarded windows, illegal parking props, abandoned couches, alley junk, broken TVs, gang graffiti, spray paint zones.
+
+Purpose:
+make alleys and rough neighborhoods feel lived-in without breaking gameplay readability.

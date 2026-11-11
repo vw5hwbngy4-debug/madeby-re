@@ -1,0 +1,8 @@
+/* v0.1.24.9 · Coverage lens shared presentation */
+#pokefield-live-panel #spx-live-snapshot .spx-coverage-card{grid-column:1/-1;grid-row:2;min-width:0}
+#pokefield-live-panel #spx-live-snapshot article:nth-child(1){grid-column:1;grid-row:1}
+#pokefield-live-panel #spx-live-snapshot article:nth-child(3){grid-column:2;grid-row:1}
+#pokefield-live-panel #spx-live-snapshot .spx-coverage-card b,
+#pokefield-live-panel #spx-live-snapshot .spx-coverage-card span{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.35}
+#teamlab #tl-open-coverage{width:100%;margin-top:9px;border-color:rgba(105,239,223,.30);background:linear-gradient(180deg,rgba(14,74,69,.48),rgba(7,42,45,.52));color:#dffef9}
+@media(max-width:760px){#pokefield-live-panel #spx-live-snapshot .spx-coverage-card{grid-column:1/-1!important;grid-row:2!important}#pokefield-live-panel #spx-live-snapshot article:nth-child(1){grid-column:1!important;grid-row:1!important}#pokefield-live-panel #spx-live-snapshot article:nth-child(3){grid-column:2!important;grid-row:1!important}}

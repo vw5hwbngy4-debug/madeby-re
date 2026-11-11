@@ -1,0 +1,7 @@
+/* JRPG.WORLD Emerald v0.1.16 — public live-panel cleanup.
+   Removes developer-facing labels from normal product UI. Debug remains available with ?debug=1. */
+#pokefield-live-panel .pf-explainer { display:none !important; }
+@media (min-width:960px) {
+  body.pf-mobile-first #pokefield-live-panel .pf-tech { margin-top:6px !important; }
+  body.pf-mobile-first #pokefield-live-panel .pf-debug { white-space:normal !important; overflow-wrap:anywhere !important; }
+}

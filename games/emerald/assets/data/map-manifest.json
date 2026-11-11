@@ -1,0 +1,4261 @@
+{
+  "source": "Zeak Map Pack / RPG Maker XP .rxdata",
+  "renderer": "lossless layer reconstruction; 32px tiles; first animation frame for animated autotiles",
+  "maps": [
+    {
+      "map_id": 82,
+      "name": "Route 118",
+      "tiles": [
+        80,
+        25
+      ],
+      "pixels": [
+        2560,
+        800
+      ],
+      "full_webp": "full/082-route-118.webp",
+      "selected_background_set": false,
+      "scenes": [
+        {
+          "id": "route-118-s1",
+          "label": "Route 118 scene 1",
+          "anchor_tile": {
+            "x": 47,
+            "y": 5
+          },
+          "tags": [
+            "base",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/082-route-118-s1.webp",
+            "card-4x3": "scenes/card-4x3/082-route-118-s1.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              809,
+              0,
+              2231,
+              800
+            ],
+            "card-4x3": [
+              986,
+              0,
+              2053,
+              800
+            ]
+          }
+        },
+        {
+          "id": "route-118-s2",
+          "label": "Route 118 scene 2",
+          "anchor_tile": {
+            "x": 67,
+            "y": 6
+          },
+          "tags": [
+            "presence",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/082-route-118-s2.webp",
+            "card-4x3": "scenes/card-4x3/082-route-118-s2.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              1138,
+              0,
+              2560,
+              800
+            ],
+            "card-4x3": [
+              1493,
+              0,
+              2560,
+              800
+            ]
+          }
+        },
+        {
+          "id": "route-118-s3",
+          "label": "Route 118 scene 3",
+          "anchor_tile": {
+            "x": 29,
+            "y": 5
+          },
+          "tags": [
+            "story",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/082-route-118-s3.webp",
+            "card-4x3": "scenes/card-4x3/082-route-118-s3.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              233,
+              0,
+              1655,
+              800
+            ],
+            "card-4x3": [
+              410,
+              0,
+              1477,
+              800
+            ]
+          }
+        },
+        {
+          "id": "route-118-s4",
+          "label": "Route 118 scene 4",
+          "anchor_tile": {
+            "x": 47,
+            "y": 14
+          },
+          "tags": [
+            "quiet",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/082-route-118-s4.webp",
+            "card-4x3": "scenes/card-4x3/082-route-118-s4.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              809,
+              0,
+              2231,
+              800
+            ],
+            "card-4x3": [
+              986,
+              0,
+              2053,
+              800
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "map_id": 296,
+      "name": "Route 124",
+      "tiles": [
+        80,
+        80
+      ],
+      "pixels": [
+        2560,
+        2560
+      ],
+      "full_webp": "full/296-route-124.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/296-route-124.webp",
+          "source_crop_px": [
+            0,
+            560,
+            2560,
+            1440
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/296-route-124.webp",
+          "source_crop_px": [
+            560,
+            0,
+            1440,
+            2560
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/296-route-124.webp",
+          "source_crop_px": [
+            0,
+            854,
+            2560,
+            853
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/296-route-124.webp",
+          "source_crop_px": [
+            0,
+            320,
+            2560,
+            1920
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 297,
+      "name": "Route 104",
+      "tiles": [
+        48,
+        80
+      ],
+      "pixels": [
+        1536,
+        2560
+      ],
+      "full_webp": "full/297-route-104.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/297-route-104.webp",
+          "source_crop_px": [
+            0,
+            848,
+            1536,
+            864
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/297-route-104.webp",
+          "source_crop_px": [
+            48,
+            0,
+            1440,
+            2560
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/297-route-104.webp",
+          "source_crop_px": [
+            0,
+            1024,
+            1536,
+            512
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/297-route-104.webp",
+          "source_crop_px": [
+            0,
+            704,
+            1536,
+            1152
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 298,
+      "name": "Route 112",
+      "tiles": [
+        40,
+        65
+      ],
+      "pixels": [
+        1280,
+        2080
+      ],
+      "full_webp": "full/298-route-112.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 299,
+      "name": "Route 121",
+      "tiles": [
+        80,
+        30
+      ],
+      "pixels": [
+        2560,
+        960
+      ],
+      "full_webp": "full/299-route-121.webp",
+      "selected_background_set": false,
+      "scenes": [
+        {
+          "id": "route-121-s1",
+          "label": "Route 121 scene 1",
+          "anchor_tile": {
+            "x": 40,
+            "y": 11
+          },
+          "tags": [
+            "base",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/299-route-121-s1.webp",
+            "card-4x3": "scenes/card-4x3/299-route-121-s1.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              442,
+              0,
+              2149,
+              960
+            ],
+            "card-4x3": [
+              656,
+              0,
+              1936,
+              960
+            ]
+          }
+        },
+        {
+          "id": "route-121-s2",
+          "label": "Route 121 scene 2",
+          "anchor_tile": {
+            "x": 18,
+            "y": 13
+          },
+          "tags": [
+            "presence",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/299-route-121-s2.webp",
+            "card-4x3": "scenes/card-4x3/299-route-121-s2.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              0,
+              1707,
+              960
+            ],
+            "card-4x3": [
+              0,
+              0,
+              1280,
+              960
+            ]
+          }
+        },
+        {
+          "id": "route-121-s3",
+          "label": "Route 121 scene 3",
+          "anchor_tile": {
+            "x": 43,
+            "y": 7
+          },
+          "tags": [
+            "story",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/299-route-121-s3.webp",
+            "card-4x3": "scenes/card-4x3/299-route-121-s3.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              538,
+              0,
+              2245,
+              960
+            ],
+            "card-4x3": [
+              752,
+              0,
+              2032,
+              960
+            ]
+          }
+        },
+        {
+          "id": "route-121-s4",
+          "label": "Route 121 scene 4",
+          "anchor_tile": {
+            "x": 42,
+            "y": 7
+          },
+          "tags": [
+            "quiet",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/299-route-121-s4.webp",
+            "card-4x3": "scenes/card-4x3/299-route-121-s4.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              506,
+              0,
+              2213,
+              960
+            ],
+            "card-4x3": [
+              720,
+              0,
+              2000,
+              960
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "map_id": 300,
+      "name": "Petalburg City",
+      "tiles": [
+        36,
+        38
+      ],
+      "pixels": [
+        1152,
+        1216
+      ],
+      "full_webp": "full/300-petalburg-city.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/300-petalburg-city.webp",
+          "source_crop_px": [
+            0,
+            260,
+            1152,
+            648
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.48,
+            0.48
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/300-petalburg-city.webp",
+          "source_crop_px": [
+            211,
+            0,
+            684,
+            1216
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.48,
+            0.48
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/300-petalburg-city.webp",
+          "source_crop_px": [
+            0,
+            392,
+            1152,
+            384
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.48,
+            0.48
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/300-petalburg-city.webp",
+          "source_crop_px": [
+            0,
+            152,
+            1152,
+            864
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.48,
+            0.48
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 301,
+      "name": "Mt. Chimney",
+      "tiles": [
+        40,
+        48
+      ],
+      "pixels": [
+        1280,
+        1536
+      ],
+      "full_webp": "full/301-mt-chimney.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/301-mt-chimney.webp",
+          "source_crop_px": [
+            0,
+            377,
+            1280,
+            720
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/301-mt-chimney.webp",
+          "source_crop_px": [
+            208,
+            0,
+            864,
+            1536
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/301-mt-chimney.webp",
+          "source_crop_px": [
+            0,
+            524,
+            1280,
+            427
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/301-mt-chimney.webp",
+          "source_crop_px": [
+            0,
+            257,
+            1280,
+            960
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 302,
+      "name": "Lilycove City",
+      "tiles": [
+        80,
+        40
+      ],
+      "pixels": [
+        2560,
+        1280
+      ],
+      "full_webp": "full/302-lilycove-city.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/302-lilycove-city.webp",
+          "source_crop_px": [
+            219,
+            0,
+            2276,
+            1280
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.53,
+            0.52
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/302-lilycove-city.webp",
+          "source_crop_px": [
+            997,
+            0,
+            720,
+            1280
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.53,
+            0.52
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/302-lilycove-city.webp",
+          "source_crop_px": [
+            0,
+            239,
+            2560,
+            853
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.53,
+            0.52
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/302-lilycove-city.webp",
+          "source_crop_px": [
+            503,
+            0,
+            1707,
+            1280
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.53,
+            0.52
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 303,
+      "name": "Rustboro city",
+      "tiles": [
+        40,
+        60
+      ],
+      "pixels": [
+        1280,
+        1920
+      ],
+      "full_webp": "full/303-rustboro-city.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/303-rustboro-city.webp",
+          "source_crop_px": [
+            0,
+            715,
+            1280,
+            720
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.56
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/303-rustboro-city.webp",
+          "source_crop_px": [
+            100,
+            0,
+            1080,
+            1920
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.56
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/303-rustboro-city.webp",
+          "source_crop_px": [
+            0,
+            862,
+            1280,
+            427
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.56
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/303-rustboro-city.webp",
+          "source_crop_px": [
+            0,
+            595,
+            1280,
+            960
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.56
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 304,
+      "name": "Jagged Pass",
+      "tiles": [
+        30,
+        46
+      ],
+      "pixels": [
+        960,
+        1472
+      ],
+      "full_webp": "full/304-jagged-pass.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/304-jagged-pass.webp",
+          "source_crop_px": [
+            0,
+            437,
+            960,
+            540
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/304-jagged-pass.webp",
+          "source_crop_px": [
+            66,
+            0,
+            828,
+            1472
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/304-jagged-pass.webp",
+          "source_crop_px": [
+            0,
+            547,
+            960,
+            320
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/304-jagged-pass.webp",
+          "source_crop_px": [
+            0,
+            347,
+            960,
+            720
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 305,
+      "name": "Pacifidlog Town",
+      "tiles": [
+        20,
+        40
+      ],
+      "pixels": [
+        640,
+        1280
+      ],
+      "full_webp": "full/305-pacifidlog-town.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/305-pacifidlog-town.webp",
+          "source_crop_px": [
+            0,
+            486,
+            640,
+            360
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/305-pacifidlog-town.webp",
+          "source_crop_px": [
+            0,
+            97,
+            640,
+            1138
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/305-pacifidlog-town.webp",
+          "source_crop_px": [
+            0,
+            559,
+            640,
+            213
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/305-pacifidlog-town.webp",
+          "source_crop_px": [
+            0,
+            426,
+            640,
+            480
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 306,
+      "name": "Route 116",
+      "tiles": [
+        100,
+        20
+      ],
+      "pixels": [
+        3200,
+        640
+      ],
+      "full_webp": "full/306-route-116.webp",
+      "selected_background_set": false,
+      "scenes": [
+        {
+          "id": "route-116-s1",
+          "label": "Route 116 scene 1",
+          "anchor_tile": {
+            "x": 71,
+            "y": 4
+          },
+          "tags": [
+            "base",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/306-route-116-s1.webp",
+            "card-4x3": "scenes/card-4x3/306-route-116-s1.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              1719,
+              0,
+              2857,
+              640
+            ],
+            "card-4x3": [
+              1862,
+              0,
+              2715,
+              640
+            ]
+          }
+        },
+        {
+          "id": "route-116-s2",
+          "label": "Route 116 scene 2",
+          "anchor_tile": {
+            "x": 55,
+            "y": 15
+          },
+          "tags": [
+            "presence",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/306-route-116-s2.webp",
+            "card-4x3": "scenes/card-4x3/306-route-116-s2.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              1207,
+              0,
+              2345,
+              640
+            ],
+            "card-4x3": [
+              1350,
+              0,
+              2203,
+              640
+            ]
+          }
+        },
+        {
+          "id": "route-116-s3",
+          "label": "Route 116 scene 3",
+          "anchor_tile": {
+            "x": 79,
+            "y": 11
+          },
+          "tags": [
+            "story",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/306-route-116-s3.webp",
+            "card-4x3": "scenes/card-4x3/306-route-116-s3.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              1975,
+              0,
+              3113,
+              640
+            ],
+            "card-4x3": [
+              2118,
+              0,
+              2971,
+              640
+            ]
+          }
+        },
+        {
+          "id": "route-116-s4",
+          "label": "Route 116 scene 4",
+          "anchor_tile": {
+            "x": 56,
+            "y": 6
+          },
+          "tags": [
+            "quiet",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/306-route-116-s4.webp",
+            "card-4x3": "scenes/card-4x3/306-route-116-s4.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              1239,
+              0,
+              2377,
+              640
+            ],
+            "card-4x3": [
+              1382,
+              0,
+              2235,
+              640
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "map_id": 307,
+      "name": "Route 122",
+      "tiles": [
+        50,
+        40
+      ],
+      "pixels": [
+        1600,
+        1280
+      ],
+      "full_webp": "full/307-route-122.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 308,
+      "name": "Ever Grande City",
+      "tiles": [
+        40,
+        80
+      ],
+      "pixels": [
+        1280,
+        2560
+      ],
+      "full_webp": "full/308-ever-grande-city.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/308-ever-grande-city.webp",
+          "source_crop_px": [
+            0,
+            971,
+            1280,
+            720
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/308-ever-grande-city.webp",
+          "source_crop_px": [
+            0,
+            193,
+            1280,
+            2276
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/308-ever-grande-city.webp",
+          "source_crop_px": [
+            0,
+            1118,
+            1280,
+            427
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/308-ever-grande-city.webp",
+          "source_crop_px": [
+            0,
+            851,
+            1280,
+            960
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 309,
+      "name": "Route 105",
+      "tiles": [
+        40,
+        80
+      ],
+      "pixels": [
+        1280,
+        2560
+      ],
+      "full_webp": "full/309-route-105.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 310,
+      "name": "Route 128",
+      "tiles": [
+        120,
+        40
+      ],
+      "pixels": [
+        3840,
+        1280
+      ],
+      "full_webp": "full/310-route-128.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 311,
+      "name": "Route 120",
+      "tiles": [
+        40,
+        100
+      ],
+      "pixels": [
+        1280,
+        3200
+      ],
+      "full_webp": "full/311-route-120.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/311-route-120.webp",
+          "source_crop_px": [
+            0,
+            1240,
+            1280,
+            720
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/311-route-120.webp",
+          "source_crop_px": [
+            0,
+            462,
+            1280,
+            2276
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/311-route-120.webp",
+          "source_crop_px": [
+            0,
+            1386,
+            1280,
+            427
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/311-route-120.webp",
+          "source_crop_px": [
+            0,
+            1120,
+            1280,
+            960
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      },
+      "scenes": [
+        {
+          "id": "route-120-s1",
+          "label": "Route 120 scene 1",
+          "anchor_tile": {
+            "x": 38,
+            "y": 54
+          },
+          "tags": [
+            "base",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/311-route-120-s1.webp",
+            "card-4x3": "scenes/card-4x3/311-route-120-s1.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              1384,
+              1280,
+              2104
+            ],
+            "card-4x3": [
+              0,
+              1264,
+              1280,
+              2224
+            ]
+          }
+        },
+        {
+          "id": "route-120-s2",
+          "label": "Route 120 scene 2",
+          "anchor_tile": {
+            "x": 18,
+            "y": 12
+          },
+          "tags": [
+            "presence",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/311-route-120-s2.webp",
+            "card-4x3": "scenes/card-4x3/311-route-120-s2.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              40,
+              1280,
+              760
+            ],
+            "card-4x3": [
+              0,
+              0,
+              1280,
+              960
+            ]
+          }
+        },
+        {
+          "id": "route-120-s3",
+          "label": "Route 120 scene 3",
+          "anchor_tile": {
+            "x": 5,
+            "y": 76
+          },
+          "tags": [
+            "story",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/311-route-120-s3.webp",
+            "card-4x3": "scenes/card-4x3/311-route-120-s3.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              2088,
+              1280,
+              2808
+            ],
+            "card-4x3": [
+              0,
+              1968,
+              1280,
+              2928
+            ]
+          }
+        },
+        {
+          "id": "route-120-s4",
+          "label": "Route 120 scene 4",
+          "anchor_tile": {
+            "x": 29,
+            "y": 85
+          },
+          "tags": [
+            "quiet",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/311-route-120-s4.webp",
+            "card-4x3": "scenes/card-4x3/311-route-120-s4.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              2376,
+              1280,
+              3096
+            ],
+            "card-4x3": [
+              0,
+              2240,
+              1280,
+              3200
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "map_id": 312,
+      "name": "Route 125",
+      "tiles": [
+        80,
+        40
+      ],
+      "pixels": [
+        2560,
+        1280
+      ],
+      "full_webp": "full/312-route-125.webp",
+      "selected_background_set": false,
+      "scenes": [
+        {
+          "id": "route-125-s1",
+          "label": "Route 125 scene 1",
+          "anchor_tile": {
+            "x": 24,
+            "y": 32
+          },
+          "tags": [
+            "base",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/312-route-125-s1.webp",
+            "card-4x3": "scenes/card-4x3/312-route-125-s1.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              0,
+              2276,
+              1280
+            ],
+            "card-4x3": [
+              0,
+              0,
+              1707,
+              1280
+            ]
+          }
+        },
+        {
+          "id": "route-125-s2",
+          "label": "Route 125 scene 2",
+          "anchor_tile": {
+            "x": 55,
+            "y": 11
+          },
+          "tags": [
+            "presence",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/312-route-125-s2.webp",
+            "card-4x3": "scenes/card-4x3/312-route-125-s2.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              284,
+              0,
+              2560,
+              1280
+            ],
+            "card-4x3": [
+              853,
+              0,
+              2560,
+              1280
+            ]
+          }
+        },
+        {
+          "id": "route-125-s3",
+          "label": "Route 125 scene 3",
+          "anchor_tile": {
+            "x": 7,
+            "y": 25
+          },
+          "tags": [
+            "story",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/312-route-125-s3.webp",
+            "card-4x3": "scenes/card-4x3/312-route-125-s3.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              0,
+              2276,
+              1280
+            ],
+            "card-4x3": [
+              0,
+              0,
+              1707,
+              1280
+            ]
+          }
+        },
+        {
+          "id": "route-125-s4",
+          "label": "Route 125 scene 4",
+          "anchor_tile": {
+            "x": 53,
+            "y": 10
+          },
+          "tags": [
+            "quiet",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/312-route-125-s4.webp",
+            "card-4x3": "scenes/card-4x3/312-route-125-s4.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              284,
+              0,
+              2560,
+              1280
+            ],
+            "card-4x3": [
+              853,
+              0,
+              2560,
+              1280
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "map_id": 313,
+      "name": "Route 114",
+      "tiles": [
+        44,
+        84
+      ],
+      "pixels": [
+        1408,
+        2688
+      ],
+      "full_webp": "full/313-route-114.webp",
+      "selected_background_set": false,
+      "scenes": [
+        {
+          "id": "route-114-s1",
+          "label": "Route 114 scene 1",
+          "anchor_tile": {
+            "x": 9,
+            "y": 47
+          },
+          "tags": [
+            "base",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/313-route-114-s1.webp",
+            "card-4x3": "scenes/card-4x3/313-route-114-s1.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              1124,
+              1408,
+              1916
+            ],
+            "card-4x3": [
+              0,
+              992,
+              1408,
+              2048
+            ]
+          }
+        },
+        {
+          "id": "route-114-s2",
+          "label": "Route 114 scene 2",
+          "anchor_tile": {
+            "x": 19,
+            "y": 70
+          },
+          "tags": [
+            "presence",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/313-route-114-s2.webp",
+            "card-4x3": "scenes/card-4x3/313-route-114-s2.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              1860,
+              1408,
+              2652
+            ],
+            "card-4x3": [
+              0,
+              1632,
+              1408,
+              2688
+            ]
+          }
+        },
+        {
+          "id": "route-114-s3",
+          "label": "Route 114 scene 3",
+          "anchor_tile": {
+            "x": 30,
+            "y": 51
+          },
+          "tags": [
+            "story",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/313-route-114-s3.webp",
+            "card-4x3": "scenes/card-4x3/313-route-114-s3.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              1252,
+              1408,
+              2044
+            ],
+            "card-4x3": [
+              0,
+              1120,
+              1408,
+              2176
+            ]
+          }
+        },
+        {
+          "id": "route-114-s4",
+          "label": "Route 114 scene 4",
+          "anchor_tile": {
+            "x": 12,
+            "y": 27
+          },
+          "tags": [
+            "quiet",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/313-route-114-s4.webp",
+            "card-4x3": "scenes/card-4x3/313-route-114-s4.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              484,
+              1408,
+              1276
+            ],
+            "card-4x3": [
+              0,
+              352,
+              1408,
+              1408
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "map_id": 314,
+      "name": "Route 115",
+      "tiles": [
+        45,
+        80
+      ],
+      "pixels": [
+        1440,
+        2560
+      ],
+      "full_webp": "full/314-route-115.webp",
+      "selected_background_set": false,
+      "scenes": [
+        {
+          "id": "route-115-s1",
+          "label": "Route 115 scene 1",
+          "anchor_tile": {
+            "x": 25,
+            "y": 24
+          },
+          "tags": [
+            "base",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/314-route-115-s1.webp",
+            "card-4x3": "scenes/card-4x3/314-route-115-s1.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              379,
+              1440,
+              1189
+            ],
+            "card-4x3": [
+              0,
+              244,
+              1440,
+              1324
+            ]
+          }
+        },
+        {
+          "id": "route-115-s2",
+          "label": "Route 115 scene 2",
+          "anchor_tile": {
+            "x": 20,
+            "y": 53
+          },
+          "tags": [
+            "presence",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/314-route-115-s2.webp",
+            "card-4x3": "scenes/card-4x3/314-route-115-s2.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              1307,
+              1440,
+              2117
+            ],
+            "card-4x3": [
+              0,
+              1172,
+              1440,
+              2252
+            ]
+          }
+        },
+        {
+          "id": "route-115-s3",
+          "label": "Route 115 scene 3",
+          "anchor_tile": {
+            "x": 32,
+            "y": 6
+          },
+          "tags": [
+            "story",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/314-route-115-s3.webp",
+            "card-4x3": "scenes/card-4x3/314-route-115-s3.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              0,
+              1440,
+              810
+            ],
+            "card-4x3": [
+              0,
+              0,
+              1440,
+              1080
+            ]
+          }
+        },
+        {
+          "id": "route-115-s4",
+          "label": "Route 115 scene 4",
+          "anchor_tile": {
+            "x": 7,
+            "y": 20
+          },
+          "tags": [
+            "quiet",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/314-route-115-s4.webp",
+            "card-4x3": "scenes/card-4x3/314-route-115-s4.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              251,
+              1440,
+              1061
+            ],
+            "card-4x3": [
+              0,
+              116,
+              1440,
+              1196
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "map_id": 315,
+      "name": "Route 127",
+      "tiles": [
+        80,
+        80
+      ],
+      "pixels": [
+        2560,
+        2560
+      ],
+      "full_webp": "full/315-route-127.webp",
+      "selected_background_set": false,
+      "scenes": [
+        {
+          "id": "route-127-s1",
+          "label": "Route 127 scene 1",
+          "anchor_tile": {
+            "x": 67,
+            "y": 63
+          },
+          "tags": [
+            "base",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/315-route-127-s1.webp",
+            "card-4x3": "scenes/card-4x3/315-route-127-s1.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              1120,
+              2560,
+              2560
+            ],
+            "card-4x3": [
+              0,
+              640,
+              2560,
+              2560
+            ]
+          }
+        },
+        {
+          "id": "route-127-s2",
+          "label": "Route 127 scene 2",
+          "anchor_tile": {
+            "x": 45,
+            "y": 24
+          },
+          "tags": [
+            "presence",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/315-route-127-s2.webp",
+            "card-4x3": "scenes/card-4x3/315-route-127-s2.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              64,
+              2560,
+              1504
+            ],
+            "card-4x3": [
+              0,
+              0,
+              2560,
+              1920
+            ]
+          }
+        },
+        {
+          "id": "route-127-s3",
+          "label": "Route 127 scene 3",
+          "anchor_tile": {
+            "x": 61,
+            "y": 21
+          },
+          "tags": [
+            "story",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/315-route-127-s3.webp",
+            "card-4x3": "scenes/card-4x3/315-route-127-s3.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              0,
+              2560,
+              1440
+            ],
+            "card-4x3": [
+              0,
+              0,
+              2560,
+              1920
+            ]
+          }
+        },
+        {
+          "id": "route-127-s4",
+          "label": "Route 127 scene 4",
+          "anchor_tile": {
+            "x": 59,
+            "y": 72
+          },
+          "tags": [
+            "quiet",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/315-route-127-s4.webp",
+            "card-4x3": "scenes/card-4x3/315-route-127-s4.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              1120,
+              2560,
+              2560
+            ],
+            "card-4x3": [
+              0,
+              640,
+              2560,
+              2560
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "map_id": 316,
+      "name": "Route 119",
+      "tiles": [
+        40,
+        140
+      ],
+      "pixels": [
+        1280,
+        4480
+      ],
+      "full_webp": "full/316-route-119.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/316-route-119.webp",
+          "source_crop_px": [
+            0,
+            1790,
+            1280,
+            720
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/316-route-119.webp",
+          "source_crop_px": [
+            0,
+            1012,
+            1280,
+            2276
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/316-route-119.webp",
+          "source_crop_px": [
+            0,
+            1937,
+            1280,
+            427
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/316-route-119.webp",
+          "source_crop_px": [
+            0,
+            1670,
+            1280,
+            960
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        }
+      },
+      "scenes": [
+        {
+          "id": "route-119-s1",
+          "label": "Route 119 scene 1",
+          "anchor_tile": {
+            "x": 16,
+            "y": 28
+          },
+          "tags": [
+            "base",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/316-route-119-s1.webp",
+            "card-4x3": "scenes/card-4x3/316-route-119-s1.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              552,
+              1280,
+              1272
+            ],
+            "card-4x3": [
+              0,
+              432,
+              1280,
+              1392
+            ]
+          }
+        },
+        {
+          "id": "route-119-s2",
+          "label": "Route 119 scene 2",
+          "anchor_tile": {
+            "x": 7,
+            "y": 101
+          },
+          "tags": [
+            "presence",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/316-route-119-s2.webp",
+            "card-4x3": "scenes/card-4x3/316-route-119-s2.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              2888,
+              1280,
+              3608
+            ],
+            "card-4x3": [
+              0,
+              2768,
+              1280,
+              3728
+            ]
+          }
+        },
+        {
+          "id": "route-119-s3",
+          "label": "Route 119 scene 3",
+          "anchor_tile": {
+            "x": 31,
+            "y": 73
+          },
+          "tags": [
+            "story",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/316-route-119-s3.webp",
+            "card-4x3": "scenes/card-4x3/316-route-119-s3.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              1992,
+              1280,
+              2712
+            ],
+            "card-4x3": [
+              0,
+              1872,
+              1280,
+              2832
+            ]
+          }
+        },
+        {
+          "id": "route-119-s4",
+          "label": "Route 119 scene 4",
+          "anchor_tile": {
+            "x": 5,
+            "y": 2
+          },
+          "tags": [
+            "quiet",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/316-route-119-s4.webp",
+            "card-4x3": "scenes/card-4x3/316-route-119-s4.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              0,
+              1280,
+              720
+            ],
+            "card-4x3": [
+              0,
+              0,
+              1280,
+              960
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "map_id": 317,
+      "name": "Route 106",
+      "tiles": [
+        80,
+        20
+      ],
+      "pixels": [
+        2560,
+        640
+      ],
+      "full_webp": "full/317-route-106.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 318,
+      "name": "Route 126",
+      "tiles": [
+        80,
+        80
+      ],
+      "pixels": [
+        2560,
+        2560
+      ],
+      "full_webp": "full/318-route-126.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 319,
+      "name": "Route 123",
+      "tiles": [
+        140,
+        30
+      ],
+      "pixels": [
+        4480,
+        960
+      ],
+      "full_webp": "full/319-route-123.webp",
+      "selected_background_set": false,
+      "scenes": [
+        {
+          "id": "route-123-s1",
+          "label": "Route 123 scene 1",
+          "anchor_tile": {
+            "x": 49,
+            "y": 3
+          },
+          "tags": [
+            "base",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/319-route-123-s1.webp",
+            "card-4x3": "scenes/card-4x3/319-route-123-s1.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              730,
+              0,
+              2437,
+              960
+            ],
+            "card-4x3": [
+              944,
+              0,
+              2224,
+              960
+            ]
+          }
+        },
+        {
+          "id": "route-123-s2",
+          "label": "Route 123 scene 2",
+          "anchor_tile": {
+            "x": 57,
+            "y": 5
+          },
+          "tags": [
+            "presence",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/319-route-123-s2.webp",
+            "card-4x3": "scenes/card-4x3/319-route-123-s2.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              986,
+              0,
+              2693,
+              960
+            ],
+            "card-4x3": [
+              1200,
+              0,
+              2480,
+              960
+            ]
+          }
+        },
+        {
+          "id": "route-123-s3",
+          "label": "Route 123 scene 3",
+          "anchor_tile": {
+            "x": 47,
+            "y": 3
+          },
+          "tags": [
+            "story",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/319-route-123-s3.webp",
+            "card-4x3": "scenes/card-4x3/319-route-123-s3.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              666,
+              0,
+              2373,
+              960
+            ],
+            "card-4x3": [
+              880,
+              0,
+              2160,
+              960
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "map_id": 320,
+      "name": "Dewford Town",
+      "tiles": [
+        28,
+        36
+      ],
+      "pixels": [
+        896,
+        1152
+      ],
+      "full_webp": "full/320-dewford-town.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/320-dewford-town.webp",
+          "source_crop_px": [
+            0,
+            347,
+            896,
+            504
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/320-dewford-town.webp",
+          "source_crop_px": [
+            124,
+            0,
+            648,
+            1152
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/320-dewford-town.webp",
+          "source_crop_px": [
+            0,
+            450,
+            896,
+            299
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/320-dewford-town.webp",
+          "source_crop_px": [
+            0,
+            263,
+            896,
+            672
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 321,
+      "name": "Lavaridge Town",
+      "tiles": [
+        25,
+        30
+      ],
+      "pixels": [
+        800,
+        960
+      ],
+      "full_webp": "full/321-lavaridge-town.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/321-lavaridge-town.webp",
+          "source_crop_px": [
+            0,
+            293,
+            800,
+            450
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.54
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/321-lavaridge-town.webp",
+          "source_crop_px": [
+            130,
+            0,
+            540,
+            960
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.54
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/321-lavaridge-town.webp",
+          "source_crop_px": [
+            0,
+            385,
+            800,
+            267
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.54
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/321-lavaridge-town.webp",
+          "source_crop_px": [
+            0,
+            218,
+            800,
+            600
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.54
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 322,
+      "name": "Route 133",
+      "tiles": [
+        80,
+        50
+      ],
+      "pixels": [
+        2560,
+        1600
+      ],
+      "full_webp": "full/322-route-133.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 323,
+      "name": "Route 107",
+      "tiles": [
+        60,
+        20
+      ],
+      "pixels": [
+        1920,
+        640
+      ],
+      "full_webp": "full/323-route-107.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 324,
+      "name": "Route 113",
+      "tiles": [
+        100,
+        23
+      ],
+      "pixels": [
+        3200,
+        736
+      ],
+      "full_webp": "full/324-route-113.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/324-route-113.webp",
+          "source_crop_px": [
+            946,
+            0,
+            1308,
+            736
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/324-route-113.webp",
+          "source_crop_px": [
+            1393,
+            0,
+            414,
+            736
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/324-route-113.webp",
+          "source_crop_px": [
+            496,
+            0,
+            2208,
+            736
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/324-route-113.webp",
+          "source_crop_px": [
+            1110,
+            0,
+            981,
+            736
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      },
+      "scenes": [
+        {
+          "id": "route-113-s1",
+          "label": "Route 113 scene 1",
+          "anchor_tile": {
+            "x": 49,
+            "y": 8
+          },
+          "tags": [
+            "base",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/324-route-113-s1.webp",
+            "card-4x3": "scenes/card-4x3/324-route-113-s1.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              930,
+              0,
+              2238,
+              736
+            ],
+            "card-4x3": [
+              1094,
+              0,
+              2075,
+              736
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "map_id": 325,
+      "name": "Route 134",
+      "tiles": [
+        80,
+        50
+      ],
+      "pixels": [
+        2560,
+        1600
+      ],
+      "full_webp": "full/325-route-134.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 326,
+      "name": "Route 108",
+      "tiles": [
+        60,
+        20
+      ],
+      "pixels": [
+        1920,
+        640
+      ],
+      "full_webp": "full/326-route-108.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 327,
+      "name": "Fallarbor Town",
+      "tiles": [
+        20,
+        30
+      ],
+      "pixels": [
+        640,
+        960
+      ],
+      "full_webp": "full/327-fallarbor-town.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/327-fallarbor-town.webp",
+          "source_crop_px": [
+            0,
+            319,
+            640,
+            360
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/327-fallarbor-town.webp",
+          "source_crop_px": [
+            50,
+            0,
+            540,
+            960
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/327-fallarbor-town.webp",
+          "source_crop_px": [
+            0,
+            393,
+            640,
+            213
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/327-fallarbor-town.webp",
+          "source_crop_px": [
+            0,
+            259,
+            640,
+            480
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 328,
+      "name": "Route 109",
+      "tiles": [
+        41,
+        39
+      ],
+      "pixels": [
+        1312,
+        1248
+      ],
+      "full_webp": "full/328-route-109.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/328-route-109.webp",
+          "source_crop_px": [
+            0,
+            255,
+            1312,
+            738
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/328-route-109.webp",
+          "source_crop_px": [
+            305,
+            0,
+            702,
+            1248
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/328-route-109.webp",
+          "source_crop_px": [
+            0,
+            406,
+            1312,
+            437
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/328-route-109.webp",
+          "source_crop_px": [
+            0,
+            132,
+            1312,
+            984
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 329,
+      "name": "Littleroot Town",
+      "tiles": [
+        34,
+        25
+      ],
+      "pixels": [
+        1088,
+        800
+      ],
+      "full_webp": "full/329-littleroot-town.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/329-littleroot-town.webp",
+          "source_crop_px": [
+            0,
+            70,
+            1088,
+            612
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.47
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/329-littleroot-town.webp",
+          "source_crop_px": [
+            319,
+            0,
+            450,
+            800
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.47
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/329-littleroot-town.webp",
+          "source_crop_px": [
+            0,
+            194,
+            1088,
+            363
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.47
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/329-littleroot-town.webp",
+          "source_crop_px": [
+            10,
+            0,
+            1067,
+            800
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.47
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 330,
+      "name": "Fortree City",
+      "tiles": [
+        40,
+        131
+      ],
+      "pixels": [
+        1280,
+        4192
+      ],
+      "full_webp": "full/330-fortree-city.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/330-fortree-city.webp",
+          "source_crop_px": [
+            0,
+            1652,
+            1280,
+            720
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/330-fortree-city.webp",
+          "source_crop_px": [
+            0,
+            874,
+            1280,
+            2276
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/330-fortree-city.webp",
+          "source_crop_px": [
+            0,
+            1799,
+            1280,
+            427
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/330-fortree-city.webp",
+          "source_crop_px": [
+            0,
+            1532,
+            1280,
+            960
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.48
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 331,
+      "name": "Petalburg Woods",
+      "tiles": [
+        58,
+        46
+      ],
+      "pixels": [
+        1856,
+        1472
+      ],
+      "full_webp": "full/331-petalburg-woods.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/331-petalburg-woods.webp",
+          "source_crop_px": [
+            0,
+            214,
+            1856,
+            1044
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/331-petalburg-woods.webp",
+          "source_crop_px": [
+            514,
+            0,
+            828,
+            1472
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/331-petalburg-woods.webp",
+          "source_crop_px": [
+            0,
+            426,
+            1856,
+            619
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/331-petalburg-woods.webp",
+          "source_crop_px": [
+            0,
+            40,
+            1856,
+            1392
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 332,
+      "name": "Slateport City",
+      "tiles": [
+        44,
+        56
+      ],
+      "pixels": [
+        1408,
+        1792
+      ],
+      "full_webp": "full/332-slateport-city.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/332-slateport-city.webp",
+          "source_crop_px": [
+            0,
+            590,
+            1408,
+            792
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.52,
+            0.55
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/332-slateport-city.webp",
+          "source_crop_px": [
+            228,
+            0,
+            1008,
+            1792
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.52,
+            0.55
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/332-slateport-city.webp",
+          "source_crop_px": [
+            0,
+            751,
+            1408,
+            469
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.52,
+            0.55
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/332-slateport-city.webp",
+          "source_crop_px": [
+            0,
+            458,
+            1408,
+            1056
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.52,
+            0.55
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 333,
+      "name": "Mossdeep City",
+      "tiles": [
+        81,
+        40
+      ],
+      "pixels": [
+        2592,
+        1280
+      ],
+      "full_webp": "full/333-mossdeep-city.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/333-mossdeep-city.webp",
+          "source_crop_px": [
+            184,
+            0,
+            2276,
+            1280
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.51,
+            0.5
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/333-mossdeep-city.webp",
+          "source_crop_px": [
+            962,
+            0,
+            720,
+            1280
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.51,
+            0.5
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/333-mossdeep-city.webp",
+          "source_crop_px": [
+            0,
+            208,
+            2592,
+            864
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.51,
+            0.5
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/333-mossdeep-city.webp",
+          "source_crop_px": [
+            468,
+            0,
+            1707,
+            1280
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.51,
+            0.5
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 334,
+      "name": "Route 110",
+      "tiles": [
+        45,
+        100
+      ],
+      "pixels": [
+        1440,
+        3200
+      ],
+      "full_webp": "full/334-route-110.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/334-route-110.webp",
+          "source_crop_px": [
+            0,
+            1195,
+            1440,
+            810
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/334-route-110.webp",
+          "source_crop_px": [
+            0,
+            320,
+            1440,
+            2560
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/334-route-110.webp",
+          "source_crop_px": [
+            0,
+            1360,
+            1440,
+            480
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/334-route-110.webp",
+          "source_crop_px": [
+            0,
+            1060,
+            1440,
+            1080
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      },
+      "scenes": [
+        {
+          "id": "route-110-s1",
+          "label": "Route 110 scene 1",
+          "anchor_tile": {
+            "x": 16,
+            "y": 25
+          },
+          "tags": [
+            "base",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/334-route-110-s1.webp",
+            "card-4x3": "scenes/card-4x3/334-route-110-s1.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              411,
+              1440,
+              1221
+            ],
+            "card-4x3": [
+              0,
+              276,
+              1440,
+              1356
+            ]
+          }
+        },
+        {
+          "id": "route-110-s2",
+          "label": "Route 110 scene 2",
+          "anchor_tile": {
+            "x": 17,
+            "y": 25
+          },
+          "tags": [
+            "presence",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/334-route-110-s2.webp",
+            "card-4x3": "scenes/card-4x3/334-route-110-s2.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              411,
+              1440,
+              1221
+            ],
+            "card-4x3": [
+              0,
+              276,
+              1440,
+              1356
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "map_id": 335,
+      "name": "Route 130",
+      "tiles": [
+        60,
+        40
+      ],
+      "pixels": [
+        1920,
+        1280
+      ],
+      "full_webp": "full/335-route-130.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 336,
+      "name": "Mauville City",
+      "tiles": [
+        40,
+        20
+      ],
+      "pixels": [
+        1280,
+        640
+      ],
+      "full_webp": "full/336-mauville-city.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/336-mauville-city.webp",
+          "source_crop_px": [
+            71,
+            0,
+            1138,
+            640
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/336-mauville-city.webp",
+          "source_crop_px": [
+            460,
+            0,
+            360,
+            640
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/336-mauville-city.webp",
+          "source_crop_px": [
+            0,
+            106,
+            1280,
+            427
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/336-mauville-city.webp",
+          "source_crop_px": [
+            214,
+            0,
+            853,
+            640
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 337,
+      "name": "Route 131",
+      "tiles": [
+        80,
+        45
+      ],
+      "pixels": [
+        2560,
+        1440
+      ],
+      "full_webp": "full/337-route-131.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 338,
+      "name": "Route 101",
+      "tiles": [
+        35,
+        21
+      ],
+      "pixels": [
+        1120,
+        672
+      ],
+      "full_webp": "full/338-route-101.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/338-route-101.webp",
+          "source_crop_px": [
+            0,
+            21,
+            1120,
+            630
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/338-route-101.webp",
+          "source_crop_px": [
+            371,
+            0,
+            378,
+            672
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/338-route-101.webp",
+          "source_crop_px": [
+            0,
+            150,
+            1120,
+            373
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/338-route-101.webp",
+          "source_crop_px": [
+            112,
+            0,
+            896,
+            672
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 339,
+      "name": "Route 117",
+      "tiles": [
+        60,
+        30
+      ],
+      "pixels": [
+        1920,
+        960
+      ],
+      "full_webp": "full/339-route-117.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 340,
+      "name": "Oldale Town",
+      "tiles": [
+        27,
+        20
+      ],
+      "pixels": [
+        864,
+        640
+      ],
+      "full_webp": "full/340-oldale-town.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/340-oldale-town.webp",
+          "source_crop_px": [
+            0,
+            77,
+            864,
+            486
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/340-oldale-town.webp",
+          "source_crop_px": [
+            252,
+            0,
+            360,
+            640
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/340-oldale-town.webp",
+          "source_crop_px": [
+            0,
+            176,
+            864,
+            288
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/340-oldale-town.webp",
+          "source_crop_px": [
+            6,
+            0,
+            853,
+            640
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 341,
+      "name": "Route 129",
+      "tiles": [
+        80,
+        40
+      ],
+      "pixels": [
+        2560,
+        1280
+      ],
+      "full_webp": "full/341-route-129.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 342,
+      "name": "Verdanturf Town",
+      "tiles": [
+        26,
+        30
+      ],
+      "pixels": [
+        832,
+        960
+      ],
+      "full_webp": "full/342-verdanturf-town.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/342-verdanturf-town.webp",
+          "source_crop_px": [
+            0,
+            265,
+            832,
+            468
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/342-verdanturf-town.webp",
+          "source_crop_px": [
+            146,
+            0,
+            540,
+            960
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/342-verdanturf-town.webp",
+          "source_crop_px": [
+            0,
+            361,
+            832,
+            277
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/342-verdanturf-town.webp",
+          "source_crop_px": [
+            0,
+            187,
+            832,
+            624
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.52
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 343,
+      "name": "Route 103",
+      "tiles": [
+        100,
+        42
+      ],
+      "pixels": [
+        3200,
+        1344
+      ],
+      "full_webp": "full/343-route-103.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/343-route-103.webp",
+          "source_crop_px": [
+            406,
+            0,
+            2389,
+            1344
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/343-route-103.webp",
+          "source_crop_px": [
+            1222,
+            0,
+            756,
+            1344
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/343-route-103.webp",
+          "source_crop_px": [
+            0,
+            138,
+            3200,
+            1067
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/343-route-103.webp",
+          "source_crop_px": [
+            704,
+            0,
+            1792,
+            1344
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 344,
+      "name": "Route 132",
+      "tiles": [
+        80,
+        40
+      ],
+      "pixels": [
+        2560,
+        1280
+      ],
+      "full_webp": "full/344-route-132.webp",
+      "selected_background_set": false
+    },
+    {
+      "map_id": 345,
+      "name": "Route 111",
+      "tiles": [
+        45,
+        140
+      ],
+      "pixels": [
+        1440,
+        4480
+      ],
+      "full_webp": "full/345-route-111.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/345-route-111.webp",
+          "source_crop_px": [
+            0,
+            1835,
+            1440,
+            810
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/345-route-111.webp",
+          "source_crop_px": [
+            0,
+            960,
+            1440,
+            2560
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/345-route-111.webp",
+          "source_crop_px": [
+            0,
+            2000,
+            1440,
+            480
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/345-route-111.webp",
+          "source_crop_px": [
+            0,
+            1700,
+            1440,
+            1080
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      },
+      "scenes": [
+        {
+          "id": "route-111-s1",
+          "label": "Route 111 scene 1",
+          "anchor_tile": {
+            "x": 27,
+            "y": 27
+          },
+          "tags": [
+            "base",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/345-route-111-s1.webp",
+            "card-4x3": "scenes/card-4x3/345-route-111-s1.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              475,
+              1440,
+              1285
+            ],
+            "card-4x3": [
+              0,
+              340,
+              1440,
+              1420
+            ]
+          }
+        },
+        {
+          "id": "route-111-s2",
+          "label": "Route 111 scene 2",
+          "anchor_tile": {
+            "x": 35,
+            "y": 1
+          },
+          "tags": [
+            "presence",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/345-route-111-s2.webp",
+            "card-4x3": "scenes/card-4x3/345-route-111-s2.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              0,
+              1440,
+              810
+            ],
+            "card-4x3": [
+              0,
+              0,
+              1440,
+              1080
+            ]
+          }
+        },
+        {
+          "id": "route-111-s3",
+          "label": "Route 111 scene 3",
+          "anchor_tile": {
+            "x": 34,
+            "y": 50
+          },
+          "tags": [
+            "story",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/345-route-111-s3.webp",
+            "card-4x3": "scenes/card-4x3/345-route-111-s3.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              1211,
+              1440,
+              2021
+            ],
+            "card-4x3": [
+              0,
+              1076,
+              1440,
+              2156
+            ]
+          }
+        },
+        {
+          "id": "route-111-s4",
+          "label": "Route 111 scene 4",
+          "anchor_tile": {
+            "x": 13,
+            "y": 19
+          },
+          "tags": [
+            "quiet",
+            "secret-base-nearby"
+          ],
+          "assets": {
+            "hero-16x9": "scenes/hero-16x9/345-route-111-s4.webp",
+            "card-4x3": "scenes/card-4x3/345-route-111-s4.webp"
+          },
+          "source_crop_px": {
+            "hero-16x9": [
+              0,
+              219,
+              1440,
+              1029
+            ],
+            "card-4x3": [
+              0,
+              84,
+              1440,
+              1164
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "map_id": 346,
+      "name": "Route 102",
+      "tiles": [
+        50,
+        38
+      ],
+      "pixels": [
+        1600,
+        1216
+      ],
+      "full_webp": "full/346-route-102.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/346-route-102.webp",
+          "source_crop_px": [
+            0,
+            158,
+            1600,
+            900
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/346-route-102.webp",
+          "source_crop_px": [
+            458,
+            0,
+            684,
+            1216
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/346-route-102.webp",
+          "source_crop_px": [
+            0,
+            342,
+            1600,
+            533
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/346-route-102.webp",
+          "source_crop_px": [
+            0,
+            8,
+            1600,
+            1200
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      }
+    },
+    {
+      "map_id": 347,
+      "name": "Sootopolis City",
+      "tiles": [
+        60,
+        60
+      ],
+      "pixels": [
+        1920,
+        1920
+      ],
+      "full_webp": "full/347-sootopolis-city.webp",
+      "selected_background_set": true,
+      "crops": {
+        "hero-16x9": {
+          "path": "hero-16x9/347-sootopolis-city.webp",
+          "source_crop_px": [
+            0,
+            516,
+            1920,
+            1080
+          ],
+          "output_px": [
+            1920,
+            1080
+          ],
+          "focus": [
+            0.5,
+            0.55
+          ]
+        },
+        "mobile-9x16": {
+          "path": "mobile-9x16/347-sootopolis-city.webp",
+          "source_crop_px": [
+            420,
+            0,
+            1080,
+            1920
+          ],
+          "output_px": [
+            1080,
+            1920
+          ],
+          "focus": [
+            0.5,
+            0.55
+          ]
+        },
+        "banner-3x1": {
+          "path": "banner-3x1/347-sootopolis-city.webp",
+          "source_crop_px": [
+            0,
+            736,
+            1920,
+            640
+          ],
+          "output_px": [
+            1800,
+            600
+          ],
+          "focus": [
+            0.5,
+            0.55
+          ]
+        },
+        "card-4x3": {
+          "path": "card-4x3/347-sootopolis-city.webp",
+          "source_crop_px": [
+            0,
+            336,
+            1920,
+            1440
+          ],
+          "output_px": [
+            1200,
+            900
+          ],
+          "focus": [
+            0.5,
+            0.55
+          ]
+        }
+      }
+    }
+  ],
+  "location_scenes": {
+    "version": "0.4.3",
+    "tile_size_px": 32,
+    "policy": "nearest anchor when x/y is known; deterministic event-tag variant otherwise; canonical crop/full-map fallback",
+    "scene_routes": 13,
+    "scene_count": 46
+  }
+}

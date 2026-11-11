@@ -1,0 +1,75 @@
+EMERALD v0.1.23 — HOME BRIDGE SOURCE CAPSULE QA
+Date: 2026-09-09
+Status: PASS
+
+SCOPE
+-----
+This milestone establishes the immutable Gen III source boundary for the future
+Pokémon HOME Bridge. It does NOT yet create a Pokémon HOME import or write to
+Pokémon HOME. It captures and verifies the exact 80-byte stored Gen III Pokémon
+record from the running Emerald session and can package it with provenance.
+
+CURRENT BEHAVIOR
+----------------
+- Strategy Context exposes a HOME action.
+- Owned party and PC-box Pokémon receive stable transfer references.
+- Exact 80-byte PK3 source bytes are captured before higher-level decoding.
+- Gen III encrypted payload checksum is revalidated locally before export.
+- A source capsule can be generated locally containing:
+    * exact .pk3 entity
+    * manifest.json
+    * README.txt
+- SHA-256 and CRC32 provenance data are generated locally.
+- Wild Pokémon cannot be exported before capture.
+- Eggs cannot enter the migration path before hatching.
+- No Pokémon HOME endpoint is contacted.
+- No HOME Tracker is generated, guessed, or fabricated.
+- No save data is modified by this P0 bridge.
+
+PKHEX SOURCE AUDIT
+------------------
+The user-supplied PKHeX source was reviewed as a research/test oracle.
+Relevant upstream conversion chain is sequential:
+  PK3 -> PK4 -> PK5 -> PK6 -> PK7
+The source also confirms generation-specific transfer mutations rather than a
+raw-format cast, and contains legality settings around missing HOME Tracker
+values. PKHeX is GPLv3; no PKHeX source code is vendored into this browser build.
+
+TARGETED QA
+-----------
+PASS  node --check pokefield-live-v0.1.23.js
+PASS  node --check strategy-pokedex-v0.1.23.js
+PASS  node --check home-bridge-core-v0.1.23.js
+PASS  node --check home-bridge-v0.1.23.js
+PASS  tests/home-bridge-integration-v0.1.23.cjs
+      Exact PK3 capture, owned-only gating, Strategy Context action,
+      no HOME network writes.
+PASS  tests/home-bridge-v0.1.23.cjs
+      Valid synthetic Gen III PK3 accepted, corrupted checksum rejected,
+      provenance ZIP generated.
+PASS  tests/seamless-mode-v0.1.22.2.cjs
+      Single-document REGULAR <-> DEX remains intact.
+PASS  tests/teamlab-v0.1.21.1.cjs
+      Existing TeamLab/EV/ADV/Hidden Power behavior remains intact.
+PASS  tests/owned-pokefield-test-v0.1.17.cjs
+      Owned specimen field/regression suite remains intact.
+PASS  tests/decoder-test.js
+      24/24 Gen III permutations, checksum rejection, IV/EV decode,
+      Hidden Power, national mapping and gender logic.
+
+BOUNDARY
+--------
+v0.1.23 is deliberately SOURCE CAPTURE P0.
+A successful capsule means "we have the exact original Gen III specimen and a
+verified provenance package", not "this file can already be imported by HOME".
+
+NEXT MILESTONE
+--------------
+v0.1.24 — TRANSFER COMPILER
+1. Implement deterministic PK3 -> PK4 -> PK5 -> PK6 transfer semantics.
+2. Preserve an immutable source capsule alongside every derived entity.
+3. Cross-check conversion outputs against PKHeX.Core fixtures.
+4. Add legality/provenance diff reporting for every mutated field.
+5. Only after the converter is stable: inject the derived entity into a
+   supported bridge-game save.
+6. Leave server-issued HOME identity/tracker assignment to official HOME paths.

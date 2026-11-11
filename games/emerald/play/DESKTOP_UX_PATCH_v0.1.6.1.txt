@@ -1,0 +1,28 @@
+JRPG.WORLD EMERALD LIVE — DESKTOP UX PATCH v0.1.6.1
+
+Scope: desktop >= 960px only.
+
+Changes:
+- Live intelligence is normal-flow below the game: no fixed overlay, no overlap.
+- Game remains dominant, centered, and preserves the native 3:2 framebuffer.
+- Bottom intelligence screen matches the game width and gains a restrained hinge cue.
+- Idle state explains LIVE / PLAY / LOCAL instead of centering "no party data".
+- Empty party drawer is hidden on desktop until party data exists.
+- TECH remains collapsed; desktop ABOUT is collapsed and secondary.
+- Original desktop keyboard strip is hidden and replaced by a compact physical-key-first guide:
+  ARROWS Move · Z A Button · X B Button · Q L · W R · Enter Start · Shift Select.
+- Actual emulator mappings are unchanged.
+- Desktop body can scroll vertically on laptop displays; no fixed panel remains.
+- Mobile <= 959px receives no CSS layout changes and no visible helper elements.
+
+Runtime intentionally untouched:
+- ROM loading
+- BPEE detection
+- live RAM bridge
+- decoder/checksum logic
+- party/wild detection
+- IV/EV/Nature/Ability/Gender/Hidden Power
+- mGBA keyboard mappings
+- touch controls
+- iOS audio recovery
+- IndexedDB persistence

@@ -1,0 +1,14 @@
+GPTGTA v4.3 Big City Harbor Notes
+
+Built from v4.2.31 fast-cars baseline.
+
+Added:
+- Larger 84x64 city map.
+- Wide road grid and skyscraper districts.
+- Harbor / industrial scrap-yard area.
+- Moving traffic cars with drivers.
+- Carjacking now ejects a driver from occupied cars.
+- Ejected drivers can run away, return to sidewalk life, or sometimes try to reclaim the car.
+- Pedestrians sometimes cross roads.
+- Rare ambient carjackers can steal traffic cars and cause city chaos.
+- Harbor Scrap objective: drive a stolen car into the marked scrap zone and press ENTER to cash it in.

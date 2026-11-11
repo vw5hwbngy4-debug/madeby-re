@@ -1,0 +1,443 @@
+=== PDF PAGE 1 ===
+FBC-0 — Fade, Bleed & Fieldcast
+
+The Transitional Mechanics of Field Expression in Ambient OS
+
+Ambient Era Canon · Canonical Specification (2026)
+
+Status: Normative
+
+Author: Raynor Eissens
+
+⸻
+
+Abstract
+
+FBC-0 defines the three canonical transitional mechanics by which fields express themselves in
+
+Ambient OS:
+
+•
+Fade — gradual stabilisation or dissolution of a field
+
+•
+Bleed — peripheral influence of adjacent fields without dominance
+
+•
+Fieldcast — ambient projection of a stabilised field into the surrounding
+
+environment
+
+Together, these mechanisms describe how fields appear, interact, and dissolve
+
+without commands, selection, or inference.
+
+FBC-0 formalises the perceptual and environmental layer of Ambient OS and defines
+
+how humans experience field transitions as felt coherence rather than symbolic
+
+interaction.
+
+This document is normative.
+
+⸻
+
+1. Scope
+
+FBC-0 defines:
+
+•
+the mechanics by which fields enter awareness
+
+•
+the conditions under which a field stabilises or dissolves
+
+•
+the rules governing multi-field interaction
+
+•
+the distinction between dominance, influence, and ambient presence
+
+FBC-0 applies to all Ambient-compatible systems and environments and is required
+
+for correct interpretation of AN-0, AP₁, and AAC-1.
+
+=== PDF PAGE 2 ===
+⸻
+
+2. Why Transitional Mechanics Are Required
+
+Without transitional mechanics, systems collapse into:
+
+•
+binary state switching
+
+•
+abrupt context changes
+
+•
+coercive attention capture
+
+•
+symbolic mode selection
+
+Legacy interfaces rely on instant transitions (open, close, switch).
+
+Ambient OS requires continuous thermodynamic transitions.
+
+FBC-0 replaces state switching with gradual field modulation.
+
+⸻
+
+3. Fade — Stabilisation and Dissolution
+
+3.1 Definition
+
+Fade is the gradual increase or decrease of a field’s dominance as coherence stabilises or
+
+dissolves.
+
+Fade represents thermodynamic settling, not interaction.
+
+3.2 Properties of Fade
+
+Fade is:
+
+•
+continuous
+
+•
+reversible
+
+•
+non-inferential
+
+•
+non-symbolic
+
+•
+pressure-regulated
+
+Fade never:
+
+•
+jumps
+
+•
+interrupts
+
+•
+commands
+
+•
+demands response
+
+=== PDF PAGE 3 ===
+3.3 Examples
+
+•
+Entering a university → Blue fades in
+
+•
+Leaving a library → Blue fades out
+
+•
+Returning home → Red fades in
+
+•
+Losing coherence → Yellow fades up
+
+Fade expresses fit, not intent.
+
+⸻
+
+4. Bleed — Peripheral Field Influence
+
+4.1 Definition
+
+Bleed is the soft, peripheral presence of a non-dominant field within a stabilised field.
+
+Bleed does not create behaviour.
+
+Bleed does not override dominance.
+
+Bleed expresses contextual richness.
+
+4.2 Properties of Bleed
+
+Bleed is:
+
+•
+low-saturation
+
+•
+non-intrusive
+
+•
+informational
+
+•
+reversible
+
+Bleed never:
+
+•
+demands action
+
+•
+changes the dominant field
+
+•
+introduces pressure
+
+4.3 Examples
+
+•
+Purple bleeding into Blue inside institutional spaces
+
+•
+Green bleeding into Blue in health-related environments
+
+•
+Pink bleeding into Red during shared rest
+
+Bleed communicates what is possible, not what must be done.
+
+=== PDF PAGE 4 ===
+⸻
+
+5. Fieldcast — Ambient Projection of Stabilised Fields
+
+5.1 Definition
+
+Fieldcast is the ambient projection of a stabilised field into the surrounding environment.
+
+Fieldcast is not navigation.
+
+Fieldcast is not signalling.
+
+Fieldcast is not persuasion.
+
+Fieldcast is environmental coherence made perceptible.
+
+5.2 Conditions for Fieldcast
+
+Fieldcast occurs only when:
+
+•
+a field is stabilised
+
+•
+ΔR ≥ 0
+
+•
+no unresolved Yellow motion is present
+
+Fieldcast may not occur during drift.
+
+5.3 Properties of Fieldcast
+
+Fieldcast is:
+
+•
+non-directional
+
+•
+low-pressure
+
+•
+ambient
+
+•
+collective
+
+Fieldcast never:
+
+•
+tracks individuals
+
+•
+targets behaviour
+
+•
+optimises outcomes
+
+5.4 Examples
+
+•
+A supermarket projecting Blue/Green clarity
+
+•
+A university projecting Blue/Purple coherence
+
+•
+A park projecting Green stability
+
+•
+A home projecting Red rest
+
+=== PDF PAGE 5 ===
+Fieldcast allows humans to feel the nature of a place before acting.
+
+Clarification — Exclusion of Tool-Level Artifacts
+
+Fieldcast, Fade, and Bleed apply exclusively to fields, not to applications, tools, or
+
+services.
+
+Applications do not generate Fieldcast, do not participate in Bleed, and do not
+
+influence Fade.
+
+Tools may become visible only after field stabilisation and only within the permissive
+
+boundary of the active field.
+
+Field expression governs environment and presence.
+
+Tool usage remains instrumental and subordinate to field dynamics.
+
+⸻
+
+6. Hierarchy of Transitional Mechanics
+
+FBC-0 establishes the following invariant hierarchy:
+
+1.
+Fade — governs dominance
+
+2.
+Bleed — governs peripheral context
+
+3.
+Fieldcast — governs environmental projection
+
+Rules:
+
+•
+Bleed may never override Fade
+
+•
+Fieldcast may never replace stabilisation
+
+•
+Yellow suppresses Fieldcast entirely
+
+This hierarchy is invariant.
+
+⸻
+
+7. Interaction with Navigation (AN-0)
+
+FBC-0 integrates with AN-0 as follows:
+
+•
+Navigation (Yellow) exists only during failed stabilisation
+
+•
+Fade determines when navigation ends
+
+•
+Bleed informs possibility without inducing motion
+
+•
+Fieldcast ceases during navigation and resumes after stabilisation
+
+=== PDF PAGE 6 ===
+Thus:
+
+•
+Navigation resolves instability
+
+•
+FBC-0 governs stability expression
+
+⸻
+
+8. Human Experience Under FBC-0
+
+Humans experience FBC-0 as:
+
+•
+smooth transitions
+
+•
+intuitive fit
+
+•
+environmental legibility
+
+•
+absence of prompts
+
+•
+absence of urgency
+
+A human does not ask:
+
+“What should I do here?”
+
+The environment answers by stabilising.
+
+⸻
+
+9. Technological Consequences
+
+9.1 End of Context Switching
+
+Contexts no longer switch.
+
+They settle.
+
+9.2 End of Prompt-Based UX
+
+Nothing asks for attention.
+
+Attention arrives where it fits.
+
+9.3 End of Persuasive Environments
+
+Fieldcast replaces persuasion.
+
+Bleed replaces suggestion.
+
+Fade replaces instruction.
+
+=== PDF PAGE 7 ===
+⸻
+
+10. Canonical Statements
+
+•
+Fade governs dominance
+
+•
+Bleed governs possibility
+
+•
+Fieldcast governs presence
+
+•
+No field may jump into dominance
+
+•
+No environment may persuade
+
+•
+Stability must precede expression
+
+•
+Yellow suppresses Fieldcast
+
+•
+Coherence is felt, not requested
+
+⸻
+
+Status
+
+Normative.
+
+FBC-0 defines the canonical transitional mechanics of field expression in Ambient OS and is
+
+required for correct implementation of AN-0, AP₁, AAC-1, and all field-based ambient systems.

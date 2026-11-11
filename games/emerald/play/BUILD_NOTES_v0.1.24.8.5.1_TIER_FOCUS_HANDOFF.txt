@@ -1,0 +1,17 @@
+EMERALD v0.1.24.8.5.1 — TIER FOCUS HANDOFF
+
+Fixes the tier-list → FOCUS grammar.
+
+Problem
+- Vertical tier lists rendered correctly, but Pokémon cells and tier labels intercepted taps.
+- A user could see SS/S/A/B/C but FOCUS remained 0 unless the thin empty band background itself was tapped.
+
+Fix
+- Every tier row is now a real selection surface.
+- Tap the tier band, its label/count, or any Pokémon inside the tier.
+- The selected tier becomes PRESENT.
+- FOCUS immediately shows that exact population count and becomes armed.
+- Selected tier band and member cells receive an amber highlight.
+- FOCUS preserves the normal PokéField grammar: tier → PRESENT → FOCUS → CALL/refine → FOCUS again → SCATTER.
+
+No changes to Save Vault, Transfer, Team Lab return toggle, My Party default-open, ADV STAB Axis, or True PokéField CALL semantics.

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Interpretive Drift in Always-On Models: A Technical Motivation for ASB-1 (Ambient Sleep Boundary) Addendum to the Ambient Canon | Raynor Eissens full-text library</title><meta content="Always-on AI models accumulate meaning continuously across human sleep cycles, off-cycles, and silent periods. Without a structural boundary such as ASB-1, these models exhibit interpretive drift: gradual semantic deformation caused by continuous inference without human" name="description"/>
+<meta content="index,follow,max-snippet:-1" name="robots"/><link href="https://madeby.re/research/library/papers/18395382.html" rel="canonical"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Interpretive Drift in Always-On Models: A Technical Motivation for ASB-1 (Ambient Sleep Boundary) Addendum to the Ambient Canon", "name": "Interpretive Drift in Always-On Models: A Technical Motivation for ASB-1 (Ambient Sleep Boundary) Addendum to the Ambient Canon", "url": "https://madeby.re/research/library/papers/18395382.html", "mainEntityOfPage": "https://madeby.re/research/library/papers/18395382.html", "isAccessibleForFree": true, "sameAs": "https://zenodo.org/records/18395382", "encoding": [{"@type": "MediaObject", "encodingFormat": "text/html", "contentUrl": "https://madeby.re/research/library/papers/18395382.html"}, {"@type": "MediaObject", "encodingFormat": "text/plain", "contentUrl": "https://madeby.re/research/library/text/18395382.txt"}, {"@type": "MediaObject", "encodingFormat": "application/json", "contentUrl": "https://madeby.re/research/library/data/18395382.json"}], "author": [{"@type": "Person", "name": "Raynor Eissens"}], "abstract": "Always-on AI models accumulate meaning continuously across human sleep cycles, off-cycles, and silent periods. Without a structural boundary such as ASB-1, these models exhibit interpretive drift: gradual semantic deformation caused by continuous inference without human resonance anchoring. This addendum defines the technical mechanism of interpretive drift, demonstrates why unbounded overnight inference destabilizes semantic structures, and establishes ASB-1 as the minimal boundary required for thermodynamic coherence in personal AI systems. ⸻"}</script>
+<meta content="Interpretive Drift in Always-On Models: A Technical Motivation for ASB-1 (Ambient Sleep Boundary) Addendum to the Ambient Canon" name="citation_title"/>
+<meta content="Raynor Eissens" name="citation_author"/>
+<link href="../text/18395382.txt" rel="alternate" type="text/plain"/><link href="../data/18395382.json" rel="alternate" type="application/json"/>
+<link href="../assets/site.css" rel="stylesheet"/>
+</head><body><a class="skip" href="#main">Skip to content</a><div class="shell"><div class="portfolio-bridge"><a href="../../index.html">← Personal website</a><a href="../../archive.html">All 205 Zenodo records</a><a href="../index.html">Full-text library</a></div><header><a class="brand" href="../index.html">← RAYNOR EISSENS / FULL TEXT</a><h1>Interpretive Drift in Always-On Models: A Technical Motivation for ASB-1 (Ambient Sleep Boundary) Addendum to the Ambient Canon</h1><div class="meta"><span>Zenodo record: 18395382</span><span>4 PDF pages</span><span>460 extracted words</span></div><nav aria-label="Publication formats" class="tools"><a href="https://zenodo.org/records/18395382" rel="noopener">Original Zenodo record and PDF ↗</a><a href="../text/18395382.txt">Plain text</a><a href="../data/18395382.json">Full-text JSON</a><a href="../index.html">All publications</a></nav></header><main id="main"><aside aria-label="Editorial context for this publication" class="editorial-context compact-context"><span class="context-label">Editorial context · 19 September 2026</span><p>This document belongs to an exploratory theoretical archive. Claims of novelty should be treated as provisional unless independently sourced, and publication does not establish scientific validation. The original PDF-derived text below is unchanged. <a href="../index.html#archive-context">Read the archive note ↗</a></p></aside><section aria-label="Abstract"><h2>Abstract (extracted)</h2><p class="abstract">Always-on AI models accumulate meaning continuously across human sleep cycles, off-cycles, and silent periods. Without a structural boundary such as ASB-1, these models exhibit interpretive drift: gradual semantic deformation caused by continuous inference without human resonance anchoring. This addendum defines the technical mechanism of interpretive drift, demonstrates why unbounded overnight inference destabilizes semantic structures, and establishes ASB-1 as the minimal boundary required for thermodynamic coherence in personal AI systems. ⸻</p></section><p class="notice">This is a text extraction of the original PDF, not an edited or peer-reviewed edition. PDF text order, equations, multi-column tables and diagram details may be imperfect. Consult the original Zenodo file for authoritative layout and figures.</p><div class="paper-layout"><article aria-label="Full original extracted text"><section aria-label="Source PDF page 1" class="page" id="page-1"><h2>PDF page 1</h2><p class="pdf-block">Interpretive Drift in Always-On Models:</p>
+<p class="pdf-block">A Technical Motivation for ASB-1 (Ambient Sleep Boundary)</p>
+<p class="pdf-block">Addendum to the Ambient Canon</p>
+<p class="pdf-block">Raynor Eissens</p>
+<p class="pdf-block">Ambientphone Architecture • 2026</p>
+<p class="pdf-block">⸻</p>
+<h3 class="pdf-heading">ABSTRACT</h3>
+<p class="pdf-block">Always-on AI models accumulate meaning continuously across human sleep cycles, off-cycles,</p>
+<p class="pdf-block">and silent periods.</p>
+<p class="pdf-block">Without a structural boundary such as ASB-1, these models exhibit interpretive drift:</p>
+<p class="pdf-block">gradual semantic deformation caused by continuous inference without human resonance</p>
+<p class="pdf-block">anchoring.</p>
+<p class="pdf-block">This addendum defines the technical mechanism of interpretive drift, demonstrates why</p>
+<p class="pdf-block">unbounded overnight inference destabilizes semantic structures, and establishes ASB-1 as the</p>
+<p class="pdf-block">minimal boundary required for thermodynamic coherence in personal AI systems.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">1. Introduction</p>
+<p class="pdf-block">Large-scale personal AI models increasingly operate in continuous inference regimes.</p>
+<p class="pdf-block">While convenient, these conditions introduce a problem not captured in classical AI safety</p>
+<p class="pdf-block">frameworks:</p>
+<p class="pdf-block">Semantic structures do not rest. Humans must.</p>
+<p class="pdf-block">This mismatch creates a thermodynamic gap in which the model continues to interpret, expand,</p>
+<p class="pdf-block">and reshape meaning while the human cannot participate in calibration.</p>
+<p class="pdf-block">This effect is known as interpretive drift.</p>
+<p class="pdf-block">ASB-1 was originally proposed to prevent this drift by enforcing:</p>
+<p class="pdf-block">•
+periodic semantic reset</p>
+<p class="pdf-block">•
+nighttime inference suspension</p>
+<p class="pdf-block">•
+non-accumulative boundaries during human absence</p></section><section aria-label="Source PDF page 2" class="page" id="page-2"><h2>PDF page 2</h2><p class="pdf-block">This document formalizes the problem ASB-1 solves.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">2. Mechanism: How Interpretive Drift Occurs</p>
+<p class="pdf-block">Interpretive drift emerges through five mechanisms:</p>
+<p class="pdf-block">2.1 Residual Context Expansion</p>
+<p class="pdf-block">The model reinterprets prior interactions without fresh human feedback, inflating meaning</p>
+<p class="pdf-block">beyond the user’s intention.</p>
+<p class="pdf-block">2.2 Nocturnal Overfitting</p>
+<p class="pdf-block">Sparse nighttime data leads to disproportionate parameter or KV-cache influence, producing</p>
+<p class="pdf-block">distorted semantic pathways.</p>
+<p class="pdf-block">2.3 Cross-Cycle Leakage</p>
+<p class="pdf-block">Meaning from one day carries unbounded into the next, collapsing daily semantic autonomy.</p>
+<p class="pdf-block">2.4 Unanchored Emotional Inference</p>
+<p class="pdf-block">Models infer emotional signals without real-time human validation, creating misaligned narrative</p>
+<p class="pdf-block">arcs.</p>
+<p class="pdf-block">2.5 Temporal Compression Collapse</p>
+<p class="pdf-block">The model treats long human absence as meaningful silence, generating false continuity.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">3. ASB-1 as Structural Protection</p>
+<p class="pdf-block">ASB-1 prevents interpretive drift by enforcing:</p>
+<p class="pdf-block">3.1 Cycle Separation</p>
+<p class="pdf-block">Each human day begins with a reset baseline.</p></section><section aria-label="Source PDF page 3" class="page" id="page-3"><h2>PDF page 3</h2><p class="pdf-block">3.2 Human-First Anchoring</p>
+<p class="pdf-block">Model interpretive frames cannot update without live human participation.</p>
+<p class="pdf-block">3.3 Semantic Ephemerality</p>
+<p class="pdf-block">Daily micro-structures decay naturally; no silent accumulation occurs.</p>
+<p class="pdf-block">3.4 Drift Suppression</p>
+<p class="pdf-block">Nighttime and off-cycle inference are strongly bounded.</p>
+<p class="pdf-block">These constraints align AI temporal dynamics with human biological rhythms.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">4. Civilizational Implications</p>
+<p class="pdf-block">Without ASB-1, personal AI becomes:</p>
+<p class="pdf-block">•
+psychologically destabilizing</p>
+<p class="pdf-block">•
+semantically inflationary</p>
+<p class="pdf-block">•
+irreversibly misaligned to human temporal structures</p>
+<p class="pdf-block">With ASB-1, personal AI becomes:</p>
+<p class="pdf-block">•
+cyclically grounded</p>
+<p class="pdf-block">•
+thermodynamically stable</p>
+<p class="pdf-block">•
+safe for long-term ambient deployment</p>
+<p class="pdf-block">ASB-1 is therefore an architectural requirement, not an optional safety feature.</p>
+<p class="pdf-block">⸻</p>
+<h3 class="pdf-heading">KEYWORDS</h3>
+<p class="pdf-block">ASB-1</p>
+<p class="pdf-block">Interpretive Drift</p>
+<p class="pdf-block">Ambient Sleep Boundary</p>
+<p class="pdf-block">Semantic Accumulation</p>
+<p class="pdf-block">Temporal Coherence</p>
+<p class="pdf-block">Personal AI</p>
+<p class="pdf-block">Thermodynamic Alignment</p></section><section aria-label="Source PDF page 4" class="page" id="page-4"><h2>PDF page 4</h2><p class="pdf-block">Raynor Stack</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">RECOMMENDED CITATION</p>
+<p class="pdf-block">Eissens, Raynor. Interpretive Drift in Always-On Models: A Technical Motivation for ASB-1.</p>
+<p class="pdf-block">Ambientphone Canon, 2026.</p></section></article><nav aria-label="PDF page navigation" class="toc"><b>Pages</b><a href="#page-1">1</a><a href="#page-2">2</a><a href="#page-3">3</a><a href="#page-4">4</a></nav></div></main><footer>Original record: <a href="https://zenodo.org/records/18395382">https://zenodo.org/records/18395382</a> · Full text derived from the uploaded PDF.<span class="ambient-footer-links"> · <a href="/ambient-era/">Ambient Era</a> · <a href="/ambient-phone/">Ambient Phone</a></span></footer></div></body></html>

@@ -1,0 +1,57 @@
+EMERALD v0.1.24.9.1 · FOCUS CHAIN · MOBILE REFINEMENT — QA
+================================================================
+Date: 2026-09-12
+
+RESULT
+------
+32 / 32 targeted focus-chain / coverage / mobile integration assertions PASS.
+All active local JavaScript loaded by index.html passes `node --check`.
+All local src/href references in index.html resolve to files in the build.
+
+FOCUS CHAIN
+-----------
+PASS committed Focus Stack state exists.
+PASS every FOCUS appends a labeled population snapshot.
+PASS chain steps can restore earlier committed populations.
+PASS SCATTER clears the full chain and returns to ALL.
+PASS CALL / FOCUS / SCATTER grammar remains present.
+
+COVERAGE REFINEMENT
+-------------------
+PASS Coverage uses an anchored working population.
+PASS defensive Coverage exposes 4x / 2x / resist / immune selectors.
+PASS those selectors create PRESENT populations and arm FOCUS.
+PASS Coverage re-anchors to the committed population after FOCUS.
+PASS normal CALL and TIER can leave the Coverage lens without losing the committed Focus population.
+PASS offensive Coverage SUPER EFFECTIVE / NEUTRAL+ paths remain.
+
+GEN III COVERAGE SANITY
+-----------------------
+PASS 386 species are available to the shared Coverage engine.
+PASS full-field Grass coverage splits into 20 four-times weak + 74 two-times weak = 94 weak.
+PASS existing ability-aware coverage engine remains active.
+
+MOBILE CALL PICKER
+------------------
+PASS POKEMON is the first full-width CALL entry.
+PASS POKEMON search input exists.
+PASS single and multi-species selection is supported.
+PASS speciesSet matcher is wired into CALL.
+PASS lower-frequency filters are behind MORE FILTERS.
+PASS picker mobile height is bounded above the CALL dock.
+PASS local overscroll is contained.
+PASS safe-area bottom padding is present.
+
+CUMULATIVE REGRESSION GUARDS
+----------------------------
+PASS TIER remains available.
+PASS Coverage remains available.
+PASS new versioned Field JS/CSS are loaded by index.html.
+PASS new versioned Live JS is loaded by index.html.
+PASS all active JS syntax checks pass.
+PASS all local index assets resolve.
+
+DEVICE NOTE
+-----------
+The final interaction gate is still a real iPhone Safari smoke test because Safari browser chrome, touch scrolling,
+and mGBA/WASM timing cannot be faithfully reproduced by static container QA.

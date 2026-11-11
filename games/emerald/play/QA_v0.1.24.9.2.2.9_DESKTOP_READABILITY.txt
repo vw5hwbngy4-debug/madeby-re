@@ -1,0 +1,14 @@
+JRPG.WORLD Emerald v0.1.24.9.2.2.9 · DESKTOP READABILITY
+
+PASS: readability layer is gated behind @media (min-width: 960px).
+PASS: mobile <=959px receives no rules from the new stylesheet.
+PASS: PokéField text/control readability increased without changing field geometry.
+PASS: Team Lab text/control readability increased without changing Team Lab JS/data.
+PASS: Emerald · MadeBy desktop typography increased without changing relation/activity logic.
+PASS: no JavaScript runtime files modified.
+PASS: index references new stylesheet.
+PASS: all local index references present.
+
+Suggested live check:
+- Desktop: PokéField, Team Lab and Hoenn text should be comfortably readable at normal browser zoom.
+- Mobile: compare with v0.1.24.9.2.2.8, layout and font sizing should remain unchanged.

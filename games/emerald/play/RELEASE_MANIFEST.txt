@@ -1,0 +1,16 @@
+EMERALD LIVE v0.4.2 · HOENN PRESENCE
+Built: 2026-09-13
+Baseline: Emerald Live v0.4.1 · Mobile BUZZ
+
+Scope:
+- signed-in visible Emerald sessions emit a 60s presence heartbeat;
+- online TTL is 150s;
+- BUZZ shows other-player presence separately from canonical stories;
+- public names appear only for trainers with an existing public card/base;
+- mobile BUZZ launcher gets a live dot when another trainer is online;
+- desktop DEX preserved;
+- no emulator core, ROM, save format or save-write changes.
+
+Companion server requirement: Hoenn / Save Vault v0.4.2.
+
+See RELEASE_v0.4.2.md and ACCEPTANCE_v0.4.2.md.

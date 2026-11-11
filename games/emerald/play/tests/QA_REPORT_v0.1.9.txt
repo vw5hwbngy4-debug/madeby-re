@@ -1,0 +1,33 @@
+JRPG.WORLD EMERALD LIVE v0.1.9 — DECODER QA
+===========================================
+
+RESULT: PASS (deterministic/unit layer)
+
+Command:
+  node site/tests/decoder-test-v0.1.9.js
+
+Coverage:
+  PASS 24/24 encrypted Gen III substructure permutations
+  PASS checksum rejection on corrupted encrypted data
+  PASS IV / EV decode
+  PASS held item decode + known item-name mapping
+  PASS friendship
+  PASS PP Ups (2 bits per move slot)
+  PASS contest condition + sheen
+  PASS Pokérus none / active / cured semantics
+  PASS met level / origin game / Poké Ball / OT gender
+  PASS ribbon ranks, special ribbons, fateful bit and ribbon count
+  PASS PID/TID/SID shiny value threshold
+  PASS party status labels
+  PASS Hidden Power
+  PASS National Dex mapping
+  PASS Gen III gender boundaries
+
+Not claimed by this report:
+  - real-ROM runtime validation on BPEE rev0
+  - Safari/iPhone visual QA for the new passport panel
+  - provenance name coverage for every unusual/event transfer location
+
+Protected baseline:
+  mGBA ABI bridge, Emerald RAM addresses, save path and v0.1.7.4 Safari audio-recovery
+  logic were not intentionally changed by the specimen-passport patch.

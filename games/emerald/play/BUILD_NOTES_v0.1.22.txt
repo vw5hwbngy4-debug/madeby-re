@@ -1,0 +1,71 @@
+EMERALD v0.1.22 · SHARED CONTEXT / STRATEGY POKÉDEX
+Date: 2026-09-09
+
+GOAL
+Turn the existing Live + My Field + TeamLab stack into one pleasant, low-friction Strategy Pokédex without opening a new feature rabbit hole.
+
+WHAT CHANGED
+1. SHARED STRATEGY CONTEXT
+- LIVE, MY FIELD and TEAM LAB now share one active specimen context.
+- My Field selection no longer kicks a party specimen back to LIVE.
+- The context strip can jump to My Field or TeamLab while preserving the same specimen.
+- TeamLab follows shared specimen identity by PID + OT ID.
+- A currently encountered WILD specimen can now be opened in TeamLab read-only before capture.
+
+2. LIVE STRATEGY POKÉDEX
+- In LIVE, a compact Strategy Snapshot reacts to the current specimen.
+- Shows projected final form/tier, top ADV role lens, exact Hidden Power context and next surfaced STAB upgrade using the existing TeamLab knowledge engine.
+- No new battle engine or new competitive dataset was added.
+
+3. DESKTOP LIVE-PLAY COCKPIT
+- At >=1180px while a game is playing, the intelligence surface owns the main page.
+- Emerald remains permanently visible in a compact dock at bottom-right.
+- Keyboard legend stays in a small dock below the game.
+- Touch wings are hidden inside this desktop dock; keyboard controls remain the intended desktop input.
+- 960–1179px retains the existing stacked desktop layout.
+- Mobile remains game-first.
+
+4. MY FIELD · FIELD-FIRST UX
+- Default view now devotes the large majority of space to specimens.
+- FILTERS and RANK are compact disclosure controls instead of permanent tall forms.
+- FIELD / DUAL / CROSS is one compact segmented control.
+- SCATTER is a small contextual action.
+- Active filter chips remain visible.
+- Specimens use an auto-filling grid so larger PC collections use available width.
+- Selecting a specimen highlights it and updates Shared Context without forcing a tab change.
+
+5. TEAMLAB PRESENTATION POLISH
+- Inter-like reading typography + Outfit display typography when the existing site font import is available, with system fallbacks.
+- Calmer spacing, larger readable labels, cleaner card headers and less dense microcopy.
+- Development, STAB, roles, routes, acquisition, partners and Team Fabric remain immediately visible.
+- Threat Lab / EV benchmarks and Six-Stack Optimizer are preserved but folded behind progressive-disclosure panels by default. No optimizer functionality was removed.
+
+6. VERSION / CACHE
+- VERSION.txt = 0.1.22
+- New cache-busted v0.1.22 Live, My Field, TeamLab and Strategy Pokédex assets.
+- Visible update trail begins with v0.1.22.
+
+READ-ONLY BOUNDARY
+No ROM/save/Pokémon mutation was introduced. Existing EV Coach local target storage and the existing TeamLab → EV Coach target handshake remain unchanged in behavior.
+
+QA
+PASS:
+- node --check: pokefield-live-v0.1.22.js
+- node --check: owned-pokefield-v0.1.22.js
+- node --check: teamlab-v0.1.22.js
+- node --check: strategy-pokedex-v0.1.22.js
+- EV Coach v0.1.19 regression
+- My Field v0.1.18 regression
+- Passport v0.1.18 regression
+- TeamLab v0.1.20 regression
+- TeamLab v0.1.21 regression
+- TeamLab v0.1.21.1 regression
+- decoder v0.1.9: 24/24
+- new Strategy Pokédex v0.1.22 wiring regression
+- new CSS brace balance check
+
+VISUAL QA NOTE
+The container's Chromium process does not terminate even for a trivial headless screenshot in this environment, so no claim is made that a real Chromium screenshot regression passed. The deploy should still get a quick desktop/mobile visual smoke test after upload.
+
+DEPLOY
+This ZIP is a full site snapshot. Copy the CONTENTS of the ZIP over the current Emerald directory and allow replacement of existing files, including index.html and VERSION.txt. Do not nest the extracted directory one level deeper.

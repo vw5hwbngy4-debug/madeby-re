@@ -1,0 +1,22 @@
+{
+  "record_id": "19638021",
+  "document_id": "19638021",
+  "title": "Environment → Transparent Surface → AI Runtime Reveal → Local Meaning",
+  "pages": 1,
+  "authors": [
+    "Raynor Eissens"
+  ],
+  "doi_confirmed_in_pdf": "10.5281/zenodo.19638021",
+  "zenodo_record": "https://zenodo.org/records/19638021",
+  "html": "papers/19638021.html",
+  "text": "text/19638021.txt",
+  "data": "data/19638021.json",
+  "abstract_extracted": "",
+  "visual_pages": [],
+  "low_text_pages": [],
+  "characters_extracted": 3276,
+  "words_extracted": 450,
+  "source_pdf_filename": "19638021_environment_transparent_surface_ai_runtime_reveal_local_meaning_raynor_eissens_2026.pdf",
+  "source_pdf_sha256": "c941be404e4fd132bc2f35ab5da4c57fccb5da26794bae953e59b114c704e6e2",
+  "full_text": "=== PDF PAGE 1 ===\nEnvironment -> Transparent Surface -> AI Runtime\nReveal -> Local Meaning\n\nA Minimal Structural Sequence for Post-App Computing\n\nRaynor Eissens · Ambient Era Canon · 2026\nDOI: 10.5281/zenodo.19638021\n\nCanonical Definition\n\nNegative Principle\n\nThis paper defines a minimal structural sequence for post-app\ncomputing:\n\nWithout transparency, AI-generated interface collapses back\ninto black-box media, overlay logic, feed logic, or smarter\ncontainment.\n\nBoundary\n\nenvironment -> transparent surface -> AI runtime reveal ->\nlocal meaning.\n\nThe sequence describes a device and interface condition in\nwhich the world remains primary, transparent surface mediates\nreveal rather than replacement, AI operates as runtime\nmodulation rather than opaque content generation, and\nmeaning appears locally rather than as generalized feed\ncontent inside a black-box container.\n\nThis paper does not claim the invention of transparent displays,\nHUDs, AR overlays, see-through hardware, or spatial\ncomputing as such. It claims a distinct structural sequence in\nwhich environment remains primary, transparent surface\nmediates reveal, AI becomes runtime modulation, and\nmeaning becomes local. The novelty claim concerns the\nsequence as an integrated architectural formulation, not the\nisolated existence of its component technologies.\n\nCore Claim\n\nWhy This Matters\n\nA runtime interface does not truly exist\nbetween AI and a black-box screen.\nIt exists between transparency and the real\nenvironment.\n\nMain Principle\n\nMost current AI interfaces remain trapped in opaque\ncontainers. Even when AI becomes more capable, the\ndominant structure often remains unchanged: a screen, a feed,\na prompt box, a generated overlay, or a bounded application\nsurface. This preserves black-box interaction and keeps\nmeaning detached from local context.\n\nWhen the world remains primary, AI no longer needs to\ngenerate a separate internal world of content, feeds, or\nscreens. It can instead operate as a reveal layer that makes\nactive meaning appear only where context, placement, and\nrelevance make it necessary.\n\nThe sequence proposed here identifies a different direction.\nPost-app computing becomes real only when the environment\nremains primary, the device surface becomes transparent, AI\nshifts from generation to reveal, and meaning becomes local.\n\nStructural Sequence\n\nOne-Sentence Version\n\nA transparent runtime interface is an environment-first AI\narchitecture in which the world remains primary, transparent\nsurface mediates reveal, AI operates as runtime modulation,\nand meaning appears locally rather than inside opaque\ncontainers.\n\nKeywords\n\nEnvironment. The real world remains the primary perceptual\nfield.\nTransparent Surface. The hardware surface becomes a\nreveal membrane rather than an opaque display container.\nAI Runtime Reveal. AI appears as runtime modulation rather\nthan generalized content generation inside opacity.\nLocal Meaning. Meaning appears in place, attached to object,\nsituation, residue, or immediate context.\n\npost-app computing; transparent surface; runtime AI; local\nmeaning; black-box containment; reveal interface; environment-first\ncomputing; transparent runtime interface; spatial interaction;\nAmbient Era Canon\n\nAmbient Era Canon\nDOI: 10.5281/zenodo.19638021"
+}

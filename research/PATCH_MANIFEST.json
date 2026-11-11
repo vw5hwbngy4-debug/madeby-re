@@ -1,0 +1,76 @@
+{
+  "patch": "The Second Jump / Superartifacts",
+  "target": "https://madeby.re/research/",
+  "date": "2026-09-27",
+  "base": "research-madeby-final-selfcontained-2026-09-27.zip",
+  "doi_assigned": false,
+  "adds": [
+    "the-second-jump-superartifacts/index.html",
+    "the-second-jump-superartifacts/article.css",
+    "the-second-jump-superartifacts/article.txt",
+    "the-second-jump-superartifacts/article.json"
+  ],
+  "updates": [
+    "index.html",
+    "papers.html",
+    "concepts.html",
+    "llms.txt",
+    "sitemap.xml"
+  ],
+  "notes": [
+    "No Zenodo/DOI catalog files are changed.",
+    "Extract this ZIP into the document root for research.madeby.re, allowing overwrite of the five updated root files."
+  ],
+  "files": [
+    {
+      "path": "UPLOAD.txt",
+      "sha256": "4ab0bf8310631f2b474d9f9040455d3e665ab299d8aa9a12077661f0ecaf3ece",
+      "bytes": 794
+    },
+    {
+      "path": "concepts.html",
+      "sha256": "8e016c31d4faede53ce880cdf7dc7e7d7ebb0cc8d810e779d1f4fb5b6592efe2",
+      "bytes": 11006
+    },
+    {
+      "path": "index.html",
+      "sha256": "9afed2388e1d84656c689b9456595e2826aa2a8748adbeca73bcdebca654f70f",
+      "bytes": 14106
+    },
+    {
+      "path": "llms.txt",
+      "sha256": "39c66229b46c628ff7cbd4a654251eb728d26556557696043c4044cb6a88f1eb",
+      "bytes": 2839
+    },
+    {
+      "path": "papers.html",
+      "sha256": "bfbf544a1f8512a96dde4d1b7f32ee8d9498921b4e3fbf462d8ec33a7f2af7c1",
+      "bytes": 24026
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "39ae8ea827d3b59768435f8f44aa88ba3d5a1491a9c822da0bda7cd040a60e0b",
+      "bytes": 22020
+    },
+    {
+      "path": "the-second-jump-superartifacts/article.css",
+      "sha256": "d988f71e586a148fc34646813c9f5670c3b8742a568071398458a785c8f1d963",
+      "bytes": 7896
+    },
+    {
+      "path": "the-second-jump-superartifacts/article.json",
+      "sha256": "0a7f91143b32eff79cfce92842a1dd394a79660e886bfe09d9dd22055da708f4",
+      "bytes": 20339
+    },
+    {
+      "path": "the-second-jump-superartifacts/article.txt",
+      "sha256": "f857b6cad66b8b4b86846a8aa78171389985e1115bf119be9535ee8188f83e48",
+      "bytes": 18512
+    },
+    {
+      "path": "the-second-jump-superartifacts/index.html",
+      "sha256": "acac82f58959fbd7eef325bd12993db3739783788a6325c6cc1e6b11e5637c9c",
+      "bytes": 32044
+    }
+  ]
+}

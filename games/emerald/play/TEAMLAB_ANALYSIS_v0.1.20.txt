@@ -1,0 +1,129 @@
+TEAM LAB v0.1.20 — ANALYSIS / ARCHITECTURE
+JRPG.WORLD · Pokémon Emerald Live
+2026-09-09
+
+GOAL
+Turn the live Emerald specimen reader into a development + competitive relationship laboratory:
+CURRENT SPECIMEN -> FUTURE EVOLUTION -> WORTHWHILE MOVES -> ACQUISITION -> ARCHETYPE -> PARTNERS -> SIX-POKEMON FABRIC.
+
+SOURCE STACK
+1. pret/pokeemerald supplied source
+   Mechanical and Emerald acquisition truth: species, base stats, abilities, evolutions, level-up moves, TM/HM learnsets, tutors, egg moves, egg groups, EV yield and Gen III type chart.
+2. supplied Pokemon Showdown source
+   Gen III tier context and a later path to exact validation/simulation.
+3. supplied audited STACKATAKA ADV200 Smogon Tactical Atlas
+   Strategy provenance for 101 covered final forms. Kept separate from deterministic mechanics.
+4. live Emerald state
+   Exact specimen truth: level, IVs, EVs, nature, ability, Hidden Power, current moves, Pokérus, friendship and party membership.
+
+EXTRACTED KNOWLEDGE CORE
+- 386 species
+- 355 moves
+- 214 terminal/final species identities in the complete Gen I-III evolution graph
+- 101 species with attached audited tactical-atlas entries
+- full evolution branching, including Nincada -> Ninjask / Shedinja
+- complete family move access retained separately from the 40-move competitive display shortlist
+- direct acquisition provenance attached per competitive move
+
+WHY FULL FAMILY MOVE ACCESS MATTERS
+A display shortlist cannot safely drive mechanics. TeamLab therefore keeps a complete family move list for deterministic capability checks. A move omitted from the visible top-40 list can still enable a role or relationship.
+
+DEVELOPMENT MODEL
+For a live specimen, TeamLab resolves all reachable final branches. A default branch is selected deterministically but branch choices remain visible.
+The STAB roadmap prefers:
+1. naturally reachable level-up acquisition along the normal evolution path;
+2. TM/HM;
+3. tutor;
+4. Move Reminder / early-stage timing;
+5. delayed-evolution routes;
+6. breeding a new specimen.
+This avoids misleading cases such as displaying Sceptile's Lv29 Leaf Blade as if a normally evolved Sceptile could naturally exist at Lv29. The natural route is Grovyle Lv29.
+
+COMPETITIVE MOVE MODEL
+Move value is an inspectable heuristic, not canonical viability.
+Inputs include Gen III move type/category, base power, accuracy, STAB and the projected final species' relevant attacking stat.
+High-value utility moves such as Substitute, Leech Seed, Baton Pass, Spore, Spikes, Rapid Spin, Recover and setup moves are explicitly surfaced.
+Hidden Power is special-cased from the live specimen because its exact type and base power are IV-derived. The Gen III type-based physical/special split is applied to that exact type.
+
+ARCHETYPE ENABLEMENT
+Archetypes are generated from legal move/ability combinations, for example:
+- SubSeed
+- SubPunch
+- Baton Pass + transferable setup
+- Dragon Dance
+- Calm Mind
+- Swords Dance
+- Bulk Up
+- Belly Drum
+- Rain / Swift Swim
+- Sun / Chlorophyll / Solar Beam
+- Spikes
+- Rapid Spin
+- RestTalk
+- status pressure
+- fast physical/special offense
+- physical/special tank profiles
+Where the supplied audited atlas has a species entry, its Smogon RS tactical route labels and tactical summary are shown separately as sourced strategy.
+
+ACQUISITION ROUTING
+HOW TO BUILD IT exposes the best route found in exact Emerald data:
+- level + species stage
+- TM/HM number
+- one-time tutor + location
+- Battle Frontier tutor
+- egg route + root species + direct compatible fathers that can carry the move by level-up
+Direct father suggestions are compatibility routes, not local-catchability claims. Trades, version exclusivity and multi-hop breeding chains remain a later router layer.
+
+PAIR FIT
+Pair Fit is relational rather than a global tier score. Channels include:
+- defensive weakness/resistance complement
+- shared weaknesses
+- STAB target expansion
+- physical/special offense complement
+- bulk complement
+- Baton Pass recipient value
+- Rain/Sun compatibility
+- SubSeed pressure + bulk/hazard complement
+- role overlap penalties
+The UI exposes reasons and risks rather than only a scalar.
+
+PARTNER LENSES
+- OWNED FIT: exact specimens currently in the party
+- STRUCTURAL CANDIDATES: mechanics-first non-Uber terminal species
+- ADV COMPETITIVE LENS: OU / UUBL candidates ranked by the same relational model
+This makes questions such as "who benefits from Ninjask's Speed/Attack pass?" and "who structurally complements Sceptile?" visible without pretending tier alone is synergy.
+
+TEAM FABRIC
+The current party is projected to its selected final forms and analyzed as one stack:
+- 17-type defensive matrix
+- weakness/resistance/immunity counts
+- shared-pressure detection
+- offensive STAB super-effective reach over all terminal species
+- capability roles such as physical/special pressure, bulk, Speed plan, weather, hazards, removal, phazing, recovery, status and Baton Pass
+- coherent lines such as Rain core, Spikes + phazing and Baton Pass
+- structural gaps
+- next-slot candidate deltas while fewer than six slots are occupied
+
+101 HP SUBSTITUTE BREAKPOINT
+Only shown when the projected final species can access Substitute.
+Correct Gen III Lv100 formula:
+HP = 2*Base + IV + floor(EV/4) + 110.
+404 HP creates a 101 HP Substitute, which survives one Lv100 Seismic Toss.
+The initial prototype incorrectly used +210; v0.1.20 corrects this and has regression tests.
+
+WHAT THIS VERSION DOES NOT CLAIM
+- It is not yet a full six-slot optimizer.
+- It does not calculate exact damage benchmarks against configured foe sets yet.
+- It does not optimize EVs against speed / OHKO / survival benchmarks yet.
+- It does not yet track whether a one-use TM/tutor has already been consumed in this save.
+- It does not yet prove whether an egg father is catchable on this cartridge without trading.
+- My Field still receives the runtime-owned party projection, not all PC boxes. TeamLab is written against the published state so box specimens can be added later without changing its knowledge core.
+- Candidate rankings are derived structural hypotheses. Mechanical facts remain separate and source-grounded.
+
+NEXT LOGICAL TEAMLAB LAYERS
+A. Reactive My Field over party + boxes: deterministic filters apply instantly, CALL reserved for composite reasoning.
+B. Threat Lab: current team defensive/offensive matchup matrix versus an ADV OU threat pool.
+C. Benchmark Lab: exact Speed, damage and survival thresholds using Showdown mechanics.
+D. EV Optimizer: minimum EV investment to hit selected speed / damage / survival / 101-Sub / berry thresholds.
+E. Theme-constrained Team Optimizer: Rain, Sun, Baton Pass, SubSeed, etc. while retaining theme identity and repairing OU threat holes.
+F. Full six-stack search: candidate additions re-scored after every slot because pairwise goodness does not guarantee team coherence.

@@ -1,0 +1,12 @@
+JRPG.WORLD EMERALD v0.1.14 — DESKTOP INTERACTION QA
+
+PASS — Trainer Card header control toggles both directions.
+PASS — Header label becomes LIVE while card is open.
+PASS — Desktop stage measures #pf-primary / .tc-card real content, preventing stale black height.
+PASS — COMPACT/EXPAND re-measures the stage after mode changes.
+PASS — Desktop COMPACT has explicit >=960px layout rules.
+PASS — Compact control is hidden while Trainer Card owns the secondary screen.
+PASS — Mobile Trainer Card CSS remains unchanged.
+PASS — Save Vault active module remains v0.1.13; native mGBA save mirror path logic untouched.
+PASS — decoder-test-v0.1.9.js.
+PASS — save-vault-v0.1.11-path-test.js.

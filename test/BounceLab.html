@@ -1,0 +1,241 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#093a3a"><title>AgentMelodies · Bounce Lab v1 · Mario Hanenbow Garden</title><style>
+:root{color-scheme:dark;--bg:#09272c;--panel:#11353b;--border:#376d69;--muted:#a5c8bd;--cream:#f6f8e8;--mint:#9af3b1;--gold:#ffdf92;--pink:#ffa7df}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 45% -15%,#1d6050 0,#0a2931 59%,#081f2b 100%);font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--cream)}main{max-width:1360px;margin:auto;padding:21px 16px 42px}header{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:15px}.eyebrow{font-size:11px;letter-spacing:.19em;color:#8de3bd;font-weight:800}h1{font:normal clamp(32px,5vw,58px)/1.04 Georgia,serif;margin:5px 0 9px;letter-spacing:-.035em}h1 em{font-style:italic;color:var(--gold)}p{margin:0;color:var(--muted)}.topTag{color:#cef3da;border:1px solid #568a7b;border-radius:24px;padding:8px 12px;font-size:12px}.app{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:13px}.card{background:#11323be8;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 15px 35px #00131333}.stage{position:relative;overflow:hidden;background:#0a815f}.stage canvas{display:block;width:100%;aspect-ratio:690/565;touch-action:none;cursor:crosshair}.stage-label{position:absolute;left:11px;top:11px;pointer-events:none;display:flex;gap:7px;flex-wrap:wrap}.stage-label span{background:#043d45c9;color:#eeffe6;border:1px solid #9dedba66;padding:5px 8px;border-radius:8px;font-size:11px}.transport{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:12px;background:#0f3338}.transport button{flex:0 0 auto}.bar{height:5px;background:#174c50}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#66f1aa,#ffcd7b)}button{font:700 12px/1.2 system-ui;cursor:pointer;background:#225759;color:#eaffea;border:1px solid #4e8a7a;border-radius:9px;padding:10px 11px}button.primary{background:#f8d58f;border-color:#f8d58f;color:#214044}button:disabled{opacity:.52;cursor:not-allowed}button:hover:not(:disabled){filter:brightness(1.12)}button:active:not(:disabled){transform:translateY(1px)}.status{padding:0 13px 12px;color:#bbdfc4;font-size:12px;min-height:27px}.editor{padding:17px;display:flex;flex-direction:column;gap:11px}.editor h2,.info h2{font:normal 25px Georgia,serif;margin:0}.intro{font-size:12px}.part{padding-bottom:11px;border-bottom:1px solid #31635f}.controlhead{display:flex;align-items:center;justify-content:space-between;gap:7px;font-size:12px;color:#e6f4df;margin-bottom:7px}.value{font:normal 22px Georgia,serif;color:#ffde96}.editor select,.editor input[type=range],.editor input[type=number]{width:100%}select,input[type=number]{background:#174850;border:1px solid #548c80;border-radius:8px;color:#fff5df;padding:8px;font:inherit}input[type=range]{accent-color:#ffdb91;cursor:pointer}label{font-size:12px;color:#d8f4df}.row{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.row button{flex:1}.hints{font-size:11px;color:#b4d5c4}.switch{display:flex;align-items:center;gap:8px}.switch input{accent-color:#f3d17c}.find{padding:12px;border-radius:12px;background:#0e4141;border:1px solid #3d7972}.find .row{margin-top:8px}.find button{flex:1}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin-top:13px}.stat{border:1px solid #42716c;background:#12373e;border-radius:13px;padding:12px 15px}.stat b{font:normal clamp(23px,2.6vw,35px) Georgia,serif;color:#ffde98;display:block;white-space:nowrap}.stat small{color:#a5cebd}.info{display:grid;grid-template-columns:1.2fr 1fr;gap:13px;margin-top:13px}.info .card{padding:17px}.log{height:160px;overflow:auto;background:#092831;border:1px solid #345d5f;border-radius:9px;padding:10px;color:#c7f3d5;font:11px/1.7 ui-monospace,monospace;white-space:pre-wrap}.notes{display:flex;gap:2px;align-items:flex-end;overflow-x:auto;min-height:82px;margin:13px 0 8px;padding:5px 0 3px}.note-cell{min-width:10px;width:10px;height:44px;border-radius:3px;position:relative;background:#2b5156;border:1px solid #447c77;flex-shrink:0}.note-cell.good{background:#8de9a9;border-color:#bdfad1}.note-cell.near{background:#f6bf6f;border-color:#fde0a5}.note-cell:hover{filter:brightness(1.5)}.notelegend{display:flex;gap:12px;flex-wrap:wrap;color:#bbd8c6;font-size:11px}.dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px}.foot{font-size:12px;color:#acc9bd;margin-top:15px;line-height:1.7}.notice{color:#f3cf94}.helper{font:11px/1.45 ui-monospace,monospace;color:#b8e5bd;margin-top:9px;white-space:pre-wrap}.muted{color:#b8d3c5}.standout{color:#fff4c7}
+@media(max-width:1020px){.app{grid-template-columns:1fr}.editor{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.editor>h2,.editor>.intro,.editor>.find{grid-column:1/-1}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:610px){main{padding:13px 9px 28px}.editor{display:flex}.info{grid-template-columns:1fr}.stat{padding:10px}.transport{gap:5px}.transport button{padding:9px;font-size:11px}.topTag{display:none}}
+</style></head><body><main>
+<header><div><div class="eyebrow">AGENTMELODIES · PHYSICS-FIRST EXPERIMENT · 01</div><h1>Bounce <em>Lab</em> <span style="font-size:.55em">🌿</span></h1><p>Super Mario World, 67 noten als doel. Roze organismen, draaibare bladeren, echte botsingen.</p></div><span class="topTag">No MIDI playback · No hidden lanes · One world</span></header>
+<div class="app">
+<section class="card"><div class="stage"><canvas id="scene" width="690" height="565" aria-label="Hanenbow-achtige muzikale vijver. Selecteer of sleep bladeren om hun hoeken en posities te veranderen"></canvas><div class="stage-label"><span id="clock">0.00s</span><span id="phase">FYSICA 240 Hz</span><span id="garden-state">Vrije botsingen</span></div></div><div class="bar"><i id="progress"></i></div><div class="transport"><button class="primary" id="play">▶ PLAY</button><button id="pause">Ⅱ PAUZE</button><button id="single">↗ ÉÉN</button><button id="reset">↺ RESET</button><button id="repair">✦ REPAIR</button><button id="compare">±5° VERGELIJK</button><button id="save">◆ BEWAAR</button><button id="export">↓ JSON</button></div><div id="status" class="status" role="status">Klaar. Iedere toon komt uit een geregistreerde bladbotsing.</div></section>
+<section class="card editor"><h2>Garden controls</h2><p class="intro">Selecteer een blad in de tuin. Sleep om te draaien of verplaatsen. De hele baan wordt opnieuw berekend.</p>
+<div class="part"><div class="controlhead"><label for="leaf">Geselecteerd blad</label><span id="leafCount">8 bladeren</span></div><select id="leaf"></select><div class="row" style="margin-top:7px"><button id="add">+ Blad</button><button id="remove">− Blad</button></div></div>
+<div class="part"><div class="controlhead"><label for="angle">Bladhoek</label><span class="value" id="angleValue">0°</span></div><input id="angle" type="range" min="0" max="359" step="1"><div class="row"><button id="left">−5°</button><button id="right">+5°</button></div></div>
+<div class="part"><div class="controlhead"><label for="pitch">Grondtoon van blad</label><span id="pitchValue" class="standout">G7</span></div><input id="pitch" type="range" min="72" max="104" step="1"><div class="hints">Het raakpunt verandert de toon met ±2 halve tonen.</div></div>
+<div class="part"><div class="controlhead"><label for="launcher">Lanceerhoek</label><span id="launcherValue" class="value">62°</span></div><input id="launcher" type="range" min="20" max="160" step="1"><div class="controlhead" style="margin-top:9px"><label for="speed">Snelheid</label><span id="speedValue">340 px/s</span></div><input id="speed" type="range" min="220" max="480" step="5"><div class="controlhead" style="margin-top:9px"><label for="sway">Automatische zwaai</label><span id="swayValue">0°</span></div><input id="sway" type="range" min="0" max="35" step="1"><div class="hints">Dezelfde oscillator bepaalt iedere lanceerrichting, nooit de MIDI.</div></div>
+<div class="part"><div class="controlhead"><label for="rate">Lanceerinterval</label><span id="rateValue" class="standout">0.25 s</span></div><input id="rate" type="range" min="0.18" max="0.85" step="0.01"><div class="controlhead" style="margin-top:9px"><label for="mode">Verslepen</label></div><select id="mode"><option value="rotate">↻ Draai blad</option><option value="move">✥ Verplaats blad</option></select><label class="switch" style="margin-top:9px"><input type="checkbox" id="traces" checked> Toon projectielbanen</label></div>
+<div class="find"><div class="controlhead"><label for="goal">Solverdoel</label><span id="iterations">0 pogingen</span></div><select id="goal"><option value="8">Mario · eerste 8 noten</option><option value="16">Mario · eerste 16 noten</option><option value="67">Mario · alle 67 noten</option></select><div class="row"><button class="primary" id="solve">✦ ZOEK OPSTELLING</button><button id="stopSolve" disabled>STOP</button></div><p class="hints" style="margin-top:9px">Lokale geometrische zoekfunctie. Geen garantie op 67/67. Iedere kandidaat wordt volledig fysisch gesimuleerd.</p></div>
+</section></div>
+<div class="stats"><div class="stat"><b id="exact">0 / 67</b><small>Exacte Mario-hits (±90 ms)</small></div><div class="stat"><b id="contacts">0</b><small>Echte bladcontacten</small></div><div class="stat"><b id="missed">67</b><small>Niet exact getroffen doelnoten</small></div><div class="stat"><b id="extra">0</b><small>Overige bladmuzieknoten</small></div></div>
+<div class="info"><section class="card"><h2>Mario target vs. garden</h2><p class="muted" style="font-size:12px">De balkjes tonen de 67 MIDI-doelnoten. Groen = echte bladbotsing met juiste toon en timing, geel = juiste toon maar net buiten de strikte tolerantie.</p><div class="notes" id="notes"></div><div class="notelegend"><span><i class="dot" style="background:#8de9a9"></i>Exact</span><span><i class="dot" style="background:#f6bf6f"></i>Bijna</span><span><i class="dot" style="background:#2b5156"></i>Gemist</span></div><div id="scoring" class="helper"></div></section>
+<section class="card"><h2>Collision proof</h2><p class="muted" style="font-size:12px;margin-bottom:10px">Audio wordt opgebouwd uit de contactlog, niet uit de doelmelodie. Wand- en watercontacten tellen niet als noten.</p><div class="log" id="log"></div><div id="comparison" class="helper">Draai een blad 5° en vergelijk twee onafhankelijke simulaties.</div></section></div>
+<p class="foot"><strong>Wetenschappelijke status:</strong> onafhankelijke Hanenbow-geïnspireerde browserfysica, geen Nintendo-emulator. De originele 67 melodienoten komen uit je eerdere Mario-machine. De omgeving speelt ze niet automatisch af: de score geeft eerlijk aan wat het huidige bladontwerp via botsingen werkelijk voortbrengt. Tonen worden door de eigen muzikale bladmapping bepaald, bladkleur door het aantal treffers.</p>
+</main><script>
+'use strict';
+// @@CORE_START
+const W=690,H=565,WATER=502,STEP=1/240,G=295,BALL_R=6,REST=0.88;
+const TARGET=[{"pitch":98,"time":0.0,"duration":0.166667,"velocity":0.787},{"pitch":98,"time":0.25,"duration":0.166667,"velocity":0.787},{"pitch":98,"time":0.5,"duration":0.166667,"velocity":0.787},{"pitch":86,"time":0.75,"duration":0.166667,"velocity":0.787},{"pitch":98,"time":1.0,"duration":0.166667,"velocity":0.787},{"pitch":98,"time":1.25,"duration":0.166667,"velocity":0.787},{"pitch":98,"time":1.5,"duration":0.166667,"velocity":0.787},{"pitch":86,"time":1.75,"duration":0.166667,"velocity":0.787},{"pitch":99,"time":2.0,"duration":1.0,"velocity":0.787},{"pitch":98,"time":3.0,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":3.75,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":4.0,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":4.25,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":4.5,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":4.75,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":5.0,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":5.25,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":5.5,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":5.75,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":6.0,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":6.25,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":6.5,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":6.75,"duration":0.125,"velocity":0.787},{"pitch":96,"time":6.875,"duration":0.125,"velocity":0.787},{"pitch":95,"time":7.0,"duration":0.5,"velocity":0.787},{"pitch":93,"time":7.5,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":7.754167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":8.004167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":8.254167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":8.504167,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":8.754167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":9.004167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":9.254167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":9.504167,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":9.754167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":10.004167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":10.254167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":10.504167,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":10.754167,"duration":0.125,"velocity":0.787},{"pitch":95,"time":10.879167,"duration":0.125,"velocity":0.787},{"pitch":93,"time":11.004167,"duration":0.495833,"velocity":0.787},{"pitch":91,"time":11.5,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":11.75,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":12.0,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":12.25,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":12.5,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":12.75,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":13.0,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":13.25,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":13.5,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":13.75,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":14.0,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":14.25,"duration":0.1875,"velocity":0.787},{"pitch":95,"time":14.5,"duration":0.1875,"velocity":0.787},{"pitch":93,"time":14.75,"duration":0.125,"velocity":0.787},{"pitch":95,"time":14.875,"duration":0.125,"velocity":0.787},{"pitch":96,"time":15.0,"duration":0.5,"velocity":0.787},{"pitch":100,"time":15.5,"duration":0.5,"velocity":0.787},{"pitch":98,"time":16.0,"duration":0.1875,"velocity":0.787},{"pitch":98,"time":16.25,"duration":0.1875,"velocity":0.787},{"pitch":98,"time":16.5,"duration":0.1875,"velocity":0.787},{"pitch":86,"time":16.75,"duration":0.1875,"velocity":0.787},{"pitch":96,"time":17.0,"duration":0.1875,"velocity":0.787},{"pitch":96,"time":17.25,"duration":0.1875,"velocity":0.787},{"pitch":96,"time":17.5,"duration":0.1875,"velocity":0.787},{"pitch":90,"time":17.75,"duration":0.1875,"velocity":0.787},{"pitch":91,"time":18.0,"duration":1.0,"velocity":0.787}];
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),rad=d=>d*Math.PI/180,deg=r=>r*180/Math.PI;
+const copy=x=>JSON.parse(JSON.stringify(x));
+const pitchName=n=>['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'][((n%12)+12)%12]+(Math.floor(n/12)-1);
+const DEFAULT={launcher:{x:108,y:486,angle:62,speed:340,sway:15,period:3.2,rate:.25},leaves:[
+ {id:1,x:273,y:166,len:133,angle:163,tuning:98},
+ {id:2,x:394,y:169,len:140,angle:17,tuning:95},
+ {id:3,x:260,y:302,len:150,angle:163,tuning:86},
+ {id:4,x:403,y:303,len:147,angle:17,tuning:93},
+ {id:5,x:251,y:424,len:132,angle:7,tuning:99},
+ {id:6,x:405,y:424,len:147,angle:25,tuning:96},
+ {id:7,x:171,y:264,len:87,angle:-20,tuning:91},
+ {id:8,x:492,y:260,len:92,angle:28,tuning:100}
+]};
+function geometry(cfg){return cfg.leaves.map(l=>{let a=rad(l.angle),c=Math.cos(a)*l.len/2,s=Math.sin(a)*l.len/2;return {...l,ax:l.x-c,ay:l.y-s,bx:l.x+c,by:l.y+s};});}
+function dot(x,y,a,b){return x*a+y*b;}
+// Swept circle vs finite leaf segment expanded by ball radius, including round endcaps.
+function segmentHit(px,py,dx,dy,l,r){
+ let sx=l.bx-l.ax,sy=l.by-l.ay,len=Math.hypot(sx,sy),ux=sx/len,uy=sy/len,nx=-uy,ny=ux;
+ let d0=dot(px-l.ax,py-l.ay,nx,ny),dn=dot(dx,dy,nx,ny),best=null;
+ function consider(t,normalX,normalY,u){if(t>=-1e-9&&t<=1+1e-9&&(!best||t<best.t)&&dot(dx,dy,normalX,normalY)<-1e-10)best={t:clamp(t,0,1),nx:normalX,ny:normalY,u:clamp(u,0,1)};}
+ if(Math.abs(dn)>1e-10)for(const sign of [-1,1]){
+  let t=(sign*r-d0)/dn;if(t<0||t>1)continue;
+  let k=dot(px+t*dx-l.ax,py+t*dy-l.ay,ux,uy);
+  if(k>=0&&k<=len)consider(t,nx*sign,ny*sign,k/len);
+ }
+ const A=dx*dx+dy*dy;if(A>1e-12)for(const end of [[l.ax,l.ay,0],[l.bx,l.by,1]]){
+  let ox=px-end[0],oy=py-end[1],B=2*dot(ox,oy,dx,dy),C=ox*ox+oy*oy-r*r,disc=B*B-4*A*C;
+  if(disc<0)continue;let t=(-B-Math.sqrt(disc))/(2*A);
+  if(t<0||t>1)continue;let vx=ox+t*dx,vy=oy+t*dy,mag=Math.hypot(vx,vy);
+  if(mag>1e-9)consider(t,vx/mag,vy/mag,end[2]);
+ }
+ return best;
+}
+function hitPitch(l,u){return clamp(l.tuning+clamp(Math.floor(u*5),0,4)-2,36,108);}
+function launchVector(cfg,t){let l=cfg.launcher,angle=l.angle+l.sway*Math.sin(2*Math.PI*t/l.period);return {x:l.x,y:l.y,vx:Math.cos(rad(angle))*l.speed,vy:-Math.sin(rad(angle))*l.speed};}
+// A trajectory is run independently because there are no ball/ball forces; all hits are
+// sorted chronologically afterward before leaf 'heat' and sound characteristics update.
+function simulate(cfg,opts={}){
+ const leaves=geometry(cfg),duration=opts.duration??20.7,rate=cfg.launcher.rate;
+ const launchCount=opts.launchCount??Math.ceil(Math.max(0,duration-1.7)/rate);
+ const detailed=opts.detailed!==false,events=[],tracks=[],walls=[],waters=[];
+ for(let id=1;id<=launchCount;id++){
+  const born=(id-1)*rate;if(born>=duration)break;
+  let p={...launchVector(cfg,born),t:born},points=[],bounceCount=0,dead=duration;
+  if(detailed)points.push([p.x,p.y,born]);
+  for(let step=0;step<Math.ceil((duration-born)/STEP);step++){
+   if(p.t>=duration-1e-8)break;
+   let dt=Math.min(STEP,duration-p.t),remaining=dt,sub=0;
+   // Gravity at fixed simulation tick, then continuous swept collision in each tick.
+   p.vy+=G*dt;
+   while(remaining>1e-8&&sub++<5){
+    let dx=p.vx*remaining,dy=p.vy*remaining,best=null;
+    function candidate(hit,type,leaf=null){if(hit&&(!best||hit.t<best.hit.t))best={hit,type,leaf};}
+    for(const l of leaves)candidate(segmentHit(p.x,p.y,dx,dy,l,BALL_R),'leaf',l);
+    if(dx<0)candidate({t:(BALL_R-p.x)/dx,nx:1,ny:0,u:0},'wall');
+    if(dx>0)candidate({t:(W-BALL_R-p.x)/dx,nx:-1,ny:0,u:0},'wall');
+    if(dy<0)candidate({t:(BALL_R-p.y)/dy,nx:0,ny:1,u:0},'wall');
+    if(dy>0)candidate({t:(WATER-BALL_R-p.y)/dy,nx:0,ny:-1,u:0},'water');
+    if(!best||best.hit.t<0||best.hit.t>1){p.x+=dx;p.y+=dy;remaining=0;break;}
+    let frac=best.hit.t,time=p.t+(dt-remaining)+frac*remaining;
+    p.x+=dx*frac;p.y+=dy*frac;
+    if(best.type==='water'){
+      if(detailed)waters.push({time,ball:id,x:p.x,y:p.y});dead=time;remaining=0;break;
+    }
+    if(best.type==='leaf'){
+      const l=best.leaf;
+      events.push({time,ball:id,leaf:l.id,u:best.hit.u,pitch:hitPitch(l,best.hit.u),x:p.x,y:p.y,angle:l.angle});
+    }else if(detailed)walls.push({time,ball:id,x:p.x,y:p.y});
+    let {nx,ny}=best.hit,vnormal=dot(p.vx,p.vy,nx,ny);
+    if(vnormal<0){p.vx-=(1+REST)*vnormal*nx;p.vy-=(1+REST)*vnormal*ny;}
+    p.x+=nx*.035;p.y+=ny*.035;
+    remaining*=1-frac;
+    bounceCount++;
+    if(bounceCount>36){dead=time;remaining=0;break;}
+    if(frac<.00001){remaining=Math.max(0,remaining-0.00004);}
+   }
+   p.t+=dt;
+   if(detailed&&step%3===0)points.push([p.x,p.y,Math.min(p.t,dead)]);
+   if(dead<duration||p.y>WATER+8||p.x<-30||p.x>W+30){dead=Math.min(dead,p.t);break;}
+  }
+  if(detailed){if(points.length&&points.at(-1)[2]>dead)points[points.length-1][2]=dead;tracks.push({id,born,dead,points});}
+ }
+ events.sort((a,b)=>a.time-b.time||a.ball-b.ball||a.leaf-b.leaf);
+ const firstContact=events.length?events[0].time:0;for(const e of events)e.musicalTime=e.time-firstContact;
+ const heat=new Map();for(const e of events){let h=(heat.get(e.leaf)||0)+1;heat.set(e.leaf,h);e.heat=h;}
+ return {events,tracks,walls,waters,leaves,duration,launchCount,settings:copy(cfg)};
+}
+// Fixed-time matching: each collision can match at most ONE MIDI target event.
+// No target notes are used by the physics engine or the audio engine.
+function judge(events,goal=67){
+ const targets=TARGET.slice(0,goal),matches=[],near=[];
+ // Maximum one-to-one matching within a strict ±90ms window and identical pitch.
+ // This avoids the undercount caused by naive greedy assignment of close repeats.
+ const candidates=targets.map(t=>events.map((e,j)=>({j,d:Math.abs(e.musicalTime-t.time),pitch:e.pitch})).filter(e=>e.pitch===t.pitch&&e.d<=.09).sort((a,b)=>a.d-b.d).map(e=>e.j));
+ const usedBy=Array(events.length).fill(-1);
+ function assign(i,seen){for(const j of candidates[i]){if(seen.has(j))continue;seen.add(j);if(usedBy[j]<0||assign(usedBy[j],seen)){usedBy[j]=i;return true;}}return false;}
+ for(let i=0;i<targets.length;i++)assign(i,new Set());
+ for(let j=0;j<usedBy.length;j++)if(usedBy[j]>=0){let i=usedBy[j];matches[i]={event:events[j],error:Math.abs(events[j].musicalTime-targets[i].time)};}
+ const taken=new Set(usedBy.map((v,j)=>v>=0?j:-1).filter(j=>j>=0));
+ for(let i=0;i<targets.length;i++)if(!matches[i]){
+  let nearest=Infinity;for(let j=0;j<events.length;j++)if(!taken.has(j)&&events[j].pitch===targets[i].pitch)nearest=Math.min(nearest,Math.abs(events[j].musicalTime-targets[i].time));
+  if(nearest<=.24)near[i]=nearest;
+ }
+ let exact=matches.filter(Boolean).length,extras=events.length-exact,soft=0;
+ for(const t of targets){let closest=10;for(const e of events){let d=Math.abs(e.musicalTime-t.time),pitch=Math.abs(e.pitch-t.pitch);if(d<.35&&pitch<=5)closest=Math.min(closest,d/.35+pitch/6);}if(closest<10)soft+=Math.max(0,1-closest);}
+ const objective=exact*110+soft*11-Math.max(0,extras)*.9+Math.min(events.length,goal)*.6;
+ return {exact,extras,missing:targets.length-exact,matches,near,objective,soft,goal};
+}
+
+// @@CORE_END
+// Runtime and interface. Rebuilds never use MIDI target times to generate sound.
+const $=id=>document.getElementById(id),canvas=$('scene'),g=canvas.getContext('2d');
+let config=copy(DEFAULT),saved=copy(DEFAULT),selected=6,run=null,result=null,playing=false,paused=false,startedAt=0,elapsed=0,raf=0,ctx=null,voices=[],solveJob=null,shown=0;
+function status(s){$('status').textContent=s;}
+function stopPlayback(){playing=false;paused=false;cancelAnimationFrame(raf);for(let v of voices){try{v.stop()}catch{}}voices=[];$('play').textContent='▶ PLAY';$('pause').textContent='Ⅱ PAUZE';if(ctx&&ctx.state==='suspended')ctx.resume().catch(()=>{});}
+function rebuild(msg){stopPlayback();run=simulate(config,{duration:20.7});result=judge(run.events,67);shown=0;elapsed=0;refresh();draw(0);if(msg)status(msg);}
+function refresh(){let l=config.leaves.find(v=>v.id===selected)||config.leaves[0];selected=l.id;$('leaf').replaceChildren();for(const leaf of config.leaves){let opt=document.createElement('option');opt.value=leaf.id;opt.textContent=`🍃 Blad ${leaf.id}`;$('leaf').append(opt);} $('leaf').value=String(selected);
+ $('leafCount').textContent=config.leaves.length+' bladeren';$('angle').value=((l.angle%360)+360)%360;$('angleValue').textContent=Math.round(l.angle)+'°';$('pitch').value=l.tuning;$('pitchValue').textContent=pitchName(l.tuning);
+ for(const key of ['launcher','speed','sway','rate']){let field=key==='launcher'?'angle':key; $(''+key).value=config.launcher[field];}
+ $('launcherValue').textContent=config.launcher.angle+'°';$('speedValue').textContent=config.launcher.speed+' px/s';$('swayValue').textContent=config.launcher.sway+'°';$('rateValue').textContent=config.launcher.rate.toFixed(2)+' s';
+ $('exact').textContent=result.exact+' / 67';$('contacts').textContent=run.events.length;$('missed').textContent=result.missing;$('extra').textContent=result.extras;
+ $('notes').replaceChildren();TARGET.forEach((t,i)=>{let d=document.createElement('div');d.className='note-cell'+(result.matches[i]?' good':result.near[i]!==undefined?' near':'');d.style.height=(25+Math.min(36,Math.max(0,(t.pitch-80)*1.35)))+'px';d.title=`${i+1}: ${pitchName(t.pitch)} @ ${t.time.toFixed(3)}s · ${result.matches[i]?'exact':result.near[i]!==undefined?'bijna':'gemist'}`;$('notes').append(d);});
+ let mse=result.matches.filter(Boolean).map(m=>m.error*1000),max=mse.length?Math.max(...mse).toFixed(1)+'ms':'—';
+ $('scoring').textContent=`START = eerste echte bladbotsing; meet daarna relatieve timing.\n${result.exact} exact binnen ±90ms · grootste afwijking ${max}\n${run.launchCount} organismen gelanceerd, ${run.events.length} bladmuzieknoten.\nDoelnoten zijn niet gebruikt voor lanceertijd of botsingsfysica.`;
+ $('log').textContent=run.events.slice(0,95).map(e=>`${e.musicalTime.toFixed(3).padStart(7)}s · ${pitchName(e.pitch).padEnd(4)} · blad ${e.leaf} @ ${(e.u*100).toFixed(0)}% · roze #${e.ball}`).join('\n')||'Geen bladbotsingen. Verstel de lanceerhoek.';
+ $('progress').style.width='0%';$('clock').textContent='0.00s';
+}
+function tone(e,when){if(!ctx)return;let f=440*Math.pow(2,(e.pitch-69)/12),volume=.09,heat=e.heat||1,len=.19+Math.min(.20,heat*.008);
+ for(const [ratio,type,amp] of [[1,'sine',1],[2,'sine',.14],[3.01,'triangle',.03]]){
+ let osc=ctx.createOscillator(),gain=ctx.createGain();osc.type=type;osc.frequency.value=f*ratio;gain.gain.setValueAtTime(.0001,when);gain.gain.exponentialRampToValueAtTime(Math.max(.0002,volume*amp),when+.009);gain.gain.exponentialRampToValueAtTime(.0001,when+len);osc.connect(gain);gain.connect(ctx.destination);osc.start(when);osc.stop(when+len+.03);voices.push(osc);
+ }
+}
+function start(prepared=false){if(solveJob)return;if(!prepared&&(!run||run.duration!==20.7))rebuild();stopPlayback();if(!run)rebuild();try{ctx??=new(window.AudioContext||window.webkitAudioContext)();ctx.resume();let audioStart=ctx.currentTime+.13;
+ // Only leaf collision events. This is NOT the MIDI target note list.
+ for(const e of run.events)tone(e,audioStart+e.time);
+ }catch(err){status('Audio niet beschikbaar: '+err.message);}playing=true;paused=false;elapsed=0;shown=0;startedAt=performance.now()+130;$('play').textContent='♫ SPEELT';$('pause').textContent='Ⅱ PAUZE';status('Roze organismen kaatsen · ieder gehoord geluid heeft een bladbotsing.');raf=requestAnimationFrame(frame);}
+function frame(now){if(!playing||paused)return;elapsed=clamp((now-startedAt)/1000,0,run.duration);draw(elapsed);$('clock').textContent=elapsed.toFixed(2)+'s';$('progress').style.width=Math.min(100,100*elapsed/run.duration)+'%';if(elapsed<run.duration){raf=requestAnimationFrame(frame);}else{stopPlayback();status(`Klaar: ${run.events.length} bladbotsingen, ${result.exact}/67 doelnoten exact.`);}}
+function togglePause(){if(!playing)return;if(!paused){paused=true;elapsed=clamp((performance.now()-startedAt)/1000,0,run.duration);cancelAnimationFrame(raf);if(ctx)ctx.suspend();$('pause').textContent='▶ VERDER';status('Gepauzeerd.');}else{paused=false;startedAt=performance.now()-elapsed*1000;if(ctx)ctx.resume();$('pause').textContent='Ⅱ PAUZE';raf=requestAnimationFrame(frame);status('Verder spelen.');}}
+function pointAt(points,time){if(!points.length||time<points[0][2])return null;let lo=0,hi=points.length-1;while(lo<hi){let mid=(lo+hi+1)>>1;if(points[mid][2]<=time)lo=mid;else hi=mid-1;}let a=points[lo],b=points[Math.min(lo+1,points.length-1)],r=b[2]===a[2]?0:clamp((time-a[2])/(b[2]-a[2]),0,1);return {x:a[0]+r*(b[0]-a[0]),y:a[1]+r*(b[1]-a[1])};}
+function draw(t){if(!run)return;g.clearRect(0,0,W,H);
+ const bg=g.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#0ac969');bg.addColorStop(.54,'#5dd33b');bg.addColorStop(1,'#167cb4');g.fillStyle=bg;g.fillRect(0,0,W,H);
+ const halo=g.createRadialGradient(335,285,60,335,285,330);halo.addColorStop(0,'#eefe4677');halo.addColorStop(1,'#ffff0040');g.fillStyle=halo;g.beginPath();g.ellipse(342,273,265,245,0,0,7);g.fill();
+ g.save();g.beginPath();g.ellipse(342,273,265,245,0,0,7);g.clip();
+ for(let i=0;i<47;i++){let x=15+(i*131)%W,y=12+(i*117)%WATER,r=3+i%6*2;g.strokeStyle='#cefff066';g.lineWidth=1.4;g.beginPath();g.arc(x,y+Math.sin(t*1.3+i)*3,r,0,7);g.stroke();g.beginPath();g.arc(x-r/3,y-r/3,1.6,0,7);g.fillStyle='#ffffff88';g.fill();}
+ // Organic center tree. Drawable tree elements do not create collisions.
+ g.fillStyle='#915021';g.beginPath();g.moveTo(298,WATER);g.bezierCurveTo(326,410,299,225,319,99);g.quadraticCurveTo(329,35,334,83);g.bezierCurveTo(356,247,344,421,379,WATER);g.closePath();g.fill();
+ g.strokeStyle='#7c3e18';g.lineWidth=5;g.beginPath();g.moveTo(325,360);g.quadraticCurveTo(300,311,261,302);g.moveTo(337,276);g.quadraticCurveTo(374,287,405,302);g.moveTo(325,199);g.lineTo(275,165);g.moveTo(340,191);g.lineTo(394,169);g.stroke();
+ for(const l of run.leaves){let heat=0;for(const e of run.events){if(e.time>t)break;if(e.leaf===l.id)heat++;}let hue=clamp(112-heat*10,5,112);g.save();g.translate(l.x,l.y);g.rotate(rad(l.angle));
+ g.shadowColor=heat?'#ffb946aa':'#e5ff99aa';g.shadowBlur=13;let grad=g.createLinearGradient(0,-19,0,18);grad.addColorStop(0,`hsl(${hue} 97% 64%)`);grad.addColorStop(1,`hsl(${clamp(hue-18,4,110)} 96% 45%)`);g.fillStyle=grad;g.strokeStyle=selected===l.id?'#fff4ac':'#f6ffaf';g.lineWidth=selected===l.id?3:1.2;
+ g.beginPath();g.moveTo(-l.len/2,0);g.bezierCurveTo(-l.len*.20,-36,l.len*.21,-30,l.len/2,0);g.bezierCurveTo(l.len*.17,30,-l.len*.2,32,-l.len/2,0);g.closePath();g.fill();g.stroke();g.shadowBlur=0;g.strokeStyle='#fff7ab';g.lineWidth=2;g.beginPath();g.moveTo(-l.len/2+4,0);g.lineTo(l.len/2-3,0);g.stroke();g.restore();
+ if(selected===l.id){g.fillStyle='#fef8d4';g.font='bold 13px system-ui';g.textAlign='center';g.fillText(`${Math.round(l.angle)}° · ${pitchName(l.tuning)}`,l.x,l.y+43);g.textAlign='left';}
+ }
+ // Launcher oscillation is deterministic, shared across every launch.
+ let launcher=config.launcher,langle=launcher.angle+launcher.sway*Math.sin(2*Math.PI*t/launcher.period);
+ g.save();g.translate(launcher.x,launcher.y+15);g.rotate(-rad(langle));g.fillStyle='#ffe95e';g.strokeStyle='#fff8b4';g.lineWidth=2;g.beginPath();g.ellipse(0,0,40,12,0,0,7);g.fill();g.stroke();g.restore();
+ // Trails are sampled directly from the physics solver, not drawn toward target notes.
+ if($('traces').checked)for(const tr of run.tracks){if(tr.born>t)break;g.beginPath();let first=true;for(const [x,y,at] of tr.points){if(at>t)break;if(first){g.moveTo(x,y);first=false;}else g.lineTo(x,y);}g.strokeStyle='#ffeaf38a';g.lineWidth=1.4;g.stroke();}
+ for(const e of run.events){let age=t-e.time;if(age<0||age>.36)continue;g.strokeStyle=`rgba(255,236,137,${1-age/.36})`;g.lineWidth=3;g.beginPath();g.arc(e.x,e.y,7+age*48,0,7);g.stroke();}
+ for(const tr of run.tracks){if(t<tr.born||t>tr.dead)continue;let pos=pointAt(tr.points,t);if(!pos)continue;g.save();g.translate(pos.x,pos.y);g.shadowBlur=11;g.shadowColor='#ff36b7';g.fillStyle='#fc29b1';g.strokeStyle='#ffd5f5';g.lineWidth=1.8;g.beginPath();g.arc(0,0,8,0,7);g.fill();g.stroke();g.shadowBlur=0;g.fillStyle='#fff';g.beginPath();g.arc(3,-3,2.4,0,7);g.fill();g.fillStyle='#f3f560';g.beginPath();g.ellipse(-12,6,10,3,-.7,0,7);g.fill();g.restore();}
+ g.restore();g.fillStyle='#158dc3';g.fillRect(0,WATER,W,H-WATER);g.fillStyle='#41a9cb88';g.fillRect(0,WATER+17,W,15);g.strokeStyle='#c0fff0';g.lineWidth=2;g.beginPath();g.moveTo(0,WATER);for(let x=0;x<=W;x+=5)g.lineTo(x,WATER+2*Math.sin(.05*x+t*3));g.stroke();
+ g.textAlign='left';g.fillStyle='#f2fff0';g.font='bold 16px system-ui';g.fillText('MARIO · BOUNCE GARDEN',18,80);g.font='12px system-ui';g.fillText('GEEN VOORGEPROGRAMMEERDE MUZIEK',18,98);g.font='12px ui-monospace,monospace';g.fillText('Echte botsingen: '+run.events.filter(e=>e.time<=t).length,18,H-18);
+}
+function updateLeaf(field,value){let l=config.leaves.find(x=>x.id===selected);if(!l)return;l[field]=value;rebuild(`Blad ${selected} aangepast. Fysica en melodie opnieuw doorgerekend.`);}
+function changeConfig(field,val){config.launcher[field]=val;rebuild('Lanceerparameters aangepast; botsingen opnieuw berekend.');}
+function compare(){stopPlayback();let before=run.events,modified=copy(config);let l=modified.leaves.find(x=>x.id===selected);l.angle+=5;let after=simulate(modified,{duration:20.7,detailed:false}).events;let first=-1;for(let i=0;i<Math.max(before.length,after.length);i++){let a=before[i],b=after[i];if(!a||!b||a.leaf!==b.leaf||a.pitch!==b.pitch||Math.abs(a.time-b.time)>.009){first=i;break;}}
+ $('comparison').textContent=`Blad ${selected}: ${Math.round(l.angle-5)}° → ${Math.round(l.angle)}°\nBasis: ${before.length} echte noten, +5°: ${after.length}\nEerste veranderde gebeurtenis: ${first<0?'geen verandering gemeten':'#'+(first+1)}\nBasis Mario: ${judge(before,67).exact}/67 · +5° Mario: ${judge(after,67).exact}/67\nBeide runs zijn onafhankelijk fysisch gesimuleerd.`;status('Twee geometrieën fysisch vergeleken; de huidige tuin is ongewijzigd.');}
+const maxId=()=>Math.max(...config.leaves.map(x=>x.id),0);
+function addLeaf(){if(config.leaves.length>=14)return status('Maximaal 14 bladeren in v1.');let id=maxId()+1;config.leaves.push({id,x:380+(id%3)*34,y:225+(id%4)*44,len:105,angle:30,tuning:95});selected=id;rebuild('Nieuw blad toegevoegd. Het is direct onderdeel van de fysica.');}
+function removeLeaf(){if(config.leaves.length<=3)return status('Minimaal drie bladeren.');config.leaves=config.leaves.filter(x=>x.id!==selected);selected=config.leaves[0].id;rebuild('Blad verwijderd. De baan is opnieuw berekend.');}
+function exportData(){let data={schema:'agentmelodies-bounce-lab-v1',config,target:{title:'Super Mario World · Title Screen',count:TARGET.length},collisionEvents:run.events.map(e=>({time:e.time,musicalTime:e.musicalTime,leaf:e.leaf,ball:e.ball,impactFraction:e.u,pitch:e.pitch,heat:e.heat})),validation:{exact:result.exact,missing:result.missing,extras:result.extras,toleranceMs:90},physics:{step:STEP,gravity:G,restitution:REST,ballRadius:BALL_R},note:'All audio events originate from leaf collisions. Projectiles are launched periodically and are NOT MIDI-timed.'};let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='agentmelodies-bounce-lab-v1.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+// Stochastic hill climber: changes ONLY the configuration, asks the same physics engine
+// to produce collision notes, and scores them with the independent MIDI validator.
+function mutate(base,rng){let c=copy(base),pick=rng();if(pick<.20){let l=c.leaves[Math.floor(rng()*c.leaves.length)];l.angle=Math.round(l.angle+(rng()-.5)*64);}else if(pick<.40){let l=c.leaves[Math.floor(rng()*c.leaves.length)];l.x=clamp(Math.round(l.x+(rng()-.5)*72),30,W-30);l.y=clamp(Math.round(l.y+(rng()-.5)*72),55,WATER-25);}else if(pick<.60){let l=c.leaves[Math.floor(rng()*c.leaves.length)];l.tuning=clamp(l.tuning+Math.round((rng()-.5)*10),72,104);}else if(pick<.76){c.launcher.angle=clamp(Math.round(c.launcher.angle+(rng()-.5)*28),20,160);}else if(pick<.86){c.launcher.speed=clamp(Math.round(c.launcher.speed+(rng()-.5)*100),220,480);}else if(pick<.94){c.launcher.sway=clamp(Math.round(c.launcher.sway+(rng()-.5)*15),0,35);}else{c.launcher.rate=clamp(Math.round((c.launcher.rate+(rng()-.5)*.10)*100)/100,.18,.85);}return c;}
+function rngFactory(seed=2391){let n=seed>>>0;return ()=>{n^=n<<13;n^=n>>>17;n^=n<<5;return (n>>>0)/4294967296;};}
+function solverStart(){if(solveJob)return;stopPlayback();let goal=Number($('goal').value),duration=goal===8?5.8:goal===16?8.4:20.7;
+ let rng=rngFactory(7731+goal+Math.round(config.launcher.angle*13)),startConfig=copy(config);
+ const evaluation=c=>{let s=simulate(c,{duration,detailed:false,launchCount:Math.ceil((Math.min(duration,goal*.42)+1)/c.launcher.rate)});return judge(s.events,goal);};
+ let bestConfig=copy(config),best=evaluation(bestConfig),currentConfig=copy(config),current=best,iterations=0,limit=goal===67?120:240;
+ solveJob={cancel:false};let job=solveJob;$('solve').disabled=true;$('stopSolve').disabled=false;$('goal').disabled=true;status(`Zoeken naar Mario · ${goal} noten. Score nu ${best.exact}/${goal}...`);
+ function batch(){if(job.cancel){finish(true);return;}let elapsedStart=performance.now();while(iterations<limit&&performance.now()-elapsedStart<28){iterations++;
+  let candidate=mutate(iterations%11===0?bestConfig:currentConfig,rng),v=evaluation(candidate),temp=.7*(1-iterations/limit)+.08;
+  if(v.objective>best.objective+1e-7){best=v;bestConfig=copy(candidate);}
+  if(v.objective>current.objective||rng()<Math.exp((v.objective-current.objective)/(temp*7))){current=v;currentConfig=candidate;}
+  if(iterations%20===0){currentConfig=copy(bestConfig);current=best;}
+ }
+ $('iterations').textContent=iterations+' / '+limit;$('phase').textContent=`ZOEKEN ${iterations}/${limit}`;
+ if(iterations<limit){setTimeout(batch,0);}else finish(false);}
+ function finish(cancelled){if(solveJob!==job)return;solveJob=null;$('solve').disabled=false;$('stopSolve').disabled=true;$('goal').disabled=false;$('phase').textContent='FYSICA 240 Hz';
+ // Always keep the strongest fully evaluated candidate, even if it was found early.
+ config=copy(bestConfig);rebuild();status(`${cancelled?'Zoeken gestopt':'Zoekproef voltooid'} · ${best.exact}/${goal} in de korte proef. Volledige Mario-score ${result.exact}/67. Geen MIDI-sturing.`);
+ $('scoring').textContent+=`\nSolver: ${iterations} fysisch doorgerekende voorstellen; gekozen resultaat ${best.exact}/${goal} in de ${goal}-notenproef.`;
+ }
+ setTimeout(batch,0);
+}
+$('play').onclick=start;$('pause').onclick=togglePause;$('single').onclick=()=>{stopPlayback();run=simulate(config,{duration:5.3,launchCount:1});result=judge(run.events,67);refresh();draw(0);start(true);status(`Één roze organisme gelanceerd · ${run.events.length} bladbotsingen.`);};
+$('reset').onclick=()=>rebuild('Opnieuw doorgerekend met de huidige bladinstellingen.');
+$('repair').onclick=()=>{config=copy(saved);rebuild('Bewaarde bladopstelling hersteld.');};
+$('save').onclick=()=>{saved=copy(config);status('Deze configuratie is nu het REPAIR-herstelpunt.');};
+$('compare').onclick=compare;$('export').onclick=exportData;
+$('leaf').onchange=e=>{selected=Number(e.target.value);refresh();draw(elapsed);};
+$('add').onclick=addLeaf;$('remove').onclick=removeLeaf;
+$('angle').oninput=e=>updateLeaf('angle',Number(e.target.value));$('pitch').oninput=e=>updateLeaf('tuning',Number(e.target.value));
+$('left').onclick=()=>{let l=config.leaves.find(x=>x.id===selected);updateLeaf('angle',l.angle-5);};
+$('right').onclick=()=>{let l=config.leaves.find(x=>x.id===selected);updateLeaf('angle',l.angle+5);};
+for(const [id,field] of [['launcher','angle'],['speed','speed'],['sway','sway'],['rate','rate']])$(''+id).oninput=e=>changeConfig(field,Number(e.target.value));
+$('traces').onchange=()=>draw(elapsed);
+$('solve').onclick=solverStart;$('stopSolve').onclick=()=>{if(solveJob)solveJob.cancel=true;};
+let drag=false;
+function coord(e){let r=canvas.getBoundingClientRect();return {x:(e.clientX-r.left)*W/r.width,y:(e.clientY-r.top)*H/r.height};}
+canvas.addEventListener('pointerdown',e=>{if(solveJob)return;let p=coord(e),choices=config.leaves.map(l=>({l,d:Math.hypot(p.x-l.x,p.y-l.y)})).sort((a,b)=>a.d-b.d);if(!choices.length||choices[0].d>75)return;selected=choices[0].l.id;drag=true;canvas.setPointerCapture(e.pointerId);refresh();draw(elapsed);});
+canvas.addEventListener('pointermove',e=>{if(!drag)return;let p=coord(e),l=config.leaves.find(x=>x.id===selected);if(!l)return;if($('mode').value==='move'){l.x=clamp(p.x,20,W-20);l.y=clamp(p.y,50,WATER-24);}else{l.angle=Math.round(deg(Math.atan2(p.y-l.y,p.x-l.x)));}rebuild('Blad direct aangepast; traject opnieuw gesimuleerd.');});
+canvas.addEventListener('pointerup',()=>drag=false);canvas.addEventListener('pointercancel',()=>drag=false);
+// For deterministic acceptance tests and future agent-config integration.
+window.__bounceLab={simulate,judge,geometry,segmentHit,launchVector,hitPitch,DEFAULT,TARGET,mutate,rngFactory,getConfig:()=>copy(config),setConfig:c=>{config=copy(c);rebuild('Configuratie geladen.');},getRun:()=>run};
+rebuild('Bounce Lab v1 gereed. Klik PLAY of draai een blad.');
+</script></body></html>

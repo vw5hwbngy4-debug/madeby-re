@@ -1,0 +1,1 @@
+v5.3.8 fixes the character being stuck in the bed by spawning beside the bed and validating the spawn against bedroom collision. It also adds stronger Safari/iOS interaction locks to prevent selection, callout, zoom gestures and page movement during gameplay.

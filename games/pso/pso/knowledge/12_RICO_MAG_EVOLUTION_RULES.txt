@@ -1,0 +1,845 @@
+RICO KNOWLEDGE MODULE
+SOURCE MODULE: 12_PSO_MAG_EVOLUTION_RULES.txt
+MOVE ROUTING: See 18_RICO_KNOWLEDGE_INDEX_QUERY_MAP.txt
+
+PSO MAG EVOLUTION RULES
+=======================
+
+PURPOSE
+Basic, Stage 3, and Stage 4 MAG evolution rules from the packaged Magatama truth layer. Preserve equations, class family, gender targets, condition tags, and A/B inference warning.
+
+SOURCE BASIS
+MagatamaBeta9 truth export in magatama-truth-v1.8.json and pso-mag-core.json.
+
+RETRIEVAL RULE
+Treat explicit platform labels, verification/status fields, source labels, and warnings as part of the fact. Never silently remove them.
+
+IMPORTANT: Stage-3 A/B Section-ID branch selection is inferred in this project because the supplied XML did not explicitly encode the mapping. Treat that branch mapping as inference, not pristine source truth.
+
+TRUTH_EXPORT_EVOLUTION
+{
+  "basic": {
+    "stage01": {
+      "HU": {
+        "id": 1,
+        "name": "Varuna"
+      },
+      "RA": {
+        "id": 2,
+        "name": "Kalki"
+      },
+      "FO": {
+        "id": 3,
+        "name": "Vritra"
+      }
+    },
+    "stage02": {
+      "1": {
+        "POW": 4,
+        "POWname": "Rudra",
+        "DEX": 5,
+        "DEXname": "Marutah",
+        "MIND": 6,
+        "MINDname": "Vayu"
+      },
+      "2": {
+        "POW": 7,
+        "POWname": "Surya",
+        "DEX": 8,
+        "DEXname": "Mitra",
+        "MIND": 9,
+        "MINDname": "Tapas"
+      },
+      "3": {
+        "POW": 10,
+        "POWname": "Sumba",
+        "DEX": 11,
+        "DEXname": "Ashvinau",
+        "MIND": 12,
+        "MINDname": "Namuci"
+      }
+    }
+  },
+  "stage03": {
+    "HU": [
+      {
+        "order": "POW_DEX_MIND",
+        "A": 13,
+        "Aname": "Varaha",
+        "B": 14,
+        "Bname": "Kama"
+      },
+      {
+        "order": "POW_MIND_DEX",
+        "A": 15,
+        "Aname": "Bhirava",
+        "B": 16,
+        "Bname": "Apsaras"
+      },
+      {
+        "order": "DEX_POW_MIND",
+        "A": 17,
+        "Aname": "Ila",
+        "B": 18,
+        "Bname": "Garuda"
+      },
+      {
+        "order": "DEX_MIND_POW",
+        "A": 19,
+        "Aname": "Nandin",
+        "B": 20,
+        "Bname": "Yaksa"
+      },
+      {
+        "order": "MIND_POW_DEX",
+        "A": 21,
+        "Aname": "Kabanda",
+        "B": 22,
+        "Bname": "Durga"
+      },
+      {
+        "order": "MIND_DEX_POW",
+        "A": 23,
+        "Aname": "Ushasu",
+        "B": 24,
+        "Bname": "Soma"
+      }
+    ],
+    "RA": [
+      {
+        "order": "POW_DEX_MIND",
+        "A": 14,
+        "Aname": "Kama",
+        "B": 25,
+        "Bname": "Madhu"
+      },
+      {
+        "order": "POW_MIND_DEX",
+        "A": 15,
+        "Aname": "Bhirava",
+        "B": 26,
+        "Bname": "Kaitabha"
+      },
+      {
+        "order": "DEX_POW_MIND",
+        "A": 15,
+        "Aname": "Bhirava",
+        "B": 26,
+        "Bname": "Kaitabha"
+      },
+      {
+        "order": "DEX_MIND_POW",
+        "A": 14,
+        "Aname": "Kama",
+        "B": 13,
+        "Bname": "Varaha"
+      },
+      {
+        "order": "MIND_POW_DEX",
+        "A": 13,
+        "Aname": "Varaha",
+        "B": 21,
+        "Bname": "Kabanda"
+      },
+      {
+        "order": "MIND_DEX_POW",
+        "A": 16,
+        "Aname": "Apsaras",
+        "B": 22,
+        "Bname": "Durga"
+      }
+    ],
+    "FO": [
+      {
+        "order": "POW_DEX_MIND",
+        "A": 27,
+        "Aname": "Naraka",
+        "B": 28,
+        "Bname": "Marica"
+      },
+      {
+        "order": "POW_MIND_DEX",
+        "A": 29,
+        "Aname": "Ravana",
+        "B": 30,
+        "Bname": "Naga"
+      },
+      {
+        "order": "DEX_POW_MIND",
+        "A": 31,
+        "Aname": "Ribhava",
+        "B": 18,
+        "Bname": "Garuda"
+      },
+      {
+        "order": "DEX_MIND_POW",
+        "A": 32,
+        "Aname": "Sita",
+        "B": 15,
+        "Bname": "Bhirava"
+      },
+      {
+        "order": "MIND_POW_DEX",
+        "A": 30,
+        "Aname": "Naga",
+        "B": 33,
+        "Bname": "Kumara"
+      },
+      {
+        "order": "MIND_DEX_POW",
+        "A": 21,
+        "Aname": "Kabanda",
+        "B": 17,
+        "Bname": "Ila"
+      },
+      {
+        "order": "POW_DEXMIND",
+        "A": 34,
+        "Aname": "Andhaka",
+        "B": 34,
+        "Bname": "Andhaka"
+      },
+      {
+        "order": "DEX_POWMIND",
+        "A": 35,
+        "Aname": "Bana",
+        "B": 35,
+        "Bname": "Bana"
+      },
+      {
+        "order": "MIND_POWDEX",
+        "A": 35,
+        "Aname": "Bana",
+        "B": 35,
+        "Bname": "Bana"
+      }
+    ]
+  },
+  "stage04": {
+    "HU": [
+      {
+        "equation": "DEFMIND-POWDEX",
+        "CND": "GPO",
+        "M": 58,
+        "Mname": "Rati",
+        "F": 59,
+        "Fname": "Savitri"
+      },
+      {
+        "equation": "DEFDEX-POWMIND",
+        "CND": "VBRW",
+        "M": 57,
+        "Mname": "Deva",
+        "F": 59,
+        "Fname": "Savitri"
+      },
+      {
+        "equation": "DEFPOW-DEXMIND",
+        "CND": "SKY",
+        "M": 58,
+        "Mname": "Rati",
+        "F": 59,
+        "Fname": "Savitri"
+      }
+    ],
+    "RA": [
+      {
+        "equation": "DEFMIND-POWDEX",
+        "CND": "GPO",
+        "M": 60,
+        "Mname": "Pushan",
+        "F": 61,
+        "Fname": "Rukmin"
+      },
+      {
+        "equation": "DEFDEX-POWMIND",
+        "CND": "VBRW",
+        "M": 60,
+        "Mname": "Pushan",
+        "F": 61,
+        "Fname": "Rukmin"
+      },
+      {
+        "equation": "DEFPOW-DEXMIND",
+        "CND": "SKY",
+        "M": 60,
+        "Mname": "Pushan",
+        "F": 62,
+        "Fname": "Diwari"
+      }
+    ],
+    "FO": [
+      {
+        "equation": "DEFMIND-POWDEX",
+        "CND": "GPO",
+        "M": 63,
+        "Mname": "Nidra",
+        "F": 65,
+        "Fname": "Bhima"
+      },
+      {
+        "equation": "DEFDEX-POWMIND",
+        "CND": "VBRW",
+        "M": 63,
+        "Mname": "Nidra",
+        "F": 64,
+        "Fname": "Sato"
+      },
+      {
+        "equation": "DEFPOW-DEXMIND",
+        "CND": "SKY",
+        "M": 63,
+        "Mname": "Nidra",
+        "F": 65,
+        "Fname": "Bhima"
+      }
+    ]
+  }
+}
+
+NORMALIZED_MAG_EVOLUTION_RULES
+{
+  "Basic": [
+    {
+      "conditionTag": "Stage01_HU",
+      "Mag": "1",
+      "name": "Varuna"
+    },
+    {
+      "conditionTag": "Stage01_RA",
+      "Mag": "2",
+      "name": "Kalki"
+    },
+    {
+      "conditionTag": "Stage01_FO",
+      "Mag": "3",
+      "name": "Vritra"
+    },
+    {
+      "conditionTag": "Stage02_1",
+      "POW": "4",
+      "POWname": "Rudra",
+      "DEX": "5",
+      "DEXname": "Marutah",
+      "MIND": "6",
+      "MINDname": "Vayu"
+    },
+    {
+      "conditionTag": "Stage02_2",
+      "POW": "7",
+      "POWname": "Surya",
+      "DEX": "8",
+      "DEXname": "Mitra",
+      "MIND": "9",
+      "MINDname": "Tapas"
+    },
+    {
+      "conditionTag": "Stage02_3",
+      "POW": "10",
+      "POWname": "Sumba",
+      "DEX": "11",
+      "DEXname": "Ashvinau",
+      "MIND": "12",
+      "MINDname": "Namuci"
+    }
+  ],
+  "FO_Stage03": [
+    {
+      "conditionTag": "POW_DEX_MIND",
+      "A": "27",
+      "Aname": "Naraka",
+      "B": "28",
+      "Bname": "Marica"
+    },
+    {
+      "conditionTag": "POW_MIND_DEX",
+      "A": "29",
+      "Aname": "Ravana",
+      "B": "30",
+      "Bname": "Naga"
+    },
+    {
+      "conditionTag": "DEX_POW_MIND",
+      "A": "31",
+      "Aname": "Ribhava",
+      "B": "18",
+      "Bname": "Garuda"
+    },
+    {
+      "conditionTag": "DEX_MIND_POW",
+      "A": "32",
+      "Aname": "Sita",
+      "B": "15",
+      "Bname": "Bhirava"
+    },
+    {
+      "conditionTag": "MIND_POW_DEX",
+      "A": "30",
+      "Aname": "Naga",
+      "B": "33",
+      "Bname": "Kumara"
+    },
+    {
+      "conditionTag": "MIND_DEX_POW",
+      "A": "21",
+      "Aname": "Kabanda",
+      "B": "17",
+      "Bname": "Ila"
+    },
+    {
+      "conditionTag": "POW_DEXMIND",
+      "A": "34",
+      "Aname": "Andhaka",
+      "B": "34",
+      "Bname": "Andhaka"
+    },
+    {
+      "conditionTag": "DEX_POWMIND",
+      "A": "35",
+      "Aname": "Bana",
+      "B": "35",
+      "Bname": "Bana"
+    },
+    {
+      "conditionTag": "MIND_POWDEX",
+      "A": "35",
+      "Aname": "Bana",
+      "B": "35",
+      "Bname": "Bana"
+    }
+  ],
+  "FO_Stage04": [
+    {
+      "conditionTag": "DEFMIND-POWDEX",
+      "CND": "GPO",
+      "M": "63",
+      "Mname": "Nidra",
+      "F": "65",
+      "Fname": "Bhima"
+    },
+    {
+      "conditionTag": "DEFDEX-POWMIND",
+      "CND": "VBRW",
+      "M": "63",
+      "Mname": "Nidra",
+      "F": "64",
+      "Fname": "Sato"
+    },
+    {
+      "conditionTag": "DEFPOW-DEXMIND",
+      "CND": "SKY",
+      "M": "63",
+      "Mname": "Nidra",
+      "F": "65",
+      "Fname": "Bhima"
+    }
+  ],
+  "HU_Stage03": [
+    {
+      "conditionTag": "POW_DEX_MIND",
+      "A": "13",
+      "Aname": "Varaha",
+      "B": "14",
+      "Bname": "Kama"
+    },
+    {
+      "conditionTag": "POW_MIND_DEX",
+      "A": "15",
+      "Aname": "Bhirava",
+      "B": "16",
+      "Bname": "Apsaras"
+    },
+    {
+      "conditionTag": "DEX_POW_MIND",
+      "A": "17",
+      "Aname": "Ila",
+      "B": "18",
+      "Bname": "Garuda"
+    },
+    {
+      "conditionTag": "DEX_MIND_POW",
+      "A": "19",
+      "Aname": "Nandin",
+      "B": "20",
+      "Bname": "Yaksa"
+    },
+    {
+      "conditionTag": "MIND_POW_DEX",
+      "A": "21",
+      "Aname": "Kabanda",
+      "B": "22",
+      "Bname": "Durga"
+    },
+    {
+      "conditionTag": "MIND_DEX_POW",
+      "A": "23",
+      "Aname": "Ushasu",
+      "B": "24",
+      "Bname": "Soma"
+    }
+  ],
+  "HU_Stage04": [
+    {
+      "conditionTag": "DEFMIND-POWDEX",
+      "CND": "GPO",
+      "M": "58",
+      "Mname": "Rati",
+      "F": "59",
+      "Fname": "Savitri"
+    },
+    {
+      "conditionTag": "DEFDEX-POWMIND",
+      "CND": "VBRW",
+      "M": "57",
+      "Mname": "Deva",
+      "F": "59",
+      "Fname": "Savitri"
+    },
+    {
+      "conditionTag": "DEFPOW-DEXMIND",
+      "CND": "SKY",
+      "M": "58",
+      "Mname": "Rati",
+      "F": "59",
+      "Fname": "Savitri"
+    }
+  ],
+  "MagCellsError": [
+    {
+      "conditionTag": "Cell_1",
+      "cnd": "Your Mag need to be at least Level 100."
+    },
+    {
+      "conditionTag": "Cell_2",
+      "cnd": "Your Mag need to be at least Level 100."
+    },
+    {
+      "conditionTag": "Cell_3",
+      "cnd": "All your Mag Stats need to be Higher than 35."
+    },
+    {
+      "conditionTag": "Cell_4",
+      "cnd": "You need at least 2 Stats above 70."
+    },
+    {
+      "conditionTag": "Cell_5",
+      "cnd": "Your Mag need to be at leas Level 120 with Maximum Synchro and at least an IQ of 180"
+    },
+    {
+      "conditionTag": "Cell_6",
+      "cnd": "Your Mag need to be at least Level 100."
+    },
+    {
+      "conditionTag": "Cell_7",
+      "cnd": "Your Mag need to be at least Level 50."
+    },
+    {
+      "conditionTag": "Cell_8",
+      "cnd": "Your Mag need to be at least Level 50."
+    },
+    {
+      "conditionTag": "Cell_9",
+      "cnd": "Your Mag need to be at least Level 100."
+    },
+    {
+      "conditionTag": "Cell_9_Droid",
+      "cnd": "Can't be used by Android."
+    },
+    {
+      "conditionTag": "Cell_10",
+      "cnd": "Your Mag need to be at least Level 100."
+    },
+    {
+      "conditionTag": "Cell_10_Droid",
+      "cnd": "Can't be used by Android."
+    },
+    {
+      "conditionTag": "Cell_11",
+      "cnd": "Your Mag need to be a Naga and be at least level 50"
+    },
+    {
+      "conditionTag": "Cell_11_lvl",
+      "cnd": "Your Naga need to be at least level 50"
+    },
+    {
+      "conditionTag": "Cell_12",
+      "cnd": "Your Mag need to be a Kaitabha and be at least level 50"
+    },
+    {
+      "conditionTag": "Cell_12_lvl",
+      "cnd": "Your Kaitabha need to be at least level 50"
+    },
+    {
+      "conditionTag": "Cell_13",
+      "cnd": "Your Mag need to at most level 9"
+    },
+    {
+      "conditionTag": "Cell_14",
+      "cnd": "Your Mag need to be a Mark III and be at least Level 60"
+    },
+    {
+      "conditionTag": "Cell_14_lvl",
+      "cnd": "Your Mark III need to be at least Level 60"
+    },
+    {
+      "conditionTag": "Cell_15",
+      "cnd": "Your Mag need to be a Master System and be at least Level 70"
+    },
+    {
+      "conditionTag": "Cell_15_lvl",
+      "cnd": "Your Master System need to be at least Level 70"
+    },
+    {
+      "conditionTag": "Cell_16",
+      "cnd": "Your Mag need to be a Genesis and be at least Level 90"
+    },
+    {
+      "conditionTag": "Cell_16_lvl",
+      "cnd": "Your Genesis need to be at least Level 90"
+    },
+    {
+      "conditionTag": "Cell_17",
+      "cnd": "Your Mag need to be a Saturn and be at least Level 160"
+    },
+    {
+      "conditionTag": "Cell_17_lvl",
+      "cnd": "Your Saturn need to be at least Level 160"
+    },
+    {
+      "conditionTag": "Cell_18",
+      "cnd": "Your Mag need to be at least Level 50."
+    },
+    {
+      "conditionTag": "Cell_18_Droid",
+      "cnd": "Can't be used by Human and Newman."
+    },
+    {
+      "conditionTag": "Cell_19",
+      "cnd": "Your Mag need to be at least Level 50."
+    },
+    {
+      "conditionTag": "Cell_20",
+      "cnd": "Your Mag need to be a Kama and be at least level 100"
+    },
+    {
+      "conditionTag": "Cell_20_lvl",
+      "cnd": "Your Kama need to be at least Level 100"
+    },
+    {
+      "conditionTag": "Cell_21",
+      "cnd": "Your Mag need to be a Rukmin."
+    },
+    {
+      "conditionTag": "Cell_22",
+      "cnd": "Your Mag need to be a Kumara."
+    },
+    {
+      "conditionTag": "Cell_22",
+      "cnd": "Your Mag need to be at least Level 50."
+    },
+    {
+      "conditionTag": "Cell_23",
+      "cnd": "Your Mag need to be a Chu Chu."
+    },
+    {
+      "conditionTag": "Cell_24",
+      "cnd": "Your Mag need to be at least Level 50."
+    },
+    {
+      "conditionTag": "Cell_25",
+      "cnd": "Your Mag need to be a Garuda."
+    },
+    {
+      "conditionTag": "Cell_26",
+      "cnd": "Your Mag need to be a Kama."
+    },
+    {
+      "conditionTag": "Cell_27",
+      "cnd": "Your Mag need to be at least Level 50."
+    }
+  ],
+  "MagCellsExclusion": [
+    {
+      "conditionTag": "Cell_1",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_2",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_3",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_4",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_5",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_6",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_7",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_8",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_9",
+      "ccnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_10",
+      "cnd": "YES"
+    },
+    {
+      "conditionTag": "Cell_11",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_12",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_13",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_14",
+      "cnd": "YES"
+    },
+    {
+      "conditionTag": "Cell_15",
+      "cnd": "YES"
+    },
+    {
+      "conditionTag": "Cell_16",
+      "cnd": "YES"
+    },
+    {
+      "conditionTag": "Cell_17",
+      "cnd": "YES"
+    },
+    {
+      "conditionTag": "Cell_18",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_19",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_20",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_21",
+      "cnd": "Yes"
+    },
+    {
+      "conditionTag": "Cell_22",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_23",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_24",
+      "cnd": "Yes"
+    },
+    {
+      "conditionTag": "Cell_25",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_26",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_27",
+      "cnd": "NO"
+    },
+    {
+      "conditionTag": "Cell_28",
+      "cnd": "NO"
+    }
+  ],
+  "RA_Stage03": [
+    {
+      "conditionTag": "POW_DEX_MIND",
+      "A": "14",
+      "Aname": "Kama",
+      "B": "25",
+      "Bname": "Madhu"
+    },
+    {
+      "conditionTag": "POW_MIND_DEX",
+      "A": "15",
+      "Aname": "Bhirava",
+      "B": "26",
+      "Bname": "Kaitabha"
+    },
+    {
+      "conditionTag": "DEX_POW_MIND",
+      "A": "15",
+      "Aname": "Bhirava",
+      "B": "26",
+      "Bname": "Kaitabha"
+    },
+    {
+      "conditionTag": "DEX_MIND_POW",
+      "A": "14",
+      "Aname": "Kama",
+      "B": "13",
+      "Bname": "Varaha"
+    },
+    {
+      "conditionTag": "MIND_POW_DEX",
+      "A": "13",
+      "Aname": "Varaha",
+      "B": "21",
+      "Bname": "Kabanda"
+    },
+    {
+      "conditionTag": "MIND_DEX_POW",
+      "A": "16",
+      "Aname": "Apsaras",
+      "B": "22",
+      "Bname": "Durga"
+    }
+  ],
+  "RA_Stage04": [
+    {
+      "conditionTag": "DEFMIND-POWDEX",
+      "CND": "GPO",
+      "M": "60",
+      "Mname": "Pushan",
+      "F": "61",
+      "Fname": "Rukmin"
+    },
+    {
+      "conditionTag": "DEFDEX-POWMIND",
+      "CND": "VBRW",
+      "M": "60",
+      "Mname": "Pushan",
+      "F": "61",
+      "Fname": "Rukmin"
+    },
+    {
+      "conditionTag": "DEFPOW-DEXMIND",
+      "CND": "SKY",
+      "M": "60",
+      "Mname": "Pushan",
+      "F": "62",
+      "Fname": "Diwari"
+    }
+  ]
+}

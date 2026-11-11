@@ -1,0 +1,309 @@
+=== PDF PAGE 1 ===
+AP₁.1 — Ambient OS Grammar & ΔR Extensions
+
+Ambient Era Standard · Canonical Specification (2026)
+
+Raynor Eissens
+
+⸻
+
+Abstract
+
+AP₁.1 defines the internal semantic grammar of Ambient OS.
+
+Where AP₁ specifies how the system behaves structurally, AP₁.1 specifies why these behaviors
+
+remain coherent, reversible, and human-safe.
+
+This document formalizes field grammar, phase-relative truth, application containment,
+
+extractivity thresholds, and ΔR extensions. It introduces a non-absolute model of software truth
+
+in which multiple correct representations may exist across interaction phases without
+
+contradiction.
+
+AP₁.1 is normative. It defines semantic validity conditions for all entities operating within Ambient
+
+OS.
+
+⸻
+
+1. Scope and Relationship to AP₁
+
+AP₁.1 specifies:
+
+• Ambient Meaning Grammar (AMG)
+
+• Phase-Relative Truth (PRT)
+
+• Application eligibility and containment
+
+• The Gray Field and extractivity thresholds
+
+• ΔR extensions and post-action integrity
+
+• Field Composition Vectors (FCV)
+
+AP₁.1 extends AP₁.
+
+It does not redefine structure, gestures, or navigation.
+
+Human Carrying Constraint
+
+All semantic grammar defined in AP₁.1 operates under HCP-1 (Human Carrying Principle), as
+
+defined in AP₁.
+
+=== PDF PAGE 2 ===
+Any semantic configuration that produces felt pressure, coercion, or irreversible engagement
+
+violates ΔR and is therefore invalid, regardless of internal grammatical correctness.
+
+⸻
+
+2. Core Principle: Phase-Relative Truth (PRT-1)
+
+Ambient OS does not enforce a single global truth.
+
+Truth in Ambient OS is phase-relative and field-correct.
+
+An entity may express multiple valid semantic representations, each correct within its active field
+
+and interaction phase, without contradiction.
+
+Truth is therefore not absolute, but situated.
+
+⸻
+
+3. Example: Multi-Field Truth (Canonical)
+
+Running activity
+
+• Yellow — navigation and motion truth
+
+• Orange — experiential completion truth
+
+• Green — physiological record truth
+
+These truths:
+
+• do not overlap
+
+• do not conflict
+
+• do not require merging
+
+• remain semantically stable
+
+Legacy systems collapse these into a single interface space.
+
+Ambient OS preserves them as distinct.
+
+⸻
+
+4. Ambient Meaning Grammar (AMG-1)
+
+=== PDF PAGE 3 ===
+Meaning arises through field-constrained operators:
+
+• Hue (H) — field selection
+
+• Saturation (S) — relevance intensity
+
+• Brightness (B) — energetic clarity
+
+• Motion (M) — directional intent (Yellow only)
+
+• Rhythm (R) — continuity and trust
+
+• Proximity (P) — residency transition
+
+• Texture (T) — ΔR instability indicator
+
+Operators are valid only within their permitted fields.
+
+⸻
+
+5. Fields That Cannot Carry Applications
+
+The following layers never carry applications:
+
+• ChronoSense — time / cycle
+
+• Aura — meta-presence
+
+• Red — being / presence
+
+• Yellow — will / action
+
+Rationale:
+
+• What is cannot be objectified
+
+• What moves cannot be contained
+
+Applications are objects.
+
+Objects require stability.
+
+⸻
+
+6. Fields Eligible to Carry Applications
+
+Applications may exist only in fields that can sustain stable truth:
+
+• Orange — expression, creativity, satisfaction
+
+• Pink — relation and communication
+
+• Green — body, health, regulation
+
+• Blue — information, cognition, organization
+
+=== PDF PAGE 4 ===
+• Purple — infrastructure, shared systems
+
+Eligibility depends on behavior, not topic.
+
+⸻
+
+7. Extractivity and the Gray Field
+
+Gray is not a category.
+
+Gray is containment for incoherent truth.
+
+An application is Gray-locked if its behavior exceeds the extractivity threshold.
+
+⸻
+
+8. Extractivity Threshold (ET-40)
+
+If an application exhibits more than ~40% extractive semantics, it cannot reside in any human
+
+field.
+
+Extractive semantics include:
+
+• infinite scroll
+
+• algorithmic compulsion
+
+• dopamine-loop retention
+
+• ad density
+
+• unpredictability without intention
+
+• ΔR destabilization
+
+If ET > 40%:
+
+→ Gray only
+
+→ no semantic color
+
+→ no field residency
+
+→ no migration upward
+
+Gray protects the human fields from legacy systems.
+
+⸻
+
+9. Dual-Seat Applications
+
+=== PDF PAGE 5 ===
+Some applications may express phase-dependent residency.
+
+Example:
+
+• Messaging app used for relation → Pink
+
+• Same app used as drift hub → Gray
+
+Residency is determined by behavior in context, not brand identity.
+
+⸻
+
+10. Field Composition Vector (FCV-7)
+
+Every entity may be represented as:
+
+FCV = {
+  Red%,
+  Orange%,
+  Yellow%,
+  Pink%,
+  Green%,
+  Blue%,
+  Purple%
+}
+
+Rules:
+
+• Percentages sum to 100%
+
+• Dominant non-Gray field determines residency
+
+• Gray overrides all if extractivity threshold is exceeded
+
+⸻
+
+11. ΔR Extensions and Post-Action Integrity
+
+ΔR is extended in AP₁.1 with post-action constraints:
+
+• No residual pressure after exit
+
+• No delayed coercion
+
+• No hidden continuation loops
+
+=== PDF PAGE 6 ===
+Actions must return the system to a neutral or warmer state.
+
+⸻
+
+12. Relationship to Artificial Intelligence
+
+AI participates only in maintaining grammatical coherence.
+
+AI:
+
+• does not define truth
+
+• does not assign meaning
+
+• does not arbitrate fields
+
+AI enforces constraints;
+
+it does not author semantics.
+
+Truth remains human-relative and field-bound.
+
+⸻
+
+13. Status
+
+AP₁.1 is normative.
+
+Any Ambient OS implementation claiming semantic compatibility must:
+
+• enforce phase-relative truth
+
+• respect application eligibility rules
+
+• contain extractive systems in Gray
+
+• preserve ΔR across phases
+
+⸻
+
+Canonical Statement
+
+Ambient OS does not collapse meaning into one place.
+
+It lets meaning live where it is true.

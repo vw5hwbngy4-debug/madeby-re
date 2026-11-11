@@ -1,0 +1,24 @@
+/* Lightweight static library: no fonts, external trackers or remote scripts. */
+:root{color-scheme:light;--ink:#21352f;--muted:#56665d;--line:#dae4da;--paper:#fcfdf9;--accent:#24634b;--surface:#f0f5ed}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}.shell{max-width:1100px;margin:auto;padding:24px clamp(18px,4vw,46px) 100px}.skip{position:absolute;left:-9999px}.skip:focus{position:static}
+header{border-bottom:1px solid var(--line);padding:14px 0 25px}.brand{font-size:.88rem;letter-spacing:.12em;text-transform:uppercase;font-weight:750;text-decoration:none}h1{font-size:clamp(2rem,4.5vw,3.4rem);letter-spacing:-.035em;line-height:1.16;margin:.7em 0 .38em}h2{font-size:1.3rem;line-height:1.35;margin:1.5em 0 .65em}h3{font-size:1.06rem;line-height:1.4;margin:1.2em 0 .4em}
+.lede{color:var(--muted);max-width:780px;font-size:1.08rem}.meta{display:flex;flex-wrap:wrap;gap:9px 18px;color:var(--muted);font-size:.88rem}.meta span{white-space:normal}.tools{display:flex;flex-wrap:wrap;gap:10px;padding:20px 0}.tools a{border:1px solid var(--line);border-radius:25px;padding:7px 14px;text-decoration:none;background:var(--surface)}.tools a:hover{border-color:var(--accent)}
+input[type=search]{width:100%;font:inherit;border:1px solid #91ab9a;border-radius:12px;padding:13px 17px;background:#fff;color:var(--ink)}.hint,.tiny{font-size:.87rem;color:var(--muted)}.catalog{list-style:none;padding:0}.catalog li{padding:18px 0;border-bottom:1px solid var(--line)}.catalog a{font-weight:650;font-size:1.04rem}.catalog p{margin:5px 0;color:var(--muted);font-size:.91rem;line-height:1.5}.count{font-variant-numeric:tabular-nums}
+.paper-layout{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:45px;align-items:start}.toc{position:sticky;top:20px;max-height:92vh;overflow:auto;border-left:1px solid var(--line);padding-left:15px;font-size:.85rem}.toc a{display:block;padding:1px 0}.page{padding:15px 0 28px;border-bottom:1px solid var(--line);scroll-margin-top:20px}.page>h2{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-bottom:8px}.pdf-block{white-space:pre-line;overflow-wrap:anywhere;margin:0 0 1.15em;line-height:1.65}.pdf-heading{white-space:pre-line;overflow-wrap:anywhere;font-weight:650}.visual{margin:20px 0 28px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px}.visual img{width:100%;height:auto;display:block}.visual figcaption{color:var(--muted);font-size:.8rem;padding:6px}.notice{padding:16px;border-left:3px solid var(--accent);background:var(--surface);font-size:.92rem}.abstract{border-left:3px solid #b5d0bb;padding:0 0 0 16px;color:var(--muted);max-width:760px}
+footer{padding:35px 0;color:var(--muted);font-size:.85rem}.result{background:var(--surface);padding:15px;margin:10px 0;border-radius:8px}.result a{font-weight:650}.result p{font-size:.9rem;margin:.3em 0}mark{background:#f9e4a3;color:inherit}
+@media(max-width:800px){.paper-layout{display:block}.toc{position:static;max-height:180px;border-left:0;border-bottom:1px solid var(--line);padding:10px 0 20px;display:flex;flex-wrap:wrap;gap:8px}.toc a{display:inline}.shell{padding-top:14px}.page{padding-top:8px}}
+
+/* Navigation back to the parent portfolio; original PDF text and page hierarchy unchanged. */
+.portfolio-bridge{display:flex;flex-wrap:wrap;gap:8px 20px;padding:10px 0 20px;border-bottom:1px solid var(--line);font-size:.83rem}.portfolio-bridge a{text-decoration:none;font-weight:650}.portfolio-bridge a:hover{text-decoration:underline}
+
+/* v3.4: editorial context outside original PDF extraction. */
+.editorial-context{max-width:950px;margin:25px 0 35px;padding:20px 25px;border:1px solid #bbd4c3;border-left:4px solid #28684b;border-radius:4px 12px 12px 4px;background:#eff6ef}
+.editorial-context .context-label{font-size:.76rem;text-transform:uppercase;letter-spacing:.09em;font-weight:750;color:#315c41}
+.editorial-context h2{margin:9px 0 10px;font-size:clamp(1.2rem,2.2vw,1.5rem)}
+.editorial-context p{font-size:.94rem;line-height:1.65;margin:10px 0}.editorial-context p:last-child{margin-bottom:0}
+.editorial-context a{font-weight:700}.compact-context{padding:15px 19px;margin:20px 0 25px}
+@media(max-width:650px){.editorial-context{padding:16px}}
+
+/* Independent web essays are separate from the 199 Zenodo PDF conversions. */
+.independent-essay{padding:20px 24px;margin:28px 0 36px;border:1px solid var(--line);border-left:4px solid #497d68;border-radius:6px 13px 13px 6px;background:var(--surface)}.independent-essay h2{margin:8px 0}.independent-essay p{margin:8px 0 12px;color:var(--muted)}.independent-essay a{font-weight:700}

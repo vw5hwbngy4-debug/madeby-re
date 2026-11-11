@@ -1,0 +1,2194 @@
+
+/* ============================================================
+   JRPG.WORLD v0.7 — World Tabs + App Launcher
+   Browser-tab ribbon for open worlds, iOS/console-style app grid
+   behind the + button. No document-level horizontal scrolling.
+   ============================================================ */
+:root{
+  --jwt-bg:#050e17;
+  --jwt-panel:#081725;
+  --jwt-panel-hi:#0c2639;
+  --jwt-line:#27546f;
+  --jwt-line-hi:#73dcf3;
+  --jwt-text:#eef9ff;
+  --jwt-muted:#7897a9;
+  --jwt-cyan:#77def4;
+  --jwt-gold:#ffe078;
+}
+html,body{max-width:100%;overflow-x:hidden!important}
+.jw-tab-host,.jw-tab-host *{box-sizing:border-box}
+.jw-tab-host{
+  display:block!important;
+  width:min(1180px,calc(100% - 28px));
+  margin:12px auto 16px;
+  position:relative;
+  z-index:900;
+  font-family:Verdana,Arial,sans-serif;
+  color:var(--jwt-text);
+}
+.jw-tabbar{display:flex;align-items:stretch;gap:7px;min-width:0;width:100%}
+
+/* JRPG.WORLD is the fixed launcher/home button */
+.jw-home-app{
+  width:66px;height:66px;flex:0 0 66px;
+  padding:0;overflow:hidden;
+  border:1px solid #4d68a0;border-radius:17px;
+  background:#111b34;text-decoration:none!important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.035) inset;
+}
+.jw-home-app img{width:100%;height:100%;display:block;object-fit:cover}
+
+/* Only this viewport scrolls horizontally. The document never does. */
+.jw-tabs-viewport{
+  min-width:0;flex:1 1 auto;
+  overflow-x:auto;overflow-y:hidden;
+  overscroll-behavior-inline:contain;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  border-radius:16px;
+}
+.jw-tabs-viewport::-webkit-scrollbar{display:none}
+.jw-tabs-ribbon{
+  width:max-content;min-width:100%;
+  display:flex;align-items:stretch;gap:6px;
+}
+
+/* Open world tab */
+.jw-app-tab{
+  position:relative;
+  width:154px;min-width:154px;height:66px;
+  display:flex;align-items:center;gap:8px;
+  padding:6px 22px 6px 7px;
+  overflow:hidden;
+  border:1px solid #244f69;border-radius:16px;
+  background:linear-gradient(180deg,#0a2032,#061520);
+  color:#dceff8!important;text-decoration:none!important;
+  transition:border-color .14s ease,background .14s ease,transform .14s ease;
+}
+.jw-app-tab:hover{border-color:#5ad0e9;background:linear-gradient(180deg,#123149,#081b29);transform:translateY(-1px)}
+.jw-app-tab.is-active{
+  border-color:var(--jwt-line-hi);
+  background:
+    linear-gradient(100deg,rgba(80,216,240,.12),transparent 58%),
+    linear-gradient(180deg,#12334c,#092033);
+  box-shadow:0 0 0 1px rgba(101,220,244,.11) inset,0 0 18px rgba(65,197,225,.09)
+}
+.jw-app-icon{
+  width:50px;height:50px;flex:0 0 50px;
+  overflow:hidden;border-radius:13px;
+  border:1px solid #4b8099;background:#07141e;
+  display:grid;place-items:center;
+}
+.jw-app-icon img{width:100%;height:100%;display:block;object-fit:cover}
+.jw-app-copy{display:block;min-width:0}
+.jw-app-copy b{
+  display:block;color:#f2fbff;font-size:10px;line-height:1.15;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap
+}
+.jw-app-copy small{
+  display:block;margin-top:3px;color:#7697aa;font-size:7px;line-height:1.15;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap
+}
+.jw-tab-lang{
+  position:absolute;top:4px;right:4px;
+  min-width:19px;padding:2px 4px;
+  border:1px solid #39657c;border-radius:999px;
+  color:#9be6f5;font-size:6px;font-weight:900;text-align:center
+}
+.jw-tab-close{
+  position:absolute;right:4px;bottom:4px;
+  width:17px;height:17px;padding:0;
+  display:grid;place-items:center;
+  border:0;border-radius:50%;cursor:pointer;
+  background:rgba(3,13,21,.56);color:#688b9d;
+  font:700 12px/1 Arial,sans-serif
+}
+.jw-tab-close:hover{background:rgba(255,255,255,.09);color:#fff}
+
+/* The familiar + slots are preserved */
+.jw-add-tab{
+  width:52px;min-width:52px;height:66px;
+  display:grid;place-items:center;
+  border:1px dashed #3c667e;border-radius:16px;
+  background:rgba(5,21,33,.72);color:#76a3b9;
+  font:700 22px/1 Arial,sans-serif;cursor:pointer
+}
+.jw-add-tab:hover{border-color:#73def3;color:#c2f5ff;background:#0a2435}
+.jw-add-tab.secondary{opacity:.62}
+
+/* ============================================================
+   App launcher
+   ============================================================ */
+.jw-picker-backdrop{
+  position:fixed;inset:0;z-index:10000;
+  display:none;align-items:center;justify-content:center;
+  padding:18px;background:rgba(0,5,10,.74);
+  backdrop-filter:blur(7px)
+}
+.jw-picker-backdrop.is-open{display:flex}
+.jw-picker{
+  width:min(670px,100%);
+  max-height:min(760px,90vh);overflow:auto;
+  padding:15px;
+  border:1px solid #3e7896;border-radius:24px;
+  background:
+    radial-gradient(circle at 86% 0,rgba(100,73,207,.15),transparent 31%),
+    linear-gradient(180deg,#0b1e2e,#06121d);
+  color:#eef9ff;
+  box-shadow:0 24px 90px rgba(0,0,0,.55)
+}
+.jw-picker-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:1px 2px 10px}
+.jw-picker-head small{display:block;color:#77ddf2;font-size:8px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.jw-picker-head h2{margin:3px 0 0;font-size:20px;color:#f5fbff}
+.jw-picker-x{
+  width:36px;height:36px;border:1px solid #365f76;border-radius:50%;
+  background:#071724;color:#bdd7e3;font-size:19px;cursor:pointer
+}
+
+/* Categories make labels discoverable even when the artwork is unfamiliar. */
+.jw-launch-categories{
+  display:flex;gap:6px;overflow-x:auto;
+  padding:4px 1px 12px;scrollbar-width:none
+}
+.jw-launch-categories::-webkit-scrollbar{display:none}
+.jw-launch-category{
+  flex:0 0 auto;padding:6px 10px;
+  border:1px solid #315c74;border-radius:999px;
+  background:#071724;color:#8eacbc;
+  font:800 8px/1 Verdana,sans-serif;
+  letter-spacing:.09em;text-transform:uppercase;cursor:pointer
+}
+.jw-launch-category.is-active{border-color:#70dcef;background:#103148;color:#dffaff}
+
+/* Actual app-grid. Artwork sells it, label identifies it. */
+.jw-app-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px 12px;
+  padding:5px 3px 8px
+}
+.jw-launch-app{
+  min-width:0;border:0;background:transparent;color:#eef8ff;
+  padding:0;cursor:pointer;text-align:center
+}
+.jw-launch-icon-wrap{
+  width:min(112px,100%);
+  aspect-ratio:1;
+  margin:0 auto;
+  position:relative;overflow:hidden;
+  border-radius:23%;
+  border:1px solid #456d88;
+  background:#06131d;
+  box-shadow:0 8px 24px rgba(0,0,0,.25)
+}
+.jw-launch-app:hover .jw-launch-icon-wrap{
+  border-color:#7ae2f5;
+  box-shadow:0 8px 25px rgba(0,0,0,.28),0 0 18px rgba(91,218,242,.10)
+}
+.jw-launch-icon-wrap img{width:100%;height:100%;display:block;object-fit:cover}
+.jw-launch-badge{
+  position:absolute;top:6px;right:6px;
+  min-width:25px;padding:3px 5px;
+  border:1px solid rgba(143,229,246,.72);
+  border-radius:999px;
+  background:rgba(4,18,28,.86);color:#a9effb;
+  font:900 7px/1 Verdana,sans-serif
+}
+.jw-launch-open{
+  position:absolute;left:6px;bottom:6px;
+  padding:3px 5px;border-radius:999px;
+  background:rgba(6,61,76,.88);border:1px solid rgba(103,222,242,.46);
+  color:#b8f2fc;font:900 6px/1 Verdana,sans-serif;
+  letter-spacing:.08em
+}
+.jw-launch-name{
+  display:block;margin-top:7px;
+  color:#eef9ff;font-size:9px;font-weight:800;line-height:1.2
+}
+.jw-launch-sub{
+  display:block;margin-top:2px;
+  color:#7694a5;font-size:7px;line-height:1.2
+}
+.jw-launch-app[hidden]{display:none!important}
+.jw-picker-note{
+  margin-top:11px;padding:9px 10px;
+  border:1px solid rgba(56,119,147,.35);border-radius:12px;
+  background:#061520;color:#7e9eaf;font-size:8px;line-height:1.45
+}
+
+/* Translation footer retained */
+.jw-random-footer{
+  width:min(1180px,calc(100% - 28px));margin:34px auto 16px;
+  font-family:Verdana,Arial,sans-serif;color:#7896a8
+}
+.jw-random-footer-frame{
+  position:relative;width:100%;height:180px;overflow:hidden;
+  border:1px solid #2a5d7a;border-radius:20px;background:#06121d
+}
+.jw-random-footer-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 48%}
+.jw-random-footer-frame::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 36px rgba(0,0,0,.34)}
+.jw-random-footer-caption{display:flex;justify-content:space-between;gap:12px;padding:8px 4px 0;font-size:8px;letter-spacing:.13em;text-transform:uppercase}
+
+/* Imported-world containment */
+body>*{max-width:100%}
+img,video,canvas{max-width:100%}
+
+/* ============================================================
+   Mobile: tabs are compact app icons in ONE horizontal ribbon
+   ============================================================ */
+@media(max-width:760px){
+  .jw-tab-host{width:calc(100% - 20px);margin:10px auto 13px}
+  .jw-tabbar{gap:6px}
+  .jw-home-app{width:62px;height:62px;flex-basis:62px;border-radius:16px}
+  .jw-app-tab{
+    width:74px;min-width:74px;height:62px;
+    padding:4px;gap:2px;
+    flex-direction:column;justify-content:center;
+    border-radius:15px
+  }
+  .jw-app-icon{width:42px;height:42px;flex-basis:42px;border-radius:11px}
+  .jw-app-copy{width:100%;text-align:center}
+  .jw-app-copy b{font-size:6.8px;line-height:1;white-space:nowrap}
+  .jw-app-copy small{display:none}
+  .jw-tab-lang{top:2px;right:2px;font-size:5px;min-width:17px}
+  .jw-tab-close{right:2px;bottom:2px;width:14px;height:14px;font-size:10px}
+  .jw-add-tab{width:58px;min-width:58px;height:62px;border-radius:15px}
+  .jw-tabs-ribbon{min-width:0}
+
+  .jw-picker-backdrop{align-items:flex-end;padding:8px}
+  .jw-picker{width:100%;max-height:84vh;padding:12px;border-radius:24px 24px 14px 14px}
+  .jw-picker-head h2{font-size:18px}
+  .jw-app-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px 9px}
+  .jw-launch-icon-wrap{width:min(92px,100%)}
+  .jw-launch-name{font-size:8px}
+  .jw-launch-sub{font-size:6.5px}
+  .jw-random-footer{width:calc(100% - 20px);margin-top:24px}
+  .jw-random-footer-frame{height:118px;border-radius:16px}
+  .jw-random-footer-caption{font-size:7px}
+
+  /* keep native site navs inside their own viewport */
+  .main-nav{max-width:100%!important}
+  header nav[aria-label="Primary"]{
+    max-width:100%!important;
+    overflow-x:auto!important;overflow-y:hidden!important;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none
+  }
+  header nav[aria-label="Primary"]::-webkit-scrollbar{display:none}
+}
+@media(max-width:390px){
+  .jw-app-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px 7px}
+  .jw-launch-icon-wrap{width:min(82px,100%)}
+  .jw-launch-name{font-size:7.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  .jw-app-tab{transition:none}
+}
+
+
+/* ============================================================
+   v0.7.1 — explicit AI product types
+   ============================================================ */
+.jw-tab-type{
+  position:absolute;
+  left:61px;
+  bottom:5px;
+  max-width:58px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:#68daf2;
+  font-size:5.5px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.jw-launch-type{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  margin:0 auto 6px;
+  padding:4px 7px;
+  border:1px solid #315d74;
+  border-radius:999px;
+  background:#071824;
+  color:#8eb0c1;
+  font-size:6.5px;
+  font-weight:900;
+  letter-spacing:.11em;
+  line-height:1;
+}
+.jw-launch-app.is-expert .jw-launch-type{
+  border-color:#51cddd;
+  color:#b8f8ff;
+  background:linear-gradient(180deg,#0b3a49,#08242f);
+  box-shadow:0 0 12px rgba(68,206,225,.10);
+}
+.jw-launch-app.is-translation .jw-launch-type{
+  border-color:#6c69a9;
+  color:#d5ceff;
+  background:linear-gradient(180deg,#292348,#171a31);
+}
+.jw-launch-app.is-expert .jw-launch-icon-wrap{
+  border-color:#5ad8e9;
+}
+.jw-launch-app.is-translation .jw-launch-icon-wrap{
+  border-color:#746ca9;
+}
+@media(max-width:760px){
+  .jw-tab-type{
+    left:3px;bottom:2px;
+    max-width:35px;
+    padding:1px 3px;
+    border-radius:999px;
+    background:rgba(3,14,23,.72);
+    font-size:4.7px;
+  }
+  .jw-launch-type{font-size:5.8px;padding:3px 5px;margin-bottom:5px}
+}
+
+
+/* ============================================================
+   JRPG.WORLD landing/about surfaces
+   ============================================================ */
+.jw-site-page{
+  min-height:100vh;
+  margin:0;
+  background:
+    radial-gradient(circle at 50% 0,rgba(79,84,190,.15),transparent 32rem),
+    radial-gradient(circle at 15% 38%,rgba(47,190,220,.07),transparent 28rem),
+    linear-gradient(180deg,#050b12,#06121c 58%,#040b12);
+  color:#edf8ff;
+  font-family:Verdana,Arial,sans-serif;
+}
+.jw-site-main{
+  width:min(1120px,calc(100% - 28px));
+  margin:0 auto;
+  padding:10px 0 50px;
+}
+.jw-landing-hero{
+  overflow:hidden;
+  border:1px solid #315d7a;
+  border-radius:26px;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(111,76,210,.15),transparent 34%),
+    linear-gradient(145deg,#0c2336,#071520 58%,#0d1223);
+  padding:clamp(24px,6vw,64px);
+  box-shadow:0 18px 55px rgba(0,0,0,.24)
+}
+.jw-landing-kicker{
+  color:#79dff4;
+  font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase
+}
+.jw-landing-hero h1{
+  max-width:850px;
+  margin:8px 0 12px;
+  font-size:clamp(34px,6vw,72px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  color:#f8fcff
+}
+.jw-landing-hero p{
+  max-width:780px;margin:0;
+  color:#aac1ce;font-size:clamp(13px,2vw,18px);line-height:1.65
+}
+.jw-landing-actions{
+  display:flex;flex-wrap:wrap;gap:9px;margin-top:20px
+}
+.jw-cta{
+  border:1px solid #55cce7;border-radius:999px;
+  background:linear-gradient(180deg,#11607c,#0a3850);
+  color:#eefcff!important;text-decoration:none!important;
+  padding:10px 15px;font-size:10px;font-weight:900;letter-spacing:.04em;
+  cursor:pointer
+}
+.jw-cta.secondary{border-color:#465d72;background:#081824;color:#a8c2d0!important}
+.jw-type-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;margin:16px 0
+}
+.jw-type-card{
+  border:1px solid #285672;border-radius:20px;
+  padding:18px;background:linear-gradient(180deg,#0a2031,#061521)
+}
+.jw-type-card.expert{border-color:#3f99aa}
+.jw-type-card.translation{border-color:#57558d}
+.jw-type-card small{
+  display:block;font-size:8px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;
+  color:#75dcef;margin-bottom:7px
+}
+.jw-type-card.translation small{color:#b6abf2}
+.jw-type-card h2{margin:0 0 8px;font-size:22px;color:#f4fbff}
+.jw-type-card p{margin:0;color:#91adbc;font-size:11px;line-height:1.55}
+.jw-showcase{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:10px;margin-top:12px
+}
+.jw-show-app{
+  display:block;text-decoration:none!important;color:#eef8ff!important;text-align:center
+}
+.jw-show-app img{
+  width:100%;aspect-ratio:1;object-fit:cover;display:block;
+  border:1px solid #426b84;border-radius:23%;
+  box-shadow:0 10px 26px rgba(0,0,0,.22)
+}
+.jw-show-app b{display:block;margin-top:7px;font-size:9px;line-height:1.2}
+.jw-show-app span{display:block;margin-top:3px;color:#728fa0;font-size:7px;line-height:1.2}
+.jw-copy-section{
+  margin-top:16px;padding:20px;
+  border:1px solid #254c64;border-radius:20px;background:#071621
+}
+.jw-copy-section h2{margin:0 0 10px;font-size:22px}
+.jw-copy-section h3{margin:20px 0 7px;font-size:14px;color:#a4ecf9}
+.jw-copy-section p,.jw-copy-section li{color:#9db5c3;font-size:11px;line-height:1.7}
+.jw-copy-section a{color:#8de8f7}
+.jw-copy-section strong{color:#edf8ff}
+.jw-site-footer{
+  margin-top:24px;padding:16px 0;
+  border-top:1px solid #17374c;
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  color:#58788b;font-size:8px;letter-spacing:.08em
+}
+.jw-site-footer a{color:#7aa8ba;text-decoration:none}
+@media(max-width:760px){
+  .jw-site-main{width:calc(100% - 20px);padding-top:4px}
+  .jw-landing-hero{border-radius:20px;padding:24px 18px}
+  .jw-type-grid{grid-template-columns:1fr}
+  .jw-showcase{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 9px}
+  .jw-copy-section{padding:16px;border-radius:18px}
+}
+
+
+/* ============================================================
+   v0.7.2 — shared clickable JRPG.WORLD masthead
+   One global header, world-tab ribbon directly below it.
+   ============================================================ */
+.jw-global-header{
+  width:min(1180px,calc(100% - 28px));
+  height:112px;
+  margin:14px auto 0;
+  overflow:hidden;
+  border:1px solid #315779;
+  border-radius:22px;
+  background:
+    radial-gradient(ellipse at 50% 50%,rgba(91,106,214,.18),transparent 48%),
+    linear-gradient(180deg,#20244e,#111b33);
+  box-shadow:0 0 0 1px rgba(255,255,255,.025) inset;
+}
+.jw-global-banner{
+  width:100%;height:100%;
+  display:grid;place-items:center;
+  text-decoration:none!important;
+}
+.jw-global-banner img{
+  display:block;
+  width:auto;height:104px;
+  max-width:96%;
+  object-fit:contain;
+  transition:transform .15s ease,filter .15s ease;
+}
+.jw-global-banner:hover img{
+  transform:scale(1.015);
+  filter:brightness(1.06)
+}
+/* ribbon is visually attached to the global header, not another floating masthead */
+.jw-global-header + .jw-tab-host{
+  margin-top:7px;
+}
+
+/* Footer art is also a way home. */
+.jw-footer-home-link{
+  display:block;
+  text-decoration:none!important;
+  cursor:pointer;
+}
+.jw-footer-home-link img{transition:filter .15s ease,transform .15s ease}
+.jw-footer-home-link:hover img{filter:brightness(1.07);transform:scale(1.006)}
+
+/* Translation sites keep only compact local identity/navigation under the world ribbon. */
+.jw-local-world-title,
+.jw-local-inline-title{
+  color:#99e9f8;
+  font:900 9px/1.2 Verdana,Arial,sans-serif;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.jw-local-inline-title{
+  width:max-content;
+  max-width:100%;
+  margin:10px 0 4px;
+  padding:5px 8px;
+  border:1px solid #28566e;
+  border-radius:999px;
+  background:#071722;
+}
+.jw-local-brand-row{
+  min-height:0!important;
+  padding:0!important;
+}
+/* Xenosaga native header becomes a local subnav instead of another brand masthead. */
+body > .jw-tab-host + .skip-link + .site-header .header-inner{
+  padding-top:.55rem!important;
+}
+body > .jw-tab-host + .skip-link + .site-header .main-nav{
+  margin-top:.55rem!important;
+}
+body > .jw-tab-host + .skip-link + .site-header{
+  box-shadow:none!important;
+}
+/* Nova local header: compact title + native anchor navigation only. */
+body > .jw-tab-host + .skip-link + .jw-local-site-header{
+  min-height:0!important;
+  padding:.55rem 0!important;
+  gap:.5rem!important;
+}
+body > .jw-tab-host + .skip-link + .jw-local-site-header nav{
+  margin:0!important;
+}
+/* Gloria had a large old top breadcrumb. Replaced by this small local label. */
+.jw-tab-host + .shell .jw-local-inline-title{margin-top:4px}
+
+/* PSO root uses the shared global header instead of its old brandRail. */
+.app > .jw-global-header{width:100%;margin-top:0}
+
+@media(max-width:760px){
+  .jw-global-header{
+    width:calc(100% - 20px);
+    height:86px;
+    margin-top:10px;
+    border-radius:18px
+  }
+  .jw-global-banner img{height:80px;max-width:94%}
+  .jw-global-header + .jw-tab-host{margin-top:6px}
+  .app > .jw-global-header{width:100%;height:82px;margin-top:0}
+  .app > .jw-global-header img{height:76px}
+  .jw-local-world-title,.jw-local-inline-title{font-size:7px}
+  body > .jw-tab-host + .skip-link + .site-header .header-inner{padding-top:.4rem!important}
+  body > .jw-tab-host + .skip-link + .site-header .main-nav{margin-top:.4rem!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .jw-global-banner img,.jw-footer-home-link img{transition:none}
+}
+
+
+/* ============================================================
+   v0.7.3 — catalog context + clean launcher flow
+   ============================================================ */
+.jw-picker{
+  display:flex!important;
+  flex-direction:column!important;
+  overflow:auto!important;
+}
+
+/* Let sparse categories feel intentional instead of like a broken 3-column grid. */
+.jw-app-grid{
+  position:static!important;
+  inset:auto!important;
+  flex:0 0 auto;
+  align-content:start;
+  min-height:0!important;
+  padding-bottom:18px!important;
+}
+.jw-launch-app{
+  align-self:start;
+}
+.jw-launch-app.is-expert .jw-launch-icon-wrap{
+  /* Expert visual language: portrait, not the gold translation-card grammar. */
+  border-radius:18px;
+}
+
+/* OPEN is state, not branding. Do not stamp it across the catalog. */
+.jw-launch-open{display:none!important}
+
+/* Keep the explanatory footer/note in normal document flow. */
+.jw-picker-note{
+  position:static!important;
+  inset:auto!important;
+  flex:0 0 auto!important;
+  width:auto!important;
+  min-height:0!important;
+  clear:both!important;
+  margin:18px 0 0!important;
+  padding:10px 11px!important;
+  z-index:auto!important;
+  background:#061520!important;
+  border:1px solid rgba(56,119,147,.35)!important;
+  border-radius:12px!important;
+  color:#7e9eaf!important;
+  font-size:8px!important;
+  line-height:1.5!important;
+}
+
+@media(max-width:760px){
+            .jw-picker-note{margin-top:14px!important}
+}
+
+
+/* ============================================================
+   v0.7.4 — clean category context
+   No large catalog banner. Category copy lives quietly below the app grid.
+   ============================================================ */
+.jw-category-note{
+  position:static!important;
+  width:min(420px,100%);
+  margin:10px 0 4px auto;
+  padding:9px 11px;
+  border:1px solid rgba(55,112,139,.36);
+  border-radius:12px;
+  background:rgba(5,20,31,.78);
+  color:#7899aa;
+  font-size:8px;
+  line-height:1.45;
+  text-align:left;
+}
+.jw-category-note b{
+  display:block;
+  margin-bottom:3px;
+  color:#a9dcea;
+  font-size:8px;
+}
+.jw-category-note span{display:block}
+
+/* Sparse expert category stays compact and intentional. */
+.jw-launch-category[data-cat="AI Experts"].is-active ~ .jw-app-grid{
+  grid-template-columns:minmax(150px,220px)!important;
+  justify-content:start!important;
+}
+
+/* Keep notes and footer text below cards, never underneath them. */
+.jw-app-grid{padding-bottom:8px!important}
+.jw-category-note + .jw-picker-note{margin-top:8px!important}
+
+@media(max-width:760px){
+  .jw-category-note{
+    width:100%;
+    margin:8px 0 2px;
+    font-size:7.5px;
+  }
+}
+
+
+/* ============================================================
+   v0.7.5 — catalog grid composition
+   Type/language live on the app icon edge; category copy fills unused grid space.
+   ============================================================ */
+.jw-launch-type,
+.jw-launch-badge,
+.jw-category-note{display:none!important}
+
+.jw-launch-icon-wrap{
+  overflow:visible!important;
+  position:relative;
+  margin-top:9px;
+}
+.jw-launch-art{
+  display:block;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  border-radius:inherit;
+  background:#06131d;
+}
+.jw-launch-art img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.jw-launch-edge{
+  position:absolute;
+  top:-10px;
+  left:8px;
+  right:8px;
+  z-index:3;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:4px;
+  pointer-events:none;
+}
+.jw-edge-chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:18px;
+  padding:3px 7px;
+  border-radius:999px;
+  border:1px solid #456b83;
+  background:#061722;
+  color:#a8ddec;
+  font-size:6px;
+  font-weight:900;
+  letter-spacing:.08em;
+  line-height:1;
+  white-space:nowrap;
+  box-shadow:0 2px 7px rgba(0,0,0,.22);
+}
+.jw-edge-lang{
+  border-color:#4fa7b8;
+  color:#b8f6ff;
+}
+.jw-launch-app.is-translation .jw-edge-type{
+  border-color:#7770aa;
+  color:#ddd6ff;
+  background:#18172b;
+}
+.jw-launch-app.is-expert .jw-edge-type{
+  border-color:#52cddd;
+  color:#c1fbff;
+  background:#082932;
+}
+
+/* Use the actual spare blue area in the 3-column catalog grid. */
+.jw-grid-context{
+  align-self:stretch;
+  justify-self:stretch;
+  min-width:0;
+  padding:16px 18px;
+  border:0;
+  border-left:1px solid rgba(70,139,166,.34);
+  background:
+    radial-gradient(circle at 100% 10%,rgba(80,196,220,.055),transparent 42%);
+  color:#89a8b8;
+  text-align:left;
+}
+.jw-grid-context b{
+  display:block;
+  margin-bottom:7px;
+  color:#b6e7f1;
+  font-size:10px;
+  line-height:1.2;
+}
+.jw-grid-context span{
+  display:block;
+  max-width:470px;
+  font-size:8.5px;
+  line-height:1.62;
+}
+
+/* Filtered AI Expert view: portrait in column 1, explanation uses columns 2–3. */
+.jw-launch-category[data-cat="AI Experts"].is-active ~ .jw-app-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+}
+.jw-launch-category[data-cat="AI Experts"].is-active ~ .jw-app-grid .jw-grid-context{
+  grid-column:2 / 4;
+}
+
+/* AI Translations: 4 cards => the explanation naturally occupies row 2, columns 2–3. */
+.jw-launch-category[data-cat="AI Translations"].is-active ~ .jw-app-grid .jw-grid-context{
+  grid-column:2 / 4;
+}
+
+/* ALL: five apps use two rows, then context becomes a clean full-width ending strip. */
+.jw-launch-category[data-cat="All"].is-active ~ .jw-app-grid .jw-grid-context{
+  grid-column:1 / 4;
+  border-left:0;
+  border-top:1px solid rgba(70,139,166,.28);
+  padding-top:12px;
+}
+
+/* Compact vertical rhythm. No floating labels above category controls. */
+.jw-app-grid{
+  row-gap:18px!important;
+  padding-top:10px!important;
+}
+.jw-launch-name{margin-top:8px!important}
+
+@media(max-width:760px){
+  .jw-launch-edge{top:-8px;left:4px;right:4px;gap:3px}
+  .jw-edge-chip{min-height:16px;padding:3px 5px;font-size:5.3px}
+  .jw-grid-context{
+    grid-column:1 / -1!important;
+    border-left:0;
+    border-top:1px solid rgba(70,139,166,.28);
+    padding:11px 6px 2px;
+  }
+  .jw-grid-context b{font-size:9px}
+  .jw-grid-context span{font-size:7.5px;line-height:1.5}
+}
+
+/* ============================================================
+   v0.8 — capability navigation + expert-by-default worlds
+   ============================================================ */
+.jw-footer-capabilities{
+  display:flex;align-items:center;justify-content:center;gap:0;
+  flex-wrap:wrap;padding:8px 0 0;font-family:Verdana,Arial,sans-serif
+}
+.jw-footer-capabilities a{
+  color:#7fa7bb!important;text-decoration:none!important;
+  font-size:8px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;
+  padding:4px 8px;border-right:1px solid rgba(68,113,136,.42)
+}
+.jw-footer-capabilities a:last-child{border-right:0}
+.jw-footer-capabilities a:hover{color:#c6f5ff!important}
+.jw-expert-strip{
+  width:min(1180px,calc(100% - 28px));margin:8px auto 14px;padding:12px;
+  border:1px solid #2e647f;border-radius:18px;
+  background:linear-gradient(180deg,#0b2234,#061723);font-family:Verdana,Arial,sans-serif;color:#eaf8ff
+}
+.jw-expert-strip-head{display:flex;justify-content:space-between;gap:12px;align-items:end;margin-bottom:8px}
+.jw-expert-strip-head small{display:block;color:#76dff3;font-size:7px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+.jw-expert-strip-head b{display:block;margin-top:3px;font-size:13px;color:#f3fbff}
+.jw-expert-scope{color:#6e8fa1;font-size:7px}
+.jw-expert-compose{display:flex;gap:7px;min-width:0}
+.jw-expert-compose input{flex:1 1 auto;min-width:0;border:1px solid #39738f;border-radius:12px;background:#04131e;color:#eef9ff;padding:10px 11px;font:inherit;font-size:10px;outline:none}
+.jw-expert-compose input:focus{border-color:#77dff4;box-shadow:0 0 0 2px rgba(98,219,243,.08)}
+.jw-expert-compose button{flex:0 0 auto;border:1px solid #62cae4;border-radius:12px;background:linear-gradient(180deg,#185f7b,#0d4059);color:#fff;font-weight:900;padding:8px 13px;cursor:pointer}
+.jw-expert-output{white-space:pre-wrap;margin-top:9px;padding:10px 11px;border:1px solid #28566d;border-radius:12px;background:#06141f;color:#bed3df;font-size:9px;line-height:1.55}
+.jw-expert-thinking{color:#77dff4}
+.jw-capability-chips{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+.jw-capability-chip{padding:2px 5px;border:1px solid #416d84;border-radius:999px;color:#8fcadd;font-size:5.5px;font-weight:900;letter-spacing:.07em}
+@media(max-width:760px){
+ .jw-footer-capabilities a{font-size:7px;padding:4px 6px}
+ .jw-expert-strip{width:calc(100% - 20px);padding:10px;border-radius:16px}
+ .jw-expert-strip-head{display:block}.jw-expert-scope{margin-top:4px}
+ .jw-expert-compose{display:grid;grid-template-columns:1fr auto}
+}
+
+.jw-edge-expert{border-color:#4fbfcf!important;color:#baf7ff!important;background:#082a32!important}
+
+
+/* ============================================================
+   v0.8.1 — Expert belongs to the application, not the global chrome
+   ============================================================ */
+.jw-expert-strip{display:none!important}
+.jw-expert-panel{
+  box-sizing:border-box;
+  width:min(1180px,100%);
+  margin:20px auto;
+  padding:18px;
+  border:1px solid #2c6682;
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 95% 0,rgba(81,211,238,.07),transparent 28%),
+    linear-gradient(180deg,#0a2030,#061521);
+  color:#dff5ff;
+}
+.jw-expert-panel-head{
+  display:flex;justify-content:space-between;gap:12px;align-items:flex-start;
+  margin-bottom:11px
+}
+.jw-expert-panel-head small{
+  display:block;color:#70def3;font-size:8px;font-weight:900;letter-spacing:.14em;text-transform:uppercase
+}
+.jw-expert-panel-head h2{margin:4px 0 7px;color:#f3fbff;font-size:20px;line-height:1.15}
+.jw-capability-chips{display:flex;flex-wrap:wrap;gap:5px}
+.jw-capability-chip{
+  display:inline-flex;align-items:center;padding:3px 7px;border:1px solid #2e667e;border-radius:999px;
+  color:#9edbe9;background:#071a26;font-size:6.5px;font-weight:900;letter-spacing:.08em
+}
+.jw-expert-compose{display:flex;gap:7px;min-width:0}
+.jw-expert-compose input{
+  min-width:0;flex:1 1 auto;border:1px solid #3c8da9;border-radius:12px;background:#04131d;color:#eefbff;
+  padding:11px 12px;font:inherit;font-size:10px;outline:none;box-shadow:0 0 0 2px rgba(74,206,232,.06)
+}
+.jw-expert-compose input:focus{border-color:#78e3f5;box-shadow:0 0 0 3px rgba(74,206,232,.10)}
+.jw-expert-compose button{
+  flex:0 0 auto;border:1px solid #77d9eb;border-radius:12px;background:linear-gradient(180deg,#3d8fa8,#215f78);
+  color:#fff;padding:0 15px;font-size:9px;font-weight:900;cursor:pointer
+}
+.jw-expert-output{
+  margin-top:9px;padding:11px 12px;border:1px solid #234f66;border-radius:12px;background:#06141e;
+  color:#c7dce6;font-size:10px;line-height:1.55;white-space:pre-wrap
+}
+.jw-expert-thinking{color:#78dff2}
+
+/* Gloria did not have a native tab bar; give it one inside the app. */
+.jw-local-app-nav{
+  display:flex;gap:7px;flex-wrap:wrap;margin:8px 0 12px;padding-bottom:8px;border-bottom:1px solid rgba(61,126,153,.28)
+}
+.jw-local-app-nav a{
+  color:#a6dbe8!important;text-decoration:none!important;border:1px solid #2b5a72;border-radius:999px;
+  padding:5px 9px;background:#071823;font-size:7px;font-weight:900;letter-spacing:.08em
+}
+.jw-local-app-nav a:hover{border-color:#6ddcef;color:#e9fbff!important}
+
+/* Native anchor tabs should land below the sticky/global chrome comfortably. */
+#expert{scroll-margin-top:130px}
+
+@media(max-width:760px){
+  .jw-expert-panel{width:100%;margin:14px auto;padding:13px;border-radius:15px}
+  .jw-expert-panel-head h2{font-size:17px}
+  .jw-expert-compose{display:grid;grid-template-columns:minmax(0,1fr) auto}
+  .jw-expert-compose input{font-size:9px;padding:10px}
+  .jw-expert-compose button{padding:0 12px}
+}
+
+
+/* ============================================================
+   v0.8.2 — minimal launcher chrome
+   One badge per app, inside the icon edge. No stacked labels.
+   ============================================================ */
+.jw-launch-edge{
+  top:6px!important;
+  left:6px!important;
+  right:6px!important;
+  justify-content:center!important;
+}
+.jw-edge-chip.jw-edge-primary{
+  min-height:18px!important;
+  padding:3px 7px!important;
+  background:rgba(4,17,27,.88)!important;
+  border:1px solid rgba(124,208,228,.62)!important;
+  color:#d8f7ff!important;
+  font-size:6px!important;
+  box-shadow:0 2px 8px rgba(0,0,0,.28)!important;
+}
+.jw-launch-app.is-translation .jw-edge-primary{
+  border-color:rgba(202,174,91,.72)!important;
+  color:#fff0b4!important;
+}
+.jw-launch-app.is-expert .jw-edge-primary{
+  border-color:rgba(86,214,231,.75)!important;
+  color:#c8fbff!important;
+}
+.jw-launch-icon-wrap{margin-top:0!important}
+.jw-launch-type,
+.jw-launch-badge,
+.jw-edge-lang,
+.jw-edge-type,
+.jw-edge-expert{display:none!important}
+
+/* More breathing room under the category pills, but zero overlap. */
+.jw-launch-categories{padding-bottom:16px!important}
+.jw-app-grid{padding-top:2px!important;row-gap:18px!important}
+
+/* Category explanation uses empty blue grid space without becoming a card-heavy UI. */
+.jw-grid-context{
+  background:transparent!important;
+  border-left:1px solid rgba(74,132,158,.26)!important;
+  padding:12px 16px!important;
+}
+.jw-grid-context b{font-size:9px!important}
+.jw-grid-context span{font-size:8px!important;line-height:1.55!important}
+
+/* Footer is image-first. No duplicated pseudo-navigation underneath. */
+.jw-footer-capabilities{display:none!important}
+.jw-random-footer-caption{
+  padding-top:7px!important;
+}
+.jw-random-footer-caption span:last-child{display:none!important}
+.jw-site-footer > span:first-child{
+  color:#607f90!important;
+}
+@media(max-width:760px){
+  .jw-launch-edge{top:4px!important;left:4px!important;right:4px!important}
+  .jw-edge-chip.jw-edge-primary{font-size:5.3px!important;padding:3px 5px!important}
+}
+
+/* v0.9 · JRPG AI GAME OF THE MONTH */
+.jw-landing-top{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px;align-items:stretch}
+.jw-landing-top .jw-landing-hero{min-height:100%}
+.jw-gotm-card{min-width:0;border:1px solid #326986;border-radius:24px;padding:12px;background:radial-gradient(circle at 50% 0,rgba(62,202,243,.13),transparent 42%),linear-gradient(180deg,#0b2235,#071520);box-shadow:0 16px 42px rgba(0,0,0,.22)}
+.jw-gotm-eyebrow{color:#80e4f7;font-size:6.5px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.jw-gotm-card h2{margin:5px 0 9px;color:#f9dc68;font-size:17px;line-height:1.05;letter-spacing:-.02em}
+.jw-gotm-mystery{position:relative;display:block;width:100%;aspect-ratio:1;padding:0;overflow:hidden;border:1px solid #477892;border-radius:18px;background:#07131e;cursor:pointer}
+.jw-gotm-image{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;transition:opacity .45s ease,transform .65s cubic-bezier(.2,.7,.2,1),filter .45s ease}
+.jw-gotm-image.mystery{opacity:1}.jw-gotm-image.revealed{opacity:0;transform:scale(.92);filter:brightness(1.7)}
+.jw-gotm-card.is-revealed .jw-gotm-image.mystery{opacity:0;transform:scale(1.08)}.jw-gotm-card.is-revealed .jw-gotm-image.revealed{opacity:1;transform:scale(1);filter:brightness(1)}
+.jw-gotm-card.no-reveal-animation .jw-gotm-image{transition:none!important}
+.jw-gotm-copy{padding:9px 2px 0;text-align:center}.jw-gotm-copy b{display:block;color:#f4fbff;font-size:10px}.jw-gotm-copy span{display:block;margin-top:3px;color:#7899ab;font-size:6.5px;letter-spacing:.08em}
+.jw-gotm-play{display:block;width:100%;margin-top:9px;padding:8px 10px;border:1px solid #f3ce5e;border-radius:999px;background:linear-gradient(180deg,#135577,#0b314b);color:#fff0a4;font-size:8px;font-weight:900;cursor:pointer}.jw-gotm-play[hidden]{display:none!important}
+.jw-gotm-fireworks{position:absolute;inset:50%;pointer-events:none;z-index:5}.jw-gotm-fireworks i{position:absolute;left:0;top:0;width:var(--s);height:var(--s);border-radius:50%;background:#fff6a5;box-shadow:0 0 8px #fff,0 0 14px #60dfff;animation:jwGotmFire .8s cubic-bezier(.15,.7,.2,1) var(--d) both}.jw-gotm-fireworks i:nth-child(3n){background:#ff5dac}.jw-gotm-fireworks i:nth-child(4n){background:#6ef6ff}
+@keyframes jwGotmFire{0%{transform:translate(0,0) scale(.2);opacity:0}15%{opacity:1}100%{transform:translate(var(--x),var(--y)) scale(0);opacity:0}}
+.jw-gotm-gift{position:fixed;z-index:20000;width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:#0c2a3f;border:1px solid #79e2f4;font-size:25px;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,.38),0 0 22px rgba(88,217,242,.18)}.jw-gotm-gift.arrived{color:#d8fbff;font:900 28px/1 Arial,sans-serif;background:#0b2434}
+.jw-gotm-runtime{margin-top:16px;overflow:hidden;border:1px solid #2d637e;border-radius:22px;background:#050d15}.jw-gotm-runtime[hidden]{display:none!important}.jw-gotm-runtime-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-bottom:1px solid #21465b;background:linear-gradient(180deg,#0b2233,#071722)}.jw-gotm-runtime-head small{display:block;color:#6eddf3;font-size:6.5px;font-weight:900;letter-spacing:.12em}.jw-gotm-runtime-head h2{margin:3px 0 0;color:#f7fbff;font-size:20px}.jw-gotm-runtime-head button{border:1px solid #3f758e;border-radius:999px;background:#071824;color:#a7d8e7;padding:7px 10px;font-size:7px;font-weight:900;cursor:pointer}
+.jw-gotm-frame{width:100%;aspect-ratio:16/9;min-height:520px;background:#000}.jw-gotm-frame iframe{display:block;width:100%;height:100%;min-height:520px;border:0;background:#000}
+.jw-launch-app[data-category="AI Games"] .jw-edge-primary{border-color:rgba(255,96,173,.72)!important;color:#ffd8ef!important;background:rgba(65,9,46,.85)!important}
+@media(max-width:900px){.jw-landing-top{grid-template-columns:minmax(0,1fr) 260px}}
+@media(max-width:760px){.jw-landing-top{grid-template-columns:1fr}.jw-gotm-card{display:grid;grid-template-columns:124px minmax(0,1fr);gap:0 11px;align-items:center;border-radius:20px}.jw-gotm-eyebrow,.jw-gotm-card h2{grid-column:1/-1}.jw-gotm-mystery{grid-row:3/6;grid-column:1}.jw-gotm-copy{grid-column:2;text-align:left;padding-top:0}.jw-gotm-play{grid-column:2}.jw-gotm-frame,.jw-gotm-frame iframe{min-height:62vh}}
+@media(max-width:420px){.jw-gotm-card{grid-template-columns:108px minmax(0,1fr)}.jw-gotm-card h2{font-size:15px}}
+
+/* v0.9.1 · corrected reveal + native pregame council */
+.jw-gotm-card.reveal-boom .jw-gotm-mystery::after{
+  content:"";position:absolute;inset:-18%;z-index:4;pointer-events:none;
+  background:radial-gradient(circle,#fff 0 6%,#fff3a8 7% 12%,rgba(85,222,255,.8) 18%,rgba(255,78,177,.36) 31%,transparent 58%);
+  animation:jwRevealBlast .75s ease-out both
+}
+@keyframes jwRevealBlast{0%{transform:scale(.2);opacity:0}18%{opacity:1}100%{transform:scale(1.45);opacity:0}}
+.jw-gotm-gift.app-arrived{padding:3px;overflow:hidden}
+.jw-gotm-gift.app-arrived img{display:block;width:100%;height:100%;object-fit:cover;border-radius:10px}
+
+.jw-native-council{
+  margin-top:16px;padding:14px;
+  border:1px solid #2f657f;border-radius:22px;
+  background:linear-gradient(180deg,#0a1d2b,#06131d);
+}
+.jw-native-council[hidden]{display:none!important}
+.jw-native-council-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+.jw-native-council-head small{color:#70dff4;font-size:7px;font-weight:900;letter-spacing:.12em}
+.jw-native-council-head h2{margin:4px 0 5px;color:#f3fbff;font-size:22px}
+.jw-native-council-head p{margin:0;max-width:690px;color:#8ba8b7;font-size:9px;line-height:1.55}
+.jw-native-status{flex:0 0 auto;padding:5px 8px;border:1px solid #397187;border-radius:999px;color:#87ddeb;font-size:6px;font-weight:900}
+
+.jw-chat-shell{
+  height:300px;overflow:auto;margin-top:12px;padding:12px;
+  border:1px solid #254f67;border-radius:18px;
+  background:
+    linear-gradient(rgba(5,18,27,.88),rgba(5,18,27,.88)),
+    radial-gradient(circle at 20% 10%,rgba(67,180,209,.12),transparent 35%);
+}
+.jw-chat-msg{display:flex;gap:8px;align-items:flex-end;margin:8px 0;max-width:78%}
+.jw-chat-msg.kato{margin-left:9%}
+.jw-chat-msg.you{margin-left:auto;flex-direction:row-reverse}
+.jw-chat-avatar{width:28px;height:28px;flex:0 0 28px;display:grid;place-items:center;border-radius:50%;background:#10394b;border:1px solid #4c9bb0;color:#bdf6ff;font-size:8px;font-weight:900}
+.jw-chat-msg.kato .jw-chat-avatar{background:#493817;border-color:#bca25a;color:#fff1a9}
+.jw-chat-msg.you .jw-chat-avatar{background:#46214d;border-color:#a060ac;color:#ffd8ff}
+.jw-chat-msg>div{padding:8px 10px;border-radius:14px 14px 14px 4px;background:#0a2a39;border:1px solid #28566b}
+.jw-chat-msg.kato>div{background:#272417;border-color:#59502a}
+.jw-chat-msg.you>div{background:#2a1830;border-color:#5e3567;border-radius:14px 14px 4px 14px}
+.jw-chat-msg b{display:block;margin-bottom:3px;color:#8de7f6;font-size:7px}.jw-chat-msg.kato b{color:#ffe28c}.jw-chat-msg.you b{color:#f0b5fa}
+.jw-chat-msg p{margin:0;color:#d5e4eb;font-size:9px;line-height:1.45}
+
+.jw-council-quick{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.jw-council-quick button{border:1px solid #325e73;border-radius:999px;background:#071722;color:#98bcca;padding:6px 9px;font-size:7px;cursor:pointer}
+.jw-council-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px;margin-top:8px}
+.jw-council-form input{min-width:0;border:1px solid #4b93aa;border-radius:14px;background:#05141f;color:#e8f8ff;padding:10px 12px;font-size:10px;outline:none}
+.jw-council-form button,.jw-council-decision button{border:1px solid #f0ce68;border-radius:14px;background:linear-gradient(180deg,#175e7e,#0c3850);color:#fff0a5;padding:9px 12px;font-size:8px;font-weight:900;cursor:pointer}
+.jw-council-decision{margin-top:11px;padding:11px 13px;border:1px solid #567d56;border-radius:15px;background:#0c2118}
+.jw-council-decision[hidden]{display:none!important}.jw-council-decision small{color:#7bea9d;font-size:6px;font-weight:900;letter-spacing:.1em}.jw-council-decision h3{margin:3px 0 4px;color:#f5fff7;font-size:15px}.jw-council-decision p{margin:0 0 8px;color:#9fc4aa;font-size:8.5px;line-height:1.5}
+
+@media(max-width:760px){
+  .jw-native-council-head{display:block}.jw-native-status{display:inline-block;margin-top:8px}
+  .jw-chat-shell{height:340px}.jw-chat-msg{max-width:92%}.jw-chat-msg.kato{margin-left:3%}
+  .jw-council-form{grid-template-columns:1fr}.jw-council-form button{width:100%}
+}
+
+/* v0.9.3 · Zero Hunt is a real app surface, never mixed with the landing page */
+.jw-zero-app[hidden],.jw-landing-home[hidden]{display:none!important}
+body.jw-zero-app-active .jw-site-main{padding-top:6px}
+.jw-zero-app{width:100%;}
+.jw-zero-app-hero{display:grid;grid-template-columns:112px minmax(0,1fr);gap:16px;align-items:center;padding:16px;border:1px solid #315f79;border-radius:22px;background:radial-gradient(circle at 85% 0,rgba(255,87,164,.1),transparent 35%),linear-gradient(145deg,#0c2231,#07141e)}
+.jw-zero-app-hero img{width:112px;aspect-ratio:1;object-fit:cover;border-radius:23%;border:1px solid #dfb957;box-shadow:0 10px 28px rgba(0,0,0,.28)}
+.jw-zero-app-hero small{color:#ffcf75;font-size:7px;font-weight:900;letter-spacing:.12em}.jw-zero-app-hero h1{margin:4px 0 6px;font-size:34px;color:#fff}.jw-zero-app-hero p{margin:0;max-width:760px;color:#a8bdc8;font-size:10px;line-height:1.6}
+.jw-zero-onboarding{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:10px}
+.jw-zero-step{padding:11px 12px;border:1px solid #284d62;border-radius:15px;background:#071722}.jw-zero-step b{display:block;color:#80dff2;font-size:7px;letter-spacing:.08em}.jw-zero-step p{margin:5px 0 0;color:#94adba;font-size:8px;line-height:1.5}
+.jw-zero-app .jw-native-council{margin-top:10px}.jw-zero-app .jw-chat-shell{height:250px}
+@media(max-width:760px){.jw-zero-app-hero{grid-template-columns:76px minmax(0,1fr);gap:11px;padding:12px}.jw-zero-app-hero img{width:76px}.jw-zero-app-hero h1{font-size:25px}.jw-zero-onboarding{grid-template-columns:1fr}.jw-zero-app .jw-chat-shell{height:300px}}
+
+
+/* ============================================================
+   v0.9.4 — landing composition after monthly unlock
+   ============================================================ */
+.jw-landing-top.gotm-retired{
+  grid-template-columns:minmax(0,1fr)!important;
+}
+.jw-landing-top.gotm-retired .jw-landing-hero{
+  width:100%;
+  max-width:none;
+}
+
+
+/* ============================================================
+   v0.9.5 — landing overflow + solved GOTM + brand slogan
+   ============================================================ */
+
+/* The landing must never create a content-box width + padding overflow. */
+.jw-site-main,
+.jw-site-main *,
+.jw-site-main *::before,
+.jw-site-main *::after{
+  box-sizing:border-box;
+}
+.jw-landing-home,
+.jw-landing-top,
+.jw-landing-hero,
+.jw-type-grid,
+.jw-type-card,
+.jw-copy-section{
+  min-width:0;
+  max-width:100%;
+}
+.jw-landing-top{
+  width:100%;
+}
+.jw-landing-top.gotm-retired .jw-landing-hero{
+  width:auto!important;
+  max-width:100%!important;
+}
+
+/* Brand thesis: short enough to remember, specific enough to mean something. */
+.jw-brand-slogan{
+  margin-top:8px;
+  color:#d9eff7;
+  font-size:clamp(11px,1.35vw,15px);
+  font-weight:800;
+  letter-spacing:.01em;
+}
+
+/* Solved monthly card stays on the landing rather than leaving a dead space. */
+.jw-gotm-card.is-solved{
+  border-color:#6e70ad;
+  background:
+    radial-gradient(circle at 50% 0,rgba(255,92,173,.10),transparent 42%),
+    linear-gradient(180deg,#151b37,#071520);
+}
+.jw-gotm-card.is-solved .jw-gotm-eyebrow::after{
+  content:" · SOLVED";
+  color:#ff9bd0;
+}
+.jw-gotm-card.is-solved .jw-gotm-mystery{
+  cursor:pointer;
+}
+.jw-gotm-card.is-solved .jw-gotm-play{
+  border-color:#e0b75c;
+}
+
+/* Defensive containment for wide desktop and awkward browser zoom levels. */
+.jw-showcase,
+.jw-tabs-viewport,
+.jw-tabs-ribbon{
+  max-width:100%;
+}
+
+
+/* ============================================================
+   v0.9.6 — Zero Hunt child-readable onboarding
+   ============================================================ */
+.jw-zero-app-intro{
+  display:grid;
+  grid-template-columns:120px minmax(0,1fr);
+  gap:18px;
+  align-items:center;
+}
+.jw-zero-app-intro h1{margin:.1em 0;font-size:clamp(32px,4vw,58px)}
+.jw-zero-app-intro h2{
+  margin:5px 0 8px;
+  color:#ffd86d;
+  font-size:clamp(18px,2vw,28px);
+  letter-spacing:.015em
+}
+.jw-zero-app-intro p{
+  max-width:900px;
+  font-size:clamp(12px,1.15vw,16px);
+  line-height:1.55
+}
+.jw-zero-steps div{
+  min-height:112px;
+  padding:16px;
+}
+.jw-zero-steps b{
+  display:block;
+  margin-bottom:8px;
+  font-size:11px;
+}
+.jw-zero-steps span{
+  display:block;
+  font-size:11px;
+  line-height:1.5;
+}
+.jw-council-quick{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px!important;
+}
+.jw-council-quick button{
+  min-height:58px;
+  padding:12px!important;
+  font-size:11px!important;
+  font-weight:900;
+  border-radius:14px!important;
+}
+.jw-council-decision button{
+  min-height:52px;
+  font-size:11px!important;
+}
+@media(max-width:760px){
+  .jw-zero-app-intro{grid-template-columns:82px minmax(0,1fr);gap:12px}
+  .jw-zero-app-intro h1{font-size:30px}
+  .jw-zero-app-intro h2{font-size:17px}
+  .jw-zero-steps{grid-template-columns:1fr!important}
+  .jw-council-quick{grid-template-columns:1fr!important}
+}
+
+
+/* ============================================================
+   v0.9.8 — browser-like tab stacking + active game beacon
+   ============================================================ */
+.jw-tabbar{
+  position:relative!important;
+  overflow:visible!important;
+}
+.jw-tabs-viewport{
+  overflow:visible!important;
+  min-width:0!important;
+  max-width:100%!important;
+}
+.jw-tabs-ribbon{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  overflow:hidden!important;
+  flex-wrap:nowrap!important;
+}
+.jw-app-tab{
+  flex:0 0 154px!important;
+}
+.jw-add-tab{
+  flex:0 0 52px!important;
+  margin-left:auto;
+}
+.jw-tab-stack{
+  flex:0 0 58px;
+  display:flex;
+}
+.jw-stack-button{
+  position:relative;
+  width:58px;height:66px;
+  padding:0;
+  display:grid;place-items:center;
+  border:1px solid #315b72;
+  border-radius:16px;
+  background:linear-gradient(180deg,#0b2132,#06141f);
+  color:#b8dce9;
+  cursor:pointer;
+}
+.jw-stack-button:hover,
+.jw-stack-button[aria-expanded="true"]{
+  border-color:#67d9ee;
+  color:#effcff;
+  background:linear-gradient(180deg,#12334a,#092030);
+}
+.jw-stack-button b{
+  position:relative;z-index:2;
+  font:900 13px/1 Arial,sans-serif;
+}
+.jw-stack-cards{
+  position:absolute;inset:8px 12px 22px;
+}
+.jw-stack-cards i{
+  position:absolute;inset:0;
+  border:1px solid rgba(112,199,218,.42);
+  border-radius:7px;
+  background:#0a2433;
+}
+.jw-stack-cards i:nth-child(1){transform:translate(-4px,-3px)}
+.jw-stack-cards i:nth-child(2){transform:translate(0,0)}
+.jw-stack-cards i:nth-child(3){transform:translate(4px,3px)}
+.jw-stack-tray{
+  position:absolute;
+  z-index:5000;
+  top:calc(100% + 7px);
+  right:54px;
+  width:min(330px,calc(100vw - 28px));
+  padding:8px;
+  border:1px solid #3b7188;
+  border-radius:15px;
+  background:rgba(4,16,25,.98);
+  box-shadow:0 18px 50px rgba(0,0,0,.48);
+  backdrop-filter:blur(12px);
+}
+.jw-stack-tray[hidden]{display:none!important}
+.jw-stack-tray-head{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:5px 6px 8px;
+  color:#718e9c;
+  font-size:7px;
+  letter-spacing:.08em;
+}
+.jw-stack-tray-head b{color:#8de8f7}
+.jw-stack-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 28px;
+  gap:5px;align-items:center;
+  margin-top:4px;
+  border:1px solid transparent;
+  border-radius:11px;
+}
+.jw-stack-row:hover{border-color:#244e63;background:#081e2b}
+.jw-stack-row>a{
+  min-width:0;
+  display:grid;
+  grid-template-columns:38px minmax(0,1fr);
+  gap:8px;align-items:center;
+  padding:6px;
+  color:#d9edf5!important;text-decoration:none!important;
+}
+.jw-stack-row img{
+  width:38px;height:38px;object-fit:cover;border-radius:9px
+}
+.jw-stack-row span{min-width:0}
+.jw-stack-row span b,
+.jw-stack-row span small{
+  display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap
+}
+.jw-stack-row span b{font-size:9px}
+.jw-stack-row span small{margin-top:2px;color:#6f93a5;font-size:6px}
+.jw-stack-row>button{
+  width:24px;height:24px;padding:0;
+  border:0;border-radius:50%;
+  background:transparent;color:#7897a7;cursor:pointer;
+}
+.jw-stack-row>button:hover{background:#193140;color:#fff}
+
+/* A browser-playable game that is currently running is impossible to miss. */
+.jw-app-tab.is-running-game{
+  border-color:#ff79c5!important;
+  background:
+    linear-gradient(100deg,rgba(255,76,174,.15),rgba(70,224,255,.10) 60%,transparent),
+    linear-gradient(180deg,#172d43,#0a1b2b)!important;
+  box-shadow:
+    0 0 0 1px rgba(255,123,202,.24) inset,
+    0 0 18px rgba(255,76,174,.30),
+    0 0 30px rgba(64,218,245,.18)!important;
+  animation:jwRunningGameGlow 2.4s ease-in-out infinite;
+}
+.jw-app-tab.is-running-game .jw-app-icon{
+  box-shadow:0 0 0 1px rgba(255,234,145,.65),0 0 13px rgba(255,88,186,.45)
+}
+.jw-running-label{
+  position:absolute;
+  left:7px;bottom:3px;
+  padding:2px 5px;
+  border-radius:999px;
+  background:#5b1749;
+  border:1px solid #ff83cd;
+  color:#ffe3f5;
+  font:900 5.5px/1 Arial,sans-serif;
+  letter-spacing:.08em;
+}
+.jw-app-tab.is-running-game .jw-tab-close{
+  width:22px!important;height:22px!important;
+  right:4px!important;bottom:4px!important;
+  background:#7a194f!important;
+  border:1px solid #ff8bd1!important;
+  color:#fff!important;
+  font-size:15px!important;
+  box-shadow:0 0 12px rgba(255,79,177,.42);
+}
+.jw-app-tab.is-running-game .jw-tab-close:hover{
+  transform:scale(1.08);
+  background:#a51f68!important
+}
+@keyframes jwRunningGameGlow{
+  0%,100%{filter:brightness(1)}
+  50%{filter:brightness(1.09)}
+}
+
+@media(max-width:760px){
+  .jw-app-tab{
+    flex-basis:74px!important;
+  }
+  .jw-add-tab{
+    flex-basis:58px!important;
+  }
+  .jw-stack-button{
+    width:54px;height:62px;border-radius:15px
+  }
+  .jw-tab-stack{flex-basis:54px}
+  .jw-stack-tray{
+    right:4px;
+    top:calc(100% + 5px);
+  }
+  .jw-running-label{
+    display:none;
+  }
+  .jw-app-tab.is-running-game .jw-tab-close{
+    width:20px!important;height:20px!important;
+    font-size:14px!important
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .jw-app-tab.is-running-game{animation:none!important}
+}
+
+
+/* ============================================================
+   v0.9.10 — persistent desktop stack slot
+   ============================================================ */
+.jw-tab-stack{
+  flex:0 0 58px!important;
+  display:flex!important;
+}
+.jw-tab-stack.is-empty .jw-stack-button,
+.jw-stack-button.is-disabled{
+  opacity:.38;
+  filter:saturate(.35);
+  cursor:default!important;
+  border-color:#2b4150!important;
+  background:linear-gradient(180deg,#0a1720,#071018)!important;
+  color:#607784!important;
+  box-shadow:none!important;
+}
+.jw-stack-button.is-disabled:hover,
+.jw-stack-button.is-disabled[aria-expanded="true"]{
+  border-color:#2b4150!important;
+  background:linear-gradient(180deg,#0a1720,#071018)!important;
+  color:#607784!important;
+}
+.jw-stack-button.is-disabled .jw-stack-cards i{
+  border-color:rgba(90,120,135,.28)!important;
+  background:#0a151d!important;
+}
+.jw-stack-button.is-disabled b{
+  opacity:.72;
+}
+@media(max-width:760px){
+  .jw-tab-stack{flex-basis:54px!important}
+}
+
+
+/* ============================================================
+   v0.9.17 — rotating landing wallpapers + wallpaper downloads
+   ============================================================ */
+.jw-wallpaper-card{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  min-height:160px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.jw-wallpaper-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background-image:var(--jw-wallpaper-image);
+  background-size:cover;
+  background-position:var(--jw-wallpaper-position,center);
+  background-repeat:no-repeat;
+  opacity:.48;
+  filter:saturate(1.08) contrast(1.04) brightness(.72);
+  transform:scale(1.025);
+  transition:opacity .34s ease, transform .6s ease;
+}
+.jw-wallpaper-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(180deg,rgba(3,10,18,.20) 0%,rgba(4,14,23,.56) 46%,rgba(4,13,22,.94) 100%),
+    linear-gradient(90deg,rgba(4,16,27,.78),rgba(4,15,25,.28) 58%,rgba(3,11,19,.58));
+}
+.jw-wallpaper-card > *{position:relative;z-index:1}
+.jw-wallpaper-card h2,
+.jw-wallpaper-card p,
+.jw-wallpaper-card small,
+.jw-wallpaper-card strong{
+  text-shadow:0 2px 13px rgba(0,0,0,.62);
+}
+.jw-wallpaper-card.is-wallpaper-swapping::before{
+  opacity:.12;
+  transform:scale(1.045);
+}
+
+.jw-wallpaper-gallery-section{
+  padding:20px;
+}
+.jw-wallpaper-gallery-head small{
+  display:block;
+  color:#77e0f5;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.15em;
+  margin-bottom:5px;
+}
+.jw-wallpaper-gallery-head h2{margin-bottom:4px}
+.jw-wallpaper-gallery-head p{margin:0}
+.jw-wallpaper-gallery{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin-top:15px;
+}
+.jw-wallpaper-download-card{
+  min-width:0;
+  overflow:hidden;
+  border:1px solid #28546d;
+  border-radius:16px;
+  background:linear-gradient(180deg,#092033,#06131f);
+}
+.jw-wallpaper-preview{
+  display:block;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:#020811;
+}
+.jw-wallpaper-preview img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform .28s ease,filter .28s ease;
+}
+.jw-wallpaper-preview:hover img{
+  transform:scale(1.025);
+  filter:brightness(1.08);
+}
+.jw-wallpaper-download-card>div{
+  padding:10px 11px 11px;
+}
+.jw-wallpaper-download-card b{
+  display:block;
+  color:#f2f8ff;
+  font-size:10px;
+  line-height:1.25;
+}
+.jw-wallpaper-download-card span{
+  display:block;
+  margin-top:3px;
+  color:#708fa1;
+  font-size:7px;
+}
+.jw-wallpaper-download-card div>a{
+  display:inline-block;
+  margin-top:8px;
+  padding:6px 9px;
+  border:1px solid #4e9fbe;
+  border-radius:999px;
+  color:#9cecff!important;
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-decoration:none!important;
+}
+.jw-wallpaper-download-card div>a:hover{
+  border-color:#86e9fb;
+  color:#fff!important;
+  background:#0a2d41;
+}
+
+/* Mobile only: Who's That AI JRPG Game artwork sits on the RIGHT. */
+@media(max-width:760px){
+  .jw-gotm-card{
+    grid-template-columns:minmax(0,1fr) 124px!important;
+  }
+  .jw-gotm-eyebrow,
+  .jw-gotm-card h2{
+    grid-column:1/-1!important;
+  }
+  .jw-gotm-mystery{
+    grid-column:2!important;
+    grid-row:3/6!important;
+  }
+  .jw-gotm-copy{
+    grid-column:1!important;
+    grid-row:3!important;
+    text-align:left!important;
+    padding:0 8px 0 0!important;
+  }
+  .jw-gotm-play{
+    grid-column:1!important;
+    grid-row:4!important;
+    align-self:start;
+    margin-right:8px;
+  }
+  .jw-wallpaper-card{
+    min-height:145px;
+  }
+  .jw-wallpaper-gallery{
+    grid-template-columns:1fr;
+  }
+}
+@media(max-width:420px){
+  .jw-gotm-card{
+    grid-template-columns:minmax(0,1fr) 108px!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .jw-wallpaper-card::before,
+  .jw-wallpaper-preview img{
+    transition:none!important;
+  }
+}
+
+
+/* ============================================================
+   v0.9.18 — Xenosaga canonical game-model expert
+   One prompt bar; LORE / GUIDE / TRANSLATION+ROM auto-route.
+   ============================================================ */
+.jw-xeno-expert{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 90% 8%,rgba(196,61,106,.16),transparent 28%),
+    linear-gradient(180deg,#0a2030,#061521)!important;
+}
+.jw-xeno-expert-top{display:grid;grid-template-columns:minmax(0,1fr) 178px;gap:18px;align-items:stretch}
+.jw-xeno-expert .jw-expert-panel-head{margin-bottom:0;align-self:center}
+.jw-xeno-expert-lede{max-width:760px;margin:0 0 9px;color:#9eb8c7;font-size:9px;line-height:1.55}
+.jw-xeno-corpus-line{margin-top:8px;color:#64899c;font-size:6.5px;font-weight:800;letter-spacing:.045em}
+.jw-xeno-expert .jw-capability-chip.lore{border-color:#8f6dca;color:#d9c6ff;background:#1c1630}
+.jw-xeno-expert .jw-capability-chip.guide{border-color:#4c9db3;color:#bdf5ff;background:#092633}
+.jw-xeno-expert .jw-capability-chip.rom{border-color:#b88e49;color:#ffe4a0;background:#2a2110}
+.jw-xeno-expert-portrait{height:118px;border:1px solid #5e4668;border-radius:16px;overflow:hidden;background:#050b13;box-shadow:0 10px 28px rgba(0,0,0,.25)}
+.jw-xeno-expert-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:78% 28%;filter:saturate(.95) contrast(1.05) brightness(.82)}
+.jw-xeno-prompt-ideas{display:flex;gap:5px;flex-wrap:wrap;margin:11px 0 8px}
+.jw-xeno-prompt-ideas button{border:1px solid #315f76;border-radius:999px;background:#071a27;color:#93c7d8;padding:5px 8px;font-size:6.5px;font-weight:800;cursor:pointer;transition:border-color .15s ease,color .15s ease,background .15s ease}
+.jw-xeno-prompt-ideas button:hover,.jw-xeno-prompt-ideas button:focus-visible{border-color:#d25c93;color:#ffd7e8;background:#241423;outline:none}
+.jw-xeno-expert .jw-expert-compose input{border-color:#6d5174;box-shadow:0 0 0 2px rgba(196,74,132,.05)}
+.jw-xeno-expert .jw-expert-compose input:focus{border-color:#df6aa0;box-shadow:0 0 0 3px rgba(223,106,160,.10)}
+.jw-xeno-expert .jw-expert-compose button{border-color:#d2749e;background:linear-gradient(180deg,#83375d,#51213c)}
+.jw-xeno-answer-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-2px -2px 9px;padding-bottom:7px;border-bottom:1px solid #244657}
+.jw-xeno-answer-meta strong{color:#f09abc;font-size:7px;letter-spacing:.09em}
+.jw-xeno-answer-meta span{color:#668b9c;font-size:6px;font-weight:800}
+.jw-xeno-answer-text{white-space:pre-wrap;color:#cbdde6}
+@media(max-width:760px){
+  .jw-xeno-expert-top{grid-template-columns:minmax(0,1fr) 86px;gap:10px}
+  .jw-xeno-expert-portrait{height:96px;border-radius:13px}
+  .jw-xeno-expert-portrait img{object-position:80% 28%}
+  .jw-xeno-corpus-line{font-size:6px;line-height:1.45}
+  .jw-xeno-prompt-ideas{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+  .jw-xeno-prompt-ideas button{text-align:left;line-height:1.25}
+  .jw-xeno-expert .jw-expert-compose{grid-template-columns:1fr}
+  .jw-xeno-expert .jw-expert-compose button{width:100%;min-height:36px}
+  .jw-xeno-answer-meta{align-items:flex-start;flex-direction:column;gap:3px}
+}
+@media(max-width:430px){
+  .jw-xeno-expert-top{grid-template-columns:minmax(0,1fr) 72px}
+  .jw-xeno-expert-portrait{height:86px}
+  .jw-xeno-prompt-ideas{grid-template-columns:1fr}
+}
+
+
+/* ============================================================
+   v0.9.19 — Xenosaga Expert reader surface
+   Structured headings, paragraphs, evidence cards, KOS-MOS responder,
+   and small visual memory breaks. Inspired by PSO presentation while
+   keeping the Xenosaga identity.
+   ============================================================ */
+.jw-xeno-expert .jw-expert-output{
+  padding:0!important;
+  overflow:hidden;
+  white-space:normal!important;
+  background:
+    radial-gradient(circle at 92% 4%,rgba(211,77,132,.09),transparent 25%),
+    linear-gradient(180deg,#061721,#041019)!important;
+}
+.jw-xeno-generated-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 184px;
+  gap:14px;
+  align-items:start;
+  padding:12px;
+}
+.jw-xeno-generated-main{min-width:0}
+.jw-xeno-answer-meta{
+  margin:0 0 10px!important;
+  padding:0 2px 8px!important;
+}
+.jw-xeno-answer-meta strong{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.jw-xeno-answer-meta strong::before{
+  content:"◆";
+  color:#79e0f2;
+  font-size:7px;
+}
+.jw-xeno-reader{
+  white-space:normal!important;
+  color:#d6e4eb!important;
+  font-size:10px;
+  line-height:1.68;
+}
+.jw-xeno-reader-section{
+  position:relative;
+  overflow:hidden;
+  margin:0 0 10px;
+  padding:12px 13px 11px;
+  border:1px solid #28536a;
+  border-radius:12px;
+  background:
+    linear-gradient(90deg,rgba(76,213,239,.035),transparent 38%),
+    linear-gradient(180deg,#09202e,#061722);
+}
+.jw-xeno-reader-section::before{
+  content:"";
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:3px;
+  background:linear-gradient(#65d9ef,#255f76);
+}
+.jw-xeno-reader-section.canon::before{background:linear-gradient(#ff83b6,#8a3158)}
+.jw-xeno-reader-section.interpretation::before{background:linear-gradient(#bd96ff,#65459a)}
+.jw-xeno-reader-section.limits::before{background:linear-gradient(#ffbb67,#8e5730)}
+.jw-xeno-reader-section.guide::before{background:linear-gradient(#75ecff,#2f7890)}
+.jw-xeno-reader-section.rom::before{background:linear-gradient(#ffe28c,#94753f)}
+
+.jw-xeno-reader h2,
+.jw-xeno-reader h3{
+  margin:0 0 8px;
+  color:#f3fbff;
+  line-height:1.25;
+  letter-spacing:.01em;
+}
+.jw-xeno-reader h2{
+  font-size:15px;
+}
+.jw-xeno-reader h3{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-size:12px;
+}
+.jw-xeno-reader h3::before{
+  content:"◇";
+  flex:0 0 auto;
+  color:#7fe6f6;
+  font-size:9px;
+}
+.jw-xeno-reader-section.canon h2,
+.jw-xeno-reader-section.canon h3{color:#ffd8e8}
+.jw-xeno-reader-section.interpretation h2,
+.jw-xeno-reader-section.interpretation h3{color:#e3d5ff}
+.jw-xeno-reader-section.limits h2,
+.jw-xeno-reader-section.limits h3{color:#ffd8a4}
+.jw-xeno-reader-section.rom h2,
+.jw-xeno-reader-section.rom h3{color:#ffedb2}
+
+.jw-xeno-reader p{
+  margin:0 0 9px;
+  color:#c9dbe4;
+}
+.jw-xeno-reader p:last-child{margin-bottom:0}
+.jw-xeno-reader strong{
+  color:#f7fbff;
+  font-weight:900;
+}
+.jw-xeno-reader em{color:#b9d7e5}
+.jw-xeno-reader code{
+  display:inline-block;
+  max-width:100%;
+  padding:1px 4px;
+  border:1px solid #2b566b;
+  border-radius:5px;
+  background:#031019;
+  color:#9deafb;
+  font:8.5px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+  overflow-wrap:anywhere;
+}
+.jw-xeno-arrow{
+  display:inline-block;
+  padding:0 3px;
+  color:#f18db7;
+  font-weight:900;
+}
+.jw-xeno-reader-list{
+  margin:5px 0 4px;
+  padding-left:18px;
+}
+.jw-xeno-reader-list li{
+  margin:0 0 7px;
+  padding-left:2px;
+  color:#d0e0e8;
+}
+.jw-xeno-reader-list li::marker{color:#71ddef}
+.jw-xeno-reader blockquote{
+  margin:8px 0;
+  padding:8px 10px;
+  border-left:3px solid #d16b98;
+  border-radius:0 8px 8px 0;
+  background:#160f1c;
+  color:#f1dce6;
+}
+.jw-xeno-reader-callout{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:8px;
+  align-items:start;
+  margin:8px 0 2px;
+  padding:9px 10px;
+  border:1px solid #4f567a;
+  border-radius:10px;
+  background:linear-gradient(90deg,#13172a,#091521);
+}
+.jw-xeno-reader-callout>span{
+  color:#f28ab7;
+  font-size:15px;
+  line-height:1;
+}
+.jw-xeno-reader-callout p{margin:0!important;color:#e6edf1}
+.jw-xeno-rule{
+  height:1px;border:0;margin:10px 0;
+  background:linear-gradient(90deg,transparent,#44778e,transparent);
+}
+
+.jw-xeno-responder{
+  position:sticky;
+  top:12px;
+  overflow:hidden;
+  border:1px solid #8b5c79;
+  border-radius:15px;
+  background:
+    linear-gradient(145deg,rgba(198,70,119,.15),rgba(5,18,28,.98) 38%),
+    #06151f;
+  box-shadow:0 0 0 1px rgba(109,226,245,.08) inset,0 12px 30px rgba(0,0,0,.22);
+}
+.jw-xeno-responder-art{
+  height:128px;
+  overflow:hidden;
+  border-bottom:1px solid #69445c;
+  background:#040b11;
+}
+.jw-xeno-responder-art img{
+  width:100%;height:100%;display:block;object-fit:cover;object-position:72% 26%;
+  filter:saturate(.96) contrast(1.05) brightness(.87);
+}
+.jw-xeno-responder-name{
+  padding:9px 9px 1px;
+  color:#fff;
+  font-size:14px;
+  font-weight:1000;
+  letter-spacing:.06em;
+}
+.jw-xeno-responder-role{
+  padding:0 9px 7px;
+  color:#f08bb5;
+  font-size:6.5px;
+  font-weight:900;
+  letter-spacing:.11em;
+}
+.jw-xeno-responder-signal{
+  margin:0 8px 8px;
+  padding:7px 8px;
+  border:1px solid #285467;
+  border-radius:9px;
+  background:#05141e;
+  color:#8cb0c0;
+  font-size:6.5px;
+  line-height:1.45;
+}
+.jw-xeno-responder-signal span{color:#78efb7}
+
+.jw-xeno-memory-break{
+  position:relative;
+  height:106px;
+  margin:7px 0 10px;
+  overflow:hidden;
+  border:1px solid #315d73;
+  border-radius:12px;
+  background:#04101a;
+}
+.jw-xeno-memory-break img{
+  display:block;
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:saturate(.88) contrast(1.03) brightness(.66);
+}
+.jw-xeno-memory-break::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(2,10,17,.45),transparent 52%,rgba(2,9,15,.36));
+  pointer-events:none;
+}
+.jw-xeno-memory-break figcaption{
+  position:absolute;
+  z-index:2;
+  left:9px;bottom:7px;
+  color:#9adcea;
+  font-size:6px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-shadow:0 2px 8px #000;
+}
+.jw-xeno-gif-divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  height:50px;
+  margin:-2px 0 7px;
+}
+.jw-xeno-gif-divider span{
+  height:1px;
+  flex:1;
+  background:linear-gradient(90deg,transparent,#37677e);
+}
+.jw-xeno-gif-divider span:last-child{
+  background:linear-gradient(90deg,#37677e,transparent);
+}
+.jw-xeno-gif-divider img{
+  width:72px;height:42px;
+  display:block;
+  object-fit:cover;
+  border-radius:7px;
+  border:1px solid #3f7189;
+  filter:saturate(.9) brightness(.82);
+}
+.jw-xeno-provenance{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 3px 2px;
+  color:#648b9d;
+  font-size:6.5px;
+  font-weight:800;
+  letter-spacing:.035em;
+}
+.jw-xeno-provenance::before{content:"◉";color:#6ff0ad}
+
+@media(max-width:760px){
+  .jw-xeno-generated-layout{
+    grid-template-columns:1fr;
+    padding:8px;
+  }
+  .jw-xeno-responder{
+    position:relative;
+    top:auto;
+    display:grid;
+    grid-template-columns:70px minmax(0,1fr);
+    grid-template-rows:auto auto auto;
+  }
+  .jw-xeno-responder-art{
+    grid-row:1/4;
+    width:70px;
+    height:84px;
+    border-right:1px solid #69445c;
+    border-bottom:0;
+  }
+  .jw-xeno-responder-art img{object-position:74% 25%}
+  .jw-xeno-responder-name{padding:8px 8px 0;font-size:12px}
+  .jw-xeno-responder-role{padding:0 8px 2px}
+  .jw-xeno-responder-signal{
+    margin:1px 7px 7px 8px;
+    padding:5px 6px;
+  }
+  .jw-xeno-reader{
+    font-size:9.5px;
+    line-height:1.62;
+  }
+  .jw-xeno-reader-section{
+    padding:10px 11px 9px;
+    border-radius:10px;
+  }
+  .jw-xeno-reader h2{font-size:13px}
+  .jw-xeno-reader h3{font-size:11px}
+  .jw-xeno-memory-break{height:92px}
+  .jw-xeno-gif-divider img{width:64px;height:38px}
+}
+@media(max-width:430px){
+  .jw-xeno-reader{font-size:9px}
+  .jw-xeno-memory-break{height:82px}
+}
+
+
+/* ============================================================
+   v0.9.20 — KOS-MOS voice + readable canon console
+   ============================================================ */
+.jw-xeno-expert .jw-expert-panel-head small{
+  font-size:13px!important;
+  letter-spacing:.11em!important;
+}
+.jw-xeno-expert .jw-expert-panel-head h2{
+  font-size:30px!important;
+  line-height:1.14!important;
+  margin-top:5px!important;
+}
+.jw-xeno-expert-lede{
+  font-size:16px!important;
+  line-height:1.6!important;
+  max-width:900px!important;
+}
+.jw-xeno-corpus-line{
+  font-size:13px!important;
+  line-height:1.55!important;
+}
+.jw-xeno-prompt-ideas button{
+  font-size:13px!important;
+  line-height:1.35!important;
+  padding:8px 12px!important;
+}
+.jw-xeno-expert .jw-expert-compose input{
+  font-size:17px!important;
+  min-height:50px!important;
+}
+.jw-xeno-expert .jw-expert-compose button{
+  font-size:14px!important;
+  min-height:50px!important;
+}
+.jw-xeno-answer-meta strong{
+  font-size:14px!important;
+}
+.jw-xeno-answer-meta span{
+  font-size:13px!important;
+}
+.jw-xeno-reader{
+  font-size:18px!important;
+  line-height:1.62!important;
+}
+.jw-xeno-reader-section{
+  padding:20px 22px 18px!important;
+  margin-bottom:16px!important;
+}
+.jw-xeno-reader h2{
+  font-size:30px!important;
+  line-height:1.18!important;
+  margin-bottom:14px!important;
+}
+.jw-xeno-reader h3{
+  font-size:21px!important;
+  line-height:1.25!important;
+  margin-bottom:12px!important;
+}
+.jw-xeno-reader p{
+  margin-bottom:14px!important;
+}
+.jw-xeno-reader-list{
+  margin:8px 0 10px!important;
+  padding-left:25px!important;
+}
+.jw-xeno-reader-list li{
+  margin-bottom:10px!important;
+}
+.jw-xeno-reader code{
+  font-size:14px!important;
+  line-height:1.45!important;
+}
+.jw-xeno-reader-callout{
+  padding:14px 16px!important;
+  gap:12px!important;
+}
+.jw-xeno-reader blockquote{
+  padding:13px 15px!important;
+}
+.jw-xeno-jp-label{
+  margin:-4px 0 14px!important;
+  color:#86a8ba!important;
+  font-size:13px!important;
+  font-style:italic;
+  letter-spacing:.02em;
+}
+.jw-xeno-jp-label span{
+  display:inline-block;
+  margin-right:6px;
+  padding:2px 6px;
+  border:1px solid #3c6273;
+  border-radius:999px;
+  color:#9bdff0;
+  font-size:11px;
+  font-style:normal;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.jw-xeno-responder-name{font-size:20px!important}
+.jw-xeno-responder-role{font-size:12px!important;line-height:1.4!important}
+.jw-xeno-responder-signal{font-size:12px!important;line-height:1.55!important}
+.jw-xeno-provenance{font-size:12px!important;line-height:1.45!important}
+.jw-xeno-memory-break{height:150px!important}
+.jw-xeno-memory-break figcaption{font-size:11px!important}
+
+@media(max-width:760px){
+  .jw-xeno-expert .jw-expert-panel-head small{font-size:11px!important}
+  .jw-xeno-expert .jw-expert-panel-head h2{font-size:24px!important}
+  .jw-xeno-expert-lede{font-size:15px!important}
+  .jw-xeno-corpus-line{font-size:11px!important}
+  .jw-xeno-prompt-ideas button{font-size:13px!important}
+  .jw-xeno-expert .jw-expert-compose input{font-size:16px!important}
+  .jw-xeno-expert .jw-expert-compose button{font-size:14px!important}
+  .jw-xeno-answer-meta strong{font-size:13px!important}
+  .jw-xeno-answer-meta span{font-size:12px!important}
+  .jw-xeno-reader{font-size:16px!important;line-height:1.62!important}
+  .jw-xeno-reader-section{padding:16px 17px 15px!important}
+  .jw-xeno-reader h2{font-size:24px!important}
+  .jw-xeno-reader h3{font-size:19px!important}
+  .jw-xeno-reader code{font-size:12px!important}
+  .jw-xeno-jp-label{font-size:12px!important}
+  .jw-xeno-responder-name{font-size:17px!important}
+  .jw-xeno-responder-role{font-size:10px!important}
+  .jw-xeno-responder-signal{font-size:10px!important}
+  .jw-xeno-provenance{font-size:10px!important}
+  .jw-xeno-memory-break{height:118px!important}
+  .jw-xeno-memory-break figcaption{font-size:9px!important}
+}
+
+
+/* ============================================================
+   v1.8 — Pokémon Emerald · first-class PLAY + LIVE app
+   ============================================================ */
+.jw-launch-app.is-live .jw-launch-icon-wrap{border-color:#4ddf9b;box-shadow:0 8px 24px rgba(0,0,0,.25),0 0 18px rgba(77,223,155,.08)}
+.jw-launch-app.is-live:hover .jw-launch-icon-wrap{border-color:#7dffc0;box-shadow:0 8px 25px rgba(0,0,0,.28),0 0 22px rgba(77,223,155,.16)}
+.jw-launch-app.is-live .jw-edge-primary{border-color:rgba(77,223,155,.72)!important;color:#c7ffe1!important;background:rgba(7,55,37,.88)!important}
+.jw-launch-category[data-cat="Playable + Live"].is-active{border-color:#4ddf9b;background:#0c3528;color:#dbffeb}
+.jw-launch-category[data-cat="Playable + Live"].is-active ~ .jw-app-grid .jw-grid-context{border-color:rgba(77,223,155,.30);background:linear-gradient(180deg,rgba(14,55,41,.64),rgba(5,23,19,.78))}
+
+
+/* v1.9 · Zero Hunt mobile play mode
+   iPhone/iOS does not reliably expose element Fullscreen API for an embedded game.
+   The runtime therefore gets a CSS full-viewport shell on coarse/mobile pointers. */
+html.jw-zero-immersive-root,
+body.jw-zero-immersive{
+  overflow:hidden!important;
+  overscroll-behavior:none;
+  touch-action:none;
+}
+.jw-gotm-runtime.is-immersive{
+  position:fixed!important;
+  inset:0!important;
+  z-index:2147483000!important;
+  width:100vw!important;
+  height:var(--jw-zero-vvh,100dvh)!important;
+  max-width:none!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:0!important;
+  display:grid!important;
+  grid-template-rows:auto minmax(0,1fr)!important;
+  background:#020913!important;
+  box-shadow:none!important;
+}
+.jw-gotm-runtime.is-immersive .jw-gotm-runtime-head,
+.jw-gotm-runtime:fullscreen .jw-gotm-runtime-head{
+  min-height:48px;
+  padding:max(7px,env(safe-area-inset-top)) 12px 7px;
+  background:rgba(3,14,24,.97);
+}
+.jw-gotm-runtime.is-immersive .jw-gotm-runtime-head small,
+.jw-gotm-runtime:fullscreen .jw-gotm-runtime-head small{display:none}
+.jw-gotm-runtime.is-immersive .jw-gotm-runtime-head h2,
+.jw-gotm-runtime:fullscreen .jw-gotm-runtime-head h2{
+  margin:0;
+  font-size:15px;
+  line-height:1.1;
+}
+.jw-gotm-runtime.is-immersive .jw-gotm-runtime-head button,
+.jw-gotm-runtime:fullscreen .jw-gotm-runtime-head button{
+  flex:0 0 auto;
+  min-height:34px;
+  padding:6px 11px;
+  border-color:#ff5ca8;
+  color:#ffe6f3;
+  background:#0a1a26;
+  font-size:8px;
+}
+.jw-gotm-runtime.is-immersive .jw-gotm-frame,
+.jw-gotm-runtime:fullscreen .jw-gotm-frame{
+  width:100%!important;
+  height:100%!important;
+  min-height:0!important;
+  aspect-ratio:auto!important;
+  overflow:hidden!important;
+}
+.jw-gotm-runtime.is-immersive .jw-gotm-frame iframe,
+.jw-gotm-runtime:fullscreen .jw-gotm-frame iframe{
+  width:100%!important;
+  height:100%!important;
+  min-height:0!important;
+}
+@media(max-width:760px), (pointer:coarse){
+  .jw-gotm-runtime-head button[data-gotm-fullscreen]{
+    min-width:96px;
+    min-height:40px;
+    font-size:8px;
+  }
+  .jw-gotm-runtime:not(.is-immersive) .jw-gotm-frame,
+  .jw-gotm-runtime:not(.is-immersive) .jw-gotm-frame iframe{
+    min-height:68dvh;
+  }
+}
+
+
+/* v2.0 Zero Hunt mobile launch controls: avoid Safari double-tap zoom behaviour. */
+.jw-gotm-runtime button[data-gotm-fullscreen],
+[data-deploy-zero-hunt],
+.jw-council-quick button,
+.jw-council-form button{
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* JRPG.WORLD primary nav v1 */
+.jw-site-nav{display:flex;align-items:center;justify-content:center;gap:4px;padding:7px 12px;background:rgba(3,13,20,.96);border-bottom:1px solid rgba(134,203,231,.12);position:relative;z-index:30}.jw-site-nav a{display:inline-flex;align-items:center;min-height:32px;padding:0 10px;border-radius:999px;color:#91aebe;text-decoration:none;font-size:9px;font-weight:900;letter-spacing:.1em}.jw-site-nav a:hover,.jw-site-nav a:focus-visible,.jw-site-nav a[aria-current="page"]{color:#eefaff;background:#0d2634;outline:none}@media(max-width:640px){.jw-site-nav{justify-content:flex-start;overflow-x:auto}.jw-site-nav a{flex:0 0 auto}}

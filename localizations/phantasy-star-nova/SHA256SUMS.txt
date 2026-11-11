@@ -1,0 +1,2 @@
+80db173fd67111f921dd51ee7bece3d06e76f5bb383e3013e865c97c891f9cb9  /mnt/data/psnova_wolken_page_v1.0/index.html
+9c4fcf48514d1b1136f377d545454aa23fd024cdff9af0adda54e7bfd5b077ea  /mnt/data/psnova_wolken_page_v1.0/assets/downloads/PSNova_Complete_English_GitHub_v1.0.zip

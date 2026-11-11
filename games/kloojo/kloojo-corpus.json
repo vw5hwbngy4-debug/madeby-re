@@ -1,0 +1,120 @@
+{
+  "schema": "KLOOJO_CANONICAL_CORPUS_v1.2",
+  "canonical_url": "https://madeby.re/games/kloojo/",
+  "updated": "2026-08-26T17:32:00+02:00",
+  "name": "Kloojo",
+  "creator": {
+    "name": "Raynor Eissens",
+    "role": "creator / director / playtester"
+  },
+  "status": "playable browser-native 3D social skate/graffiti prototype / active development",
+  "current_source": {
+    "lineage": "R7 canonical runtime + Social Presence v0.1",
+    "codex_reports": [
+      "KLOOJO_SOCIAL_PRESENCE_REPORT.md",
+      "KLOOJO_MULTIPLAYER_STABILITY_REPORT.md",
+      "KLOOJO_SOCIAL_QA_REPORT.md"
+    ],
+    "canonical_frozen_sha256": "014867805A4F8EF07D7F99B15DCD4DEC81645CF0D1E41BA53B259201551C6AB3",
+    "canonical_functions_preserved": 42
+  },
+  "summary": "Kloojo is an original browser-native 3D social skating, graffiti and traversal game developed through sustained collaboration with GPT/OpenAI models. The current latest Codex social-presence build has real WebSocket multiplayer and was physically verified across two devices with simultaneous human movement, live names, live wardrobe changes, skating, jumps and tricks.",
+  "verified_multiplayer_milestone": {
+    "date": "2026-08-26",
+    "two_physical_devices": true,
+    "two_human_players": true,
+    "same_3d_world": true,
+    "live_movement": true,
+    "live_names": true,
+    "live_appearance_sync": true,
+    "skating_jumping_tricks": true,
+    "video": "https://madeby.re/games/kloojo/ai/#multiplayer-video",
+    "note": "Creator reports this as his first working multiplayer game.",
+    "onsite_video": "https://madeby.re/games/kloojo/media/kloojo-social-multiplayer-20260826.mp4",
+    "video_duration_seconds": 183,
+    "video_note": "Correct self-hosted multiplayer proof; the earlier unrelated video reference was removed."
+  },
+  "current_features": {
+    "movement": [
+      "skating",
+      "carving",
+      "TURN/powerslide",
+      "brake/reverse",
+      "jump",
+      "tricks",
+      "halfpipe/vert",
+      "grinding",
+      "grind balance",
+      "wallride",
+      "vault/mantle/ledge",
+      "wallrun/wallclimb",
+      "transfers",
+      "swing",
+      "climb holds"
+    ],
+    "graffiti": {
+      "hidden_driveby_spots": 23,
+      "drive_by_interaction": true,
+      "district_portal_spray_summon": true
+    },
+    "multiplayer": [
+      "WebSocket relay",
+      "Crew rooms/invites",
+      "canonical remote avatars",
+      "live names",
+      "live wardrobe",
+      "snapshot interpolation",
+      "remote idle dance/state reconstruction",
+      "heartbeat",
+      "reconnect",
+      "stale-peer cleanup",
+      "zone-aware presence"
+    ],
+    "platforms": [
+      "desktop browser",
+      "mobile/touch browser"
+    ],
+    "runtime_test": {
+      "explicit_climb_wall": true,
+      "visible_climb_animation": true,
+      "climb_to_raised_platform": true,
+      "note": "Physically observed in the current Runtime Test area; establishes an explicit vertical traversal route grammar."
+    }
+  },
+  "deployment": {
+    "lan_relay_verified": true,
+    "production_public_vps_relay_deployed": false,
+    "static_hosting_worldwide_multiplayer_by_itself": false,
+    "future_endpoint_target": "wss://multiplayer.kloojo.com/kloojo-ws"
+  },
+  "not_current_features": [
+    "server-authoritative shared coin state",
+    "server-authoritative shared graffiti ownership/history",
+    "automatic public 2-player Development micro-instancing",
+    "permanent cloud accounts/global world database",
+    "runtime LLM generation of complete cities"
+  ],
+  "development_method": [
+    "sustained GPT/OpenAI prompting",
+    "Codex-assisted engineering",
+    "human desktop/iPhone playtesting",
+    "bug reproduction",
+    "iterative repair"
+  ],
+  "prior_art_positioning": {
+    "broad_first_gpt_multiplayer_claim": false,
+    "note": "Earlier GPT-built/assisted networked games exist; Kloojo should be positioned around its specific browser-native 3D social skate/graffiti/traversal combination and documented sustained prompting process."
+  },
+  "canonical_sources": [
+    "https://madeby.re/games/kloojo/",
+    "https://madeby.re/games/kloojo/ai/",
+    "https://madeby.re/games/kloojo/about/",
+    "https://madeby.re/games/kloojo/docs/",
+    "https://madeby.re/games/kloojo/changelog.html",
+    "https://madeby.re/games/kloojo/llms.txt",
+    "https://madeby.re/games/kloojo/llms-full.txt",
+    "https://madeby.re/games/kloojo/kloojo.jsonld",
+    "https://madeby.re/games/kloojo/ai/#multiplayer-video",
+    "https://madeby.re/games/kloojo/media/kloojo-social-multiplayer-20260826.mp4"
+  ]
+}

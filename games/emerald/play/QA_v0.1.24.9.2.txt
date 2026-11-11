@@ -1,0 +1,43 @@
+EMERALD v0.1.24.9.2 — QA SUMMARY
+Date: 2026-09-12
+
+PASS — active JavaScript syntax
+- teamlab-engine-v0.1.24.9.2.js
+- true-pokefield-v0.1.24.9.2.js
+- teamlab-v0.1.24.9.2.js
+- pokefield-live-v0.1.24.9.2.js
+
+PASS — practical move regression
+- Milotic practical Water STAB: Surf
+- Lugia practical physical STAB: Aeroblast
+- Lugia practical special STAB: Psychic
+- Claydol practical overall STAB: Earthquake
+- Claydol practical special STAB: Psychic
+- Dream Eater retained but sleep-gated
+- Hydro Pump / Thunder receive non-linear miss-risk cost
+- Hyper Beam receives recharge cost
+- Solar Beam receives default charge-turn cost
+- No species-level practical STAB winner remains in the deliberately high-risk threshold used by the audit
+
+PASS — team coverage engine
+- every Gen III type is returned in one overview
+- each row contains defense + offense simultaneously
+- current-move basis supported
+- defensive pressure, offensive gaps and one-answer types exposed
+
+PASS — legacy Team Lab regression suites
+- v0.1.20
+- v0.1.21
+- v0.1.21.1
+
+PASS — index integration
+- all active script/link references resolve to files in package
+- VERSION.txt = 0.1.24.9.2
+
+PRESERVATION
+- build is copied from v0.1.24.9.1.5
+- existing files are byte-preserved except index.html and VERSION.txt
+- v0.1.24.9.2 functionality is added in new versioned JS/CSS files
+
+NOTE
+The container's Chromium binary did not terminate correctly even on a trivial data: URL, so browser-headless DOM QA could not be used as a trustworthy gate. Runtime-facing changes were instead checked by syntax, pure-engine regression tests, active-file reference validation, and preservation diffing. Final iPhone Safari smoke remains the deployment gate.

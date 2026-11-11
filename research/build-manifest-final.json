@@ -1,0 +1,21 @@
+{
+  "generated": "2026-10-01",
+  "canonical_root": "https://madeby.re/research/",
+  "ambient_era": "https://madeby.re/research/ambient-era/",
+  "ambient_phone": "https://madeby.re/research/ambient-phone/",
+  "file_count": 932,
+  "external_ambient_domains_required": false,
+  "legacy_wolken_domains_required": false,
+  "main_stylesheet": "styles-final-20260927.css",
+  "latest_web_article": "https://madeby.re/research/background-without-profiling/",
+  "background_without_profiling": {
+    "path": "/background-without-profiling/",
+    "date": "2026-10-01",
+    "encodings": [
+      "index.html",
+      "article.txt",
+      "article.json"
+    ],
+    "status": "independent web article; no DOI assigned"
+  }
+}

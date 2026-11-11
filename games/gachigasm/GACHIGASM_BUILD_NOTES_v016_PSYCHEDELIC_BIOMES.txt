@@ -1,0 +1,13 @@
+GACHIGASM v0.16 — Psychedelic Biomes
+
+Added without replacing existing tracks or courses:
+- Cumboi · Prism Muscle Cathedral (MP3)
+- Gaybeat Central Dome · Drum And Ass (MP3)
+- GAYSTELVANIA (AAC audio extracted losslessly from supplied MP4 into M4A)
+
+New biome grammars:
+- prismcathedral: rainbow arch cathedral + floating prisms, evolving through crystal/chroma/dream sections
+- centraldome: low neon dome rings + mirrored columns, evolving through rainbow/biceps/flex/chroma sections
+- gaystelvania: neon gothic arches + stained-glass prisms, reusing and recolouring the existing castle grammar
+
+The original soundtrack, gameplay, sleep/wake system, collectibles, vehicles and existing biomes remain intact.

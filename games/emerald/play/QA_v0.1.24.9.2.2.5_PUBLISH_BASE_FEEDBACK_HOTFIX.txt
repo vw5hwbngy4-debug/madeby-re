@@ -1,0 +1,15 @@
+QA — v0.1.24.9.2.2.5 PUBLISH BASE FEEDBACK HOTFIX
+
+PASS — hoenn-online-v0.1.5.js parses with node --check.
+PASS — actual Emerald 128 KiB fixture with native Secret Base serializes to schema v2 and deserializes back to 160-byte native record.
+PASS — fixture summary resolves native Secret Base id 101 and trainer NICK.
+PASS — publish path is read-only and requests getActiveSnapshot({serverBackup:false}).
+PASS — add/import path still calls Save Vault applyMutation(), retaining pre-write backup + rollback semantics.
+PASS — stable panel-level click delegation owns CLOSE / PUBLISH / ADD after innerHTML re-renders.
+PASS — Publish has explicit in-flight, success, timeout, network and server-error feedback.
+PASS — save-vault-v0.1.13.7.js byte-identical to v0.1.24.9.2.2.4.
+PASS — mGBA browser bundle byte-identical to v0.1.24.9.2.2.4.
+PASS — PokéField, True PokéField and Team Lab selected runtime files byte-identical to v0.1.24.9.2.2.4.
+PASS — VERSION.txt bumped to 0.1.24.9.2.2.5 to break stale index caching.
+
+NOTE — external production saves.jrpg.world Hoenn API could not be network-tested from the isolated build container. The client now surfaces that distinction to the user rather than appearing inert.

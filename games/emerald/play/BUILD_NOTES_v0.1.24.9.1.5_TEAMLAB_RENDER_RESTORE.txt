@@ -1,0 +1,34 @@
+EMERALD v0.1.24.9.1.5 — TEAM LAB RENDER RESTORE
+Date: 2026-09-12
+
+ROOT CAUSE FOUND
+----------------
+The v0.1.24.9 Coverage Lens merge accidentally removed five Team Lab UI helper
+functions while the Threat Lab renderer still called them:
+
+- abilityFor
+- moveOptions
+- chooseThreat
+- damageText
+- evTiles
+
+Because threatLab() is evaluated while the large Team Lab HTML template is being
+constructed, the first missing helper throws a ReferenceError BEFORE section.innerHTML
+is assigned. The mode button therefore becomes active and the Team Lab shell becomes
+visible, but the panel itself remains an empty green/teal rounded surface. This exactly
+matches the iPhone screenshots from 2026-09-12.
+
+FIX
+---
+- Restored the five helper functions from the last pre-Coverage Team Lab lineage.
+- Kept teamlab-engine-v0.1.24.9.js untouched so PokéField Coverage Lens remains current.
+- Kept true-pokefield-v0.1.24.9.1.2.js untouched so Focus Chain + keyboard guard remain current.
+- Kept the v0.1.24.9.1.4 race-proof Team Lab nav/state work.
+- Added a render guard: future Team Lab render exceptions paint an explicit recovery
+  message instead of silently leaving an empty panel.
+- Updated the visible recent-build label to v0.1.24.9.1.5.
+
+NO ROLLBACK
+-----------
+Coverage Lens, tier focus handoff, Focus Chain, Field search keyboard guard, ADV STAB
+axis, CALL/FOCUS/SCATTER, DEX and Trainer Card remain on the latest merged lineage.

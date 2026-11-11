@@ -1,0 +1,61 @@
+EMERALD v0.1.21.1 — TEAMLAB ADV ROLES + EV COACH HANDSHAKE
+Date: 2026-09-09
+Scope: additive read-only competitive intelligence. No emulator/save writes.
+
+1. TEAMLAB → LIVE EV COACH UX HANDSHAKE
+- Threat Lab's exact merged EV target now has SEND TO LIVE EV COACH.
+- Clean-spread target has SEND CLEAN TARGET.
+- Both dispatch jrpg:emerald-set-ev-plan with the selected specimen's PID + OT ID and six-stat target.
+- Live EV Coach already stores plans by PID + OT ID, so the target follows the exact specimen when it moves between party and PC boxes.
+- Illegal >510 targets cannot be sent.
+- Button gives immediate SENT TO LIVE EV COACH confirmation.
+
+2. ADV ROLE GRAMMAR
+TeamLab now surfaces role identity explicitly instead of only generic pressure/bulk tags.
+Core roles include:
+- Physical Sweeper
+- Special Sweeper
+- Physical Breaker
+- Special Breaker
+- Physical Wall
+- Special Wall
+- Opener
+- Phaser
+- Spiker
+- Rapid Spinner
+- Baton Passer
+Supporting/theme roles include Rain/Sun setter or sweeper, Status/Disruptor, Trapper and longevity.
+
+Role derivation uses Gen III base stats, abilities, legal movepool, derived archetypes and supplied audited Smogon route text where available. A merely legal move does not automatically create a primary role: e.g. legal Roar alone does not turn Sceptile into a phaser.
+
+3. HIDDEN POWER AS ADV COVERAGE
+- Exact owned specimens carry their IV-derived Hidden Power type + base power into projected final-form records.
+- TeamLab labels exact Hidden Power Coverage with Gen III physical/special category.
+- Theoretical species without an exact specimen receive Hidden Power Flex only; no type is invented.
+- Exact Hidden Power participates in pair-fit offensive complement and the ADV OU/UUBL structural threat screen.
+- Example mechanically tested: exact HP Ice Sceptile can surface Hidden Power Ice as revenge pressure into Salamence.
+- Pinned/owned optimizer records now preserve exact specimen facts instead of being collapsed back to a generic species record.
+
+4. TEAM FABRIC + SIX-STACK
+- Team Fabric role row now speaks in ADV roles.
+- Gaps ask for missing physical/special sweep or break pressure, opener, physical wall, special wall, Spikes and Rapid Spin.
+- Spikes + Phaser becomes an explicit coherent line.
+- Exact Hidden Power types present in the current stack are listed as a coherent coverage line.
+- Six-stack results now show their role fabric directly underneath the six Pokémon.
+- Balance scoring rewards coverage across physical/special pressure, walls and an opener without treating those as hard mandatory slots.
+
+5. PRESERVED v0.1.21
+- 14 × 30 PC box bridge
+- Reactive My Field
+- Dual Rank / Cross comparison
+- Threat Lab
+- exact supported RSE speed/damage/survival benchmarks
+- EV optimizer
+- Rain/Sun/Baton Pass/SubSeed/Spikes theme-constrained six-stack optimizer
+- evolution/STAB/acquisition/partner/development layers
+
+SOURCE BOUNDARY
+- Emerald acquisition/species data: supplied pret/pokeemerald extraction.
+- Gen III mechanical/tier layer: supplied Pokémon Showdown lineage.
+- Historical tactical labels: supplied audited Smogon ADV200 atlas where available.
+- Role, partner, threat and six-stack scoring: derived TeamLab heuristics, visibly separated from exact mechanics.

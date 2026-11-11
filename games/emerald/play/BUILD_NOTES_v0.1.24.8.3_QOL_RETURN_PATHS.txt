@@ -1,0 +1,9 @@
+EMERALD v0.1.24.8.3 — QOL RETURN PATHS
+
+- MY PARTY opens by default in expanded LIVE.
+- COMPACT remembers the originating expanded surface. EXPAND returns to FIELD, TEAM LAB, TRAINER CARD, DEX, or LIVE as appropriate.
+- Saved Finds now have a real DELETE action; deleting a find also removes it from Trainer Card slots if necessary.
+- TRANSFER FILES is again discoverable directly on an owned live specimen. It opens the truthful local PK3/PK4/PK5 export sheet only.
+- Save Vault marks byte-identical duplicate slots and offers a safe FIX DUPLICATE path by replacing the duplicate with an earlier server snapshot or importing a different .sav.
+- No fake Save Vault DELETE button was added: the current remote Vault API exposes no destructive slot-delete action in the supplied client contract.
+- True PokéField CALL / FOCUS / SCATTER is unchanged.

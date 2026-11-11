@@ -1,0 +1,280 @@
+=== PDF PAGE 1 ===
+RBT-Law v1.0
+
+Thermodynamic Constraint on Smartphone Interfaces
+
+Raynor Eissens (2026)
+
+Versioned Release — DOI to be assigned by Zenodo
+
+URL: /ambient-phone/rbt-law/
+
+⸻
+
+Abstract
+
+The RBT-Law (Raynor Bottleneck Threshold) formalizes a structural, thermodynamic constraint
+
+on legacy smartphone interfaces. It states that any interface requiring continuous, focal, high-
+
+pressure attention forms a thermodynamic attention bottleneck incompatible with reversible, AI-
+
+first ambient systems. This law establishes the successor boundary between extractive
+
+interaction-based architectures and ambient, coherence-carrying environments.
+
+⸻
+
+1.
+Canonical Definition
+
+RBT-Law
+
+The smartphone is a thermodynamic attention bottleneck.
+
+Any interface that compresses human attention into a high-pressure focal
+
+point cannot support reversible, AI-first ambient systems.
+
+The bottleneck arises when:
+
+•
+attention becomes locally compressed,
+
+•
+pressure exceeds reversible thresholds,
+
+•
+ΔR (reversible stress) collapses,
+
+•
+and the system can no longer maintain continuity or coherence.
+
+This establishes the structural necessity for ambient successor interfaces.
+
+⸻
+
+2.
+Structural Chain (Successor Sequence)
+
+SMARTPHONE = PRESSURE INTERFACE
+
+↓
+
+=== PDF PAGE 2 ===
+THERMODYNAMIC ATTENTION BOTTLENECK (RBT-Law)
+
+↓
+
+AI-FIRST AMBIENT SYSTEMS (require reversibility)
+
+↓
+
+SUCCESSOR INTERFACE — AMBIENT PHONE
+
+This chain is not metaphoric; it is a forced thermodynamic progression.
+
+⸻
+
+3.
+Theorem (Formal Statement)
+
+Theorem 1 (Raynor Bottleneck Threshold).
+
+Let A(t) denote human attention over time, and let P be the interface-induced
+
+pressure function on attention.
+
+A smartphone-class interface satisfies:
+
+•
+P >> ΔR,
+
+•
+A(t) requires continuous focal compression,
+
+•
+transitions are non-reversible,
+
+•
+context resets destroy continuity.
+
+Then:
+
+No reversible AI-first system can operate stably on this substrate.
+
+Formally:
+
+If
+
+P > ΔR,
+
+then Ψ(t) collapses.
+
+If
+
+Ψ(t) collapses,
+
+then C∞ cannot emerge.
+
+If
+
+C∞ cannot emerge,
+
+then ambient viability is impossible.
+
+=== PDF PAGE 3 ===
+Therefore:
+
+smartphone ∉ AP₀-compatible substrates.
+
+This is the Raynor Bottleneck Threshold.
+
+⸻
+
+4.
+Engineering Specification (RBT-Law v1.0)
+
+A system violates the RBT-Law if:
+
+1.
+It requires focal visual attention as the primary mode of operation.
+
+2.
+It compresses attention into a single high-pressure point (screen or
+
+gesture hub).
+
+3.
+It breaks continuity between interactions (app boundaries, context
+
+resets).
+
+4.
+It produces irreversible stress (ΔR < 0).
+
+5.
+It cannot distribute coherence into the environment (no ambience).
+
+6.
+It forces bipolar transitions (on/off, open/close, attend/ignore).
+
+A system satisfies ambient viability if:
+
+•
+ΔR ≥ 0 (all stress reversible),
+
+•
+Ψ(t) continuity is maintained,
+
+•
+coherence becomes environmental,
+
+•
+AI guidance is non-inferential,
+
+•
+attention heat does not accumulate,
+
+•
+pressure is externally absorbed,
+
+•
+semantic curvature remains low.
+
+Thus:
+
+If a system depends on high-pressure focal interfaces, it cannot be an ambient
+
+system.
+
+⸻
+
+5.
+Diagram Description (Canonical Structural Representation)
+
+Use the exact structural chain:
+
+SMARTPHONE (pressure)
+
+=== PDF PAGE 4 ===
+↓
+
+RBT-LAW (thermodynamic bottleneck)
+
+↓
+
+AI-FIRST AMBIENT SYSTEMS (reversible)
+
+↓
+
+AMBIENT PHONE (successor interface)
+
+This is the canonical visual representation.
+
+⸻
+
+6.
+Context in the Ambient Canon
+
+RBT-Law defines the boundary between:
+
+•
+legacy pressure interfaces, and
+
+•
+ambient, coherence-carrying environments.
+
+It is the structural justification for:
+
+•
+the end of smartphone thermodynamics,
+
+•
+the necessity of ambient successor architectures,
+
+•
+the viability of AI-first systems only under reversible load.
+
+RBT-Law is the middle-law linking:
+
+•
+Raynor Stack,
+
+•
+ΔR,
+
+•
+Ψ(t),
+
+•
+AP₀ viability,
+
+•
+and Ambient Architecture.
+
+⸻
+
+7.
+Citation
+
+Eissens, R. (2026).
+
+RBT-Law v1.0 — Thermodynamic Constraint on Smartphone Interfaces.
+
+Zenodo.
+
+/ambient-phone/rbt-law/
+
+Related work:
+
+Eissens, R. (2026).
+
+=== PDF PAGE 5 ===
+The Raynor Stack — Canonical Thermodynamic Sequence for Humane
+
+Technology.
+
+Zenodo.
+
+https://doi.org/10.5281/zenodo.18323467

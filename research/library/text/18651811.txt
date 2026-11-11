@@ -1,0 +1,346 @@
+=== PDF PAGE 1 ===
+AAC-1.1 — Attractor-Entity Governance
+
+Field-Correct Commerce, Residency, and Zero-Residue Interaction
+
+Ambient Era Economic Standard · Canonical Specification (2026)
+
+Raynor Eissens
+
+⸻
+
+Abstract
+
+AAC-1.1 defines the canonical governance grammar for Attractor-Entities (AEs) within Ambient
+
+OS.
+
+Where AP₁ defines structural interaction, AP₁.1 defines semantic truth, AP₁-Y defines navigation,
+
+and AP₁.2 defines color semantics, AAC-1.1 specifies how commercial, civic, and institutional
+
+entities may exist as ambient presences without violating human reversibility (ΔR), field
+
+coherence, or semantic integrity.
+
+This document formalizes FCV-6 registration, residency assignment, fade-only activation, Instant
+
+Acquisition (IA), Instant Exit (IA-X), and zero-residue constraints. It explicitly excludes navigation
+
+(Yellow), agentic persuasion, notification coercion, and extractive interaction patterns.
+
+AAC-1.1 is normative. It defines the conditions under which commerce may appear in Ambient OS
+
+without becoming extractive, coercive, or thermodynamically unstable.
+
+⸻
+
+1. Scope and Relationship
+
+AAC-1.1 specifies:
+
+• Attractor-Entity (AE) definition
+
+• FCV-6 registration and validation
+
+• Field-correct residency assignment
+
+• Fade-only activation (FPB-1)
+
+• IA / IA-X reversible interaction
+
+• Zero-residue enforcement
+
+• Prohibited behaviors and violations
+
+AAC-1.1 depends on:
+
+=== PDF PAGE 2 ===
+• AP₁ — Structural Field Topology
+
+• AP₁.1 — Semantic Grammar and ΔR
+
+• AP₁.2 — Color Semantics and Expression
+
+AAC-1.1 does not define UI design, pricing models, payment systems, or legal enforcement
+
+infrastructure.
+
+⸻
+
+2. Definition: Attractor-Entity (AE)
+
+An Attractor-Entity is a location-bound semantic presence that may appear within Ambient OS
+
+as a stable field of interaction.
+
+An AE is not:
+
+• an application
+
+• an advertisement
+
+• a notification
+
+• a task
+
+• a navigational target
+
+An AE is:
+
+• a presence
+
+• a place
+
+• a contextual field
+
+• thermodynamically bounded
+
+Commerce in Ambient OS is presence-based, not attention-based.
+
+⸻
+
+3. Attractor Fields and Exclusions
+
+Only the following six fields may host Attractor-Entities:
+
+• Red — Presence / Home
+
+• Orange — Leisure / Light Commerce
+
+• Green — Health / Regulation
+
+• Blue — Information / Organization
+
+• Purple — Infrastructure / Transit
+
+=== PDF PAGE 3 ===
+• Pink — Relation (overlay only, non-residential)
+
+Yellow is explicitly excluded.
+
+Yellow is a navigation and action state, not a field.
+
+No Attractor-Entity may register, appear, or persist in Yellow.
+
+⸻
+
+4. FCV-6 Registration
+
+Every Attractor-Entity must declare an FCV-6 profile:
+
+FCV-6 = {
+
+Red%,
+
+Orange%,
+
+Pink%,
+
+Green%,
+
+Blue%,
+
+Purple%
+
+}
+
+Constraints:
+
+• Percentages must sum to 100%
+
+• The dominant field determines residency
+
+• Pink may never be a dominant field
+
+• Yellow may never appear in FCV
+
+• Cross-field impersonation is forbidden
+
+FCV describes semantic function, not branding or intent.
+
+⸻
+
+5. Residency Assignment
+
+Residency is determined solely by dominant FCV-6 field.
+
+Residency rules:
+
+• One residency field only
+
+=== PDF PAGE 4 ===
+• No multi-residency
+
+• No dynamic reassignment
+
+• No context switching across fields
+
+Tint, warmth, and saturation may vary within the residency field but may not obscure or replace
+
+it.
+
+⸻
+
+6. Fade-Only Activation (FPB-1)
+
+All Attractor-Entity interactions activate exclusively through fade.
+
+Fade characteristics:
+
+• Non-directional
+
+• Non-coercive
+
+• Presence-based
+
+• Reversible
+
+Bleed is strictly prohibited for commerce.
+
+Bleed is reserved exclusively for Yellow navigation state.
+
+Any commercial use of bleed constitutes a semantic boundary violation.
+
+⸻
+
+7. IA and IA-X (Reversible Commerce)
+
+AAC-1.1 defines a strict interaction loop:
+
+IA — Instant Acquisition
+
+• Enter residency field via fade
+
+• Minimal interface
+
+• No persuasion
+
+• No retention logic
+
+IA-X — Instant Exit
+
+• Immediate dissolve
+
+• No reminders
+
+=== PDF PAGE 5 ===
+• No follow-ups
+
+• Return to Red or ChronoSense
+
+The IA → IA-X loop must leave zero residue.
+
+⸻
+
+8. Zero-Residue Constraint
+
+After exit, an Attractor-Entity must leave:
+
+• no pressure
+
+• no memory hooks
+
+• no delayed prompts
+
+• no algorithmic continuation
+
+• no emotional debt
+
+Any detectable residue constitutes a violation.
+
+Repeated violations trigger AE suspension under ARS-1.
+
+⸻
+
+9. Prohibited Behaviors
+
+The following are forbidden for all Attractor-Entities:
+
+• Yellow usage
+
+• Directional guidance
+
+• Notification prompts
+
+• Attention capture mechanics
+
+• Infinite scroll
+
+• Algorithmic persuasion
+
+• Cross-field masquerading
+
+• Identity-first interruption
+
+Commerce must never behave as navigation, urgency, or command.
+
+⸻
+
+10. Canonical Attractor-Entity Examples
+
+=== PDF PAGE 6 ===
+Examples of valid residency:
+
+• Supermarket → Blue
+
+• Café → Orange with Pink overlay
+
+• Gym / Clinic → Green
+
+• Library → Blue
+
+• Transit Station → Purple
+
+Examples of invalid entities:
+
+• Ad feed → Reject
+
+• Gamified retention loop → Reject
+
+• Directional store guidance → Reject
+
+⸻
+
+11. Relationship to Navigation
+
+Attractor-Entities never guide movement.
+
+Navigation belongs exclusively to Yellow and is user-initiated.
+
+An AE may be present but may never pull.
+
+Fade defines presence.
+
+Bleed defines motion.
+
+⸻
+
+12. Status
+
+AAC-1.1 is normative.
+
+Any Ambient OS implementation claiming economic compatibility must:
+
+• Enforce FCV-6
+
+• Exclude Yellow from commerce
+
+• Require fade-only activation
+
+• Guarantee zero residue
+
+• Preserve ΔR integrity
+
+=== PDF PAGE 7 ===
+⸻
+
+Canonical Statement
+
+Commerce is presence.
+
+Presence must be field-correct.
+
+Fade replaces force.
+
+Zero residue is law.

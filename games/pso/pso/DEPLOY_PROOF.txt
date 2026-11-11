@@ -1,0 +1,5 @@
+PSO MADEBY.RE DEPLOY PROOF
+BUILD=wolken-root-route-20260917-v1
+Document root must contain index.html AND folder pso/
+/pso/ must contain index.html, app.js, styles.css and api/pso.php
+The /pso/ URL is a real compatibility page for Ragol Link v0.1.4, not a redirect.

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0c1028" />
+  <title>KLOOJO</title>
+  <style>
+    :root{
+      --bg:#0c1028;
+      --cyan:#31eaff;
+      --pink:#ff42ba;
+      --yellow:#ffe33b;
+      --blue:#356bff;
+      --white:#ffffff;
+      --shadow-pink:#ff3fb4;
+    }
+
+    *{box-sizing:border-box}
+
+    html,body{
+      width:100%;
+      height:100%;
+      margin:0;
+      overflow:hidden;
+      background:var(--bg);
+    }
+
+    body{
+      display:grid;
+      place-items:center;
+      color:var(--white);
+      font-family:system-ui,sans-serif;
+    }
+
+    .kloojo-brand{
+      display:grid;
+      justify-items:center;
+      gap:30px;
+      transform:translateY(-2vh);
+      user-select:none;
+      -webkit-user-select:none;
+    }
+
+    .kloojo-mark{
+      height:46px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-end;
+      gap:12px;
+    }
+
+    .kloojo-mark i{
+      display:block;
+      width:20px;
+      height:46px;
+      background:var(--yellow);
+      transform:skew(-20deg);
+      animation:kloojo-mark 0.55s infinite alternate ease-in-out;
+      box-shadow:0 0 18px rgba(255,227,59,.18);
+    }
+
+    .kloojo-mark i:nth-child(2){
+      background:var(--cyan);
+      animation-delay:.12s;
+      box-shadow:0 0 18px rgba(49,234,255,.18);
+    }
+
+    .kloojo-mark i:nth-child(3){
+      background:var(--pink);
+      animation-delay:.24s;
+      box-shadow:0 0 18px rgba(255,66,186,.18);
+    }
+
+    .kloojo-logo{
+      margin:0;
+      color:var(--white);
+      font:1000 clamp(72px,18vw,176px)/.72 Impact,"Arial Black",sans-serif;
+      letter-spacing:-.035em;
+      text-shadow:
+        0 8px 0 var(--shadow-pink),
+        10px 14px 0 var(--blue);
+    }
+
+    @keyframes kloojo-mark{
+      from{transform:skew(-20deg) translateY(0) rotate(0deg)}
+      to{transform:skew(-20deg) translateY(-14px) rotate(9deg)}
+    }
+
+    @media (max-width:600px){
+      .kloojo-brand{gap:24px;transform:translateY(-1vh)}
+      .kloojo-mark{height:36px;gap:9px}
+      .kloojo-mark i{width:16px;height:36px}
+      .kloojo-logo{
+        font-size:clamp(72px,20vw,118px);
+        text-shadow:
+          0 6px 0 var(--shadow-pink),
+          8px 11px 0 var(--blue);
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .kloojo-mark i{animation:none}
+    }
+  </style>
+</head>
+<body>
+  <main class="kloojo-brand" aria-label="KLOOJO">
+    <div class="kloojo-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+    <h1 class="kloojo-logo">KLOOJO</h1>
+  </main>
+</body>
+</html>

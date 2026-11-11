@@ -1,0 +1,25 @@
+EMERALD v0.1.24.9.1.4 — TEAM LAB RACE-PROOF RESTORE
+
+Goal
+Restore Team Lab / Strategy Pokédex without rolling back the v0.1.24.9 Coverage Lens, v0.1.24.9.1 Focus Chain, or v0.1.24.9.1.2 keyboard guard.
+
+Root cause hardened
+Team Lab could attach after LIVE navigation existed but before FIELD had mounted. The old code created TEAM LAB and attempted to insert it only after FIELD. In that timing window the button had no parent, while attach() still returned success and stopped retrying. The newer PokéField surface made that race much easier to hit.
+
+Fix
+- TEAM LAB nav mounting is idempotent and race-proof.
+- If FIELD is late, TEAM LAB gets a safe nav fallback and is moved immediately after FIELD when FIELD appears.
+- A nav MutationObserver keeps this ordering intact.
+- State restore now checks current canonical state, JRPGWorldEmeraldLastPopulatedState, then session cache.
+- v0.1.24.9.1.3 cache remains compatible.
+- Opening Team Lab requests canonical state, then resyncs/rerenders again on the next task.
+- focus/pageshow resync Team Lab and its nav mount.
+- Unsupported non-Emerald ROM state still clears fallback state.
+
+Preserved unchanged
+- true-pokefield-v0.1.24.9.1.2.js
+- teamlab-engine-v0.1.24.9.js
+- strategy-pokedex-v0.1.24.9.js
+- coverage-lens-v0.1.24.9.css
+- CALL / PRESENT / FOCUS / SCATTER
+- Focus Stack, Coverage -> FOCUS, TIER -> FOCUS, ADV STAB Axis

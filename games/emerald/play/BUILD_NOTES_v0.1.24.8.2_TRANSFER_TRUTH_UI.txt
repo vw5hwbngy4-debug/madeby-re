@@ -1,0 +1,17 @@
+EMERALD v0.1.24.8.2 — TRANSFER TRUTH UI
+
+FIXES
+- HOME context action renamed TRANSFER. It no longer looks like a back/home-navigation button.
+- Transfer UI is a dedicated full-screen sheet on mobile; the PokéField/Trainer Card cannot remain visibly layered underneath it.
+- Active UI no longer claims SEND TO SWITCH or Pokémon HOME transfer.
+- Removed future PK6/HOME route cards and pending promises from the active transfer surface.
+- The only transfer actions shown are functions implemented in this build: exact PK3 source export and audited local PK4+PK5 compilation/download.
+- Explicit truth boundary: nothing is sent to Switch, HOME, Bank, 3DS or a server.
+- Defensive cleanup removes stale experimental SEND TO SWITCH controls if an older cached bridge script injected them.
+
+PRESERVED
+- TRUE POKÉFIELD MERGE
+- CALL / FOCUS / SCATTER
+- Compact returns to one-line LIVE
+- Save Vault durable Safari picker and save switching
+- Team Lab / Trainer Card / DEX

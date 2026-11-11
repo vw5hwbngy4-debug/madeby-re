@@ -1,0 +1,104 @@
+MY POKEFIELD P0 v0.1.17 — QA REPORT
+Date: 2026-09-08
+Status: IMPLEMENTED / FIXTURE-VERIFIED; REAL-GAME ACCEPTANCE PENDING.
+This is a review build, not an assertion that all 18 acceptance tests passed.
+
+SOURCE
+Canonical base: supplied extracted directory
+EMERALD_v0.1.16_FULL_SITE_DESKTOP_LIVE_PANEL_CLEANUP(1).
+Donor: supplied pokemon/pokemon/src/ultimate/ultimate-field.js and .css.
+The original ZIP files themselves were not present in the workspace. Archive-level
+provenance could not be verified. No older Emerald base was substituted.
+Donor concepts adapted: hex cells, aqua field, responding/subdued scope, recursive
+CALL, FOCUS, ordered RANK, SCATTER. No donor runtime or population was copied.
+
+ADDED BUILD FILES
+owned-pokefield-v0.1.17.js — isolated adapter, state transitions, UI.
+owned-pokefield-v0.1.17.css — scoped field styling and mode visibility.
+owned-pokefield-fixtures-v0.1.17.js — lazy debug-only fixture module.
+tests/owned-pokefield-test-v0.1.17.cjs — deterministic acceptance assertions.
+QA_MY_POKEFIELD_P0_v0.1.17.txt — this report.
+BUILD_NOTES_v0.1.17.txt — integration notes.
+
+EXISTING FILES MODIFIED (complete list, confirmed by SHA-256 comparison)
+index.html — load two additive feature assets; bust cache for live selection hook.
+VERSION.txt — visible release/cache version 0.1.17.
+pokefield-live-v0.1.9.js — update visible release label/trail; add small validated
+party-selection listener calling existing render/card; publish cleared state on
+absent/unsupported ROM; include current party values in render-change detection.
+Decoder, encryption, enrichment and canonical passport markup were not rewritten.
+All other original files are byte-identical. No original file is missing.
+
+ACCEPTANCE RESULTS
+1 PARTY POPULATION — PARTIAL: adapter and browser fixture pass; null slots skipped,
+  population capped at six. Actual running Emerald party not available to test.
+2 DUPLICATE SPECIES — PASS (deterministic fixture): two Ralts have different PID/OT
+  identities, independent cells and IV values.
+3 LIVE UPDATE — PARTIAL: browser event injection changes level 18 to 25 and slot
+  1 to 0 without reload, preserving identity 77:88 despite changed checksum.
+  Actual game-driven event not tested.
+4 SINGLE SELECTION — PARTIAL: browser click emits exact partySlot and specimenId,
+  returns to LIVE. Listener validates identity and invokes existing renderer,
+  expands canonical DETAILS (including owned drawer during a wild encounter).
+  Real emulator-to-passport end-to-end result remains unverified without ROM/save.
+  Debug fixtures intentionally do not open a fabricated passport.
+5 IV CALL — PASS: unit assertions and browser SP. ATK IV >= 25.
+6 RECURSIVE CALL — PASS: browser Ralts then SP. ATK IV >= 25 yields one answer,
+  five subdued cells; unit tests also cover species then nature.
+7 FOCUS — PASS: browser responders become one-cell field; unit tests preserve
+  focus identity through party relocation and handle empty response focus.
+8 RANK TOTAL IV — PASS: browser order 186,108,106,104,102,21; unit assertions.
+9 RANK INDIVIDUAL IV — PASS: SPEED IV ordering asserted against fixture values.
+10 POKERUS — PASS: active, cured and none each independently matched in tests.
+11 RIBBONS — PASS: positive count predicate and count-based ordering asserted.
+12 SCATTER — PASS: browser and unit tests restore complete current party scope.
+13 SAVE REGRESSION — NOT RUN end-to-end. Local Save Vault reports UNAVAILABLE;
+  backend absent on static preview; no ROM/save supplied. Existing native-path
+  test passes; every Save Vault and emulator asset is byte-identical to base.
+14 RESTORE REGRESSION — NOT RUN: same ROM/save/backend limitations. Restore,
+  RTC handling and routing sources unchanged; not a substitute for runtime QA.
+15 DESKTOP REGRESSION — PARTIAL: browser Compact/Expand class transitions,
+  Trainer Card flip and LIVE return pass at 1440x1000. Existing header button
+  also exits MY FIELD correctly. Keyboard module is byte-identical; live game
+  input and loaded-game panel geometry remain unverified.
+16 MOBILE REGRESSION — PARTIAL: 390x844 browser visual check; document width 390,
+  field width 358, no horizontal overflow. Six-cell ranking, zero and one fit.
+  Loaded game controls, authenticated Save Vault and actual save flows not tested.
+17 ZERO PARTY — PASS: invalid/null input unit tests and friendly browser empty state.
+18 ONE SPECIMEN — PASS: adapter/ordering tests and browser one-cell geometry,
+  field area height 144px. Real passport selection limitation is covered by #4.
+
+ADDITIONAL CHECKS
+Existing decoder suite PASS: all 24 substructure permutations, checksum, IV/EV,
+held items, friendship, PP Ups, contest, Pokerus, origin, ribbons, shiny, status.
+Existing native save path test PASS (v0.1.11 test retained by base).
+New JS and modified live JS syntax checks PASS.
+Public page contains no fixture picker/debug state. Fixture import only occurs
+after choosing a fixture under ?debug=1. Fixture module also checks debug itself.
+Browser reported no uncaught JS errors during completed feature checks.
+Read-only adapter tests confirm source party is unchanged.
+No network requests, timers, emulator references or writes in field queries.
+
+LOCAL QA METHOD
+Static preview with original assets and COOP/COEP headers. Because no backend was
+available, the existing unavailable Save Vault gate was hidden in the disposable
+browser DOM for UI testing only. No saved or shipped file bypasses authentication.
+Browser public-state injection was synthetic and did not write emulator RAM/save.
+
+SAVE CODE MODIFIED: NO.
+mGBA ROUTING CODE MODIFIED: NO.
+SERVER ENDPOINTS / LOGIN / DATABASE MODIFIED: NO.
+PC BOXES IMPLEMENTED: NO. PARTY ONLY.
+
+REPRODUCE (from extracted build directory, Node installed)
+node tests/owned-pokefield-test-v0.1.17.cjs
+node -e "global.location={search:''};require('./tests/decoder-test-v0.1.9.js')"
+node tests/save-vault-v0.1.11-path-test.js
+For browser fixtures: open ?debug=1, MY FIELD, DEBUG FIXTURES, SIX SPECIMENS.
+Use LIVE DATA to return to actual published state.
+
+RELEASE GATE
+Before claiming full P0 acceptance, run tests 1/3/4 with a real Emerald party,
+13/14 against the supported authenticated server flow (standard and RTC saves),
+and loaded-game desktop/mobile regressions in 15/16. No claim of passing those
+runtime checks is made by this report.

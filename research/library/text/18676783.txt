@@ -1,0 +1,397 @@
+=== PDF PAGE 1 ===
+ΔC — Field Economics
+
+Value, Cost, and Viability in Ambient Navigation Systems
+
+(AN-0 Canonical Update)
+
+Ambient Era Canon · Canonical Specification (2026)
+
+Status: Normative
+
+Author: Raynor Eissens
+
+⸻
+
+Abstract
+
+ΔC defines the economic and viability mechanics of Ambient OS.
+
+Legacy systems define value through extraction: attention, prediction, persuasion, and lock-in.
+
+Ambient systems define value through coherence preservation.
+
+ΔC formalises how cost, value, and trust operate in field-based environments where navigation,
+
+behaviour, and commerce emerge thermodynamically rather than transactionally.
+
+This document introduces Field Cost, Fieldcast Cost, and Ambient Viability as first-class
+
+economic variables.
+
+ΔC is normative.
+
+⸻
+
+1. Scope
+
+ΔC defines:
+
+•
+how value emerges in field-based systems
+
+•
+how cost is incurred without transactions
+
+•
+how fieldcast introduces economic pressure
+
+•
+how navigation interacts with economic viability
+
+•
+the conditions under which environments remain habitable
+
+ΔC applies to all Ambient-compatible systems, including navigation, retail,
+
+institutions, infrastructure, and digital environments.
+
+=== PDF PAGE 2 ===
+⸻
+
+2. Why Legacy Economics Fail in Ambient Systems
+
+Legacy economic systems assume:
+
+1.
+scarcity of information
+
+2.
+persuasion as value generation
+
+3.
+prediction as optimisation
+
+4.
+choice overload as neutral
+
+These assumptions produce:
+
+•
+attentional extraction
+
+•
+irreversible stress (ΔR < 0)
+
+•
+trust collapse
+
+•
+behavioural fatigue
+
+•
+economic brittleness
+
+Ambient systems cannot survive under these mechanics.
+
+⸻
+
+3. Core Principle
+
+Value in the Ambient Era is not produced.
+
+Value is preserved.
+
+A system is valuable when it does not force the human to supply coherence.
+
+⸻
+
+4. Definition of ΔC (Field Cost)
+
+ΔC is defined as:
+
+the thermodynamic cost imposed on a human or environment by a field’s
+
+presence, behaviour, or signalling.
+
+ΔC is not monetary.
+
+ΔC is not transactional.
+
+ΔC is not symbolic.
+
+=== PDF PAGE 3 ===
+ΔC is experienced cost.
+
+⸻
+
+5. Field Cost vs Fieldcast Cost
+
+5.1 Field Cost
+
+Field Cost arises from:
+
+•
+stabilisation effort
+
+•
+semantic load
+
+•
+environmental pressure
+
+•
+attentional drag
+
+A field with low ΔC:
+
+•
+stabilises quickly
+
+•
+does not demand interpretation
+
+•
+does not pull attention forward
+
+5.2 Fieldcast Cost
+
+Fieldcast Cost arises when a field:
+
+•
+broadcasts intent ahead of human arrival
+
+•
+advertises itself into unrelated fields
+
+•
+persists beyond its attractor boundary
+
+Fieldcast Cost is the primary cause of extractive environments.
+
+⸻
+
+6. Navigation and ΔC
+
+Navigation interacts with ΔC as follows:
+
+•
+High ΔC environments increase drift
+
+•
+Low ΔC environments terminate navigation
+
+•
+Fieldcast Cost prolongs Yellow unnecessarily
+
+•
+Fade reduces ΔC
+
+•
+Bleed increases ΔC only when reversible
+
+Navigation is an economic signal.
+
+=== PDF PAGE 4 ===
+⸻
+
+7. Apps Under ΔC
+
+Apps are tools, not economic actors.
+
+Rules:
+
+•
+Apps may not fieldcast
+
+•
+Apps may not advertise
+
+•
+Apps may not persist outside stabilised fields
+
+•
+Apps inherit the ΔC of the active field
+
+Outside attractors:
+
+•
+Apps are accessible only via Orange (volitional use)
+
+•
+Apps carry no contextual priority
+
+•
+Color coding remains visible but non-directive
+
+Inside attractors:
+
+•
+Apps dissolve into field behaviour
+
+•
+Options appear as affordances, not containers
+
+⸻
+
+8. Commerce as Ambient Phenomenon
+
+In Ambient systems:
+
+•
+persuasion is forbidden
+
+•
+pricing must be legible
+
+•
+exit must be instant
+
+•
+memory must not be implanted
+
+A shop is no longer a marketplace.
+
+A shop is an attractor.
+
+Commerce succeeds when ΔC remains low.
+
+Clarification: Applications under AN-0
+
+AN-0 does not eliminate applications as tools.
+
+It eliminates applications as navigational or contextual primitives.
+
+=== PDF PAGE 5 ===
+Applications may exist as field-bound instruments, accessible only after stabilisation
+
+or explicit volitional entry (AP₁).
+
+Applications never define destinations, never initiate movement, and never override
+
+field dynamics.
+
+Navigation remains field-first. Tools remain secondary.
+
+⸻
+
+9. Ambient Viability
+
+A system is viable when:
+
+•
+ΔR ≥ 0
+
+•
+ΔR⁺ ≥ depletion rate
+
+•
+ΔC remains bounded
+
+•
+Λ₋ = false
+
+•
+W₀ drift is stable
+
+•
+TRUST continuity holds
+
+•
+NIAI is preserved
+
+•
+Ψ(t) remains above leakage threshold
+
+Habitability is a thermodynamic condition.
+
+⸻
+
+10. Eight-Dimensional Viability Map
+
+Ambient viability spans eight coupled dimensions:
+
+•
+Internal
+
+•
+External
+
+•
+Temporal
+
+•
+Thermal
+
+•
+Cognitive
+
+•
+Social
+
+•
+Cultural
+
+•
+Planetary
+
+Failure in any dimension raises ΔC and collapses trust.
+
+⸻
+
+=== PDF PAGE 6 ===
+11. Relationship to Canon
+
+ΔC integrates with:
+
+•
+AN-0 — navigation as unresolved stabilisation
+
+•
+FBC-0 — modulation of cost via fade and bleed
+
+•
+NTF-0 — movement as pressure correction
+
+•
+AAC-1 — attractor governance
+
+•
+AP₁ — app behaviour and access
+
+ΔC is the economic grammar of the Ambient Era.
+
+⸻
+
+12. Canonical Statements
+
+•
+Value is coherence preserved
+
+•
+Cost is pressure experienced
+
+•
+Fieldcast is economic extraction
+
+•
+Navigation signals economic imbalance
+
+•
+Commerce must terminate drift
+
+•
+Apps inherit field economics
+
+•
+Habitability precedes growth
+
+⸻
+
+Status
+
+Normative.
+
+ΔC defines the economic and viability substrate of Ambient OS and supersedes all attention-
+
+extractive, predictive, or persuasion-based economic models.

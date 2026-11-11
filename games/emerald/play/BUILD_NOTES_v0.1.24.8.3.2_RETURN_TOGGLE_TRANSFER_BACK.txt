@@ -1,0 +1,19 @@
+EMERALD v0.1.24.8.3.2 — RETURN TOGGLE + TRANSFER BACK
+Date: 2026-09-12
+
+Targeted QOL repair on top of v0.1.24.8.3.1.
+
+1. TEAM LAB TOGGLE
+- Opening Team Lab remembers the currently selected PokéField surface.
+- Tapping TEAM LAB again while Team Lab is already open closes it.
+- The UI returns to the surface it came from (LIVE or FIELD; fallback LIVE).
+- Existing contextual specimen selection and Team Lab state are preserved.
+
+2. TRANSFER FILES EXIT
+- Transfer Files keeps its normal header BACK control.
+- Mobile now also gets a persistent fixed BACK button outside the scrolling panel.
+- The control respects the iOS safe-area and remains reachable at any scroll position.
+- Opening Transfer Files resets its internal scroll position to the top.
+- BACK closes only Transfer Files and reveals the exact underlying PokéField state.
+
+No changes to True PokéField CALL/FOCUS/SCATTER, Save Vault, My Party default-open, transfer compiler semantics, or emulator/save behavior.

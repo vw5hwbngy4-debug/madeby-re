@@ -1,0 +1,98 @@
+JRPG.WORLD · EMERALD HOME BRIDGE · PKHeX SOURCE AUDIT v0.1.24
+Date: 2026-09-09
+Status: TRANSFER COMPILER PASS THROUGH PK5; PK6 TARGET BIND WITHHELD
+
+INPUT ORACLE
+------------
+User-supplied: PKHeX-master.zip
+SHA-256: d93a040fcc4960ee9d41b1ed8aa27643e658396e85d8f88917952291be0e7b5e
+
+MILESTONE
+---------
+v0.1.24 turns the immutable v0.1.23 exact PK3 source capsule into a deterministic sequential transfer path:
+
+  exact Emerald PK3
+      -> Pal Park-style PK4
+      -> Poké Transfer-style PK5
+      -> PK6 pre-bind contract
+
+Native PK4 and PK5 stored entities are emitted encrypted and checksummed.
+A PK6 binary is deliberately NOT emitted until a destination Gen6 save supplies the target trainer / 3DS context required by the supplied PKHeX conversion semantics.
+
+PK3 -> PK4 IMPLEMENTED
+----------------------
+Grounded against PKHeX.Core PK3.ConvertToPK4 and supporting helpers:
+- PID, OID/TID/SID and National species identity
+- held-item Gen3 -> Gen4 mapping/filter
+- experience, friendship, language, form/gender context
+- EVs, contest stats, IV data
+- moves, PP Ups, PP repair
+- ability ID mapping from supplied PKHeX enum
+- Pokérus / game / ball / OT gender
+- Pal Park met location 0x0037 and transfer date/level
+- Gen III ribbon expansion
+- Gen III HM stripping and move compaction
+- native PK4 checksum/encryption
+- exact Pal Park nickname/OT glyph conversion
+- exact language-specific Pal Park string buffer residue / trash-byte reuse
+- exact Gen III default-name comparison for the PK4 IsNicknamed bit
+
+PK4 -> PK5 IMPLEMENTED
+----------------------
+Grounded against PKHeX.Core PK4.ConvertToPK5 and supporting helpers:
+- PID/OID/species preservation
+- held-item transfer behavior
+- explicit Gen V nature storage
+- Poké Transfer met location 30001
+- transfer date/level fields
+- move/PP repair and transfer-HM cleanup
+- actual PK4 nickname/OT buffer decoded and transferred to Gen V
+- exact StringConverter345 TransferGlyphs45 invalid-character replacement behavior
+- native PK5 checksum/encryption
+
+PK5 -> PK6 SAFETY BOUNDARY
+---------------------------
+The compiler emits pk6.prebind.json rather than pretending a complete PK6 exists.
+The pre-bind contract carries deterministic source-derived values including:
+- encryption constant basis
+- PID shiny-protection rule result
+- TID/SID, species, EXP, language, nature, form
+- met data, ball, Pokérus
+- EV normalization to Gen VI per-stat max 252
+- IVs and moves
+
+It explicitly requires destination-save-derived fields such as:
+- handling trainer name/gender
+- 3DS console region / country / subregion context
+- base friendship binding
+- resolved Gen6 ability context
+
+No HOME Tracker, HOME server history, target trainer, or 3DS geography is fabricated.
+
+STRING/TRASH PARITY RESULT
+--------------------------
+See PAL_PARK_STRING_PARITY_v0.1.24.txt
+PASS: 6,876 / 6,876 parity checks relative to the supplied PKHeX snapshot.
+
+IMPORTANT CORRECTIONS MADE IN THE FINAL PARITY PASS
+---------------------------------------------------
+1. Default English Gen III names such as TREECKO are no longer falsely treated as nicknames merely because the UI displays Treecko.
+2. PK4 IV32 bit31 now tracks exact Gen III default-name semantics.
+3. The compiler rejects a decoded-PK3 species / UI specimen dex mismatch before conversion.
+4. Pal Park nickname and OT residual bytes now follow the source-modeled buffer-reuse sequence rather than clean-string regeneration.
+5. PK4 -> PK5 strings are transferred from the actual PK4 string buffers, preserving the transfer pipeline semantics.
+
+LICENSE NOTE
+------------
+PKHeX is distributed under GNU GPL v3. The v0.1.24 transfer compiler contains a translated/modified implementation derived from the supplied PKHeX conversion/string behavior and data tables rather than merely using PKHeX as a black-box oracle.
+The build therefore includes a PKHeX GPL notice and a copy of the GPLv3 license for redistribution. Keep the corresponding modified source available when distributing this module. This note is engineering hygiene, not legal advice.
+
+NEXT MILESTONE
+--------------
+v0.1.25 · GEN6 BRIDGE BINDER
+- accept a user-supplied compatible Gen6 destination save
+- read its actual trainer / handler / 3DS-region context
+- bind the pre-transfer specimen without inventing those fields
+- emit a destination-save patch while preserving unrelated save bytes
+- validate the resulting PK6/save structure
+- only then proceed to real hardware / official-software acceptance testing

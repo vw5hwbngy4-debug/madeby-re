@@ -1,0 +1,90 @@
+EMERALD v0.1.24.9 · COVERAGE LENS
+==================================
+Date: 2026-09-12
+Base: v0.1.24.8.6 APP CALM · SINGLE SURFACE
+
+WHY THIS BUILD
+--------------
+Coverage already existed in fragments before v0.1.24.9:
+- Team Lab had shared-weakness counts and a collapsed defensive type matrix.
+- Team Lab had structural coverage / STAB-reach heuristics.
+- The STAB-axis work understood Gen III physical/special type categories.
+
+But the old coverage path was fragmented and mostly type-only:
+- ability immunities/resistance modifiers were not consistently applied to team weakness summaries;
+- Field could select/rank populations, but could not analyze the current population as a coverage surface;
+- the DEX did not expose per-species weakness/resistance/immunity context;
+- offensive coverage was not clearly separated into typing-only vs exact current moves vs legal movepool.
+
+v0.1.24.9 extends the existing engine instead of creating a separate type-chart page.
+
+POKÉFIELD COVERAGE LENS
+-----------------------
+- Adds one-tap COVERAGE quick access beside TIER.
+- Coverage always analyzes the current Field population:
+  ALL 386, current CALL responders, current FOCUS, or a selected tier population.
+- DEFENSE lens paints the current population by one incoming type:
+  severe weakness / weakness / resistance / immunity / neutral.
+- DEFENSE is ability-aware where the ability is exact or deterministic.
+- OFFENSE lens supports:
+  * TYPING: STAB-type reach only.
+  * CURRENT MOVES when every selected member maps to an exact move-known specimen.
+  * LEGAL MOVEPOOL otherwise, including Hidden Power potential/exact Hidden Power where known.
+- Coverage subsets hand directly into existing FOCUS grammar:
+  WEAK / SAFE / IMMUNE or SUPER EFFECTIVE / NEUTRAL+ -> PRESENT -> FOCUS.
+- CALL / FOCUS / SCATTER / TIER remain intact; Coverage is a lens on the same population, not a new database page.
+- Species detail now includes Weak / Resists / Immune before STAB notes.
+
+ABILITY-AWARE DEFENSE
+---------------------
+Implemented in the shared TeamLab engine:
+- Levitate: Ground immunity
+- Flash Fire: Fire immunity
+- Volt Absorb: Electric immunity
+- Water Absorb: Water immunity
+- Wonder Guard: blocks non-super-effective damaging types in this coverage model
+- Thick Fat: halves Fire/Ice effectiveness again
+
+When a specimen has an exact ability, that exact ability is used.
+When species data exposes exactly one unique deterministic ability, that ability may be used at species level.
+Ambiguous multi-ability species are not silently assigned one ability.
+
+DEX COVERAGE
+------------
+- DEX live snapshot now includes COVERAGE · DEFENSE for the current species.
+- Uses the current species typing, not the projected evolution's typing.
+- Shows weaknesses with multipliers, plus resistances and immunities.
+- Ability-based immunities include the ability name where available.
+
+TEAM LAB COVERAGE
+-----------------
+- Existing TEAM FABRIC is retained and upgraded rather than replaced.
+- Shared pressure / defensive rows are ability-aware.
+- STAB SE REACH label becomes MOVE SE REACH because the engine now includes move coverage.
+- Shows super-effective reach and neutral+ reach.
+- Adds concise LIVE DEFENSIVE PRESSURE for risky types.
+- Existing full matrix remains available as a collapsed, ability-aware party matrix.
+- OPEN COVERAGE IN FIELD hands the party analysis into the Field surface.
+
+TRUTH / SCOPE BOUNDARIES
+------------------------
+- This is not a full battle simulator and does not claim damage proof from coverage alone.
+- TYPING mode describes type/STAB reach, not a specific four-move set.
+- CURRENT MOVES is only used when exact move-known selected specimens are available.
+- LEGAL MOVEPOOL describes possible legal move coverage from supplied Emerald/ADV data.
+- Full 'remove one teammate and show live delta / single-point-of-failure' visualization is not included in this build yet.
+
+CUMULATIVE BASE RETAINED
+------------------------
+Includes all cumulative behavior from the v0.1.24.8.6 line, including:
+- TRUE POKÉFIELD 386 spatial field
+- CALL / FOCUS / SCATTER
+- vertical tier lists + tier focus handoff
+- ADV STAB AXIS
+- APP CALM single-surface navigation
+- Team Lab return toggle
+- Transfer Back + truthful export UI
+- My Party default-open
+- Saved Finds removal
+- Compact return paths
+- durable iOS/Safari Save Vault picker and save-switch work

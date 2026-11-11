@@ -1,0 +1,13 @@
+PASS · VERSION 8.3.2
+PASS · index loads 8.3.2 live
+PASS · index loads 8.3.2 Team Lab
+PASS · index loads 8.3.2 transfer JS
+PASS · index loads 8.3.2 transfer CSS
+PASS · Team Lab remembers return mode
+PASS · Team Lab active tap toggles closed
+PASS · Transfer persistent mobile exit markup
+PASS · Transfer persistent exit wired
+PASS · Transfer resets scroll
+PASS · Transfer safe-area fixed exit
+PASS · My Party default-open preserved
+PASS · True PokéField untouched by this patch

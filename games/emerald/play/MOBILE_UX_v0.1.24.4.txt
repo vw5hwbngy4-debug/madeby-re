@@ -1,0 +1,39 @@
+JRPG.WORLD Emerald v0.1.24.4 — MOBILE UX CONSOLIDATION
+
+WHY THIS PATCH
+The mobile interface had accumulated several valid features that no longer formed one clear navigation system. Live started expanded, the expanded intelligence surface could consume the lower phone viewport, Trainer Card had multiple entry buttons, and the legacy local "My Box" wording collided conceptually with PC Boxes and Save Vault.
+
+CHANGES
+1. MOBILE STARTS COMPACT
+- Every fresh mobile page load (<=959 CSS px) starts the live intelligence surface in COMPACT.
+- EXPAND remains available.
+- Desktop still honors the saved compact/full preference.
+
+2. EXPANDED LIVE IS BOUNDED
+- On mobile, expanded LIVE becomes an internal scroll surface capped at 46dvh / 430px.
+- It can show all details without swallowing the entire game page.
+
+3. SAVE VAULT STAYS REACHABLE
+- On phones, the floating Save Vault launcher is moved to a compact top control beside DEX and given a higher global z-index.
+- Expanded live intelligence can no longer visually bury it.
+
+4. ONE TRAINER CARD ENTRY
+- On mobile, the legacy Trainer Card button in the live header is hidden.
+- The redundant per-Pokemon TRAINER CARD flip button was removed.
+- The LIVE / MY FIELD / TRAINER CARD navigation row is now the canonical entry point.
+
+5. TRAINER CARD REALLY TOGGLES
+- Tap TRAINER CARD to open it.
+- Tap the selected TRAINER CARD tab again to return to LIVE.
+- The card's internal LIVE button also returns to LIVE and now synchronizes the navigation state.
+
+6. SAVED-FIND LANGUAGE
+- Local Trainer Card snapshots are now called SAVED FINDS rather than MY BOX.
+- SAVE TO BOX became SAVE FIND.
+- This avoids confusing a browser-side specimen snapshot with Emerald PC Boxes or the server Save Vault.
+
+NON-GOALS
+- No Save Vault server/database change.
+- No emulator save semantics changed.
+- No My Field / DEX mechanics changed.
+- No removal of expanded mode.

@@ -1,0 +1,813 @@
+[
+  {
+    "heading": "Pioneer 2 city",
+    "occurrences": 114,
+    "lines": [
+      35,
+      106,
+      134,
+      196,
+      222,
+      295,
+      319,
+      402,
+      642,
+      883,
+      1173,
+      1461,
+      1609,
+      1649,
+      1673,
+      1701,
+      1751,
+      1837,
+      1875,
+      1951,
+      1983,
+      2047,
+      2109,
+      2131,
+      2181,
+      2235,
+      2367,
+      2403,
+      2519,
+      2553,
+      2659,
+      2717,
+      2771,
+      2839,
+      2877,
+      2977,
+      3023,
+      3197,
+      3235,
+      3279,
+      3315,
+      3423,
+      3493,
+      3551,
+      3591,
+      3645,
+      3747,
+      3861,
+      3897,
+      3949,
+      4009,
+      4043,
+      4067,
+      4233,
+      4275,
+      4399,
+      5747,
+      5819,
+      5877,
+      6049,
+      6089,
+      6247,
+      8474,
+      8498,
+      8550,
+      8574,
+      8626,
+      8650,
+      8698,
+      8728,
+      8766,
+      8796,
+      8832,
+      8862,
+      8898,
+      8934,
+      8970,
+      9006,
+      9040,
+      9076,
+      9112,
+      9148,
+      9178,
+      9222,
+      9366,
+      9496,
+      9510,
+      9684,
+      9732,
+      9780,
+      9948,
+      9966,
+      10000,
+      10260,
+      11488,
+      11597,
+      11781,
+      11875,
+      11928,
+      12567,
+      12620,
+      12652,
+      12976,
+      14622,
+      14684,
+      14706,
+      14782,
+      14874,
+      14968,
+      15018,
+      15108,
+      15192,
+      15260,
+      15318
+    ]
+  },
+  {
+    "heading": "Quest Board",
+    "occurrences": 24,
+    "lines": [
+      1625,
+      1725,
+      1857,
+      2205,
+      2753,
+      3005,
+      3217,
+      3573,
+      3703,
+      4253,
+      4419,
+      5851,
+      6063,
+      6259,
+      8528,
+      8604,
+      8678,
+      9670,
+      9928,
+      10416,
+      11577,
+      11853,
+      15148,
+      15330
+    ]
+  },
+  {
+    "heading": "The Lab",
+    "occurrences": 21,
+    "lines": [
+      378,
+      624,
+      839,
+      929,
+      997,
+      1129,
+      1205,
+      1285,
+      1335,
+      9260,
+      9308,
+      9392,
+      9438,
+      9956,
+      11699,
+      14840,
+      14914,
+      14998,
+      15092,
+      15168,
+      15298
+    ]
+  },
+  {
+    "heading": "Addendums",
+    "occurrences": 10,
+    "lines": [
+      1629,
+      3727,
+      9634,
+      9858,
+      10302,
+      11572,
+      11829,
+      11950,
+      13040,
+      14976
+    ]
+  },
+  {
+    "heading": "Principal's Room",
+    "occurrences": 9,
+    "lines": [
+      3,
+      116,
+      206,
+      305,
+      9718,
+      9806,
+      9882,
+      14630,
+      14664
+    ]
+  },
+  {
+    "heading": "Forest",
+    "occurrences": 8,
+    "lines": [
+      1667,
+      1677,
+      1767,
+      2021,
+      2069,
+      2151,
+      8490,
+      8998
+    ]
+  },
+  {
+    "heading": "Forest 1",
+    "occurrences": 7,
+    "lines": [
+      1487,
+      1885,
+      2253,
+      2421,
+      3511,
+      3607,
+      8714
+    ]
+  },
+  {
+    "heading": "Forest 2",
+    "occurrences": 7,
+    "lines": [
+      1903,
+      2269,
+      2495,
+      3444,
+      3497,
+      4023,
+      14730
+    ]
+  },
+  {
+    "heading": "Cave 2",
+    "occurrences": 6,
+    "lines": [
+      2817,
+      2903,
+      3113,
+      3271,
+      3365,
+      3523
+    ]
+  },
+  {
+    "heading": "Central Control Area",
+    "occurrences": 5,
+    "lines": [
+      838,
+      907,
+      933,
+      1091,
+      9432,
+      11762
+    ]
+  },
+  {
+    "heading": "Cave 1",
+    "occurrences": 5,
+    "lines": [
+      2797,
+      3079,
+      3265,
+      3331,
+      8782
+    ]
+  },
+  {
+    "heading": "Cal snippets",
+    "occurrences": 4,
+    "lines": [
+      606,
+      820,
+      1117,
+      1367
+    ]
+  },
+  {
+    "heading": "Cave 3",
+    "occurrences": 4,
+    "lines": [
+      2681,
+      2925,
+      9742,
+      14746
+    ]
+  },
+  {
+    "heading": "Cave",
+    "occurrences": 4,
+    "lines": [
+      104,
+      3625,
+      8566,
+      9068,
+      14644
+    ]
+  },
+  {
+    "heading": "Mine",
+    "occurrences": 4,
+    "lines": [
+      3779,
+      8642,
+      9140,
+      11908
+    ]
+  },
+  {
+    "heading": "Ruins 3",
+    "occurrences": 4,
+    "lines": [
+      3943,
+      3953,
+      6189,
+      14770
+    ]
+  },
+  {
+    "heading": "Seaside Area",
+    "occurrences": 3,
+    "lines": [
+      1043,
+      9952,
+      11500
+    ]
+  },
+  {
+    "heading": "Seabed Lower Levels",
+    "occurrences": 3,
+    "lines": [
+      1279,
+      1299,
+      14886
+    ]
+  },
+  {
+    "heading": "Mine 2",
+    "occurrences": 3,
+    "lines": [
+      4119,
+      4327,
+      14758
+    ]
+  },
+  {
+    "heading": "Exceptions",
+    "occurrences": 3,
+    "lines": [
+      9656,
+      9912,
+      10312
+    ]
+  },
+  {
+    "heading": "Cal terminal messages",
+    "occurrences": 3,
+    "lines": [
+      11721,
+      11732,
+      11764
+    ]
+  },
+  {
+    "heading": "Forest, Rico's messages",
+    "occurrences": 2,
+    "lines": [
+      75,
+      1379
+    ]
+  },
+  {
+    "heading": "Cave, Rico's messages",
+    "occurrences": 2,
+    "lines": [
+      168,
+      1397
+    ]
+  },
+  {
+    "heading": "Mine, Rico's messages",
+    "occurrences": 2,
+    "lines": [
+      256,
+      1413
+    ]
+  },
+  {
+    "heading": "Ruins, Rico's messages",
+    "occurrences": 2,
+    "lines": [
+      353,
+      1423
+    ]
+  },
+  {
+    "heading": "Seabed Upper Levels",
+    "occurrences": 2,
+    "lines": [
+      1185,
+      1213
+    ]
+  },
+  {
+    "heading": "Mine 1",
+    "occurrences": 2,
+    "lines": [
+      4371,
+      8848
+    ]
+  },
+  {
+    "heading": "Ruins",
+    "occurrences": 2,
+    "lines": [
+      281,
+      5769,
+      9206
+    ]
+  },
+  {
+    "heading": "Ruins 1",
+    "occurrences": 2,
+    "lines": [
+      5909,
+      8914
+    ]
+  },
+  {
+    "heading": "Ruins 2",
+    "occurrences": 2,
+    "lines": [
+      5965,
+      6095
+    ]
+  },
+  {
+    "heading": "Failure",
+    "occurrences": 2,
+    "lines": [
+      9646,
+      11952
+    ]
+  },
+  {
+    "heading": "Control Tower",
+    "occurrences": 2,
+    "lines": [
+      15076,
+      15290
+    ]
+  },
+  {
+    "heading": "Principal's Room, during Forest",
+    "occurrences": 1,
+    "lines": [
+      94
+    ]
+  },
+  {
+    "heading": "[Principal's Room, during Cave]",
+    "occurrences": 1,
+    "lines": [
+      186
+    ]
+  },
+  {
+    "heading": "Principal's Room, during Mine",
+    "occurrences": 1,
+    "lines": [
+      267
+    ]
+  },
+  {
+    "heading": "The area between Mine and Ruins, Rico's messages",
+    "occurrences": 1,
+    "lines": [
+      283
+    ]
+  },
+  {
+    "heading": "Principal's Room, before reading the last message",
+    "occurrences": 1,
+    "lines": [
+      289
+    ]
+  },
+  {
+    "heading": "VR Temple area Alpha",
+    "occurrences": 1,
+    "lines": [
+      426
+    ]
+  },
+  {
+    "heading": "VR Temple area Beta",
+    "occurrences": 1,
+    "lines": [
+      498
+    ]
+  },
+  {
+    "heading": "VR Temple Final",
+    "occurrences": 1,
+    "lines": [
+      566
+    ]
+  },
+  {
+    "heading": "VR Spaceship area Alpha",
+    "occurrences": 1,
+    "lines": [
+      662
+    ]
+  },
+  {
+    "heading": "VR Spaceship area Beta",
+    "occurrences": 1,
+    "lines": [
+      728
+    ]
+  },
+  {
+    "heading": "VR Spaceship Final",
+    "occurrences": 1,
+    "lines": [
+      792
+    ]
+  },
+  {
+    "heading": "Jungle Area",
+    "occurrences": 1,
+    "lines": [
+      963
+    ]
+  },
+  {
+    "heading": "Mountain Area",
+    "occurrences": 1,
+    "lines": [
+      1005
+    ]
+  },
+  {
+    "heading": "Pioneer city 2",
+    "occurrences": 1,
+    "lines": [
+      3389
+    ]
+  },
+  {
+    "heading": "Jungle North/Seaside",
+    "occurrences": 1,
+    "lines": [
+      9300
+    ]
+  },
+  {
+    "heading": "Yound ladies only",
+    "occurrences": 1,
+    "lines": [
+      9636
+    ]
+  },
+  {
+    "heading": "Boys only",
+    "occurrences": 1,
+    "lines": [
+      9860
+    ]
+  },
+  {
+    "heading": "Jungle North/Mountain",
+    "occurrences": 1,
+    "lines": [
+      10068
+    ]
+  },
+  {
+    "heading": "Jungle East/Seaside",
+    "occurrences": 1,
+    "lines": [
+      10078
+    ]
+  },
+  {
+    "heading": "Lemon Rappy cake",
+    "occurrences": 1,
+    "lines": [
+      10304
+    ]
+  },
+  {
+    "heading": "Candy expert",
+    "occurrences": 1,
+    "lines": [
+      10314
+    ]
+  },
+  {
+    "heading": "Trick-or-Treating Hallo Rappies",
+    "occurrences": 1,
+    "lines": [
+      10328
+    ]
+  },
+  {
+    "heading": "Hallo Rappy at meeting 2",
+    "occurrences": 1,
+    "lines": [
+      10346
+    ]
+  },
+  {
+    "heading": "Hallo Rappy at meeting 4",
+    "occurrences": 1,
+    "lines": [
+      10384
+    ]
+  },
+  {
+    "heading": "Nurse",
+    "occurrences": 1,
+    "lines": [
+      10406
+    ]
+  },
+  {
+    "heading": "Pioneer 2",
+    "occurrences": 1,
+    "lines": [
+      11554
+    ]
+  },
+  {
+    "heading": "VR Temple Alpha",
+    "occurrences": 1,
+    "lines": [
+      11709
+    ]
+  },
+  {
+    "heading": "VR Spaceship Beta",
+    "occurrences": 1,
+    "lines": [
+      11728
+    ]
+  },
+  {
+    "heading": "Jungle North",
+    "occurrences": 1,
+    "lines": [
+      11738
+    ]
+  },
+  {
+    "heading": "Mountain",
+    "occurrences": 1,
+    "lines": [
+      11746
+    ]
+  },
+  {
+    "heading": "Jungle East",
+    "occurrences": 1,
+    "lines": [
+      11754
+    ]
+  },
+  {
+    "heading": "Candy",
+    "occurrences": 1,
+    "lines": [
+      11966
+    ]
+  },
+  {
+    "heading": "Pioneer Warehouse",
+    "occurrences": 1,
+    "lines": [
+      12597
+    ]
+  },
+  {
+    "heading": "VR Spaceship Alpha",
+    "occurrences": 1,
+    "lines": [
+      12694
+    ]
+  },
+  {
+    "heading": "Room 1",
+    "occurrences": 1,
+    "lines": [
+      12700
+    ]
+  },
+  {
+    "heading": "Room 2",
+    "occurrences": 1,
+    "lines": [
+      12744
+    ]
+  },
+  {
+    "heading": "Room 3",
+    "occurrences": 1,
+    "lines": [
+      12762
+    ]
+  },
+  {
+    "heading": "Room 4",
+    "occurrences": 1,
+    "lines": [
+      12780
+    ]
+  },
+  {
+    "heading": "Secret room 1",
+    "occurrences": 1,
+    "lines": [
+      12798
+    ]
+  },
+  {
+    "heading": "Room 5",
+    "occurrences": 1,
+    "lines": [
+      12816
+    ]
+  },
+  {
+    "heading": "Room 6",
+    "occurrences": 1,
+    "lines": [
+      12834
+    ]
+  },
+  {
+    "heading": "Secret room 2",
+    "occurrences": 1,
+    "lines": [
+      12848
+    ]
+  },
+  {
+    "heading": "Room 7",
+    "occurrences": 1,
+    "lines": [
+      12866
+    ]
+  },
+  {
+    "heading": "Room 8",
+    "occurrences": 1,
+    "lines": [
+      12884
+    ]
+  },
+  {
+    "heading": "Secret room 3",
+    "occurrences": 1,
+    "lines": [
+      12902
+    ]
+  },
+  {
+    "heading": "Room 9",
+    "occurrences": 1,
+    "lines": [
+      12920
+    ]
+  },
+  {
+    "heading": "Final room",
+    "occurrences": 1,
+    "lines": [
+      12968
+    ]
+  },
+  {
+    "heading": "VR Temple",
+    "occurrences": 1,
+    "lines": [
+      14880
+    ]
+  },
+  {
+    "heading": "Seabed",
+    "occurrences": 1,
+    "lines": [
+      15250
+    ]
+  }
+]

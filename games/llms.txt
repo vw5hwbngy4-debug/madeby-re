@@ -1,0 +1,6 @@
+# Games · Raynor Eissens
+Canonical: https://madeby.re/games/
+
+Original browser games, experiments, fan tools and preservation projects by Raynor Eissens.
+
+Projects: Kickshift, Kloojo, gachiGASM!, o-vvv-o, SlopWorm, Emerald fan experiment, PSO Ragol Link strategy layer, Mirror’s Edge browser preservation, Kloojo Core.

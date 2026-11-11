@@ -1,0 +1,10 @@
+Ash District v0.13 Firepath Stash Pass
+
+- Based on stable v0.11 firepath-road line.
+- Fixed duplicate audio button declaration that could hard-crash boot.
+- Mobile BAG button remains removed; PATH/Firepath is the skill button.
+- Added drag/drop item transfer between Bag and Depot Stash on desktop.
+- Added tap-to-move between grids on mobile: select an item, tap an empty square in the other grid.
+- Stash/inventory panel is now smartphone-fit with compact two-grid layout and no vertical scroll.
+- Bag and stash slots reduced to 35 each so the mobile grid fits cleanly.
+- Added error overlay for future boot failures instead of silent black screen.

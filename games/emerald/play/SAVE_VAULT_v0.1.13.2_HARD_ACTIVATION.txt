@@ -1,0 +1,29 @@
+JRPG.WORLD Emerald v0.1.24.1 — SAVE VAULT HARD ACTIVATION
+
+ROOT CAUSE
+The previous client hotfix wrote the selected .sav while Emerald was still running, then called mGBA quickReload(). A running core may flush its current SRAM during reload/quit. That can overwrite the newly staged save with the old in-memory save (for example Raynor), so the title screen still shows the old trainer.
+
+FIX
+Activation now uses a deterministic order:
+1. block Save Vault capture/upload;
+2. remember the current ROM + native mGBA save path;
+3. stop the current Emerald core first;
+4. sync the core's final old SRAM write;
+5. write the selected server/imported .sav to the exact native save path;
+6. FSSync;
+7. read it back and SHA-256 verify it;
+8. start the same ROM again with that exact save path;
+9. keep capture blocked through boot, then resume normal Save Vault mirroring.
+
+HOSTINGER
+This is a STATIC /emerald client patch. The separate saves.jrpg.world Node app does not need to be redeployed for this fix. Its API stores/copies/downloads save blobs; activation into mGBA happens in the browser client.
+
+VISIBLE BUILD
+VERSION.txt is now 0.1.24.1 and the PokéField RECENT panel shows the Save Vault Hard Load fix so deployment is obvious.
+
+TEST
+- Import EMERALD-with-STEPHEN-base.sav into SAVE 2 or SAVE 3.
+- Tap USE THIS SAVE.
+- The running Emerald session should stop and restart automatically.
+- Title screen must show the imported trainer, not Raynor.
+- If automatic restart cannot happen, the selected bytes remain verified/staged and the UI asks to load the ROM once.

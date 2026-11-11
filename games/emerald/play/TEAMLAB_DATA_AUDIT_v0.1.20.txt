@@ -1,0 +1,29 @@
+TEAMLAB EMERALD KNOWLEDGE CORE v0.1.20 — AUDIT
+
+PASS
+- Species: 386 / 386 National Dex Gen III species
+- Move records: 355
+- Terminal species: 214
+- Tactical atlas matches: 101
+- Treecko -> Sceptile final path: PASS
+- Sceptile Leaf Blade Lv29 roadmap: PASS
+- Sceptile Substitute Emerald tutor route: PASS
+- Treecko Leech Seed breeding-parent surfacing: PASS
+- Sceptile SubSeed capability detection: PASS
+- Ninjask Baton Pass capability detection: PASS
+- 101 HP Substitute HP-EV threshold calculation: PASS
+- Pair-fit decomposition: PASS
+- 17-type Team Fabric matrix: PASS
+- Final-form STAB coverage population: PASS
+
+PROVENANCE POLICY
+CANONICAL EMERALD ACQUISITION / MECHANICS:
+  supplied pret/pokeemerald source + supplied exact BPEE ROM lineage
+SHOWDOWN CONTEXT:
+  supplied Pokémon Showdown Gen III formats data
+TACTICAL EVIDENCE:
+  supplied audited STACKATAKA ADV200 Smogon Tactical Atlas
+DERIVED:
+  TeamLab move-value labels, archetype enablement, pair-fit and fabric heuristics
+
+Derived claims stay visually separable from source-derived facts.

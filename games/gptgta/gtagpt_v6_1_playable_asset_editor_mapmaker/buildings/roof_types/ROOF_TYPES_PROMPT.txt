@@ -1,0 +1,3 @@
+Generate modular top-down roof spritesheets:
+tar roofs, gravel roofs, industrial roofs, luxury roofs, dirty roofs, rooftop AC layouts, rooftop clutter, skylight layouts.
+Use 32x32 roof tiles and 128x128 assembled chunks.

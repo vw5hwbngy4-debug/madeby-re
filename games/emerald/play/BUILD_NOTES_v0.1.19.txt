@@ -1,0 +1,27 @@
+EMERALD v0.1.19
+DETAIL POLISH + LIVE EV COACH
+
+DETAIL POLISH
+- Reworked DETAILS into clear Overview / Specimen / Origin / Pokérus & Bond / Contest / Ribbons cards.
+- Desktop uses a two-column information grid; mobile collapses cleanly to one column.
+- Friendship is shown as a 0–255 meter with a PokéSprite friendship chip.
+- Pokérus has a compact PKRS status badge with active/cured/never-infected state.
+- Soothe Bell and Macho Brace use supplied PokéSprite item artwork when relevant.
+
+LIVE EV COACH
+- Reads the six live EV bytes already exposed from Emerald RAM.
+- Persistent per-specimen target spreads now use stable PID + OT ID identity. IMPORTANT: checksum is deliberately NOT used because the Gen III checksum changes when EV data changes.
+- Supports normal six-field editing plus pasted Smogon notation such as: 252 SpA / 252 Spe / 4 HP.
+- Shows per-stat current/target progress, remaining EVs, over-target/off-target warnings and total 510 usage.
+- Tracks actual live EV deltas between RAM snapshots, so battle gains, vitamins and berry corrections become visible as save-as-truth changes.
+- Shows HP Up / Protein / Iron / Calcium / Zinc / Carbos and Pomeg / Kelpsy / Qualot / Hondew / Grepa / Tamato coaching sprites.
+- Context hints reflect Emerald/Gen III rules: 255 stored per stat, 252 useful competitive cap, vitamins +10 only below 100 EV, EV berries -10 + friendship, Macho Brace x2 and active Pokérus x2 stacking to x4 battle EVs.
+- No later-generation Power item mechanics are exposed in the Emerald coach.
+
+DISPLAY STATE
+- Core and presentation-module labels agree with the chosen UI convention: COMPACT while compact, EXPAND while expanded.
+- v0.1.18.1 live-panel height sync is retained.
+
+SPRITE SOURCE
+- Selected item/misc artwork copied from the user-supplied PokéSprite archive.
+- PokéSprite code/project license: MIT. Its README states sprite images are © Nintendo/Creatures Inc./GAME FREAK Inc.

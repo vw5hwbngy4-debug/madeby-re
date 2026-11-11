@@ -1,0 +1,13 @@
+QA v0.1.24.8.1 COMPACT RETURNS TO LIVE
+==============================================
+PASS  new version loaded
+PASS  compact calls live normalizer
+PASS  field/team/trainer detection
+PASS  live nav click
+PASS  dex -> regular
+PASS  trainer -> live
+PASS  preserve true field script
+PASS  preserve save vault
+PASS  preserve one-line glance
+
+RESULT: 9/9 PASS

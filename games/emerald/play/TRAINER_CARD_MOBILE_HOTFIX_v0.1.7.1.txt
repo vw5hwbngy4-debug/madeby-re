@@ -1,0 +1,20 @@
+JRPG.WORLD EMERALD — TRAINER CARD MOBILE HOTFIX v0.1.7.1
+Date: 2026-09-07
+
+SCOPE
+- Layout/view-state hotfix only.
+- Emulator runtime, live RAM bridge/decoder, save persistence, audio recovery and touch controls are unchanged.
+
+FIXES
+1. Mobile Trainer Card remains a 2 x 3 grid, including <=390px widths.
+2. Mobile slots and header/summary are condensed into a compact card object.
+3. MY BOX remains a native <details> disclosure, is collapsed whenever the mobile Trainer Card is entered, and uses a bounded 2-column scroll grid when opened.
+4. Mobile does not use the desktop 3D flip layout or JS-measured stage height.
+5. Inactive mobile face is display:none, so it contributes zero document-flow height.
+6. Any inline stage/min-height left by desktop mode is cleared when entering mobile mode or switching views.
+7. Desktop 3D flip/measurement behavior remains intact.
+
+DESKTOP SELECT CHECK
+- Existing emulator bundle already binds Shift -> Select at the emulator-core keyboard layer.
+- Existing window keyboard map includes ShiftLeft -> Select and ShiftRight -> Select.
+- No Select/input code was changed by this hotfix.

@@ -1,0 +1,37 @@
+EMERALD v0.1.21.1 TEAMLAB ADV ROLES + EV HANDSHAKE — QA
+Date: 2026-09-09
+
+PASS — JavaScript syntax
+- pokefield-live-v0.1.21.1.js
+- owned-pokefield-v0.1.21.js
+- teamlab-engine-v0.1.21.1.js
+- teamlab-v0.1.21.1.js
+- presentation-v0.1.18.2.js
+
+PASS — tests/teamlab-v0.1.21.1.cjs
+- 386 species knowledge core
+- ADV OU/UUBL pool
+- exact specimen Hidden Power survives projected final-form record
+- Sceptile: Special Sweeper + Opener + exact HP coverage
+- Sceptile is NOT promoted to Phaser merely because Roar is legal
+- Skarmory: Physical Wall + Phaser + Spiker
+- exact HP Ice participates in structural Salamence answer
+- Gen III stats, Seismic Toss and Levitate regression
+- EV merge legality
+- TeamLab UI exposes current + clean send buttons
+- TeamLab dispatches jrpg:emerald-set-ev-plan
+- Rain hard-theme regression
+- party + PC box reactive Hidden Power filter regression
+
+PASS — preserved regressions
+- tests/teamlab-v0.1.20.cjs
+- tests/ev-coach-v0.1.19.cjs
+- tests/owned-polish-v0.1.18.cjs
+- tests/passport-polish-v0.1.18.cjs
+
+NOT CLAIMED AS SANDBOX QA
+- physical iPhone/Android touch QA
+- live running mGBA PC-box polling against every storage rotation case
+- exhaustive Pokémon Showdown equivalence for every event-driven item/ability/move state
+
+The UI handshake is read-only: it writes only the EV Coach target in browser localStorage through the pre-existing event bridge. It does not modify Pokémon EVs or emulator memory.

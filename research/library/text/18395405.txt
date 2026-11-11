@@ -1,0 +1,178 @@
+=== PDF PAGE 1 ===
+Post-Semantic Behavioral Signals as Risk Vectors:
+
+A Boundary Analysis under ABL-1
+
+Addendum to the Ambient Canon
+
+Raynor Eissens
+
+Ambientphone Architecture • 2026
+
+⸻
+
+ABSTRACT
+
+Post-semantic behavioral signals—micro-timing, interaction rhythms, affective drift, circadian
+
+entrainment—form a uniquely identifiable layer that is neither biometric nor symbolic.
+
+In ambient systems, these signals act as behavioral risk vectors when not bounded by ABL-1
+
+(Aura Boundary Law).
+
+This addendum defines these vectors, examines their identifiability risk, and demonstrates why
+
+ABL-1 is the minimal architecture necessary to prevent aura collapse into continuous
+
+surveillance.
+
+⸻
+
+1. Introduction
+
+Ambient systems process continuous human signals, many of which emerge below linguistic or
+
+cognitive thresholds.
+
+These include:
+
+•
+hesitation curves
+
+•
+attention decay rhythms
+
+•
+emotional modulation patterns
+
+•
+perceptual coupling with light, noise, social density
+
+•
+micro-temporal motor signatures
+
+Individually, they appear innocuous.
+
+Collectively, they form an identity field more precise than biometrics.
+
+ABL-1 exists to prevent this field from being extracted or recognized.
+
+⸻
+
+=== PDF PAGE 2 ===
+2. Post-Semantic Behavioral Signals: The Four Risk Classes
+
+2.1 Micro-Temporal Identity Drift
+
+Small variations in timing become a stable behavioral fingerprint when aggregated.
+
+2.2 Rhythmic Vulnerability Leakage
+
+Attention/mood rhythms expose emotional states that can be exploited for personalization or
+
+manipulation.
+
+2.3 Cross-Context Behavioral Binding
+
+Signals recorded in one environment can match patterns in another, collapsing anonymity.
+
+2.4 Latent Intent Extraction
+
+Unbounded systems infer intent from micro-patterns the user does not consciously express.
+
+Each vector violates human autonomy at a structural level.
+
+⸻
+
+3. ABL-1 as Risk Containment Architecture
+
+ABL-1 neutralizes all four risk vectors:
+
+3.1 Non-Identifiability Principle
+
+Signals cannot form persistent identity.
+
+3.2 Locality Constraint
+
+Signals never leave the immediate environment.
+
+3.3 Ephemerality Requirement
+
+Signals decay; accumulation is forbidden.
+
+3.4 Non-Predictive Rule
+
+=== PDF PAGE 3 ===
+Signals cannot be used to infer intent or vulnerability.
+
+3.5 Anti-Surveillance Clause
+
+No cross-context behavioral matching is permitted.
+
+ABL-1 transforms aura-like signals from risk vectors into expressive-only presence fields.
+
+⸻
+
+4. Implications for Personal AI and Ambient Systems
+
+Without ABL-1:
+
+•
+ambient devices become total behavioral surveillance
+
+•
+identity becomes involuntary and permanent
+
+•
+personalization becomes psychological extraction
+
+•
+safety collapses into exploitation
+
+With ABL-1:
+
+•
+aura becomes expressive, not recognitional
+
+•
+ambient computing becomes humane
+
+•
+personal AI becomes non-extractive
+
+•
+identity becomes voluntary and moment-bound
+
+ABL-1 is therefore foundational for post-symbolic human rights.
+
+⸻
+
+KEYWORDS
+
+ABL-1
+
+Aura
+
+Behavioral Signals
+
+Identity Risk
+
+Post-Semantic Field
+
+Ambient Systems
+
+Surveillance Prevention
+
+Raynor Stack
+
+Thermodynamic Architecture
+
+⸻
+
+=== PDF PAGE 4 ===
+RECOMMENDED CITATION
+
+Eissens, Raynor. Post-Semantic Behavioral Signals as Risk Vectors: A Boundary Analysis under
+
+ABL-1. Ambientphone Canon, 2026.

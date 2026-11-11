@@ -1,0 +1,28 @@
+JRPG.WORLD Emerald Live v0.1.24.9.2.2.6 — HOENN overlay escape + publish lock hotfix
+Baseline: v0.1.24.9.2.2.5 PUBLISH BASE FEEDBACK HOTFIX.
+
+Problem confirmed from mobile screenshot + active CSS:
+- HOENN panel used z-index 2399 while the live PokéField surface uses z-index 99999.
+- This allowed PokéField / underlying UI to visually sit above parts of HOENN.
+- The only large BACK TO GAME control lived at the bottom of HOENN's scrolling content, so status/activity growth could make the escape path unreachable.
+- After a successful publish, the publish button became active again and allowed an immediate second publish/update.
+
+Fix:
+- Added a compact, independent fixed `GAME ×` escape control outside the scrolling HOENN panel.
+- Escape is visible only while HOENN is open and always closes back to the same running Emerald session.
+- Raised HOENN panel to z-index 100010 and escape control to 100040, above PokéField (99999) while remaining below Save Vault modal/gate layers.
+- Removed the large bottom BACK TO GAME control from the active renderer.
+- Kept the in-panel × as a second exit path.
+- Added desktop Escape-key close support.
+- Compacted progress/success feedback. Successful publish now renders `BASE PUBLISHED ✓` + a small second line.
+- Added an explicit post-success publish lock: the button becomes `PUBLISHED ✓` and is disabled for the current HOENN-open session.
+- Reopening HOENN or a newly committed save unlocks UPDATE BASE, so deliberate later updates remain possible.
+- Busy action is tracked so the publish button says `PUBLISHING…` during the request rather than generic WORKING.
+
+UNCHANGED:
+- Save Vault runtime / mutation safety
+- mGBA JS + WASM runtime
+- ROM loading
+- PokéField / True PokéField / Team Lab logic
+- Secret Base serialization / import mechanics
+- Hoenn server API contract

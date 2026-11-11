@@ -1,0 +1,12 @@
+/* v0.1.24.8.3 QOL return paths */
+#pokefield-live-panel .tc-box-actions{display:flex;flex-direction:column;gap:4px;align-items:stretch}
+#pokefield-live-panel .tc-box-delete{border-color:rgba(255,139,139,.28);color:#ffb6b6;background:rgba(255,90,90,.055)}
+#pokefield-live-panel .tc-action-transfer{border-color:rgba(127,207,255,.28);color:#b8e5ff;background:rgba(80,170,255,.06)}
+#save-vault-modal .sv-slot.sv-duplicate{border-color:rgba(255,209,102,.46);box-shadow:inset 0 0 0 1px rgba(255,209,102,.08)}
+#save-vault-modal .sv-slot.sv-duplicate .sv-slot-head .sv-ok{color:#ffd166}
+@media(max-width:959px){
+  #pokefield-live-panel .tc-live-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+  #pokefield-live-panel .tc-live-actions .tc-action{width:100%;min-width:0}
+  #pokefield-live-panel .tc-box-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;gap:5px}
+  #pokefield-live-panel .tc-box-actions .tc-box-action{grid-column:auto!important;width:100%}
+}

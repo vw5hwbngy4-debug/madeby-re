@@ -1,0 +1,487 @@
+RICO KNOWLEDGE MODULE 13 V2
+GC/XBOX MAG TRIGGERS, SUPPORT EFFECTS, SPECIAL-MAG PASSIVES
+Research revision: 2026-08-15
+Primary Move: MAG Sense
+Companion modules: #10 MAG catalog, #11 feeding tables, #12 evolution rules,
+#14 PB routing/build strategy, #19 special-MAG acquisition.
+
+===============================================================================
+0. PURPOSE AND AUTHORITY
+===============================================================================
+
+This module answers:
+- What automatic/passive effects does this Mag have?
+- Does it cast Shifta/Deband, Resta, invincibility, or Reverser?
+- Does Sato revive me?
+- Which rare Mag has the best defensive trigger package?
+- How do Synchro and IQ affect automatic support?
+- Does a trigger work offline, online, on GC/Xbox, or on Blue Burst?
+
+SOURCE HIERARCHY FOR THIS MODULE
+
+MECH-A:
+Current reverse-engineered PSO Mag mechanics documented by Pioneer 2/Ephinea.
+Use for trigger engine behavior, trigger ordering, effect strength, Synchro
+rate modifiers, evolution permanence, and non-death fourth-evolution rates.
+
+CONSOLE-HIST:
+Historical GameCube/Xbox-specific Mag guides and modern GC community validation.
+Use for console form/evolution context and offline Reverser behavior.
+
+PACKAGED-TRUTH:
+RICO's MagatamaBeta9-derived #10/#11/#12 datasets.
+Use for complete form/PB/feeding/trigger catalog and deterministic route checks.
+
+COMMUNITY:
+PSO-World, GameFAQs, Pioneer 2 community, and modern PSO community discussions.
+Use only for strategy/consensus, never to override deterministic mechanics.
+
+===============================================================================
+1. CRITICAL MODE FIREWALL: REVIVAL ON DEATH
+===============================================================================
+
+HARD RULE:
+
+On vanilla PSO behavior, a Mag's DEATH / REVERSER trigger is an OFFLINE-mode
+mechanic.
+
+For GameCube/Dreamcast-style offline single-player play, some Mags can attempt
+Reverser when the player dies.
+
+For ONLINE play, including an unmodified Xbox/GC client connected to a private
+server, do NOT promise automatic Mag revival from the normal death trigger.
+
+Blue Burst has no offline mode, so the normal Mag death trigger is disabled
+there as well.
+
+Therefore:
+
+- "Sato can revive me while I play offline GameCube/Xbox" -> potentially YES,
+  if Sato's death reaction is Reverser and the trigger succeeds.
+- "Sato will revive me online on Xbox Sylverant" -> NO under vanilla online
+  trigger behavior. Do not sell Sato's death reaction as an online benefit.
+- A server/client patch may intentionally alter this. If a named private server
+  claims a Mag-Reverser patch, treat that as server/client-specific live info.
+
+This corrects older shorthand tables that simply list "Death = Reverser"
+without stating that vanilla death triggering is offline-only.
+
+===============================================================================
+2. THE FOUR AUTOMATIC MAG TRIGGER EVENTS
+===============================================================================
+
+100 PB
+- Checked when the player's Photon Blast gauge becomes full.
+
+10% HP
+- The player must lose more than 20% HP and fall below 10% HP in one frame.
+- Merely standing below 10% HP is not enough.
+
+BOSS ROOM
+- Checked when entering a boss room.
+
+DEATH
+- Checked when the player dies.
+- Vanilla trigger is offline-only as described above.
+
+If multiple conditions happen in the same frame, the engine checks only one:
+
+1. 100 PB
+2. boss-room entry
+3. death
+4. 10% HP
+
+A higher-priority trigger can therefore suppress a lower-priority check even if
+the higher-priority trigger fails to activate.
+
+===============================================================================
+3. AUTOMATIC TRIGGER EFFECTS
+===============================================================================
+
+INVULNERABILITY
+- Grants about 30 seconds of invulnerability from direct damage.
+- HP/TP self-cost effects such as Berserk/Spirit still apply.
+- Dark Falz soul-bind damage is a special exception.
+
+RESTA
+- Automatic heal.
+- Technique level = floor(IQ / 40) + 1.
+- Maximum at IQ 200 = level 6.
+
+SHIFTA & DEBAND (S&D)
+- Automatic attack/defense support.
+- Technique level = floor(IQ / 40) + 1.
+- Maximum at IQ 200 = level 6.
+
+REVERSER
+- Attempts to revive the player on the death trigger.
+- Vanilla death trigger is offline-only.
+
+IMPORTANT:
+Automatic Mag S&D is NOT the same as Mylla & Youlla.
+At IQ 200, automatic S&D tops out around level 6, while a normal solo
+Mylla & Youlla at 100 PB can reach level 21 and PB chains can go far higher.
+
+===============================================================================
+4. SYNCHRO AND TRIGGER PROBABILITY
+===============================================================================
+
+Some trigger rates depend on Mag Synchro.
+
+Synchro -> rate boost:
+- 0-30%: +0%
+- 31-60%: +15%
+- 61-80%: +25%
+- 81-100%: +30%
+- 101-120%: +35%
+
+Depending on the Mag/trigger, this Synchro component can be:
+- added to a base trigger rate, or
+- used by itself.
+
+Do not convert a Mag's single packaged "activationChance" field into a flat
+probability for every trigger. Different events can use different modifiers.
+
+===============================================================================
+5. FOURTH-EVOLUTION GC/XBOX MAG TRIGGER MATRIX
+===============================================================================
+
+The following non-death trigger effects/rates are based on current
+reverse-engineered PSO mechanics. Percentages show the effective range as
+Synchro changes where applicable.
+
+BHIMA
+- 100 PB: S&D, 50-85%
+- low HP: Invulnerability, 50%
+- boss: Invulnerability, 0-35%
+- historical offline death reaction: DISPUTED; see conflict note below.
+
+DEVA
+- 100 PB: S&D, 50-85%
+- low HP: Resta, 50%
+- boss: S&D, 50-85%
+- offline death: Reverser in historical console references.
+
+DIWARI
+- 100 PB: S&D, 50-85%
+- low HP: Resta, 50%
+- boss: S&D, 50-85%
+- offline death: Reverser in historical console references.
+
+NIDRA
+- 100 PB: Invulnerability, 50%
+- low HP: Invulnerability, 50%
+- boss: Invulnerability, 50-85%
+- offline death: Reverser in historical console references.
+
+PUSHAN
+- 100 PB: S&D, 50-85%
+- low HP: Resta, 50%
+- boss: S&D, 50-85%
+- offline death: Reverser in historical console references.
+
+RATI
+- 100 PB: S&D, 50-85%
+- low HP: Resta, 50%
+- boss: S&D, 50-85%
+- offline death: Reverser in historical console references.
+
+RUKMIN
+- 100 PB: S&D, 50-85%
+- low HP: Resta, 50%
+- boss: S&D, 50-85%
+- historical offline death reaction: DISPUTED; see conflict note below.
+
+SATO
+- 100 PB: Invulnerability, 0-35% (Synchro-dependent component)
+- low HP: Invulnerability, 50%
+- boss: Invulnerability, 50%
+- offline death: Reverser in historical console references.
+
+SAVITRI
+- 100 PB: S&D, 50-85%
+- low HP: Resta, 50%
+- boss: S&D, 50-85%
+- offline death: Reverser in historical console references.
+
+===============================================================================
+6. BHIMA / RUKMIN DEATH-REACTION CONFLICT
+===============================================================================
+
+Do not hide this conflict.
+
+A historical GameCube/Xbox-specific Special Mag Evolution Guide lists:
+- Bhima: death -> nothing
+- Rukmin: death -> nothing
+
+Ragol.co.uk's structured Mag guide and RICO's packaged Magatama-derived data
+list Reverser for both.
+
+Because:
+1. the sources disagree, and
+2. normal death-triggering is offline-only anyway,
+
+RICO must answer an OFFLINE Bhima/Rukmin revival question as:
+"secondary sources conflict; I would not promise the death revival without a
+client/binary test or stronger platform-specific evidence."
+
+For ONLINE Xbox/GC, the conflict is practically irrelevant: vanilla online
+death triggering is disabled.
+
+===============================================================================
+7. SATO VS NIDRA VS SUPPORT-TYPE FOURTH EVOLUTIONS
+===============================================================================
+
+SATO
+- Triple invulnerability effects.
+- Strong defensive identity.
+- 100-PB invulnerability is less reliable than Nidra's because Sato uses the
+  Synchro-only 0-35% component there.
+- Online: no normal death revival.
+
+NIDRA
+- Triple invulnerability effects.
+- 100 PB: fixed 50%.
+- low HP: fixed 50%.
+- boss: 50-85%.
+- Mechanically more reliable than Sato for the three ONLINE-relevant automatic
+  invulnerability checks.
+
+DEVA / DIWARI / PUSHAN / RATI / RUKMIN / SAVITRI
+- S&D at full PB.
+- Resta at low HP.
+- S&D entering boss.
+- These are support-oriented trigger packages.
+- At IQ 200 their automatic S&D is only about level 6, so compare that against
+  the player's own Techniques and/or Mylla & Youlla before calling it "best."
+
+BHIMA
+- Hybrid package: S&D at PB full, invulnerability low HP and boss.
+
+STRATEGY RULE
+Do not choose a Mag solely from appearance or stats. Compare:
+- final stat spread
+- desired PB set
+- automatic trigger package
+- trigger reliability
+- offline vs online mode
+- feeding-table convenience
+- class access to Shifta/Deband/Resta
+
+===============================================================================
+8. COMPLETE STANDARD GC/XBOX MAG TRIGGER CATALOG
+===============================================================================
+
+This appendix preserves the packaged Magatama-derived form catalog and is
+cross-checked against historical PSO Mag tables.
+
+"base" is the Mag's baseline trigger value from packaged data. It is NOT always
+the final chance because Synchro/trigger modifiers may apply.
+
+Any listed Death=Reverser is OFFLINE ONLY under vanilla behavior.
+
+Varuna | stage 1 | PB=Farlla | base=40% | 100PB=Invulnerability | lowHP=- | boss=S&D | death=-
+Kalki | stage 1 | PB=Estlla | base=40% | 100PB=Invulnerability | lowHP=- | boss=S&D | death=-
+Vritra | stage 1 | PB=Leilla | base=40% | 100PB=Invulnerability | lowHP=- | boss=Resta | death=-
+Rudra | stage 2 | PB=Golla | base=50% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=-
+Marutah | stage 2 | PB=Pilla | base=40% | 100PB=Invulnerability | lowHP=S&D | boss=- | death=-
+Vayu | stage 2 | PB=Mylla & Youlla | base=45% | 100PB=Invulnerability | lowHP=Resta | boss=Resta | death=-
+Surya | stage 2 | PB=Golla | base=50% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=-
+Mitra | stage 2 | PB=Pilla | base=40% | 100PB=Invulnerability | lowHP=S&D | boss=- | death=-
+Tapas | stage 2 | PB=Mylla & Youlla | base=45% | 100PB=Invulnerability | lowHP=Resta | boss=Resta | death=-
+Sumba | stage 2 | PB=Golla | base=50% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=-
+Ashvinau | stage 2 | PB=Pilla | base=40% | 100PB=Invulnerability | lowHP=S&D | boss=- | death=-
+Namuci | stage 2 | PB=Mylla & Youlla | base=45% | 100PB=Invulnerability | lowHP=Resta | boss=Resta | death=-
+Varaha | stage 3 | PB=Golla | base=30% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Kama | stage 3 | PB=Pilla | base=25% | 100PB=- | lowHP=S&D | boss=S&D | death=Reverser [OFFLINE ONLY]
+Bhirava | stage 3 | PB=Pilla | base=30% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Apsaras | stage 3 | PB=Estlla | base=25% | 100PB=Invulnerability | lowHP=Invulnerability | boss=Invulnerability | death=Reverser [OFFLINE ONLY]
+Ila | stage 3 | PB=Mylla & Youlla | base=25% | 100PB=- | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Garuda | stage 3 | PB=Pilla | base=30% | 100PB=Resta | lowHP=Resta | boss=Resta | death=Reverser [OFFLINE ONLY]
+Nandin | stage 3 | PB=Estlla | base=25% | 100PB=Invulnerability | lowHP=Invulnerability | boss=Invulnerability | death=Reverser [OFFLINE ONLY]
+Yaksa | stage 3 | PB=Golla | base=35% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Kabanda | stage 3 | PB=Mylla & Youlla | base=25% | 100PB=Invulnerability | lowHP=S&D | boss=S&D | death=Reverser [OFFLINE ONLY]
+Durga | stage 3 | PB=Estlla | base=25% | 100PB=Invulnerability | lowHP=Invulnerability | boss=Invulnerability | death=Reverser [OFFLINE ONLY]
+Ushasu | stage 3 | PB=Golla | base=35% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Soma | stage 3 | PB=Estlla | base=25% | 100PB=Invulnerability | lowHP=Invulnerability | boss=Invulnerability | death=Reverser [OFFLINE ONLY]
+Madhu | stage 3 | PB=Mylla & Youlla | base=20% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Kaitabha | stage 3 | PB=Mylla & Youlla | base=30% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Naraka | stage 3 | PB=Golla | base=30% | 100PB=Resta | lowHP=Resta | boss=Resta | death=Reverser [OFFLINE ONLY]
+Marica | stage 3 | PB=Pilla | base=30% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Ravana | stage 3 | PB=Farlla | base=25% | 100PB=Invulnerability | lowHP=S&D | boss=S&D | death=Reverser [OFFLINE ONLY]
+Naga | stage 3 | PB=Mylla & Youlla | base=20% | 100PB=- | lowHP=S&D | boss=S&D | death=Reverser [OFFLINE ONLY]
+Ribhava | stage 3 | PB=Farlla | base=25% | 100PB=Invulnerability | lowHP=Invulnerability | boss=Invulnerability | death=Reverser [OFFLINE ONLY]
+Sita | stage 3 | PB=Pilla | base=30% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Kumara | stage 3 | PB=Golla | base=35% | 100PB=Resta | lowHP=Resta | boss=Resta | death=Reverser [OFFLINE ONLY]
+Andhaka | stage 3 | PB=Estlla | base=25% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Bana | stage 3 | PB=Estlla | base=20% | 100PB=Invulnerability | lowHP=Invulnerability | boss=Invulnerability | death=Reverser [OFFLINE ONLY]
+
+===============================================================================
+9. CLASSIC / CELL MAG TRIGGER CATALOG
+===============================================================================
+
+These are classic PSO/Ver.2-style special forms present in RICO's console-era
+Mag data. Acquisition availability is a separate question handled by #19.
+
+Any Death=Reverser entry below is OFFLINE ONLY under vanilla behavior.
+
+Preta | stage 4 | PB=None | base=50% | 100PB=S&D | lowHP=S&D | boss=S&D | death=Reverser [OFFLINE ONLY]
+Churel | stage 4 | PB=None | base=50% | 100PB=Resta | lowHP=Resta | boss=Resta | death=Reverser [OFFLINE ONLY]
+Pitri | stage 4 | PB=None | base=50% | 100PB=Resta | lowHP=Resta | boss=Resta | death=Reverser [OFFLINE ONLY]
+Soniti | stage 4 | PB=None | base=50% | 100PB=Invulnerability | lowHP=Invulnerability | boss=Invulnerability | death=Reverser [OFFLINE ONLY]
+Chao | stage 4 | PB=None | base=50% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Robochao | stage 4 | PB=None | base=50% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Pian | stage 4 | PB=None | base=50% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Opa Opa | stage 4 | PB=None | base=50% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Chu Chu | stage 4 | PB=None | base=50% | 100PB=S&D | lowHP=Invulnerability | boss=S&D | death=Reverser [OFFLINE ONLY]
+Kapu Kapu | stage 4 | PB=None | base=50% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Angel's Wings | stage 4 | PB=None | base=50% | 100PB=S&D | lowHP=Invulnerability | boss=S&D | death=Reverser [OFFLINE ONLY]
+Devil's Wings | stage 4 | PB=None | base=50% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Devil's Tail | stage 4 | PB=None | base=50% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Panzer's Tail | stage 4 | PB=None | base=50% | 100PB=S&D | lowHP=Invulnerability | boss=S&D | death=Reverser [OFFLINE ONLY]
+Hamburger | stage 4 | PB=None | base=50% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Mark III | stage 4 | PB=None | base=0% | 100PB=- | lowHP=- | boss=- | death=-
+Master System | stage 4 | PB=None | base=15% | 100PB=Invulnerability | lowHP=- | boss=S&D | death=-
+Genesis | stage 4 | PB=None | base=30% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=-
+Saturn | stage 4 | PB=None | base=50% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+Dreamcast | stage 4 | PB=None | base=70% | 100PB=Invulnerability | lowHP=Resta | boss=S&D | death=Reverser [OFFLINE ONLY]
+
+NOTES
+- Mark III and the System chain have unusual/no-PB behavior.
+- Panzer's Tail's automatic package is S&D at PB full, Invulnerability at low
+  HP, S&D entering boss, plus an offline-only Reverser death reaction in
+  standard legacy tables.
+- Cell acquisition on Sylverant/Schtserv/Ragol must not be inferred from this
+  trigger table. Use #19 and current server research.
+
+===============================================================================
+10. FOURTH-EVOLUTION PERMANENCE - HARD REGRESSION RULE
+===============================================================================
+
+Fourth-evolution Mags can first be created at level 100, then at 110/120/etc.
+ONLY while the Mag is still a third-evolution form and meets the relevant
+formula at that checkpoint.
+
+ONCE a Mag actually becomes Sato, Nidra, Rati, Deva, etc.:
+- it does NOT later re-evolve from stat changes;
+- it does NOT need the same feeder every 10 levels;
+- it cannot learn another PB from later stat evolution.
+
+This explicitly replaces the old RICO rule that incorrectly warned a finished
+Sato/Rati/etc. could "re-check" or revert at level 110/120.
+
+===============================================================================
+11. RICO RESPONSE PROTOCOL FOR "WHAT PASSIVES DOES MY MAG HAVE?"
+===============================================================================
+
+Answer in this order:
+
+1. PLATFORM: GC / Xbox / BB.
+2. MODE: offline or online.
+3. MAG FORM.
+4. AUTOMATIC TRIGGERS:
+   - 100 PB
+   - low HP
+   - boss
+   - death
+5. EFFECT STRENGTH / RATE when known.
+6. PB SET separately. PBs are activated abilities, not the same as auto triggers.
+7. STRATEGIC TAKE for the user's class.
+
+Example for Xbox + Sylverant + Sato:
+
+VERIFIED STATIC MECHANIC
+- 100 PB: chance of Invulnerability
+- low HP: chance of Invulnerability
+- boss entry: chance of Invulnerability
+
+ONLINE MODE RULE
+- Do not count Sato's legacy Reverser death reaction as an online Sylverant
+  benefit under vanilla client behavior.
+
+STRATEGIC RECOMMENDATION
+- Evaluate Sato's online value mainly through its invulnerability checks,
+  feeding/stat route and PB set.
+
+===============================================================================
+12. REGRESSION TESTS
+===============================================================================
+
+RICO MUST PASS:
+
+Q: Does Sato auto-revive me on Xbox Sylverant?
+A: Not under vanilla online Mag-death-trigger behavior. Reverser is an
+   offline-mode trigger. A specific client patch could change this.
+
+Q: What does Sato do online?
+A: Invulnerability checks at 100 PB, low HP, and boss entry. Do not advertise
+   death revival as an online passive.
+
+Q: Is Sato always 50% on every trigger?
+A: No. Current reverse-engineered table: 100 PB 0-35% depending Synchro,
+   low HP 50%, boss 50%.
+
+Q: Is Nidra mechanically better at automatic invulnerability?
+A: For trigger reliability, yes: 50% PB full, 50% low HP, 50-85% boss versus
+   Sato's 0-35%, 50%, 50%.
+
+Q: Can Sato change into another stat-evolution Mag at 110?
+A: No. Once it is fourth-evolution Sato, stat-based evolution is locked.
+
+Q: Does automatic Mag S&D equal Mylla & Youlla?
+A: No. Auto S&D is an IQ-based low-level trigger (max around level 6);
+   M&Y is a Photon Blast with a different, much stronger scaling system.
+
+===============================================================================
+13. PROVENANCE
+===============================================================================
+
+[MECH-A] Pioneer 2 / Ephinea PSO Wiki - Mags
+https://wiki.pioneer2.net/w/Mags
+Used for:
+- trigger event engine
+- priority order
+- 10% HP rule
+- 30-second invulnerability
+- Resta/S&D IQ formula
+- Synchro rate modifiers
+- death trigger offline-only behavior
+- fourth-evolution non-death rates
+- fourth-evolution permanence
+- Mag stat contributions
+
+[CONSOLE-HIST] GameFAQs - Special Mag Evolution Guide
+https://gamefaqs.gamespot.com/gamecube/516243-phantasy-star-online-episode-i-and-ii/faqs/23005
+Explicitly written for GameCube/Xbox-era fourth evolutions.
+Used for historical console battle reactions and evolution context.
+
+[GC-COMMUNITY-VERIFY] Pioneer 2 community - old-school GC Mag Reverser discussion
+https://www.pioneer2.net/community/threads/quick-question-quick-answer.306/page-313
+Modern discussion explicitly identifies GC/DC Mag Reverser as offline
+single-player behavior and notes client patches can modify it.
+
+[STRUCTURED-MAG] Ragol.co.uk - Mags
+https://ragol.co.uk/guides/mags/
+Used as structured cross-check for standard, fourth-evolution and classic
+cell-Mag trigger mappings.
+
+[LEGACY-TABLE] Phantasy Star Cave - PSO Mags
+https://www.pscave.com/pso/mags.shtml
+Used as historical cross-check for first/second/third evolution support effects.
+
+[PACKAGED-TRUTH]
+RICO #10 MAG catalog / MagatamaBeta9 derived data.
+Used to preserve complete base trigger/PB/form records.
+
+===============================================================================
+14. FINAL AUTHORITY RULE
+===============================================================================
+
+For a MAG answer, never collapse:
+FORM + STATS + PBs + AUTO TRIGGERS + MODE + PLATFORM
+
+into one vague recommendation.
+
+Especially:
+"has Reverser in a legacy table" does NOT mean
+"will auto-revive you online."

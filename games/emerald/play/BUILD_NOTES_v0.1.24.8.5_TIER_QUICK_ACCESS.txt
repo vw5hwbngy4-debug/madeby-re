@@ -1,0 +1,9 @@
+EMERALD v0.1.24.8.5 · TIER QUICK ACCESS
+
+- Cumulative on top of v0.1.24.8.4 ADV STAB AXIS and all v0.1.24.8.3.x navigation/QOL fixes.
+- Adds a permanent TIER quick-access pill at the top-right of True PokéField.
+- Tapping TIER opens the vertical tier-list metric selector directly; it no longer requires + -> RANK.
+- Tier metric order prioritizes BEST STAB, PHYS STAB, SPEC STAB, SPEED, ATTACK and SP.ATK before general stats.
+- Vertical tier presentation remains SS / S / A / B / C. Tapping a tier marks that band PRESENT so FOCUS can promote it.
+- The + / CALL selector still contains TIER LIST for discoverability, but CALL / FOCUS / SCATTER remain the primary field grammar.
+- Active tier mode keeps the TIER pill visible and labels it with the selected metric.

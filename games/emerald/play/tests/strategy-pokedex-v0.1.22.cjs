@@ -1,0 +1,27 @@
+const fs=require('fs');
+const currentVersion=fs.readFileSync('VERSION.txt','utf8').trim();
+if(currentVersion!=='0.1.22.1'){console.log(`SKIP historical strategy-pokedex-v0.1.22 snapshot on ${currentVersion}`);process.exit(0);}
+const assert=(x,m)=>{if(!x)throw new Error(m)};
+const regular=fs.readFileSync('index.html','utf8');
+const index=fs.readFileSync('dex.html','utf8');
+const live=fs.readFileSync('pokefield-live-v0.1.22.1.js','utf8');
+const field=fs.readFileSync('owned-pokefield-v0.1.22.js','utf8');
+const lab=fs.readFileSync('teamlab-v0.1.22.js','utf8');
+const bridge=fs.readFileSync('strategy-pokedex-v0.1.22.js','utf8');
+const css=fs.readFileSync('strategy-pokedex-v0.1.22.css','utf8');
+assert(fs.readFileSync('VERSION.txt','utf8').trim()==='0.1.22.1','VERSION');
+for(const f of ['pokefield-live-v0.1.22.1.js','owned-pokefield-v0.1.22.js','teamlab-v0.1.22.js','strategy-pokedex-v0.1.22.js','strategy-pokedex-v0.1.22.css'])assert(index.includes(f),`DEX missing ${f}`);
+assert(regular.includes('owned-pokefield-v0.1.21.js')&&regular.includes('teamlab-v0.1.21.1.js'),'regular previous-build assets');
+assert(!regular.includes('strategy-pokedex-v0.1.22.js')&&!regular.includes('strategy-pokedex-v0.1.22.css'),'regular must not be DEX cockpit');
+assert(regular.includes('href="./dex.html"')&&regular.includes('<b>DEX</b>'),'regular DEX switch');
+assert(index.includes('REGULAR MODE'),'DEX return switch');
+assert(live.includes('OPTIONAL DEX MODE')&&live.includes('Regular mode restored'),'update trail');
+assert(field.includes('opf-field-toolbar')&&field.includes('opf-filter-tools')&&field.includes('opf-rank-tools'),'field-first toolbar');
+assert(field.includes("jrpg:strategy-context"),'My Field publishes context');
+assert(!field.includes("if(m.source==='party'){mode('live')"),'party click must not kick user out of My Field');
+assert(lab.includes("_source:'wild'")&&lab.includes("WILD · LIVE"),'TeamLab live-wild bridge');
+assert(lab.includes('syncSharedContext')&&lab.includes('jrpg:strategy-context'),'TeamLab shared context');
+assert(bridge.includes('JRPGWorldStrategyContext')&&bridge.includes('MATCHUPS & EV BENCHMARKS'),'context + progressive disclosure');
+assert(css.includes('body.spx-game-playing #pokefield-live-panel')&&css.includes('.emulator-container.game-playing'),'desktop strategy cockpit');
+assert(css.includes('grid-template-columns:repeat(auto-fill,minmax(112px,1fr))'),'field-first specimen area');
+console.log('PASS strategy-pokedex-v0.1.22.1: regular mode restored, opt-in DEX cockpit, shared context, field-first DEX controls and mode switch');

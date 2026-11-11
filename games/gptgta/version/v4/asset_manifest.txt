@@ -1,0 +1,53 @@
+RETRO GTA ASSET MANIFEST
+
+ROADS
+ - straight_horizontal
+ - straight_vertical
+ - intersection
+ - crossroad
+ - t_junction
+ - curve
+ - alley
+ - highway
+ - parking_lot
+ - wet_variants
+
+CHARACTERS
+ - player
+ - civilian
+ - gang_member
+ - police
+ - swat
+ - medic
+ - businessman
+ - biker
+ - construction_worker
+
+VEHICLES
+ - sedan
+ - taxi
+ - sports_car
+ - van
+ - police_car
+ - ambulance
+ - motorcycle
+ - bus
+ - helicopter
+
+WEAPONS
+ - knife
+ - bat
+ - pistol
+ - shotgun
+ - smg
+ - rifle
+ - rocket_launcher
+
+EFFECTS
+ - explosion_small
+ - explosion_large
+ - fire
+ - smoke
+ - rain
+ - blood
+

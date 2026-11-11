@@ -1,0 +1,20 @@
+EMERALD v0.1.24.8.5 · TIER QUICK ACCESS — QA
+Date: 2026-09-12
+
+PASS 13 / 13 static implementation checks
+- index loads v0.1.24.8.5 True PokéField JS
+- index loads v0.1.24.8.5 True PokéField CSS
+- index loads v0.1.24.8.5 Live JS
+- permanent TIER quick-access control exists in FIELD
+- TIER control opens metric picker directly
+- vertical SS / S / A / B / C tier bands preserved
+- tapping a tier converts that tier to PRESENT selection
+- FOCUS promotes selected tier
+- SCATTER restores field
+- STAB tier metrics preserved and prioritized
+- active TIER metric is reflected in quick-access label
+- mobile tier control has bounded width / ellipsis
+- prior v0.1.24.8.3.2 Transfer Back and Team Lab return lineage remains loaded
+
+JavaScript syntax: PASS
+Build is cumulative on v0.1.24.8.4 ADV STAB AXIS.

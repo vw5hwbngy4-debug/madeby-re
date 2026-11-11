@@ -1,0 +1,17 @@
+JRPG.WORLD EMERALD — TRAINER CARD RUNTIME HOTFIX v0.1.7.3
+
+Symptom
+-------
+On mobile, the game could freeze when the first owned Pokémon (notably Treecko) appeared and the IV card rendered.
+
+Root cause
+----------
+trainer-card-v0.1.7.1.js observed #pf-primary with MutationObserver. Its callback called syncLiveActions(), which unconditionally rewrote actions.innerHTML inside the same observed subtree. That write generated another mutation, allowing a self-sustaining observer feedback loop once a live Pokémon card existed.
+
+Fix
+---
+Live Trainer Card action controls now carry a semantic signature based on current Pokémon identity/kind, saved capture identity and on-card state. The action DOM is rebuilt only when that signature changes. Observer callbacks that see the same state perform no child-list mutation, breaking the feedback loop.
+
+Scope
+-----
+No mGBA runtime, ROM memory reading, IV/EV/Nature/Ability/Gender/Hidden Power decoding, save persistence, audio recovery, touch controls or desktop input mappings were modified. Mobile compact Trainer Card v0.1.7.1 and desktop keyboard v0.1.7.2 are retained.

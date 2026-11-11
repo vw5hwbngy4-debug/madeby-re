@@ -1,0 +1,77 @@
+{
+  "patch": "When the Carrier Improves Itself: Intelligence Explosion as a Compression of Civilizational Time",
+  "target": "https://madeby.re/research/",
+  "date": "2026-09-28",
+  "doi_assigned": false,
+  "adds": [
+    "when-the-carrier-improves-itself/index.html",
+    "when-the-carrier-improves-itself/article.css",
+    "when-the-carrier-improves-itself/article.txt",
+    "when-the-carrier-improves-itself/article.json"
+  ],
+  "updates": [
+    "index.html",
+    "research.html",
+    "papers.html",
+    "llms.txt",
+    "sitemap.xml",
+    "build-manifest-final.json"
+  ],
+  "notes": [
+    "Source-driven conceptual essay based on the CASP automated-AI-R&D report and supporting first-party evidence.",
+    "No Zenodo/DOI catalog files are changed.",
+    "Extract into the document root for research.madeby.re, allowing overwrite of updated root files."
+  ],
+  "files": [
+    {
+      "path": "when-the-carrier-improves-itself/index.html",
+      "sha256": "19566f041f86234a8f590fba28bd5890d27db99a47c2c4c6a05c0d8341279a71",
+      "bytes": 29206
+    },
+    {
+      "path": "when-the-carrier-improves-itself/article.css",
+      "sha256": "8a112312130d2307e8257a4d133297641a9c7e06077ff81d7729238bdb97dc99",
+      "bytes": 6610
+    },
+    {
+      "path": "when-the-carrier-improves-itself/article.txt",
+      "sha256": "dce4ccaf061dc0d5a2ea60a362ea1e1bf99229fa2cc7385dddb1e5e2b965deb7",
+      "bytes": 15947
+    },
+    {
+      "path": "when-the-carrier-improves-itself/article.json",
+      "sha256": "0df1c60165c81f2e9b38820a12729243fab38f628120cd201446ff98d4d7a8a1",
+      "bytes": 18956
+    },
+    {
+      "path": "index.html",
+      "sha256": "d31fafd5f888de76c5c1dc674a36d511c678cec3253ed64b09ae807fbe91b9d5",
+      "bytes": 14673
+    },
+    {
+      "path": "research.html",
+      "sha256": "f36c9c4a71ac28a0acfc17405b90634eeafd6216336581029117a32b228faf78",
+      "bytes": 13761
+    },
+    {
+      "path": "papers.html",
+      "sha256": "c95e89c2dcfb959ffbc577ca8db72887411c0d242a3143fcd93257c746ab3788",
+      "bytes": 24978
+    },
+    {
+      "path": "llms.txt",
+      "sha256": "71b5652a9553299015ab8d0bca0d6843549827a85296c99bf9d86a8ad25e8276",
+      "bytes": 3167
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "7dc3fc01d06ffe7749b4f7165cacd66f1bccc7822db00306243da890b9c494af",
+      "bytes": 22432
+    },
+    {
+      "path": "build-manifest-final.json",
+      "sha256": "6900dd531bcbcf61002c0bfdd3b364474c6387d648b5ffe6498b2559041cd9d0",
+      "bytes": 455
+    }
+  ]
+}

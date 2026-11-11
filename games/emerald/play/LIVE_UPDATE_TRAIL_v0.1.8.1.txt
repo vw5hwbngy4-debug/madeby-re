@@ -1,0 +1,27 @@
+JRPG.WORLD EMERALD v0.1.8.1 — LIVE UPDATE TRAIL
+==================================================
+
+PURPOSE
+-------
+Make active development visible without turning PokéField into a changelog page.
+
+NEW
+---
+- Tiny always-visible “UPDATED 7 SEP · v0.1.8.1” development row.
+- Tap the row to reveal the five most recent meaningful updates.
+- Collapsed by default, including in compact mode.
+- No timers, polling, analytics or network dependency.
+- No emulator/runtime/decoder/save/audio changes.
+
+RECENT TRAIL
+------------
+v0.1.8.1  Live update trail
+v0.1.8    Compact mode + held items
+v0.1.7.4  Safari sound recovery
+v0.1.7.3  Trainer Card runtime freeze fix
+v0.1.7.1  Compact mobile Trainer Card
+
+MAINTENANCE
+-----------
+For future releases, update the small list inside ensureUI() in pokefield-live and replace the oldest row.
+Keep it to roughly five entries so it remains a signal of activity rather than product clutter.

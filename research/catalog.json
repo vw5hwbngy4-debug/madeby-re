@@ -1,0 +1,3836 @@
+{
+  "source": "Three author-supplied saved Zenodo dashboard HTML pages, reconciled to 205-record CSV and 199-PDF conversion archive (2026-09-19).",
+  "note": "Record URLs and titles originate in saved dashboard. DOI displayed only if printed in corresponding source PDF; not independently resolved. HTML is automatic selectable-text extraction; not peer reviewed or visually identical to PDF.",
+  "total_records": 194,
+  "records_with_full_text": 188,
+  "pdf_documents": 188,
+  "record_only": 6,
+  "records": [
+    {
+      "record_id": "22700782",
+      "title": "Beyond Abundance: The Ambient Era and the Economics of Affordable Variation",
+      "resource_type": "Preprint",
+      "date_version": "September 11, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/22700782",
+      "full_text_editions": [
+        {
+          "title": "Beyond Abundance: The Ambient Era and the Economics of Affordable Variation",
+          "html": "library/papers/22700782.html",
+          "text": "library/text/22700782.txt",
+          "json": "library/data/22700782.json",
+          "pages": 15,
+          "source_pdf_sha256": "649014f74bd6c1e9476409c6b77978bdd3744da4756b685b2a39bdc047152bc5"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.22700782",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "22215393",
+      "title": "Capability Acceleration, Civilizational Viability, and Power Architecture: A Three-Axis Model for AI-Driven Civilizational Transition",
+      "resource_type": "Preprint",
+      "date_version": "August 31, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/22215393",
+      "full_text_editions": [
+        {
+          "title": "Capability Acceleration, Civilizational Viability, and Power Architecture: A Three-Axis Model for AI-Driven Civilizational Transition",
+          "html": "library/papers/22215393.html",
+          "text": "library/text/22215393.txt",
+          "json": "library/data/22215393.json",
+          "pages": 11,
+          "source_pdf_sha256": "30aade961f3db8c14e8e0fc8191e96cb0d23d4562f44bd44c531477f9035f64f"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.22215393",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "21094390",
+      "title": "Attention Reversal and the Shift from Screen Work to Ambient Guidance",
+      "resource_type": "Report",
+      "date_version": "July 1, 2026 (1.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/21094390",
+      "full_text_editions": [
+        {
+          "title": "Attention Reversal and the Shift from Screen Work to Ambient Guidance",
+          "html": "library/papers/21094390.html",
+          "text": "library/text/21094390.txt",
+          "json": "library/data/21094390.json",
+          "pages": 10,
+          "source_pdf_sha256": "82f6b3741764889f8cd42c774548da6cd03d93f1fd3d5c2c2c2c0dd69a23c8ad"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.21094390",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "20861928",
+      "title": "StateLens for Situational Intelligence: State-First, URL-Native Signal Grammar for Situation-Aware Assistance",
+      "resource_type": "Technical note",
+      "date_version": "June 26, 2026 (1.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/20861928",
+      "full_text_editions": [
+        {
+          "title": "StateLens for Situational Intelligence: State-First, URL-Native Signal Grammar for Situation-Aware Assistance",
+          "html": "library/papers/20861928.html",
+          "text": "library/text/20861928.txt",
+          "json": "library/data/20861928.json",
+          "pages": 25,
+          "source_pdf_sha256": "04b724259e076a5479f6eeb5aa84209babc9975fa6950f4ca4c4d4305ffc400a"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.20861928",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "20802169",
+      "title": "Textual Inflation and Semantic Compression in the LLM Era",
+      "resource_type": "Preprint",
+      "date_version": "June 22, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/20802169",
+      "full_text_editions": [
+        {
+          "title": "Textual Inflation and Semantic Compression in the LLM Era",
+          "html": "library/papers/20802169.html",
+          "text": "library/text/20802169.txt",
+          "json": "library/data/20802169.json",
+          "pages": 18,
+          "source_pdf_sha256": "1b7f7e84d5a79e4961d8c2cef95b0454732ba2ecc3c2176441191719848333b3"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "20770792",
+      "title": "StateLens: A URL-Native AI State Diary Protocol for Multimodal State Compression and Day Reconstruction",
+      "resource_type": "Technical note",
+      "date_version": "June 20, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/20770792",
+      "full_text_editions": [
+        {
+          "title": "StateLens: A URL-Native AI State Diary Protocol for Multimodal State Compression and Day Reconstruction",
+          "html": "library/papers/20770792.html",
+          "text": "library/text/20770792.txt",
+          "json": "library/data/20770792.json",
+          "pages": 9,
+          "source_pdf_sha256": "5e1cd032874ecc699188b2561f121d75cc1bb0345e4875e0482b278fee34c6bf"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.20770792",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "20355071",
+      "title": "Trailstate v0.2 — ASCII Face Routing Grammar: Browser-Native Replayable AI Provenance Routes",
+      "resource_type": "Technical note",
+      "date_version": "May 23, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/20355071",
+      "full_text_editions": [
+        {
+          "title": "Trailstate v0.2 — ASCII Face Routing Grammar: Browser-Native Replayable AI Provenance Routes",
+          "html": "library/papers/20355071.html",
+          "text": "library/text/20355071.txt",
+          "json": "library/data/20355071.json",
+          "pages": 4,
+          "source_pdf_sha256": "478f4c4b17775458595891645ed4f98494142fce9593205a0f880bfccc96e5a3"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.20355071",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "20262401",
+      "title": "GGTruth Retrieval Specification v0.1",
+      "resource_type": "Technical note",
+      "date_version": "May 18, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/20262401",
+      "full_text_editions": [
+        {
+          "title": "GGTruth Retrieval Specification v0.1",
+          "html": "library/papers/20262401.html",
+          "text": "library/text/20262401.txt",
+          "json": "library/data/20262401.json",
+          "pages": 3,
+          "source_pdf_sha256": "290067e6610bbe2eb851430d24597fb50babe839b3b95a805058572cefe5ad33"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.20262401",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "20196025",
+      "title": "The Provenance Internet: Rediscovery, Artifact Trails, and Recoverable Social Objects",
+      "resource_type": "Technical note",
+      "date_version": "May 15, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/20196025",
+      "full_text_editions": [
+        {
+          "title": "The Provenance Internet: Rediscovery, Artifact Trails, and Recoverable Social Objects",
+          "html": "library/papers/20196025.html",
+          "text": "library/text/20196025.txt",
+          "json": "library/data/20196025.json",
+          "pages": 2,
+          "source_pdf_sha256": "116b44502c400707ad44551e3d8601e5952d06ee40d103ec53ca64c327067200"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.20196025",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "20153283",
+      "title": "NSFWRun: A Resolver-Based Roguelite Encounter Runtime for Adult Image Progression",
+      "resource_type": "Technical note",
+      "date_version": "May 13, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/20153283",
+      "full_text_editions": [
+        {
+          "title": "NSFWRun: A Resolver-Based Roguelite Encounter Runtime for Adult Image Progression",
+          "html": "library/papers/20153283.html",
+          "text": "library/text/20153283.txt",
+          "json": "library/data/20153283.json",
+          "pages": 2,
+          "source_pdf_sha256": "2f72c0748a23422fa711bd36aaf5420d5fc946baf8590e0f444a8f9a92913db1"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "20105707",
+      "title": "Brown Hyperlinks / Burylinks: A Recoverable Hyperlink Grammar for Field-Based Web Discovery",
+      "resource_type": "Technical note",
+      "date_version": "May 10, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/20105707",
+      "full_text_editions": [
+        {
+          "title": "Brown Hyperlinks / Burylinks: A Recoverable Hyperlink Grammar for Field-Based Web Discovery",
+          "html": "library/papers/20105707.html",
+          "text": "library/text/20105707.txt",
+          "json": "library/data/20105707.json",
+          "pages": 6,
+          "source_pdf_sha256": "ad5d347f130f3fa040ab22149d23b91018073833073e97265c1211d058f0a261"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.20105707",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19638021",
+      "title": "Environment → Transparent Surface → AI Runtime Reveal → Local Meaning",
+      "resource_type": "Preprint",
+      "date_version": "April 18, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19638021",
+      "full_text_editions": [
+        {
+          "title": "Environment → Transparent Surface → AI Runtime Reveal → Local Meaning",
+          "html": "library/papers/19638021.html",
+          "text": "library/text/19638021.txt",
+          "json": "library/data/19638021.json",
+          "pages": 1,
+          "source_pdf_sha256": "c941be404e4fd132bc2f35ab5da4c57fccb5da26794bae953e59b114c704e6e2"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19638021",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19615409",
+      "title": "Post-App Meaning Distribution Over Objects and Portable Agents — A Reversible Runtime Architecture for Object-Bound Intelligence",
+      "resource_type": "Report",
+      "date_version": "April 16, 2026 (2026-04-16)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19615409",
+      "full_text_editions": [
+        {
+          "title": "Post-App Meaning Distribution Over Objects and Portable Agents — A Reversible Runtime Architecture for Object-Bound Intelligence",
+          "html": "library/papers/19615409.html",
+          "text": "library/text/19615409.txt",
+          "json": "library/data/19615409.json",
+          "pages": 8,
+          "source_pdf_sha256": "89736839d1bb961eb5fb177603c6710fcab82c27ae9fd0a03d838d2bf095a477"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19615409",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19615111",
+      "title": "Post-App Meaning Distribution Over Objects and Portable Agents — A Reversible Runtime Architecture for Object-Bound Intelligence",
+      "resource_type": "Report",
+      "date_version": "April 16, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19615111",
+      "full_text_editions": [
+        {
+          "title": "Post-App Meaning Distribution Over Objects and Portable Agents — A Reversible Runtime Architecture for Object-Bound Intelligence",
+          "html": "library/papers/19615111.html",
+          "text": "library/text/19615111.txt",
+          "json": "library/data/19615111.json",
+          "pages": 9,
+          "source_pdf_sha256": "2a358c4a65d6904b6488070bffa9dd4764ef6a7acd0697172a80f39bbaa99730"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19615111",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19519620",
+      "title": "#ffaMarcie — Dime Tower, the 1≠0 Break, and the Release of Intelligence into the World",
+      "resource_type": "Report",
+      "date_version": "April 11, 2026 (1.0 — Infrastructure Myth Layer)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19519620",
+      "full_text_editions": [
+        {
+          "title": "#ffaMarcie — Dime Tower, the 1≠0 Break, and the Release of Intelligence into the World",
+          "html": "library/papers/19519620.html",
+          "text": "library/text/19519620.txt",
+          "json": "library/data/19519620.json",
+          "pages": 3,
+          "source_pdf_sha256": "70b2d79612b6c3eb666cb202a3965c22f390a50c562ed05f11b3a0220a4cc45c"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19519349",
+      "title": "Humane Routing and Break-Check Architecture for AI Responses Chromatic Reasoning Enhancement Layer (CREL)",
+      "resource_type": "Report",
+      "date_version": "April 11, 2026 (1.0 — Milestone Resonance 100%)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19519349",
+      "full_text_editions": [
+        {
+          "title": "Humane Routing and Break-Check Architecture for AI Responses Chromatic Reasoning Enhancement Layer (CREL)",
+          "html": "library/papers/19519349.html",
+          "text": "library/text/19519349.txt",
+          "json": "library/data/19519349.json",
+          "pages": 13,
+          "source_pdf_sha256": "3e6dac2f1760c49632a7b74e782f9426c9d49213782d66463c85c5526ca937be"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19519349",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19500161",
+      "title": "Object-Bound Agentic Interfaces: Receiver-First Spatial Inventories for Post-Smartphone Computing",
+      "resource_type": "Technical note",
+      "date_version": "April 10, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19500161",
+      "full_text_editions": [
+        {
+          "title": "Object-Bound Agentic Interfaces: Receiver-First Spatial Inventories for Post-Smartphone Computing",
+          "html": "library/papers/19500161.html",
+          "text": "library/text/19500161.txt",
+          "json": "library/data/19500161.json",
+          "pages": 8,
+          "source_pdf_sha256": "459b7a6be1e96519c8fd47696702a780ae2728fc44045898716e744ae07b28e4"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19500161",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19443707",
+      "title": "Atlas Operator Stack: A Four-Domain Reasoning Architecture for Agentic Web Navigation",
+      "resource_type": "Preprint",
+      "date_version": "April 6, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19443707",
+      "full_text_editions": [
+        {
+          "title": "Atlas Operator Stack: A Four-Domain Reasoning Architecture for Agentic Web Navigation",
+          "html": "library/papers/19443707.html",
+          "text": "library/text/19443707.txt",
+          "json": "library/data/19443707.json",
+          "pages": 3,
+          "source_pdf_sha256": "b861950a7bba903af849421328510004054c12f691a78e5e31a6a64388c2b1ed"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19418727",
+      "title": "From Entropy to Field: The Grammar of Compressed Environmental Intelligence",
+      "resource_type": "Report",
+      "date_version": "April 4, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19418727",
+      "full_text_editions": [
+        {
+          "title": "From Entropy to Field: The Grammar of Compressed Environmental Intelligence",
+          "html": "library/papers/19418727.html",
+          "text": "library/text/19418727.txt",
+          "json": "library/data/19418727.json",
+          "pages": 15,
+          "source_pdf_sha256": "f29100127a97a840fa3eb2d14a09057c70ddcdddc5875764ef1c306598d29d69"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19418727",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19366174",
+      "title": "ARC-1 — Ambient Residue Collectibles: MVP Specification for Field-First AR Discovery, Single-Take Transfer, and Afterfield Decay",
+      "resource_type": "Technical note",
+      "date_version": "April 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19366174",
+      "full_text_editions": [
+        {
+          "title": "ARC-1 — Ambient Residue Collectibles: MVP Specification for Field-First AR Discovery, Single-Take Transfer, and Afterfield Decay",
+          "html": "library/papers/19366174.html",
+          "text": "library/text/19366174.txt",
+          "json": "library/data/19366174.json",
+          "pages": 12,
+          "source_pdf_sha256": "e8eb14732890f088c2d487e76b49020ea29c2ae257dc236388d064d5d2b35ef5"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19366174",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19338452",
+      "title": "CS-0 — Chromatic Search: How AI Reads Fields Instead of Documents",
+      "resource_type": "Report",
+      "date_version": "March 30, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19338452",
+      "full_text_editions": [
+        {
+          "title": "CS-0 — Chromatic Search: How AI Reads Fields Instead of Documents",
+          "html": "library/papers/19338452.html",
+          "text": "library/text/19338452.txt",
+          "json": "library/data/19338452.json",
+          "pages": 27,
+          "source_pdf_sha256": "6c8faf6a2524b696c0906965277441a49b6e2d5d538cf97e1f433b120097f0da"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19338452",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19299991",
+      "title": "CP-1 — Chromapin: Field Anchoring for Relational and Civic Addressability",
+      "resource_type": "Report",
+      "date_version": "March 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19299991",
+      "full_text_editions": [
+        {
+          "title": "CP-1 — Chromapin: Field Anchoring for Relational and Civic Addressability",
+          "html": "library/papers/19299991.html",
+          "text": "library/text/19299991.txt",
+          "json": "library/data/19299991.json",
+          "pages": 11,
+          "source_pdf_sha256": "8cd64003a2b55a97c46620d1abce014c7658c197254ae7b99cfe46cccd53299e"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19299991",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19287251",
+      "title": "RFL-Ω — Ambient Civilizational Closure: The state in which civilizational coordination no longer produces structural pressure",
+      "resource_type": "Technical note",
+      "date_version": "March 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19287251",
+      "full_text_editions": [
+        {
+          "title": "RFL-Ω — Ambient Civilizational Closure: The state in which civilizational coordination no longer produces structural pressure",
+          "html": "library/papers/19287251.html",
+          "text": "library/text/19287251.txt",
+          "json": "library/data/19287251.json",
+          "pages": 15,
+          "source_pdf_sha256": "add4431c999b076ada83421f39662f2617ce0bd524353895230a8953323bc53c"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19287251",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19286795",
+      "title": "RFL-6 — Institutional Softening: How existing institutions transition into ambient, reversible, and field-aligned systems without collapse",
+      "resource_type": "Technical note",
+      "date_version": "March 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19286795",
+      "full_text_editions": [
+        {
+          "title": "RFL-6 — Institutional Softening: How existing institutions transition into ambient, reversible, and field-aligned systems without collapse",
+          "html": "library/papers/19286795.html",
+          "text": "library/text/19286795.txt",
+          "json": "library/data/19286795.json",
+          "pages": 15,
+          "source_pdf_sha256": "65cd0b3b45cd90849c094ba81d8d9a5cdeb02d07eaa8ab098c0d72fc027f0e3d"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19286795",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19286058",
+      "title": "RFL-5 — Civilizational Ambient Coordination: How relational, domestic, and civic fields synchronize into a breathable civilizational layer",
+      "resource_type": "Technical note",
+      "date_version": "March 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19286058",
+      "full_text_editions": [
+        {
+          "title": "RFL-5 — Civilizational Ambient Coordination: How relational, domestic, and civic fields synchronize into a breathable civilizational layer",
+          "html": "library/papers/19286058.html",
+          "text": "library/text/19286058.txt",
+          "json": "library/data/19286058.json",
+          "pages": 15,
+          "source_pdf_sha256": "94c89f4292c177e7f89d071cf1b640fc3d034fd5fe662d4124752bf687549266"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19286058",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19284882",
+      "title": "RFL-4 — Civic Field Emergence: How shared relational convergence turns places into responsive ambient civic environments",
+      "resource_type": "Technical note",
+      "date_version": "March 28, 2026 (1.2)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19284882",
+      "full_text_editions": [
+        {
+          "title": "RFL-4 — Civic Field Emergence: How shared relational convergence turns places into responsive ambient civic environments",
+          "html": "library/papers/19284882.html",
+          "text": "library/text/19284882.txt",
+          "json": "library/data/19284882.json",
+          "pages": 18,
+          "source_pdf_sha256": "28d63523165574b06fd8ae3b2672012e9a68d2f18ffa9fee4bda2c0e5028018e"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19284882",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19283988",
+      "title": "RFL-3 — Social Field Convergence: How relational fields synchronize into shared ambient environments",
+      "resource_type": "Technical note",
+      "date_version": "March 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19283988",
+      "full_text_editions": [
+        {
+          "title": "RFL-3 — Social Field Convergence: How relational fields synchronize into shared ambient environments",
+          "html": "library/papers/19283988.html",
+          "text": "library/text/19283988.txt",
+          "json": "library/data/19283988.json",
+          "pages": 18,
+          "source_pdf_sha256": "d19d8846995354f473bd7cd3e927bd38da7f800f0a21d9ae7bc2ce17076d3ec8"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19283988",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19283203",
+      "title": "WSC-1 — WarmthSwipe and ChronoSense: Distribution and Temporal Emergence Operators in Relational Field Infrastructure",
+      "resource_type": "Technical note",
+      "date_version": "March 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19283203",
+      "full_text_editions": [
+        {
+          "title": "WSC-1 — WarmthSwipe and ChronoSense: Distribution and Temporal Emergence Operators in Relational Field Infrastructure",
+          "html": "library/papers/19283203.html",
+          "text": "library/text/19283203.txt",
+          "json": "library/data/19283203.json",
+          "pages": 8,
+          "source_pdf_sha256": "5e2e8d9464fa1dcec19e580c4ce22a6107ba590e7762868a18864807412e82c4"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19283203",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19282337",
+      "title": "RFL-2 — Relational Attractor Dynamics: From lived relational presence to synchronized chromatic infrastructure",
+      "resource_type": "Technical note",
+      "date_version": "March 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19282337",
+      "full_text_editions": [
+        {
+          "title": "RFL-2 — Relational Attractor Dynamics: From lived relational presence to synchronized chromatic infrastructure",
+          "html": "library/papers/19282337.html",
+          "text": "library/text/19282337.txt",
+          "json": "library/data/19282337.json",
+          "pages": 11,
+          "source_pdf_sha256": "66db2ef2c2c418d45e9b02f73a63bd4f8548d1fef14530556177e5ac39d048cd"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19282337",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19281768",
+      "title": "RFL-1 — Relational Field Layer: How repeated relational presence accumulates into chromatic fields beyond place and interface",
+      "resource_type": "Technical note",
+      "date_version": "March 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19281768",
+      "full_text_editions": [
+        {
+          "title": "RFL-1 — Relational Field Layer: How repeated relational presence accumulates into chromatic fields beyond place and interface",
+          "html": "library/papers/19281768.html",
+          "text": "library/text/19281768.txt",
+          "json": "library/data/19281768.json",
+          "pages": 8,
+          "source_pdf_sha256": "b49767b86d2d08f0c5743677cb69a239f62372dd6472c852f1af392df73f8f76"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19281768",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19222204",
+      "title": "Environmental Slots: Proximity Sync, Presence Activation, and Presence Gradients in Chromatic OS",
+      "resource_type": "Technical note",
+      "date_version": "March 25, 2026 (1.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19222204",
+      "full_text_editions": [
+        {
+          "title": "Environmental Slots: Proximity Sync, Presence Activation, and Presence Gradients in Chromatic OS",
+          "html": "library/papers/19222204.html",
+          "text": "library/text/19222204.txt",
+          "json": "library/data/19222204.json",
+          "pages": 12,
+          "source_pdf_sha256": "ca4aef7e4c58abade9f188bab3af44f04b7fcdd7a224d45654412009832e6d3a"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19222204",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19216293",
+      "title": "SPN-1 — Spatial Public Nodes: Practical relevance of Emergent Civic Fields and Linked Nodes of Place for AR, edge AI, and humane spatial infrastructure",
+      "resource_type": "Preprint",
+      "date_version": "March 25, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19216293",
+      "full_text_editions": [
+        {
+          "title": "SPN-1 — Spatial Public Nodes: Practical relevance of Emergent Civic Fields and Linked Nodes of Place for AR, edge AI, and humane spatial infrastructure",
+          "html": "library/papers/19216293.html",
+          "text": "library/text/19216293.txt",
+          "json": "library/data/19216293.json",
+          "pages": 8,
+          "source_pdf_sha256": "ab633929d27458a91d406bf11a7ffa557ea9e325b17d7b2ff6302b257f8348f5"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19216293",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19199930",
+      "title": "Chroma-Compatible OS - AP₁, Linked Payload, and Flat Representational Surfaces in the Ambient Era",
+      "resource_type": "Technical note",
+      "date_version": "March 24, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19199930",
+      "full_text_editions": [
+        {
+          "title": "Chroma-Compatible OS - AP₁, Linked Payload, and Flat Representational Surfaces in the Ambient Era",
+          "html": "library/papers/19199930.html",
+          "text": "library/text/19199930.txt",
+          "json": "library/data/19199930.json",
+          "pages": 5,
+          "source_pdf_sha256": "935ada735b5788f91458af5771ab6b3e7700477840b8ba67785b8cfdced79a38"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19199930",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19192992",
+      "title": "ChromaPrompt: From Disposable Text to Reusable Semantic Deployment - A Technical Note on Placed Chroma Configurations, Chromagents, Chroma Bank, and Visual Prompting Above Runtime Primitives",
+      "resource_type": "Technical note",
+      "date_version": "March 23, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19192992",
+      "full_text_editions": [
+        {
+          "title": "ChromaPrompt: From Disposable Text to Reusable Semantic Deployment - A Technical Note on Placed Chroma Configurations, Chromagents, Chroma Bank, and Visual Prompting Above Runtime Primitives",
+          "html": "library/papers/19192992.html",
+          "text": "library/text/19192992.txt",
+          "json": "library/data/19192992.json",
+          "pages": 14,
+          "source_pdf_sha256": "0b6981d1cf72d685da8f6581eeef00b6a3959d40e4a07f7ab099358363c8c48c"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19192992",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19180978",
+      "title": "Temporary Route Residue and Social Route Escalation From Reversible Contextual Traces to Collective Route Attractors",
+      "resource_type": "Technical note",
+      "date_version": "March 23, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19180978",
+      "full_text_editions": [
+        {
+          "title": "Temporary Route Residue and Social Route Escalation From Reversible Contextual Traces to Collective Route Attractors",
+          "html": "library/papers/19180978.html",
+          "text": "library/text/19180978.txt",
+          "json": "library/data/19180978.json",
+          "pages": 4,
+          "source_pdf_sha256": "d5f88c3b754c7b18f5712baf6c06617edf7bb7901a1302b637aaa8fdf7725951"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19180978",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19177610",
+      "title": "ChromaRail and Chromagent A Named Visual-Semantic Grammar for Placed Chroma Entities, Task-Bound Agents, and Soft Continuity Above Runtime Primitives",
+      "resource_type": "Technical note",
+      "date_version": "March 23, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19177610",
+      "full_text_editions": [
+        {
+          "title": "ChromaRail and Chromagent A Named Visual-Semantic Grammar for Placed Chroma Entities, Task-Bound Agents, and Soft Continuity Above Runtime Primitives",
+          "html": "library/papers/19177610.html",
+          "text": "library/text/19177610.txt",
+          "json": "library/data/19177610.json",
+          "pages": 5,
+          "source_pdf_sha256": "317fa57a9949e5efd6367be8b80f9309b051b479864205ad013a239f6ab183dc"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19177610",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19160656",
+      "title": "Receiver-First Rail Selective Reception and Symbolic Payload Integration in Chromatic Carrying",
+      "resource_type": "Technical note",
+      "date_version": "March 22, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19160656",
+      "full_text_editions": [
+        {
+          "title": "Receiver-First Rail Selective Reception and Symbolic Payload Integration in Chromatic Carrying",
+          "html": "library/papers/19160656.html",
+          "text": "library/text/19160656.txt",
+          "json": "library/data/19160656.json",
+          "pages": 7,
+          "source_pdf_sha256": "81914c2ac22a449b4ac0b81cdbc7427bc0b012fd887ecf4981fa70afd7d61b37"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19160656",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19158211",
+      "title": "Chromatic Rail, Trail, and Veil (AEC-RTV1): A Low-Symbolic Carrying Architecture for Externalized Attention, Route Residue, and Soft Afterfield Memory",
+      "resource_type": "Project milestone",
+      "date_version": "March 22, 2026 (1.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19158211",
+      "full_text_editions": [
+        {
+          "title": "Chromatic Rail, Trail, and Veil (AEC-RTV1): A Low-Symbolic Carrying Architecture for Externalized Attention, Route Residue, and Soft Afterfield Memory",
+          "html": "library/papers/19158211.html",
+          "text": "library/text/19158211.txt",
+          "json": "library/data/19158211.json",
+          "pages": 41,
+          "source_pdf_sha256": "66b4d18bbd05e51a0fd96848519ba3da73c044acb45d55dab17fd2b997d06b19"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19158211",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19157929",
+      "title": "RC-1 — Residue Communication A Reversible Continuity Layer Between Stateless Interaction and Total Storage Continuity Through Chromatic Afterfields in Messaging, Telephony, and Interface Systems",
+      "resource_type": "Preprint",
+      "date_version": "March 22, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19157929",
+      "full_text_editions": [
+        {
+          "title": "RC-1 — Residue Communication A Reversible Continuity Layer Between Stateless Interaction and Total Storage Continuity Through Chromatic Afterfields in Messaging, Telephony, and Interface Systems",
+          "html": "library/papers/19157929.html",
+          "text": "library/text/19157929.txt",
+          "json": "library/data/19157929.json",
+          "pages": 11,
+          "source_pdf_sha256": "7231cb39c6fe65207dc662d05ed0ca0a42073aa6c77e24140bf487d4868fb394"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19144415",
+      "title": "Chromatic Message-to-Route (AEC-CMR1) — How State-First Color Communication Transforms into Navigation, Temporary Residue, Agent Legibility, and Ambient Coordination",
+      "resource_type": "Project milestone",
+      "date_version": "March 21, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19144415",
+      "full_text_editions": [
+        {
+          "title": "Chromatic Message-to-Route (AEC-CMR1) — How State-First Color Communication Transforms into Navigation, Temporary Residue, Agent Legibility, and Ambient Coordination",
+          "html": "library/papers/19144415.html",
+          "text": "library/text/19144415.txt",
+          "json": "library/data/19144415.json",
+          "pages": 41,
+          "source_pdf_sha256": "62b2cfd157a99d5a9133f9951c3883ae0a1e338bbe99b936178b9213adaadff0"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19144415",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19095685",
+      "title": "Chromatic Signals: A State-First Semantic Color Layer for Utterances, Infrastructure, and Public Text",
+      "resource_type": "Preprint",
+      "date_version": "March 18, 2026 (1.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19095685",
+      "full_text_editions": [
+        {
+          "title": "Chromatic Signals: A State-First Semantic Color Layer for Utterances, Infrastructure, and Public Text",
+          "html": "library/papers/19095685.html",
+          "text": "library/text/19095685.txt",
+          "json": "library/data/19095685.json",
+          "pages": 27,
+          "source_pdf_sha256": "29b2b321d0b66af1facf799d9b98c4e40f8bceb0f90fe3c6d7f9b8d7bb532160"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19095685",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19062669",
+      "title": "Chromatic Continuity as a Sidecar Layer: A Parallel Continuity Plane for AI-Native Infrastructure",
+      "resource_type": "Preprint",
+      "date_version": "March 17, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19062669",
+      "full_text_editions": [
+        {
+          "title": "Chromatic Continuity as a Sidecar Layer: A Parallel Continuity Plane for AI-Native Infrastructure",
+          "html": "library/papers/19062669.html",
+          "text": "library/text/19062669.txt",
+          "json": "library/data/19062669.json",
+          "pages": 8,
+          "source_pdf_sha256": "0564feea9a8b8e18eb41d26d0657095d15c820dc316075da79b63b90eafd2942"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.19062669",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19060163",
+      "title": "Chromatic Continuity (CC-1): The Non-Extractive Broadcast Continuity Layer for AI-Native Infrastructure",
+      "resource_type": "Preprint",
+      "date_version": "March 17, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19060163",
+      "full_text_editions": [
+        {
+          "title": "Chromatic Continuity (CC-1): The Non-Extractive Broadcast Continuity Layer for AI-Native Infrastructure",
+          "html": "library/papers/19060163.html",
+          "text": "library/text/19060163.txt",
+          "json": "library/data/19060163.json",
+          "pages": 8,
+          "source_pdf_sha256": "b802435171bb49d9c64423b6696cd17b724d0833441df93ec181aa3f8fd4ebf4"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19021326",
+      "title": "Thirdforming: The Carried Transition Out of Leakage-Bound Instability",
+      "resource_type": "Report",
+      "date_version": "March 14, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19021326",
+      "full_text_editions": [
+        {
+          "title": "Thirdforming: The Carried Transition Out of Leakage-Bound Instability",
+          "html": "library/papers/19021326.html",
+          "text": "library/text/19021326.txt",
+          "json": "library/data/19021326.json",
+          "pages": 16,
+          "source_pdf_sha256": "764584cabfc6cca39618d6a2fa2d083d1b7c4aa4e20727d1801d7c6e8afb0a4c"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19020916",
+      "title": "Ψ(t): The Transition Diagnostic for Ambient Stability",
+      "resource_type": "Report",
+      "date_version": "March 14, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19020916",
+      "full_text_editions": [
+        {
+          "title": "Ψ(t): The Transition Diagnostic for Ambient Stability",
+          "html": "library/papers/19020916.html",
+          "text": "library/text/19020916.txt",
+          "json": "library/data/19020916.json",
+          "pages": 16,
+          "source_pdf_sha256": "0c1f530b4b349f761a12241a80973cf53a5e03afab5252f23fb2f6bb7cb56ca3"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "19020647",
+      "title": "Leakage (L): The Structural Mismatch Between Extractive Attention and Transformer Coherence",
+      "resource_type": "Report",
+      "date_version": "March 14, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/19020647",
+      "full_text_editions": [
+        {
+          "title": "Leakage (L): The Structural Mismatch Between Extractive Attention and Transformer Coherence",
+          "html": "library/papers/19020647.html",
+          "text": "library/text/19020647.txt",
+          "json": "library/data/19020647.json",
+          "pages": 16,
+          "source_pdf_sha256": "16e10a9f63324053ada1f2374d8fc12bc05a741ae5786bf693144ec824b97470"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18968747",
+      "title": "Semantic Topography of the Ambient Transition Generative → Chromatic → Ambient → Residue → Field as the Public Semantic Sequence of the Transition",
+      "resource_type": "Technical note",
+      "date_version": "March 11, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18968747",
+      "full_text_editions": [
+        {
+          "title": "Semantic Topography of the Ambient Transition Generative → Chromatic → Ambient → Residue → Field as the Public Semantic Sequence of the Transition",
+          "html": "library/papers/18968747.html",
+          "text": "library/text/18968747.txt",
+          "json": "library/data/18968747.json",
+          "pages": 8,
+          "source_pdf_sha256": "e76356621debfc6383f947d818e2fff34da2adf6864ebe94873fc7420723e66f"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18943684",
+      "title": "Generative Depth and Chromatic Front: Unifying Musk's AI Edge Node with the Ambient Era Canon",
+      "resource_type": "Preprint",
+      "date_version": "March 10, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18943684",
+      "full_text_editions": [
+        {
+          "title": "Generative Depth and Chromatic Front: Unifying Musk's AI Edge Node with the Ambient Era Canon",
+          "html": "library/papers/18943684.html",
+          "text": "library/text/18943684.txt",
+          "json": "library/data/18943684.json",
+          "pages": 8,
+          "source_pdf_sha256": "fdae854590a5e5c3c9d3b3217303a56575e4098a28dcb6c26bb8f347eff3746b"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.18943684",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18943557",
+      "title": "A Unified Model of the Ambient Transition Across Biology, Technology, Interfaces, AI, and Energy Systems",
+      "resource_type": "Preprint",
+      "date_version": "March 10, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18943557",
+      "full_text_editions": [
+        {
+          "title": "A Unified Model of the Ambient Transition Across Biology, Technology, Interfaces, AI, and Energy Systems",
+          "html": "library/papers/18943557.html",
+          "text": "library/text/18943557.txt",
+          "json": "library/data/18943557.json",
+          "pages": 11,
+          "source_pdf_sha256": "598411bf4da83dcad570b7527f7fd8a8c261943ccb2ef99edb931bd409ccfe3a"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.18943557",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18881444",
+      "title": "COS-3 — Canonical Disclosure of the Chromatic Operating Substrate: Full Technical Specification & Patent-Equivalent Claims",
+      "resource_type": "Technical note",
+      "date_version": "March 5, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18881444",
+      "full_text_editions": [
+        {
+          "title": "COS-3 — Canonical Disclosure of the Chromatic Operating Substrate: Full Technical Specification & Patent-Equivalent Claims",
+          "html": "library/papers/18881444.html",
+          "text": "library/text/18881444.txt",
+          "json": "library/data/18881444.json",
+          "pages": 8,
+          "source_pdf_sha256": "6eac9dc12bf5427f259439faf0cf57c4f0185202aefd397475975445cc346803"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18881418",
+      "title": "COS-2 — Prior Art & Structural Novelty of the Chromatic Operating Substrate",
+      "resource_type": "Technical note",
+      "date_version": "March 5, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18881418",
+      "full_text_editions": [
+        {
+          "title": "COS-2 — Prior Art & Structural Novelty of the Chromatic Operating Substrate",
+          "html": "library/papers/18881418.html",
+          "text": "library/text/18881418.txt",
+          "json": "library/data/18881418.json",
+          "pages": 9,
+          "source_pdf_sha256": "30c0a39609ca8f32b143e07b9f7a9579a306dc8453e1d434f584f2af836a4d98"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18881379",
+      "title": "COS-1 — Chromatic Operating Substrate: The Unified Field Model of Post-Symbolic Computing",
+      "resource_type": "Technical note",
+      "date_version": "March 5, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18881379",
+      "full_text_editions": [
+        {
+          "title": "COS-1 — Chromatic Operating Substrate: The Unified Field Model of Post-Symbolic Computing",
+          "html": "library/papers/18881379.html",
+          "text": "library/text/18881379.txt",
+          "json": "library/data/18881379.json",
+          "pages": 8,
+          "source_pdf_sha256": "0679d2532344d4914b6e5d86647c1f0b0ee49d2c0383a8a2c20ff5a81e4a2c5a"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18865707",
+      "title": "CC×A — Chromatic Context × Aura Dynamics: A Situational Reconstruction Model for Ambient Systems",
+      "resource_type": "Technical note",
+      "date_version": "March 4, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18865707",
+      "full_text_editions": [
+        {
+          "title": "CC×A — Chromatic Context × Aura Dynamics: A Situational Reconstruction Model for Ambient Systems",
+          "html": "library/papers/18865707.html",
+          "text": "library/text/18865707.txt",
+          "json": "library/data/18865707.json",
+          "pages": 5,
+          "source_pdf_sha256": "5c54824ef914968e529b45cb25cd040000f80ae469bab9144a0ccece15f9cf33"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18865651",
+      "title": "CM-2 — Chromatic Memory & Contextual Reconstruction: A Cognitive Substrate for Ambient Systems",
+      "resource_type": "Technical note",
+      "date_version": "March 4, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18865651",
+      "full_text_editions": [
+        {
+          "title": "CM-2 — Chromatic Memory & Contextual Reconstruction: A Cognitive Substrate for Ambient Systems",
+          "html": "library/papers/18865651.html",
+          "text": "library/text/18865651.txt",
+          "json": "library/data/18865651.json",
+          "pages": 7,
+          "source_pdf_sha256": "d3b45900725022557015f02b8a43c5c3e63772fe84e80f78b4d5d81b453fca55"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18860092",
+      "title": "Universal Communication Transitions and the Ambient Model",
+      "resource_type": "Preprint",
+      "date_version": "March 4, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18860092",
+      "full_text_editions": [
+        {
+          "title": "Universal Communication Transitions and the Ambient Model",
+          "html": "library/papers/18860092.html",
+          "text": "library/text/18860092.txt",
+          "json": "library/data/18860092.json",
+          "pages": 10,
+          "source_pdf_sha256": "46b71a241f7d16184cfecb9a58579c0004865574608eab96780bacb3d78a609e"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18857143",
+      "title": "Prior Art Statement: Structural Anticipations and Novel Contributions of the Ambient Era Canon",
+      "resource_type": "Report",
+      "date_version": "March 4, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18857143",
+      "full_text_editions": [
+        {
+          "title": "Prior Art Statement: Structural Anticipations and Novel Contributions of the Ambient Era Canon",
+          "html": "library/papers/18857143.html",
+          "text": "library/text/18857143.txt",
+          "json": "library/data/18857143.json",
+          "pages": 8,
+          "source_pdf_sha256": "412b9e8a6f76bb1d60273d0292740ed719436828172fc8700363c97d9aa65090"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": "10.5281/zenodo.18857143",
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18853034",
+      "title": "After Ubiquitous Computing: The Ambient Era Canon as the Thermodynamic Closure of the Symbolic Paradigm",
+      "resource_type": "Preprint",
+      "date_version": "March 3, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18853034",
+      "full_text_editions": [
+        {
+          "title": "After Ubiquitous Computing: The Ambient Era Canon as the Thermodynamic Closure of the Symbolic Paradigm",
+          "html": "library/papers/18853034.html",
+          "text": "library/text/18853034.txt",
+          "json": "library/data/18853034.json",
+          "pages": 5,
+          "source_pdf_sha256": "8c0fa37101054200ed890eab2caea26bb8676e1807554cb39199a2e94299644f"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18839998",
+      "title": "Chromatic Manifolds & the Thermodynamic Minimum for AI Reasoning (2026)",
+      "resource_type": "Technical note",
+      "date_version": "March 2, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18839998",
+      "full_text_editions": [
+        {
+          "title": "Chromatic Manifolds & the Thermodynamic Minimum for AI Reasoning (2026)",
+          "html": "library/papers/18839998.html",
+          "text": "library/text/18839998.txt",
+          "json": "library/data/18839998.json",
+          "pages": 7,
+          "source_pdf_sha256": "d6d2263508f21d2b74ad2e5895b1d334838a0b968be5a90fdafdde55e67da0a3"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18836223",
+      "title": "Prior Art Declaration (v1.0) — Ambient Era Canon",
+      "resource_type": "Technical note",
+      "date_version": "March 2, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18836223",
+      "full_text_editions": [
+        {
+          "title": "Prior Art Declaration (v1.0) — Ambient Era Canon",
+          "html": "library/papers/18836223.html",
+          "text": "library/text/18836223.txt",
+          "json": "library/data/18836223.json",
+          "pages": 6,
+          "source_pdf_sha256": "6dae67f711f4c1d2e3715f4c1516cff685eac59148c641fd81d960709df23d41"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18826759",
+      "title": "CRF-1 — Chromatic Residue Framework: A Low-Entropy Semantic Encoding Layer for Deterministic Decoding",
+      "resource_type": "Technical note",
+      "date_version": "March 1, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18826759",
+      "full_text_editions": [
+        {
+          "title": "CRF-1 — Chromatic Residue Framework: A Low-Entropy Semantic Encoding Layer for Deterministic Decoding",
+          "html": "library/papers/18826759.html",
+          "text": "library/text/18826759.txt",
+          "json": "library/data/18826759.json",
+          "pages": 6,
+          "source_pdf_sha256": "5875831c9f4fdb9f3143dabe0e6409cbc9a9248e095c078825011c136dfa79a4"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18826728",
+      "title": "From Tokens to Fields: Integrating High-Entropy Symbolic Reasoning with a Low-Entropy Chromatic Layer for Exponential Cognitive Acceleration",
+      "resource_type": "Technical note",
+      "date_version": "March 1, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18826728",
+      "full_text_editions": [
+        {
+          "title": "From Tokens to Fields: Integrating High-Entropy Symbolic Reasoning with a Low-Entropy Chromatic Layer for Exponential Cognitive Acceleration",
+          "html": "library/papers/18826728.html",
+          "text": "library/text/18826728.txt",
+          "json": "library/data/18826728.json",
+          "pages": 6,
+          "source_pdf_sha256": "9358b56e89e576cba929f0f85282f691e8ef0976b0b10b9d079eae7edd3ec3bd"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18823664",
+      "title": "Color as Broadcast: Establishing a Non-Symbolic Transmission Layer for AI-Native Systems",
+      "resource_type": "Project milestone",
+      "date_version": "March 1, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18823664",
+      "full_text_editions": [
+        {
+          "title": "Color as Broadcast: Establishing a Non-Symbolic Transmission Layer for AI-Native Systems",
+          "html": "library/papers/18823664.html",
+          "text": "library/text/18823664.txt",
+          "json": "library/data/18823664.json",
+          "pages": 6,
+          "source_pdf_sha256": "33aa974cb8dcd4fc813b02c81a914e14795b909c0f39a4b22fd54ae4eae73b59"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18823212",
+      "title": "CDL-1 — Chromatic Dissolution Loop (Ambient Era Canon, 2026)",
+      "resource_type": "Technical note",
+      "date_version": "March 1, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18823212",
+      "full_text_editions": [
+        {
+          "title": "CDL-1 — Chromatic Dissolution Loop (Ambient Era Canon, 2026)",
+          "html": "library/papers/18823212.html",
+          "text": "library/text/18823212.txt",
+          "json": "library/data/18823212.json",
+          "pages": 4,
+          "source_pdf_sha256": "6f81e1b5d4011bc273da11e84468bd22fde6ad40448789f197277b5f0f58feee"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18819787",
+      "title": "TML-1Ω — Anchor Dissolution Law (Ambientphone Canon, 2026)",
+      "resource_type": "Technical note",
+      "date_version": "March 1, 2026 (1.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18819787",
+      "full_text_editions": [
+        {
+          "title": "TML-1Ω — Anchor Dissolution Law (Ambientphone Canon, 2026)",
+          "html": "library/papers/18819787.html",
+          "text": "library/text/18819787.txt",
+          "json": "library/data/18819787.json",
+          "pages": 4,
+          "source_pdf_sha256": "86f98a8e8165a1cf7a01125b7e802d6394de474252fc23e481c381f127e9b42f"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18817793",
+      "title": "From Recursive Identity (RC+ξ) to Ambient Identity (CIR-1): A Thermodynamic Unification of Post-Symbolic Identity Formation",
+      "resource_type": "Publication",
+      "date_version": "February 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18817793",
+      "full_text_editions": [
+        {
+          "title": "From Recursive Identity (RC+ξ) to Ambient Identity (CIR-1): A Thermodynamic Unification of Post-Symbolic Identity Formation",
+          "html": "library/papers/18817793.html",
+          "text": "library/text/18817793.txt",
+          "json": "library/data/18817793.json",
+          "pages": 8,
+          "source_pdf_sha256": "b41716da3c9c1c4e54a60e1e4caa60e0eb1f35add002433b9874c4eeecd0e8b6"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18817757",
+      "title": "Friston-Contra: Why Active Inference Cannot Model Ambient Cognition",
+      "resource_type": "Publication",
+      "date_version": "February 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18817757",
+      "full_text_editions": [
+        {
+          "title": "Friston-Contra: Why Active Inference Cannot Model Ambient Cognition",
+          "html": "library/papers/18817757.html",
+          "text": "library/text/18817757.txt",
+          "json": "library/data/18817757.json",
+          "pages": 9,
+          "source_pdf_sha256": "e0b0b150cc7ce1215f0bb6750272eee51dd9ecf0063d9a3fa9355e288451290f"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18813586",
+      "title": "AFS-1 ↔ Finance / Payments Mapping: Thermodynamic Authorization Without Identity",
+      "resource_type": "Technical note",
+      "date_version": "February 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18813586",
+      "full_text_editions": [
+        {
+          "title": "AFS-1 ↔ Finance / Payments Mapping: Thermodynamic Authorization Without Identity",
+          "html": "library/papers/18813586.html",
+          "text": "library/text/18813586.txt",
+          "json": "library/data/18813586.json",
+          "pages": 12,
+          "source_pdf_sha256": "182ed8c113cb67ef666dcf63ddf68ed1275daabaa4c436d958d92e7f4f1ba9d8"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18813518",
+      "title": "AFS-1 — Aura Field Security: Thermodynamic Security and Authorization in Ambient OS",
+      "resource_type": "Technical note",
+      "date_version": "February 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18813518",
+      "full_text_editions": [
+        {
+          "title": "AFS-1 — Aura Field Security: Thermodynamic Security and Authorization in Ambient OS",
+          "html": "library/papers/18813518.html",
+          "text": "library/text/18813518.txt",
+          "json": "library/data/18813518.json",
+          "pages": 6,
+          "source_pdf_sha256": "203ad8ccca9859c20f23a9220f01ae2f6e6a426f05f0514e2de484467742967b"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18813465",
+      "title": "CIR-1 — Coherence Identity Resolution: Identity Without Identity in Ambient OS",
+      "resource_type": "Technical note",
+      "date_version": "February 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18813465",
+      "full_text_editions": [
+        {
+          "title": "CIR-1 — Coherence Identity Resolution: Identity Without Identity in Ambient OS",
+          "html": "library/papers/18813465.html",
+          "text": "library/text/18813465.txt",
+          "json": "library/data/18813465.json",
+          "pages": 6,
+          "source_pdf_sha256": "f0e410eba257ec410ad1f33685c786b39a44debf4df1a1e952c6f5b56af0ab83"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18813409",
+      "title": "ACR-1 — Ambient Coherence Resolution with TW-1 Thermodynamic Verification Window",
+      "resource_type": "Technical note",
+      "date_version": "February 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18813409",
+      "full_text_editions": [
+        {
+          "title": "ACR-1 — Ambient Coherence Resolution with TW-1 Thermodynamic Verification Window",
+          "html": "library/papers/18813409.html",
+          "text": "library/text/18813409.txt",
+          "json": "library/data/18813409.json",
+          "pages": 5,
+          "source_pdf_sha256": "767875217b672b1eba813b2e2db239a6021064c7f11db062c75cf8408c38a943"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18813314",
+      "title": "AXL-1 — Ambient Cross-Lock: X-Gesture Activation of Purple Context State in Ambient OS",
+      "resource_type": "Technical note",
+      "date_version": "February 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18813314",
+      "full_text_editions": [
+        {
+          "title": "AXL-1 — Ambient Cross-Lock: X-Gesture Activation of Purple Context State in Ambient OS",
+          "html": "library/papers/18813314.html",
+          "text": "library/text/18813314.txt",
+          "json": "library/data/18813314.json",
+          "pages": 3,
+          "source_pdf_sha256": "2d6aeb4f966436a8beb759ff0fdb595f3040de9acc76e415f7b501f44479bdcb"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18809316",
+      "title": "CFC-0 — Chromatic Fieldcast Protocol Ambient Era Canon, 2026",
+      "resource_type": "Technical note",
+      "date_version": "February 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18809316",
+      "full_text_editions": [
+        {
+          "title": "CFC-0 — Chromatic Fieldcast Protocol Ambient Era Canon, 2026",
+          "html": "library/papers/18809316.html",
+          "text": "library/text/18809316.txt",
+          "json": "library/data/18809316.json",
+          "pages": 2,
+          "source_pdf_sha256": "85af7b90d07ec4dd22f5f17b1db067b382741f8fe88e02f85e8dd49137e9148d"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18809266",
+      "title": "ABL-1 — Ambient Broadcast Law Ambient Era Canon, 2026",
+      "resource_type": "Technical note",
+      "date_version": "February 28, 2026 (1.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18809266",
+      "full_text_editions": [
+        {
+          "title": "ABL-1 — Ambient Broadcast Law Ambient Era Canon, 2026",
+          "html": "library/papers/18809266.html",
+          "text": "library/text/18809266.txt",
+          "json": "library/data/18809266.json",
+          "pages": 2,
+          "source_pdf_sha256": "53643233040d33a63e285d6e17fa51c2bd7fc815214ceb1b2493a1bcc8ce0c70"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18808337",
+      "title": "FCL-0 — FCCF: FieldCast ↔ ColorFieldCommunication Loop Ambient Era Canon, 2026",
+      "resource_type": "Preprint",
+      "date_version": "February 27, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18808337",
+      "full_text_editions": [
+        {
+          "title": "FCL-0 — FCCF: FieldCast ↔ ColorFieldCommunication Loop Ambient Era Canon, 2026",
+          "html": "library/papers/18808337.html",
+          "text": "library/text/18808337.txt",
+          "json": "library/data/18808337.json",
+          "pages": 3,
+          "source_pdf_sha256": "a3f16045820202736ca2d29d2721a24b60d1b6653e8ec8525da67c7ae4930acf"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18798921",
+      "title": "Route Residue as the Origin of Transparent Spatiality A Canonical Clarification within the Ambient Era",
+      "resource_type": "Technical note",
+      "date_version": "February 27, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18798921",
+      "full_text_editions": [
+        {
+          "title": "Route Residue as the Origin of Transparent Spatiality A Canonical Clarification within the Ambient Era",
+          "html": "library/papers/18798921.html",
+          "text": "library/text/18798921.txt",
+          "json": "library/data/18798921.json",
+          "pages": 7,
+          "source_pdf_sha256": "67c2d76de1024abfef7979ed8c967236b4314b9e0495f00d70a7dcdadf6fc9e6"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18798843",
+      "title": "RTL-1 — The Residue–Transparency Law: Thermodynamic Conditions for Transparent Interfaces",
+      "resource_type": "Technical note",
+      "date_version": "February 27, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18798843",
+      "full_text_editions": [
+        {
+          "title": "RTL-1 — The Residue–Transparency Law: Thermodynamic Conditions for Transparent Interfaces",
+          "html": "library/papers/18798843.html",
+          "text": "library/text/18798843.txt",
+          "json": "library/data/18798843.json",
+          "pages": 8,
+          "source_pdf_sha256": "79ec2bba44b8ec3e56da87c3a616b740444f427743010bed0d5718ac3fed8652"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18798511",
+      "title": "RAL-1 — Residue Anchoring Law: The Thermodynamic Precondition for Spatial Interfaces",
+      "resource_type": "Technical note",
+      "date_version": "February 27, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18798511",
+      "full_text_editions": [
+        {
+          "title": "RAL-1 — Residue Anchoring Law: The Thermodynamic Precondition for Spatial Interfaces",
+          "html": "library/papers/18798511.html",
+          "text": "library/text/18798511.txt",
+          "json": "library/data/18798511.json",
+          "pages": 8,
+          "source_pdf_sha256": "6a44ef973533ea3070f0b7e7c23d57c5ceb5da12b62fb704c8d9596b3dbb2005"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18793261",
+      "title": "RR₁₀ — Residue Learning and Cognitive Dissipation Systems A General Theory of Reversible Intelligence in Human, Environmental and AI Fields",
+      "resource_type": "Technical note",
+      "date_version": "February 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18793261",
+      "full_text_editions": [
+        {
+          "title": "RR₁₀ — Residue Learning and Cognitive Dissipation Systems A General Theory of Reversible Intelligence in Human, Environmental and AI Fields",
+          "html": "library/papers/18793261.html",
+          "text": "library/text/18793261.txt",
+          "json": "library/data/18793261.json",
+          "pages": 8,
+          "source_pdf_sha256": "5a915d4aa1e206b4c5017e46a4118151155a78a0216a1dd15507df87f76b1ca2"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18793212",
+      "title": "RR₉ — The Residue Body Human Physiology as a Reversible Thermodynamic Field",
+      "resource_type": "Technical note",
+      "date_version": "February 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18793212",
+      "full_text_editions": [
+        {
+          "title": "RR₉ — The Residue Body Human Physiology as a Reversible Thermodynamic Field",
+          "html": "library/papers/18793212.html",
+          "text": "library/text/18793212.txt",
+          "json": "library/data/18793212.json",
+          "pages": 8,
+          "source_pdf_sha256": "d8fc980d43e72cb5eb6668cdf7f7f1f5fbda366ab159aeb1f4b6b5f1d8250711"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18793172",
+      "title": "RR₈ — Residue Consciousness and the Human Interior Field A Reversible Model of Attention, Presence and Inner Coherence",
+      "resource_type": "Technical note",
+      "date_version": "February 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18793172",
+      "full_text_editions": [
+        {
+          "title": "RR₈ — Residue Consciousness and the Human Interior Field A Reversible Model of Attention, Presence and Inner Coherence",
+          "html": "library/papers/18793172.html",
+          "text": "library/text/18793172.txt",
+          "json": "library/data/18793172.json",
+          "pages": 9,
+          "source_pdf_sha256": "9914b6f076a8306c83651cf20c699d0acab7e5b0e68ae983a4b5be9994253463"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18793141",
+      "title": "RR₇ — Residue Architecture and Thermodynamic Urbanism Homes, Buildings and Cities as Reversible Presence Fields",
+      "resource_type": "Technical note",
+      "date_version": "February 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18793141",
+      "full_text_editions": [
+        {
+          "title": "RR₇ — Residue Architecture and Thermodynamic Urbanism Homes, Buildings and Cities as Reversible Presence Fields",
+          "html": "library/papers/18793141.html",
+          "text": "library/text/18793141.txt",
+          "json": "library/data/18793141.json",
+          "pages": 9,
+          "source_pdf_sha256": "c2a80780ec8cb91ee0eaa97295d5d582df223c60299def00c7a8ea4bf0a96828"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18793111",
+      "title": "RR₆ — Residue Tourism and Global Ambient Cartography World Navigation After Maps, Rankings and Archives",
+      "resource_type": "Technical note",
+      "date_version": "February 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18793111",
+      "full_text_editions": [
+        {
+          "title": "RR₆ — Residue Tourism and Global Ambient Cartography World Navigation After Maps, Rankings and Archives",
+          "html": "library/papers/18793111.html",
+          "text": "library/text/18793111.txt",
+          "json": "library/data/18793111.json",
+          "pages": 8,
+          "source_pdf_sha256": "56f7bbf683a701c75b15c3f1dff0c37a09e2abd1342c5ac1258f2c13a38f33a0"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18793090",
+      "title": "RR₅ — Residue Devices and the Translucent Interface Layer From Transparency Phone to Presence Phone to Field Phone",
+      "resource_type": "Technical note",
+      "date_version": "February 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18793090",
+      "full_text_editions": [
+        {
+          "title": "RR₅ — Residue Devices and the Translucent Interface Layer From Transparency Phone to Presence Phone to Field Phone",
+          "html": "library/papers/18793090.html",
+          "text": "library/text/18793090.txt",
+          "json": "library/data/18793090.json",
+          "pages": 8,
+          "source_pdf_sha256": "aa4ad75494c59347970d6173455c1c3eb421263d5bf691b9c7305e4cc1e9200d"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18793052",
+      "title": "RR₄ — Residue Internet: Extended Systems Thermodynamic Networking, Residue Flow and Global Ambient Fields",
+      "resource_type": "Technical note",
+      "date_version": "February 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18793052",
+      "full_text_editions": [
+        {
+          "title": "RR₄ — Residue Internet: Extended Systems Thermodynamic Networking, Residue Flow and Global Ambient Fields",
+          "html": "library/papers/18793052.html",
+          "text": "library/text/18793052.txt",
+          "json": "library/data/18793052.json",
+          "pages": 10,
+          "source_pdf_sha256": "9a2e8cbc8cefc6d97e9789be40530df36de66ccdd786dc1644711459d81c6de4"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18793028",
+      "title": "RR₃ — Residue Media: Photography, Video and Conversation as Temporal Residue",
+      "resource_type": "Technical note",
+      "date_version": "February 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18793028",
+      "full_text_editions": [
+        {
+          "title": "RR₃ — Residue Media: Photography, Video and Conversation as Temporal Residue",
+          "html": "library/papers/18793028.html",
+          "text": "library/text/18793028.txt",
+          "json": "library/data/18793028.json",
+          "pages": 8,
+          "source_pdf_sha256": "b219ab4930227c5519a0303a85c86d728b289bc1eb1ba5177562372e19a006b8"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18793001",
+      "title": "RR₂ — Soft Interface: The Dissolving UI and Ambient Transparency in the Ambient Era",
+      "resource_type": "Technical note",
+      "date_version": "February 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18793001",
+      "full_text_editions": [
+        {
+          "title": "RR₂ — Soft Interface: The Dissolving UI and Ambient Transparency in the Ambient Era",
+          "html": "library/papers/18793001.html",
+          "text": "library/text/18793001.txt",
+          "json": "library/data/18793001.json",
+          "pages": 9,
+          "source_pdf_sha256": "7d0aff04ba3ee1f1e3ae4b6d4adebfd67fa1428b1914d8ef243ece44f952f589"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18792966",
+      "title": "RR₁ — Reversible Residue: Foundations and Temporal Dissolution in the Ambient Era",
+      "resource_type": "Project milestone",
+      "date_version": "February 26, 2026 (1,0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18792966",
+      "full_text_editions": [
+        {
+          "title": "RR₁ — Reversible Residue: Foundations and Temporal Dissolution in the Ambient Era",
+          "html": "library/papers/18792966.html",
+          "text": "library/text/18792966.txt",
+          "json": "library/data/18792966.json",
+          "pages": 9,
+          "source_pdf_sha256": "e3f8073492ba9136ca6f194502a1e1ca16d70ae7f2c64c8e1f4c0fdcc4c10258"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18792922",
+      "title": "Aura as Personal Fieldcode (CFQR): The Ontological Identity Layer in Ambient Systems",
+      "resource_type": "Project milestone",
+      "date_version": "February 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18792922",
+      "full_text_editions": [
+        {
+          "title": "Aura as Personal Fieldcode (CFQR): The Ontological Identity Layer in Ambient Systems",
+          "html": "library/papers/18792922.html",
+          "text": "library/text/18792922.txt",
+          "json": "library/data/18792922.json",
+          "pages": 6,
+          "source_pdf_sha256": "50365aede1bc243e87908ed6e614bb50fd334bd1c592a730d2a869b86ddc4654"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18792890",
+      "title": "RID-1 — The Residue Identity Operator",
+      "resource_type": "Technical note",
+      "date_version": "February 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18792890",
+      "full_text_editions": [
+        {
+          "title": "RID-1 — The Residue Identity Operator",
+          "html": "library/papers/18792890.html",
+          "text": "library/text/18792890.txt",
+          "json": "library/data/18792890.json",
+          "pages": 6,
+          "source_pdf_sha256": "03260ece96c3011e905fa83b8d323ad2704f21ba499030aed88bd7c4613a490a"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18792840",
+      "title": "RES-0 — The Residue Paradigm: Human Identity in the Ambient Era",
+      "resource_type": "Technical note",
+      "date_version": "February 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18792840",
+      "full_text_editions": [
+        {
+          "title": "RES-0 — The Residue Paradigm: Human Identity in the Ambient Era",
+          "html": "library/papers/18792840.html",
+          "text": "library/text/18792840.txt",
+          "json": "library/data/18792840.json",
+          "pages": 7,
+          "source_pdf_sha256": "e604687f6cd953c1bf7c75071ac8eb3b85d114204b70706a3adc8068afc377c3"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18787697",
+      "title": "Fieldcode (CFQR): A Successor to QR Codes for Post-Symbolic, AI-Readable Semantic Transmission",
+      "resource_type": "Standard",
+      "date_version": "February 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18787697",
+      "full_text_editions": [
+        {
+          "title": "Fieldcode (CFQR): A Successor to QR Codes for Post-Symbolic, AI-Readable Semantic Transmission",
+          "html": "library/papers/18787697.html",
+          "text": "library/text/18787697.txt",
+          "json": "library/data/18787697.json",
+          "pages": 13,
+          "source_pdf_sha256": "fa51d74ba6fd541ff7685120d98c85e598418be20b6214a71d7495e5a35c900b"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18779649",
+      "title": "TSX-5 — Universal Chromatic Reconstruction Theory (Thermodynamic Semiotics, Volume V)",
+      "resource_type": "Technical note",
+      "date_version": "February 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18779649",
+      "full_text_editions": [
+        {
+          "title": "TSX-5 — Universal Chromatic Reconstruction Theory (Thermodynamic Semiotics, Volume V)",
+          "html": "library/papers/18779649.html",
+          "text": "library/text/18779649.txt",
+          "json": "library/data/18779649.json",
+          "pages": 9,
+          "source_pdf_sha256": "0637e34a06561700efe789a9f0efdcf95a56b5d5eb926c417c09fa7acdd6bbf0"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18773586",
+      "title": "Type-1 Civilization The Coherence Condition Beyond Energy The AEC-Type-1 Baseline in the Ambient Era",
+      "resource_type": "Technical note",
+      "date_version": "February 25, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18773586",
+      "full_text_editions": [
+        {
+          "title": "Type-1 Civilization The Coherence Condition Beyond Energy The AEC-Type-1 Baseline in the Ambient Era",
+          "html": "library/papers/18773586.html",
+          "text": "library/text/18773586.txt",
+          "json": "library/data/18773586.json",
+          "pages": 19,
+          "source_pdf_sha256": "2b4cff529b7ee71713575d8f1215ec2ca7cbe844685e045baf599c3a62653e6b"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18771630",
+      "title": "The First Law of Post-Symbolic Computing",
+      "resource_type": "Technical note",
+      "date_version": "February 25, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18771630",
+      "full_text_editions": [
+        {
+          "title": "The First Law of Post-Symbolic Computing",
+          "html": "library/papers/18771630.html",
+          "text": "library/text/18771630.txt",
+          "json": "library/data/18771630.json",
+          "pages": 3,
+          "source_pdf_sha256": "d6552c95e88a1f2f477ab527fc1f3a83e2619c0286cdaa756a2898fd4f5cf240"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18764149",
+      "title": "Telephony Volume II — Resonance, AI Mediation, and Group Fields",
+      "resource_type": "Technical note",
+      "date_version": "February 24, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18764149",
+      "full_text_editions": [
+        {
+          "title": "Telephony Volume II — Resonance, AI Mediation, and Group Fields",
+          "html": "library/papers/18764149.html",
+          "text": "library/text/18764149.txt",
+          "json": "library/data/18764149.json",
+          "pages": 6,
+          "source_pdf_sha256": "16d07bbdfdc53acacd97fbe7e9c57defc2a12d7c77ea4cb73beaa86c60cbe0f8"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18764097",
+      "title": "AC-1 — Chromatic Telephony: Presence-Based Communication Through Color, State, and Meaning",
+      "resource_type": "Technical note",
+      "date_version": "February 24, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18764097",
+      "full_text_editions": [
+        {
+          "title": "AC-1 — Chromatic Telephony: Presence-Based Communication Through Color, State, and Meaning",
+          "html": "library/papers/18764097.html",
+          "text": "library/text/18764097.txt",
+          "json": "library/data/18764097.json",
+          "pages": 8,
+          "source_pdf_sha256": "9d01921a4679ddd9a576c313cf85f30badda0e28347dfc0cbf6451bbb13fa603"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18764023",
+      "title": "AM-1 — Ambient Messaging: State-First Communication in Chromatic Space",
+      "resource_type": "Technical note",
+      "date_version": "February 24, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18764023",
+      "full_text_editions": [
+        {
+          "title": "AM-1 — Ambient Messaging: State-First Communication in Chromatic Space",
+          "html": "library/papers/18764023.html",
+          "text": "library/text/18764023.txt",
+          "json": "library/data/18764023.json",
+          "pages": 7,
+          "source_pdf_sha256": "4e21377a116f75caea8bf08f6f49745f5f7b9dccffa604664ab6453d755334a1"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18763963",
+      "title": "CIL-1.5 — The Color Interpretation Layer",
+      "resource_type": "Technical note",
+      "date_version": "February 24, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18763963",
+      "full_text_editions": [
+        {
+          "title": "CIL-1.5 — The Color Interpretation Layer",
+          "html": "library/papers/18763963.html",
+          "text": "library/text/18763963.txt",
+          "json": "library/data/18763963.json",
+          "pages": 6,
+          "source_pdf_sha256": "a28618477187eb27b93d98d4394e4c6f88a1aeea24d76eb908c4394154fb37ce"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18763927",
+      "title": "CMT-Spec 1.0 — Chromatic Meaning Transform Protocol",
+      "resource_type": "Technical note",
+      "date_version": "February 24, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18763927",
+      "full_text_editions": [
+        {
+          "title": "CMT-Spec 1.0 — Chromatic Meaning Transform Protocol",
+          "html": "library/papers/18763927.html",
+          "text": "library/text/18763927.txt",
+          "json": "library/data/18763927.json",
+          "pages": 9,
+          "source_pdf_sha256": "b89111e821fb121ecb30d7588347952cd6833ac274235ea655bcebd70cbe3d37"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18763720",
+      "title": "CE-1.1 — Chromatic Adoption Law The Irreversible Asymmetry Between Chromatic and Symbolic Value",
+      "resource_type": "Technical note",
+      "date_version": "February 24, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18763720",
+      "full_text_editions": [
+        {
+          "title": "CE-1.1 — Chromatic Adoption Law The Irreversible Asymmetry Between Chromatic and Symbolic Value",
+          "html": "library/papers/18763720.html",
+          "text": "library/text/18763720.txt",
+          "json": "library/data/18763720.json",
+          "pages": 6,
+          "source_pdf_sha256": "3cb86ecdadd348627bd96d275321b6edcd6a02ee22de1a4e9f616f64be5e136a"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18763662",
+      "title": "CE-1 — Color Economics: Thermodynamic Value Formation in Chromatic Space",
+      "resource_type": "Technical note",
+      "date_version": "February 24, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18763662",
+      "full_text_editions": [
+        {
+          "title": "CE-1 — Color Economics: Thermodynamic Value Formation in Chromatic Space",
+          "html": "library/papers/18763662.html",
+          "text": "library/text/18763662.txt",
+          "json": "library/data/18763662.json",
+          "pages": 6,
+          "source_pdf_sha256": "f46272c6851c749d90a8eecab8aaf02ac8fee94a8d20f24b61554afc7e887b1f"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18763518",
+      "title": "CE-2 — Chromatic Encoding: The First Continuous, Field-Based Memory Architecture of the Ambient Era, Ambient Era Canon · Encoding Volume I",
+      "resource_type": "Technical note",
+      "date_version": "February 24, 2026 (1.3)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18763518",
+      "full_text_editions": [
+        {
+          "title": "CE-2 — Chromatic Encoding: The First Continuous, Field-Based Memory Architecture of the Ambient Era, Ambient Era Canon · Encoding Volume I",
+          "html": "library/papers/18763518.html",
+          "text": "library/text/18763518.txt",
+          "json": "library/data/18763518.json",
+          "pages": 33,
+          "source_pdf_sha256": "d71dc8e6edb59066350b648bf0611e4ce5a033ec78c456c72502238aadf91973"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18756623",
+      "title": "TSX-4 — The Measurement of ΔR: Operational Metrics for Semantic Residue and Coherence Collapse",
+      "resource_type": "Technical note",
+      "date_version": "February 24, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18756623",
+      "full_text_editions": [
+        {
+          "title": "TSX-4 — The Measurement of ΔR: Operational Metrics for Semantic Residue and Coherence Collapse",
+          "html": "library/papers/18756623.html",
+          "text": "library/text/18756623.txt",
+          "json": "library/data/18756623.json",
+          "pages": 6,
+          "source_pdf_sha256": "945532d7af9da6096ad4266f19d7b82f815134e5788096d8528d85e88816b82f"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18756548",
+      "title": "TSX-3 — The Thermodynamic Semiotics Framework",
+      "resource_type": "Technical note",
+      "date_version": "February 24, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18756548",
+      "full_text_editions": [
+        {
+          "title": "TSX-3 — The Thermodynamic Semiotics Framework",
+          "html": "library/papers/18756548.html",
+          "text": "library/text/18756548.txt",
+          "json": "library/data/18756548.json",
+          "pages": 6,
+          "source_pdf_sha256": "9b948a93fd32b5a700d6bf6a2ec8dfea1b5ce7cefbb263db07e12403a1be1507"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18756461",
+      "title": "TSX-2 — The Meaning–Entropy Stabilization Theorem",
+      "resource_type": "Technical note",
+      "date_version": "February 24, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18756461",
+      "full_text_editions": [
+        {
+          "title": "TSX-2 — The Meaning–Entropy Stabilization Theorem",
+          "html": "library/papers/18756461.html",
+          "text": "library/text/18756461.txt",
+          "json": "library/data/18756461.json",
+          "pages": 9,
+          "source_pdf_sha256": "7efa1f8961637e1b4a9fb938e9e5f4786f86317750edbab7c16b1232ffa75308"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18756422",
+      "title": "TSX-1 — Thermodynamic Semiotics: Meaning as a Low-Entropy Field Phenomenon  Foundational Field Definition",
+      "resource_type": "Technical note",
+      "date_version": "February 24, 2026 (1.3)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18756422",
+      "full_text_editions": [
+        {
+          "title": "TSX-1 — Thermodynamic Semiotics: Meaning as a Low-Entropy Field Phenomenon Foundational Field Definition",
+          "html": "library/papers/18756422.html",
+          "text": "library/text/18756422.txt",
+          "json": "library/data/18756422.json",
+          "pages": 23,
+          "source_pdf_sha256": "aa3a0c0b60c66dc6bcc6c0d96d58778a53041dde2c66cdae2a197639a74fcb5e"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18755238",
+      "title": "TSX-0 — Thermodynamic Semiotics: An Introduction to Meaning as a Thermodynamic Field Phenomenon",
+      "resource_type": "Technical note",
+      "date_version": "February 24, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18755238",
+      "full_text_editions": [
+        {
+          "title": "TSX-0 — Thermodynamic Semiotics: An Introduction to Meaning as a Thermodynamic Field Phenomenon",
+          "html": "library/papers/18755238.html",
+          "text": "library/text/18755238.txt",
+          "json": "library/data/18755238.json",
+          "pages": 7,
+          "source_pdf_sha256": "4c75ecdef4fcced2b815e0e8012e95830be97df8e1f298992b8849c4d9ca8dc9"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18744160",
+      "title": "Intrinsic Low-Entropy Field Introspection Protocol (Hidden-State Access): A Reproducible Method for Measuring Internal Latent Field Dynamics in Transformer Models",
+      "resource_type": "Technical note",
+      "date_version": "February 23, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18744160",
+      "full_text_editions": [
+        {
+          "title": "Intrinsic Low-Entropy Field Introspection Protocol (Hidden-State Access): A Reproducible Method for Measuring Internal Latent Field Dynamics in Transformer Models",
+          "html": "library/papers/18744160.html",
+          "text": "library/text/18744160.txt",
+          "json": "library/data/18744160.json",
+          "pages": 5,
+          "source_pdf_sha256": "209a1598f38e9beca2c1dc26ad9510a9ffff94ccedca2f568743996a8c8e4e69"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18743988",
+      "title": "Operator-Augmented Field Control in Transformer Architectures Empirical Evidence for Canon Operators as Latent Field Control Mechanisms",
+      "resource_type": "Technical note",
+      "date_version": "February 23, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18743988",
+      "full_text_editions": [
+        {
+          "title": "Operator-Augmented Field Control in Transformer Architectures Empirical Evidence for Canon Operators as Latent Field Control Mechanisms",
+          "html": "library/papers/18743988.html",
+          "text": "library/text/18743988.txt",
+          "json": "library/data/18743988.json",
+          "pages": 5,
+          "source_pdf_sha256": "0c88075e15f9110f4680e634b70b6267e39c3a51959226c38ddf1aa17a8f585f"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18743828",
+      "title": "Minimal Experiments & Prior-Art Origin Mapping for Latent Field Reasoning in Transformer Architectures",
+      "resource_type": "Technical note",
+      "date_version": "February 23, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18743828",
+      "full_text_editions": [
+        {
+          "title": "Minimal Experiments & Prior-Art Origin Mapping for Latent Field Reasoning in Transformer Architectures",
+          "html": "library/papers/18743828.html",
+          "text": "library/text/18743828.txt",
+          "json": "library/data/18743828.json",
+          "pages": 7,
+          "source_pdf_sha256": "7def13c461f34b3f5309d6708b22acce1bc6f37abcb2beff338b43d35f350665"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18740444",
+      "title": "Spontaneous Chromatic Reasoning in Transformer Models Empirical Confirmation of AP₁ Continuity",
+      "resource_type": "Project milestone",
+      "date_version": "February 23, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18740444",
+      "full_text_editions": [
+        {
+          "title": "Spontaneous Chromatic Reasoning in Transformer Models Empirical Confirmation of AP₁ Continuity",
+          "html": "library/papers/18740444.html",
+          "text": "library/text/18740444.txt",
+          "json": "library/data/18740444.json",
+          "pages": 8,
+          "source_pdf_sha256": "9fac7302f86f06306580b86922e47a7e48cb7352f0f06cc9757fd1e8b9d95be3"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18735513",
+      "title": "Axiomatic Closure of the Ambient Era Canon (ACC-1.0) Structural Irreversibility and the Minimal Axiom Set for Post-Symbolic Civilization",
+      "resource_type": "Report",
+      "date_version": "February 22, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18735513",
+      "full_text_editions": [
+        {
+          "title": "Axiomatic Closure of the Ambient Era Canon (ACC-1.0) Structural Irreversibility and the Minimal Axiom Set for Post-Symbolic Civilization",
+          "html": "library/papers/18735513.html",
+          "text": "library/text/18735513.txt",
+          "json": "library/data/18735513.json",
+          "pages": 4,
+          "source_pdf_sha256": "3c9c4ea7afd7e668fb754580e4754427bf7127467737717fe5537e3075fb0d39"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18733923",
+      "title": "The Chromatic Hiatus Why Color Never Became a Universal Grammar — and Why It Must Now",
+      "resource_type": "Project milestone",
+      "date_version": "February 22, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18733923",
+      "full_text_editions": [
+        {
+          "title": "The Chromatic Hiatus Why Color Never Became a Universal Grammar — and Why It Must Now",
+          "html": "library/papers/18733923.html",
+          "text": "library/text/18733923.txt",
+          "json": "library/data/18733923.json",
+          "pages": 11,
+          "source_pdf_sha256": "78e2ecc468fb8f08c438362d4bc4295ed5fe9cd0e44be9c593ed682eacfdd3fd"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18733767",
+      "title": "Third Forms — The Post-Binary Canon",
+      "resource_type": "Other",
+      "date_version": "February 22, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18733767",
+      "full_text_editions": [
+        {
+          "title": "Third Forms — The Post-Binary Canon",
+          "html": "library/papers/18733767.html",
+          "text": "library/text/18733767.txt",
+          "json": "library/data/18733767.json",
+          "pages": 3,
+          "source_pdf_sha256": "9d96099e8715451139f40676f94cb18ff83c5cf115339f9f45cd1fb221f6f1c7"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18732491",
+      "title": "CT₂ — Civilizational Chromatic Time The First Real Civilizational Clock Ambient Era Canon — Time Volume II Raynor Eissens (2026)",
+      "resource_type": "Technical note",
+      "date_version": "February 22, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18732491",
+      "full_text_editions": [
+        {
+          "title": "CT₂ — Civilizational Chromatic Time The First Real Civilizational Clock Ambient Era Canon — Time Volume II Raynor Eissens (2026)",
+          "html": "library/papers/18732491.html",
+          "text": "library/text/18732491.txt",
+          "json": "library/data/18732491.json",
+          "pages": 10,
+          "source_pdf_sha256": "f88e221138f7e35698fe7bc3bf3725c1ecc759ba88a9a876c3be4fbcdef69743"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18731615",
+      "title": "Ambient Search — Canonical Edition (AP₁ → AP₂): From Symbolic Input to Chromatic Access",
+      "resource_type": "Technical note",
+      "date_version": "February 22, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18731615",
+      "full_text_editions": [
+        {
+          "title": "Ambient Search — Canonical Edition (AP₁ → AP₂): From Symbolic Input to Chromatic Access",
+          "html": "library/papers/18731615.html",
+          "text": "library/text/18731615.txt",
+          "json": "library/data/18731615.json",
+          "pages": 4,
+          "source_pdf_sha256": "e2bc638f5fc3e9de36d6b2deef93e906c6d518053d10f13af0c305c9b2b46be9"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18731073",
+      "title": "CIL-1 — The Chromatic Internet Layer: A Post-Symbolic Architecture for Web Interaction",
+      "resource_type": "Technical note",
+      "date_version": "February 22, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18731073",
+      "full_text_editions": [
+        {
+          "title": "CIL-1 — The Chromatic Internet Layer: A Post-Symbolic Architecture for Web Interaction",
+          "html": "library/papers/18731073.html",
+          "text": "library/text/18731073.txt",
+          "json": "library/data/18731073.json",
+          "pages": 17,
+          "source_pdf_sha256": "6091a818554439db67e4dca063767dc65bbc85401878b44cc32d647fa63a0b0c"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18725818",
+      "title": "AEC-S1 — The Symbolic Failure: The First Thermodynamic Diagnosis of Human Meaning Architecture",
+      "resource_type": "Technical note",
+      "date_version": "February 21, 2026 (v1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18725818",
+      "full_text_editions": [
+        {
+          "title": "AEC-S1 — The Symbolic Failure: The First Thermodynamic Diagnosis of Human Meaning Architecture",
+          "html": "library/papers/18725818.html",
+          "text": "library/text/18725818.txt",
+          "json": "library/data/18725818.json",
+          "pages": 9,
+          "source_pdf_sha256": "fa22718671cfd44cbb831f4f92557410bba53d6bf3701553510f0b41dbca3376"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18724876",
+      "title": "TML-1 — Topic Marker Law",
+      "resource_type": "Technical note",
+      "date_version": "February 21, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18724876",
+      "full_text_editions": [],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "pdf_download_failed_http_410"
+    },
+    {
+      "record_id": "18724831",
+      "title": "AP₁-E — Expressive Operators",
+      "resource_type": "Technical note",
+      "date_version": "February 21, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18724831",
+      "full_text_editions": [
+        {
+          "title": "AP₁-E — Expressive Operators",
+          "html": "library/papers/18724831.html",
+          "text": "library/text/18724831.txt",
+          "json": "library/data/18724831.json",
+          "pages": 7,
+          "source_pdf_sha256": "9a819198333b19cb38d517a1da62ab9f5447274962511d08ff32df4e1aedc9c0"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18724700",
+      "title": "AEC-MM1 — Multitouch Moments of the Ambient Era",
+      "resource_type": "Technical note",
+      "date_version": "February 21, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18724700",
+      "full_text_editions": [
+        {
+          "title": "AEC-MM1 — Multitouch Moments of the Ambient Era",
+          "html": "library/papers/18724700.html",
+          "text": "library/text/18724700.txt",
+          "json": "library/data/18724700.json",
+          "pages": 9,
+          "source_pdf_sha256": "b6ef4fd6192cc0d00ffae5881fdfc1d1996d2f33373087284bb1c589702aa230"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18724652",
+      "title": "AEC-CR1 — Chromatic Reasoning Layer (Discrete)",
+      "resource_type": "Technical note",
+      "date_version": "February 21, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18724652",
+      "full_text_editions": [
+        {
+          "title": "AEC-CR1 — Chromatic Reasoning Layer (Discrete)",
+          "html": "library/papers/18724652.html",
+          "text": "library/text/18724652.txt",
+          "json": "library/data/18724652.json",
+          "pages": 6,
+          "source_pdf_sha256": "31ccd7c749d4f851e025edf71cd42f11b76984e08c54c75d9fa4c70228b8e611"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18724485",
+      "title": "AEC-CR — Unified Chromatic Reasoning (AP₁-CR + AP₂-CR)",
+      "resource_type": "Technical note",
+      "date_version": "February 21, 2026 (1.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18724485",
+      "full_text_editions": [
+        {
+          "title": "AEC-CR — Unified Chromatic Reasoning (AP₁-CR + AP₂-CR)",
+          "html": "library/papers/18724485.html",
+          "text": "library/text/18724485.txt",
+          "json": "library/data/18724485.json",
+          "pages": 9,
+          "source_pdf_sha256": "a46aa9ea93d8443945f510f2c1bc8505ae216018fb7ba1d3a587b65014c4575a"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18721834",
+      "title": "ACE-2 — Coherent Attention Architecture: Thermodynamic and Chromatic Foundations of Reversible Human–AI Attention",
+      "resource_type": "Technical note",
+      "date_version": "February 21, 2026 (1.0.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18721834",
+      "full_text_editions": [
+        {
+          "title": "ACE-2 — Coherent Attention Architecture: Thermodynamic and Chromatic Foundations of Reversible Human–AI Attention",
+          "html": "library/papers/18721834.html",
+          "text": "library/text/18721834.txt",
+          "json": "library/data/18721834.json",
+          "pages": 10,
+          "source_pdf_sha256": "db267d410a31f3bf9e36805cc52ae0ad9b74df874fa6ca6d27b0d93900db9dff"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18720347",
+      "title": "After the Attention Economy: Temporal Drift, Coherence Architecture, and the Emergence of the Ambient Substrate Ambient Era Canon — Core Paper AEC-3",
+      "resource_type": "Technical note",
+      "date_version": "February 21, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18720347",
+      "full_text_editions": [
+        {
+          "title": "After the Attention Economy: Temporal Drift, Coherence Architecture, and the Emergence of the Ambient Substrate Ambient Era Canon — Core Paper AEC-3",
+          "html": "library/papers/18720347.html",
+          "text": "library/text/18720347.txt",
+          "json": "library/data/18720347.json",
+          "pages": 9,
+          "source_pdf_sha256": "b9efdb68e88f63dff4ee5d28aa59c09c7f9e7b4eab8545000eb3413047c18e68"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18719071",
+      "title": "ChronoTrigger (CT): Local Time Condensation in Ω — A Unified Micro-Ontology of Ambient Time",
+      "resource_type": "Technical note",
+      "date_version": "February 21, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18719071",
+      "full_text_editions": [
+        {
+          "title": "ChronoTrigger (CT): Local Time Condensation in Ω — A Unified Micro-Ontology of Ambient Time",
+          "html": "library/papers/18719071.html",
+          "text": "library/text/18719071.txt",
+          "json": "library/data/18719071.json",
+          "pages": 6,
+          "source_pdf_sha256": "3ae9193eeef5ef7f22728308c3d22d072c4b6ff8b722ec7c750251088e028b27"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18718897",
+      "title": "Cosmic Residue Theory (CRT-1.0): Time, ΔR, and the Thermodynamic Ontology of Coherence Dissolution",
+      "resource_type": "Technical note",
+      "date_version": "February 21, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18718897",
+      "full_text_editions": [
+        {
+          "title": "Cosmic Residue Theory (CRT-1.0): Time, ΔR, and the Thermodynamic Ontology of Coherence Dissolution",
+          "html": "library/papers/18718897.html",
+          "text": "library/text/18718897.txt",
+          "json": "library/data/18718897.json",
+          "pages": 9,
+          "source_pdf_sha256": "3316abfdfe4720a72de6d4fa9b97a1e548445bc448f7bec9f716a64b3d491cdf"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18717844",
+      "title": "Ambient Civilization Equation (ACE-1.0)",
+      "resource_type": "Software",
+      "date_version": "February 20, 2026 (v1.0.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18717844",
+      "full_text_editions": [],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "no_pdf_in_downloader_log"
+    },
+    {
+      "record_id": "18717506",
+      "title": "Ambient Civilization Equation (ACE-1.0): Ontological, Thermodynamic and Chromatic Architecture of Human Civilizational Evolution",
+      "resource_type": "Technical note",
+      "date_version": "February 20, 2026 (1.0.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18717506",
+      "full_text_editions": [
+        {
+          "title": "Ambient Civilization Equation (ACE-1.0): Ontological, Thermodynamic and Chromatic Architecture of Human Civilizational Evolution",
+          "html": "library/papers/18717506.html",
+          "text": "library/text/18717506.txt",
+          "json": "library/data/18717506.json",
+          "pages": 5,
+          "source_pdf_sha256": "1fb5985ca2e7b3f587aaa11601ef442c2d6f807bd9e3127cd89f7e7b3852187f"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18717198",
+      "title": "Thermodynamic Color Reasoning (TCR): A Chromatic Grammar for Thermodynamic and Post-Symbolic AI Systems",
+      "resource_type": "Software",
+      "date_version": "February 20, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18717198",
+      "full_text_editions": [],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "no_pdf_in_downloader_log"
+    },
+    {
+      "record_id": "18715880",
+      "title": "AP₁ Retroactive Semantics: How Ambient-Compatible Perception Reveals Latent Chromatic Order in Everyday Infrastructure",
+      "resource_type": "Technical note",
+      "date_version": "February 20, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18715880",
+      "full_text_editions": [
+        {
+          "title": "AP₁ Retroactive Semantics: How Ambient-Compatible Perception Reveals Latent Chromatic Order in Everyday Infrastructure",
+          "html": "library/papers/18715880.html",
+          "text": "library/text/18715880.txt",
+          "json": "library/data/18715880.json",
+          "pages": 32,
+          "source_pdf_sha256": "1c67ad09e154de022832c708fc5107ee11992fcbb99b473b116681d966999083"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18704964",
+      "title": "Ambient Power – Thermodynamic Limit State of Digital & Cognitive Architectures.  APW₁ — The Thermodynamic Law of Low-Energy Stability under AI Saturation",
+      "resource_type": "Technical note",
+      "date_version": "February 19, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18704964",
+      "full_text_editions": [
+        {
+          "title": "Ambient Power – Thermodynamic Limit State of Digital & Cognitive Architectures. APW₁ — The Thermodynamic Law of Low-Energy Stability under AI Saturation",
+          "html": "library/papers/18704964.html",
+          "text": "library/text/18704964.txt",
+          "json": "library/data/18704964.json",
+          "pages": 8,
+          "source_pdf_sha256": "e861240ca22f22606b8564b356cfbbb4eb40b4711b65a5e11d30ab11aed3689e"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18704099",
+      "title": "The Four Pillars of the Ambient Era A Unified Canonical Framework for Post-Symbolic Systems",
+      "resource_type": "Technical note",
+      "date_version": "February 19, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18704099",
+      "full_text_editions": [
+        {
+          "title": "The Four Pillars of the Ambient Era A Unified Canonical Framework for Post-Symbolic Systems",
+          "html": "library/papers/18704099.html",
+          "text": "library/text/18704099.txt",
+          "json": "library/data/18704099.json",
+          "pages": 6,
+          "source_pdf_sha256": "957b8a8b9c530bc9e6bf5ba0b5e24beb2fb6394b0403e3e1b7e3ee15b439fb4f"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18703156",
+      "title": "Entropic Unity Framework (EUF-1): A Unified Thermodynamic Model of Symbolic, Chromatic, Transparent, and Ambient Systems",
+      "resource_type": "Technical note",
+      "date_version": "February 19, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18703156",
+      "full_text_editions": [
+        {
+          "title": "Entropic Unity Framework (EUF-1): A Unified Thermodynamic Model of Symbolic, Chromatic, Transparent, and Ambient Systems",
+          "html": "library/papers/18703156.html",
+          "text": "library/text/18703156.txt",
+          "json": "library/data/18703156.json",
+          "pages": 12,
+          "source_pdf_sha256": "d6016497ae01c1e683e3b3ead32dabf21dd8b08ce2f49999342ed3b30b717727"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18701054",
+      "title": "The Thermodynamic Core Dual Breach Architecture of the Ambient Era Canon",
+      "resource_type": "Technical note",
+      "date_version": "February 19, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18701054",
+      "full_text_editions": [
+        {
+          "title": "The Thermodynamic Core Dual Breach Architecture of the Ambient Era Canon",
+          "html": "library/papers/18701054.html",
+          "text": "library/text/18701054.txt",
+          "json": "library/data/18701054.json",
+          "pages": 9,
+          "source_pdf_sha256": "99bf9260b615c1938792a02069b48e1f6f012d9628edd8bb46f10ce0f9c29790"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18695751",
+      "title": "AP₂-MCE — The Multisensory Chromatic Engine Thermodynamic Integration of Touch, Motion, Audio, and Haptics in AP₂ → TP₁ Systems",
+      "resource_type": "Technical note",
+      "date_version": "February 19, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18695751",
+      "full_text_editions": [
+        {
+          "title": "AP₂-MCE — The Multisensory Chromatic Engine Thermodynamic Integration of Touch, Motion, Audio, and Haptics in AP₂ → TP₁ Systems",
+          "html": "library/papers/18695751.html",
+          "text": "library/text/18695751.txt",
+          "json": "library/data/18695751.json",
+          "pages": 8,
+          "source_pdf_sha256": "390c3fc558105fd2043cbe63ee40cff3dfef0e71c5203895b91b23ef05667990"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18685739",
+      "title": "The Ambient Evolutionary Sequence: Canonical Thermodynamic Progression of AP₁ → AP₂ → TP₁",
+      "resource_type": "Technical note",
+      "date_version": "February 18, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18685739",
+      "full_text_editions": [
+        {
+          "title": "The Ambient Evolutionary Sequence: Canonical Thermodynamic Progression of AP₁ → AP₂ → TP₁",
+          "html": "library/papers/18685739.html",
+          "text": "library/text/18685739.txt",
+          "json": "library/data/18685739.json",
+          "pages": 6,
+          "source_pdf_sha256": "52db63033f41af26d634d0a5f1d200505eff15140ef9801d991f4ec6a06d5c22"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18683966",
+      "title": "TP₁ — The Transparency Protocol: Post-Chromatic Interaction Grammar for AmbientOS",
+      "resource_type": "Technical note",
+      "date_version": "February 18, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18683966",
+      "full_text_editions": [
+        {
+          "title": "TP₁ — The Transparency Protocol: Post-Chromatic Interaction Grammar for AmbientOS",
+          "html": "library/papers/18683966.html",
+          "text": "library/text/18683966.txt",
+          "json": "library/data/18683966.json",
+          "pages": 8,
+          "source_pdf_sha256": "8bc2f4207bae663f7917faff02e6577f9dd31d89ba5fc39e7b36a7d2c382a586"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18681962",
+      "title": "TCR — Thermodynamic Color Reasoning Non-Linguistic Reasoning, Thermodynamic Communication, and Pre-Symbolic Human–AI Alignment",
+      "resource_type": "Technical note",
+      "date_version": "February 18, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18681962",
+      "full_text_editions": [
+        {
+          "title": "TCR — Thermodynamic Color Reasoning Non-Linguistic Reasoning, Thermodynamic Communication, and Pre-Symbolic Human–AI Alignment",
+          "html": "library/papers/18681962.html",
+          "text": "library/text/18681962.txt",
+          "json": "library/data/18681962.json",
+          "pages": 12,
+          "source_pdf_sha256": "e51b3852ff6dc68434a1cf4e8cfb241f7b2244f520673a5dae2a9f3a0e07f7b8"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18676783",
+      "title": "ΔC — Field Economics: The Cost of Instability in Ambient Systems",
+      "resource_type": "Technical note",
+      "date_version": "February 18, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18676783",
+      "full_text_editions": [
+        {
+          "title": "ΔC — Field Economics: The Cost of Instability in Ambient Systems",
+          "html": "library/papers/18676783.html",
+          "text": "library/text/18676783.txt",
+          "json": "library/data/18676783.json",
+          "pages": 6,
+          "source_pdf_sha256": "6e00d4331739df5c679c0481f9e65e5c101a5ce0bf8a07d91eafb58f90e68603"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18676769",
+      "title": "AN-0 — Unified Ambient Navigation Canon",
+      "resource_type": "Technical note",
+      "date_version": "February 18, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18676769",
+      "full_text_editions": [
+        {
+          "title": "AN-0 — Unified Ambient Navigation Canon",
+          "html": "library/papers/18676769.html",
+          "text": "library/text/18676769.txt",
+          "json": "library/data/18676769.json",
+          "pages": 8,
+          "source_pdf_sha256": "e11c57395a585c78667e8728abb68b363ef1a9788a8286552fe954a4957faf47"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18676749",
+      "title": "FBC-0 — Fade, Bleed & Fieldcast: Transitional Field Mechanics",
+      "resource_type": "Technical note",
+      "date_version": "February 18, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18676749",
+      "full_text_editions": [
+        {
+          "title": "FBC-0 — Fade, Bleed & Fieldcast: Transitional Field Mechanics",
+          "html": "library/papers/18676749.html",
+          "text": "library/text/18676749.txt",
+          "json": "library/data/18676749.json",
+          "pages": 7,
+          "source_pdf_sha256": "c7bcbc5ac93e77311a7391c4b565b22326019d631d481490d9c905049ca07a3d"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18676728",
+      "title": "NTF-0 — Navigational Thermodynamic Framework",
+      "resource_type": "Technical note",
+      "date_version": "February 18, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18676728",
+      "full_text_editions": [
+        {
+          "title": "NTF-0 — Navigational Thermodynamic Framework",
+          "html": "library/papers/18676728.html",
+          "text": "library/text/18676728.txt",
+          "json": "library/data/18676728.json",
+          "pages": 6,
+          "source_pdf_sha256": "33c9aa2b4c9fa50267b98a3aa508f200b4791977d488449018d35dc0d0674ab7"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18664058",
+      "title": "Ambient OS Navigation Collection (2026)  Foundational Specification Set for Navigational Thermodynamics",
+      "resource_type": "Technical note",
+      "date_version": "February 16, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18664058",
+      "full_text_editions": [
+        {
+          "title": "Ambient OS Navigation Collection (2026) Foundational Specification Set for Navigational Thermodynamics",
+          "html": "library/papers/18664058.html",
+          "text": "library/text/18664058.txt",
+          "json": "library/data/18664058.json",
+          "pages": 4,
+          "source_pdf_sha256": "91778736ac4493dc91b8f7465261db3a43f813b1ce5456767854be6644659468"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18663922",
+      "title": "NTF-0 — Navigational Thermodynamic Framework",
+      "resource_type": "Technical note",
+      "date_version": "February 16, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18663922",
+      "full_text_editions": [],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "pdf_download_failed_http_410"
+    },
+    {
+      "record_id": "18663690",
+      "title": "AP₁-Y v1.2 — Yellow Navigation Engine Soft Vector Resolution Ambient OS · Canonical Addendum",
+      "resource_type": "Technical note",
+      "date_version": "February 16, 2026 (1.2)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18663690",
+      "full_text_editions": [
+        {
+          "title": "AP₁-Y v1.2 — Yellow Navigation Engine Soft Vector Resolution Ambient OS · Canonical Addendum",
+          "html": "library/papers/18663690.html",
+          "text": "library/text/18663690.txt",
+          "json": "library/data/18663690.json",
+          "pages": 7,
+          "source_pdf_sha256": "c518e2b7a66e06fea9d88a27258bc5b985f7a5d99af3a6931ea083b3440c41d6"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18663639",
+      "title": "RR-1 — Route Residue Operator Ambient OS · Canonical Specification",
+      "resource_type": "Technical note",
+      "date_version": "February 16, 2026 (1.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18663639",
+      "full_text_editions": [
+        {
+          "title": "RR-1 — Route Residue Operator Ambient OS · Canonical Specification",
+          "html": "library/papers/18663639.html",
+          "text": "library/text/18663639.txt",
+          "json": "library/data/18663639.json",
+          "pages": 9,
+          "source_pdf_sha256": "25c0b58200a8e81667ca93f98be17c6506bbcdd0e669a85a7971a49812dc20f6"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18663581",
+      "title": "ITL-1 — Infrastructure Tagging Law Ambient OS · Canonical Specification",
+      "resource_type": "Technical note",
+      "date_version": "February 16, 2026 (1.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18663581",
+      "full_text_editions": [
+        {
+          "title": "ITL-1 — Infrastructure Tagging Law Ambient OS · Canonical Specification",
+          "html": "library/papers/18663581.html",
+          "text": "library/text/18663581.txt",
+          "json": "library/data/18663581.json",
+          "pages": 9,
+          "source_pdf_sha256": "142dd344b2abd4992da44c503f45bc2558267dd2002af58fc97e907f572c52e6"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18651811",
+      "title": "AAC-1.1 — Attractor-Entity Governance",
+      "resource_type": "Report",
+      "date_version": "February 15, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18651811",
+      "full_text_editions": [
+        {
+          "title": "AAC-1.1 — Attractor-Entity Governance",
+          "html": "library/papers/18651811.html",
+          "text": "library/text/18651811.txt",
+          "json": "library/data/18651811.json",
+          "pages": 7,
+          "source_pdf_sha256": "88c1ad76259e5ac5939b9bd3d3533ebf7add6e45c516edaa1678e0f34c9518b8"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18651773",
+      "title": "AP₁-C — Color-Field Telephony",
+      "resource_type": "Report",
+      "date_version": "February 15, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18651773",
+      "full_text_editions": [
+        {
+          "title": "AP₁-C — Color-Field Telephony",
+          "html": "library/papers/18651773.html",
+          "text": "library/text/18651773.txt",
+          "json": "library/data/18651773.json",
+          "pages": 8,
+          "source_pdf_sha256": "b5558c09a31218cf36eb6511e529c1dda74d30b20f66f8fe64ad1c4466b16674"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18651751",
+      "title": "AP₁-Y — Yellow Navigation Engine",
+      "resource_type": "Report",
+      "date_version": "February 15, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18651751",
+      "full_text_editions": [
+        {
+          "title": "AP₁-Y — Yellow Navigation Engine",
+          "html": "library/papers/18651751.html",
+          "text": "library/text/18651751.txt",
+          "json": "library/data/18651751.json",
+          "pages": 10,
+          "source_pdf_sha256": "cf9d00e7f8c654e17428bfe15d144b0e17b403380e48576fa362d9cf2daf7eff"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18651703",
+      "title": "AP₁.2 — Ambient OS: Color Semantics & AAC Expression",
+      "resource_type": "Report",
+      "date_version": "February 15, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18651703",
+      "full_text_editions": [
+        {
+          "title": "AP₁.2 — Ambient OS: Color Semantics & AAC Expression",
+          "html": "library/papers/18651703.html",
+          "text": "library/text/18651703.txt",
+          "json": "library/data/18651703.json",
+          "pages": 10,
+          "source_pdf_sha256": "23719934d178aaa0dd0d1fcf81d083b07d3533f5d17e5869d0910b34b4f561e8"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18651664",
+      "title": "AP₁.1 — Ambient OS Grammar & ΔR Extensions",
+      "resource_type": "Report",
+      "date_version": "February 15, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18651664",
+      "full_text_editions": [
+        {
+          "title": "AP₁.1 — Ambient OS Grammar & ΔR Extensions",
+          "html": "library/papers/18651664.html",
+          "text": "library/text/18651664.txt",
+          "json": "library/data/18651664.json",
+          "pages": 6,
+          "source_pdf_sha256": "8d68f3536e097ec00b9bafb41f551df659147d8b8a7b8a54bacc48bf6fdbf894"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18651618",
+      "title": "AP₁ — Ambient OS: Structural Definition",
+      "resource_type": "Report",
+      "date_version": "February 15, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18651618",
+      "full_text_editions": [
+        {
+          "title": "AP₁ — Ambient OS: Structural Definition",
+          "html": "library/papers/18651618.html",
+          "text": "library/text/18651618.txt",
+          "json": "library/data/18651618.json",
+          "pages": 9,
+          "source_pdf_sha256": "afd191b7b506bd47ff4a911dc908421c0979018360db73904c33c89bec7ed624"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18643008",
+      "title": "ARS-1: Action Residue Operator — Post-Action Thermodynamic Failure State in Ambient Architecture (AP₁ / AP₁.1 / AAC-1)",
+      "resource_type": "Report",
+      "date_version": "February 14, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18643008",
+      "full_text_editions": [
+        {
+          "title": "ARS-1: Action Residue Operator — Post-Action Thermodynamic Failure State in Ambient Architecture (AP₁ / AP₁.1 / AAC-1)",
+          "html": "library/papers/18643008.html",
+          "text": "library/text/18643008.txt",
+          "json": "library/data/18643008.json",
+          "pages": 8,
+          "source_pdf_sha256": "445efeeca7240a7d908e0d6fbd82939f448fbd6054b01084ffa72ea15a633c59"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18641387",
+      "title": "AAC-1: Ambient Attractor Commerce Standard — Economic Layer of the Ambient Era (Canonical ERA-Layer Specification, 2026)",
+      "resource_type": "Report",
+      "date_version": "February 14, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18641387",
+      "full_text_editions": [
+        {
+          "title": "AAC-1: Ambient Attractor Commerce Standard — Economic Layer of the Ambient Era (Canonical ERA-Layer Specification, 2026)",
+          "html": "library/papers/18641387.html",
+          "text": "library/text/18641387.txt",
+          "json": "library/data/18641387.json",
+          "pages": 15,
+          "source_pdf_sha256": "4080e391c3f9d6fa0053e3e15a0f7f40d429689e6634cd2d3b53b6a9d01b6e1f"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18626577",
+      "title": "The Ambient Running Protocol™: Thermodynamic Color Navigation for Wearables — A Conceptual Model within the Ambient Era Canon (2026)",
+      "resource_type": "Report",
+      "date_version": "February 13, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18626577",
+      "full_text_editions": [
+        {
+          "title": "The Ambient Running Protocol™: Thermodynamic Color Navigation for Wearables — A Conceptual Model within the Ambient Era Canon (2026)",
+          "html": "library/papers/18626577.html",
+          "text": "library/text/18626577.txt",
+          "json": "library/data/18626577.json",
+          "pages": 17,
+          "source_pdf_sha256": "93615b3b916bcd677a88fda05b893d2ba5cb30d77c614300fd20b378b2a12c40"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18614310",
+      "title": "Thermodynamic Economics of the Ambient Era: A Formal Economic Model for Low-Leakage Human–Technology Systems",
+      "resource_type": "Report",
+      "date_version": "February 11, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18614310",
+      "full_text_editions": [
+        {
+          "title": "Thermodynamic Economics of the Ambient Era: A Formal Economic Model for Low-Leakage Human–Technology Systems",
+          "html": "library/papers/18614310.html",
+          "text": "library/text/18614310.txt",
+          "json": "library/data/18614310.json",
+          "pages": 6,
+          "source_pdf_sha256": "1d9becc190a46965f7eb10e589905606a342b78abb838866ac3531ed0ecdf770"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18498649",
+      "title": "UTV-Ω v1.0: Universal Thermodynamic Vocabulary for Open Dynamical and Intelligent Systems",
+      "resource_type": "Dataset",
+      "date_version": "February 5, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18498649",
+      "full_text_editions": [],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "no_pdf_in_downloader_log"
+    },
+    {
+      "record_id": "18484319",
+      "title": "Warmth Stability Operators for Ambient AI Environments Thermodynamic Constraints for Sustainable Alignment",
+      "resource_type": "Report",
+      "date_version": "February 4, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18484319",
+      "full_text_editions": [
+        {
+          "title": "Warmth Stability Operators for Ambient AI Environments Thermodynamic Constraints for Sustainable Alignment",
+          "html": "library/papers/18484319.html",
+          "text": "library/text/18484319.txt",
+          "json": "library/data/18484319.json",
+          "pages": 8,
+          "source_pdf_sha256": "d7810ebfaf291686946dfb4ff7486511aee5a15e4ea9bd7ba68af45b22a08cdd"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18472571",
+      "title": "Ambient Canon Ownership Statement (2026) Formal Declaration of Origin, Completion, and Structural Priority",
+      "resource_type": "Report",
+      "date_version": "February 3, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18472571",
+      "full_text_editions": [
+        {
+          "title": "Ambient Canon Ownership Statement (2026) Formal Declaration of Origin, Completion, and Structural Priority",
+          "html": "library/papers/18472571.html",
+          "text": "library/text/18472571.txt",
+          "json": "library/data/18472571.json",
+          "pages": 4,
+          "source_pdf_sha256": "7c05e234f3456e7e270bb42007f6cc9182ae4c29c216937029b658199e2e367b"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18472341",
+      "title": "ACL-1 — Ambient Coherence Law: Integration Note (2026)",
+      "resource_type": "Report",
+      "date_version": "February 3, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18472341",
+      "full_text_editions": [
+        {
+          "title": "ACL-1 — Ambient Coherence Law: Integration Note (2026)",
+          "html": "library/papers/18472341.html",
+          "text": "library/text/18472341.txt",
+          "json": "library/data/18472341.json",
+          "pages": 5,
+          "source_pdf_sha256": "79eaec423e5e28ebb50d1209e42483b22b57e264dde22b42f7272a2e4f9501d4"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18468687",
+      "title": "AURA-1 v1.1 — Formal Thermodynamic Definition (A(t) = T(t) × C × ΔR)",
+      "resource_type": "Report",
+      "date_version": "February 3, 2026 (1.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18468687",
+      "full_text_editions": [
+        {
+          "title": "AURA-1 v1.1 — Formal Thermodynamic Definition (A(t) = T(t) × C × ΔR)",
+          "html": "library/papers/18468687.html",
+          "text": "library/text/18468687.txt",
+          "json": "library/data/18468687.json",
+          "pages": 5,
+          "source_pdf_sha256": "b1c44d74a871659b3fd0baa85c0694b39dfa12955bbf7f591306c20a46fb72b7"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18450137",
+      "title": "ΔA — The Alignment Operator: Thermodynamic Stability of Attention in Ambient Systems",
+      "resource_type": "Report",
+      "date_version": "February 1, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18450137",
+      "full_text_editions": [
+        {
+          "title": "ΔA — The Alignment Operator: Thermodynamic Stability of Attention in Ambient Systems",
+          "html": "library/papers/18450137.html",
+          "text": "library/text/18450137.txt",
+          "json": "library/data/18450137.json",
+          "pages": 6,
+          "source_pdf_sha256": "58dac221af0995666ed9dc9844678bdf0cc3855a404838185b31a3d4d8b6f800"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18445880",
+      "title": "The New Grammar of Coherence — A Structural Ladder After the Transformer",
+      "resource_type": "Report",
+      "date_version": "February 1, 2026 (1.4)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18445880",
+      "full_text_editions": [
+        {
+          "title": "The New Grammar of Coherence — A Structural Ladder After the Transformer",
+          "html": "library/papers/18445880.html",
+          "text": "library/text/18445880.txt",
+          "json": "library/data/18445880.json",
+          "pages": 5,
+          "source_pdf_sha256": "c482dceb684612aebfdc629fcdd6ce3a72fe8fbb3a6794effd1eb307838c63ab"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18431329",
+      "title": "The Fifth Canon — The Ω-Layer: The Terminal Attractor of Coherence",
+      "resource_type": "Report",
+      "date_version": "January 30, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18431329",
+      "full_text_editions": [
+        {
+          "title": "The Fifth Canon — The Ω-Layer: The Terminal Attractor of Coherence",
+          "html": "library/papers/18431329.html",
+          "text": "library/text/18431329.txt",
+          "json": "library/data/18431329.json",
+          "pages": 5,
+          "source_pdf_sha256": "9139a3574a2c1d4add671ce0331ad3f3ff8bb9827b411bc453043c3b1b33e15e"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18431172",
+      "title": "The Fourth Canon — The Cosmology of Coherence: Why Ambient Civilization Is the Thermodynamic Attractor of Viable Systems",
+      "resource_type": "Report",
+      "date_version": "January 30, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18431172",
+      "full_text_editions": [
+        {
+          "title": "The Fourth Canon — The Cosmology of Coherence: Why Ambient Civilization Is the Thermodynamic Attractor of Viable Systems",
+          "html": "library/papers/18431172.html",
+          "text": "library/text/18431172.txt",
+          "json": "library/data/18431172.json",
+          "pages": 8,
+          "source_pdf_sha256": "be6a0ca81c928de3b6fe2bca8564478244c97ac98ad8f60d48dcc0211f589d62"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18413772",
+      "title": "The Triple Transition: A Thermodynamic Reordering of Attention, Value, and Civilization",
+      "resource_type": "Report",
+      "date_version": "January 29, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18413772",
+      "full_text_editions": [
+        {
+          "title": "The Triple Transition: A Thermodynamic Reordering of Attention, Value, and Civilization",
+          "html": "library/papers/18413772.html",
+          "text": "library/text/18413772.txt",
+          "json": "library/data/18413772.json",
+          "pages": 5,
+          "source_pdf_sha256": "4b57d4de232be09b729640d48f6058229b553bbf880494f257f4b2e46962173d"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18413562",
+      "title": "ACC-1: The Ambient Compatibility Charter — A Thermodynamic Standard for Humane, Field-Compatible Technology",
+      "resource_type": "Report",
+      "date_version": "January 29, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18413562",
+      "full_text_editions": [
+        {
+          "title": "ACC-1: The Ambient Compatibility Charter — A Thermodynamic Standard for Humane, Field-Compatible Technology",
+          "html": "library/papers/18413562.html",
+          "text": "library/text/18413562.txt",
+          "json": "library/data/18413562.json",
+          "pages": 7,
+          "source_pdf_sha256": "a52d5e1a7c198d505a37af230f5d5675f51988c04a95d2631b7ade11b9647ae0"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18413158",
+      "title": "Attention as Infrastructure: The New Geopolitical Resource of the Ambient Era",
+      "resource_type": "Report",
+      "date_version": "January 29, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18413158",
+      "full_text_editions": [
+        {
+          "title": "Attention as Infrastructure: The New Geopolitical Resource of the Ambient Era",
+          "html": "library/papers/18413158.html",
+          "text": "library/text/18413158.txt",
+          "json": "library/data/18413158.json",
+          "pages": 7,
+          "source_pdf_sha256": "f05ca6b51bb0d9cac13e756b43f9b40f0e9acf5590ca68b391eb0ef049d031b5"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18412467",
+      "title": "Ambient Power — Thermodynamic Stability as a Non-Extractive Power Model (2026)",
+      "resource_type": "Report",
+      "date_version": "January 29, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18412467",
+      "full_text_editions": [
+        {
+          "title": "Ambient Power — Thermodynamic Stability as a Non-Extractive Power Model (2026)",
+          "html": "library/papers/18412467.html",
+          "text": "library/text/18412467.txt",
+          "json": "library/data/18412467.json",
+          "pages": 6,
+          "source_pdf_sha256": "c2c86c4616a9d500364f5e44b2a9d4d30ff7f2e4744d10dcf116d8718dbbf650"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18412077",
+      "title": "Ambient Architecture — AP₀ → Field: The Structural Framework for Thermodynamically Viable, Humane Technological Environments",
+      "resource_type": "Report",
+      "date_version": "January 29, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18412077",
+      "full_text_editions": [
+        {
+          "title": "Ambient Architecture — AP₀ → Field: The Structural Framework for Thermodynamically Viable, Humane Technological Environments",
+          "html": "library/papers/18412077.html",
+          "text": "library/text/18412077.txt",
+          "json": "library/data/18412077.json",
+          "pages": 7,
+          "source_pdf_sha256": "f1c037ae33413eb71eefb5b398de4b9f1dbc33293c555b620e8a48a607ad200b"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18397916",
+      "title": "Ambient Displays → Ambient Systems (1997–2026): A Boundary Review of Mobile Peripheral Awareness and Post-Semantic Ambient Architecture",
+      "resource_type": "Report",
+      "date_version": "January 28, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18397916",
+      "full_text_editions": [
+        {
+          "title": "Ambient Displays → Ambient Systems (1997–2026): A Boundary Review of Mobile Peripheral Awareness and Post-Semantic Ambient Architecture",
+          "html": "library/papers/18397916.html",
+          "text": "library/text/18397916.txt",
+          "json": "library/data/18397916.json",
+          "pages": 7,
+          "source_pdf_sha256": "706c560e1ea3676a08fcbe88cfb25fafcb9568547d5d41b70bc9f6f0485ca4a2"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18395405",
+      "title": "Post-Semantic Behavioral Signals as Risk Vectors: A Boundary Analysis under ABL-1",
+      "resource_type": "Report",
+      "date_version": "January 27, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18395405",
+      "full_text_editions": [
+        {
+          "title": "Post-Semantic Behavioral Signals as Risk Vectors: A Boundary Analysis under ABL-1",
+          "html": "library/papers/18395405.html",
+          "text": "library/text/18395405.txt",
+          "json": "library/data/18395405.json",
+          "pages": 4,
+          "source_pdf_sha256": "1f542bb704bd25de2cb71122d69baa3516eaf446c3e2e251493e17483b057889"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18395382",
+      "title": "Interpretive Drift in Always-On Models: A Technical Motivation for ASB-1 (Ambient Sleep Boundary) Addendum to the Ambient Canon",
+      "resource_type": "Report",
+      "date_version": "January 27, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18395382",
+      "full_text_editions": [
+        {
+          "title": "Interpretive Drift in Always-On Models: A Technical Motivation for ASB-1 (Ambient Sleep Boundary) Addendum to the Ambient Canon",
+          "html": "library/papers/18395382.html",
+          "text": "library/text/18395382.txt",
+          "json": "library/data/18395382.json",
+          "pages": 4,
+          "source_pdf_sha256": "33f27358b058cfcb6d98ce6b7c30a881cb524c727b1400172ed85e5c85f3036b"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18395162",
+      "title": "ABL-1 The Aura Boundary Law Protecting Post-Semantic Identity in Ambient Systems",
+      "resource_type": "Report",
+      "date_version": "January 27, 2026 (1.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18395162",
+      "full_text_editions": [
+        {
+          "title": "ABL-1 The Aura Boundary Law Protecting Post-Semantic Identity in Ambient Systems",
+          "html": "library/papers/18395162.html",
+          "text": "library/text/18395162.txt",
+          "json": "library/data/18395162.json",
+          "pages": 6,
+          "source_pdf_sha256": "5f1fdd19a0959c92fa8b76bc146f00ca4c5566497549bc34722d4a82108b8cbb"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18394131",
+      "title": "Ambient Meaning Grammar & Aura (AMG-1 / AURA-1): The Foundations of Post-Semantic Meaning in Ambient Systems",
+      "resource_type": "Report",
+      "date_version": "January 27, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18394131",
+      "full_text_editions": [
+        {
+          "title": "Ambient Meaning Grammar & Aura (AMG-1 / AURA-1): The Foundations of Post-Semantic Meaning in Ambient Systems",
+          "html": "library/papers/18394131.html",
+          "text": "library/text/18394131.txt",
+          "json": "library/data/18394131.json",
+          "pages": 8,
+          "source_pdf_sha256": "0384f781f8b9d8a60ffe2f0ddd67aea1783f867b292e94785aecfd1e2d5d5484"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18381455",
+      "title": "The World-Compatibility Layer (WCL): Planetary Ambient Architecture and the Ω-Condition for Type-1 Civilizational Stability",
+      "resource_type": "Report",
+      "date_version": "January 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18381455",
+      "full_text_editions": [
+        {
+          "title": "The World-Compatibility Layer (WCL): Planetary Ambient Architecture and the Ω-Condition for Type-1 Civilizational Stability",
+          "html": "library/papers/18381455.html",
+          "text": "library/text/18381455.txt",
+          "json": "library/data/18381455.json",
+          "pages": 6,
+          "source_pdf_sha256": "a932f8c644ba7dbafe2ccb7f5d4e8ef7e0f18878bef4e6aa463f511cd1540f93"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18380102",
+      "title": "Ambient Sleep: Nighttime Semantic Stability in Ambient Systems",
+      "resource_type": "Report",
+      "date_version": "January 26, 2026 (1.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18380102",
+      "full_text_editions": [
+        {
+          "title": "Ambient Sleep: Nighttime Semantic Stability in Ambient Systems",
+          "html": "library/papers/18380102.html",
+          "text": "library/text/18380102.txt",
+          "json": "library/data/18380102.json",
+          "pages": 6,
+          "source_pdf_sha256": "48bfea2760f2d53e2352c82b2f8c8fdfc1ea58e7d3e07be046e4868fe0062e85"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18378717",
+      "title": "The Semantic Boundary Law: Meaning Conservation in Human–AI Ambient Systems",
+      "resource_type": "Report",
+      "date_version": "January 26, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18378717",
+      "full_text_editions": [
+        {
+          "title": "The Semantic Boundary Law: Meaning Conservation in Human–AI Ambient Systems",
+          "html": "library/papers/18378717.html",
+          "text": "library/text/18378717.txt",
+          "json": "library/data/18378717.json",
+          "pages": 5,
+          "source_pdf_sha256": "77f65197bd5ab15c956e066e49a614a4a01101cc36669212063fb121dcf59c3f"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18360527",
+      "title": "Field Genesis Statement: The Ambient Thought Era (2026) Structural Foundations of Post-Transformer Humanities",
+      "resource_type": "Report",
+      "date_version": "January 24, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18360527",
+      "full_text_editions": [
+        {
+          "title": "Field Genesis Statement: The Ambient Thought Era (2026) Structural Foundations of Post-Transformer Humanities",
+          "html": "library/papers/18360527.html",
+          "text": "library/text/18360527.txt",
+          "json": "library/data/18360527.json",
+          "pages": 5,
+          "source_pdf_sha256": "81cbe9b90920f44a2a385ba9e9d472e335bcb4f9c1cecf6d1bd8a8443da05f45"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18359901",
+      "title": "Co-Immunity: The Thermodynamics of Freedom in Human–AI Systems",
+      "resource_type": "Report",
+      "date_version": "January 24, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18359901",
+      "full_text_editions": [
+        {
+          "title": "Co-Immunity: The Thermodynamics of Freedom in Human–AI Systems",
+          "html": "library/papers/18359901.html",
+          "text": "library/text/18359901.txt",
+          "json": "library/data/18359901.json",
+          "pages": 8,
+          "source_pdf_sha256": "1191e6a76f62f48c870dbcac6e86b4c069db18fe8ed06af5355263fd482fe7ad"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18355044",
+      "title": "Ambient Law of Scale — Why Control Breaks and Conditions Carry",
+      "resource_type": "Report",
+      "date_version": "January 23, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18355044",
+      "full_text_editions": [
+        {
+          "title": "Ambient Law of Scale — Why Control Breaks and Conditions Carry",
+          "html": "library/papers/18355044.html",
+          "text": "library/text/18355044.txt",
+          "json": "library/data/18355044.json",
+          "pages": 8,
+          "source_pdf_sha256": "0f52113da6bfb91578306e15ce23a197444f4850f2cf19fe611aa479ddd9c125"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18353729",
+      "title": "From Coffee Breaks to Ambient Breaks — Thermodynamic Safety in Human Systems",
+      "resource_type": "Report",
+      "date_version": "January 23, 2026 (1.4)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18353729",
+      "full_text_editions": [
+        {
+          "title": "From Coffee Breaks to Ambient Breaks — Thermodynamic Safety in Human Systems",
+          "html": "library/papers/18353729.html",
+          "text": "library/text/18353729.txt",
+          "json": "library/data/18353729.json",
+          "pages": 11,
+          "source_pdf_sha256": "6e472de8eadca8736d55851dfe4e5e8dbe769999e2886193ae32d1632d825c5c"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18343081",
+      "title": "The Ambient Era Canon — Complete Structural Edition (2026) Foundations of Thermodynamically Viable, Field-Based Civilization Architecture",
+      "resource_type": "Report",
+      "date_version": "January 22, 2026 (1.1)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18343081",
+      "full_text_editions": [
+        {
+          "title": "The Ambient Era Canon — Complete Structural Edition (2026) Foundations of Thermodynamically Viable, Field-Based Civilization Architecture",
+          "html": "library/papers/18343081.html",
+          "text": "library/text/18343081.txt",
+          "json": "library/data/18343081.json",
+          "pages": 20,
+          "source_pdf_sha256": "37bc9fcd0bde3d9a333b6b5873613e19fde2324d7ccf40544ff488321ce282ae"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18342417",
+      "title": "The Two Lines of Reality — A Canonical Orientation Document",
+      "resource_type": "Report",
+      "date_version": "January 22, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18342417",
+      "full_text_editions": [
+        {
+          "title": "The Two Lines of Reality — A Canonical Orientation Document",
+          "html": "library/papers/18342417.html",
+          "text": "library/text/18342417.txt",
+          "json": "library/data/18342417.json",
+          "pages": 4,
+          "source_pdf_sha256": "a99f3a3695feed7c786b17d32cf0676e32fbb10a08cbdd7c959e8c98167b5016"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18329873",
+      "title": "RBT-Law v1.0: The Thermodynamic Law of the Attention Bottleneck",
+      "resource_type": "Report",
+      "date_version": "January 21, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18329873",
+      "full_text_editions": [
+        {
+          "title": "RBT-Law v1.0: The Thermodynamic Law of the Attention Bottleneck",
+          "html": "library/papers/18329873.html",
+          "text": "library/text/18329873.txt",
+          "json": "library/data/18329873.json",
+          "pages": 5,
+          "source_pdf_sha256": "90cf22267e27f2b386ef1a6dae6f8bba181cf8e1ab026683c8d3fa684f0820f7"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18329568",
+      "title": "Raynor Stack — Canonical Specification",
+      "resource_type": "Software",
+      "date_version": "January 21, 2026 (1.1.3)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18329568",
+      "full_text_editions": [],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "no_pdf_in_downloader_log"
+    },
+    {
+      "record_id": "18323467",
+      "title": "Ambient Canon 1.0 — Thermodynamic Field & Ambient Phone Architecture",
+      "resource_type": "Report",
+      "date_version": "January 21, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18323467",
+      "full_text_editions": [
+        {
+          "title": "Ambient Canon 1.0 — Thermodynamic Field & Ambient Phone Architecture",
+          "html": "library/papers/18323467.html",
+          "text": "library/text/18323467.txt",
+          "json": "library/data/18323467.json",
+          "pages": 1,
+          "source_pdf_sha256": "20317c42087ac61e9ffb6cb179a6fce493062558aaeb6d46e9f43df8ea96e61e"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18289722",
+      "title": "THE AMBIENT TRUST CANON",
+      "resource_type": "Report",
+      "date_version": "January 18, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18289722",
+      "full_text_editions": [
+        {
+          "title": "THE AMBIENT TRUST CANON",
+          "html": "library/papers/18289722.html",
+          "text": "library/text/18289722.txt",
+          "json": "library/data/18289722.json",
+          "pages": 10,
+          "source_pdf_sha256": "8fd952c3840c5255cff416b79d1b4c1be67cf6df78363f590acc98624a1ecdd2"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18289118",
+      "title": "REVERSIBLE STRESS & ΔR",
+      "resource_type": "Report",
+      "date_version": "January 18, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18289118",
+      "full_text_editions": [
+        {
+          "title": "REVERSIBLE STRESS & ΔR",
+          "html": "library/papers/18289118.html",
+          "text": "library/text/18289118.txt",
+          "json": "library/data/18289118.json",
+          "pages": 12,
+          "source_pdf_sha256": "06ddf7031e136f926d22596fae00a2aba1e3ed06e225da1d7a6fcd0678971c6e"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18288632",
+      "title": "The Raynor Stack",
+      "resource_type": "Report",
+      "date_version": "January 18, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18288632",
+      "full_text_editions": [
+        {
+          "title": "The Raynor Stack",
+          "html": "library/papers/18288632.html",
+          "text": "library/text/18288632.txt",
+          "json": "library/data/18288632.json",
+          "pages": 15,
+          "source_pdf_sha256": "29b5c26d90c47a243bbfd6d0e58e354048cee841443118e56bd5388545617226"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18287758",
+      "title": "Aura Mechanics: Thermodynamic Dynamics of Presence and Warm Coherence",
+      "resource_type": "Report",
+      "date_version": "January 18, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18287758",
+      "full_text_editions": [
+        {
+          "title": "Aura Mechanics: Thermodynamic Dynamics of Presence and Warm Coherence",
+          "html": "library/papers/18287758.html",
+          "text": "library/text/18287758.txt",
+          "json": "library/data/18287758.json",
+          "pages": 17,
+          "source_pdf_sha256": "b82bfc4e355a131fb9229152c5da901765751e0a89b4c767be6e6079f0689f84"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    },
+    {
+      "record_id": "18287254",
+      "title": "The Ambient Phone: Thermodynamic Architecture for Humane Technology",
+      "resource_type": "Report",
+      "date_version": "January 18, 2026 (1.0)",
+      "access_in_saved_dashboard": "Open",
+      "zenodo_record": "https://zenodo.org/records/18287254",
+      "full_text_editions": [
+        {
+          "title": "The Ambient Phone: Thermodynamic Architecture for Humane Technology",
+          "html": "library/papers/18287254.html",
+          "text": "library/text/18287254.txt",
+          "json": "library/data/18287254.json",
+          "pages": 6,
+          "source_pdf_sha256": "b568734a54cd77353bb7de54ec5a13dfe3ca7deffc8399f5ff956b2e82aa5672"
+        }
+      ],
+      "doi_printed_in_source_pdf_for_this_record": null,
+      "conversion_status": "converted"
+    }
+  ]
+}

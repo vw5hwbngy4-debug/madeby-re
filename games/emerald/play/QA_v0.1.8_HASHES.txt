@@ -1,0 +1,9 @@
+JRPG.WORLD EMERALD v0.1.8 — CRITICAL UNCHANGED FILE HASHES
+
+25eb90e37ce9a45326d00fedf0410b492ff108d7188adff56264311ef91c3dff     44505  assets/mgba-9Quf3WhR.js.gz
+769580db1db4c93a418a8de91b58d4fbaa3be645e7e431211add0fecdd32130b    598700  assets/mgba-2tQpynw2.wasm.gz
+fb43ac03a8fdbfd0b58a9e6ad357c67faf49148af1328bbd892bb1accf21fbee      6289  assets/index-DGEhSGq8.css.gz
+151e8c5e91d6a88aed47239a2b675fa953d7df96e278b27628b8155d568124df      4679  desktop-keyboard-v0.1.7.2.js
+3fab175eea4209504d3737dca57ffcdf82752468c58acc967f0ed2200dae93f9      3383  desktop-ux-v0.1.7.2.js
+b141608aae5856c5a340e66902c9e33124c638e29e5f82161ee4398db0380c5f     11218  desktop-ux-v0.1.6.2.css
+b6d8ca26af9c992e055d8bf0c2a2b697fcdac826ffdb584d12ea636bf5588c18    340895  data/emerald-live-dex.json

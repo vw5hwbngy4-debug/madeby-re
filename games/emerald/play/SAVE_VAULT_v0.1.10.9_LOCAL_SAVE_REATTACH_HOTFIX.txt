@@ -1,0 +1,13 @@
+EMERALD v0.1.10.9 — LOCAL SAVE REATTACH HOTFIX
+
+Observed failure:
+After Safari/site storage reset, a manually reloaded old .sav could exist under its original filename while PokéField forces Emerald to boot from the canonical Save Vault path /data/saves/JRPG_WORLD_EMERALD_BPEE_REV0.sav. The game then legitimately showed NEW GAME and the active canonical file remained an empty 128 KiB save (0 Emerald sectors).
+
+Fixes:
+- before ROM boot, scan every /data/saves/*.sav for the best valid Emerald save
+- if a valid local save exists under another filename, copy all bytes (including optional 16-byte mGBA RTC footer) to the canonical active path before mGBA loads the ROM
+- wrap mGBA local .sav import so valid imported saves are normalized to the canonical path and persisted
+- Save Vault SAVE 1 import now also attaches the imported save to the canonical local path and asks for a ROM reload
+- local migration to an empty server vault normalizes the active path before upload
+
+Backend: v0.1.2 remains compatible; no backend schema/API change required.

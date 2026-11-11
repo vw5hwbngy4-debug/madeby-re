@@ -1,0 +1,1 @@
+v5.3.2 keeps the stronger v5.3.1 visual/person foundation and adds: parking lot + opening gate, parked street cars, hydrant water-spray collisions, a clearer bridge at the beach inlet, and fixed UZI pickup points outside interiors.

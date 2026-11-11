@@ -1,0 +1,26 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../trainer-card-v0.1.7.1.css">
+<style>
+body{margin:0;background:#30334f} #pokefield-live-panel{width:800px;background:#080c12;padding:12px}
+.pf-card{border:1px solid #75e5db;background:#ffffff08;padding:10px}.pf-detail{margin-top:8px}.big{height:520px}
+</style>
+<div id="pokefield-live-panel">
+  <div class="pf-head"><div class="pf-head-actions"></div></div>
+  <div id="pf-primary"><div class="pf-card"><div>TOP</div><details class="pf-detail"><summary>DETAILS</summary><div class="big">LONG DETAILS</div></details></div></div>
+</div>
+<script src="../trainer-card-v0.1.14.js"></script>
+<script>
+setTimeout(()=>{
+  const stage=document.querySelector('#tc-stage');
+  const details=document.querySelector('.pf-detail');
+  const before=parseFloat(stage.style.height)||stage.getBoundingClientRect().height;
+  details.open=true;
+  setTimeout(()=>{
+    const after=parseFloat(stage.style.height)||stage.getBoundingClientRect().height;
+    const result=document.createElement('pre');
+    result.id='result';
+    result.textContent=JSON.stringify({before,after,grew:after>before+400,open:details.open});
+    document.body.appendChild(result);
+  },120);
+},120);
+</script>

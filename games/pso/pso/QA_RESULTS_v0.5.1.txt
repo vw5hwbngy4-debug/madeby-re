@@ -1,0 +1,44 @@
+JRPG.WORLD /pso/ · RICO INTELLIGENCE v0.5.1
+QA date: 2026-09-09
+
+RESULT
+------
+65 / 65 automated tests PASS
+JavaScript syntax PASS:
+- app.js
+- engine.js
+- mag-engine.js
+- save-mag-coach.js
+- hunt-router-core.js
+- hunt-router-ui.js
+- account-router-core.js
+- account-router-ui.js
+- gear-progression-core.js
+- gear-progression-ui.js
+- pso-character-link.js
+
+PHP lint PASS:
+- api/pso.php
+- api/install-health.php
+
+GOLDEN ORIGINAL XBOX SAVE
+-------------------------
+Eilaa · RAmarl · Redria · Lv2
+MAG Lv6 · DEF 5.14 / POW 0.30 / DEX 1.20 / MIND 0.00
+Effective ATA 73.85
+Rifle EQUIP NOW at ATA 72
+Autogun LOCKED at ATA 78 with +4.15 gap
+Corrupted save rejected
+Raw save binary excluded from RICO state
+
+UX ACCEPTANCE
+-------------
+- Existing /pso/ consumer shell preserved
+- JRPG.WORLD world-tabs preserved
+- Only compact Original Xbox save control added
+- No GameCube or Blue Burst save UI
+- Hunt / Account / Gear engines mounted headless
+- Large V0.5 lab dashboards not permanently rendered
+- Generic linked-save "what next?" queries receive concise save + gear overview facts
+- Shared /assets/pso library reused from main JRPG.WORLD
+- Local /pso/api/pso.php reuses parent private/config.php

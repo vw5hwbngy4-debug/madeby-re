@@ -1,0 +1,527 @@
+/* JRPG.WORLD Emerald v0.1.7 — local Competitive Trainer Card MVP.
+   Additive UI only. Emulator, live RAM decoder and touch/keyboard controls remain separate. */
+
+:root {
+  --tc-bg: #080c12;
+  --tc-card: #0d131d;
+  --tc-card-2: #111927;
+  --tc-line: rgba(255,255,255,.12);
+  --tc-muted: #8390a2;
+  --tc-text: #f2f6fb;
+  --tc-green: #72f0a9;
+  --tc-yellow: #ffd166;
+  --tc-purple: #b7a9ff;
+}
+
+/* Header entry point, available even when no live specimen is present. */
+#pokefield-live-panel .tc-header-button {
+  appearance: none;
+  margin-left: auto;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+  background: rgba(255,255,255,.055);
+  color: #cfd7e3;
+  padding: 5px 8px;
+  font: 800 8px/1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  letter-spacing: .08em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+#pokefield-live-panel .tc-header-button:hover { border-color: rgba(114,240,169,.4); color: #fff; }
+#pokefield-live-panel .tc-header-button:focus-visible,
+#pokefield-live-panel .tc-action:focus-visible,
+#pokefield-live-panel .tc-card-action:focus-visible,
+#pokefield-live-panel .tc-box-action:focus-visible,
+#pokefield-live-panel .tc-slot button:focus-visible,
+#pokefield-live-panel .tc-trainer-name:focus-visible {
+  outline: 2px solid var(--tc-green);
+  outline-offset: 2px;
+}
+
+/* 3D stage: the existing live IV surface is the front, Trainer Card is the back. */
+#pokefield-live-panel .tc-stage {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  perspective: 1300px;
+  transition: height .22s ease;
+}
+#pokefield-live-panel .tc-flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .46s cubic-bezier(.2,.72,.18,1);
+}
+#pokefield-live-panel .tc-stage.tc-flipped .tc-flipper { transform: rotateY(180deg); }
+#pokefield-live-panel .tc-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+#pokefield-live-panel .tc-face-front { transform: rotateY(0); }
+#pokefield-live-panel .tc-face-back { transform: rotateY(180deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  #pokefield-live-panel .tc-flipper { transition: none; }
+  #pokefield-live-panel .tc-stage { transition: none; }
+}
+
+/* Existing live card gets a compact action row after the decoded facts. */
+#pokefield-live-panel .tc-live-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 5px 0 1px;
+}
+#pokefield-live-panel .tc-action,
+#pokefield-live-panel .tc-card-action,
+#pokefield-live-panel .tc-box-action {
+  appearance: none;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 8px;
+  background: rgba(255,255,255,.055);
+  color: #cbd3df;
+  min-height: 30px;
+  padding: 6px 9px;
+  font: 800 8px/1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  letter-spacing: .075em;
+  cursor: pointer;
+}
+#pokefield-live-panel .tc-action-primary {
+  border-color: rgba(114,240,169,.36);
+  background: rgba(114,240,169,.10);
+  color: #bfffd8;
+}
+#pokefield-live-panel .tc-action[disabled],
+#pokefield-live-panel .tc-card-action[disabled],
+#pokefield-live-panel .tc-box-action[disabled] {
+  cursor: default;
+  opacity: .42;
+}
+
+/* Trainer side. */
+#pokefield-live-panel .tc-card {
+  overflow: hidden;
+  border: 1px solid rgba(114,240,169,.23);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(114,240,169,.10), transparent 32%),
+    linear-gradient(155deg, #101925 0%, #0a0f17 55%, #080c12 100%);
+  box-shadow: inset 0 1px rgba(255,255,255,.04);
+  color: var(--tc-text);
+}
+#pokefield-live-panel .tc-card-top {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  gap: 9px;
+  align-items: start;
+  padding: 10px 11px 8px;
+  border-bottom: 1px solid rgba(255,255,255,.09);
+}
+#pokefield-live-panel .tc-eyebrow {
+  color: #8c99aa;
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: .16em;
+}
+#pokefield-live-panel .tc-trainer-name {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  margin: 3px 0 0;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px dashed rgba(255,255,255,.16);
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  font: 900 19px/1.15 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+#pokefield-live-panel .tc-trainer-name::placeholder { color: #657184; }
+#pokefield-live-panel .tc-top-actions {
+  display: flex;
+  gap: 5px;
+}
+#pokefield-live-panel .tc-card-action { min-height: 28px; padding: 5px 7px; }
+#pokefield-live-panel .tc-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  color: #87a191;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+#pokefield-live-panel .tc-live-badge::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--tc-green);
+  box-shadow: 0 0 8px rgba(114,240,169,.5);
+}
+
+#pokefield-live-panel .tc-summary {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 5px;
+  padding: 7px 10px 0;
+}
+#pokefield-live-panel .tc-summary-item {
+  min-width: 0;
+  padding: 6px 7px;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 8px;
+  background: rgba(255,255,255,.025);
+}
+#pokefield-live-panel .tc-summary-item span {
+  display: block;
+  color: #778395;
+  font-size: 6.5px;
+  font-weight: 800;
+  letter-spacing: .11em;
+}
+#pokefield-live-panel .tc-summary-item strong {
+  display: block;
+  margin-top: 2px;
+  color: #e8edf4;
+  font-size: 12px;
+  line-height: 1;
+}
+
+#pokefield-live-panel .tc-team {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 5px;
+  padding: 7px 10px 9px;
+}
+#pokefield-live-panel .tc-slot {
+  position: relative;
+  min-width: 0;
+  min-height: 92px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 10px;
+  background: rgba(255,255,255,.028);
+  overflow: hidden;
+}
+#pokefield-live-panel .tc-slot.tc-replace-target {
+  border-color: rgba(255,209,102,.45);
+  background: rgba(255,209,102,.07);
+}
+#pokefield-live-panel .tc-slot-empty {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  min-height: 92px;
+  padding: 8px;
+  color: #566274;
+  text-align: center;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: .10em;
+}
+#pokefield-live-panel .tc-slot-body {
+  display: grid;
+  grid-template-columns: 38px minmax(0,1fr);
+  gap: 6px;
+  align-items: center;
+  padding: 7px 7px 5px;
+}
+#pokefield-live-panel .tc-slot img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+#pokefield-live-panel .tc-slot-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #eef3fa;
+  font-size: 9px;
+  font-weight: 900;
+}
+#pokefield-live-panel .tc-slot-meta {
+  margin-top: 2px;
+  color: #8c98a9;
+  font-size: 7px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#pokefield-live-panel .tc-slot-ivs {
+  padding: 0 7px 6px;
+  color: #aeb7c5;
+  font: 700 6.7px/1.35 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  white-space: nowrap;
+}
+#pokefield-live-panel .tc-slot-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  padding: 5px 7px;
+  border-top: 1px solid rgba(255,255,255,.06);
+  background: rgba(0,0,0,.12);
+}
+#pokefield-live-panel .tc-slot-avg { color: #bcc5d2; font-size: 7px; font-weight: 900; }
+#pokefield-live-panel .tc-slot-hp { min-width: 0; color: #a99cff; font-size: 6.8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#pokefield-live-panel .tc-slot-remove,
+#pokefield-live-panel .tc-slot-replace {
+  appearance: none;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 6px;
+  background: rgba(0,0,0,.40);
+  color: #8f9aab;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0 5px;
+  font: 900 9px/1 system-ui,sans-serif;
+  cursor: pointer;
+}
+#pokefield-live-panel .tc-slot-replace {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(255,209,102,.07);
+  color: #ffe4a0;
+  font-size: 8px;
+  letter-spacing: .08em;
+}
+
+#pokefield-live-panel .tc-replace-banner {
+  display: none;
+  margin: 0 10px 7px;
+  padding: 7px 8px;
+  border: 1px solid rgba(255,209,102,.25);
+  border-radius: 8px;
+  background: rgba(255,209,102,.07);
+  color: #d9bf80;
+  font-size: 7.5px;
+  line-height: 1.35;
+}
+#pokefield-live-panel .tc-replace-banner.tc-show { display: block; }
+
+#pokefield-live-panel .tc-box {
+  border-top: 1px solid rgba(255,255,255,.09);
+}
+#pokefield-live-panel .tc-box > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  list-style: none;
+  padding: 8px 10px;
+  color: #8793a4;
+  font-size: 7.5px;
+  font-weight: 900;
+  letter-spacing: .11em;
+}
+#pokefield-live-panel .tc-box > summary::-webkit-details-marker { display: none; }
+#pokefield-live-panel .tc-box-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 5px;
+  max-height: 180px;
+  overflow: auto;
+  padding: 0 10px 9px;
+}
+#pokefield-live-panel .tc-box-mon {
+  display: grid;
+  grid-template-columns: 34px minmax(0,1fr) auto;
+  gap: 5px;
+  align-items: center;
+  min-width: 0;
+  padding: 5px;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 8px;
+  background: rgba(255,255,255,.022);
+}
+#pokefield-live-panel .tc-box-mon img { width: 34px; height: 34px; object-fit: contain; image-rendering: pixelated; }
+#pokefield-live-panel .tc-box-name { color: #dfe5ee; font-size: 8px; font-weight: 900; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#pokefield-live-panel .tc-box-meta { margin-top: 2px; color: #7c8798; font-size: 6.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#pokefield-live-panel .tc-box-action { min-height: 26px; padding: 4px 6px; font-size: 6.5px; }
+#pokefield-live-panel .tc-box-empty { grid-column: 1/-1; padding: 10px; color: #657183; text-align: center; font-size: 7px; }
+
+#pokefield-live-panel .tc-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 10px 9px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  color: #667285;
+  font-size: 6.5px;
+  line-height: 1.35;
+}
+#pokefield-live-panel .tc-card-footer strong { color: #8f9bac; }
+
+#pokefield-live-panel .tc-toast {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  z-index: 6;
+  max-width: 230px;
+  padding: 7px 9px;
+  border: 1px solid rgba(114,240,169,.30);
+  border-radius: 8px;
+  background: #11231a;
+  color: #c2ffda;
+  box-shadow: 0 8px 22px rgba(0,0,0,.35);
+  font-size: 8px;
+  font-weight: 800;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity .16s ease, transform .16s ease;
+}
+#pokefield-live-panel .tc-toast.tc-show { opacity: 1; transform: translateY(0); }
+
+/* Mobile hotfix v0.1.7.1: one mounted face in normal flow, compact 2 x 3 card. */
+@media (max-width: 959px) {
+  #pokefield-live-panel .pf-head { flex-wrap: nowrap; }
+  #pokefield-live-panel .tc-header-button { padding: 5px 7px; font-size: 7px; }
+  #pokefield-live-panel .tc-live-actions { justify-content: stretch; gap: 4px; }
+  #pokefield-live-panel .tc-action { flex: 1 1 0; min-height: 34px; padding-inline: 6px; font-size: 7px; }
+
+  /* Do not use the desktop 3D/height-measured flip on mobile. Only the active face exists in layout flow. */
+  #pokefield-live-panel .tc-stage {
+    height: auto !important;
+    min-height: 0 !important;
+    perspective: none;
+    transition: none;
+  }
+  #pokefield-live-panel .tc-flipper,
+  #pokefield-live-panel .tc-stage.tc-flipped .tc-flipper {
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+    transform-style: flat;
+    transition: none;
+  }
+  #pokefield-live-panel .tc-face {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-height: 0 !important;
+    transform: none !important;
+    transform-style: flat;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+  }
+  #pokefield-live-panel .tc-face-front { display: block; }
+  #pokefield-live-panel .tc-face-back { display: none; }
+  #pokefield-live-panel .tc-stage.tc-flipped .tc-face-front { display: none; }
+  #pokefield-live-panel .tc-stage.tc-flipped .tc-face-back { display: block; }
+
+  /* Compact object, not a stacked mobile page. */
+  #pokefield-live-panel .tc-card { border-radius: 12px; }
+  #pokefield-live-panel .tc-card-top {
+    grid-template-columns: minmax(0,1fr) auto;
+    gap: 6px;
+    padding: 7px 8px 6px;
+  }
+  #pokefield-live-panel .tc-eyebrow { display: none; }
+  #pokefield-live-panel .tc-trainer-name {
+    max-width: none;
+    margin-top: 0;
+    font-size: 15px;
+    line-height: 1.05;
+  }
+  #pokefield-live-panel .tc-live-badge { display: none; }
+  #pokefield-live-panel .tc-top-actions { gap: 4px; }
+  #pokefield-live-panel .tc-card-action { min-height: 26px; padding: 4px 6px; font-size: 6.5px; }
+
+  #pokefield-live-panel .tc-summary {
+    gap: 4px;
+    padding: 5px 7px 0;
+  }
+  #pokefield-live-panel .tc-summary-item { padding: 5px 5px; border-radius: 7px; }
+  #pokefield-live-panel .tc-summary-item span { font-size: 5.7px; letter-spacing: .07em; }
+  #pokefield-live-panel .tc-summary-item strong { margin-top: 1px; font-size: 10px; }
+
+  #pokefield-live-panel .tc-team {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 4px;
+    padding: 5px 7px 7px;
+  }
+  #pokefield-live-panel .tc-slot { min-height: 70px; border-radius: 8px; }
+  #pokefield-live-panel .tc-slot-empty {
+    min-height: 70px;
+    padding: 5px;
+    font-size: 6.2px;
+    letter-spacing: .07em;
+  }
+  #pokefield-live-panel .tc-slot-body {
+    grid-template-columns: 30px minmax(0,1fr);
+    gap: 4px;
+    padding: 5px 5px 3px;
+  }
+  #pokefield-live-panel .tc-slot img { width: 30px; height: 30px; }
+  #pokefield-live-panel .tc-slot-name { font-size: 7.8px; }
+  #pokefield-live-panel .tc-slot-meta { margin-top: 1px; font-size: 6px; }
+  #pokefield-live-panel .tc-slot-ivs { padding: 0 5px 4px; font-size: 5.6px; overflow: hidden; text-overflow: ellipsis; }
+  #pokefield-live-panel .tc-slot-bottom { gap: 3px; padding: 3px 5px; }
+  #pokefield-live-panel .tc-slot-avg { font-size: 6.1px; }
+  #pokefield-live-panel .tc-slot-hp { font-size: 5.8px; }
+  #pokefield-live-panel .tc-slot-remove { top: 3px; right: 3px; min-width: 20px; min-height: 20px; font-size: 8px; }
+
+  /* MY BOX is a disclosure on mobile and never expands the page by default. */
+  #pokefield-live-panel .tc-box > summary { padding: 7px 8px; font-size: 7px; }
+  #pokefield-live-panel .tc-box > summary span:first-child::after { content: " ▸"; }
+  #pokefield-live-panel .tc-box[open] > summary span:first-child::after { content: " ▾"; }
+  #pokefield-live-panel .tc-box-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 4px;
+    max-height: min(34vh, 220px);
+    overflow: auto;
+    padding: 0 7px 7px;
+  }
+  #pokefield-live-panel .tc-box-mon {
+    grid-template-columns: 28px minmax(0,1fr);
+    gap: 4px;
+    padding: 4px;
+  }
+  #pokefield-live-panel .tc-box-mon img { width: 28px; height: 28px; }
+  #pokefield-live-panel .tc-box-name { font-size: 7px; }
+  #pokefield-live-panel .tc-box-meta { font-size: 5.6px; }
+  #pokefield-live-panel .tc-box-action { grid-column: 1 / -1; min-height: 24px; padding: 3px 5px; font-size: 6px; }
+  #pokefield-live-panel .tc-card-footer { display: none; }
+}
+
+/* Even the narrowest phones keep the required 2 x 3 Trainer Card grid. */
+@media (max-width: 390px) {
+  #pokefield-live-panel .tc-team { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  #pokefield-live-panel .tc-slot,
+  #pokefield-live-panel .tc-slot-empty { min-height: 66px; }
+  #pokefield-live-panel .tc-slot-body { grid-template-columns: 27px minmax(0,1fr); }
+  #pokefield-live-panel .tc-slot img { width: 27px; height: 27px; }
+}
+
+/* While the card is flipped, keep the second screen focused on the card itself. */
+#pokefield-live-panel.tc-showing-card > #pf-owned-drawer,
+#pokefield-live-panel.tc-showing-card > .pf-tech,
+#pokefield-live-panel.tc-showing-card > .pf-explainer,
+#pokefield-live-panel.tc-showing-card > #pf-desktop-idle {
+  display: none !important;
+}
+/* Emerald · MadeBy v0.4 social identity */
+#pokefield-live-panel .tc-top-actions{flex-wrap:wrap;justify-content:flex-end}
+#pokefield-live-panel .tc-hoenn-publish{background:#c8f0bf;border-color:#61a66a;color:#153f2f}
+#pokefield-live-panel .tc-hoenn-publish:not([disabled]):hover{background:#d8f7d1}
+@media(max-width:959px){
+  #pokefield-live-panel .tc-top-actions{max-width:178px}
+  #pokefield-live-panel .tc-hoenn-publish{order:-1;flex:1 0 100%;font-size:7px}
+}

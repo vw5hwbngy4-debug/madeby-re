@@ -1,0 +1,30 @@
+PSO · MadeBy | STANDALONE DEPLOY | 2026-09-17
+================================================
+Target: https://madeby.re/games/pso/pso/
+This package contains only PSO's deploy files and assets, plus Ragol Link v0.1.4.
+No world-tabs, JRPG.WORLD top navigation, links to /landing/, /about/ or /releases/.
+
+Install:
+1. Back up your existing games.madeby.re/pso directory.
+2. Upload this ZIP to the exact document root for games.madeby.re/pso.
+   This is the folder in which index.html currently lives, NOT an extra public_html folder.
+3. Extract ZIP CONTENTS into the root and overwrite matching files. To fully remove
+   old orphaned multi-site navigation assets, remove old assets/world-nav and
+   assets/site-shell folders only if no OTHER app is hosted in this same document root.
+   These orphaned files are not loaded by the new PSO page.
+4. Visit https://madeby.re/games/pso/pso/?v=standalone-1 then refresh if cached.
+5. Visit https://madeby.re/games/pso/pso/smoke-check.html for local checks.
+6. Test the RICO question form, MAG, hunt/gear tools and Ragol Link Windows USB bridge.
+
+IMPORTANT API configuration:
+The PSO PHP endpoint is /pso/api/pso.php and uses a local OPENAI_API_KEY
+server environment variable or private/config.php. Credentials are NOT in this ZIP.
+Copy private/config.php.example to private/config.php on the server if needed,
+insert a key there privately, and keep private/.htaccess (deny all) intact.
+Never put your real key into files served from the website; do not share it in chat.
+The smoke test will show configuration missing until set.
+
+NO DB or Node.js required for PSO. This does not touch existing Nova/Xenosaga/Gloria
+or Emerald subdomains. Archive and old jrpg.world can be cancelled only AFTER
+independent live tests confirm all desired pages/downloads and Ragol Link work.
+The Windows v0.1.4 code/package has NOT been hardware-tested in this environment.

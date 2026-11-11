@@ -1,0 +1,22 @@
+EMERALD v0.1.24.9.2.2.8 · HOENN DESKTOP ENTRY
+QA 2026-09-12
+
+PASS  JS syntax: hoenn-online-v0.1.8.js
+PASS  index loads exactly one active Hoenn runtime: hoenn-online-v0.1.8.js
+PASS  exactly one #hoenn-online-panel creation in active Hoenn runtime
+PASS  desktop launcher is idempotent (#hoenn-desktop-launch)
+PASS  desktop launcher delegates to existing toggleHoenn() / STATE.open
+PASS  mobile Menu/HOENN console delegate retained
+PASS  launcher state synchronizes desktop and mobile aria-pressed state
+PASS  desktop launcher CSS hidden below 960px and visible at >=960px
+PASS  no persistent MutationObserver added to Hoenn runtime
+PASS  all local index references exist
+PASS  VERSION.txt = 0.1.24.9.2.2.8
+PASS  critical protected runtimes byte-identical to v0.1.24.9.2.2.7
+
+Protected parity includes mGBA bundle, Save Vault, PokéField, True PokéField,
+Team Lab, Strategy DEX, Trainer Card and Secret Base core.
+
+NOTE: H keyboard shortcut intentionally omitted. It was optional and claiming a new
+keyboard key would expand the regression surface beyond the launcher-only pass.
+Existing Escape-to-close behavior is preserved.

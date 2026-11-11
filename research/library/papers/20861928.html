@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>StateLens for Situational Intelligence: State-First, URL-Native Signal Grammar for Situation-Aware Assistance | Raynor Eissens full-text library</title><meta content="StateLens began as a URL-native AI state diary protocol: a way to compress user-world moments into readable operator states so that a day could later be reconstructed without storing raw recordings, transcripts, or permanent profiles. Version 1.1 extends that role. It p" name="description"/>
+<meta content="index,follow,max-snippet:-1" name="robots"/><link href="https://madeby.re/research/library/papers/20861928.html" rel="canonical"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "StateLens for Situational Intelligence: State-First, URL-Native Signal Grammar for Situation-Aware Assistance", "name": "StateLens for Situational Intelligence: State-First, URL-Native Signal Grammar for Situation-Aware Assistance", "url": "https://madeby.re/research/library/papers/20861928.html", "mainEntityOfPage": "https://madeby.re/research/library/papers/20861928.html", "isAccessibleForFree": true, "sameAs": ["https://zenodo.org/records/20861928", "https://doi.org/10.5281/zenodo.20861928"], "encoding": [{"@type": "MediaObject", "encodingFormat": "text/html", "contentUrl": "https://madeby.re/research/library/papers/20861928.html"}, {"@type": "MediaObject", "encodingFormat": "text/plain", "contentUrl": "https://madeby.re/research/library/text/20861928.txt"}, {"@type": "MediaObject", "encodingFormat": "application/json", "contentUrl": "https://madeby.re/research/library/data/20861928.json"}], "author": [{"@type": "Person", "name": "Raynor Eissens"}], "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.5281/zenodo.20861928"}, "abstract": "StateLens began as a URL-native AI state diary protocol: a way to compress user-world moments into readable operator states so that a day could later be reconstructed without storing raw recordings, transcripts, or permanent profiles. Version 1.1 extends that role. It positions StateLens as a state-first grammar for situational intelligence: AI assistance that recognizes when an external event becomes relevant to a particular human life, surfaces a compact state signal, preserves private context behind a gate, and leaves action with the human. The paper argues that without a state-first layer, situational AI tends to collapse into one of three less desirable forms: verbose notifications, hidden automation, or invasive profiling. StateLens introduces a different sequence: public operator first, gated explanation second, human branch third, and provenance trail fourth. A signal such as x-vvv-x does not expose the user's life. It denotes a class of state - conflict, mismatch, incoherence, or unstable relation - while the specific reason remains in a trusted private AI context or local v"}</script>
+<meta content="StateLens for Situational Intelligence: State-First, URL-Native Signal Grammar for Situation-Aware Assistance" name="citation_title"/>
+<meta content="Raynor Eissens" name="citation_author"/>
+<meta content="10.5281/zenodo.20861928" name="citation_doi"/>
+<link href="../text/20861928.txt" rel="alternate" type="text/plain"/><link href="../data/20861928.json" rel="alternate" type="application/json"/>
+<link href="../assets/site.css" rel="stylesheet"/>
+</head><body><a class="skip" href="#main">Skip to content</a><div class="shell"><div class="portfolio-bridge"><a href="../../index.html">← Personal website</a><a href="../../archive.html">All 205 Zenodo records</a><a href="../index.html">Full-text library</a></div><header><a class="brand" href="../index.html">← RAYNOR EISSENS / FULL TEXT</a><h1>StateLens for Situational Intelligence: State-First, URL-Native Signal Grammar for Situation-Aware Assistance</h1><div class="meta"><span>Zenodo record: 20861928</span><span>25 PDF pages</span><span>7,846 extracted words</span><span>DOI: <a href="https://doi.org/10.5281/zenodo.20861928">10.5281/zenodo.20861928</a></span></div><nav aria-label="Publication formats" class="tools"><a href="https://zenodo.org/records/20861928" rel="noopener">Original Zenodo record and PDF ↗</a><a href="../text/20861928.txt">Plain text</a><a href="../data/20861928.json">Full-text JSON</a><a href="../index.html">All publications</a></nav></header><main id="main"><aside aria-label="Editorial context for this publication" class="editorial-context compact-context"><span class="context-label">Editorial context · 19 September 2026</span><p>This document belongs to an exploratory theoretical archive. Claims of novelty should be treated as provisional unless independently sourced, and publication does not establish scientific validation. The original PDF-derived text below is unchanged. <a href="../index.html#archive-context">Read the archive note ↗</a></p></aside><section aria-label="Abstract"><h2>Abstract (extracted)</h2><p class="abstract">StateLens began as a URL-native AI state diary protocol: a way to compress user-world moments into readable operator states so that a day could later be reconstructed without storing raw recordings, transcripts, or permanent profiles. Version 1.1 extends that role. It positions StateLens as a state-first grammar for situational intelligence: AI assistance that recognizes when an external event becomes relevant to a particular human life, surfaces a compact state signal, preserves private context behind a gate, and leaves action with the human. The paper argues that without a state-first layer, situational AI tends to collapse into one of three less desirable forms: verbose notifications, hidden automation, or invasive profiling. StateLens introduces a different sequence: public operator first, gated explanation second, human branch third, and provenance trail fourth. A signal such as x-vvv-x does not expose the user's life. It denotes a class of state - conflict, mismatch, incoherence, or unstable relation - while the specific reason remains in a trusted private AI context or local v</p></section><p class="notice">This is a text extraction of the original PDF, not an edited or peer-reviewed edition. PDF text order, equations, multi-column tables and diagram details may be imperfect. Consult the original Zenodo file for authoritative layout and figures.</p><div class="paper-layout"><article aria-label="Full original extracted text"><section aria-label="Source PDF page 1" class="page" id="page-1"><h2>PDF page 1</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+StateLens for Situational
+Intelligence</p>
+<p class="pdf-block">State-First, URL-Native Signal Grammar for Situation-Aware
+Assistance</p>
+<p class="pdf-block">StateLens externalizes state, not the person. It puts the state on the web while keeping the life
+behind the gate.</p>
+<p class="pdf-block">Author
+Raynor Eissens</p>
+<p class="pdf-block">Version
+1.1 Final</p>
+<p class="pdf-block">10.5281/zenodo.20861928</p>
+<p class="pdf-block">DOI</p>
+<p class="pdf-block">Canonical site
+https://statelens.net/</p>
+<p class="pdf-block">Related pages
+https://statelens.net/situational-intelligence/ ·
+https://companionhabitat.com/situational-intelligence/</p>
+<p class="pdf-block">Related layers
+StateLens · Trailstate · ObjectPortal · Companion Habitat · Reversible Systems</p>
+<p class="pdf-block">Document type
+Conceptual protocol paper / position paper</p>
+<p class="pdf-block">Suggested citation: Eissens, R. (2026). StateLens for Situational Intelligence: State-First, URL-Native Signal Grammar for
+Situation-Aware Assistance. Zenodo. https://doi.org/10.5281/zenodo.20861928</p>
+<p class="pdf-block">1</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 1; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/20861928-p1.webp"/><figcaption>Visual reference for page 1. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 2" class="page" id="page-2"><h2>PDF page 2</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<h3 class="pdf-heading">Abstract</h3>
+<p class="pdf-block">StateLens began as a URL-native AI state diary protocol: a way to compress user-world moments into
+readable operator states so that a day could later be reconstructed without storing raw recordings,
+transcripts, or permanent profiles. Version 1.1 extends that role. It positions StateLens as a state-first
+grammar for situational intelligence: AI assistance that recognizes when an external event becomes
+relevant to a particular human life, surfaces a compact state signal, preserves private context behind a
+gate, and leaves action with the human.</p>
+<p class="pdf-block">The paper argues that without a state-first layer, situational AI tends to collapse into one of three less
+desirable forms: verbose notifications, hidden automation, or invasive profiling. StateLens introduces a
+different sequence: public operator first, gated explanation second, human branch third, and provenance
+trail fourth. A signal such as x-vvv-x does not expose the user's life. It denotes a class of state - conflict,
+mismatch, incoherence, or unstable relation - while the specific reason remains in a trusted private AI
+context or local vault.</p>
+<p class="pdf-block">The contribution is not a new foundation model, sensor system, clinical intervention, or emergency
+service. It is an interface and protocol pattern: a finite, URL-native, human-readable and
+machine-readable signal grammar for situation-aware assistance. It integrates ideas from ambient
+intelligence, context-aware computing, calm technology, situation awareness, Just-in-Time Adaptive
+Interventions, Semantic Web architecture, REST, provenance, and human-in-the-loop AI, while making a
+narrower claim: these traditions do not, by themselves, provide a public, URL-native, state-first grammar
+for personal situational relevance with gated context and provenance-backed action trails.</p>
+<p class="pdf-block">A reference Heat Ping case illustrates the pattern. A severe weather warning conflicts with a user's
+outdoor work context. The surface signal is only THERMOMETER | x-vvv-x | Weather/work mismatch
+detected. Open?. If the user opens it, the private AI explains why the state appeared, offers reversible
+branches, and records a Trailstate path only if chosen. The system may signal, explain, offer, draft, and
+save. It may not send, call, cancel, contact a third party, or decide without explicit confirmation.</p>
+<h3 class="pdf-heading">Keywords</h3>
+<p class="pdf-block">StateLens; state-first computing; situational intelligence; situation-aware assistance; URL-native
+operators; gated context; Trailstate; ObjectPortal; provenance; Just-in-Time Adaptive Interventions;
+human action boundary; calm technology; context-aware computing.</p>
+<h3 class="pdf-heading">Executive summary</h3>
+<p class="pdf-block">The central claim of this paper is simple but carefully bounded: future AI systems may increasingly detect
+when situations matter to people, but the open design question is how that relevance should become
+visible. StateLens proposes that relevance should appear first as compact state, not as a full explanation,
+hidden inference, or autonomous action.</p>
+<p class="pdf-block">The prior-art review indicates that the components of the problem are well known. Ambient intelligence
+makes environments responsive; context-aware computing adapts services to user state; calm
+technology minimizes attention cost; situation awareness studies dynamic decision environments;
+Just-in-Time Adaptive Interventions deliver timely adaptive support; REST and Semantic Web traditions
+make resources addressable; W3C PROV models provenance; and human-in-the-loop/XAI literature
+emphasizes oversight. However, the combination of public or semi-public operator state, gated private
+context, URL-native addressability, provenance-backed trails, and explicit human action boundaries is not
+found as a coherent user-facing protocol pattern in the reviewed materials.</p>
+<p class="pdf-block">The paper therefore treats StateLens v1.1 as a concept/protocol proposal. It does not claim empirical
+effectiveness, medical safety, or universal novelty. It offers a design vocabulary and a reference
+architecture. Its strongest defensible claim is that StateLens defines a state-first signal grammar for
+situation-aware assistance: compact public operators, gated private context, human-confirmed branches,
+and replayable provenance.</p>
+<p class="pdf-block">2</p></section><section aria-label="Source PDF page 3" class="page" id="page-3"><h2>PDF page 3</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<h3 class="pdf-heading">Contents</h3>
+<p class="pdf-block">G
+1. Introduction</p>
+<p class="pdf-block">G
+2. From State Diary to State Visibility</p>
+<p class="pdf-block">G
+3. The Situational Intelligence Gap</p>
+<p class="pdf-block">G
+4. Prior Art and Adjacent Traditions</p>
+<p class="pdf-block">G
+5. State-First Computing</p>
+<p class="pdf-block">G
+6. State Resolution</p>
+<p class="pdf-block">G
+7. URL-Native Operator Grammar</p>
+<p class="pdf-block">G
+8. Public State and Private Context</p>
+<p class="pdf-block">G
+9. Architecture</p>
+<p class="pdf-block">G
+10. Relationship to Just-in-Time Adaptive Interventions</p>
+<p class="pdf-block">G
+11. Operators Instead of Notifications</p>
+<p class="pdf-block">G
+12. Heat Ping Case Study</p>
+<p class="pdf-block">G
+13. Protocol Specification v1.1</p>
+<p class="pdf-block">G
+14. Branching Agentic Workflows and Plugins</p>
+<p class="pdf-block">G
+15. Privacy, Safeguards and Human Action Boundary</p>
+<p class="pdf-block">G
+16. Future Applications</p>
+<p class="pdf-block">G
+17. Limitations, Falsification and Reviewer Risks</p>
+<p class="pdf-block">G
+18. Defensible Claims and Publication Positioning</p>
+<p class="pdf-block">G
+19. Conclusion</p>
+<p class="pdf-block">G
+References</p>
+<p class="pdf-block">G
+Appendix A. Minimal Operator Set</p>
+<p class="pdf-block">G
+Appendix B. Signal Object Schema</p>
+<p class="pdf-block">3</p></section><section aria-label="Source PDF page 4" class="page" id="page-4"><h2>PDF page 4</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">1. Introduction</p>
+<p class="pdf-block">Many people expect AI to do more than wait for prompts. They expect a system that can notice when the
+outside world becomes relevant to their life: a severe weather alert before an outdoor workday, a travel
+disruption before a commitment, a safety mismatch before a tool is used, or a conflicting object state
+before an agent acts. This expectation is not merely a demand for stronger models. It is a demand for
+situated assistance.</p>
+<p class="pdf-block">Current AI products often remain organized around explicit initiation. Chatbots wait for a question.
+Assistants respond to commands. Agents execute goals supplied by the user. Automations run only after
+a rule or schedule has been configured. These forms are powerful, but they still require the user to notice
+the situation, name the relevance, provide context, and request action.</p>
+<p class="pdf-block">The problem addressed by this paper is narrower than general intelligence. It asks how relevance should
+become visible when an AI system detects that an external event intersects with a user's bounded private
+context. A naive design would push a verbose notification. A more invasive design would expose personal
+context. A more dangerous design would act automatically. StateLens proposes a fourth pattern: surface
+a compact state first, keep the explanation gated, allow the user to open context, then branch only with
+confirmation.</p>
+<p class="pdf-block">People do not only expect AI to answer. They expect intelligence to notice when the world becomes
+relevant to their life.</p>
+<p class="pdf-block">The phrase situational intelligence is used here in a specific sense: AI assistance that links external world
+events to a person's bounded context and surfaces relevance before the person has to discover the issue
+manually. The term overlaps with older concepts such as situation awareness, ambient intelligence, and
+context-aware computing, and this paper does not claim that those broader traditions are new. Instead, it
+introduces StateLens as a concrete state-first signal grammar that can make situational relevance
+readable without making the person public.</p>
+<p class="pdf-block">1.1 Scope and contribution</p>
+<p class="pdf-block">The contribution of StateLens v1.1 is a protocol pattern rather than an empirical result. It consists of four
+claims:</p>
+<p class="pdf-block">G
+AI systems that detect relevance should not default to full explanations, hidden automation, or public
+exposure of private context.</p>
+<p class="pdf-block">G
+A bounded operator can serve as an initial state surface: a visible sign that a meaningful relation has
+changed without disclosing why.</p>
+<p class="pdf-block">G
+URL-native operator addresses can make states portable, linkable, replayable and
+provider-independent.</p>
+<p class="pdf-block">G
+Trailstate-style provenance and explicit human action boundaries can preserve agency before
+consequential action.</p>
+<p class="pdf-block">The paper is therefore conservative about novelty. It builds on established work in ambient intelligence,
+context-aware computing, calm technology, situation awareness, Just-in-Time Adaptive Interventions,
+Semantic Web architecture, REST and provenance. The specific proposal is the synthesis: a public or
+semi-public, URL-native, low-entropy state grammar for personal situational relevance with gated context
+and provenance-backed human branching.</p>
+<p class="pdf-block">4</p></section><section aria-label="Source PDF page 5" class="page" id="page-5"><h2>PDF page 5</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">2. From State Diary to State Visibility</p>
+<p class="pdf-block">The earlier StateLens framing described a state diary: a compact trail of operators that allows AI to
+reconstruct a day, decision path or lived sequence without storing full raw experience. This remains a
+valid use case. A sequence such as q-vvv-p -&gt; n-vvv-n -&gt; 0-vvv-0 can mark a question opening, attention
+narrowing and a decision stabilizing. The system stores the shape of the transition, not a full transcript of
+the user's inner life.</p>
+<p class="pdf-block">The situational interpretation asks a complementary question: how can AI signal that a present or future
+situation matters without revealing the entire reason at the surface layer? This turns StateLens from a
+retrospective diary into a live state surface. The same operator grammar can support memory after the
+fact and relevance before or during the moment.</p>
+<p class="pdf-block">Core question
+StateLens role</p>
+<p class="pdf-block">Use case
+Temporal
+orientation</p>
+<p class="pdf-block">State Diary
+After the moment
+What happened, in state
+terms?</p>
+<p class="pdf-block">Reconstruct a day or decision path
+from compact operator trails.</p>
+<p class="pdf-block">Situational Signal
+Before or during the
+moment</p>
+<p class="pdf-block">Has a relevant state
+appeared?</p>
+<p class="pdf-block">Surface a low-entropy state so the
+user can choose whether to open
+context.</p>
+<p class="pdf-block">Branching Agentic
+Workflow</p>
+<p class="pdf-block">During action
+selection</p>
+<p class="pdf-block">Which branch is safe or
+appropriate?</p>
+<p class="pdf-block">Provide a visible state node before
+tools, plugins or agents execute.</p>
+<p class="pdf-block">This paper therefore defines the expanded role of StateLens as state visibility. A diary is one application.
+Situational intelligence is another. Branching agentic workflows are a third. In each case, the same design
+principle holds: state first, not transcript first; signal first, not action first.</p>
+<p class="pdf-block">2.1 Continuity without full capture</p>
+<p class="pdf-block">StateLens is motivated by a tension in AI memory and context systems. The more useful a personal AI
+becomes, the more context it may need. Yet storing raw recordings, transcripts and full profiles increases
+privacy risk, surveillance anxiety and governance burden. StateLens explores the opposite direction:
+compress experience into states, then preserve only enough structure for later reconstruction or situated
+assistance.</p>
+<p class="pdf-block">StateLens does not store the person. It stores the shape of relevance.</p>
+<p class="pdf-block">This statement is not a claim that state storage has no privacy risk. Long-term state patterns can still
+reveal routines, vulnerabilities or stress cycles. The claim is more modest: a bounded operator reveals
+less than a transcript, image, audio recording or detailed profile, and it can be paired with visibility levels,
+retention rules and gated provenance.</p>
+<p class="pdf-block">5</p></section><section aria-label="Source PDF page 6" class="page" id="page-6"><h2>PDF page 6</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">3. The Situational Intelligence Gap</p>
+<p class="pdf-block">A capable model can converse intelligently while still failing to notice that a weather event matters for a
+user who works outdoors. A simple alert can notice weather while failing to understand the user's work,
+commute, body and choices. The gap is therefore not only a lack of model capability. It is a lack of
+situatedness and state surface.</p>
+<p class="pdf-block">Pattern
+Trigger
+Typical context
+Limitation</p>
+<p class="pdf-block">Chatbot
+User prompt
+Current conversation
+The user must notice the problem,
+formulate the context and ask.</p>
+<p class="pdf-block">Assistant
+Command, wake word
+or app invocation</p>
+<p class="pdf-block">Device/app context
+Useful but still mostly reactive;
+context is siloed.</p>
+<p class="pdf-block">Agent
+User goal or task
+Tools, memory, files, APIs
+Can act, but usually after the user
+defines the goal.</p>
+<p class="pdf-block">Automation
+Schedule, rule or
+sensor</p>
+<p class="pdf-block">Preconfigured parameters
+Narrow and brittle when personal
+nuance changes.</p>
+<p class="pdf-block">Companion
+Relationship, chat,
+memory or notification</p>
+<p class="pdf-block">Longer-term interaction
+May optimize engagement rather
+than bounded protective relevance.</p>
+<p class="pdf-block">Situational
+intelligence</p>
+<p class="pdf-block">World data plus user context
+Requires state visibility, privacy
+boundaries and human control.</p>
+<p class="pdf-block">External event +
+bounded private
+context</p>
+<p class="pdf-block">The design problem can be stated as follows: how can an AI companion, wearable or ambient agent signal
+relevance without becoming a surveillance system, a paternalistic controller, or a noisy notification
+engine? StateLens answers with a state-first sequence. The system does not initially reveal everything it
+knows. It first surfaces a bounded operator that says: this situation has entered a meaningful state.</p>
+<p class="pdf-block">Situational intelligence notices relevance. StateLens makes relevance readable.</p>
+<p class="pdf-block">3.1 What StateLens is not</p>
+<p class="pdf-block">StateLens is not proposed as an emergency alert system, a medical device, a replacement for
+occupational policy, or a system that can guarantee safety. It is also not a claim that every situation
+should be abstracted into a cryptic code. The protocol is most useful when relevance is meaningful but
+the full reason is private, when the first surface should be compact, and when action must remain under
+user control.</p>
+<p class="pdf-block">6</p></section><section aria-label="Source PDF page 7" class="page" id="page-7"><h2>PDF page 7</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">4. Prior Art and Adjacent Traditions</p>
+<p class="pdf-block">The literature review shows substantial overlap between StateLens and older research traditions. This
+overlap is not a weakness; it is the academic floor. The novelty claim must be limited to what those
+traditions do not provide together: a public, URL-native, state-first signal grammar with private context,
+provenance and human-confirmed action.</p>
+<p class="pdf-block">Tradition
+Contribution
+Similarity to StateLens
+Difference</p>
+<p class="pdf-block">Shares the aim of unobtrusive
+contextual support.</p>
+<p class="pdf-block">Ambient Intelligence
+Smart environments adapt to
+people through embedded
+sensing and context
+sensitivity.</p>
+<p class="pdf-block">Often environment-centric
+and automation-oriented;
+does not define a user-facing
+URL-native state grammar.</p>
+<p class="pdf-block">Context-aware
+computing</p>
+<p class="pdf-block">Provides the context
+matching foundation.</p>
+<p class="pdf-block">Focuses on adaptation inside
+systems rather than public
+state surfaces.</p>
+<p class="pdf-block">Systems use location, activity,
+social, informational or
+emotional state to adapt
+behavior.</p>
+<p class="pdf-block">Supports the idea of
+low-attention signals.</p>
+<p class="pdf-block">A design philosophy, not a
+bounded symbolic protocol.</p>
+<p class="pdf-block">Calm Technology
+Technology moves between
+periphery and center of
+attention without overload.</p>
+<p class="pdf-block">Shares the relevance and
+decision-support orientation.</p>
+<p class="pdf-block">Situation Awareness
+Perception, comprehension
+and projection in dynamic
+situations.</p>
+<p class="pdf-block">Usually dashboards/data
+integration for operators, not
+compact personal-life state
+signals.</p>
+<p class="pdf-block">Strongly overlaps in timing
+and personalization.</p>
+<p class="pdf-block">JITAIs
+Real-time, tailored support
+delivered when needed,
+especially in mHealth.</p>
+<p class="pdf-block">Intervention-first and
+domain-specific; StateLens is
+state-first and
+protocol-oriented.</p>
+<p class="pdf-block">Personal AI /
+Assistants</p>
+<p class="pdf-block">Shares the direction toward
+context-rich assistance.</p>
+<p class="pdf-block">Memory, app context,
+proactive suggestions and
+workflow help.</p>
+<p class="pdf-block">Mostly product-internal and
+text/action-oriented; no
+public state grammar.</p>
+<p class="pdf-block">AI Companions
+Persistent relational or
+emotional support.</p>
+<p class="pdf-block">Shares continuity and
+situated support goals.</p>
+<p class="pdf-block">Often
+engagement/relationship
+oriented; may not preserve
+agency through state-first
+signals.</p>
+<p class="pdf-block">URI-based entities, RDF/OWL,
+graphs and symbolic relations.</p>
+<p class="pdf-block">Knowledge
+Representation /
+Semantic Web</p>
+<p class="pdf-block">Provides a technical
+precedent for addressable
+semantics.</p>
+<p class="pdf-block">Represents structured
+knowledge, not the UX of a
+personal state signal.</p>
+<p class="pdf-block">REST / Hypermedia
+Resources are identified by
+URIs and manipulated through
+representations.</p>
+<p class="pdf-block">Supports the idea that
+state/resources can be
+web-native.</p>
+<p class="pdf-block">Does not define a
+human-facing operator
+grammar for situational
+relevance.</p>
+<p class="pdf-block">Provenance / W3C
+PROV</p>
+<p class="pdf-block">Supports Trailstate-style
+receipts and auditability.</p>
+<p class="pdf-block">Entities, activities and agents
+can be traced through
+derivation.</p>
+<p class="pdf-block">Generic data provenance,
+not a live personal signal
+interface.</p>
+<p class="pdf-block">XAI /
+Human-in-the-loop</p>
+<p class="pdf-block">Explanations, oversight and
+human control.</p>
+<p class="pdf-block">Supports gated explanation
+and action boundaries.</p>
+<p class="pdf-block">Often
+explanation-after-model;
+StateLens begins with
+state-before-explanation.</p>
+<p class="pdf-block">4.1 Literature review conclusion</p>
+<p class="pdf-block">No reviewed tradition exactly matches the full StateLens configuration: public or semi-public URL-based
+state signal, bounded symbolic operator, private context gate, provenance trail, replayable transitions,
+and human confirmation before action. The underlying ideas are known. Their combination as a state-first
+signal grammar for situation-aware assistance appears to be a defensible research gap.</p>
+<p class="pdf-block">The strongest academic posture is therefore not to claim invention of context awareness or situational
+assistance. The safer claim is that StateLens proposes a distinct interface/protocol layer for making
+situational relevance visible while reducing immediate exposure of private context.</p>
+<p class="pdf-block">7</p></section><section aria-label="Source PDF page 8" class="page" id="page-8"><h2>PDF page 8</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">5. State-First Computing</p>
+<p class="pdf-block">State-first computing is proposed here as a design orientation: reasoning should resolve to a visible state
+before it resolves to a full explanation or action. In many AI systems, the first output is a paragraph,
+recommendation, task execution or notification. In StateLens, the first output is a bounded operator.</p>
+<p class="pdf-block">This distinction matters because the first surface of an interaction determines the privacy and agency
+posture of the system. A full explanation may disclose sensitive context. An action may overstep. A
+standard notification may be noisy and semantically ambiguous. A state signal is smaller: it says that
+something has entered a state class, while leaving the user to open context if desired.</p>
+<p class="pdf-block">External World</p>
+<p class="pdf-block">Private Context Match</p>
+<p class="pdf-block">State Resolution</p>
+<p class="pdf-block">StateLens Operator</p>
+<p class="pdf-block">User Opens</p>
+<p class="pdf-block">Private AI Explanation</p>
+<p class="pdf-block">Human Decision</p>
+<p class="pdf-block">Trailstate</p>
+<p class="pdf-block">Figure 1. Complete state-first architecture for situation-aware assistance.</p>
+<p class="pdf-block">5.1 State first, context second, action third</p>
+<p class="pdf-block">The canonical interaction sequence is:</p>
+<p class="pdf-block">1. Public signal
+   THERMOMETER | x-vvv-x</p>
+<p class="pdf-block">2. User opens it
+   Private AI explains the gated context.</p>
+<p class="pdf-block">3. User chooses action
+   Draft message / call supervisor / drink water / take leave / ignore.</p>
+<p class="pdf-block">4. Trailstate records the path
+   x-vvv-x -&gt; q-vvv-p -&gt; n-vvv-n -&gt; r-vvv-r -&gt; 0-vvv-0.</p>
+<p class="pdf-block">5. Context remains gated
+   Only the state/provenance surface is web-native.</p>
+<p class="pdf-block">This sequence is conservative by design. It grants the AI permission to notice and signal, but not to
+execute. It grants the user permission to open context, branch, confirm, ignore, correct or save. The
+human remains the place where state becomes action.</p>
+<p class="pdf-block">AI makes the relevant state visible. The human decides what that state means for action.</p>
+<p class="pdf-block">8</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 8; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/20861928-p8.webp"/><figcaption>Visual reference for page 8. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 9" class="page" id="page-9"><h2>PDF page 9</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">6. State Resolution</p>
+<p class="pdf-block">State Resolution is the process of mapping a real-world situation onto a bounded operator. It is the central
+protocol concept in StateLens v1.1. A recognition system asks: What is this? A StateLens system asks:
+What state did this situation resolve into?</p>
+<p class="pdf-block">World</p>
+<p class="pdf-block">Reasoning</p>
+<p class="pdf-block">State Resolution</p>
+<p class="pdf-block">Operator</p>
+<p class="pdf-block">Figure 2. State Resolution maps a real-world situation to a bounded operator.</p>
+<p class="pdf-block">State Resolution is not the same as classification in the narrow machine-learning sense. It may use
+classifiers, language models, rules, sensor data, user context and object anchors. The output is
+constrained: a finite operator and optional label, not an unconstrained explanation. This constraint is what
+makes StateLens low-entropy and auditable.</p>
+<p class="pdf-block">Stage
+Input
+Operation
+Output</p>
+<p class="pdf-block">Candidate event</p>
+<p class="pdf-block">Notice that a candidate event
+exists</p>
+<p class="pdf-block">Detection
+External event, sensor input,
+object state, calendar change,
+message, weather alert</p>
+<p class="pdf-block">Context match
+Candidate event + allowed
+private context</p>
+<p class="pdf-block">Check whether the event
+intersects with user context</p>
+<p class="pdf-block">Relevance score or state
+candidate</p>
+<p class="pdf-block">Operator such as x-vvv-x</p>
+<p class="pdf-block">State Resolution
+Relevance candidate + operator
+grammar</p>
+<p class="pdf-block">Map the relation to a bounded
+state</p>
+<p class="pdf-block">Surface
+Operator + optional topic
+Show minimal state signal
+Public or protected state
+surface</p>
+<p class="pdf-block">Gated explanation
+User opens signal
+Explain why the state appeared
+Private explanation</p>
+<p class="pdf-block">Trailstate path</p>
+<p class="pdf-block">Branch
+User chooses path
+Offer or execute only confirmed
+branches</p>
+<p class="pdf-block">6.1 Why State Resolution must be bounded</p>
+<p class="pdf-block">If State Resolution produces unrestricted text, the system becomes a normal AI explanation layer. If it
+produces unrestricted action, it becomes an agent. If it produces raw logs, it becomes a surveillance
+diary. The operator boundary is what keeps the first surface small. It also makes it easier to compare
+states across time, providers and interfaces.</p>
+<p class="pdf-block">9</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 9; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/20861928-p9.webp"/><figcaption>Visual reference for page 9. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 10" class="page" id="page-10"><h2>PDF page 10</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">7. URL-Native Operator Grammar</p>
+<p class="pdf-block">The operator grammar is deliberately finite and low-entropy. Operators are ASCII-native, URL-safe, short,
+stable, human-readable, machine-readable and suitable for domain-native addresses. Their meanings are
+intentionally abstract; context and provenance make them specific.</p>
+<p class="pdf-block">Operator
+Surface semantics
+Context semantics
+Allowed branches
+Default
+visibility</p>
+<p class="pdf-block">Public</p>
+<p class="pdf-block">o-vvv-o
+Open field / beginning
+A new situation, day, route or
+interaction opens</p>
+<p class="pdf-block">observe, enter,
+continue</p>
+<p class="pdf-block">q-vvv-p
+Question / uncertainty
+A decision question or relevance
+question opens</p>
+<p class="pdf-block">explain, compare,
+defer, ignore</p>
+<p class="pdf-block">Public or
+protected</p>
+<p class="pdf-block">Protected</p>
+<p class="pdf-block">n-vvv-n
+Narrowing /
+comparison</p>
+<p class="pdf-block">choose, compare,
+validate</p>
+<p class="pdf-block">Possible branches or
+interpretations become more
+focused</p>
+<p class="pdf-block">x-vvv-x
+Conflict / mismatch /
+incoherence</p>
+<p class="pdf-block">open, ignore, repair,
+escalate, save</p>
+<p class="pdf-block">Public or
+protected</p>
+<p class="pdf-block">External event conflicts with
+context or a relation becomes
+unstable</p>
+<p class="pdf-block">Protected</p>
+<p class="pdf-block">r-vvv-r
+Repair / recovery
+A mitigation, correction or
+recovery action begins</p>
+<p class="pdf-block">plan, rest, hydrate,
+revise, recover</p>
+<p class="pdf-block">0-vvv-0
+Stabilized / resolved
+Decision or interpretation
+stabilizes</p>
+<p class="pdf-block">archive, save, close
+Public or
+protected</p>
+<p class="pdf-block">u-vvv-u
+Archived / closed
+Trail is closed for reconstruction
+replay, summarize,
+archive</p>
+<p class="pdf-block">Private or
+protected</p>
+<p class="pdf-block">Important semantic boundary. x-vvv-x should not mean danger by default. It should mean conflict,
+mismatch, incoherence, or unstable relation. A heat warning, product defect, social friction,
+robot-action mismatch, or object-state mismatch can all resolve to x-vvv-x; provenance explains why.</p>
+<p class="pdf-block">7.1 URL-native properties</p>
+<p class="pdf-block">Property
+Meaning for StateLens</p>
+<p class="pdf-block">Human-readable
+A person can recognize the operator as a visible state, not only an opaque ID.</p>
+<p class="pdf-block">Machine-readable
+Software can parse the operator as a finite state token.</p>
+<p class="pdf-block">URL-safe
+Operators can appear in paths, domains, query strings and receipts without special
+encoding.</p>
+<p class="pdf-block">Bookmarkable
+A state address or receipt can be revisited.</p>
+<p class="pdf-block">Replayable
+Sequences of operators can reconstruct trails or decision paths.</p>
+<p class="pdf-block">Searchable
+States can be indexed as states without exposing sealed context.</p>
+<p class="pdf-block">Linkable
+Operators can point to canonical state pages or documentation.</p>
+<p class="pdf-block">Provider-independent
+A state grammar can travel across AI providers, agents and devices.</p>
+<p class="pdf-block">Low entropy
+The first surface is compact; detailed context remains behind the gate.</p>
+<p class="pdf-block">An operator address such as x-vvv-x.com should define the public meaning of the operator, not host the
+user's private incident. The specific event belongs in Trailstate or an equivalent provenance layer. The
+sensitive reason belongs in the private AI context.</p>
+<p class="pdf-block">10</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 10; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/20861928-p10.webp"/><figcaption>Visual reference for page 10. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 11" class="page" id="page-11"><h2>PDF page 11</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">8. Public State and Private Context</p>
+<p class="pdf-block">The privacy architecture of StateLens depends on separating what kind of state appeared from why that
+state mattered for a particular person. The state may be public or semi-public; the context should remain
+gated. This does not eliminate privacy risk, but it reduces the amount of personal information exposed at
+the surface layer.</p>
+<p class="pdf-block">Layer
+What is visible
+Example
+Default handling</p>
+<p class="pdf-block">Public
+Operator only
+x-vvv-x
+Visible as a state class; no
+private reason.</p>
+<p class="pdf-block">Protected
+Operator + topic
+x-vvv-x | weather-work conflict
+Share only with chosen
+systems, receipts or trusted
+agents.</p>
+<p class="pdf-block">Private
+Operator + reason
+Weather risk matched outdoor work
+and commute context</p>
+<p class="pdf-block">Keep in private AI context,
+local vault or provider-gated
+memory.</p>
+<p class="pdf-block">Sealed
+Full sensitive context
+Health details, employer details,
+personal identity history</p>
+<p class="pdf-block">Local, encrypted, or
+provider-gated; never public
+by default.</p>
+<p class="pdf-block">This produces the principle: public state, private reason, gated provenance. The public surface says that a
+meaningful state has occurred. The private context explains why it matters. The provenance trail records
+how the state was derived without necessarily exposing sealed context.</p>
+<p class="pdf-block">8.1 Privacy-light, not privacy-null</p>
+<p class="pdf-block">A single operator reveals little. Long-term patterns may reveal more. If an observer sees repeated conflict
+states, recovery states or narrowed-decision states, they may infer stress cycles, habits or vulnerabilities.
+StateLens therefore treats states as privacy-light rather than privacy-null. Visibility settings, retention
+limits, aggregation, local storage and protected receipts are necessary design requirements.</p>
+<p class="pdf-block">8.2 Relation to provider memory</p>
+<p class="pdf-block">In a consumer implementation, private context may remain inside a trusted personal AI provider,
+encrypted local vault or user-controlled memory system. StateLens does not require the open web to
+store the user's life. It only externalizes the state surface. The AI provider may know why x-vvv-x
+appeared; the public web only needs to know that a conflict/mismatch state exists if the user allows that
+surface to be visible.</p>
+<p class="pdf-block">11</p></section><section aria-label="Source PDF page 12" class="page" id="page-12"><h2>PDF page 12</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">9. Architecture</p>
+<p class="pdf-block">The architecture separates state, context, provenance and action. This separation is the core safety
+property. A StateLens system should not collapse all context into a single profile, should not expose
+sealed context in state URLs, and should not leap from detection to execution.</p>
+<p class="pdf-block">External event
+  -&gt; ObjectPortal anchor
+  -&gt; Relevance check against private context
+  -&gt; State Resolution
+  -&gt; StateLens operator signal
+  -&gt; Optional gated explanation
+  -&gt; Human-selected branch
+  -&gt; Trailstate provenance trail
+  -&gt; Reversible action boundary</p>
+<p class="pdf-block">9.1 Public operator layer</p>
+<p class="pdf-block">The public operator layer contains only compact operator states. These are not designed to replace
+explanation. They provide an initial state surface, allowing humans and machines to recognize that a
+situation has entered a particular class.</p>
+<p class="pdf-block">9.2 Private context layer</p>
+<p class="pdf-block">The private context layer contains the reason a state mattered for the user: work context, route, health
+constraints, time obligations, preferences, relationships, prior decisions or object history. This layer
+should be bounded by consent, minimization, auditability and revocation.</p>
+<p class="pdf-block">9.3 ObjectPortal anchor layer</p>
+<p class="pdf-block">ObjectPortal-style anchors prevent all meaning from being collapsed into a single opaque user profile. A
+weather event, workplace, route, tool, object, document or room can have its own address. The AI can
+then resolve relevance through object/context relations rather than exposing one undifferentiated user
+model.</p>
+<p class="pdf-block">9.4 Trailstate provenance layer</p>
+<p class="pdf-block">Trailstate records what happened in the state path: which operator appeared, which topic was involved,
+which source or anchor contributed, what level of trust or visibility was attached, and how the state later
+evolved. The provenance trail should not automatically contain sealed context.</p>
+<p class="pdf-block">9.5 Reversible Systems action boundary</p>
+<p class="pdf-block">Reversibility is the difference between helpful signal and coercive automation. The system may prepare,
+suggest, draft or branch. It must not execute irreversible actions without the user's explicit confirmation.</p>
+<p class="pdf-block">12</p></section><section aria-label="Source PDF page 13" class="page" id="page-13"><h2>PDF page 13</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">10. Relationship to Just-in-Time Adaptive
+Interventions</p>
+<p class="pdf-block">Just-in-Time Adaptive Interventions (JITAIs) are one of the closest prior-art families. They are especially
+important because they already combine timing, personalization and context. In mobile health, JITAIs
+deliver support that corresponds to a need in real time, adapting content or timing to data collected since
+support began. This makes them a strong neighbor to StateLens.</p>
+<p class="pdf-block">While JITAIs optimize the timing of interventions, StateLens optimizes the visibility of situational state
+before any intervention occurs.</p>
+<p class="pdf-block">Aspect
+JITAIs
+StateLens for Situational Intelligence</p>
+<p class="pdf-block">Primary domain
+mHealth and behavior change, such as
+physical activity, smoking, medication
+adherence or mental health</p>
+<p class="pdf-block">General situation-aware assistance across
+work, travel, objects, agents, wearables,
+safety and daily context</p>
+<p class="pdf-block">Core output
+Intervention, prompt, exercise,
+recommendation or behavioral support</p>
+<p class="pdf-block">Low-entropy operator state first; explanation
+only after user opens</p>
+<p class="pdf-block">Design orientation
+Intervention-first
+State-first</p>
+<p class="pdf-block">Agency model
+Often system-triggered and designed to
+influence behavior</p>
+<p class="pdf-block">Human action boundary: signal, explain and
+offer; no execution without confirmation</p>
+<p class="pdf-block">Privacy posture
+May rely on sensor streams, EMA, activity
+data and health context</p>
+<p class="pdf-block">Public/protected state surface with
+private/sealed context behind gate</p>
+<p class="pdf-block">Representation
+Text, app notification, treatment component,
+decision rule</p>
+<p class="pdf-block">URL-native operator, state trail and
+provenance receipt</p>
+<p class="pdf-block">Evaluation tradition
+Empirical studies, micro-randomized trials,
+feasibility and effectiveness research</p>
+<p class="pdf-block">Currently conceptual/protocol proposal;
+needs usability and implementation studies</p>
+<p class="pdf-block">10.1 Complement, not replacement</p>
+<p class="pdf-block">StateLens should not be positioned as a replacement for JITAIs. JITAIs are more mature in empirical
+methodology and intervention design. StateLens can be understood as a protocol/interface layer that may
+sit before, beside or above a JITAI-like system. A JITAI may detect the moment; StateLens may represent
+the moment as a compact state before any intervention is shown.</p>
+<p class="pdf-block">This distinction is important for publication. If a reviewer argues that the Heat Ping Demo resembles a
+JITAI, the correct response is: yes, it shares just-in-time timing and context adaptation. The difference is
+that StateLens does not begin with a full behavioral support message. It begins with a state class, then
+lets the user choose whether to reveal the reason and branch.</p>
+<p class="pdf-block">13</p></section><section aria-label="Source PDF page 14" class="page" id="page-14"><h2>PDF page 14</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">11. Operators Instead of Notifications</p>
+<p class="pdf-block">A common objection is that StateLens may simply be a redesigned notification system. This objection
+must be taken seriously. Weather alerts, calendar reminders and health prompts already notify users
+when something may matter. The StateLens distinction is not that it produces a message. The distinction
+is that it classifies the situation first and separates that state from the private explanation and any action.</p>
+<p class="pdf-block">Notification: Tomorrow will be hot</p>
+<p class="pdf-block">Full message appears immediately</p>
+<p class="pdf-block">User reads or dismisses</p>
+<p class="pdf-block">Figure 3a. Standard notification pattern.</p>
+<p class="pdf-block">StateLens: THERMOMETER | x-vvv-x</p>
+<p class="pdf-block">User decides whether to open</p>
+<p class="pdf-block">Private AI explains gated context</p>
+<p class="pdf-block">User confirms branch or ignores</p>
+<p class="pdf-block">Figure 3b. StateLens operator pattern.</p>
+<p class="pdf-block">11.1 Notifications tell; operators classify</p>
+<p class="pdf-block">A notification tells the user a fact, recommendation or reminder. An operator classifies the relation before
+explanation. For example, Tomorrow will be hot is a fact. x-vvv-x says that a relation has become
+conflicted or unstable. The weather may be hot for everyone, but the conflict state exists because
+weather intersects with a specific bounded context: outdoor work, commute, schedule and relevant body
+constraints.</p>
+<p class="pdf-block">11.2 Operator advantages</p>
+<p class="pdf-block">G
+The first surface can be short without losing the ability to open explanation.</p>
+<p class="pdf-block">G
+The operator can be reused across domains because it describes relation state, not event category.</p>
+<p class="pdf-block">G
+The state can be linked, indexed, replayed or validated without exposing sealed context.</p>
+<p class="pdf-block">G
+The same operator can appear in wearables, browser notifications, agent logs, object inventories or
+provenance receipts.</p>
+<p class="pdf-block">G
+The action boundary is built into the interaction sequence rather than left to application convention.</p>
+<p class="pdf-block">11.3 Operator risks</p>
+<p class="pdf-block">Operators can also fail. If too abstract, they may be cryptic. If overused, they may become noise. If
+displayed publicly over time, they may leak patterns. If poorly mapped, they may create false confidence.
+StateLens therefore requires careful design of labels, thresholds, visibility settings and correction paths.</p>
+<p class="pdf-block">14</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 14; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/20861928-p14.webp"/><figcaption>Visual reference for page 14. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 15" class="page" id="page-15"><h2>PDF page 15</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">12. Heat Ping Case Study</p>
+<p class="pdf-block">The Heat Ping Demo is a deliberately small case study. It is not presented as a clinical system,
+occupational policy, or working weather service. It is a protocol example showing how StateLens can
+surface personal relevance without exposing the entire personal context.</p>
+<p class="pdf-block">Scenario: a user works outdoors in Lelystad, lives in Almere, performs physically heavy work, and has
+bounded private body/health context. A code red heat warning is issued for Flevoland. In a standard
+system, the user must discover the warning, infer relevance, remember personal constraints, ask AI what
+to do, and explain the situation. In a situational system, the AI can notice the external event and match it
+to allowed context. In a StateLens system, it does not start by exposing all details. It starts with a state.</p>
+<p class="pdf-block">THERMOMETER | x-vvv-x
+Weather/work mismatch detected. Open?</p>
+<p class="pdf-block">Layer
+Content in the Heat Ping Demo</p>
+<p class="pdf-block">External event
+Code red heat warning in Flevoland</p>
+<p class="pdf-block">Private context
+Outdoor work in Lelystad; commute from Almere; body or health sensitivity; leave option
+available</p>
+<p class="pdf-block">Public signal
+THERMOMETER | x-vvv-x | Weather/work mismatch detected. Open?</p>
+<p class="pdf-block">Gated explanation
+This signal was triggered because external weather risk matched private work/body context.</p>
+<p class="pdf-block">Human branches
+Draft message; call supervisor; drink water; take leave; ignore; save trail</p>
+<p class="pdf-block">Trailstate path
+x-vvv-x -&gt; q-vvv-p -&gt; n-vvv-n -&gt; r-vvv-r -&gt; 0-vvv-0</p>
+<p class="pdf-block">12.1 Trail example</p>
+<p class="pdf-block">State
+Label
+Interpretation</p>
+<p class="pdf-block">x-vvv-x
+Heat/work mismatch
+The situation conflicts with tomorrow's work context.</p>
+<p class="pdf-block">q-vvv-p
+Should I contact supervisor?
+A decision question opens.</p>
+<p class="pdf-block">n-vvv-n
+Options narrowed
+Call, message, leave or ignore become the branches.</p>
+<p class="pdf-block">r-vvv-r
+Recovery action
+Hydration, rest, cooling or adapted plan begins.</p>
+<p class="pdf-block">0-vvv-0
+Decision stabilized
+The user's decision is settled.</p>
+<p class="pdf-block">An example protected provenance URL may look like:</p>
+<p class="pdf-block">https://trailstate.org/?r=x-vvv-x&amp;q=heat-work-context&amp;source=weather-
+alert&amp;visibility=protected</p>
+<p class="pdf-block">This URL is not the private story. It is a protected receipt for the state event and its provenance surface.</p>
+<p class="pdf-block">15</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 15; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/20861928-p15.webp"/><figcaption>Visual reference for page 15. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 16" class="page" id="page-16"><h2>PDF page 16</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">13. Protocol Specification v1.1</p>
+<p class="pdf-block">The following minimal specification describes one situational signal. It is not a full API standard. It is a
+reference pattern for implementers.</p>
+<p class="pdf-block">{
+  "schema": "statelens.situational_signal.v1.1",
+  "operator": "x-vvv-x",
+  "surface_label": "Weather/work mismatch detected. Open?",
+  "icon_hint": "thermometer",
+  "visibility": "public",
+  "topic": "heat-work-context",
+  "context_layer": "gated_private_ai",
+  "object_anchor": "objectportal:event/flevoland-heat-warning",
+  "provenance_url": "https://trailstate.org/?r=x-vvv-x&amp;q=heat-work-
+context&amp;source=weather-alert&amp;visibility=protected",
+  "state_resolution": {
+    "external_event": "weather-alert",
+    "private_context_match": "outdoor-work + commute + body-context",
+    "resolved_state": "conflict/mismatch"
+  },
+  "allowed_branches": [
+    "open_context",
+    "draft_message",
+    "call_supervisor",
+    "drink_water",
+    "take_leave",
+    "ignore",
+    "save_trail"
+  ],
+  "forbidden_without_confirmation": [
+    "send_message",
+    "place_call",
+    "cancel_work",
+    "contact_employer",
+    "make_decision",
+    "disclose_sealed_context"
+  ],
+  "boundary": "signal_explain_offer_never_execute_without_confirmation"
+}</p>
+<p class="pdf-block">13.1 Required fields</p>
+<p class="pdf-block">Field
+Purpose</p>
+<p class="pdf-block">operator
+The bounded StateLens operator chosen by State Resolution.</p>
+<p class="pdf-block">surface_label
+A short human-readable description, ideally under one line.</p>
+<p class="pdf-block">visibility
+Public, protected, private or sealed.</p>
+<p class="pdf-block">topic
+A coarse topic tag; should not contain sealed private context.</p>
+<p class="pdf-block">context_layer
+Where private reasoning lives, e.g. trusted AI provider or local vault.</p>
+<p class="pdf-block">object_anchor
+Optional reference to object, event, route, tool or environment anchor.</p>
+<p class="pdf-block">provenance_url
+Where the event trail or receipt can be checked.</p>
+<p class="pdf-block">state_resolution
+Metadata explaining how the state class was resolved, without exposing sealed
+context.</p>
+<p class="pdf-block">allowed_branches
+Permitted next steps the user may choose.</p>
+<p class="pdf-block">forbidden_without_confirmation
+Actions that must never happen automatically.</p>
+<p class="pdf-block">boundary
+Human action boundary statement.</p>
+<p class="pdf-block">16</p></section><section aria-label="Source PDF page 17" class="page" id="page-17"><h2>PDF page 17</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">14. Branching Agentic Workflows and Plugins</p>
+<p class="pdf-block">StateLens is compatible with plugins, tools and agentic workflows because it gives the agent a visible
+state node before action. The agent does not leap from detection to execution. It branches through a
+human-confirmed path.</p>
+<p class="pdf-block">Detect</p>
+<p class="pdf-block">Resolve State</p>
+<p class="pdf-block">Surface Operator</p>
+<p class="pdf-block">User Opens</p>
+<p class="pdf-block">Explain</p>
+<p class="pdf-block">Branch</p>
+<p class="pdf-block">Confirm</p>
+<p class="pdf-block">Act or Ignore</p>
+<p class="pdf-block">Save Trail</p>
+<p class="pdf-block">Figure 4. Branching workflow pattern with human confirmation.</p>
+<p class="pdf-block">This pattern is especially useful for high-stakes or sensitive domains: health, work, travel, finance,
+caregiving, family logistics, robots and object-bound AI. A plugin can receive a StateLens signal, display
+the operator, open explanation only with user permission, and then present branches. The branch can be
+logged as a state transition rather than an opaque tool execution.</p>
+<p class="pdf-block">14.1 From tools to visible state nodes</p>
+<p class="pdf-block">Most tool-using agents represent intermediate reasoning internally. StateLens proposes that some
+intermediate states should become visible before action. This does not mean exposing chain-of-thought
+or private reasoning. It means surfacing a bounded state class, such as conflict, question, narrowing,
+repair or stabilization. The details remain gated, but the user can see the condition of the workflow.</p>
+<p class="pdf-block">14.2 Example branches</p>
+<p class="pdf-block">Signal
+Possible branches
+Forbidden without
+confirmation</p>
+<p class="pdf-block">x-vvv-x weather/work
+mismatch</p>
+<p class="pdf-block">Open context, draft message, hydrate, take
+leave, ignore, save trail</p>
+<p class="pdf-block">Send message, call employer, cancel
+work</p>
+<p class="pdf-block">q-vvv-p medication
+uncertainty</p>
+<p class="pdf-block">Open context, compare instructions, contact
+clinician, ignore</p>
+<p class="pdf-block">Change dosage, contact clinician,
+disclose health data</p>
+<p class="pdf-block">x-vvv-x robot-action
+mismatch</p>
+<p class="pdf-block">Pause robot, show object state, ask user,
+rollback</p>
+<p class="pdf-block">Continue physical action, move
+object, override human</p>
+<p class="pdf-block">n-vvv-n travel options
+narrowed</p>
+<p class="pdf-block">Show options, choose route, defer, save
+Book ticket, cancel appointment,
+share location</p>
+<p class="pdf-block">17</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 17; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/20861928-p17.webp"/><figcaption>Visual reference for page 17. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 18" class="page" id="page-18"><h2>PDF page 18</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">15. Privacy, Safeguards and Human Action
+Boundary</p>
+<p class="pdf-block">StateLens does not claim that state storage is privacy-free. It claims that state-first design can reduce the
+amount of sensitive context exposed at the first surface. The protocol still requires safeguards.</p>
+<p class="pdf-block">Risk
+Description
+Safeguard</p>
+<p class="pdf-block">Thresholding, user feedback, easy ignore/correct</p>
+<p class="pdf-block">False positive
+System surfaces a mismatch that is not
+important</p>
+<p class="pdf-block">False negative
+System fails to surface a relevant state
+Domain-specific validation and fallback alerts</p>
+<p class="pdf-block">Privacy leakage
+State patterns reveal routines or
+vulnerabilities over time</p>
+<p class="pdf-block">Visibility levels, retention limits, protected
+receipts, aggregation</p>
+<p class="pdf-block">Paternalism
+AI treats user as someone to be
+managed</p>
+<p class="pdf-block">Human action boundary; no execution without
+confirmation</p>
+<p class="pdf-block">Over-reliance
+User stops noticing context without AI
+Design for awareness and agency, not
+replacement</p>
+<p class="pdf-block">Provenance
+confusion</p>
+<p class="pdf-block">User cannot tell why a state appeared
+Trailstate receipt, source/confidence surface,
+correction path</p>
+<p class="pdf-block">Operator ambiguity
+Mapping from situation to operator feels
+arbitrary</p>
+<p class="pdf-block">Formal definitions, examples, correction and audit
+logs</p>
+<p class="pdf-block">Infrastructure
+leakage</p>
+<p class="pdf-block">URLs or logs leak metadata
+Minimize topics, protect receipts, avoid sealed
+context in URLs</p>
+<p class="pdf-block">15.1 Human action boundary</p>
+<p class="pdf-block">The companion first surfaces only a low-entropy state signal. If the user opens it, the private AI explains
+the gated context and may offer reversible actions such as drafting a message, planning a recovery step
+or saving the trail. It never sends, calls, cancels, contacts a third party, discloses sealed context, or
+decides without explicit user confirmation.</p>
+<p class="pdf-block">Boundary formula. Signal is allowed. Explanation is allowed after opening. Branching is allowed.
+Drafting is allowed. Execution requires confirmation.</p>
+<p class="pdf-block">15.2 Why this is not a surveillance diary</p>
+<p class="pdf-block">A surveillance diary stores raw life. StateLens stores state transitions. A transcript says what was said. A
+video shows what happened. A profile asserts who the person is. A StateLens trail records the shape of
+relevance: conflict opened, question opened, options narrowed, recovery began, decision stabilized.</p>
+<p class="pdf-block">18</p></section><section aria-label="Source PDF page 19" class="page" id="page-19"><h2>PDF page 19</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">16. Future Applications</p>
+<p class="pdf-block">The protocol is intentionally domain-general. StateLens does not only apply to weather, health or diaries.
+Its strongest potential may appear wherever AI systems must notice relevance without immediately
+exposing private context or acting autonomously.</p>
+<p class="pdf-block">Domain
+Possible StateLens role
+Example state</p>
+<p class="pdf-block">Wearables
+Low-friction state surface for health, travel, work and
+environment signals</p>
+<p class="pdf-block">x-vvv-x: body/environment
+mismatch</p>
+<p class="pdf-block">x-vvv-x: action/object mismatch</p>
+<p class="pdf-block">Robotics
+Pre-action mismatch signal before physical movement
+or object manipulation</p>
+<p class="pdf-block">Vehicles
+Driver or route context signal before navigation/action
+n-vvv-n: route options narrowed</p>
+<p class="pdf-block">x-vvv-x: tool/environment conflict</p>
+<p class="pdf-block">Industrial safety
+Protected signal when work condition conflicts with
+environment or procedure</p>
+<p class="pdf-block">Healthcare support
+State surface before opening sensitive health context
+q-vvv-p: care question opened</p>
+<p class="pdf-block">n-vvv-n: options narrowed</p>
+<p class="pdf-block">Family coordination
+Low-detail signal before exposing schedules or private
+obligations</p>
+<p class="pdf-block">r-vvv-r: recovery path begins</p>
+<p class="pdf-block">Companion AI
+State-first support that does not optimize for emotional
+retention</p>
+<p class="pdf-block">Ambient computing
+Peripheral, calm signal layer across rooms and devices
+o-vvv-o: environment open</p>
+<p class="pdf-block">x-vvv-x: object state mismatch</p>
+<p class="pdf-block">Object-bound agents
+ObjectPortal anchor plus StateLens operator for object
+state</p>
+<p class="pdf-block">0-vvv-0: state stabilized</p>
+<p class="pdf-block">Digital twins
+State-level interface to a modeled personal or
+operational context</p>
+<p class="pdf-block">16.1 Minimal viable implementation</p>
+<p class="pdf-block">A minimal prototype does not require a new model. It can be built as a small layer above existing AI
+systems:</p>
+<p class="pdf-block">G
+Detect or receive an external event.</p>
+<p class="pdf-block">G
+Match it against an explicitly allowed private context domain.</p>
+<p class="pdf-block">G
+Resolve the situation to a StateLens operator.</p>
+<p class="pdf-block">G
+Show only the public or protected state first.</p>
+<p class="pdf-block">G
+Open gated explanation only on user request.</p>
+<p class="pdf-block">G
+Offer reversible branches.</p>
+<p class="pdf-block">G
+Record a Trailstate receipt if the user chooses to save the path.</p>
+<p class="pdf-block">19</p></section><section aria-label="Source PDF page 20" class="page" id="page-20"><h2>PDF page 20</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">17. Limitations, Falsification and Reviewer
+Risks</p>
+<p class="pdf-block">This section attempts to falsify or weaken the framework. It should be included because the safest
+academic positioning is not a first-mover claim but a transparent proposal.</p>
+<p class="pdf-block">Objection
+Why it matters
+Response or research need</p>
+<p class="pdf-block">State signals still leak
+privacy</p>
+<p class="pdf-block">Repeated operators may reveal routines
+or vulnerabilities</p>
+<p class="pdf-block">Use visibility levels, retention limits and
+protected receipts; avoid sealed context in
+URLs.</p>
+<p class="pdf-block">Operators may be too
+minimal</p>
+<p class="pdf-block">Users may not understand why the signal
+appeared</p>
+<p class="pdf-block">Use clear surface labels and open-on-demand
+explanation; evaluate usability.</p>
+<p class="pdf-block">No empirical evidence
+yet</p>
+<p class="pdf-block">Reviewers may ask whether users
+understand or prefer operators</p>
+<p class="pdf-block">Position as concept/protocol paper; propose user
+studies.</p>
+<p class="pdf-block">Mapping is subjective
+Why should a situation resolve to x-vvv-x
+rather than another state?</p>
+<p class="pdf-block">Define State Resolution formally; allow
+correction and audit.</p>
+<p class="pdf-block">URL-native can be
+fragile</p>
+<p class="pdf-block">Logs, firewalls, redirects and corporate
+policies may create risk</p>
+<p class="pdf-block">Keep URLs minimal; separate state address from
+private context; use protected receipts.</p>
+<p class="pdf-block">Looks like status
+notification</p>
+<p class="pdf-block">Critics may say this is just a short alert
+Emphasize classification-before-explanation,
+gated context, provenance and replay.</p>
+<p class="pdf-block">Implementation
+complexity</p>
+<p class="pdf-block">Requires ObjectPortal, private context
+gate, Trailstate and operator grammar</p>
+<p class="pdf-block">Start with narrow prototypes and optional
+layers.</p>
+<p class="pdf-block">Over-standardization
+A universal grammar may not fit all
+cultures or domains</p>
+<p class="pdf-block">Treat the operator set as extensible, versioned
+and domain-sensitive.</p>
+<p class="pdf-block">17.1 Claims to avoid</p>
+<p class="pdf-block">G
+Do not claim that StateLens replaces medical advice, emergency services, occupational policy or
+professional judgment.</p>
+<p class="pdf-block">G
+Do not claim that state signals eliminate privacy risk.</p>
+<p class="pdf-block">G
+Do not claim that no similar ideas exist anywhere.</p>
+<p class="pdf-block">G
+Do not claim that an AI has authority over the human.</p>
+<p class="pdf-block">G
+Do not claim empirical effectiveness without a study.</p>
+<p class="pdf-block">G
+Do not frame the work as competing with large AI providers; frame it as a protocol layer.</p>
+<p class="pdf-block">20</p></section><section aria-label="Source PDF page 21" class="page" id="page-21"><h2>PDF page 21</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">18. Defensible Claims and Publication
+Positioning</p>
+<p class="pdf-block">The paper should be positioned as a conceptual protocol paper. Its strongest claims are architectural and
+interface-level, not empirical. The following table separates safe, risky and unsupported claims.</p>
+<p class="pdf-block">Claim type
+Example
+Status</p>
+<p class="pdf-block">Defensible as a protocol proposal.</p>
+<p class="pdf-block">Safe
+StateLens proposes a state-first signal grammar for
+situation-aware assistance.</p>
+<p class="pdf-block">Supported by literature review.</p>
+<p class="pdf-block">Safe
+The framework builds on ambient intelligence,
+context-aware computing, JITAIs, REST, Semantic Web
+and provenance.</p>
+<p class="pdf-block">Definitional and architectural claim.</p>
+<p class="pdf-block">Safe
+StateLens separates public state from private context
+and human-confirmed action.</p>
+<p class="pdf-block">Cautious
+The exact combination appears underdescribed in prior
+work.</p>
+<p class="pdf-block">Reasonable if phrased as
+review-based, not absolute.</p>
+<p class="pdf-block">Risky
+StateLens is the first system of its kind.
+Avoid unless exhaustive
+patent/product review is
+completed.</p>
+<p class="pdf-block">Requires empirical study.</p>
+<p class="pdf-block">Unsupported
+StateLens improves safety or reduces cognitive load in
+practice.</p>
+<p class="pdf-block">Unsupported
+Users will prefer low-entropy operators.
+Requires user testing.</p>
+<p class="pdf-block">18.1 Recommended title</p>
+<p class="pdf-block">The literature review recommends an academically careful title. This paper adopts:</p>
+<p class="pdf-block">StateLens for Situational Intelligence: State-First, URL-Native Signal Grammar for Situation-Aware
+Assistance</p>
+<p class="pdf-block">18.2 Defensible taxonomy</p>
+<p class="pdf-block">The following taxonomy is proposed rather than asserted as standard literature:</p>
+<p class="pdf-block">Chatbots
+  -&gt; Assistants
+  -&gt; Agents
+  -&gt; Companions
+  -&gt; Situational Intelligence
+  -&gt; StateLens signal grammar</p>
+<p class="pdf-block">The taxonomy should be read as an interface/interaction gradient: from reactive dialogue, to
+command-based help, to goal-directed agency, to persistent companionship, to situation-aware relevance
+detection, to the state-first signal layer that makes such relevance visible.</p>
+<p class="pdf-block">21</p></section><section aria-label="Source PDF page 22" class="page" id="page-22"><h2>PDF page 22</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">19. Conclusion</p>
+<p class="pdf-block">StateLens began as a state diary protocol. Its broader role is now visible as a state-first grammar for
+AI-readable situations. In a diary, the protocol helps reconstruct what happened. In situational
+intelligence, it helps surface what matters. In branching agentic workflows, it provides a visible state node
+before action.</p>
+<p class="pdf-block">This matters because the next generation of AI assistance will not be defined only by better answers or
+more autonomous agents. It will be defined by whether AI can recognize relevance without becoming
+invasive, helpful without becoming paternalistic, and contextual without exposing the person.</p>
+<p class="pdf-block">Future AI systems will increasingly recognize when situations matter. The remaining question is not
+whether AI can detect relevance, but how that relevance should become visible to people. StateLens
+proposes that this visibility should begin with compact, URL-native operator states rather than hidden
+inference, verbose notification, or autonomous action.</p>
+<p class="pdf-block">Situational Intelligence is the category. StateLens is the signal grammar. Trailstate is the provenance.
+ObjectPortal is the context anchor. Reversible Systems is the action boundary.</p>
+<p class="pdf-block">Canonical phrases</p>
+<p class="pdf-block">G
+StateLens externalizes state, not the person.</p>
+<p class="pdf-block">G
+StateLens puts the state on the web while keeping the life behind the gate.</p>
+<p class="pdf-block">G
+URL-native states allow AI to signal relevance publicly while keeping personal context private.</p>
+<p class="pdf-block">G
+Without a state-first grammar, situational intelligence becomes verbose notification, hidden
+automation, or invasive profiling.</p>
+<p class="pdf-block">G
+JITAIs optimize intervention timing. StateLens optimizes state visibility before intervention.</p>
+<p class="pdf-block">G
+AI makes the relevant state visible; the human decides what the state means for action.</p>
+<p class="pdf-block">22</p></section><section aria-label="Source PDF page 23" class="page" id="page-23"><h2>PDF page 23</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">References and Related Work</p>
+<p class="pdf-block">Aarts, E., &amp; Marzano, S. (Eds.). (2003). The New Everyday: Views on Ambient Intelligence. 010 Publishers.</p>
+<p class="pdf-block">Abowd, G. D., Dey, A. K., Brown, P. J., Davies, N., Smith, M., &amp; Steggles, P. (1999). Towards a better understanding of context and
+context-awareness. Proceedings of HUC '99, 304-307.</p>
+<p class="pdf-block">Berners-Lee, T., Hendler, J., &amp; Lassila, O. (2001). The Semantic Web. Scientific American, 284(5), 34-43.</p>
+<p class="pdf-block">Cook, D. J., Augusto, J. C., &amp; Jakkula, V. R. (2009). Ambient intelligence: Technologies, applications, and opportunities. Pervasive and Mobile
+Computing, 5(4), 277-298.</p>
+<p class="pdf-block">Dey, A. K. (2001). Understanding and using context. Personal and Ubiquitous Computing, 5, 4-7.</p>
+<p class="pdf-block">Ducatel, K., Bogdanowicz, M., Scapolo, F., Leijten, J., &amp; Burgelman, J.-C. (2001). Scenarios for Ambient Intelligence in 2010. ISTAG.</p>
+<p class="pdf-block">Endsley, M. R. (1995). Toward a theory of situation awareness in dynamic systems. Human Factors, 37(1), 32-64.</p>
+<p class="pdf-block">Fielding, R. T. (2000). Architectural Styles and the Design of Network-based Software Architectures. Doctoral dissertation, University of
+California, Irvine.</p>
+<p class="pdf-block">Harel, D. (1987). Statecharts: A visual formalism for complex systems. Science of Computer Programming, 8(3), 231-274.</p>
+<p class="pdf-block">Hardeman, W., Houghton, J., Lane, K., Jones, A., &amp; Naughton, F. (2019). A systematic review of just-in-time adaptive interventions to
+promote physical activity. International Journal of Behavioral Nutrition and Physical Activity, 16, 31.</p>
+<p class="pdf-block">Moreau, L., &amp; Missier, P. (Eds.). (2013). PROV-DM: The PROV Data Model. W3C Recommendation.</p>
+<p class="pdf-block">Nahum-Shani, I., Smith, S. N., Spring, B. J., Collins, L. M., Witkiewitz, K., Tewari, A., &amp; Murphy, S. A. (2018). Just-in-time adaptive
+interventions (JITAIs) in mobile health: Key components and design principles for ongoing health behavior support. Annals of Behavioral
+Medicine, 52(6), 446-462.</p>
+<p class="pdf-block">Schilit, B. N., Adams, N., &amp; Want, R. (1994). Context-aware computing applications. Proceedings of the Workshop on Mobile Computing
+Systems and Applications, 85-90.</p>
+<p class="pdf-block">Weiser, M. (1991). The computer for the 21st century. Scientific American, 265(3), 94-104.</p>
+<p class="pdf-block">Weiser, M., &amp; Brown, J. S. (1996). The Coming Age of Calm Technology. Xerox PARC.</p>
+<p class="pdf-block">World Wide Web Consortium. (2013). PROV-O: The PROV Ontology. W3C Recommendation.</p>
+<p class="pdf-block">Eissens, R. (2026). StateLens: A URL-Native AI State Diary Protocol for Multimodal State Compression and Day Reconstruction. Zenodo.
+https://doi.org/10.5281/zenodo.20770792</p>
+<p class="pdf-block">Eissens, R. (2026). StateLens for Situational Intelligence: URL-Native State Signals for Situated Care, Gated Context, and Provenance-Backed AI Assistance.
+Version 1.0 draft. DOI: https://doi.org/10.5281/zenodo.20861928</p>
+<p class="pdf-block">Project URLs</p>
+<p class="pdf-block">StateLens: https://statelens.net/</p>
+<p class="pdf-block">Companion Habitat: https://companionhabitat.com/</p>
+<p class="pdf-block">Trailstate: https://trailstate.org/</p>
+<p class="pdf-block">ObjectPortal: https://objectportal.com/</p>
+<p class="pdf-block">DOI: https://doi.org/10.5281/zenodo.20861928</p>
+<p class="pdf-block">23</p></section><section aria-label="Source PDF page 24" class="page" id="page-24"><h2>PDF page 24</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">Appendix A. Minimal Operator Set</p>
+<p class="pdf-block">This appendix restates a minimal operator set suitable for situational intelligence examples. It is not the
+full StateLens grammar. It is a constrained subset used for protocol clarity.</p>
+<p class="pdf-block">Operator
+Surface semantics
+Context semantics
+Allowed branches
+Default
+visibility</p>
+<p class="pdf-block">Public</p>
+<p class="pdf-block">o-vvv-o
+Open field / beginning
+A new situation, day, route or
+interaction opens</p>
+<p class="pdf-block">observe, enter,
+continue</p>
+<p class="pdf-block">q-vvv-p
+Question / uncertainty
+A decision question or relevance
+question opens</p>
+<p class="pdf-block">explain, compare,
+defer, ignore</p>
+<p class="pdf-block">Public or
+protected</p>
+<p class="pdf-block">Protected</p>
+<p class="pdf-block">n-vvv-n
+Narrowing /
+comparison</p>
+<p class="pdf-block">choose, compare,
+validate</p>
+<p class="pdf-block">Possible branches or
+interpretations become more
+focused</p>
+<p class="pdf-block">x-vvv-x
+Conflict / mismatch /
+incoherence</p>
+<p class="pdf-block">open, ignore, repair,
+escalate, save</p>
+<p class="pdf-block">Public or
+protected</p>
+<p class="pdf-block">External event conflicts with
+context or a relation becomes
+unstable</p>
+<p class="pdf-block">Protected</p>
+<p class="pdf-block">r-vvv-r
+Repair / recovery
+A mitigation, correction or
+recovery action begins</p>
+<p class="pdf-block">plan, rest, hydrate,
+revise, recover</p>
+<p class="pdf-block">0-vvv-0
+Stabilized / resolved
+Decision or interpretation
+stabilizes</p>
+<p class="pdf-block">archive, save, close
+Public or
+protected</p>
+<p class="pdf-block">u-vvv-u
+Archived / closed
+Trail is closed for reconstruction
+replay, summarize,
+archive</p>
+<p class="pdf-block">Private or
+protected</p>
+<p class="pdf-block">Appendix A.1 Design constraints</p>
+<p class="pdf-block">G
+Operators should be short enough to display on wearables, browser surfaces, object pages or receipts.</p>
+<p class="pdf-block">G
+Operators should remain abstract enough to generalize across domains.</p>
+<p class="pdf-block">G
+Operators should never encode sealed context directly.</p>
+<p class="pdf-block">G
+Operators should be stable enough to support replay and indexing.</p>
+<p class="pdf-block">G
+Operators should be accompanied by correction paths if the state resolution is wrong.</p>
+<p class="pdf-block">24</p></section><section aria-label="Source PDF page 25" class="page" id="page-25"><h2>PDF page 25</h2><p class="pdf-block">STATELENS PROTOCOL · VERSION 1.1 · JUNE 2026
+State-First, URL-Native Signal Grammar for Situational Intelligence</p>
+<p class="pdf-block">Appendix B. Signal Object Schema</p>
+<p class="pdf-block">The following describes one possible minimal schema for implementers. It is intentionally not framed as a
+final API standard.</p>
+<p class="pdf-block">{
+  "schema": "statelens.situational_signal.v1.1",
+  "operator": "x-vvv-x",
+  "surface_label": "Weather/work mismatch detected. Open?",
+  "icon_hint": "thermometer",
+  "visibility": "public",
+  "topic": "heat-work-context",
+  "context_layer": "gated_private_ai",
+  "object_anchor": "objectportal:event/flevoland-heat-warning",
+  "provenance_url": "https://trailstate.org/?r=x-vvv-x&amp;q=heat-work-
+context&amp;source=weather-alert&amp;visibility=protected",
+  "state_resolution": {
+    "external_event": "weather-alert",
+    "private_context_match": "outdoor-work + commute + body-context",
+    "resolved_state": "conflict/mismatch"
+  },
+  "allowed_branches": [
+    "open_context",
+    "draft_message",
+    "call_supervisor",
+    "drink_water",
+    "take_leave",
+    "ignore",
+    "save_trail"
+  ],
+  "forbidden_without_confirmation": [
+    "send_message",
+    "place_call",
+    "cancel_work",
+    "contact_employer",
+    "make_decision",
+    "disclose_sealed_context"
+  ],
+  "boundary": "signal_explain_offer_never_execute_without_confirmation"
+}</p>
+<p class="pdf-block">A production implementation would also need authentication, access control, retention policy,
+cryptographic integrity, consent management, correction paths, localization and domain-specific
+validation.</p>
+<p class="pdf-block">25</p></section></article><nav aria-label="PDF page navigation" class="toc"><b>Pages</b><a href="#page-1">1</a><a href="#page-2">2</a><a href="#page-3">3</a><a href="#page-4">4</a><a href="#page-5">5</a><a href="#page-6">6</a><a href="#page-7">7</a><a href="#page-8">8</a><a href="#page-9">9</a><a href="#page-10">10</a><a href="#page-11">11</a><a href="#page-12">12</a><a href="#page-13">13</a><a href="#page-14">14</a><a href="#page-15">15</a><a href="#page-16">16</a><a href="#page-17">17</a><a href="#page-18">18</a><a href="#page-19">19</a><a href="#page-20">20</a><a href="#page-21">21</a><a href="#page-22">22</a><a href="#page-23">23</a><a href="#page-24">24</a><a href="#page-25">25</a></nav></div></main><footer>Original record: <a href="https://zenodo.org/records/20861928">https://zenodo.org/records/20861928</a> · Full text derived from the uploaded PDF.<span class="ambient-footer-links"> · <a href="/ambient-era/">Ambient Era</a> · <a href="/ambient-phone/">Ambient Phone</a></span></footer></div></body></html>

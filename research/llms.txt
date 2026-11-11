@@ -1,0 +1,61 @@
+# Raynor Eissens | independent research
+
+Canonical site: https://madeby.re/research/
+
+## Internal ambient research lenses
+- Ambient Era: https://madeby.re/research/ambient-era/
+  Broader transition frame for intelligence becoming environmental across agents, capabilities and surfaces.
+- Ambient Phone: https://madeby.re/research/ambient-phone/
+  Personal continuity and authority architecture for distributed intelligence.
+
+## Orientation
+Raynor Eissens is an independent researcher working on post-generative systems, ambient intelligence, reversibility, attention, trust, power architecture and distributed AI systems. The site distinguishes conceptual frameworks, critical synthesis and empirical research programs. Publication identifiers do not themselves imply peer review, independent validation or novelty.
+
+
+## Current research entry points
+- Background Without Profiling: Human-Bound Persistent State for Agentic Systems: https://madeby.re/research/background-without-profiling/
+  Canonical definition: Background is persistent human-bound state from which replaceable agents, models, services, devices, and artifacts can receive purpose-bounded context. It is not itself a profile, agent memory, or simulation of the person.
+  Core distinction: Profile describes the person; AI twin simulates the person; agent memory remembers the person for an agent; Background persists for the person across replaceable systems.
+  Novelty boundary: conceptual and governance abstraction built from substantial prior art; not claimed as a new storage, identity, memory, or cryptographic primitive.
+  Plain text: https://madeby.re/research/background-without-profiling/article.txt
+  JSON: https://madeby.re/research/background-without-profiling/article.json
+- The Civilizational Layer: From Ambient Coordination to Civilizational Carrying Capacity: https://madeby.re/research/civilizational-layer/
+  Core proposition: A civilization can itself become a carrying layer.
+  Connects RFL-5 civilizational ambient coordination to carrying layers, superartifacts and civilizational carrying capacity.
+  Plain text: https://madeby.re/research/civilizational-layer/article.txt
+  JSON: https://madeby.re/research/civilizational-layer/article.json
+- The Artifact Layer of the Intelligence Stack: Superartifact as Address, Capability, and Lineage: https://madeby.re/research/artifact-layer-intelligence-stack/
+  Canonical definition: A superartifact is an addressable artifact that acts as a stable interface to a heterogeneous capability graph extending beyond its local representation, with at least some of that capability operationally invokable, composable, or reusable.
+  Core properties: Address / identity; Capability; Lineage.
+  Plain text: https://madeby.re/research/artifact-layer-intelligence-stack/article.txt
+  JSON: https://madeby.re/research/artifact-layer-intelligence-stack/article.json
+- When the Carrier Improves Itself: Intelligence Explosion as a Compression of Civilizational Time: https://madeby.re/research/when-the-carrier-improves-itself/
+  Plain text: https://madeby.re/research/when-the-carrier-improves-itself/article.txt
+  JSON: https://madeby.re/research/when-the-carrier-improves-itself/article.json
+- The Second Jump: From Released Intelligence to Superartifacts: https://madeby.re/research/the-second-jump-superartifacts/
+  Plain text: https://madeby.re/research/the-second-jump-superartifacts/article.txt
+  JSON: https://madeby.re/research/the-second-jump-superartifacts/article.json
+- Measuring Reversibility in AI Systems: https://madeby.re/research/measuring-reversibility/
+  Plain text: https://madeby.re/research/measuring-reversibility/article.txt
+  JSON: https://madeby.re/research/measuring-reversibility/article.json
+- From Agent Offload to Ambient Field: https://madeby.re/research/agent-offload-ambient-field/
+  Plain text: https://madeby.re/research/agent-offload-ambient-field/article.txt
+  JSON: https://madeby.re/research/agent-offload-ambient-field/article.json
+- Ambient Power: https://madeby.re/research/ambient-power/
+  Plain text: https://madeby.re/research/ambient-power/article.txt
+  JSON: https://madeby.re/research/ambient-power/article.json
+- Beyond Abundance: https://doi.org/10.5281/zenodo.22700782
+- Research map: https://madeby.re/research/research.html
+- Selected publications: https://madeby.re/research/papers.html
+- Publication catalog: https://madeby.re/research/archive.html
+- Full-text library: https://madeby.re/research/library/
+- Concepts: https://madeby.re/research/concepts.html
+- About and method: https://madeby.re/research/about.html
+
+## Evidence conventions
+Conceptual work proposes models or distinctions. Synthesis notes connect documented developments while separating observation from hypothesis. Empirical programs define measurements, studies and falsification criteria; they do not imply that the proposed experiments have already been completed.
+
+## Core current empirical question
+As AI becomes cheaper to use, does meaningful technological choice become cheaper to reverse?
+
+The Measuring Reversibility paper decomposes reversibility into exit cost, state portability, attentional burden, irreversible residue and variation cost.

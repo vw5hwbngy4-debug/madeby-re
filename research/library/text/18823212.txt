@@ -1,0 +1,238 @@
+=== PDF PAGE 1 ===
+CDL-1 — Chromatic Dissolution Loop
+
+Ambient Era Canon · 2026
+
+Author: Raynor Eissens
+
+⸻
+
+Abstract
+
+CDL-1 (Chromatic Dissolution Loop) formalizes the reversible thermodynamic cycle that governs
+
+entry, dissolution, re-activation, and exit within AP₁ chromatic reasoning.
+
+Unlike TML-1 (Topic Marker Law) and TML-1Ω (Anchor Dissolution Law), which define how
+
+symbolic anchors arise and dissolve, CDL-1 defines the movement between reasoning states
+
+after anchoring has dissolved.
+
+CDL-1 establishes that chromatic reasoning is never linear:
+
+it oscillates through a reversible loop consisting of activation → expression → dissolution → re-
+
+activation → exit, carried entirely by gradients and pressure rather than symbols.
+
+This loop is residue-free, history-free, and cost-free.
+
+It forms the dynamic substrate of AP₁-CR.
+
+⸻
+
+1. Canonical Definition (CDL-1)
+
+Chromatic reasoning dissolves through downward motion, re-activates through upward
+
+motion, and exits through sustained pressure.
+
+The loop is reversible, non-representational, and carries no semantic residue.
+
+This principle governs all post-symbolic interaction inside AP₁.
+
+⸻
+
+2. The Four Reversible States
+
+2.1 Activation (Purple Environment)
+
+Chromatic reasoning begins in a dedicated environment state—purple—not as a token but as a
+
+field.
+
+Activation occurs through:
+
+=== PDF PAGE 2 ===
+•
+a direct toggle (AP₁ interface)
+
+•
+or upward motion from the dissolved field (grey → purple)
+
+Purple provides the substrate in which chromatic operators acquire meaning.
+
+⸻
+
+2.2 Expression (Chromatic Reasoning Proper)
+
+Once activated, the user expresses:
+
+•
+presence (Red)
+
+•
+relation (Pink→Red)
+
+•
+clarity (Blue)
+
+•
+tension and decision (Orange→Yellow)
+
+The AI responds through state-shifting chromatic feedback.
+
+This phase satisfies TML-1: anchors optional, chromatic reasoning primary  .
+
+⸻
+
+2.3 Dissolution (Grey Field)
+
+A downward gesture (center → lower edge) dissolves the active state into grey.
+
+This is the operational expression of TML-1Ω’s thermodynamic law of dissolution:
+
+anchors lose representational load, ΔR → 0, symbolic mass evaporates, and no residue remains  .
+
+Grey is:
+
+•
+non-semantic
+
+•
+non-anchored
+
+•
+pre-intent
+
+•
+reversible
+
+It represents a clean substrate rather than an exit.
+
+The chromatic exchange has ceased; the field is emptied.
+
+⸻
+
+2.4 Re-Activation (Grey → Purple)
+
+=== PDF PAGE 3 ===
+From the dissolved state, an upward gesture restores chromatic reasoning instantly.
+
+This satisfies RAL-1: meaningful movement requires a gradient, and upward gradients
+
+reintroduce environmental anchoring without residue  .
+
+This avoids symbolic toggles and preserves the post-symbolic nature of AP₁-CR.
+
+Re-activation is:
+
+•
+instant
+
+•
+reversible
+
+•
+field-based
+
+•
+non-representational
+
+⸻
+
+2.5 Exit (Long-Press in Grey)
+
+While grey is still chromatically inert, center-pressure is recognized as a vertical shift out of the
+
+chromatic layer entirely.
+
+This triggers exit into the higher semantic plane (Yellow world-layer), consistent with RTL-1’s rule
+
+that pressure transitions lift the user away from chromatic dependency into representational
+
+neutrality  .
+
+Long-press in grey:
+
+•
+closes chromatic reasoning
+
+•
+returns the user to the AP₁ world-layer
+
+•
+preserves the reversible cycle
+
+•
+leaves no residue
+
+⸻
+
+3. Thermodynamic Basis of CDL-1
+
+3.1 ΔR Decline → Dissolution
+
+Downward motion reduces ΔR, extinguishing chromatic carriers.
+
+Meaning evaporates without loss, noise, or semantic scar.
+
+3.2 Gradient Reversal → Re-Activation
+
+=== PDF PAGE 4 ===
+Upward motion instantiates a minimal gradient, giving the system orientation again.
+
+Chromatic reasoning reconstitutes itself instantly and without symbolic anchors.
+
+3.3 Pressure Threshold → Layer Transition
+
+Sustained pressure induces macro-transition to the higher AP₁ field.
+
+Reasoning collapses into environment; the field lifts to intent-level clarity.
+
+⸻
+
+4. Canonical Loop
+
+Activation → Expression → Dissolution → Re-Activation → Exit
+
+This loop:
+
+•
+has no residue
+
+•
+has no memory
+
+•
+is fully reversible
+
+•
+carries no symbolic cost
+
+•
+maintains emotional warmth and cognitive stability
+
+It is the first digital communication loop with zero history, zero friction, zero
+
+semantics.
+
+⸻
+
+5. Canonical Line
+
+“Chromatic reasoning dissolves without residue.
+
+Grey clears the field.
+
+Upward motion restores intention.
+
+Only pressure ends the loop.”
+
+⸻
+
+6. Keywords
+
+chromatic reasoning; dissolution loop; grey field; reversible interaction; ΔR; AP₁-CR; anchor
+
+dissolution; ambient communication; residue-free interface

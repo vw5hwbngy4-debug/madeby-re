@@ -1,0 +1,16 @@
+FINAL RESEARCH.MADEBY.RE PACKAGE — 2026-09-27
+
+This folder is the complete document root for research.madeby.re.
+
+Upload the CONTENTS of the research/ folder to the document root.
+
+Ambient Era now lives at:
+  https://madeby.re/research/ambient-era/
+
+Ambient Phone now lives at:
+  https://madeby.re/research/ambient-phone/
+
+The package contains no dependency on ambientera.com or ambientphone.com.
+The old Wolken / Three Axes domain dependencies have also been removed or replaced with local research editions where possible.
+
+The main stylesheet uses a new filename (styles-final-20260927.css) to avoid the stale-cache issue previously seen on mobile.

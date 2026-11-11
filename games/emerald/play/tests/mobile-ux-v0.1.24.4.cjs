@@ -1,0 +1,27 @@
+const fs=require('fs');
+const assert=require('assert');
+const read=f=>fs.readFileSync(f,'utf8');
+const index=read('index.html');
+const live=read('pokefield-live-v0.1.24.4.js');
+const trainer=read('trainer-card-v0.1.24.4.js');
+const owned=read('owned-pokefield-v0.1.24.4.js');
+const css=read('mobile-ux-v0.1.24.4.css');
+
+assert(index.includes('pokefield-live-v0.1.24.4.js'), 'new live module loaded');
+assert(index.includes('trainer-card-v0.1.24.4.js'), 'new trainer module loaded');
+assert(index.includes('owned-pokefield-v0.1.24.4.js'), 'new field/navigation module loaded');
+assert(index.includes('mobile-ux-v0.1.24.4.css'), 'mobile UX CSS loaded');
+assert(live.includes("matchMedia('(max-width: 959px)')"), 'mobile breakpoint seeds compact state');
+assert(live.includes('let compactMode = !!MOBILE_DISPLAY.matches'), 'mobile default is compact');
+assert(live.includes("if (!MOBILE_DISPLAY.matches) compactMode = savedDisplayMode === 'compact'"), 'desktop saved choice retained');
+assert(!trainer.includes('id="tc-flip-primary"'), 'redundant per-Pokemon Trainer Card flip removed');
+assert(trainer.includes('<summary><span>SAVED FINDS</span>'), 'legacy MY BOX wording replaced');
+assert(trainer.includes("jrpg:trainer-card-view"), 'Trainer Card publishes navigation state');
+assert(owned.includes("if(next==='trainer'&&activeMode==='trainer')next='live'"), 'Trainer Card tab toggles back to live');
+assert(owned.includes("window.addEventListener('jrpg:trainer-card-view'"), 'navigation follows internal card exits');
+assert(css.includes('#pokefield-live-panel .tc-header-button { display:none !important; }'), 'duplicate mobile header entry hidden');
+assert(css.includes('max-height:min(46dvh,430px)'), 'expanded live is bounded on phone');
+assert(css.includes('top:max(8px,env(safe-area-inset-top))'), 'Save Vault moved to safe top mobile control');
+assert(css.includes('right:max(82px'), 'Save Vault sits beside DEX');
+assert(css.includes('#save-vault-launch small { display:none !important; }'), 'mobile Save Vault status compacted');
+console.log('PASS v0.1.24.4 mobile UX: compact startup, bounded expand, persistent Save Vault access, single Trainer Card entry, toggle-back navigation, clearer Saved Finds language.');

@@ -1,0 +1,81 @@
+JRPG.WORLD PSO v0.5 — COMPLETE PSO.JRPG.WORLD INSTALL
+Target: https://pso.jrpg.world/
+
+THIS PACKAGE WAS BUILT FROM
+---------------------------
+- The user's current JRPG.WORLD public_html backup supplied on 2026-09-09.
+- The cumulative tested V0.5 stack:
+  Character Link -> SAVE MAG COACH -> ALL-ID HUNT ROUTER -> ACCOUNT ROUTER -> GEAR GPS.
+
+WHAT IS INCLUDED
+----------------
+- data.js and engine.js from the current live site backup
+- all current assets/pso/
+- current shared world-nav assets, patched for the pso.jrpg.world origin
+- local RICO PSO knowledge files
+- V0.5 Character Link / MAG / Hunt / Account / Gear modules
+- V0.5 drop + Xbox v3 gear canon
+- subdomain-aware api/pso.php
+- smoke-check.html
+- api/install-health.php
+
+WHAT IS DELIBERATELY NOT INCLUDED
+---------------------------------
+- private/config.php
+- API keys or secrets
+- runtime rate-limit files
+- user Xbox saves
+
+The adapted backend searches the parent JRPG.WORLD directory for the existing
+private/config.php. Therefore create the new subdomain directory DIRECTLY below
+the existing jrpg.world public_html.
+
+RECOMMENDED HOSTINGER LAYOUT
+----------------------------
+public_html/
+  private/config.php       <- existing secret, stays here
+  pso/                     <- old slash-PSO, untouched
+  pso-v05/                 <- NEW subdomain document root
+    index.html
+    data.js
+    engine.js
+    assets/
+    knowledge/
+    api/
+    ...V0.5 modules...
+
+MANUAL INSTALL
+--------------
+1. In Hostinger hPanel create subdomain: pso.jrpg.world
+2. Give it a CUSTOM directory such as: pso-v05
+   IMPORTANT: do NOT point it to the existing public_html/pso directory.
+3. Open that new pso-v05 directory in File Manager.
+4. Remove Hostinger's default.php if present.
+5. Upload this ZIP and extract it DIRECTLY inside pso-v05.
+6. Confirm index.html is directly inside pso-v05, not inside another nested folder.
+7. Visit: https://pso.jrpg.world/smoke-check.html
+8. You want 9/9 checks passed.
+9. Then visit: https://pso.jrpg.world/
+10. Test ordinary RICO first, then link your local Xbox PSO save.
+
+GOLDEN SAVE CHECK
+-----------------
+Name: Eilaa
+Class: RAmarl
+Section ID: Redria
+Level: 2
+MAG: Lv6; DEF 5.14 / POW 0.30 / DEX 1.20 / MIND 0.00
+Gear GPS effective ATA: 73.85
+Rifle: EQUIP NOW (ATA 72)
+Autogun: LOCKED (ATA 78; gap 4.15)
+
+ROLLBACK
+--------
+The existing https://madeby.re/games/pso/pso/ is never modified.
+If pso.jrpg.world is wrong, remove only the subdomain mapping or pso-v05 folder.
+
+SECURITY
+--------
+Xbox save parsing remains browser-local/read-only.
+Raw save bytes are not sent to RICO.
+The package contains no API key.

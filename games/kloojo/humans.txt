@@ -1,0 +1,8 @@
+KLOOJO
+Creator: Raynor Eissens
+URL: https://madeby.re/games/kloojo/
+Method: sustained GPT/OpenAI prompt-driven development + Codex engineering + direct human playtesting
+Canonical update: 2026-08-26
+Current social milestone: physically verified two-device realtime multiplayer with live names/outfits, skating, jumps and tricks
+Video: https://madeby.re/games/kloojo/ai/#multiplayer-video
+Production relay status: LAN proven; permanent public VPS/WSS not deployed yet

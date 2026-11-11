@@ -1,0 +1,71 @@
+=== PDF PAGE 1 ===
+The Provenance Internet
+
+Rediscovery, Artifact Trails, and Recoverable Social Objects
+
+DOI: 10.5281/zenodo.20196025
+Status: Conceptual proposal for provenance-based social interaction systems.
+Related Systems: OldDug, The Brown Web, Brown Hyperlinks / Burylinks.
+
+Abstract
+
+The Provenance Internet proposes a shift away from feed-based social systems toward rediscovery-oriented
+interaction systems centered around artifacts, trails, buried objects, and recoverable social memory. In feed-based
+internet systems, value is primarily attached to novelty, immediacy, and visibility. AI-generated media accelerates this
+process by making content production nearly infinite. The Provenance Internet reframes value around provenance
+rather than publication. The central question becomes: “Where did this come from, who carried it, how did it survive,
+and why does it continue to reappear?”
+
+Core Principle
+
+Artifact → Bury → Dig → Rebury → Trail The provenance model treats internet objects as persistent recoverable
+entities rather than disposable feed units.
+
+Canonical Vocabulary
+
+• Artifact — A recoverable social object with contextual history.
+• Provenance — The history and rediscovery path of an object.
+• Digging — Searching for buried or hidden artifacts.
+• Re-Dug — An artifact rediscovered by another user.
+• Trail — The movement history of an object.
+• Deep Dug — A long-buried rediscovered artifact.
+• Fresh Dug — A newly discovered artifact.
+• Brown Hyperlink / Burylink — A recoverable hyperlink requiring excavation before reveal.
+
+Feed Internet
+Provenance Internet
+
+Scrolling
+Digging
+
+Post
+Artifact
+
+Timeline
+Trail
+
+Immediate exposure
+Recoverable discovery
+
+Novelty
+Rediscovery
+
+Disposable content
+Persistent objects
+
+OldDug
+
+OldDug is proposed as a provenance-native social runtime centered around rediscovery, artifact sediment, buried
+social objects, and recoverable internet memory. The platform introduces a social grammar centered around terms
+such as: OldDug, dug, re-dug, deep dug, fresh dug, artifact trails, and buried objects.
+
+=== PDF PAGE 2 ===
+AI and Provenance
+
+AI-generated content increases the importance of provenance systems. When generation becomes abundant, social
+value shifts away from raw creation toward rediscovery, contextual history, rarity, trail formation, and human carrying.
+
+Conclusion
+
+The Provenance Internet reframes internet interaction from publication toward rediscovery. “The web had surfing. It
+never had digging.”

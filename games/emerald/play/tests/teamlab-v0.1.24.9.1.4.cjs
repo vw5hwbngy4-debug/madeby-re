@@ -1,0 +1,13 @@
+const fs=require('fs');const assert=require('assert');
+const index=fs.readFileSync('index.html','utf8');
+const tl=fs.readFileSync('teamlab-v0.1.24.9.1.4.js','utf8');
+assert(index.includes('teamlab-v0.1.24.9.1.4.js?v=0.1.24.9.1.4-raceproof-restore'));
+assert(tl.includes('function ensureTeamLabButtonPlacement()'));
+assert(tl.includes('navObserver.observe(nav,{childList:true})'));
+assert(tl.includes('JRPGWorldEmeraldLastPopulatedState'));
+assert(tl.includes("window.dispatchEvent(new CustomEvent('jrpg:emerald-state-request'))"));
+assert(tl.includes('TEAMLAB_STATE_CACHE_LEGACY'));
+assert(fs.existsSync('true-pokefield-v0.1.24.9.1.2.js'));
+assert(fs.existsSync('teamlab-engine-v0.1.24.9.js'));
+assert(fs.existsSync('coverage-lens-v0.1.24.9.css'));
+console.log('PASS teamlab-v0.1.24.9.1.4: race-proof Team Lab mount and state restore; latest PokéField Coverage/Focus assets preserved');

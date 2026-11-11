@@ -1,0 +1,174 @@
+RICO KNOWLEDGE MODULE
+SOURCE MODULE: 17_PSO_SOURCES_PROVENANCE_GAPS.txt
+MOVE ROUTING: See 18_RICO_KNOWLEDGE_INDEX_QUERY_MAP.txt
+
+PSO SOURCE REGISTRY, PROVENANCE, LIMITATIONS, AND GAPS
+======================================================
+
+PURPOSE
+Source map and explicit knowledge boundaries. Use this when deciding whether a statement is verified, synthesized, or absent from the uploaded corpus.
+
+SOURCE BASIS
+provenance.json; pso-sources.json; Hunter Goals README/source policy.
+
+RETRIEVAL RULE
+Treat explicit platform labels, verification/status fields, source labels, and warnings as part of the fact. Never silently remove them.
+
+PACKAGED PROVENANCE
+{
+  "schemaVersion": "eila.pso.provenance.v1",
+  "packId": "pso-console-expert-pack-1-0",
+  "builtAt": "2026-08-06T02:56:00.000Z",
+  "sources": [
+    {
+      "file": "pso-drops-full.json",
+      "bytes": 1490814,
+      "sha256": "80c2ec6a8733bc920a005ad5fb03d4794085b425a436033170d0b77c3112e68a"
+    },
+    {
+      "file": "pso-blueburst-drops-ultimate.json",
+      "bytes": 490334,
+      "sha256": "8196934d3fda0f84c123ac6b18e6e226507d7fb71af79cce5ae5226fbc446f35"
+    },
+    {
+      "file": "item-endpoint-index.json",
+      "bytes": 1224651,
+      "sha256": "9f39cb71353eaf807287bdc249c5201c796e996dbda7cc357afc3658784514ff"
+    },
+    {
+      "file": "section-id-strategy.json",
+      "bytes": 401962,
+      "sha256": "deccf3e7d8fcec1a894246e65eed0dedf471bf476f0959520743b5b670273405"
+    },
+    {
+      "file": "section-id-overlap.json",
+      "bytes": 311561,
+      "sha256": "68e3e771cce36360f3892e1b48319f549db5d39873f49945429dc0e8d7f34021"
+    },
+    {
+      "file": "account-roster-planner.json",
+      "bytes": 75295,
+      "sha256": "94923ee7d509dd502c28774aa22da7f7445e6bfc9acbd40d0beb17b89d8ee1a3"
+    },
+    {
+      "file": "community-section-id.json",
+      "bytes": 14363,
+      "sha256": "333d6facd6fed393e5943c05af36ec3cc4ff87d8ba9eece809b6a828b759d2f2"
+    },
+    {
+      "file": "magatama-truth-v1.8.json",
+      "bytes": 86826,
+      "sha256": "3be08d2e73c948be7a13d3179bd82025d4837e156a47c519264f0f9162e9d811"
+    }
+  ],
+  "coverage": {
+    "gameCubeXboxDropRecords": 3600,
+    "blueBurstDropRecords": 1105,
+    "totalDropRecords": 4705,
+    "indexedItems": 380,
+    "mags": 76,
+    "feedingTables": 16,
+    "classes": 12,
+    "sectionIds": 10,
+    "photonBlasts": 7
+  },
+  "sourceClaims": [
+    {
+      "kind": "database",
+      "label": "PSOGC Drop Charts",
+      "platform": "GameCube / Xbox"
+    },
+    {
+      "kind": "database",
+      "label": "Blue Burst frontend drop database",
+      "platform": "Blue Burst"
+    },
+    {
+      "kind": "truth-export",
+      "label": "MagatamaBeta9 XML",
+      "notes": [
+        "v1.8 regenerates embedded data from MagatamaBeta9 XML before app load.",
+        "Recovery Engine is not implemented in this version.",
+        "No save/cloud/multiple MAG tracking is implemented."
+      ]
+    }
+  ],
+  "limitations": [
+    "Community strategy scores are recommendations, not drop facts.",
+    "The Magatama truth export does not implement a recovery engine.",
+    "MAG advice requires confirmed current stats and progress bars for exact multi-feed planning.",
+    "Stage-3 MAG A/B branch selection is inferred from even/odd Section ID indices because the supplied XML does not state the mapping explicitly."
+  ]
+}
+
+HUNTER GOALS SOURCE REGISTRY
+{
+  "src_ggtruth_drop_rates_1000": {
+    "type": "uploaded_txt",
+    "path": "ggtruth_pso_drop_rates_1000_faq(1).txt",
+    "role": "drop-rate FAQ corpus",
+    "policy": "fraction primary, platform separated, conflicts preserved"
+  },
+  "src_pso_faq": {
+    "type": "uploaded_txt",
+    "path": "Psofaq(2)(1).txt",
+    "role": "semantic route/MAG/class FAQ corpus"
+  },
+  "src_magatama_beta9": {
+    "type": "uploaded_zip",
+    "path": "MagatamaBeta9(2).zip",
+    "role": "MAG list, feeding tables, evolution rules, triggers"
+  },
+  "src_sec_id_calculator": {
+    "type": "uploaded_zip",
+    "path": "secid-calculator-master(1).zip",
+    "role": "GC/Xbox and Blue Burst Section ID calculator rules"
+  },
+  "src_mag_planner": {
+    "type": "uploaded_zip",
+    "path": "mag-planner-main(1).zip",
+    "role": "feed preview implementation reference"
+  },
+  "src_pso_world": {
+    "type": "web",
+    "url": "https://www.pso-world.com/sections.php?artid=1031&op=viewarticle",
+    "role": "Mag guides and feeding charts reference"
+  },
+  "src_pioneer2_wiki_mags": {
+    "type": "web",
+    "url": "https://wiki.pioneer2.net/w/Mags",
+    "role": "Blue Burst/Ephinea MAG reference"
+  },
+  "src_pioneer2_wiki_mag_guide": {
+    "type": "web",
+    "url": "https://wiki.pioneer2.net/w/Mags/Guide",
+    "role": "Simple MAG route guide reference"
+  },
+  "src_pioneer2_wiki_weapon_drop_tables": {
+    "type": "web",
+    "url": "https://wiki.pioneer2.net/w/Weapon_drop_tables",
+    "role": "Ephinea/Blue Burst weapon drop reference"
+  },
+  "src_gamefaqs_special_mag": {
+    "type": "web",
+    "url": "https://gamefaqs.gamespot.com/gamecube/516243-phantasy-star-online-episode-i-and-ii/faqs/23005",
+    "role": "Special MAG evolution guide reference"
+  },
+  "src_fandom_weapons": {
+    "type": "web",
+    "url": "https://phantasystar.fandom.com/wiki/Weapons_in_Phantasy_Star_Online_Episodes_I%2C_2%2C_and_4",
+    "role": "Rare weapon category reference"
+  }
+}
+
+DEDUPLICATION NOTES
+- The Eila Frame and Skillbeasts PSO packaged datasets were byte-identical for all 11 canonical PSO data files checked, so only one copy is included.
+- The 250-block GGTruth FAQ contains no unique Q-line text outside the 1000-block FAQ and is therefore not uploaded as a second Knowledge file.
+
+KNOWN CORPUS GAPS / DO NOT PRETEND COVERAGE
+- Narrative coverage has been expanded with the complete user-supplied Episode I & II script corpus. RICO can now answer from the supplied main-story, quest/event/shop, NPC dialogue, Rico-message, and related script material. This still does NOT make the corpus a complete encyclopedia of map layouts, enemy stat tables, technique formulas, weapon equip requirements, armor stat ranges, challenge-mode rules, battle-mode rules, or every server-specific event/mechanic.
+- The Blue Burst packaged drop dataset in this build is Ultimate-focused, not a full all-difficulty BB database.
+- The uploaded corpus names external/community sources but does not include local copies of every referenced web page.
+- The Blue Burst class-modifier lookup required for exact name-to-Section-ID calculation is not present in the uploaded corpus.
+- Magatama truth export reports zero parsed Mag Cell conditions in this build; do not infer that special MAG transformations have no conditions.
+- Hunter Goals explicitly warns that its item coverage equals the imported source corpus and must not be treated as exhaustive when a row is missing.

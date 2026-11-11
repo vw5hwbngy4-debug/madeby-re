@@ -1,0 +1,77 @@
+CURRENT PRESENTATION UPDATE — 2026-09-09
+Supersedes the three-state presentation descriptions below.
+Binary COMPACT / EXPANDED button, no select menu. Button names its next action.
+Compact: existing Pokemon sprite + one abbreviated line. Optional facts are
+removed from the end when space is insufficient; full summary remains accessible
+via the row label/title and the existing expanded passport. Saved collapsed
+preference migrates to compact. All other presentation preferences remain valid.
+Browser checked at 390px: BUTTON element, compact/expanded switching, 32px sprite
+asset and single text line; no horizontal document overflow. Syntax check passed.
+
+EMERALD v0.1.18 — MY POKEFIELD UX POLISH
+
+Source: exact v0.1.17 ZIP. Party only; existing live data contract, PID/OT identity,
+canonical Specimen Passport, Save Vault and emulator ownership retained.
+
+CALL / RESET
+Selectors start with CALL BY... / CHOOSE... / RANK BY..., no implicit criterion.
+Numeric inputs start empty. Valid predicate required before flute CALL enables.
+Each category is a facet; each IV stat is its own facet. HP TYPE and HP POWER
+are separate facets. Same-facet CALL replaces in place, exact repeats deduplicate,
+and different facets intersect. Chips remove individual predicates.
+Zero matches never permit FOCUS. Nonzero responses highlight FOCUS.
+FOCUS promotes identities, clears predicates/rank/tier and resets controls.
+SCATTER additionally removes focus, showing the entire current party.
+Live changes re-evaluate calls; focus remains identity-based through slot moves.
+
+RANK
+Vertical S/A/B/C/D/E rows, based on fixed metric thresholds, not party percentiles
+or competitive tiers. Empty rows disabled. Select a nonempty row to answer with
+that tier; this clears previous CALL chips. FOCUS promotes that tier.
+Unknown/egg values are Unranked. Within rows, values descend with slot tie-break.
+Thresholds below are S/A/B/C/D/E lower bounds (inclusive):
+Individual IV: 31 / 26 / 21 / 16 / 11 / 0
+HP power:     70 / 65 / 60 / 50 / 40 / 30
+Total IV:    186 /156 /126 / 96 / 66 / 0
+EV total:    510 /408 /306 /204 /102 / 0
+Level:       100 / 80 / 60 / 40 / 20 / 1
+Friendship:  255 /220 /180 /130 / 70 / 0
+Ribbons:      32 / 24 / 16 /  8 /  1 / 0 (S = 32+)
+Each row shows its numeric range. HP power input accepts integers 30–70;
+individual IV 0–31, total IV 0–186 and level 1–100.
+
+PRESENTATION
+Small select explicitly names the current MINIMAL / SUMMARY / FULL size.
+Preference stored locally under pf-presentation-v18; default FULL.
+MINIMAL: header, presentation selector, update bar only.
+SUMMARY: adds selected/current public specimen facts and noteworthy reasons.
+FULL: existing live/passport/party, Trainer Card and full My Field workspace.
+Compact facts are a summary, not a second passport. DETAILS remains canonical.
+The old two-state button is hidden; existing compact API is reused internally.
+
+NOTABILITY
+Shared pure helper consumes already-proven specimen values, used by live output,
+canonical passport badges, field cells and compact summary.
+SPECIAL: shiny, active Pokerus, proven fateful origin.
+CHECK: cured Pokerus, ribbons, held item, perfect IV(s), Hidden Power 70,
+rare female; SPECIAL wins when any special evidence coexists.
+CLEAR: no configured noteworthy hidden-value flags detected, never release advice.
+Legacy IV assessment remains internal historical logic, not the public summary.
+
+MIRAGE
+mirageValue = personality & 0xFFFF. Displayed only in DETAILS/debug; also available
+in the public record. Every specimen has a value. The live reader does not expose
+a validated daily Mirage Island comparison value. MIRAGE TODAY and that CALL
+are therefore not implemented. No RTC inference, new RAM reader or save parser.
+
+DEBUG / LIMITS
+?debug=1 retains isolated synthetic fixtures, now including HP type/power bands.
+Fixture values exercise the public-data contract, not legal encrypted specimens.
+No fixture writes into game state or opens a fabricated passport.
+Full QA details and real-game testing limitations are in the companion QA report.
+No save-routing, Save Vault, RTC, login, server, emulator, keyboard, audio or
+Trainer Card code changes. PC boxes remain a separate future P1 milestone.
+
+Label update 2026-09-09: MINIMAL / SUMMARY / FULL. Internal state keys and saved presentation preference remain compatible.
+
+Gender clipping fix: increased compact text line-height and vertical padding; explicit symbol font for passport gender symbols; field name line-height adjusted. No behavior or save changes.

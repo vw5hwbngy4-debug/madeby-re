@@ -1,0 +1,1033 @@
+{
+  "patch": "Footer and backstage-meta cleanup",
+  "date": "2026-09-28",
+  "target": "https://madeby.re/research/",
+  "changed_file_count": 205,
+  "files": [
+    {
+      "path": "SUPERARTIFACT_LAYER_PATCH_MANIFEST.json",
+      "sha256": "76bb43b8a0b6f684cc059d975fc6be76e9b15ee5494d7f16a412aedb923194e0",
+      "bytes": 3035
+    },
+    {
+      "path": "about.html",
+      "sha256": "764f63e24bf993d7309f2a33ce69d13f30305559a1c7d55a7cedcdda978f6713",
+      "bytes": 10367
+    },
+    {
+      "path": "agent-offload-ambient-field/index.html",
+      "sha256": "f1449c2937ed0161e4ab06b315c1fabe6c9a573b692c8e15edfb646738b60959",
+      "bytes": 44599
+    },
+    {
+      "path": "ambient-power/article.json",
+      "sha256": "8f40b92ee5d76c0390d07e4d6926a657b0d3d1c78d0653265c7cf84c370bd746",
+      "bytes": 11156
+    },
+    {
+      "path": "ambient-power/index.html",
+      "sha256": "b33c898389e85fbd4793de394ae4fee246c2a9e5d930617b55d3cf070b4563ce",
+      "bytes": 14288
+    },
+    {
+      "path": "archive.html",
+      "sha256": "74b1e467c926868f98b0c7c0ea7e896d4cc2a8d8f55361fd276e837ad74cbfe7",
+      "bytes": 278281
+    },
+    {
+      "path": "artifact-layer-intelligence-stack/article.json",
+      "sha256": "e1951364f6b9317ff96ab10962a1d5e9be005fbd06562537c6b0fb6acd98568e",
+      "bytes": 14591
+    },
+    {
+      "path": "artifact-layer-intelligence-stack/article.txt",
+      "sha256": "6d2aa96e1a74627d7e88d6f4bfe99e475fa1ffc8d677f2c3e4e5094fe9c470d5",
+      "bytes": 11772
+    },
+    {
+      "path": "artifact-layer-intelligence-stack/index.html",
+      "sha256": "8f380fcb850ba6755c316c24afe242d839b58e54368c0d8c9477554b425ced1d",
+      "bytes": 23386
+    },
+    {
+      "path": "index.html",
+      "sha256": "1d0aa5e8b2703f7add9285ff7bd130292742510ea631570a0c9c801e47cb303f",
+      "bytes": 15256
+    },
+    {
+      "path": "library/index.html",
+      "sha256": "e75c55b3fa10d0dde001e9b47fab7ed466c8df07a1a9868a769d35025aca7192",
+      "bytes": 132166
+    },
+    {
+      "path": "library/papers/18287254.html",
+      "sha256": "7cc18b05c2ab9c6f68a7b9e164350978cd5f44d1122d1b810b15a24c38c0430a",
+      "bytes": 16849
+    },
+    {
+      "path": "library/papers/18287758.html",
+      "sha256": "59e5a960db8355d725a7ff897376e91ddf7cff72c2f676926daf1fb8144e93d4",
+      "bytes": 20752
+    },
+    {
+      "path": "library/papers/18288632.html",
+      "sha256": "f60db101e1a8ad952f3f79e340904e51389c52983bb4d0c14c75c8a799ff4532",
+      "bytes": 24736
+    },
+    {
+      "path": "library/papers/18289118.html",
+      "sha256": "c81640114993abfd7f7581c42d13311b9a1ad02fb59fc25fc3e662c04f3a26ef",
+      "bytes": 22425
+    },
+    {
+      "path": "library/papers/18289722.html",
+      "sha256": "f1c15b0787de9ce765bb75c42fb7f8b154aa4f1a9705a227c94d321d3a2bec4a",
+      "bytes": 22597
+    },
+    {
+      "path": "library/papers/18323467.html",
+      "sha256": "279aa0080ebd9006d521045afbf4d5011da8a01dbd8839231e884fad24db8512",
+      "bytes": 6821
+    },
+    {
+      "path": "library/papers/18329873.html",
+      "sha256": "a015b6e9ba5c1ac71d69a1e42d7db1499886536d1d65a671fd6cb0eac2a7fa2a",
+      "bytes": 14116
+    },
+    {
+      "path": "library/papers/18342417.html",
+      "sha256": "c91ae66039e83b300121a37c798c9ce3f96789baae06339298d5f0e26f4146ab",
+      "bytes": 15169
+    },
+    {
+      "path": "library/papers/18343081.html",
+      "sha256": "a64a0a0c1b4cc6e91f3e5dd471a557715a3d3ff1d980e61f090df65697160b04",
+      "bytes": 46939
+    },
+    {
+      "path": "library/papers/18353729.html",
+      "sha256": "32260dd11b92b75a9b2895fbfa97ac1f1ad4ab150935de4c87d2185c3fdbdf02",
+      "bytes": 33178
+    },
+    {
+      "path": "library/papers/18355044.html",
+      "sha256": "0ed87a8b7ccf22e772b9e2764251483041d14f8dd6edf4cdcdaedd9cf1cc8ffc",
+      "bytes": 19504
+    },
+    {
+      "path": "library/papers/18359901.html",
+      "sha256": "3a7328a31235b5f65c9f9b3f61f67baa0475bb5099c39aad80af7f478a72050b",
+      "bytes": 20262
+    },
+    {
+      "path": "library/papers/18360527.html",
+      "sha256": "5fc7fc739d2195d83e7b68a3055519e6d795bfc3505a7e507c93b2c8ec8ac1b7",
+      "bytes": 14147
+    },
+    {
+      "path": "library/papers/18378717.html",
+      "sha256": "8aeecbcd94ce900c5861e52a9617ed66471202905dd5f18cc535d6a3c78199dd",
+      "bytes": 14923
+    },
+    {
+      "path": "library/papers/18380102.html",
+      "sha256": "90dcea839355f10d2ad58fbc7b8fb0222d0f67edb35d2d65457dfd56e70814fb",
+      "bytes": 17345
+    },
+    {
+      "path": "library/papers/18381455.html",
+      "sha256": "693e89e1d49a5add39be060beb2eb3303ae1992ba32f1c15a87b08ff4ddd68db",
+      "bytes": 18758
+    },
+    {
+      "path": "library/papers/18394131.html",
+      "sha256": "16e5fbbb22b9625beb5218493fcd4a5ad6b96b83fe6e78eef76a5e8ef4854274",
+      "bytes": 20788
+    },
+    {
+      "path": "library/papers/18395162.html",
+      "sha256": "feeea944ff3dea987640439f15d48363f08944c3d511714e919096728f857a9b",
+      "bytes": 16969
+    },
+    {
+      "path": "library/papers/18395382.html",
+      "sha256": "74663be7c23ab81895457ca736df98bde25aac522a7e7c7eda677f194dd1e72d",
+      "bytes": 11577
+    },
+    {
+      "path": "library/papers/18395405.html",
+      "sha256": "e447d8a571697515970bbfc1fd6c24da2913ee4ddc11c3d4d051682e350bffd2",
+      "bytes": 10984
+    },
+    {
+      "path": "library/papers/18397916.html",
+      "sha256": "0d7c7546787bb8335ab07b24fd2f1efd3d344e7b6a9b56a58018dd7c57c26012",
+      "bytes": 20943
+    },
+    {
+      "path": "library/papers/18412077.html",
+      "sha256": "944ca21b411d61a8bf57a762ece7bd0a991f4e4e5e0963f140d6e48d4db2b7b9",
+      "bytes": 18658
+    },
+    {
+      "path": "library/papers/18412467.html",
+      "sha256": "f72736d2f499d6138da23187c93d83def2414f8d36b00bc0a106a764a3b7310b",
+      "bytes": 17749
+    },
+    {
+      "path": "library/papers/18413158.html",
+      "sha256": "94e211eaf5190d5da0a4d9a6a303173392ac1874eccbd398d8d4f0a10a6b8e8a",
+      "bytes": 18246
+    },
+    {
+      "path": "library/papers/18413562.html",
+      "sha256": "c572da350813fd469d1989b0c34d788ae171ddaa9dc77aa61a104ee2423d8103",
+      "bytes": 18435
+    },
+    {
+      "path": "library/papers/18413772.html",
+      "sha256": "8fafc2073b2a305e78fbd9dc6f0276602f1acc997e6530707f00ea237fc0d6ff",
+      "bytes": 15138
+    },
+    {
+      "path": "library/papers/18431172.html",
+      "sha256": "d411b6877e5bd0bc68882007f21038ef2e412bd7e4be1bfab525b23a828bd269",
+      "bytes": 23703
+    },
+    {
+      "path": "library/papers/18431329.html",
+      "sha256": "8e67954f179f286845e7a30b3ae686a9ae66ea8a23ee4310654df677e765a692",
+      "bytes": 15044
+    },
+    {
+      "path": "library/papers/18445880.html",
+      "sha256": "7e2e116626047c9489fe2b47daa44b205e31427c7fc2ae0b597996d1ccc1d2e9",
+      "bytes": 15084
+    },
+    {
+      "path": "library/papers/18450137.html",
+      "sha256": "0ede095f5e3182b293db433d8db09fbc73dde353d9ea08dfecadeb108144b9bc",
+      "bytes": 17098
+    },
+    {
+      "path": "library/papers/18468687.html",
+      "sha256": "706e68d1314c9dc45b250c9448df3cf76a8284dc705d02a30fcc6bf6c5aa5729",
+      "bytes": 15600
+    },
+    {
+      "path": "library/papers/18472341.html",
+      "sha256": "ac140e0f74b58208dd25d8d4f529560ff4f71328a5eda719d210ae28d7a7126a",
+      "bytes": 15094
+    },
+    {
+      "path": "library/papers/18472571.html",
+      "sha256": "aa9321e8ecf5be4ec6edb8d60cb37bc5045eda0dc342829f2fc5e6de6a0fc9d2",
+      "bytes": 11669
+    },
+    {
+      "path": "library/papers/18484319.html",
+      "sha256": "d5f1f9c53424a5ae714d96a76de73dd073b26cfe083d70808c0df0f404ae8d5d",
+      "bytes": 19207
+    },
+    {
+      "path": "library/papers/18614310.html",
+      "sha256": "cade00d5b44245191d9dd5dbb19a9af95e293f24ddf239ede1096e8c6db07efa",
+      "bytes": 18146
+    },
+    {
+      "path": "library/papers/18626577.html",
+      "sha256": "3478b8084fca931599e98560d90b12beaf03cfd343542a7811e3a20c821758d5",
+      "bytes": 23124
+    },
+    {
+      "path": "library/papers/18641387.html",
+      "sha256": "b18cf8b87d4803bf7a86fc1803bc818423b04b2f0edfbd09ab3b4df87fb1f2ed",
+      "bytes": 30153
+    },
+    {
+      "path": "library/papers/18643008.html",
+      "sha256": "e4dfcebbd80199db26aa0b19721ed6339659335d576165125691e6b9eb2abc65",
+      "bytes": 19433
+    },
+    {
+      "path": "library/papers/18651618.html",
+      "sha256": "b35cb136ff6f25b0b695fa1fed751601c998d6a463a99448c92d9664c23d82aa",
+      "bytes": 22245
+    },
+    {
+      "path": "library/papers/18651664.html",
+      "sha256": "48e0003ced1173ea5bf92b1513aebe6595850cb96d7b0d3442439213e643431e",
+      "bytes": 16319
+    },
+    {
+      "path": "library/papers/18651703.html",
+      "sha256": "b6ebda5c5659c27b143ffb9a9481cbb3a185eca56b91dbbe017f080fb889661b",
+      "bytes": 24913
+    },
+    {
+      "path": "library/papers/18651751.html",
+      "sha256": "f2b9b20da8232dcf34c05e321bd28686d52627e86b92c697c0ea2c2e2e30b1e3",
+      "bytes": 21392
+    },
+    {
+      "path": "library/papers/18651773.html",
+      "sha256": "749997df800fb6284f1638e2259544884f63a7f6ca416ccd36fd722f734102a2",
+      "bytes": 20207
+    },
+    {
+      "path": "library/papers/18651811.html",
+      "sha256": "52ba7b7e73de13a7b86f5a343bcb7e461d14cd20dd7d481dc6e0c9a1b9cd0281",
+      "bytes": 17011
+    },
+    {
+      "path": "library/papers/18663581.html",
+      "sha256": "a431cc9898456224770010c55b8ff3c151f7ea803bc889441fd83028ae3197a3",
+      "bytes": 20569
+    },
+    {
+      "path": "library/papers/18663639.html",
+      "sha256": "4f8a61e3fce5a26f7f168687d5ef49b12083c8c81f040638c8e1418b8b5469e7",
+      "bytes": 20106
+    },
+    {
+      "path": "library/papers/18663690.html",
+      "sha256": "fbe16280cbbb33da6553d2321caca322c72d92649928bd54ae021426b29e0eeb",
+      "bytes": 18702
+    },
+    {
+      "path": "library/papers/18664058.html",
+      "sha256": "3811e1eb0406d83a75984425b6a7ee992ce02788617c5d90807b04df9e5be47a",
+      "bytes": 10811
+    },
+    {
+      "path": "library/papers/18676728.html",
+      "sha256": "373a593122c39e35bf7f5a361567c11e48cd65fea57089ef74c5b21bf6f35c4d",
+      "bytes": 16482
+    },
+    {
+      "path": "library/papers/18676749.html",
+      "sha256": "6768ce40c3cf6bbc17f0cddb2b90489515ec194f0ea90abd54fd70d9d09b9492",
+      "bytes": 18090
+    },
+    {
+      "path": "library/papers/18676769.html",
+      "sha256": "ba908934a1042fd562eeaae6bc3f3d68f665c83f18bcee9d8ef36a77af5456af",
+      "bytes": 20490
+    },
+    {
+      "path": "library/papers/18676783.html",
+      "sha256": "27226e06de913702ed3c4e0a10d84c295a5bde2bbd35cf19b5a2f47b4d3dcf07",
+      "bytes": 16544
+    },
+    {
+      "path": "library/papers/18681962.html",
+      "sha256": "b66ba9d2eba32e291298e6c68d791e8005bf35b988db30f6c7b51d7b821f5ba3",
+      "bytes": 29514
+    },
+    {
+      "path": "library/papers/18683966.html",
+      "sha256": "3135b2b05adbbccfc9f97cee796be48b83b0ac62e1193689d8b48355ad263fab",
+      "bytes": 17436
+    },
+    {
+      "path": "library/papers/18685739.html",
+      "sha256": "c494e701acabbfdc81cb1ec6b116b934ce6836052eddce0c0a3fdd1651ef76d4",
+      "bytes": 16004
+    },
+    {
+      "path": "library/papers/18695751.html",
+      "sha256": "829a23fd3f0b0936a2f63dc2dd890d69e9cffedf759b4419806633965b23a9ce",
+      "bytes": 21329
+    },
+    {
+      "path": "library/papers/18701054.html",
+      "sha256": "b1b20641677cc5a175cda01a9b3c6bb32c1a4aa0348b8893713dd11338140e78",
+      "bytes": 20060
+    },
+    {
+      "path": "library/papers/18703156.html",
+      "sha256": "542526e6dc262a22861ddb692fb10d0123fbaf3c6fdc527efe24fa02d1cfdbcd",
+      "bytes": 25872
+    },
+    {
+      "path": "library/papers/18704099.html",
+      "sha256": "96005c299be07bc23a38f7b5e155ac3a932258364b79b12369f923294b607a95",
+      "bytes": 18138
+    },
+    {
+      "path": "library/papers/18704964.html",
+      "sha256": "acd51504d06070d9a36ba74073b9434b4b41fa4b4bcde7802fc6714c35504709",
+      "bytes": 19350
+    },
+    {
+      "path": "library/papers/18715880.html",
+      "sha256": "1a80e2012f856e6493d164a23f7bf0a28e5c23c2324da38567840d33919f3bac",
+      "bytes": 55017
+    },
+    {
+      "path": "library/papers/18717506.html",
+      "sha256": "b74a94e7ed7c6d6c35c1130044198a083f3bf3aa213f64d1ca508cb621b41c29",
+      "bytes": 14264
+    },
+    {
+      "path": "library/papers/18718897.html",
+      "sha256": "f779e52355697728c8e438a2c20182d83c9858863843f1deee2df6e9773406cf",
+      "bytes": 22104
+    },
+    {
+      "path": "library/papers/18719071.html",
+      "sha256": "0a7253dc7c50f7027a49b91d01a723d8336542e6028795bc4b67b89645239506",
+      "bytes": 17050
+    },
+    {
+      "path": "library/papers/18720347.html",
+      "sha256": "8d10335662bc5b31a63181649dc62090fa5e89a2033330680f5cd45c4829d4fc",
+      "bytes": 24155
+    },
+    {
+      "path": "library/papers/18721834.html",
+      "sha256": "9ee329fb1ad9d7030e78ef80b66fe7c093d9dbdb0ed04dac212b4f5ff7e535ca",
+      "bytes": 24064
+    },
+    {
+      "path": "library/papers/18724485.html",
+      "sha256": "a0b22d51dc9179533b81f5e1197192588a92a741f8fc76ae37f4bacc999b0ad2",
+      "bytes": 21325
+    },
+    {
+      "path": "library/papers/18724652.html",
+      "sha256": "028ffcac160e5de2497038766272c5a4e49055f850e0fb7629e1d4cfc66b1156",
+      "bytes": 17268
+    },
+    {
+      "path": "library/papers/18724700.html",
+      "sha256": "9babba06d29d4d226e2bb9f75ae63f990db062394bd9a4b431e27ee76801498e",
+      "bytes": 19990
+    },
+    {
+      "path": "library/papers/18724831.html",
+      "sha256": "ce5f9368fce1d83f651587ef040f2d7459663d52cd0663c8ee77cf03d2e3f41a",
+      "bytes": 18827
+    },
+    {
+      "path": "library/papers/18725818.html",
+      "sha256": "fbf5d5f53d6284f5c1cee636f672151b6e65387b01f8c470d985b03ff25c4fdc",
+      "bytes": 21648
+    },
+    {
+      "path": "library/papers/18731073.html",
+      "sha256": "533b8906e0ac0705ddf262c4904994e4d145bb230693b054025dc4e46a6a23d6",
+      "bytes": 35931
+    },
+    {
+      "path": "library/papers/18731615.html",
+      "sha256": "ef137f81a8edfc5f278b725ef060ba5a4896c571ab8591ae8ea54cd62356aa09",
+      "bytes": 13049
+    },
+    {
+      "path": "library/papers/18732491.html",
+      "sha256": "68c629c19b899e4e052681fc0c0e001019c6db8157820a8e8c5b2ac1fdc099f0",
+      "bytes": 24333
+    },
+    {
+      "path": "library/papers/18733767.html",
+      "sha256": "36e3a38e82c04010fdc323c75d4b839101f58c1c69bd886c7adb264d163da809",
+      "bytes": 11957
+    },
+    {
+      "path": "library/papers/18733923.html",
+      "sha256": "ad8bbaacb9493bffd9d71f648287e3e2ea5465c93fc569cacba18f8102f5dfa3",
+      "bytes": 32300
+    },
+    {
+      "path": "library/papers/18735513.html",
+      "sha256": "9f0ae4ae19ffba300ca1731e2e8ca25c3af818c69cfc3664609b586f0d5168ed",
+      "bytes": 15633
+    },
+    {
+      "path": "library/papers/18740444.html",
+      "sha256": "f791f9abea2e5f45aab7b33acc25c4df85a42c4ac6aa94b519e0c38a457e2370",
+      "bytes": 21732
+    },
+    {
+      "path": "library/papers/18743828.html",
+      "sha256": "09ffb0918aa6bbcae56e9f7440b7b50535abfd22acb9ed00c6514a5c04b2cd83",
+      "bytes": 23743
+    },
+    {
+      "path": "library/papers/18743988.html",
+      "sha256": "412c2c3cfcfae84c16dc056b17b3f70116eb8297a7d9baae2ced88f8df95d892",
+      "bytes": 17365
+    },
+    {
+      "path": "library/papers/18744160.html",
+      "sha256": "56582b0a1a19b776582f080321accbb1ce4bdab1d2365dfbf4623ca6d7628e8b",
+      "bytes": 17185
+    },
+    {
+      "path": "library/papers/18755238.html",
+      "sha256": "4f4fab15de8c3f9846bdb7bda485fbf01285d72597fca7de03d6615e442ead78",
+      "bytes": 18133
+    },
+    {
+      "path": "library/papers/18756422.html",
+      "sha256": "28fabf40a0d7cec852640bd81049111387ace22a21ce23fc38db42be0a9075bf",
+      "bytes": 49549
+    },
+    {
+      "path": "library/papers/18756461.html",
+      "sha256": "95e47445247a59af2c6acb13703bbfaa10e25a3944bcd6114350721a374b4c96",
+      "bytes": 19160
+    },
+    {
+      "path": "library/papers/18756548.html",
+      "sha256": "913003fb5cf22c9fe02189d9bbc1568642b1fc1e69cbc71049bf5b1e91fca241",
+      "bytes": 17451
+    },
+    {
+      "path": "library/papers/18756623.html",
+      "sha256": "5e61247d5d19cbbf49fb3db4ea5010e5200736b8da0c7f443820ef1323830591",
+      "bytes": 15600
+    },
+    {
+      "path": "library/papers/18763518.html",
+      "sha256": "0c081b92260537012aa6b7b3b47a3589b12de4ae6eb6fa37707d37dc95e17b8c",
+      "bytes": 62207
+    },
+    {
+      "path": "library/papers/18763662.html",
+      "sha256": "6a243a0f0c51799d4c21813890487fc8644dc82cb890df9e3c9089d3e6669cb9",
+      "bytes": 18027
+    },
+    {
+      "path": "library/papers/18763720.html",
+      "sha256": "564c8e6b15992b46eec6d673b0ab43d4327ecc5c9325a95606b4be93da6c4310",
+      "bytes": 16121
+    },
+    {
+      "path": "library/papers/18763927.html",
+      "sha256": "3d6ddbb4229e6a1cfb76112011907a5e139dc2429be6f481bcc8213a1aaf36a5",
+      "bytes": 20637
+    },
+    {
+      "path": "library/papers/18763963.html",
+      "sha256": "657565a23fd55ebd380d3493c7d6033345cb6dc40e905d81115e1d6d48f134b3",
+      "bytes": 17639
+    },
+    {
+      "path": "library/papers/18764023.html",
+      "sha256": "f68db0c0a5c31e191785484f25c055b58eb1383928c17ba421af6e690c49aad2",
+      "bytes": 18786
+    },
+    {
+      "path": "library/papers/18764097.html",
+      "sha256": "fb26fb195c18c6b424f0df8fe548523c973e7d9a002af5430a7629cdaaf90eff",
+      "bytes": 19638
+    },
+    {
+      "path": "library/papers/18764149.html",
+      "sha256": "73eb1710912bc7319d16243e79cdad7adf91a8f6045965b3be24ebcb0d3a15b5",
+      "bytes": 14652
+    },
+    {
+      "path": "library/papers/18771630.html",
+      "sha256": "a2422d5c5ed35c6d9c541a72498f966368ca8ed1cf55d7af7859580663fa4499",
+      "bytes": 12266
+    },
+    {
+      "path": "library/papers/18773586.html",
+      "sha256": "3e2b396e93c305e916368183c7cb1fc9a2c0a6af4d432ef79dff89aa122e8775",
+      "bytes": 32418
+    },
+    {
+      "path": "library/papers/18779649.html",
+      "sha256": "79cb8446e5d59b8e28a3092d507547280cea2cc6521d72b0ea821e84c0b90d59",
+      "bytes": 21306
+    },
+    {
+      "path": "library/papers/18787697.html",
+      "sha256": "83fad332cb16b0bfb9ca19c9009db134b54e868912193f7047412361e1ad091c",
+      "bytes": 30949
+    },
+    {
+      "path": "library/papers/18792840.html",
+      "sha256": "5185d72232ca18de4fb8d572077dd330737cc39660327c5b1585b4d063d389a9",
+      "bytes": 17367
+    },
+    {
+      "path": "library/papers/18792890.html",
+      "sha256": "f3d95c0d38bc580c74e1255c6f4f8508fb7ae3132b499f1a6c944d498d1db16c",
+      "bytes": 15610
+    },
+    {
+      "path": "library/papers/18792922.html",
+      "sha256": "b3515d76baf4e5ab49478a5dc498a630c30149d4bb7238ae3ff10d0d9a4bfe10",
+      "bytes": 19069
+    },
+    {
+      "path": "library/papers/18792966.html",
+      "sha256": "563b561579e828ea3d8d59e9487e61d24fa68a605fe5a07119851fca93f1f0ac",
+      "bytes": 20274
+    },
+    {
+      "path": "library/papers/18793001.html",
+      "sha256": "a023a91854b9b8f42e075b324904c427ef6d3db49b9caecb5988b73aeccc5649",
+      "bytes": 20801
+    },
+    {
+      "path": "library/papers/18793028.html",
+      "sha256": "a7402e118ba17b07a11053ca710a17d128c4e309418b35c2a32a1beebf109f34",
+      "bytes": 19775
+    },
+    {
+      "path": "library/papers/18793052.html",
+      "sha256": "3570db9efd32999e73e340ec5c2e4a9616304aeb3e3dd04f52e30091a6a2ef35",
+      "bytes": 21581
+    },
+    {
+      "path": "library/papers/18793090.html",
+      "sha256": "8c992f461a3080f00e0babdbbaf03f4ad5ee35fa5370a8234eea687dba5d7b72",
+      "bytes": 19759
+    },
+    {
+      "path": "library/papers/18793111.html",
+      "sha256": "99f4f12dfa3749128f66e018369a48cf21a3bb0d24ca555f36505164e8709973",
+      "bytes": 19575
+    },
+    {
+      "path": "library/papers/18793141.html",
+      "sha256": "4d41c8d4b73e37de11e5371af1b105de94150afa5a1601d85a22272926bbc5ed",
+      "bytes": 20315
+    },
+    {
+      "path": "library/papers/18793172.html",
+      "sha256": "30bf3655925e1e3254be8b6ae35ae8abec4ab3fe8fc7c1cacf37e2810b8ecc36",
+      "bytes": 20548
+    },
+    {
+      "path": "library/papers/18793212.html",
+      "sha256": "4c86a915e70c79bc28794e8666dfd8042cf52d9fd5eb5104b7dcc6aa3c108a1d",
+      "bytes": 20234
+    },
+    {
+      "path": "library/papers/18793261.html",
+      "sha256": "2787c74209e9fb7efd6516e96a5bd9ab83f9f7f148ec150158749f735344e873",
+      "bytes": 20159
+    },
+    {
+      "path": "library/papers/18798511.html",
+      "sha256": "2c2199537aeacd013d431a0e85560c5001605a85b75d1f6e02c9c59b3f6b1437",
+      "bytes": 18861
+    },
+    {
+      "path": "library/papers/18798843.html",
+      "sha256": "b50ebf93164e2ecbfde467269827238c6c0e71a83b248e73d9df79eda0e7e996",
+      "bytes": 18642
+    },
+    {
+      "path": "library/papers/18798921.html",
+      "sha256": "c33f0ed5246eacc628d1bf777c36182b1d7b091fb38dbf7c448f1642c2211838",
+      "bytes": 18125
+    },
+    {
+      "path": "library/papers/18808337.html",
+      "sha256": "6d94b3ad82179dab217625817fbeb0295ca7808bed1c77c4c099830f46f61a13",
+      "bytes": 11704
+    },
+    {
+      "path": "library/papers/18809266.html",
+      "sha256": "b7d74a6b5f6fe5d5c3163fb281dc2f08914e8c8ae23542c1949b36ebf5ff8b93",
+      "bytes": 10033
+    },
+    {
+      "path": "library/papers/18809316.html",
+      "sha256": "cf208d21b9b9bd97c26f585dddc73411ae7679951066001bf4dec344cebe472e",
+      "bytes": 9982
+    },
+    {
+      "path": "library/papers/18813314.html",
+      "sha256": "de8b69128fec52b5e48e48e7e5f617659d11e58ec63d1e3477417ffba3232852",
+      "bytes": 12655
+    },
+    {
+      "path": "library/papers/18813409.html",
+      "sha256": "de33bcf03afc08d7fb9a2364f97f7a080cf26c63231228e3c8a38bea2b86e4c8",
+      "bytes": 16376
+    },
+    {
+      "path": "library/papers/18813465.html",
+      "sha256": "dec1fae01fd17a1d15bfcd90f4b751bec7906ab6d0016725e6797f3654adf850",
+      "bytes": 17058
+    },
+    {
+      "path": "library/papers/18813518.html",
+      "sha256": "23536482808d78028f9ae89f79e370f0a4e0f8acb32785e1393cc92abcda0a81",
+      "bytes": 16964
+    },
+    {
+      "path": "library/papers/18813586.html",
+      "sha256": "8c617e4b7cb652126350f564acf0c3eb93855be9cb02ec27f8ded9d53ffda216",
+      "bytes": 27047
+    },
+    {
+      "path": "library/papers/18817757.html",
+      "sha256": "9397291146a1976e29795df89d41d30d9d0fa639e03ba1e1e55663d32eac3309",
+      "bytes": 22292
+    },
+    {
+      "path": "library/papers/18817793.html",
+      "sha256": "eb9b5aba4158ed2bfa5d9fcd5a339f80a6210968b228423ac9072935cd52eb98",
+      "bytes": 16961
+    },
+    {
+      "path": "library/papers/18819787.html",
+      "sha256": "b7ff63cb703ea2b260e5b05a1f7807196532d2c6d9cca3e10547343b39ac38c0",
+      "bytes": 14247
+    },
+    {
+      "path": "library/papers/18823212.html",
+      "sha256": "98d2016f9494be9f4ae359d0751a7fae3b899eb660dce9c649268c72ad93c992",
+      "bytes": 14120
+    },
+    {
+      "path": "library/papers/18823664.html",
+      "sha256": "eb7f61e0ffd095de67a248ed7f43aed277e145ac2c4dfe69769133f89afd7422",
+      "bytes": 18953
+    },
+    {
+      "path": "library/papers/18826728.html",
+      "sha256": "69585355d1d74bd25b3aec7a6feb84c517d6ad095f8092bbceaf160ebcdbc656",
+      "bytes": 18032
+    },
+    {
+      "path": "library/papers/18826759.html",
+      "sha256": "d475446928dc0713293985c6e9a1abf4ac1e1da3e23d53bb33399c8957982d64",
+      "bytes": 17835
+    },
+    {
+      "path": "library/papers/18836223.html",
+      "sha256": "59c0e12c3fdf3c7eb609dffad101b55aef279e15d05fa25d46f8f57182b65f5c",
+      "bytes": 14842
+    },
+    {
+      "path": "library/papers/18839998.html",
+      "sha256": "eb9c27b03886c69eed89eab79ed5c82ca4e2431bc45e188d87eb0b2d90601bdd",
+      "bytes": 19359
+    },
+    {
+      "path": "library/papers/18853034.html",
+      "sha256": "9a02d7e5e54f89610bd81ba9289897d981a2a0ecff867b1fe9662035f7b80f65",
+      "bytes": 17646
+    },
+    {
+      "path": "library/papers/18857143.html",
+      "sha256": "71fd2c95ac656c5d9d2981c1b786cc234698bc8161c12ff952979ca688ecf246",
+      "bytes": 21998
+    },
+    {
+      "path": "library/papers/18860092.html",
+      "sha256": "cf6bfb67cbf1bc98990ac90e17aa255bc42d32e0d6b332df7da19bb7f6843e76",
+      "bytes": 23783
+    },
+    {
+      "path": "library/papers/18865651.html",
+      "sha256": "abb79c0827955c891ee10d06da384a9550f28ef2bbfbad2c70a6412d5e266868",
+      "bytes": 16903
+    },
+    {
+      "path": "library/papers/18865707.html",
+      "sha256": "7b61e18e363a2625e50f97a7a040eeedba1856c29c7b37499c39055cb474307e",
+      "bytes": 15709
+    },
+    {
+      "path": "library/papers/18881379.html",
+      "sha256": "d54489e949aa1e9d0afd4aa4cb740331ada5e7fa6e4ee0c31e539130e28feff6",
+      "bytes": 19355
+    },
+    {
+      "path": "library/papers/18881418.html",
+      "sha256": "f6f3b8a70c04f0a7bf50e71c57b4258e4cbec82f152500ae27228e46f69ee4de",
+      "bytes": 22112
+    },
+    {
+      "path": "library/papers/18881444.html",
+      "sha256": "a7814b55f6ff1d5291bfe0bf0319f052b7572db921bb54b041f83ab1f121318d",
+      "bytes": 20322
+    },
+    {
+      "path": "library/papers/18943557.html",
+      "sha256": "b3aafe85f16d1bbfb668ba66313faf487e50339a6d2da11abbac5ba846fa972e",
+      "bytes": 26097
+    },
+    {
+      "path": "library/papers/18943684.html",
+      "sha256": "dbffb0a3a974a96c056c5bd6e68dbb1af6351ef4a1e25722f8f3ba218af6f4e6",
+      "bytes": 21893
+    },
+    {
+      "path": "library/papers/18968747.html",
+      "sha256": "15fbde6aa780748b140c283c3991ce2c32267441f80dfc21a129136cd30f4b08",
+      "bytes": 22938
+    },
+    {
+      "path": "library/papers/19020647.html",
+      "sha256": "d40c40e3a18ee3f0d2d86629d0767e82edb267ed5ca7d3e72120ca7c228ba7e1",
+      "bytes": 36019
+    },
+    {
+      "path": "library/papers/19020916.html",
+      "sha256": "548a3043f1f828fa9be01078d4ae0983910c311d21c92ab8218f256dfaaebdc3",
+      "bytes": 35950
+    },
+    {
+      "path": "library/papers/19021326.html",
+      "sha256": "6acbd829c3dd6f7c5b58499ee68892efbfaf795bdf111d47a85296d907321951",
+      "bytes": 36744
+    },
+    {
+      "path": "library/papers/19060163.html",
+      "sha256": "8f5f66e06e4048e07d600d98c42363c530d9344294328affea960fbd8abfd14e",
+      "bytes": 20587
+    },
+    {
+      "path": "library/papers/19062669.html",
+      "sha256": "1f2a83ac4bd5b76aaa3aec06fd8204783bd1d6c718467f76d2d1aba078a5091d",
+      "bytes": 22753
+    },
+    {
+      "path": "library/papers/19095685.html",
+      "sha256": "4355a9f8c6f7fe3b4a0ef050e4388c3b8e216f6c4671754998b5f8a55cb791ec",
+      "bytes": 36491
+    },
+    {
+      "path": "library/papers/19144415.html",
+      "sha256": "09bbe721ae454568af7511d83118df1b69d3a1c19556f2ec854bca4be5981a99",
+      "bytes": 70723
+    },
+    {
+      "path": "library/papers/19157929.html",
+      "sha256": "271f939ce048c52cef47ed2559e332ba0f9154211b2a90d331917e5b5b372406",
+      "bytes": 28843
+    },
+    {
+      "path": "library/papers/19158211.html",
+      "sha256": "a7759cb6c3fe428fdd862d8249af28b2ba1af8e0d6dcc947ea938d1135ce8e47",
+      "bytes": 138371
+    },
+    {
+      "path": "library/papers/19160656.html",
+      "sha256": "4302edd45c949c8fb876f42db813f3f28066dfff8c8b5067fba6005c5053a7af",
+      "bytes": 20307
+    },
+    {
+      "path": "library/papers/19177610.html",
+      "sha256": "99e6ad3740395f9a8c2d23a118dee1d94bc016c7180cae16e600f6d5238b63b7",
+      "bytes": 17466
+    },
+    {
+      "path": "library/papers/19180978.html",
+      "sha256": "e46f225b4688d605a88f7fcdd6f7907edf73fb223ea01d05032289c1e2a21708",
+      "bytes": 16178
+    },
+    {
+      "path": "library/papers/19192992.html",
+      "sha256": "d9c3794c6b11157190fd646a144f5f444e43cd324318aed3d99b646ef2675377",
+      "bytes": 35753
+    },
+    {
+      "path": "library/papers/19199930.html",
+      "sha256": "88021ccbaf91abdee5783db67ad00cf3eb00c706bc35c782f57d4c9bffcdb1c8",
+      "bytes": 18817
+    },
+    {
+      "path": "library/papers/19216293.html",
+      "sha256": "b3a9034f4d95d6d6dfff1cc3745230aa55e27807df60efa8f1218bf7f33c33fd",
+      "bytes": 27086
+    },
+    {
+      "path": "library/papers/19222204.html",
+      "sha256": "12d7e1861b4c388d0043c9c4e7706422ba7039686f43aab63a13a7a4294cd19b",
+      "bytes": 36552
+    },
+    {
+      "path": "library/papers/19281768.html",
+      "sha256": "d413d49f1916e77027bc4b23dd25f3160df8f93bb99e320e861fe6989143a06b",
+      "bytes": 21609
+    },
+    {
+      "path": "library/papers/19282337.html",
+      "sha256": "3ae9afa8e28908aa5f16304108240c0cab3b5499882d11f45812871f404d3501",
+      "bytes": 26546
+    },
+    {
+      "path": "library/papers/19283203.html",
+      "sha256": "e0e1269547b9311211f3a59a944951186fdbf06d03b4c1926d0fcc8acaeea474",
+      "bytes": 23088
+    },
+    {
+      "path": "library/papers/19283988.html",
+      "sha256": "546a0c416f01ce1d93ecd31952dae8ee9b8919a3bd64363ee806c10e4bd3c8c8",
+      "bytes": 41220
+    },
+    {
+      "path": "library/papers/19284882.html",
+      "sha256": "737c15a87adffe04296355cb69b2ab90a0a09a09f7ca1eef08d07e8e7429d3d8",
+      "bytes": 40469
+    },
+    {
+      "path": "library/papers/19286058.html",
+      "sha256": "3d633023425e6c4fbdf3815916bb5a4e15850c5eb83d35095ffe649e968fea79",
+      "bytes": 34348
+    },
+    {
+      "path": "library/papers/19286795.html",
+      "sha256": "97a0100b9e61d1a45dde3d585971c16df8f79f44c4c43c377ca655779b0373b3",
+      "bytes": 32175
+    },
+    {
+      "path": "library/papers/19287251.html",
+      "sha256": "ed076c4d5e5efdd251ffe63b3136f9cc1c982d928ceb7ab1e83f9018b26a7f61",
+      "bytes": 31726
+    },
+    {
+      "path": "library/papers/19299991.html",
+      "sha256": "3d640fc5dc5fb631dbb2bffa521ffd2e05c6f48c95d4d27f1b8c06e431c6ed41",
+      "bytes": 29571
+    },
+    {
+      "path": "library/papers/19338452.html",
+      "sha256": "b9a522f2fb52b31098745ba86436bddd5054883265b555742049055ae1e1e837",
+      "bytes": 78808
+    },
+    {
+      "path": "library/papers/19366174.html",
+      "sha256": "84fa1f54f52f594f5aa1e402700f0ad71faa49140dce9313623df6a75bb4b559",
+      "bytes": 32253
+    },
+    {
+      "path": "library/papers/19418727.html",
+      "sha256": "6c75a61409825330f28c4ae4c21f05720fe4947d7c22aa6d0ccdc4836dc43b68",
+      "bytes": 29802
+    },
+    {
+      "path": "library/papers/19443707.html",
+      "sha256": "528fad0b6279261d866bf23e0bec6271cbfd533de7b30365944636450626f0c0",
+      "bytes": 12620
+    },
+    {
+      "path": "library/papers/19500161.html",
+      "sha256": "e7dec0621b59550b09afe22a8e847b2b57491cbc3e5d727508bb074372b77934",
+      "bytes": 19788
+    },
+    {
+      "path": "library/papers/19519349.html",
+      "sha256": "90298f913a5522675ae3327335a6e2c1088e9683fff9fe49f0ddf23c90a7cbe4",
+      "bytes": 34266
+    },
+    {
+      "path": "library/papers/19519620.html",
+      "sha256": "f2b589fff8dd165748210af4ad60508ff2b4844e8b522f389350eaf84b1836e0",
+      "bytes": 15160
+    },
+    {
+      "path": "library/papers/19615111.html",
+      "sha256": "2aeee6e556823aac69558fe2526818429c8dcb0627a36116d15647c38d84e57a",
+      "bytes": 23296
+    },
+    {
+      "path": "library/papers/19615409.html",
+      "sha256": "727dd98b29423c8ee5b07057d00d000f579bcf4efca6683b076a752d49404ef3",
+      "bytes": 22936
+    },
+    {
+      "path": "library/papers/19638021.html",
+      "sha256": "a1e06cf818ecf545278ba832b7addcc69cf3b0fcc2e81cff6ea313b5f3725478",
+      "bytes": 8488
+    },
+    {
+      "path": "library/papers/20105707.html",
+      "sha256": "db67c05bb165e74189809cf015681ce3449fd0320918a92f938fa8a3dfb4c51f",
+      "bytes": 13224
+    },
+    {
+      "path": "library/papers/20153283.html",
+      "sha256": "7f6d88726de01ffc4bb364f1e43632f578caa2b6d08f853aee0d5e8305124cc8",
+      "bytes": 9137
+    },
+    {
+      "path": "library/papers/20196025.html",
+      "sha256": "1ddae18768997c7a26cb04b4627089be98be8c87db3197e77a9936b5f3546235",
+      "bytes": 10062
+    },
+    {
+      "path": "library/papers/20262401.html",
+      "sha256": "4da3979e8b9e8ad0da177e272a3013827797e46dc8a00cc246fbbb2bea3ef010",
+      "bytes": 7827
+    },
+    {
+      "path": "library/papers/20355071.html",
+      "sha256": "722d2b2a5b22a5c9ad15e757182c131110984eebabab16c2a0d83dcb107e362b",
+      "bytes": 16597
+    },
+    {
+      "path": "library/papers/20770792.html",
+      "sha256": "f15d0b4abcb5b0fdbb298f7eb3c93484ed21b425eb7b378762f92f1dd322a8de",
+      "bytes": 36898
+    },
+    {
+      "path": "library/papers/20802169.html",
+      "sha256": "b2c895b946fe0c84c19c38e7cb53114432a7c61c8441234d1733a8ff58236b4b",
+      "bytes": 70947
+    },
+    {
+      "path": "library/papers/20861928.html",
+      "sha256": "bfe6b41b45837bd3e41a29e796f8e770b112a9e0168d635a18ee865c472a44de",
+      "bytes": 83064
+    },
+    {
+      "path": "library/papers/21094390.html",
+      "sha256": "c4c8de04ee7465ef1b48d8008af0636b4b46cf4f9a59c7d4d6805d5da114eff9",
+      "bytes": 43593
+    },
+    {
+      "path": "library/papers/22215393.html",
+      "sha256": "cb41389006b7513b545ab305632fda7f55296e9b0071a6246d3256efa308bee4",
+      "bytes": 47162
+    },
+    {
+      "path": "library/papers/22700782.html",
+      "sha256": "3c158a15bafea0dbaadb299d9ac8c901d6506c8ddea24adb9ab9cebc320aa689",
+      "bytes": 59163
+    },
+    {
+      "path": "measuring-reversibility/index.html",
+      "sha256": "2e3de2d0e38027b20fb196d692e13583bb15022fa9bec32c8e57cede143f8e0a",
+      "bytes": 62527
+    },
+    {
+      "path": "papers.html",
+      "sha256": "c4bff24661a7acf6ece6c9cbd1b2e2866db65f0bc37bd428a800e84f48795cce",
+      "bytes": 25966
+    },
+    {
+      "path": "query-native-news/index.html",
+      "sha256": "1ac641be48afd8e815251a296bafac65e130f5ac70c2e596948ca1e7d50ecaf7",
+      "bytes": 15809
+    },
+    {
+      "path": "research.html",
+      "sha256": "6a8b9bce59c0f513680e78cadf844b56df24eca76d5b588aa71259469ded459f",
+      "bytes": 14109
+    },
+    {
+      "path": "the-second-jump-superartifacts/index.html",
+      "sha256": "63be7af5ff6e0bec8d639df4b2414ea6d80ba0da6822cfeb0ec94c3c300c3c59",
+      "bytes": 32038
+    },
+    {
+      "path": "when-the-carrier-improves-itself/index.html",
+      "sha256": "e3cd3d31b64a37f2f4ac3c48703c441fdc51bf5e9616dff61cd96ab26736ab4d",
+      "bytes": 29441
+    }
+  ]
+}

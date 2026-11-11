@@ -1,0 +1,10 @@
+Create transparent overlay decal spritesheets:
+oil stains, blood stains, puddles, cracks, sewer grime, cigarette litter, broken glass, leaves, skid marks, chewing gum spots, paper trash, water leaks.
+
+Rules:
+- 32x32 transparent cells
+- low opacity edges
+- randomly placeable
+- tilemap safe
+- gameplay readable
+- no over-detail

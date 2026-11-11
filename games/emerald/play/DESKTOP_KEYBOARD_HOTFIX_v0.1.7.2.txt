@@ -1,0 +1,43 @@
+JRPG.WORLD EMERALD — DESKTOP KEYBOARD HOTFIX v0.1.7.2
+=====================================================
+
+Problem
+-------
+The upstream mGBA-Web bundle called bindKey("Shift", "Select") and similar
+string-name bindings. The mapping being registered in source does not prove
+that every browser/OS/SDL path recognizes that exact key name. In practice,
+Shift did not reliably produce GBA input on the user's desktop and could trigger
+OS/browser sounds.
+
+Fix
+---
+A new capture-phase desktop keyboard adapter drives the already exposed mGBA
+buttonPress/buttonUnpress API directly from KeyboardEvent.code. It does not
+rewrite the emulator, ROM, save system, RAM bridge, decoder or audio engine.
+
+Desktop mapping
+---------------
+Arrow keys       = D-pad
+A or Z            = GBA A
+B or X            = GBA B
+Q                 = L
+W                 = R
+Enter or C        = Start
+Space             = Select
+Left/Right Shift  = Select legacy alias only
+
+Why this is more robust
+-----------------------
+KeyboardEvent.code is browser-standard and identifies the physical key without
+requiring SDL to parse a human-readable key name such as "Shift". The adapter
+then calls the same mGBA buttonPress/buttonUnpress interface used by direct
+system-button input.
+
+Safety
+------
+- Active keys are tracked so browser key-repeat cannot spam buttonPress.
+- blur/visibility changes release held buttons to avoid stuck inputs.
+- mapped keys call preventDefault; Space therefore does not scroll the page.
+- ordinary HTML text inputs/selects/contenteditable fields are left alone.
+- mobile breakpoint behavior is untouched.
+- v0.1.7.1 compact Trainer Card hotfix is retained unchanged.

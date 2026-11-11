@@ -1,0 +1,23 @@
+EMERALD v0.1.24.7 · POKÉFIELD SPECIES FIELD RESET QA
+==============================================================
+PASS · species dataset · 386
+PASS · species sprites · 0
+PASS · index loads owned-pokefield-v0.1.24.7.js · owned-pokefield-v0.1.24.7.js
+PASS · index loads owned-pokefield-v0.1.24.7.css · owned-pokefield-v0.1.24.7.css
+PASS · index loads pokefield-live-v0.1.24.7.js · pokefield-live-v0.1.24.7.js
+PASS · index loads presentation-v0.1.24.7.js · presentation-v0.1.24.7.js
+PASS · index loads mobile-ux-v0.1.24.7.js · mobile-ux-v0.1.24.7.js
+PASS · index loads save-vault-v0.1.13.5.js · save-vault-v0.1.13.5.js
+PASS · field has ALL 386 SPECIES · ALL 386 SPECIES
+PASS · field has FOCUS · FOCUS
+PASS · field has SCATTER · SCATTER
+PASS · field has RANK INTO S / A / B / C / D · RANK INTO S / A / B / C / D
+PASS · field has inputmode="numeric" · inputmode="numeric"
+PASS · field has SHINY OWNED · SHINY OWNED
+PASS · field has PARTY · PARTY
+PASS · field has OWNED · OWNED
+PASS · durable picker remains · global input #sv-import-file-global
+
+RESULT: 17/17 PASS
+
+Manual mobile checks still required on real Safari: numeric keyboard, sticky command dock, DEX header placement, modal sheet gesture behavior, live emulator continuity.

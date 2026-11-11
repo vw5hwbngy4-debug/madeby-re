@@ -1,0 +1,16 @@
+JRPG.WORLD /pso/ · RICO INTELLIGENCE v0.5.2 QA
+
+71 / 71 automated regression tests PASS
+JavaScript syntax: PASS
+PHP lint: PASS
+Golden Original Xbox save decode: PASS
+Eilaa matrix: 9 reachable rare MAG targets / 18 route variants
+VERIFIED_SAVE_MAG_MATRIX payload: ~7 KB, below 16 KB deterministic-fact server budget
+Matrix query detector: PASS
+Headless matrix routing: PASS
+Default Rukmin planner suppressed for plural matrix query: PASS
+Server hard complete-matrix rule: PASS
+Original Xbox-only import scope preserved: PASS
+Raw save binary excluded from Rico fact payload: PASS
+
+Expected smoke check after deploy: 10/10.

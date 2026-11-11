@@ -1,0 +1,43 @@
+EMERALD v0.1.21 TEAM LAB FULL STACK — QA
+Date: 2026-09-09
+
+PASS — JavaScript syntax
+- pokefield-live-v0.1.21.js
+- owned-pokefield-v0.1.21.js
+- teamlab-engine-v0.1.21.js
+- teamlab-v0.1.21.js
+- presentation-v0.1.18.2.js
+
+PASS — tests/teamlab-v0.1.21.cjs
+- 386-species v0.1.21 knowledge core loads
+- ADV OU/UUBL threat pool populated
+- Gen III HP/stat/nature arithmetic
+- fixed-point modifier helper
+- fixed-level Seismic Toss
+- Levitate Ground immunity
+- minimum Speed EV benchmark
+- EV target merge
+- Rain theme constraint
+- party + PC box adaptation
+- instant Hidden Power filter
+- ranking on reactive field
+
+PASS — preserved regressions
+- tests/teamlab-v0.1.20.cjs
+- tests/ev-coach-v0.1.19.cjs
+- tests/owned-polish-v0.1.18.cjs
+- tests/passport-polish-v0.1.18.cjs
+
+SOURCE-LEVEL PC BOX STRUCT CHECK
+pret/pokeemerald include/pokemon_storage_system.h confirms:
+- TOTAL_BOXES_COUNT 14
+- IN_BOX_COUNT 30
+- PokemonStorage.currentBox offset 0x0000
+- PokemonStorage.boxes offset 0x0001
+
+NOT CLAIMED AS SANDBOX QA
+- live mGBA BPEE PC-box scan against a running browser emulator
+- end-to-end touchscreen layout on physical iOS/Android
+- exhaustive Pokemon Showdown simulator equivalence for every move/ability/item interaction
+
+The benchmark engine therefore labels its exactness boundary explicitly: exact RSE integer/fixed-power arithmetic for the assumptions and supported mechanics shown; unsupported variable/stateful moves are rejected rather than approximated.

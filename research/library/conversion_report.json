@@ -1,0 +1,48 @@
+{
+  "archive_pdf_count": 188,
+  "converted_count": 188,
+  "pdf_pages": 1700,
+  "extracted_words": 274423,
+  "extracted_characters": 1933834,
+  "rendered_visual_pages": 279,
+  "low_text_pages": 85,
+  "explicit_doi_confirmed_in_pdf": 40,
+  "base_url": "https://madeby.re/research/library/",
+  "original_record_count_in_log": 205,
+  "no_pdf_records": [
+    {
+      "record_id": "18717844",
+      "title": "Ambient Civilization Equation (ACE-1.0)"
+    },
+    {
+      "record_id": "18717198",
+      "title": "Thermodynamic Color Reasoning (TCR): A Chromatic Grammar for Thermodynamic and Post-Symbolic AI Systems"
+    },
+    {
+      "record_id": "18498649",
+      "title": "UTV-Ω v1.0: Universal Thermodynamic Vocabulary for Open Dynamical and Intelligent Systems"
+    },
+    {
+      "record_id": "18329568",
+      "title": "Raynor Stack — Canonical Specification"
+    }
+  ],
+  "failed_download_records": [
+    {
+      "record_id": "18724876",
+      "title": "TML-1 — Topic Marker Law"
+    },
+    {
+      "record_id": "18663922",
+      "title": "NTF-0 — Navigational Thermodynamic Framework"
+    }
+  ],
+  "processing_issues": [],
+  "limitations": [
+    "Selectable PDF text and reading order may not perfectly represent multi-column layouts, mathematical expressions or tables.",
+    "Visual-page images preserve appearance but diagrams and embedded images are not semantically transcribed.",
+    "HTML files are not publicly crawlable until uploaded to a publicly accessible website.",
+    "The exact base URL must match the eventual deployed URL; run configure_site.py to replace it before uploading to a different location.",
+    "Original PDFs are not bundled to keep the package compact; original Zenodo records are linked from each page."
+  ]
+}

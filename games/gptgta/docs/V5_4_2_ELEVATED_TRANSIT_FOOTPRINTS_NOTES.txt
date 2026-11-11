@@ -1,0 +1,4 @@
+v5.4.2 notes:
+- The metro is still a fixed-route entity, but the visual layer now separates under-structure, deck, and train.
+- Cars can pass under selected elevated structures visually because the deck is redrawn after traffic.
+- Sand footprints are generated dynamically from player movement on sand tiles.

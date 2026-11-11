@@ -1,0 +1,18 @@
+Ash District v0.6 — Diablo-like town/shop pass
+
+- Removed wave progression from the core loop. Zombies now spawn as roaming field packs outside Ember Camp.
+- Added pack leaders: stronger elites embedded in zombie groups, with better loot drops.
+- Added slower roaming/chase behavior: packs wander until the player comes close.
+- Added vendor interaction with E in Ember Camp: Healer, Armorer, Supplier.
+- Added buy loop: money from zombies can buy ammo, healing, melee weapons, firearms, armor and accessories.
+- Added item selling from the bag while inside Ember Camp.
+- Reworked inventory styling toward a Diablo II-style paperdoll: weapon/offhand/helm/armor/gloves/boots/rings/amulet/throwable.
+- Added helm/offhand item generation.
+- Added more melee weapons: crowbar, machete, katana and fire axe.
+- Corpses and blood pools persist much longer after kills.
+- Included the broader uploaded GPTGTA asset library under assets/gptgta and connected several props/trees/storefronts/blood assets.
+
+Known limits:
+- Vendors use a simple buy panel, not full dialogue trees yet.
+- Inventory uses item cards inside a Diablo-like layout, not true tile-size Tetris inventory yet.
+- Corpses persist for a long time but are capped for performance.

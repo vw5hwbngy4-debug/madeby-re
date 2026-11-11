@@ -1,0 +1,45 @@
+EMERALD v0.1.13 — PUBLIC SAVE VAULT UI QA
+Date: 2026-09-08
+
+BASELINE
+- Built directly from the working v0.1.12 full-site build.
+- v0.1.11 native mGBA save ownership/mirror architecture is retained.
+- 131072-byte Emerald saves and 131088-byte mGBA RTC saves remain supported.
+- Save Vault backend contract remains Node v0.1.2. No backend/schema change.
+- v0.1.12 gate wallpaper and auth hero assets are byte-identical.
+
+PUBLIC UI ASSERTIONS
+PASS — modal title is SAVE VAULT, not SERVER SAVE VAULT.
+PASS — healthy save status is SAVED, not SERVER VERIFIED.
+PASS — public save cards show only Play Time, Trainer ID and Last Saved.
+PASS — byte count, SHA-256, save counter and server-time terminology are removed from public cards.
+PASS — WHERE IS MY SAVE? is removed from the public UI.
+PASS — provider/database/runtime-path copy is removed from the public UI.
+PASS — Refresh Database, Capture Save Now and Download Local Raw .sav are removed from the normal footer.
+PASS — footer now contains only Log Out and Back to Game.
+PASS — save history no longer exposes hashes or internal save counters.
+PASS — Local Save Diagnostics are not rendered by default.
+PASS — Developer Diagnostics can still be opened explicitly with ?debug=1 or localStorage pokefield-debug=1.
+PASS — auth wallpaper and human login/create-account copy remain in place.
+PASS — visible site update stamp is UPDATED 8 SEP · v0.1.13.
+
+SAVE-ROUTING REGRESSION GUARDS
+PASS — no M.saveName assignment exists in active v0.1.13 Save Vault code.
+PASS — wrapped mGBA loadGame still forwards original(gamePath, saveName) unchanged.
+PASS — legacy canonical save path is migration-only and is not the active runtime target.
+PASS — server mirror continues to follow mGBA's native /data/saves/<ROM basename>.sav routing.
+
+STATIC CHECKS
+PASS — node --check save-vault-v0.1.13.js
+PASS — node --check pokefield-live-v0.1.9.js
+PASS — active index references save-vault-v0.1.13.js/css with v0.1.13 cache busters.
+PASS — VERSION.txt = 0.1.13.
+PASS — gate wallpaper SHA-256 unchanged from v0.1.12.
+PASS — auth hero SHA-256 unchanged from v0.1.12.
+
+REAL-DEVICE BASELINE ALREADY PROVEN BY USER
+- v0.1.11: native Emerald save loaded and played successfully.
+- Save 1 reached SAVED/verified server state with trainer Raynor, valid 131088-byte RTC save and server timestamp.
+- v0.1.12: new Save Vault wallpaper rendered correctly on iPhone Safari.
+
+v0.1.13 is a player-facing UI polish pass on top of that proven save baseline; it does not redesign the save engine.

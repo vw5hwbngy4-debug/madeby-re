@@ -1,0 +1,13 @@
+GPTGTA v5.4.7 — Overpass Ramp + Facade + Traffic Fix
+
+Focus:
+- longer, shallower overpass ramps
+- traffic flow anti-stack improvements
+- building entrances repositioned onto the readable facade wall
+
+Key changes:
+1. Overpasses now render with longer ramp mouths so the bridge feels connected instead of abruptly ending.
+2. Elevated-layer detection extends onto the ramp mouths for cleaner upper/lower separation.
+3. Traffic adds node occupancy checks, soft rerouting when stuck, and per-segment spacing correction.
+4. Traffic streaming now avoids injecting cars too close together on the same segment.
+5. Facade entrances are placed on the front wall instead of floating on the roof plate.

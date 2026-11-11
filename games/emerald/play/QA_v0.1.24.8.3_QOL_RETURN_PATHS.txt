@@ -1,0 +1,27 @@
+EMERALD v0.1.24.8.3 — QOL RETURN PATHS — QA
+
+PASS JavaScript syntax:
+- pokefield-live-v0.1.24.8.3.js
+- trainer-card-v0.1.24.8.3.js
+- save-vault-v0.1.13.6.js
+- true-pokefield-v0.1.24.8.js
+- teamlab-v0.1.24.8.js
+- transfer-files-v0.1.24.8.2.js
+
+PASS QOL static regression: 18/18
+- My Party default-open marker
+- Compact return-target memory: Field / Team Lab / Trainer Card / DEX / Live
+- Saved Finds delete UI + Trainer Card reference cleanup
+- Live Transfer Files discoverability
+- Duplicate Save Vault detection + safe repair path
+- no fake destructive Vault delete API
+- durable Safari global file picker retained
+
+PASS existing Save Vault native path tests.
+PASS transfer compiler: 24/24 permutations + PK4/PK5 checksum/crypto + truthful local ZIP.
+PASS transfer UI truth/full-screen checks: 13/13.
+PASS true-pokefield donor JS/CSS hashes unchanged from v0.1.24.8.2.
+PASS transfer-files/compiler hashes unchanged from v0.1.24.8.2.
+
+BOUNDARY
+The supplied Save Vault frontend contract has no destructive server-side slot-delete action. v0.1.24.8.3 therefore does NOT expose a fake DELETE SAVE button. Duplicate secondary slots are clearly marked and can be replaced with a different imported .sav or repaired from an earlier SAVE 1 snapshot through the existing recovery path.

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>GTAGPT v6.1 Playable Asset Editor</title>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" name="viewport"/>
+<style>
+html,body{margin:0;width:100%;height:100%;background:#090909;overflow:hidden;touch-action:none;overscroll-behavior:none;font-family:monospace;color:white}
+#game{position:fixed;inset:0;width:100vw;height:100vh;image-rendering:pixelated;image-rendering:crisp-edges;background:#222}
+.panel{position:fixed;background:rgba(0,0,0,.76);border:2px solid #f4b642;color:#fff3a0;padding:6px 8px;font-size:12px;line-height:1.25;z-index:3}
+#top{left:calc(8px + env(safe-area-inset-left));right:calc(8px + env(safe-area-inset-right));top:calc(8px + env(safe-area-inset-top));display:flex;gap:6px;align-items:center;overflow-x:auto;white-space:nowrap}
+#top button,#top select{font-family:monospace;background:#222;color:#fff3a0;border:1px solid #f4b642;padding:6px 8px;border-radius:4px}
+#brush{left:calc(8px + env(safe-area-inset-left));top:calc(58px + env(safe-area-inset-top));display:flex;align-items:center;gap:8px;pointer-events:none}
+#brushPreview{width:32px;height:32px;border:2px solid #f4b642;background:#222;object-fit:contain;image-rendering:pixelated}
+#cats{left:calc(8px + env(safe-area-inset-left));right:calc(8px + env(safe-area-inset-right));bottom:calc(92px + env(safe-area-inset-bottom));display:flex;gap:6px;overflow-x:auto;align-items:center}
+#palette{left:calc(8px + env(safe-area-inset-left));right:calc(8px + env(safe-area-inset-right));bottom:calc(8px + env(safe-area-inset-bottom));display:flex;gap:6px;overflow-x:auto;align-items:center;min-height:66px}
+.cat,.tool{min-width:74px;height:48px;border:2px solid #555;background:#222;color:#fff3a0;border-radius:6px;font-size:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.cat.active,.tool.active{border-color:#fff;background:#5a431e}
+.thumb{width:32px;height:28px;object-fit:contain;image-rendering:pixelated}
+#msg{left:50%;transform:translateX(-50%);bottom:calc(164px + env(safe-area-inset-bottom));width:min(88vw,560px);text-align:center;pointer-events:none}
+#stickBase{position:fixed;left:24px;bottom:calc(78px + env(safe-area-inset-bottom));width:112px;height:112px;border-radius:50%;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.25);pointer-events:auto;display:none;z-index:4}
+#stickKnob{position:absolute;left:35px;top:35px;width:42px;height:42px;border-radius:50%;background:rgba(255,220,90,.75);border:2px solid rgba(0,0,0,.5)}
+.btn{position:fixed;width:76px;height:76px;border-radius:50%;background:rgba(244,182,66,.22);border:2px solid rgba(244,182,66,.8);color:#fff3a0;display:none;place-items:center;font-weight:bold;font-size:14px;pointer-events:auto;user-select:none;z-index:4}
+#btnE{right:24px;bottom:calc(78px + env(safe-area-inset-bottom))}
+#btnBoost{right:112px;bottom:calc(150px + env(safe-area-inset-bottom));width:66px;height:66px;font-size:11px}
+#jsonBox{position:fixed;left:5vw;right:5vw;top:12vh;bottom:12vh;background:#111;border:3px solid #f4b642;z-index:9;display:none;flex-direction:column;padding:10px;gap:8px}
+#jsonText{flex:1;background:#050505;color:#bfffbf;border:1px solid #555;font-family:monospace;font-size:12px}
+#jsonBox button{font-family:monospace;background:#222;color:#fff3a0;border:1px solid #f4b642;padding:8px}
+</style>
+<link href="https://madeby.re/games/gptgta/gtagpt_v6_1_playable_asset_editor_mapmaker/gtagpt_v6_asset_editor.html" rel="canonical"/><meta content="https://madeby.re/games/gptgta/gtagpt_v6_1_playable_asset_editor_mapmaker/gtagpt_v6_asset_editor.html" property="og:url"/><meta content="GPTGTA" name="madeby:game"/></head>
+<body>
+<canvas id="game"></canvas>
+<div class="panel" id="top">
+<button id="modeBtn">MODE: EDIT</button>
+<button id="gridBtn">GRID: OFF</button>
+<button id="saveBtn">EXPORT</button>
+<button id="loadBtn">IMPORT</button>
+<button id="clearBtn">CLEAR</button>
+<select id="layerSelect">
+<option value="ground">ground</option>
+<option value="roads">roads</option>
+<option value="buildings">buildings</option>
+<option value="props">props</option>
+<option value="overlays">overlays</option>
+<option value="vehicles">vehicles</option>
+</select>
+<span id="status">v6 · loading assets…</span>
+</div>
+<div class="panel" id="brush"><img id="brushPreview"/><span id="brushName">Brush</span></div>
+<div class="panel" id="cats"></div>
+<div class="panel" id="palette"></div>
+<div class="panel" id="msg">Loading asset_manifest.json…</div>
+<div id="stickBase"><div id="stickKnob"></div></div>
+<div class="btn" id="btnBoost">BOOST</div>
+<div class="btn" id="btnE">ENTER</div>
+<div id="jsonBox">
+<textarea id="jsonText"></textarea>
+<div>
+<button id="copyJson">COPY</button>
+<button id="applyJson">APPLY IMPORT</button>
+<button id="closeJson">CLOSE</button>
+</div>
+</div>
+<script>
+const canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
+ctx.imageSmoothingEnabled=false;
+let W=0,H=0,DPR=1;
+function resize(){DPR=Math.min(devicePixelRatio||1,2);W=innerWidth|0;H=innerHeight|0;canvas.width=(W*DPR)|0;canvas.height=(H*DPR)|0;canvas.style.width=W+'px';canvas.style.height=H+'px';ctx.setTransform(DPR,0,0,DPR,0,0);ctx.imageSmoothingEnabled=false}
+addEventListener('resize',resize);resize();
+
+const TILE=32,BW=40,BH=30;
+let manifest=null, category="base_tiles", selected=null, mode="edit", showGrid=false, msg="Loading assets…";
+let cam={x:0,y:0}, input={x:0,y:0,boost:false,enter:false}, hoverTile=null;
+let keyState={};
+let board={ground:[],roads:[],buildings:[],props:[],overlays:[],vehicles:[]};
+let imgs=new Map();
+let player={x:5*TILE,y:5*TILE,w:18,h:22,speed:1.6675,inCar:false,wanted:0,angle:0,money:1250};
+let activeCar=null, cars=[], peds=[];
+
+const solidLayers=["buildings","props"];
+const solidNameHints=["roof","tree","water","clutter","building","wall","fence","barrier","dumpster","crate","container"];
+const vehicleTypes=["sedan","taxi","police","van","ambulance","motorcycle","bus"];
+
+function emptyBoard(){
+  board={ground:[],roads:[],buildings:[],props:[],overlays:[],vehicles:[]};
+  for(let y=0;y<BH;y++){board.ground[y]=[];board.roads[y]=[];board.buildings[y]=[];board.props[y]=[];board.overlays[y]=[];board.vehicles[y]=[];for(let x=0;x<BW;x++){board.ground[y][x]=null;board.roads[y][x]=null;board.buildings[y][x]=null;board.props[y][x]=null;board.overlays[y][x]=null;board.vehicles[y][x]=null;}}
+}
+function idAt(layer,tx,ty){if(tx<0||ty<0||tx>=BW||ty>=BH)return null;return board[layer]?.[ty]?.[tx]||null}
+function setAt(layer,tx,ty,val){if(tx<0||ty<0||tx>=BW||ty>=BH)return;board[layer][ty][tx]=val}
+function assetById(id){if(!id||!manifest)return null;for(const arr of Object.values(manifest.categories)){const f=arr.find(a=>a.uid===id);if(f)return f;}return null}
+function imageForId(id){let a=assetById(id);return a?imgs.get(a.path):null}
+function rnd(n){let x=Math.sin(n*999.123)*10000;return x-Math.floor(x)}
+function overlap(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
+function quantizeAngle(dx,dy,current){if(Math.hypot(dx,dy)<.08)return current;let a=Math.atan2(dx,-dy),step=Math.PI/4;return Math.round(a/step)*step}
+function forwardVector(angle){return {x:Math.sin(angle),y:-Math.cos(angle)}}
+function dot(ax,ay,bx,by){return ax*bx+ay*by}
+
+const handling={
+ sedan:{name:"SEDAN",accel:0.442,reverse:0.286,max:4.615,reverseMax:2.405,friction:.90,hp:100,color:"#3d8cff",w:25,h:38},
+ taxi:{name:"TAXI",accel:0.507,reverse:0.312,max:5.135,reverseMax:2.535,friction:.895,hp:95,color:"#ffd23d",w:25,h:38},
+ police:{name:"POLICE",accel:0.546,reverse:0.325,max:5.525,reverseMax:2.73,friction:.90,hp:105,color:"#465dff",w:25,h:38},
+ van:{name:"VAN",accel:0.351,reverse:0.234,max:3.965,reverseMax:1.885,friction:.91,hp:130,color:"#b8b8d0",w:29,h:42},
+ ambulance:{name:"AMBULANCE",accel:0.416,reverse:0.26,max:4.745,reverseMax:2.145,friction:.905,hp:125,color:"#f0f0f0",w:29,h:42},
+ motorcycle:{name:"BIKE",accel:0.624,reverse:0.234,max:6.24,reverseMax:1.755,friction:.875,hp:55,color:"#d03a3a",w:16,h:30},
+ bus:{name:"BUS",accel:0.26,reverse:0.169,max:3.315,reverseMax:1.43,friction:.925,hp:180,color:"#dc8128",w:34,h:58}
+};
+function makeCar(type,x,y,angle=0,assetId=null){const h=handling[type]||handling.sedan;return {type,x,y,w:h.w,h:h.h,vx:0,vy:0,angle,hp:h.hp,maxHp:h.hp,damageFlash:0,assetId}}
+
+function guessVehicleType(asset){
+  let low=(asset?.path||asset?.id||"").toLowerCase();
+  for(const t of vehicleTypes) if(low.includes(t)) return t==="police_car"?"police":t;
+  if(low.includes("police_car")) return "police";
+  return "sedan";
+}
+function isSolidAsset(id){
+  let a=assetById(id); if(!a)return false;
+  let low=(a.path+" "+a.id+" "+a.name).toLowerCase();
+  return solidNameHints.some(h=>low.includes(h));
+}
+
+async function loadManifest(){
+  const res=await fetch("asset_manifest.json?bust="+Date.now());
+  const data=await res.json();
+  // add stable unique ids
+  for(const [cat,arr] of Object.entries(data.categories)){
+    arr.forEach((a,i)=>{a.uid=cat+":"+i+":"+a.path;});
+  }
+  manifest=data;
+  // preload thumbnails/light images
+  let all=Object.values(manifest.categories).flat();
+  await Promise.all(all.map(a=>new Promise(resolve=>{let im=new Image();im.onload=()=>{imgs.set(a.path,im);resolve();};im.onerror=()=>resolve();im.src=a.path;})));
+}
+
+function seedBoard(){
+  emptyBoard();
+  const base = findAsset("base_tiles","plain_asphalt") || firstAsset("base_tiles");
+  const grass = findAsset("base_tiles","grass_plain") || firstAsset("base_tiles");
+  const sidewalk = findAsset("base_tiles","sidewalk_plain") || firstAsset("base_tiles");
+  const water = findAsset("base_tiles","wet_asphalt_plain") || firstAsset("base_tiles");
+  const roof = findAsset("base_tiles","roof_flat_gray") || firstAsset("base_tiles");
+  for(let y=0;y<BH;y++)for(let x=0;x<BW;x++)setAt("ground",x,y,grass?.uid||null);
+  for(let y=0;y<BH;y++)for(let x=8;x<13;x++)setAt("roads",x,y,base?.uid||null);
+  for(let x=0;x<BW;x++)for(let y=10;y<15;y++)setAt("roads",x,y,base?.uid||null);
+  for(let y=0;y<BH;y++){setAt("ground",7,y,sidewalk?.uid||null);setAt("ground",13,y,sidewalk?.uid||null)}
+  for(let x=0;x<BW;x++){setAt("ground",x,9,sidewalk?.uid||null);setAt("ground",x,15,sidewalk?.uid||null)}
+  for(let y=2;y<7;y++)for(let x=2;x<6;x++)setAt("buildings",x,y,roof?.uid||null);
+  for(let y=3;y<9;y++)for(let x=25;x<36;x++)setAt("ground",x,y,water?.uid||null);
+  const sedan=findAsset("vehicles","sedan_clean")||firstAsset("vehicles");
+  if(sedan)setAt("vehicles",10,17,sedan.uid);
+  syncCarsFromBoard();
+}
+function firstAsset(cat){return manifest.categories[cat]?.[0]||null}
+function findAsset(cat, contains){return (manifest.categories[cat]||[]).find(a=>a.path.toLowerCase().includes(contains.toLowerCase())||a.id.toLowerCase().includes(contains.toLowerCase()))||null}
+
+function syncCarsFromBoard(){
+  cars=[];
+  for(let y=0;y<BH;y++)for(let x=0;x<BW;x++){
+    let id=idAt("vehicles",x,y); if(!id)continue;
+    let a=assetById(id); let type=guessVehicleType(a);
+    cars.push(makeCar(type,x*TILE+2,y*TILE+2,Math.PI/2,id));
+  }
+  placePlayerOnSafeSpawn(); player.inCar=false; activeCar=null;
+}
+function spawnRuntime(){
+  syncCarsFromBoard();
+  peds=[];
+  let count=0;
+  for(let y=0;y<BH;y++)for(let x=0;x<BW;x++){
+    if(count<26 && !idAt("buildings",x,y) && !idAt("props",x,y) && rnd(x*17+y*23)>.88){
+      peds.push({x:x*TILE+8,y:y*TILE+8,w:14,h:18,dead:false,angle:0,t:count*20,goal:null});
+      count++;
+    }
+  }
+}
+
+function buildCats(){
+  const c=document.getElementById("cats"); c.innerHTML="";
+  Object.keys(manifest.categories).forEach(name=>{
+    const b=document.createElement("button"); b.className="cat"+(name===category?" active":"");
+    b.textContent=name+" ("+manifest.categories[name].length+")";
+    b.onclick=()=>{category=name;selected=manifest.categories[name][0]||null;buildCats();buildPalette();updateBrush();msg="Category: "+name;};
+    c.appendChild(b);
+  });
+}
+function buildPalette(){
+  const p=document.getElementById("palette"); p.innerHTML="";
+  const arr=manifest.categories[category]||[];
+  arr.forEach(a=>{
+    const b=document.createElement("button"); b.className="tool"+(selected&&a.uid===selected.uid?" active":"");
+    const img=document.createElement("img"); img.className="thumb"; img.src=a.path;
+    const span=document.createElement("span"); span.textContent=a.id.slice(0,11);
+    b.appendChild(img); b.appendChild(span);
+    b.onclick=()=>{selected=a;buildPalette();updateBrush();msg="Brush: "+a.name;};
+    p.appendChild(b);
+  });
+}
+function updateBrush(){
+  const img=document.getElementById("brushPreview");
+  img.src=selected?selected.path:"";
+  document.getElementById("brushName").textContent=selected?("Brush: "+selected.name):"No brush";
+}
+
+function screenToWorld(clientX,clientY){return {x:clientX+cam.x,y:clientY+cam.y}}
+function paintAt(clientX,clientY){
+  if(mode!=="edit" || !selected)return;
+  const p=screenToWorld(clientX,clientY),tx=Math.floor(p.x/TILE),ty=Math.floor(p.y/TILE);
+  hoverTile={tx,ty};
+  if(tx<0||ty<0||tx>=BW||ty>=BH)return;
+  const layer=document.getElementById("layerSelect").value;
+  setAt(layer,tx,ty,selected.uid);
+  if(layer==="vehicles") syncCarsFromBoard();
+}
+function eraseAt(clientX,clientY){
+  const p=screenToWorld(clientX,clientY),tx=Math.floor(p.x/TILE),ty=Math.floor(p.y/TILE);
+  if(tx<0||ty<0||tx>=BW||ty>=BH)return;
+  const layer=document.getElementById("layerSelect").value;
+  setAt(layer,tx,ty,null);
+  if(layer==="vehicles") syncCarsFromBoard();
+}
+
+let painting=false,panStart=null;
+canvas.addEventListener("touchstart",e=>{
+  if(e.touches.length===1){painting=true;paintAt(e.touches[0].clientX,e.touches[0].clientY);}
+  else if(e.touches.length===2){painting=false;panStart={x:(e.touches[0].clientX+e.touches[1].clientX)/2,y:(e.touches[0].clientY+e.touches[1].clientY)/2,cx:cam.x,cy:cam.y};}
+  e.preventDefault();
+},{passive:false});
+canvas.addEventListener("touchmove",e=>{
+  if(mode==="edit"&&e.touches.length===1&&painting)paintAt(e.touches[0].clientX,e.touches[0].clientY);
+  if(mode==="edit"&&e.touches.length===2&&panStart){let x=(e.touches[0].clientX+e.touches[1].clientX)/2,y=(e.touches[0].clientY+e.touches[1].clientY)/2;cam.x=panStart.cx-(x-panStart.x);cam.y=panStart.cy-(y-panStart.y);clampCam();}
+  e.preventDefault();
+},{passive:false});
+canvas.addEventListener("touchend",e=>{painting=false;if(e.touches.length<2)panStart=null;e.preventDefault();},{passive:false});
+canvas.addEventListener("mousedown",e=>{painting=true; if(e.shiftKey)eraseAt(e.clientX,e.clientY); else paintAt(e.clientX,e.clientY);});
+canvas.addEventListener("mousemove",e=>{const p=screenToWorld(e.clientX,e.clientY);hoverTile={tx:Math.floor(p.x/TILE),ty:Math.floor(p.y/TILE)}; if(painting)paintAt(e.clientX,e.clientY);});
+addEventListener("mouseup",()=>painting=false);
+function clampCam(){cam.x=Math.max(0,Math.min(Math.max(0,BW*TILE-W),cam.x));cam.y=Math.max(0,Math.min(Math.max(0,BH*TILE-H),cam.y));}
+
+function exportMap(){return {format:"gtagpt-board-2.0",w:BW,h:BH,tileSize:TILE,layers:board};}
+function importMap(data){
+  if(!data||!data.layers)throw new Error("Invalid v6 map");
+  emptyBoard();
+  for(const layer of Object.keys(board)){
+    if(data.layers[layer]) board[layer]=data.layers[layer];
+  }
+  syncCarsFromBoard();
+}
+
+document.getElementById("modeBtn").onclick=()=>setMode(mode==="edit"?"play":"edit");
+document.getElementById("gridBtn").onclick=()=>{showGrid=!showGrid;document.getElementById("gridBtn").textContent="GRID: "+(showGrid?"ON":"OFF");};
+document.getElementById("clearBtn").onclick=()=>{if(confirm("Clear board?")){emptyBoard();cars=[];peds=[];}};
+document.getElementById("saveBtn").onclick=()=>{document.getElementById("jsonText").value=JSON.stringify(exportMap(),null,2);document.getElementById("jsonBox").style.display="flex";};
+document.getElementById("loadBtn").onclick=()=>{document.getElementById("jsonText").value="";document.getElementById("jsonBox").style.display="flex";};
+document.getElementById("closeJson").onclick=()=>document.getElementById("jsonBox").style.display="none";
+document.getElementById("copyJson").onclick=async()=>{await navigator.clipboard.writeText(document.getElementById("jsonText").value);msg="Copied board JSON.";};
+document.getElementById("applyJson").onclick=()=>{try{importMap(JSON.parse(document.getElementById("jsonText").value));document.getElementById("jsonBox").style.display="none";msg="Imported board JSON.";}catch(e){alert(e.message)}};
+
+function setMode(m){
+  mode=m;
+  document.getElementById("modeBtn").textContent="MODE: "+mode.toUpperCase();
+  const edit=mode==="edit";
+  document.getElementById("palette").style.display=edit?"flex":"none";
+  document.getElementById("cats").style.display=edit?"flex":"none";
+  document.getElementById("brush").style.display=edit?"flex":"none";
+  document.getElementById("stickBase").style.display=edit?"none":"block";
+  document.getElementById("btnE").style.display=edit?"none":"grid";
+  document.getElementById("btnBoost").style.display=edit?"none":"grid";
+  if(!edit){spawnRuntime();msg="PLAY: drag the left stick or use WASD/arrow keys. ENTER/E steals car.";} else msg="EDIT: choose category/layer, paint real PNGs.";
+}
+
+function rectHitsSolid(nx,ny,w,h){
+  const pts=[[nx,ny],[nx+w,ny],[nx,ny+h],[nx+w,ny+h],[nx+w/2,ny+h/2]];
+  for(const [px,py] of pts){
+    let tx=Math.floor(px/TILE),ty=Math.floor(py/TILE);
+    for(const layer of ["ground","roads","buildings","props"]){
+      let id=idAt(layer,tx,ty);
+      if(id && (layer==="buildings" || layer==="props" || isSolidAsset(id))) return true;
+    }
+  }
+  return false;
+}
+
+function isSpawnBlocked(px,py){return rectHitsSolid(px,py,player.w,player.h)}
+function placePlayerOnSafeSpawn(){
+  const preferred=[
+    [10,12],[9,12],[11,12],[10,11],[10,13],
+    [8,10],[12,10],[8,14],[12,14],[6,12],[14,12]
+  ];
+  for(const [tx,ty] of preferred){
+    const px=tx*TILE+7, py=ty*TILE+5;
+    if(!isSpawnBlocked(px,py)){player.x=px;player.y=py;return;}
+  }
+  for(let y=0;y<BH;y++)for(let x=0;x<BW;x++){
+    const px=x*TILE+7, py=y*TILE+5;
+    if(!isSpawnBlocked(px,py)){player.x=px;player.y=py;return;}
+  }
+  player.x=10*TILE; player.y=12*TILE;
+}
+
+function hitCar(nx,ny,w,h,self){let b={x:nx,y:ny,w,h};for(const c of cars)if(c!==self&&c.hp>0&&overlap(b,c))return c;return null}
+function applyDamage(c,amount){if(!c)return;c.hp=Math.max(0,c.hp-amount);c.damageFlash=8;if(c.hp<=0){c.vx=0;c.vy=0;msg=(handling[c.type]?.name||"CAR")+" destroyed."}}
+function doEnter(){
+  if(player.inCar){player.inCar=false;player.x=activeCar.x+activeCar.w+8;player.y=activeCar.y+6;msg="On foot.";return}
+  let nearest=null,best=99999;
+  for(const c of cars){if(c.hp<=0)continue;let d=Math.hypot((player.x+9)-(c.x+c.w/2),(player.y+11)-(c.y+c.h/2));if(d<best){best=d;nearest=c;}}
+  if(nearest&&best<54){activeCar=nearest;player.inCar=true;msg="Stole "+handling[activeCar.type].name;}else msg="Move closer to a car.";
+}
+function updateCar(c,controlled){
+  const h=handling[c.type]||handling.sedan;
+  if(controlled){
+    const f=forwardVector(c.angle), throttle=dot(input.x,input.y,f.x,f.y), mag=Math.hypot(input.x,input.y);
+    if(mag>.12&&throttle>=-.15)c.angle=quantizeAngle(input.x,input.y,c.angle);
+    if(throttle>=0){
+      const boost=input.boost?1.45:1;
+      c.vx=c.vx*h.friction+input.x*h.accel*boost;c.vy=c.vy*h.friction+input.y*h.accel*boost;
+      const max=h.max*boost;c.vx=Math.max(-max,Math.min(max,c.vx));c.vy=Math.max(-max,Math.min(max,c.vy));
+    }else{
+      c.vx=c.vx*h.friction-f.x*h.reverse;c.vy=c.vy*h.friction-f.y*h.reverse;
+      const s=Math.hypot(c.vx,c.vy);if(s>h.reverseMax){c.vx=c.vx/s*h.reverseMax;c.vy=c.vy/s*h.reverseMax}
+    }
+  }else{c.vx*=.93;c.vy*=.93}
+  let speed=Math.hypot(c.vx,c.vy),nx=c.x+c.vx,ny=c.y+c.vy;
+  let bx=rectHitsSolid(nx,c.y,c.w,c.h),cx=hitCar(nx,c.y,c.w,c.h,c);
+  if(!bx&&!cx)c.x=nx;else{if(speed>1.1)applyDamage(c,Math.round(speed*5));if(cx)applyDamage(cx,Math.round(speed*3));c.vx*=-.38;msg="Collision."}
+  let by=rectHitsSolid(c.x,ny,c.w,c.h),cy=hitCar(c.x,ny,c.w,c.h,c);
+  if(!by&&!cy)c.y=ny;else{if(speed>1.1)applyDamage(c,Math.round(speed*5));if(cy)applyDamage(cy,Math.round(speed*3));c.vy*=-.38;msg="Collision."}
+  if(c.damageFlash>0)c.damageFlash--;
+}
+function updatePeds(){for(const p of peds){if(p.dead)continue;p.t++;let dx=(rnd(p.t+p.x)-.5)*.4,dy=(rnd(p.t+p.y+5)-.5)*.4;p.angle=quantizeAngle(dx,dy,p.angle);if(!rectHitsSolid(p.x+dx,p.y+dy,p.w,p.h)){p.x+=dx;p.y+=dy;}}}
+function update(){
+  updateKeyboardInput();
+  if(mode!=="play")return;
+  if(input.enter){input.enter=false;doEnter()}
+  for(const c of cars)updateCar(c,player.inCar&&c===activeCar);
+  if(player.inCar&&activeCar){player.x=activeCar.x+5;player.y=activeCar.y+8;player.angle=activeCar.angle;}
+  else{let dx=input.x,dy=input.y,l=Math.hypot(dx,dy)||1;if(l>1){dx/=l;dy/=l}player.angle=quantizeAngle(dx,dy,player.angle);dx*=player.speed;dy*=player.speed;if(!rectHitsSolid(player.x+dx,player.y,player.w,player.h))player.x+=dx;if(!rectHitsSolid(player.x,player.y+dy,player.w,player.h))player.y+=dy;}
+  updatePeds();
+  let target=player.inCar?activeCar:player;cam.x+=((target.x+target.w/2-W/2)-cam.x)*.12;cam.y+=((target.y+target.h/2-H/2)-cam.y)*.12;clampCam();
+}
+
+function drawAssetCell(id,x,y){
+  if(!id)return;
+  let img=imageForId(id);
+  if(img)ctx.drawImage(img,x,y,TILE,TILE);
+}
+function spriteCar(c){
+  const a=c.assetId?assetById(c.assetId):null;
+  const img=a?imgs.get(a.path):null;
+  const h=handling[c.type]||handling.sedan;
+  const cx=Math.round(c.x+c.w/2),cy=Math.round(c.y+c.h/2);
+  ctx.save();ctx.translate(cx,cy);ctx.rotate(c.angle);
+  ctx.fillStyle='rgba(0,0,0,.35)';ctx.fillRect(Math.round(-c.w/2+2),Math.round(c.h/2-5),c.w,5);
+  if(img)ctx.drawImage(img,Math.round(-c.w/2),Math.round(-c.h/2),c.w,c.h);
+  else{ctx.fillStyle=h.color;ctx.fillRect(Math.round(-c.w/2),Math.round(-c.h/2),c.w,c.h);}
+  ctx.fillStyle='rgba(255,240,120,.95)';ctx.fillRect(-3,Math.round(-c.h/2),6,4);
+  if(c.damageFlash>0){ctx.fillStyle='rgba(255,60,60,.45)';ctx.fillRect(Math.round(-c.w/2),Math.round(-c.h/2),c.w,c.h)}
+  ctx.restore();
+}
+function drawPed(p){if(p.dead){ctx.fillStyle='#991111';ctx.fillRect(Math.round(p.x),Math.round(p.y+10),16,6);return}ctx.fillStyle='#74d878';ctx.fillRect(Math.round(p.x+4),Math.round(p.y+6),10,14);ctx.fillStyle='#e0b48c';ctx.fillRect(Math.round(p.x+5),Math.round(p.y),8,8);}
+function drawPlayer(){
+  const img=findPlayerImage();
+  const cx=Math.round(player.x+player.w/2),cy=Math.round(player.y+player.h/2);
+  ctx.save();ctx.translate(cx,cy);ctx.rotate(player.angle);
+  ctx.fillStyle='rgba(0,0,0,.35)';ctx.fillRect(-7,8,18,5);
+  if(img)ctx.drawImage(img,-9,-11,18,22);else{ctx.fillStyle='#4c8cff';ctx.fillRect(-9,-11,18,22);}
+  ctx.fillStyle='rgba(255,240,120,.95)';ctx.fillRect(-3,-11,6,4);
+  ctx.restore();
+}
+function findPlayerImage(){
+  let chars=manifest.categories.characters||[];
+  let a=chars.find(x=>x.path.toLowerCase().includes("player_idle"))||chars[0];
+  return a?imgs.get(a.path):null;
+}
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  ctx.save();ctx.translate(-Math.floor(cam.x),-Math.floor(cam.y));
+  for(let y=0;y<BH;y++)for(let x=0;x<BW;x++)drawAssetCell(idAt("ground",x,y),x*TILE,y*TILE);
+  for(let layer of ["roads","buildings","props","overlays"])for(let y=0;y<BH;y++)for(let x=0;x<BW;x++)drawAssetCell(idAt(layer,x,y),x*TILE,y*TILE);
+  for(const c of cars)spriteCar(c);
+  if(mode==="edit"&&showGrid){ctx.strokeStyle="rgba(255,255,255,.16)";for(let x=0;x<=BW;x++){ctx.beginPath();ctx.moveTo(x*TILE,0);ctx.lineTo(x*TILE,BH*TILE);ctx.stroke()}for(let y=0;y<=BH;y++){ctx.beginPath();ctx.moveTo(0,y*TILE);ctx.lineTo(BW*TILE,y*TILE);ctx.stroke()}}
+  if(mode==="edit"&&hoverTile){ctx.strokeStyle="rgba(255,240,120,.95)";ctx.lineWidth=2;ctx.strokeRect(hoverTile.tx*TILE+1,hoverTile.ty*TILE+1,TILE-2,TILE-2);ctx.lineWidth=1;}
+  if(mode==="play"){for(const p of peds)drawPed(p); if(!player.inCar)drawPlayer();}
+  ctx.restore();
+  document.getElementById("status").textContent=mode==="edit"?"EDIT · layer: "+document.getElementById("layerSelect").value:"PLAY · "+(player.inCar&&activeCar?handling[activeCar.type].name+" HP "+activeCar.hp:"on foot");
+  document.getElementById("msg").textContent=msg;
+}
+function loop(){update();draw();requestAnimationFrame(loop)}
+
+// controls
+
+function updateKeyboardInput(){
+  const left=keyState.ArrowLeft||keyState.KeyA;
+  const right=keyState.ArrowRight||keyState.KeyD;
+  const up=keyState.ArrowUp||keyState.KeyW;
+  const down=keyState.ArrowDown||keyState.KeyS;
+  let kx=(right?1:0)-(left?1:0);
+  let ky=(down?1:0)-(up?1:0);
+  const usingKeys=kx!==0||ky!==0;
+  if(usingKeys){
+    const l=Math.hypot(kx,ky)||1;
+    input.x=kx/l; input.y=ky/l;
+  }else if(activeStick===null){
+    input.x=0; input.y=0;
+  }
+  input.boost=!!(keyState.ShiftLeft||keyState.ShiftRight||keyState.Space);
+}
+addEventListener('keydown',e=>{
+  keyState[e.code]=true;
+  if(e.code==='KeyE'||e.code==='Enter'){input.enter=true;}
+  if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','KeyW','KeyA','KeyS','KeyD','Space','ShiftLeft','ShiftRight','KeyE','Enter'].includes(e.code)) e.preventDefault();
+},{passive:false});
+addEventListener('keyup',e=>{
+  keyState[e.code]=false;
+  if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','KeyW','KeyA','KeyS','KeyD','Space','ShiftLeft','ShiftRight','KeyE','Enter'].includes(e.code)) e.preventDefault();
+},{passive:false});
+
+const base=document.getElementById('stickBase'),knob=document.getElementById('stickKnob');let activeStick=null;
+function setStick(clientX,clientY){const r=base.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;let dx=clientX-cx,dy=clientY-cy,dist=Math.hypot(dx,dy),max=42;if(dist>max){dx=dx/dist*max;dy=dy/dist*max}input.x=dx/max;input.y=dy/max;knob.style.left=(35+dx)+'px';knob.style.top=(35+dy)+'px'}
+function resetStick(){input.x=0;input.y=0;knob.style.left='35px';knob.style.top='35px'}
+base.addEventListener('touchstart',e=>{activeStick=e.changedTouches[0].identifier;setStick(e.changedTouches[0].clientX,e.changedTouches[0].clientY);e.preventDefault()},{passive:false});
+base.addEventListener('touchmove',e=>{for(const t of e.changedTouches)if(t.identifier===activeStick)setStick(t.clientX,t.clientY);e.preventDefault()},{passive:false});
+base.addEventListener('touchend',e=>{for(const t of e.changedTouches)if(t.identifier===activeStick){activeStick=null;resetStick()}e.preventDefault()},{passive:false});
+base.addEventListener('touchcancel',()=>{activeStick=null;resetStick()});
+document.getElementById('btnE').addEventListener('touchstart',e=>{input.enter=true;e.preventDefault()},{passive:false});
+document.getElementById('btnBoost').addEventListener('touchstart',e=>{input.boost=true;e.preventDefault()},{passive:false});
+document.getElementById('btnBoost').addEventListener('touchend',e=>{input.boost=false;e.preventDefault()},{passive:false});
+
+async function boot(){
+  await loadManifest();
+  category=manifest.categories.base_tiles?"base_tiles":Object.keys(manifest.categories)[0];
+  selected=manifest.categories[category][0];
+  seedBoard();
+  buildCats();buildPalette();updateBrush();setMode("edit");
+  msg="v6 ready: real PNG categories loaded.";
+  loop();
+}
+boot();
+</script>
+</body>
+</html>

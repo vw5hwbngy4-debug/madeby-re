@@ -1,0 +1,111 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>AgentASCII | Flip-Mod-Save Lab · Chat Edition</title>
+<style>
+#aa-flip-lab,#aa-flip-lab *{box-sizing:border-box}#aa-flip-lab{max-width:710px;margin:auto;background:#102338;color:#e6fbff;border-radius:16px;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none;font-family:ui-monospace,Menlo,monospace}#aa-flip-lab button{font:800 12px ui-monospace,Menlo,monospace;cursor:pointer;touch-action:none;color:#fff;border:1px solid #6d91a4;border-radius:9px;background:#2d5064;padding:9px 11px}#aa-flip-lab button.active{background:#e54460;border-color:#ffd7df}#aa-flip-lab .top{padding:11px 12px;display:flex;gap:8px;justify-content:space-between;align-items:center}#aa-flip-lab .top b{color:#82f3d6}#aa-flip-lab .modes{display:flex;gap:5px;flex-wrap:wrap;padding:0 11px 10px}#aa-flip-lab .modes button{padding:8px 7px;flex:1;font-size:11px}#aa-flip-lab .wrap{position:relative;background:#bdeffc}#aa-flip-lab .wrap canvas{width:100%;display:block;aspect-ratio:26/13;image-rendering:pixelated;touch-action:none}#aa-flip-lab .toast{font-size:11px;color:#a0f1d8;min-height:31px;padding:9px 12px;text-align:center;background:#193347}#aa-flip-lab .row{padding:10px 11px;display:flex;align-items:center;justify-content:space-between;gap:6px}#aa-flip-lab .row button{flex:1}#aa-flip-lab .row button:disabled{opacity:.4}#aa-flip-lab .row .save{background:#117258;border-color:#62dcc0}#aa-flip-lab .row .load{background:#265ea1;border-color:#83bdff}#aa-flip-lab .row .flip{background:#74439f;border-color:#bd9df0}#aa-flip-lab .actions{display:flex;gap:9px;justify-content:space-between;align-items:center;padding:11px 13px 13px}#aa-flip-lab .actions button{width:56px;height:58px;font-size:21px}#aa-flip-lab .actions .jump{width:78px;background:#147e88;font-size:13px}#aa-flip-lab .actions .glide{width:76px;background:#bb7a23;font-size:12px}#aa-flip-lab .instructions{color:#9db7ce;font-size:10px;text-align:center;padding:0 12px 13px}#aa-flip-lab .editbar{padding:10px 12px;display:none;gap:8px;align-items:center}#aa-flip-lab .editbar button{flex:1}#aa-flip-lab .note{font-size:10px;color:#d6eafe;margin-left:auto}#aa-flip-lab .hidden{display:none!important}#aa-flip-lab button:active{filter:brightness(1.2)}
+</style></head><body>
+<div class="lab" id="aa-flip-lab">
+<div class="top"><div><b>AGENTASCII · FLIP/MOD/SAVE</b><div style="color:#a4b8d1;font-size:10px;margin-top:3px">LIVE ASCII WORLD · SNAPSHOT ≠ WORLD</div></div><span id="aa-status" style="font-size:11px;color:#ffe090">P 0/3</span></div>
+<div class="modes" id="aa-levels"><button data-level="platform" class="active">01 · 3 PLATFORM</button><button data-level="spring">02 · 2 SPRING</button><button data-level="thermal">03 · 3 THERMAL</button></div>
+<div class="wrap"><canvas id="aa-canvas" width="624" height="312"></canvas></div>
+<div class="toast" id="aa-message">Spring, SAVE in de lucht, FLIP, bouw onder jezelf, LOAD.</div>
+<div class="row"><button id="aa-save" class="save">▣ SAVE</button><button id="aa-load" class="load" disabled>↶ LOAD</button><button id="aa-flip" class="flip">↻ FLIP → ASCII</button><button id="aa-reset">RESET</button></div>
+<div id="aa-play-controls" class="actions"><div style="display:flex;gap:8px"><button id="aa-left">◀</button><button id="aa-right">▶</button></div><div style="display:flex;gap:8px"><button id="aa-jump" class="jump">JUMP</button><button id="aa-glide" class="glide">GLIDE</button></div></div>
+<div id="aa-edit-controls" class="editbar"><button id="aa-undo">↶ UNDO MOD</button><span class="note" id="aa-budget">0/3 geplaatst</span><button id="aa-play">▶ PLAY</button></div>
+<div class="instructions" id="aa-help">Eerste proef: zet maximaal drie platforms neer. Je behoudt je SAVE na wijzigingen.</div>
+</div>
+<script>
+(()=>{
+const root=document.getElementById('aa-flip-lab');if(root.dataset.init)return;root.dataset.init='1';
+const $=id=>root.querySelector('#'+id),canvas=$('aa-canvas'),c=canvas.getContext('2d');
+const W=26,H=13,T=24,SW=W*T,SH=H*T,S=1/120;
+const cfg={platform:{name:'3 PLATFORM',glyph:'=',limit:3,tip:'Teken maximaal 3 platformtegels'},spring:{name:'2 SPRING',glyph:'B',limit:2,tip:'Twee springveren'},thermal:{name:'3 THERMAL',glyph:'F',limit:3,tip:'Drie thermals'}};
+const levels=['platform','spring','thermal'];
+let level='platform',map=[],placed=[],undo=[],p,slot=null,oldSlot=null,mode='play',clock=0,acc=0,last=0,dead=0,deathCount=0,win=false,frame=0,noticeAt=0;
+const held={left:new Set(),right:new Set(),glide:new Set()},key={left:false,right:false,glide:false};let jumpQueued=false;
+const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+const overlap=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
+function toast(t){$('aa-message').textContent=t;noticeAt=clock+3}
+function baseMap(){const arr=Array.from({length:H},()=>Array(W).fill('.'));for(let x=0;x<W;x++){arr[12][x]=x>=7&&x<=20?'^':'#';if(x<=6||x>=21)arr[11][x]='#'}arr[10][2]='S';arr[10][23]='G';return arr}
+function build(resetAll=true){map=baseMap();placed=[];undo=[];p={x:2*T+4,y:11*T-19,w:15,h:19,vx:0,vy:0,ground:true,facing:1};clock=0;acc=0;frame=0;dead=0;win=false;jumpQueued=false;mode='play';if(resetAll){slot=null;oldSlot=null;deathCount=0}ui();toast('SAVE → FLIP → PLAATS → LOAD. De gewijzigde wereld blijft bestaan!')}
+function blocks(){const a=[];for(let y=0;y<H;y++)for(let x=0;x<W;x++)if(map[y][x]==='#')a.push({x:x*T,y:y*T,w:T,h:T,type:'#'});for(const q of placed)if(q.kind!=='F')a.push({x:q.x*T,y:q.y*T,w:T,h:q.kind==='B'?10:8,type:q.kind});return a}
+function hitHaz(){if(p.y>SH+12)return true;for(let x=7;x<=20;x++)if(overlap(p,{x:x*T+4,y:12*T+6,w:16,h:18}))return true;return false}
+function resetPlayer(){p={x:2*T+4,y:11*T-19,w:15,h:19,vx:0,vy:0,ground:true,facing:1};dead=0;win=false}
+function save(){if(mode!=='play'||dead||win){toast('SAVE alleen tijdens het spelen.');return}oldSlot=slot?JSON.parse(JSON.stringify(slot)):null;slot={player:{...p},clock,frame};toast('▣ SAVED. FLIP NU NAAR ASCII EN VERANDER DE WERELD.');ui()}
+function load(){if(!slot){toast('Je hebt nog geen SAVE.');return}p={...slot.player};clock=slot.clock;frame=slot.frame;dead=0;win=false;acc=0;mode='play';jumpQueued=false;toast('↶ SPELMOMENT HERSTELD · GEWIJZIGDE TEGELS BLIJVEN!');ui()}
+function die(){deathCount++;dead=.38;toast(slot?'GEVALLEN → TERUG NAAR SAVE':'GEVALLEN → START');}
+function update(dt){if(mode!=='play'||win)return;if(dead){dead-=dt;if(dead<=0){if(slot){p={...slot.player};clock=slot.clock;frame=slot.frame}else resetPlayer();dead=0;}return}
+clock+=dt;frame++;
+const dir=Number(held.right.size>0||key.right)-Number(held.left.size>0||key.left),glide=level==='thermal'&&(held.glide.size>0||key.glide)&&!p.ground;
+if(dir)p.facing=dir;
+if(jumpQueued&&p.ground){p.vy=-365;p.ground=false}jumpQueued=false;
+const oldY=p.y,oldX=p.x;
+p.vx=dir*(glide?171:170);
+const g=glide?150:1030;
+p.vy=Math.min(glide?90:550,p.vy+g*dt);
+if(glide){for(const fire of placed)if(fire.kind==='F'&&Math.abs(p.x+p.w/2-(fire.x+.5)*T)<T*1.75&&p.y+p.h>(fire.y-7)*T&&p.y<(fire.y+1)*T){p.vy=Math.max(-148,p.vy-740*dt);}}
+p.x+=p.vx*dt;
+for(const b of blocks())if(overlap(p,b)){if(p.vx>0&&oldX+p.w<=b.x+2)p.x=b.x-p.w;else if(p.vx<0&&oldX>=b.x+b.w-2)p.x=b.x+b.w;}
+p.y+=p.vy*dt;
+let landed=false,launched=false;
+for(const b of blocks())if(overlap(p,b)){
+if(p.vy>=0&&oldY+p.h<=b.y+3){p.y=b.y-p.h;if(b.type==='B'){p.vy=-550;launched=true}else{p.vy=0;landed=true}}
+else if(p.vy<0&&oldY>=b.y+b.h-3){p.y=b.y+b.h;p.vy=0}
+}
+p.ground=landed;if(launched)p.ground=false;
+p.x=clamp(p.x,0,SW-p.w);
+if(hitHaz()){die();return}
+if(p.x>23*T&&p.y+p.h>=10*T&&p.y<11*T+4){win=true;toast('LEVEL COMPLETE! JOUW OPLOSSING WERKT.');}
+}
+function asciiRows(){const rows=map.map(r=>r.slice());for(const q of placed)rows[q.y][q.x]=q.kind;return rows}
+function ui(){const edit=mode==='edit';$('aa-play-controls').classList.toggle('hidden',edit);$('aa-edit-controls').style.display=edit?'flex':'none';$('aa-flip').textContent=edit?'↻ FLIP → SPEL':'↻ FLIP → ASCII';$('aa-load').disabled=!slot;$('aa-save').disabled=edit;
+$('aa-budget').textContent=`${placed.length}/${cfg[level].limit} ${cfg[level].name}`;$('aa-status').textContent=`${cfg[level].glyph} ${placed.length}/${cfg[level].limit} · ${deathCount}×`;
+$('aa-help').textContent=edit?'TIK OP EEN VAK IN DE ASCII-KAART. De huidige SAVE blijft bestaan.':level==='platform'?'Maximaal 3 platforms. SAVE midden in de lucht, FLIP, teken een platform onder je.':level==='spring'?'Maximaal 2 veren. Land op B voor een krachtige sprong. SAVE/LOAD bewaart je snelheid.':'Maximaal 3 vuurtjes. Houd GLIDE vast; boven F ontstaat opstijgende lucht.';
+for(const b of root.querySelectorAll('[data-level]'))b.classList.toggle('active',b.dataset.level===level);
+}
+function flip(){mode=mode==='edit'?'play':'edit';ui();toast(mode==='edit'?'ASCII-MODUS · TIK OM TE PLAATSEN OF WEG TE HALEN':'SPELMODUS · DRUK LOAD OM JE MOMENT TE HERHALEN')}
+function canPlace(x,y){return x>=7&&x<=20&&y>=5&&y<=11&&map[y][x]==='.'}
+function editTile(x,y){if(mode!=='edit'||x<0||x>=W||y<0||y>=H)return;
+let index=placed.findIndex(q=>q.x===x&&q.y===y);if(index!==-1){undo.push(placed.map(q=>({...q})));placed.splice(index,1);toast('Tegel verwijderd, budget terug.');ui();return}
+if(!canPlace(x,y)){toast('Alleen op lege vakken boven de kloof (rij 5–11).');return}
+if(placed.length>=cfg[level].limit){toast('BUDGET OP! Verwijder eerst een andere tegel.');return}
+undo.push(placed.map(q=>({...q})));placed.push({x,y,kind:cfg[level].glyph});toast(`${cfg[level].glyph} geplaatst (${placed.length}/${cfg[level].limit})`);ui()
+}
+function drawWorld(){c.fillStyle=level==='thermal'?'#cceef4':'#b9e9f8';c.fillRect(0,0,SW,SH);
+for(let i=0;i<8;i++){const x=i*91-10,y=80+(i*19)%75;c.fillStyle='#e9faff';c.fillRect(x,y,57,SH-y)}
+const rows=asciiRows();
+for(let y=0;y<H;y++)for(let x=0;x<W;x++){const k=rows[y][x],px=x*T,py=y*T;
+if(k==='#'){c.fillStyle='#f9feff';c.fillRect(px,py,T,T);c.fillStyle='#b8d3e0';c.fillRect(px,py,T,3);c.fillStyle='#99b4c7';c.font='bold 12px monospace';c.fillText('#',px+7,py+18)}
+if(k==='='){c.fillStyle='#fdfdfd';c.fillRect(px,py,T,8);c.fillStyle='#e34e65';c.fillRect(px,py,T,3);c.fillStyle='#94bbd2';c.font='11px monospace';c.fillText('=',px+7,py+17)}
+if(k==='B'){c.fillStyle='#a66de5';c.fillRect(px,py+4,T,7);c.fillStyle='#fcf';c.font='bold 13px monospace';c.fillText('B',px+7,py+18)}
+if(k==='F'){c.fillStyle='#e76b27';c.fillRect(px+4,py+14,16,8);c.fillStyle='#ffca49';c.font='bold 17px monospace';c.fillText('^',px+6,py+17);if(mode==='play'){c.fillStyle='rgba(248,178,45,0.13)';c.fillRect(px-24,Math.max(0,py-7*T),3*T,7*T)}}
+if(k==='^'){c.fillStyle='#df3957';c.font='bold 20px monospace';c.fillText('^',px+3,py+20)}
+if(k==='S'){c.fillStyle='#19a9a1';c.fillRect(px+6,py+5,12,15)}
+if(k==='G'){c.fillStyle='#f0445a';c.fillRect(px+8,py-3,6,29);c.fillStyle='#fff';c.font='bold 12px monospace';c.fillText('>',px+13,py+7)}
+}
+if(slot){c.strokeStyle='#f4ad32';c.lineWidth=2;c.setLineDash([3,3]);c.strokeRect(slot.player.x-2,slot.player.y-2,p.w+4,p.h+4);c.setLineDash([]);c.fillStyle='#a15e14';c.font='bold 10px monospace';c.fillText('SAVE',slot.player.x,slot.player.y-5)}
+c.fillStyle='#154760';c.fillRect(p.x,p.y,p.w,p.h);c.fillStyle='#77ebd7';c.fillRect(p.x+2,p.y+2,p.w-4,p.h-6);c.fillStyle='#12384b';c.fillRect(p.x+4,p.y+7,3,3);c.fillRect(p.x+10,p.y+7,3,3);
+if(level==='thermal'&&(held.glide.size>0||key.glide)&&!p.ground){c.strokeStyle='#e33f63';c.lineWidth=3;c.beginPath();c.moveTo(p.x-17,p.y-3);c.quadraticCurveTo(p.x+7,p.y-26,p.x+33,p.y-3);c.stroke();c.strokeStyle='#23657d';c.lineWidth=1;c.beginPath();c.moveTo(p.x-12,p.y-3);c.lineTo(p.x+7,p.y+5);c.lineTo(p.x+27,p.y-3);c.stroke()}
+if(win){c.fillStyle='rgba(15,47,60,.75)';c.fillRect(110,108,405,90);c.fillStyle='#fff';c.font='bold 24px monospace';c.fillText('LEVEL COMPLETE ✓',167,158)}
+}
+function drawAscii(){c.fillStyle='#0b1829';c.fillRect(0,0,SW,SH);const rows=asciiRows();c.font='bold 17px monospace';c.textBaseline='middle';c.textAlign='center';
+for(let y=0;y<H;y++)for(let x=0;x<W;x++){
+const ch=rows[y][x];c.strokeStyle='#1d3851';c.lineWidth=.5;c.strokeRect(x*T+.5,y*T+.5,T,T);
+if(ch==='.')c.fillStyle='#355571';else if(ch==='#')c.fillStyle='#dffcff';else if(ch==='^')c.fillStyle='#ff6e87';else if(ch==='G')c.fillStyle='#ffd372';else if(ch==='S')c.fillStyle='#73ead5';else if(ch==='F')c.fillStyle='#ffb65c';else if(ch==='B')c.fillStyle='#ce9bff';else c.fillStyle='#fc7590';
+c.fillText(ch,x*T+T/2,y*T+T/2+1);
+}
+c.strokeStyle='#ffde75';c.lineWidth=2;c.strokeRect(Math.floor(p.x/T)*T+1,Math.floor(p.y/T)*T+1,T-2,T-2);
+c.textAlign='left';c.textBaseline='alphabetic';
+}
+function render(){if(mode==='edit')drawAscii();else drawWorld()}
+function frameLoop(t){if(!root.isConnected)return;let dt=Math.min(.05,(t-last)/1000||.016);last=t;if(mode==='play'){acc=Math.min(.1,acc+dt);let count=0;while(acc>=S&&count++<12){update(S);acc-=S}}render();requestAnimationFrame(frameLoop)}
+canvas.addEventListener('pointerdown',e=>{if(mode!=='edit')return;e.preventDefault();const b=canvas.getBoundingClientRect();const x=Math.floor((e.clientX-b.left)/b.width*W),y=Math.floor((e.clientY-b.top)/b.height*H);editTile(x,y)});
+function hold(id,name){const button=$(id);button.addEventListener('pointerdown',e=>{e.preventDefault();held[name].add(e.pointerId);button.setPointerCapture(e.pointerId);button.classList.add('active')});const stop=e=>{held[name].delete(e.pointerId);button.classList.toggle('active',held[name].size>0)};['pointerup','pointercancel','lostpointercapture'].forEach(ev=>button.addEventListener(ev,stop))}
+hold('aa-left','left');hold('aa-right','right');hold('aa-glide','glide');
+$('aa-jump').addEventListener('pointerdown',e=>{e.preventDefault();e.currentTarget.setPointerCapture(e.pointerId);jumpQueued=true;e.currentTarget.classList.add('active')});['pointerup','pointercancel','lostpointercapture'].forEach(ev=>$('aa-jump').addEventListener(ev,()=>$('aa-jump').classList.remove('active')));
+$('aa-save').onclick=save;$('aa-load').onclick=load;$('aa-flip').onclick=flip;$('aa-play').onclick=()=>{mode='play';ui()};$('aa-reset').onclick=()=>build();$('aa-undo').onclick=()=>{if(!undo.length){toast('Geen wijzigingen om terug te draaien.');return}placed=undo.pop();ui();toast('Laatste wijziging ongedaan gemaakt.')};
+for(const b of root.querySelectorAll('[data-level]'))b.onclick=()=>{level=b.dataset.level;build();toast(`${cfg[level].name} · NIEUW EXPERIMENT`)};
+window.addEventListener('keydown',e=>{if(!root.isConnected)return;const k=e.key.toLowerCase();if(['arrowleft','arrowright','arrowup',' '].includes(k))e.preventDefault();if(k==='a'||k==='arrowleft')key.left=true;if(k==='d'||k==='arrowright')key.right=true;if(k==='g')key.glide=true;if((k===' '||k==='arrowup')&&!e.repeat)jumpQueued=true;if(k==='q'&&!e.repeat)save();if(k==='e'&&!e.repeat)load();if(k==='f'&&!e.repeat)flip()});window.addEventListener('keyup',e=>{const k=e.key.toLowerCase();if(k==='a'||k==='arrowleft')key.left=false;if(k==='d'||k==='arrowright')key.right=false;if(k==='g')key.glide=false});
+window.addEventListener('blur',()=>{for(const k of Object.keys(held))held[k].clear();key.left=key.right=key.glide=false});
+build();requestAnimationFrame(frameLoop);
+})();
+</script>
+</body></html>

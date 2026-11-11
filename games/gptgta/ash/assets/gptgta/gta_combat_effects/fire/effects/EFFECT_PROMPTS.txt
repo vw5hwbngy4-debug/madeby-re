@@ -1,0 +1,11 @@
+
+Generate retro combat effects:
+- explosions
+- muzzle flashes
+- smoke
+- sparks
+- blood splatter
+- fire
+- tire smoke
+
+Arcade readable.

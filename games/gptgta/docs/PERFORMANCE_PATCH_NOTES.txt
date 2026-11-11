@@ -1,0 +1,13 @@
+GPTGTA v4.2 performance cleanup patch
+
+Applied to /version/v4.2/index.html:
+- capped canvas DPR to 1.25 for mobile Safari performance
+- added effect, bullet, water-mark and car caps
+- reduced chopper trail-smoke spawn rate and routes it through capped effect creation
+- throttled HUD DOM writes to roughly 5x/sec instead of every frame
+- throttled keyboard polling to 33ms
+- updates pedestrians every other frame
+- replaced raw requestAnimationFrame loop with guarded 40fps loop
+- added duplicate-loop guard so the game loop cannot stack accidentally
+
+Goal: prevent long-session slowdown from accumulated effects/entities and reduce Total Blocking Time without changing the core gameplay loop.

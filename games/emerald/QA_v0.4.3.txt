@@ -1,0 +1,12 @@
+EMERALD · MADEBY.RE WEB v0.4.3 LOCATION SCENES — QA
+
+PASS  node --check app.js
+PASS  map-manifest scene_count matches generated definitions (46)
+PASS  all 92 generated WebP scene paths exist
+PASS  all 13 native Secret Base routes have scene banks
+PASS  Route 127 has four XY-anchored scene variants
+PASS  Route 127 visual contact-sheet inspection
+PASS  sitemap contains 56 URLs (root/play/you + 53 reconstructed places)
+
+NOTE
+Headless Chromium in the build container could not complete a screenshot run because of the container's Chromium/DBus environment. Static JS, asset, manifest and server regression checks are the release gate here.

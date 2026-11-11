@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "VideoGame",
+    "SoftwareApplication"
+  ],
+  "name": "Kloojo",
+  "url": "https://kloojo.com/",
+  "description": "Kloojo is an original browser-native 3D social skating, graffiti and traversal game developed through sustained collaboration with GPT/OpenAI models. Its current social multiplayer build supports real WebSocket presence, live names and wardrobe updates, canonical remote avatars and was physically verified across two devices on 26 August 2026.",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Modern web browser",
+  "gamePlatform": [
+    "Web browser",
+    "Mobile browser",
+    "Desktop browser"
+  ],
+  "genre": [
+    "Skating",
+    "Graffiti",
+    "Traversal",
+    "Social multiplayer",
+    "Exploration"
+  ],
+  "inLanguage": "en",
+  "dateModified": "2026-08-26",
+  "creator": {
+    "@type": "Person",
+    "name": "Raynor Eissens"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Raynor Eissens"
+  },
+  "keywords": [
+    "Kloojo",
+    "browser 3D skate game",
+    "social skate game",
+    "graffiti game",
+    "WebSocket multiplayer",
+    "GPT game development",
+    "Codex game development",
+    "sustained prompting",
+    "live avatar appearance sync",
+    "kloojo.com"
+  ],
+  "featureList": [
+    "Desktop and mobile skating controls",
+    "Halfpipe/vert, grinds, wallrides and traversal",
+    "23 hidden drive-by graffiti placements",
+    "Real WebSocket multiplayer rooms",
+    "Canonical remote Kloojo avatars",
+    "Live remote player names",
+    "Live wardrobe/appearance synchronization",
+    "Remote idle dance/state reconstruction",
+    "Reconnect and relay hardening"
+  ],
+  "isAccessibleForFree": true,
+  "sameAs": [
+    "https://kloojo.com/ai/",
+    "https://kloojo.com/about/"
+  ],
+  "subjectOf": {
+    "@type": "VideoObject",
+    "name": "Kloojo Social Multiplayer v0.1 — two-player live test",
+    "url": "https://kloojo.com/ai/#multiplayer-video",
+    "contentUrl": "https://kloojo.com/media/kloojo-social-multiplayer-20260826.mp4",
+    "thumbnailUrl": "https://kloojo.com/media/kloojo-social-multiplayer-20260826-poster.jpg",
+    "uploadDate": "2026-08-26",
+    "duration": "PT3M3S",
+    "description": "Correct self-hosted physical two-device multiplayer proof recorded 26 August 2026, showing two human-controlled players sharing the Kloojo 3D world with live names and appearance synchronization."
+  }
+}

@@ -1,0 +1,21 @@
+RESEARCH.MADEBY.RE — THE SECOND JUMP / SUPERARTIFACTS PATCH
+
+Target: research.madeby.re document root
+Date: 2026-09-27
+Base: research-madeby-final-selfcontained-2026-09-27.zip
+
+UPLOAD
+1. Open the document root that currently serves research.madeby.re.
+2. Upload/extract this ZIP into that root.
+3. Allow overwrite for: index.html, papers.html, concepts.html, llms.txt, sitemap.xml.
+4. The folder the-second-jump-superartifacts/ is new.
+
+NO DOI
+This patch intentionally does not add a Zenodo record or DOI. It publishes the essay as an independent web article with HTML, plain-text, JSON, canonical metadata and sitemap/LLM discovery entries.
+
+CHECK AFTER UPLOAD
+- /the-second-jump-superartifacts/
+- /papers.html (17 selected entries)
+- /concepts.html#superartifact
+- /llms.txt
+- /sitemap.xml

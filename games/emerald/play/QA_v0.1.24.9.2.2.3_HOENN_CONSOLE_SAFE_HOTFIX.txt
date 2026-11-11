@@ -1,0 +1,26 @@
+EMERALD v0.1.24.9.2.2.3 — QA
+================================
+
+Static/runtime-boundary checks
+------------------------------
+PASS: hoenn-online-v0.1.3.js parses with Node syntax checker.
+PASS: every local src/href referenced by index.html exists.
+PASS: Hoenn console integration contains no MutationObserver constructor.
+PASS: Hoenn console integration contains no page-wide data-gba-btn Menu scan loop.
+PASS: touchstart is intercepted once at document capture phase.
+PASS: click is intercepted once at document capture phase.
+PASS: MENU -> HOENN label change is CSS-only.
+PASS: floating HOENN launcher is hidden.
+
+Known-good preservation checks
+------------------------------
+PASS: save-vault-v0.1.13.7.js is byte-for-byte identical to v0.1.24.9.2.2.1.
+PASS: assets/index-PF016-audio.js (emulator/React bundle) is byte-for-byte identical to v0.1.24.9.2.2.1.
+PASS: pokefield-live-v0.1.24.9.2.1.2.js is byte-for-byte identical to v0.1.24.9.2.2.1.
+
+Expected mobile behavior
+------------------------
+SELECT | HOENN | START
+HOENN opens/closes the existing Emerald · MadeBy panel.
+The original emulator MENU/settings handler must not receive that same touch/click.
+Save Vault remains responsible for authentication, server-save lookup and mGBA save mirroring.

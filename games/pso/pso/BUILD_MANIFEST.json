@@ -1,0 +1,9 @@
+{
+  "build": "JRPG.WORLD PSO v0.5 COMPLETE SUBDOMAIN INSTALL",
+  "target": "https://pso.jrpg.world/",
+  "file_count": 697,
+  "uncompressed_bytes": 60143560,
+  "contains_private_config": false,
+  "smoke_checks": 9,
+  "source": "current public_html backup + cumulative V0.5"
+}

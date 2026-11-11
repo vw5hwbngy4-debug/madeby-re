@@ -1,0 +1,98 @@
+RICO — SECTION SCAN CALCULATOR REFERENCE
+================================================
+
+MOVE
+Section Scan
+
+PURPOSE
+Exact Section-ID calculation behavior preserved from RICO's deterministic PSO implementation, plus the ten-ID order, regression vectors, strategic routing links, and safe fallback procedure for a standalone Custom GPT.
+
+SOURCE BASIS
+secid-calculator-master/src/composables/section-id.ts; Skillbeasts src/pso-expert.js; Hunter Goals routegraph; RICO regression tests.
+
+RETRIEVAL RULE
+Treat explicit platform labels, verification/status fields, source labels, and warnings as part of the fact. Never silently remove them.
+
+CRITICAL RULE
+Do not use a generic web calculator, Ephinea answer, memory, or guessed capitalization rule when this reference is available. For GameCube/Xbox use this exact packaged implementation. Capitalization can change the result because Unicode character codes change.
+
+SECTION_ID_ORDER_BY_INDEX_0_TO_9
+0 Viridia
+1 Greenill
+2 Skyly
+3 Bluefull
+4 Purplenum
+5 Pinkal
+6 Redria
+7 Oran
+8 Yellowboze
+9 Whitill
+
+EXACT CONSOLE / GAMECUBE-XBOX IMPLEMENTATION
+1. Start sum at 5.
+2. Iterate the name using JavaScript UTF-16 charCodeAt values. Add each character code.
+3. Character-set transition handling from the packaged calculator:
+   - Maintain a flag initially 0.
+   - If code >= 0x0100 and code < 0xFF61, desired flag is 2.
+   - Else if code <= 0xFF91, desired flag is 1.
+   - When desired flag differs from the current flag, switch flag and add 45 once for that transition.
+4. index = ((sum % 10) + 10) % 10.
+5. Map index through the Section-ID order above.
+
+IMPORTANT IMPLEMENTATION NOTE
+For ordinary ASCII names, the first character enters flag state 1, so the first character contributes the calculator's 45-point transition bonus. Preserve this exact behavior. Do not simplify it to only “sum the letters + 5”.
+
+REFERENCE PSEUDOCODE
+function ricoConsoleSectionId(name):
+    ids = [Viridia, Greenill, Skyly, Bluefull, Purplenum, Pinkal, Redria, Oran, Yellowboze, Whitill]
+    sum = 5
+    flag = 0
+    for each UTF-16 code unit in name:
+        sum += code
+        desired = flag
+        if code >= 0x0100 and code < 0xFF61:
+            desired = 2
+        else if code <= 0xFF91:
+            desired = 1
+        if desired != flag:
+            flag = desired
+            sum += 45
+    index = ((sum mod 10) + 10) mod 10
+    return ids[index]
+
+REGRESSION VECTORS — THESE MUST NEVER CHANGE WITHOUT SOURCE REVISION
+GameCube / Xbox:
+- Eila  -> sum 429 -> index 9 -> WHITILL
+- Eilaa -> sum 526 -> index 6 -> REDRIA
+- Raynor -> sum 685 -> index 5 -> PINKAL
+- raynor -> sum 717 -> index 7 -> ORAN
+- RAYNOR -> sum 525 -> index 5 -> PINKAL
+
+These vectors are especially useful for detecting bad third-party calculators. A result such as Raynor=VIRIDIA or raynor=PURPLENUM does not match RICO's packaged console calculator.
+
+BLUE BURST IMPLEMENTATION
+- Same name-character accumulation and transition handling, but the starting modifier is a supplied class modifier instead of console modifier 5.
+- This corpus does not contain a verified class-to-modifier lookup table.
+- Do not invent one. Require a verified modifier or connected deterministic RICO tool when exact Blue Burst name calculation depends on it.
+
+STANDALONE CUSTOM GPT FALLBACK
+If the connected ragion_section_scan tool is unavailable:
+1. Use this reference, not the public web.
+2. Prefer code execution/calculation over mental arithmetic when available.
+3. Preserve the user's capitalization exactly.
+4. Report platform, exact input name, sum, index, and Section ID for auditability when the result matters.
+5. For strategic questions after calculation, route to 08_RICO_SECTION_ID_STRATEGY_OVERLAP.txt and 09_RICO_ACCOUNT_ROSTER_PLANNER.txt.
+
+CHARACTER CLASSES / VERSION AVAILABILITY AS PACKAGED
+- HUmar | ep1 YES | ep2 YES | ep4 YES
+- HUnewearl | ep1 YES | ep2 YES | ep4 YES
+- HUcast | ep1 YES | ep2 YES | ep4 YES
+- HUcaseal | ep1 NO | ep2 YES | ep4 YES
+- RAmar | ep1 YES | ep2 YES | ep4 YES
+- RAmarl | ep1 NO | ep2 YES | ep4 YES
+- RAcast | ep1 YES | ep2 YES | ep4 YES
+- RAcaseal | ep1 YES | ep2 YES | ep4 YES
+- FOmar | ep1 NO | ep2 YES | ep4 YES
+- FOmarl | ep1 YES | ep2 YES | ep4 YES
+- FOnewm | ep1 YES | ep2 YES | ep4 YES
+- FOnewearl | ep1 YES | ep2 YES | ep4 YES

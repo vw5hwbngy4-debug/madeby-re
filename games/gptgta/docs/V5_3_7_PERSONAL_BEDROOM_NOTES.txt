@@ -1,0 +1,1 @@
+v5.3.7 fixes the home/stairwell prototype. Starts in personal bedroom, no strangers in bedroom, three bounded floors, two-way stairs, and roof re-entry descends to top hallway.

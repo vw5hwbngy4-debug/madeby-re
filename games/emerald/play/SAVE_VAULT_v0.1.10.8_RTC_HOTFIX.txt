@@ -1,0 +1,13 @@
+EMERALD v0.1.10.8 — mGBA RTC SAVE HOTFIX
+
+Root cause proven by live diagnostics: after the first in-game Emerald save, mGBA writes 131,088 bytes, not 131,072. The extra 16 bytes are mGBA RTC state. v0.1.10.7 found all 14 Emerald signature sectors and IDs 0–13, but parseSave rejected the file before parsing because it required exactly 128 KiB.
+
+Fix:
+- accept 131,072-byte standard Emerald saves
+- accept 131,088-byte mGBA Emerald saves with 16-byte RTC footer
+- parse the first 131,072 bytes as the Emerald save core
+- preserve and upload all 131,088 bytes when the RTC footer exists
+- show RTC footer state in local diagnostics
+- update launch/watch status instead of leaving the stale pre-save 0-sector label
+
+Requires the companion Node Save Vault v0.1.2 backend, which accepts and preserves both lengths.

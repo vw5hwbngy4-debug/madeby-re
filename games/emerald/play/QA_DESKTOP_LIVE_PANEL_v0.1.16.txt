@@ -1,0 +1,18 @@
+JRPG.WORLD EMERALD v0.1.16 — DESKTOP LIVE PANEL CLEANUP QA
+
+Purpose
+- Remove the public TECH/read-only bridge drawer and raw BPEE/memory/audio diagnostics.
+- Keep diagnostics available only with ?debug=1.
+- Remove the old technical product explainer from the public live panel.
+- Simplify the empty desktop state from LIVE READY to READY.
+- Preserve v0.1.15 keyboard mapping and all v0.1.14 interaction fixes.
+- Preserve Save Vault v0.1.13 and native mGBA save architecture.
+
+Public UI expected
+- No TECH label.
+- No BPEE addresses, battle flags, gesture/audio recovery strings.
+- No overlap from the diagnostics drawer.
+- Idle line: READY · Encounter or select a Pokémon.
+
+Debug
+- Add ?debug=1 to the page URL to expose DEBUG / developer diagnostics.

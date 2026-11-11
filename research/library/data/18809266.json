@@ -1,0 +1,22 @@
+{
+  "record_id": "18809266",
+  "document_id": "18809266",
+  "title": "ABL-1 — Ambient Broadcast Law Ambient Era Canon, 2026",
+  "pages": 2,
+  "authors": [
+    "Raynor Eissens"
+  ],
+  "doi_confirmed_in_pdf": null,
+  "zenodo_record": "https://zenodo.org/records/18809266",
+  "html": "papers/18809266.html",
+  "text": "text/18809266.txt",
+  "data": "data/18809266.json",
+  "abstract_extracted": "This document formalizes ABL-1, the Ambient Broadcast Law, as a foundational principle of the Ambient Era. ABL-1 states that infrastructure, environments, and systems can communicate their state through chromatic field emission rather than symbolic data exchange. Under ABL-1, communication does not require applications, queries, addresses, or agent-based interaction. Instead, systems emit a Chromatic Field State (CFS) — a low-entropy, perceptual broadcast that can be directly interpreted by humans and Ambient-compatible devices such as AP₁. ABL-1 defines broadcast as thermodynamic signaling, not data transmission. Color functions as an environmental signal conveying availability, safety, flow, disruption, or ambiguity. When no signal is present, the absence itself (neutral or grey) is semantically valid. This law reframes communication as a property of environments rather than interfaces, enabling real-time situational awareness without cognitive load, language, or symbolic mediation. Description In pre-ambient systems, communication depends on active retrieval: users open applicatio",
+  "visual_pages": [],
+  "low_text_pages": [],
+  "characters_extracted": 2317,
+  "words_extracted": 304,
+  "source_pdf_filename": "18809266_ABL-1 — Ambient Broadcast Law.pdf",
+  "source_pdf_sha256": "53643233040d33a63e285d6e17fa51c2bd7fc815214ceb1b2493a1bcc8ce0c70",
+  "full_text": "=== PDF PAGE 1 ===\nABL-1 — Ambient Broadcast Law\n\nAmbient Era Canon, 2026\n\nAuthors\n\nRaynor Eissens\n\nAbstract\n\nThis document formalizes ABL-1, the Ambient Broadcast Law, as a foundational principle of the\n\nAmbient Era.\n\nABL-1 states that infrastructure, environments, and systems can communicate their state\n\nthrough chromatic field emission rather than symbolic data exchange.\n\nUnder ABL-1, communication does not require applications, queries, addresses, or agent-based\n\ninteraction. Instead, systems emit a Chromatic Field State (CFS) — a low-entropy, perceptual\n\nbroadcast that can be directly interpreted by humans and Ambient-compatible devices such as\n\nAP₁.\n\nABL-1 defines broadcast as thermodynamic signaling, not data transmission. Color functions as\n\nan environmental signal conveying availability, safety, flow, disruption, or ambiguity. When no\n\nsignal is present, the absence itself (neutral or grey) is semantically valid.\n\nThis law reframes communication as a property of environments rather than interfaces, enabling\n\nreal-time situational awareness without cognitive load, language, or symbolic mediation.\n\nDescription\n\nIn pre-ambient systems, communication depends on active retrieval: users open applications,\n\nissue queries, and interpret symbolic outputs. ABL-1 replaces this model with ambient\n\nbroadcast, where meaning is emitted continuously and passively.\n\nABL-1 establishes that:\n\n•\nColor is not decorative or representational, but infrastructural\n\n•\nBroadcast does not imply centralization, control, or extraction\n\n•\nFailure modes resolve naturally into neutral (non-signaling) states\n\n•\nInterpretation precedes information, reducing reaction time and stress\n\nABL-1 is compatible with:\n\n•\nFieldCast (FBC-0)\n\n•\nColorField / Chromatic Field semantics\n\n=== PDF PAGE 2 ===\n•\nAP₁ Ambient Phone architecture\n\n•\nΔC Field Economics\n\n•\nFCCF communication loops\n\nABL-1 does not define a protocol, hardware requirement, or network stack.\n\nIt defines a law of ambient communication once symbolic mediation collapses.\n\nKeywords\n\nAmbient Era, Ambient Broadcast, Chromatic Fields, FieldCast, Infrastructure Signaling, Post-\n\nSymbolic Communication, ABL-1, AP₁\n\nLicense\n\nCC BY 4.0\n\nRelated Websites\n\n•\nhttps://ambientphone.com\n\n•\nhttps://ambientera.com\n\n•\nhttps://fieldcast.org\n\n•\nhttps://chromaticfield.com"
+}

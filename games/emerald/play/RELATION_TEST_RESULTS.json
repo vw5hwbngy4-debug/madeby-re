@@ -1,0 +1,34 @@
+{
+  "A": "NOT_PRESENT",
+  "B": "PRESENT_CURRENT",
+  "C": "PRESENT_CURRENT",
+  "D": "PRESENT_CURRENT",
+  "E": "NOT_PRESENT",
+  "F": "PRESENT_CURRENT",
+  "G": {
+    "same_sha": true,
+    "owner_count": 1
+  },
+  "H": "PRESENT_OUTDATED",
+  "I": {
+    "pre": "PRESENT_OUTDATED",
+    "slot": 1,
+    "new_location": 143
+  },
+  "J": {
+    "registry": 1
+  },
+  "K": "NO_SAFE_SLOT",
+  "L": {
+    "events": [
+      "base_visited",
+      "base_challenged",
+      "base_battle_won"
+    ],
+    "repeat_events": 0,
+    "relation_after_visit": "PRESENT_CURRENT"
+  },
+  "M": {
+    "recency_only": "PRESENT_CURRENT"
+  }
+}

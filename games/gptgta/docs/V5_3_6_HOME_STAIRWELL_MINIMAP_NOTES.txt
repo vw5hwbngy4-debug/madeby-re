@@ -1,0 +1,4 @@
+v5.3.6 notes:
+- Minimap now draws into an attached canvas instead of replacing CSS background-image with a dataURL.
+- Parking lot moved to an off-road dedicated area to stop cars driving through beach parking.
+- Home apartment/stairwell flow added as first vertical interior prototype.

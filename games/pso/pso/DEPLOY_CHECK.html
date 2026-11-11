@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PSO deployment check</title>
+<style>body{font:18px system-ui;background:#081c25;color:#e7fffa;max-width:760px;margin:3rem auto;padding:1rem}a{color:#80ffe1}pre{white-space:pre-wrap}</style>
+<h1>PSO · MadeBy · deploy check</h1><p>Build <strong>wolken-root-route-20260917-v1</strong>. No account, USB save or token is read by this page.</p><pre id="results">Checking...</pre>
+<p><a href="/">Open root site</a> · <a href="/pso/">Open Ragol Link compatibility site</a></p>
+<script>
+(async()=>{let lines=[];for(let path of ['/DEPLOY_PROOF.txt','/pso/DEPLOY_PROOF.txt','/pso/index.html','/pso/app.js','/pso/api/install-health.php']){
+try{let r=await fetch(path+'?deploy-check=wolken-root-route-20260917-v1',{cache:'no-store'}); let ok=r.ok; let body=(path.endsWith('index.html')||path.endsWith('DEPLOY_PROOF.txt'))?await r.text():'';
+if(path.endsWith('index.html')&&ok) ok=body.includes('name="pso-deploy"')&&!body.includes('jw-global-header')&&!body.includes('world-tabs.js');
+if(path.endsWith('DEPLOY_PROOF.txt')&&ok)ok=body.includes('BUILD=wolken-root-route-20260917-v1');
+lines.push((ok?'PASS':'FAIL')+' '+path+' HTTP '+r.status);
+}catch(e){lines.push('FAIL '+path+' '+String(e));}}
+document.getElementById('results').textContent=lines.join('\n');
+})();
+</script></html>

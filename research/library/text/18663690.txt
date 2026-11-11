@@ -1,0 +1,473 @@
+=== PDF PAGE 1 ===
+AP₁-Y v1.2 — Yellow Navigation Engine
+
+Soft Vector Resolution
+
+Ambient OS · Canonical Addendum
+
+Author: Raynor Eissens
+
+Status: Normative
+
+Version: AP₁-Y v1.2
+
+Date: February 2026
+
+Scope: Ambient OS (AP₁, AP₁.1, ITL-1 v1.1, RR-1, AAC-1.1)
+
+⸻
+
+Abstract
+
+This addendum specifies the canonical mechanism by which navigation resolves in Yellow
+
+without endpoints, destinations, route selection, optimization, or goal inference.
+
+AP₁-Y v1.2 formalizes soft vector resolution: navigation as a thermodynamic field phenomenon
+
+arising from permissibility, embodied motion, and route residue as defined by RR-1.
+
+Navigation does not choose routes.
+
+Navigation resolves through resonance.
+
+⸻
+
+1. Scope of This Addendum
+
+AP₁-Y v1.2 extends AP₁-Y v1.1 by defining:
+
+•
+how Yellow operates with or without Purple definition
+
+•
+how multiple navigational affordances resolve without choice
+
+•
+how routes exist as residue rather than stored objects (RR-1)
+
+•
+how AI participates without defining direction
+
+•
+how navigation remains endpoint-free, reversible, and non-coercive
+
+This addendum does not alter the core constraints of AP₁-Y v1.1.
+
+⸻
+
+2. Two Canonical States of Yellow
+
+=== PDF PAGE 2 ===
+Yellow exists in two canonically distinct states.
+
+2.1 Explorative Yellow (Non-Navigational Motion)
+
+Yellow may exist without any Purple anchors, as specified in ITL-1 v1.1.
+
+In this state:
+
+•
+no infrastructure is defined
+
+•
+no routes are active
+
+•
+no navigation occurs
+
+•
+no route residue is formed (RR-1)
+
+Explorative Yellow expresses:
+
+•
+bodily rhythm
+
+•
+spatial openness
+
+•
+resistance and release
+
+•
+acceleration and deceleration
+
+Explorative Yellow may occur across all modes of movement, including:
+
+•
+walking
+
+•
+running
+
+•
+cycling
+
+•
+driving
+
+•
+public transport
+
+•
+passive motion (vehicles, rides, attractions)
+
+All expressions in Explorative Yellow are:
+
+•
+ephemeral
+
+•
+non-binding
+
+•
+non-persistent
+
+Any system that records or preserves exploratory motion as navigational residue
+
+violates RR-1 and ITL-1.
+
+⸻
+
+2.2 Navigational Yellow
+
+Navigational Yellow becomes possible only after Purple definition, as specified by ITL-1 v1.1.
+
+=== PDF PAGE 3 ===
+Only in this state may:
+
+•
+route residue activate
+
+•
+directional bleed occur
+
+•
+soft vector resolution emerge
+
+Navigational Yellow is governed jointly by:
+
+•
+ITL-1 (definition grammar)
+
+•
+RR-1 (residue persistence)
+
+•
+AP₁-Y (motion resolution)
+
+⸻
+
+3. Rejection of A → B Navigation
+
+Ambient OS explicitly rejects A → B navigation.
+
+A → B navigation presumes:
+
+•
+a fixed destination
+
+•
+stable intent
+
+•
+route optimization
+
+•
+irreversible commitment
+
+These assumptions violate:
+
+•
+ΔR (reversibility)
+
+•
+human-scale intention
+
+•
+ambient thermodynamic stability
+
+Navigation in Yellow never begins with an endpoint.
+
+⸻
+
+4. Permissibility as the Basis of Motion
+
+Navigation in Yellow is constrained by permissibility, not targets.
+
+Permissibility is defined as:
+
+•
+the set of movements that are physically and infrastructurally possible
+
+•
+independent of desirability, efficiency, or outcome
+
+Permissibility derives from:
+
+•
+infrastructural topology
+
+=== PDF PAGE 4 ===
+•
+environmental affordances
+
+•
+bodily capacity
+
+•
+temporal conditions
+
+Permissibility defines the motion space.
+
+It does not define direction.
+
+⸻
+
+5. Route Residue (RR-1)
+
+Routes in Ambient OS do not exist as stored paths.
+
+A route exists only as directional field residue created through embodied traversal, as defined
+
+by RR-1.
+
+Route residue:
+
+•
+strengthens through repeated traversal
+
+•
+weakens through non-use
+
+•
+fades without explicit deletion
+
+•
+has no symbolic or representational form
+
+Route residue is not memory.
+
+It is thermodynamic imprint.
+
+⸻
+
+6. Soft Vector Field Formation
+
+When Navigational Yellow is active and multiple route residues exist, Ambient OS does not
+
+present:
+
+•
+choices
+
+•
+lists
+
+•
+rankings
+
+•
+suggested routes
+
+•
+optimal paths
+
+Instead, a soft vector field forms.
+
+This field consists of overlapping directional residues whose amplitudes differ, as
+
+governed by RR-1.
+
+=== PDF PAGE 5 ===
+⸻
+
+7. Soft Vector Resolution
+
+Directional resolution occurs through relative amplitude, not selection.
+
+The route whose residue is most coherent with:
+
+•
+current time
+
+•
+bodily rhythm
+
+•
+environmental context
+
+•
+recent embodied activity
+
+produces the strongest directional bleed.
+
+This bleed:
+
+•
+expresses tendency, not instruction
+
+•
+attracts motion without coercion
+
+•
+dissolves when motion ceases
+
+No decision event occurs.
+
+⸻
+
+8. Role of AI (ϟA)
+
+AI in Yellow operates strictly as ϟA — externalized attention over time.
+
+AI may:
+
+•
+maintain continuity
+
+•
+regulate smoothness
+
+•
+preserve reversibility
+
+•
+dampen oscillation
+
+AI may never:
+
+•
+define direction
+
+•
+select routes
+
+•
+infer intent
+
+•
+predict destinations
+
+•
+optimize outcomes
+
+=== PDF PAGE 6 ===
+AI may not generate, preserve, or reinforce route residue autonomously (RR-1).
+
+Any AI system that injects direction violates AP₁-Y and ΔR.
+
+⸻
+
+9. Distinction Between Routes and Locations
+
+This addendum affirms the canonical distinction defined in ITL-1 v1.1:
+
+•
+Routes may bleed into Yellow as directional residue.
+
+•
+Locations may never bleed.
+
+Locations:
+
+•
+exist only as Purple anchors
+
+•
+appear exclusively via contextual fade-in
+
+•
+exert no directional pull
+
+Any system in which a location attracts motion is non-canonical.
+
+⸻
+
+10. Voluntary Activation and Withdrawal
+
+Yellow navigation is:
+
+•
+voluntary
+
+•
+temporary
+
+•
+withdrawable
+
+Navigation ends when:
+
+•
+motion stops
+
+•
+attention releases
+
+•
+the human withdraws will
+
+No completion state exists.
+
+No arrival event is required.
+
+⸻
+
+11. Canonical Statements
+
+Navigation does not require endpoints.
+
+=== PDF PAGE 7 ===
+It requires permissibility.
+
+Routes are not chosen.
+
+They resonate.
+
+Direction is not instruction.
+
+It is thermodynamic tendency.
+
+Exploration leaves no residue.
+
+Navigation may.
+
+AI may regulate continuity.
+
+AI may never define direction.
+
+Any system that collapses navigation into A → B violates AP₁-Y.
+
+⸻
+
+12. Status
+
+AP₁-Y v1.2 is canonical and normative.
+
+It completes the navigational grammar of Ambient OS by defining:
+
+•
+motion without goals
+
+•
+routes without objects
+
+•
+direction without instruction
+
+•
+navigation without destinations
+
+⸻
+
+Closing Note
+
+Yellow navigation does not lead somewhere.
+
+It allows movement to unfold where movement is possible.
+
+By separating exploration from navigation and persistence from choice, Ambient OS restores
+
+navigation to a human, embodied, and thermodynamically stable scale.

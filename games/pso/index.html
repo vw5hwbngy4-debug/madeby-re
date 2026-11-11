@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><base href="/pso/"/><meta charset="utf-8"/><meta name="pso-deploy" content="wolken-root-route-20260917-v1"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="/pso/assets/pso/ui/class_portraits/HUmar_pressed.png" rel="icon" type="image/png"/><meta content="#071523" name="theme-color"/><title>Original Xbox PSO Save Reader &amp; MAG Planner | PSO · MadeBy</title><meta content="Bring a verified Original Xbox PSO character from USB into PSO · MadeBy with Ragol Link, then use save-aware MAG, Section ID hunt and gear tools." name="description"/><link href="https://madeby.re/games/pso/" rel="canonical"/><link href="styles.css?v=073" rel="stylesheet"/><link href="rico-intelligence.css?v=055" rel="stylesheet"/>
+<style id="rico-opener-inline-v094">
+/* RICO opener is intentionally self-contained in this page. */
+#ricoOpenerSurface{
+  position:relative!important;
+  height:110px!important;
+  min-height:110px!important;
+  max-height:110px!important;
+  overflow:hidden!important;
+  cursor:pointer!important;
+  user-select:none;
+  transition:border-color .18s ease, box-shadow .18s ease!important;
+}
+#ricoOpenerSurface:hover,
+#ricoOpenerSurface:focus-visible{
+  border-color:#ff79b7!important;
+  box-shadow:
+    0 0 0 1px rgba(255,121,183,.22) inset,
+    0 0 22px rgba(255,74,157,.20)!important;
+  outline:none!important;
+}
+#ricoOpenerSurface:hover .welcomeMark,
+#ricoOpenerSurface:focus-visible .welcomeMark{
+  color:#ff8bc1!important;
+  filter:drop-shadow(0 0 7px rgba(255,100,180,.55))!important;
+}
+#ricoOpenerCopy{
+  max-width:72%!important;
+  text-align:center!important;
+  padding:0!important;
+  margin:0!important;
+  transition:opacity .16s ease, transform .16s ease!important;
+}
+#ricoOpenerText{
+  display:inline!important;
+}
+#ricoOpenerPortrait[hidden]{
+  display:none!important;
+}
+#ricoOpenerPortrait:not([hidden]){
+  display:block!important;
+  position:absolute!important;
+  z-index:4!important;
+  top:0!important;
+  right:0!important;
+  bottom:0!important;
+  width:86px!important;
+  height:110px!important;
+  overflow:hidden!important;
+  pointer-events:none!important;
+  animation:ricoInlinePortraitIn .2s ease both;
+}
+#ricoOpenerPortrait img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  object-fit:cover!important;
+  object-position:center 22%!important;
+  border:0!important;
+  border-left:1px solid rgba(255,118,180,.65)!important;
+  border-radius:0!important;
+  box-shadow:-10px 0 24px rgba(255,72,156,.14)!important;
+}
+#ricoOpenerSurface.rico-opened #ricoOpenerCopy{
+  max-width:62%!important;
+  transform:translateX(-5px);
+}
+#ricoOpenerSurface.rico-swap #ricoOpenerCopy{
+  animation:ricoInlineSwap .22s ease;
+}
+@keyframes ricoInlinePortraitIn{
+  from{opacity:0;transform:translateX(8px)}
+  to{opacity:1;transform:translateX(0)}
+}
+@keyframes ricoInlineSwap{
+  from{opacity:.28;transform:translateX(-5px) translateY(2px)}
+  to{opacity:1;transform:translateX(-5px) translateY(0)}
+}
+@media(max-width:720px){
+  #ricoOpenerSurface{
+    height:110px!important;
+    min-height:110px!important;
+    max-height:110px!important;
+  }
+  #ricoOpenerPortrait:not([hidden]){
+    width:72px!important;
+    height:110px!important;
+  }
+  #ricoOpenerSurface.rico-opened #ricoOpenerCopy{
+    max-width:64%!important;
+  }
+}
+@media(max-width:430px){
+  #ricoOpenerPortrait:not([hidden]){
+    width:64px!important;
+  }
+  #ricoOpenerSurface.rico-opened #ricoOpenerCopy{
+    max-width:61%!important;
+    font-size:12px!important;
+    line-height:1.28!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  #ricoOpenerSurface,
+  #ricoOpenerCopy{transition:none!important}
+  #ricoOpenerPortrait:not([hidden]),
+  #ricoOpenerSurface.rico-swap #ricoOpenerCopy{animation:none!important}
+}
+</style>
+<meta content="website" property="og:type"/><meta content="Original Xbox PSO Save-Aware Tools | PSO · MadeBy" property="og:title"/><meta content="Ragol Link reads and validates a real Original Xbox PSO character from USB, then PSO · MadeBy uses that state for MAG, hunt and gear tools." property="og:description"/><meta content="https://madeby.re/games/pso/" property="og:url"/><meta content="https://madeby.re/games/pso/assets/pso/personality/rico.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Original Xbox PSO Save-Aware Tools | PSO · MadeBy" name="twitter:title"/><meta content="Real Original Xbox save state into browser-native PSO strategy tools." name="twitter:description"/><meta content="https://madeby.re/games/pso/assets/pso/personality/rico.jpg" name="twitter:image"/><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "PSO · MadeBy Phantasy Star Online Save-Aware Tools", "url": "https://madeby.re/games/pso/", "description": "PSO Episode I & II strategy tools that can use a verified Original Xbox character as the starting point for MAG, Section ID hunt and gear progression.", "applicationCategory": "GameApplication", "creator": {"@type": "Person", "name": "Raynor Eissens"}}, {"@type": "SoftwareApplication", "name": "Ragol Link", "softwareVersion": "0.1.4", "operatingSystem": "Windows 11", "applicationCategory": "UtilityApplication", "downloadUrl": "https://madeby.re/games/pso/downloads/Ragol-Link-Windows.zip", "url": "https://madeby.re/games/pso/releases/ragol-link-v0-1-4/", "description": "Read-only Original Xbox PSO USB-to-browser save bridge. Reads and validates PSO_CHARACTER locally and hands verified character state to PSO · MadeBy."}]}</script></head><body><main class="app"><section class="memory"><img alt="PSO memory" id="memoryImg"/><div class="memoryText"><div class="kicker">Phantasy Star Online Ep. I&amp;II · Save-aware strategy</div><h1>Bring your real PSO character into the strategy layer.</h1><p>Ask RICO, plan a MAG, route hunts across Section IDs or map gear progression. With Ragol Link, the verified Original Xbox save can be the starting point.</p></div></section><section aria-labelledby="ragolReleaseTitle" class="ragolRelease">
+<div class="ragolReleaseCopy">
+<div class="ragolReleaseKicker">RAGOL LINK v0.1.4 · WINDOWS</div>
+<h2 id="ragolReleaseTitle">Bring a real Original Xbox PSO character into PSO · MadeBy.</h2>
+<p>Ragol Link reads PSO_CHARACTER directly from an Xbox-formatted USB on Windows, validates the save locally, and hands verified character state to the browser. The Original Xbox remains the source of truth and USB access is read-only.</p>
+<div class="ragolReleaseActions">
+<a class="ragolReleasePrimary" download="" href="/pso/downloads/Ragol-Link-Windows-v0.1.4.zip">DOWNLOAD FOR WINDOWS</a>
+<a href="https://github.com/vw5hwbngy4-debug/Ragol-Link/releases" rel="noopener noreferrer" target="_blank">GITHUB RELEASES ↗</a>
+<a href="downloads/SHA256SUMS.txt" rel="noopener" target="_blank">SHA-256</a>
+<a href="releases/ragol-link-v0-1-4/">RELEASE NOTES</a></div>
+<details class="ragolHow"><summary>How to use it</summary><ol><li>Download and extract <b>Ragol-Link-Windows.zip</b>.</li><li>Run <b>INSTALL RAGOL LINK.cmd</b>, then start Ragol Link with your Xbox-formatted PSO USB connected.</li><li>Ragol Link opens this page and links the verified save to RICO automatically.</li></ol></details>
+</div>
+<a aria-label="Download Ragol Link v0.1.4 for Windows" class="ragolReleaseSeal" download href="/pso/downloads/Ragol-Link-Windows-v0.1.4.zip">
+<strong>v0.1.4</strong><span>PUBLIC RELEASE</span><small>Windows 11 tested<br/>Unsigned · Original Xbox only</small>
+</a>
+</section><section class="service"><div class="ricoServiceTop"><div class="promptLabel">What do you want from this world?</div><section aria-label="Link an Original Xbox PSO save" class="saveMagCoachHost saveMagCoachCompact" id="saveMagCoachHost"></section></div><form class="promptWrap" id="askForm"><input autocomplete="off" class="prompt" id="prompt" placeholder="Ask RICO about drops, your MAG, gear, routes or Ragol…" spellcheck="false"/><button class="go" type="submit">↵</button></form><div class="examples"><button class="example" data-q="Where does Spread Needle drop on Xbox Redria?">Spread Needle · Redria</button><button class="example" data-q="What is the Section ID for Raynor on Xbox?">Section ID · Raynor</button><button class="example" data-q="Compare Skyly vs Redria on Ultimate">Skyly vs Redria</button><button class="example" data-q="What can Pinkal farm in Ruins?">Pinkal profile</button><button class="example" data-q="make a mag plan for a Redria male Hunter with Sato">Sato MAG plan</button><button class="example" data-q="What do Rico's messages reveal about Ragol and what patterns emerge from them?">Story · Rico</button></div><div class="status"><span class="dot"></span><span>RAGOL LINK v0.1.4 READY · RICO INTELLIGENCE READY · ORIGINAL XBOX SAVE OPTIONAL · SCRIPT CANON READY</span></div></section><div aria-hidden="true" class="ricoIntelligenceHeadless">
+<section class="huntRouterHost" id="huntRouterHost"></section>
+<section class="accountRouterHost" id="accountRouterHost"></section>
+<section class="gearProgressionHost" id="gearProgressionHost"></section>
+</div><section class="surface" id="surface">
+<div aria-label="Get a prompt idea from RICO" class="surfaceShell welcomeSurface" id="ricoOpenerSurface" role="button" tabindex="0">
+<div class="welcomeMark">◈</div>
+<div class="emptySurface" id="ricoOpenerCopy">
+<b>RICO is standing by.</b><br/>
+<span id="ricoOpenerText">Ask Ragol for what you need.</span>
+</div>
+<aside aria-hidden="true" hidden="" id="ricoOpenerPortrait">
+<img alt="" src="/pso/assets/pso/personality/rico.jpg"/>
+</aside>
+</div>
+</section>
+<footer aria-label="Ragol memory" class="ragolFooter">
+<div class="footerFrame"><img alt="Phantasy Star Online memory" id="randomFooterImg"/></div>
+<div class="footerCaption"><span>RAGOL MEMORY ARCHIVE</span><span>PSO · MadeBy · PSO</span></div>
+</footer><div class="foot">PSO · MadeBy · PHANTASY STAR ONLINE · RICO INTELLIGENCE v0.6 · RAGOL LINK v0.1.4</div></main><audio id="bgAudio" loop="" preload="auto" src="/pso/assets/pso/sfx/jungle_a_lush_load.mp3"></audio><button class="audioBtn" id="audioBtn">♫ PSO MUSIC: OFF</button><script src="data.js?v=061"></script><script src="engine.js?v=061"></script><script src="mag-data.js?v=060"></script><script src="mag-engine.js?v=062"></script><script src="app.js?v=088"></script><script src="save-mag-coach.js?v=054" type="module"></script><script src="ragol-link-bridge.js?v=015" type="module"></script><script src="hunt-router-ui.js?v=034" type="module"></script><script src="account-router-ui.js?v=042" type="module"></script><script src="gear-progression-ui.js?v=052" type="module"></script>
+<script id="rico-opener-inline-script-v094">
+(()=>{
+  const box=document.getElementById('ricoOpenerSurface');
+  const text=document.getElementById('ricoOpenerText');
+  const portrait=document.getElementById('ricoOpenerPortrait');
+  if(!box||!text||!portrait)return;
+
+  const openers=[
+    "What should I hunt next for my Section ID?",
+    "Where does Spread Needle drop for Redria?",
+    "Build me a Sato MAG plan for my class.",
+    "Which Section ID fits the weapons I want?",
+    "What is the best upgrade I can hunt next?",
+    "Compare Skyly and Redria for Ultimate.",
+    "Which quest is best for this enemy or drop?",
+    "What should I feed my MAG next?",
+    "Who is Red Ring Rico, beyond the legend?",
+    "What is the relationship between Elly and Calus?",
+    "What do Rico's messages reveal about Ragol?",
+    "Explain Kireek's story and what changes him.",
+    "What recurring patterns connect Episode I and Episode II?",
+    "What does the script tell us about Dark Falz?"
+  ];
+
+  let index=0;
+
+  // Hard reset: first arrival is ALWAYS the original idle panel.
+  portrait.hidden=true;
+  box.classList.remove('rico-opened','rico-swap');
+  text.textContent='Ask Ragol for what you need.';
+
+  const cycle=()=>{
+    text.textContent=openers[index];
+    index=(index+1)%openers.length;
+    portrait.hidden=false;
+    box.classList.add('rico-opened');
+    box.classList.remove('rico-swap');
+    void box.offsetWidth;
+    box.classList.add('rico-swap');
+  };
+
+  box.addEventListener('click',cycle);
+  box.addEventListener('keydown',(e)=>{
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();
+      cycle();
+    }
+  });
+})();
+</script>
+</body></html>

@@ -1,0 +1,36 @@
+EMERALD v0.1.25.2 — SMALL SWITCH BRIDGE ROLLBACK
+=================================================
+Purpose
+-------
+Remove the experimental SEND TO SWITCH surface and localhost bridge hooks while
+preserving the existing Emerald v0.1.24 live game, My Field, Team Lab, Trainer
+Card, DEX, live RAM / hidden-values tooling, HOME transfer compiler, save vault,
+and all unrelated assets/features.
+
+Files restored from the clean v0.1.24 baseline
+------------------------------------------------
+- index.html
+- owned-pokefield-v0.1.21.css
+- owned-pokefield-v0.1.22.2.js
+- home-bridge-v0.1.24.js
+- home-bridge-v0.1.24.css
+
+Safety override
+---------------
+- switch-bridge-v0.1.25.js is replaced by an inert no-op. This prevents a stale
+  cached page from calling the experimental localhost bridge.
+- VERSION_SWITCH_BRIDGE.txt marks the experimental bridge as rolled back.
+
+Expected UI after deployment
+----------------------------
+LIVE | MY FIELD | TEAM LAB | TRAINER CARD
+No SEND TO SWITCH button.
+No Switch transfer button in the HOME/transfer compiler modal.
+No calls to http://127.0.0.1:49327 from the active v0.1.24 UI.
+
+Deployment
+----------
+Extract/overwrite these files in the same Emerald web root where the previous
+Switch Bridge hotfix was deployed. Then hard-refresh / clear the site cache.
+The obsolete experimental bridge files may remain on disk; they are inert and
+unreferenced after this overlay.

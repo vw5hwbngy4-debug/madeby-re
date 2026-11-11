@@ -1,0 +1,34 @@
+POKÉFIELD v0.1.5 - GEN III GENDER LOGIC
+
+ROM SOURCE
+  Exact Pokemon Emerald BPEE SpeciesInfo extracted in POKEFIELD_GEN3_FIRST_EXTRACTION_v0.1.
+  Fields added to emerald-live-dex.json:
+    genderRatioRaw
+    eggGroups
+    eggGroupIds
+    friendshipBase
+    eggCycles
+
+RUNTIME RULE
+  Equivalent to GetGenderFromSpeciesAndPersonality:
+    ratio 0   => male-only
+    ratio 254 => female-only
+    ratio 255 => genderless
+    otherwise female iff genderRatioRaw > (personality & 0xFF), else male.
+
+DISPLAY RATIOS
+  Canonical species labels are used for the standard Gen III ratio constants:
+    31  => 12.5% female
+    63  => 25% female
+    127 => 50% female
+    191 => 75% female
+    223 => 87.5% female
+
+ASSESSMENT
+  IV signal remains separately available as ivSignal.
+  A breedable female with a canonical female ratio <=25% is marked RARE FEMALE.
+  Overall signal escalation is intentionally modest:
+    PASS -> CHECK
+    CHECK -> KEEP
+    KEEP -> KEEP
+  This prevents a breeding-valuable rare female from being dismissed solely by IVs.

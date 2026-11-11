@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>AP₁.1 — Ambient OS Grammar &amp; ΔR Extensions | Raynor Eissens full-text library</title><meta content="AP₁.1 defines the internal semantic grammar of Ambient OS. Where AP₁ specifies how the system behaves structurally, AP₁.1 specifies why these behaviors remain coherent, reversible, and human-safe. This document formalizes field grammar, phase-relative truth, application" name="description"/>
+<meta content="index,follow,max-snippet:-1" name="robots"/><link href="https://madeby.re/research/library/papers/18651664.html" rel="canonical"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "AP₁.1 — Ambient OS Grammar & ΔR Extensions", "name": "AP₁.1 — Ambient OS Grammar & ΔR Extensions", "url": "https://madeby.re/research/library/papers/18651664.html", "mainEntityOfPage": "https://madeby.re/research/library/papers/18651664.html", "isAccessibleForFree": true, "sameAs": "https://zenodo.org/records/18651664", "encoding": [{"@type": "MediaObject", "encodingFormat": "text/html", "contentUrl": "https://madeby.re/research/library/papers/18651664.html"}, {"@type": "MediaObject", "encodingFormat": "text/plain", "contentUrl": "https://madeby.re/research/library/text/18651664.txt"}, {"@type": "MediaObject", "encodingFormat": "application/json", "contentUrl": "https://madeby.re/research/library/data/18651664.json"}], "author": [{"@type": "Person", "name": "Raynor Eissens"}], "abstract": "AP₁.1 defines the internal semantic grammar of Ambient OS. Where AP₁ specifies how the system behaves structurally, AP₁.1 specifies why these behaviors remain coherent, reversible, and human-safe. This document formalizes field grammar, phase-relative truth, application containment, extractivity thresholds, and ΔR extensions. It introduces a non-absolute model of software truth in which multiple correct representations may exist across interaction phases without contradiction. AP₁.1 is normative. It defines semantic validity conditions for all entities operating within Ambient OS. ⸻ 1. Scope and Relationship to AP₁ AP₁.1 specifies: • Ambient Meaning Grammar (AMG) • Phase-Relative Truth (PRT) • Application eligibility and containment • The Gray Field and extractivity thresholds • ΔR extensions and post-action integrity • Field Composition Vectors (FCV) AP₁.1 extends AP₁. It does not redefine structure, gestures, or navigation. Human Carrying Constraint All semantic grammar defined in AP₁.1 operates under HCP-1 (Human Carrying Principle), as defined in AP₁. Any semantic configuration t"}</script>
+<meta content="AP₁.1 — Ambient OS Grammar &amp; ΔR Extensions" name="citation_title"/>
+<meta content="Raynor Eissens" name="citation_author"/>
+<link href="../text/18651664.txt" rel="alternate" type="text/plain"/><link href="../data/18651664.json" rel="alternate" type="application/json"/>
+<link href="../assets/site.css" rel="stylesheet"/>
+</head><body><a class="skip" href="#main">Skip to content</a><div class="shell"><div class="portfolio-bridge"><a href="../../index.html">← Personal website</a><a href="../../archive.html">All 205 Zenodo records</a><a href="../index.html">Full-text library</a></div><header><a class="brand" href="../index.html">← RAYNOR EISSENS / FULL TEXT</a><h1>AP₁.1 — Ambient OS Grammar &amp; ΔR Extensions</h1><div class="meta"><span>Zenodo record: 18651664</span><span>6 PDF pages</span><span>820 extracted words</span></div><nav aria-label="Publication formats" class="tools"><a href="https://zenodo.org/records/18651664" rel="noopener">Original Zenodo record and PDF ↗</a><a href="../text/18651664.txt">Plain text</a><a href="../data/18651664.json">Full-text JSON</a><a href="../index.html">All publications</a></nav></header><main id="main"><aside aria-label="Editorial context for this publication" class="editorial-context compact-context"><span class="context-label">Editorial context · 19 September 2026</span><p>This document belongs to an exploratory theoretical archive. Claims of novelty should be treated as provisional unless independently sourced, and publication does not establish scientific validation. The original PDF-derived text below is unchanged. <a href="../index.html#archive-context">Read the archive note ↗</a></p></aside><section aria-label="Abstract"><h2>Abstract (extracted)</h2><p class="abstract">AP₁.1 defines the internal semantic grammar of Ambient OS. Where AP₁ specifies how the system behaves structurally, AP₁.1 specifies why these behaviors remain coherent, reversible, and human-safe. This document formalizes field grammar, phase-relative truth, application containment, extractivity thresholds, and ΔR extensions. It introduces a non-absolute model of software truth in which multiple correct representations may exist across interaction phases without contradiction. AP₁.1 is normative. It defines semantic validity conditions for all entities operating within Ambient OS. ⸻ 1. Scope and Relationship to AP₁ AP₁.1 specifies: • Ambient Meaning Grammar (AMG) • Phase-Relative Truth (PRT) • Application eligibility and containment • The Gray Field and extractivity thresholds • ΔR extensions and post-action integrity • Field Composition Vectors (FCV) AP₁.1 extends AP₁. It does not redefine structure, gestures, or navigation. Human Carrying Constraint All semantic grammar defined in AP₁.1 operates under HCP-1 (Human Carrying Principle), as defined in AP₁. Any semantic configuration t</p></section><p class="notice">This is a text extraction of the original PDF, not an edited or peer-reviewed edition. PDF text order, equations, multi-column tables and diagram details may be imperfect. Consult the original Zenodo file for authoritative layout and figures.</p><div class="paper-layout"><article aria-label="Full original extracted text"><section aria-label="Source PDF page 1" class="page" id="page-1"><h2>PDF page 1</h2><p class="pdf-block">AP₁.1 — Ambient OS Grammar &amp; ΔR Extensions</p>
+<p class="pdf-block">Ambient Era Standard · Canonical Specification (2026)</p>
+<p class="pdf-block">Raynor Eissens</p>
+<p class="pdf-block">⸻</p>
+<h3 class="pdf-heading">Abstract</h3>
+<p class="pdf-block">AP₁.1 defines the internal semantic grammar of Ambient OS.</p>
+<p class="pdf-block">Where AP₁ specifies how the system behaves structurally, AP₁.1 specifies why these behaviors</p>
+<p class="pdf-block">remain coherent, reversible, and human-safe.</p>
+<p class="pdf-block">This document formalizes field grammar, phase-relative truth, application containment,</p>
+<p class="pdf-block">extractivity thresholds, and ΔR extensions. It introduces a non-absolute model of software truth</p>
+<p class="pdf-block">in which multiple correct representations may exist across interaction phases without</p>
+<p class="pdf-block">contradiction.</p>
+<p class="pdf-block">AP₁.1 is normative. It defines semantic validity conditions for all entities operating within Ambient</p>
+<p class="pdf-block">OS.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">1. Scope and Relationship to AP₁</p>
+<p class="pdf-block">AP₁.1 specifies:</p>
+<p class="pdf-block">• Ambient Meaning Grammar (AMG)</p>
+<p class="pdf-block">• Phase-Relative Truth (PRT)</p>
+<p class="pdf-block">• Application eligibility and containment</p>
+<p class="pdf-block">• The Gray Field and extractivity thresholds</p>
+<p class="pdf-block">• ΔR extensions and post-action integrity</p>
+<p class="pdf-block">• Field Composition Vectors (FCV)</p>
+<p class="pdf-block">AP₁.1 extends AP₁.</p>
+<p class="pdf-block">It does not redefine structure, gestures, or navigation.</p>
+<p class="pdf-block">Human Carrying Constraint</p>
+<p class="pdf-block">All semantic grammar defined in AP₁.1 operates under HCP-1 (Human Carrying Principle), as</p>
+<p class="pdf-block">defined in AP₁.</p></section><section aria-label="Source PDF page 2" class="page" id="page-2"><h2>PDF page 2</h2><p class="pdf-block">Any semantic configuration that produces felt pressure, coercion, or irreversible engagement</p>
+<p class="pdf-block">violates ΔR and is therefore invalid, regardless of internal grammatical correctness.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">2. Core Principle: Phase-Relative Truth (PRT-1)</p>
+<p class="pdf-block">Ambient OS does not enforce a single global truth.</p>
+<p class="pdf-block">Truth in Ambient OS is phase-relative and field-correct.</p>
+<p class="pdf-block">An entity may express multiple valid semantic representations, each correct within its active field</p>
+<p class="pdf-block">and interaction phase, without contradiction.</p>
+<p class="pdf-block">Truth is therefore not absolute, but situated.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">3. Example: Multi-Field Truth (Canonical)</p>
+<p class="pdf-block">Running activity</p>
+<p class="pdf-block">• Yellow — navigation and motion truth</p>
+<p class="pdf-block">• Orange — experiential completion truth</p>
+<p class="pdf-block">• Green — physiological record truth</p>
+<p class="pdf-block">These truths:</p>
+<p class="pdf-block">• do not overlap</p>
+<p class="pdf-block">• do not conflict</p>
+<p class="pdf-block">• do not require merging</p>
+<p class="pdf-block">• remain semantically stable</p>
+<p class="pdf-block">Legacy systems collapse these into a single interface space.</p>
+<p class="pdf-block">Ambient OS preserves them as distinct.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">4. Ambient Meaning Grammar (AMG-1)</p></section><section aria-label="Source PDF page 3" class="page" id="page-3"><h2>PDF page 3</h2><p class="pdf-block">Meaning arises through field-constrained operators:</p>
+<p class="pdf-block">• Hue (H) — field selection</p>
+<p class="pdf-block">• Saturation (S) — relevance intensity</p>
+<p class="pdf-block">• Brightness (B) — energetic clarity</p>
+<p class="pdf-block">• Motion (M) — directional intent (Yellow only)</p>
+<p class="pdf-block">• Rhythm (R) — continuity and trust</p>
+<p class="pdf-block">• Proximity (P) — residency transition</p>
+<p class="pdf-block">• Texture (T) — ΔR instability indicator</p>
+<p class="pdf-block">Operators are valid only within their permitted fields.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">5. Fields That Cannot Carry Applications</p>
+<p class="pdf-block">The following layers never carry applications:</p>
+<p class="pdf-block">• ChronoSense — time / cycle</p>
+<p class="pdf-block">• Aura — meta-presence</p>
+<p class="pdf-block">• Red — being / presence</p>
+<p class="pdf-block">• Yellow — will / action</p>
+<p class="pdf-block">Rationale:</p>
+<p class="pdf-block">• What is cannot be objectified</p>
+<p class="pdf-block">• What moves cannot be contained</p>
+<p class="pdf-block">Applications are objects.</p>
+<p class="pdf-block">Objects require stability.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">6. Fields Eligible to Carry Applications</p>
+<p class="pdf-block">Applications may exist only in fields that can sustain stable truth:</p>
+<p class="pdf-block">• Orange — expression, creativity, satisfaction</p>
+<p class="pdf-block">• Pink — relation and communication</p>
+<p class="pdf-block">• Green — body, health, regulation</p>
+<p class="pdf-block">• Blue — information, cognition, organization</p></section><section aria-label="Source PDF page 4" class="page" id="page-4"><h2>PDF page 4</h2><p class="pdf-block">• Purple — infrastructure, shared systems</p>
+<p class="pdf-block">Eligibility depends on behavior, not topic.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">7. Extractivity and the Gray Field</p>
+<p class="pdf-block">Gray is not a category.</p>
+<p class="pdf-block">Gray is containment for incoherent truth.</p>
+<p class="pdf-block">An application is Gray-locked if its behavior exceeds the extractivity threshold.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">8. Extractivity Threshold (ET-40)</p>
+<p class="pdf-block">If an application exhibits more than ~40% extractive semantics, it cannot reside in any human</p>
+<p class="pdf-block">field.</p>
+<p class="pdf-block">Extractive semantics include:</p>
+<p class="pdf-block">• infinite scroll</p>
+<p class="pdf-block">• algorithmic compulsion</p>
+<p class="pdf-block">• dopamine-loop retention</p>
+<p class="pdf-block">• ad density</p>
+<p class="pdf-block">• unpredictability without intention</p>
+<p class="pdf-block">• ΔR destabilization</p>
+<p class="pdf-block">If ET &gt; 40%:</p>
+<p class="pdf-block">→ Gray only</p>
+<p class="pdf-block">→ no semantic color</p>
+<p class="pdf-block">→ no field residency</p>
+<p class="pdf-block">→ no migration upward</p>
+<p class="pdf-block">Gray protects the human fields from legacy systems.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">9. Dual-Seat Applications</p></section><section aria-label="Source PDF page 5" class="page" id="page-5"><h2>PDF page 5</h2><p class="pdf-block">Some applications may express phase-dependent residency.</p>
+<p class="pdf-block">Example:</p>
+<p class="pdf-block">• Messaging app used for relation → Pink</p>
+<p class="pdf-block">• Same app used as drift hub → Gray</p>
+<p class="pdf-block">Residency is determined by behavior in context, not brand identity.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">10. Field Composition Vector (FCV-7)</p>
+<p class="pdf-block">Every entity may be represented as:</p>
+<p class="pdf-block">FCV = {
+  Red%,
+  Orange%,
+  Yellow%,
+  Pink%,
+  Green%,
+  Blue%,
+  Purple%
+}</p>
+<p class="pdf-block">Rules:</p>
+<p class="pdf-block">• Percentages sum to 100%</p>
+<p class="pdf-block">• Dominant non-Gray field determines residency</p>
+<p class="pdf-block">• Gray overrides all if extractivity threshold is exceeded</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">11. ΔR Extensions and Post-Action Integrity</p>
+<p class="pdf-block">ΔR is extended in AP₁.1 with post-action constraints:</p>
+<p class="pdf-block">• No residual pressure after exit</p>
+<p class="pdf-block">• No delayed coercion</p>
+<p class="pdf-block">• No hidden continuation loops</p></section><section aria-label="Source PDF page 6" class="page" id="page-6"><h2>PDF page 6</h2><p class="pdf-block">Actions must return the system to a neutral or warmer state.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">12. Relationship to Artificial Intelligence</p>
+<p class="pdf-block">AI participates only in maintaining grammatical coherence.</p>
+<p class="pdf-block">AI:</p>
+<p class="pdf-block">• does not define truth</p>
+<p class="pdf-block">• does not assign meaning</p>
+<p class="pdf-block">• does not arbitrate fields</p>
+<p class="pdf-block">AI enforces constraints;</p>
+<p class="pdf-block">it does not author semantics.</p>
+<p class="pdf-block">Truth remains human-relative and field-bound.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">13. Status</p>
+<p class="pdf-block">AP₁.1 is normative.</p>
+<p class="pdf-block">Any Ambient OS implementation claiming semantic compatibility must:</p>
+<p class="pdf-block">• enforce phase-relative truth</p>
+<p class="pdf-block">• respect application eligibility rules</p>
+<p class="pdf-block">• contain extractive systems in Gray</p>
+<p class="pdf-block">• preserve ΔR across phases</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Canonical Statement</p>
+<p class="pdf-block">Ambient OS does not collapse meaning into one place.</p>
+<p class="pdf-block">It lets meaning live where it is true.</p></section></article><nav aria-label="PDF page navigation" class="toc"><b>Pages</b><a href="#page-1">1</a><a href="#page-2">2</a><a href="#page-3">3</a><a href="#page-4">4</a><a href="#page-5">5</a><a href="#page-6">6</a></nav></div></main><footer>Original record: <a href="https://zenodo.org/records/18651664">https://zenodo.org/records/18651664</a> · Full text derived from the uploaded PDF.<span class="ambient-footer-links"> · <a href="/ambient-era/">Ambient Era</a> · <a href="/ambient-phone/">Ambient Phone</a></span></footer></div></body></html>

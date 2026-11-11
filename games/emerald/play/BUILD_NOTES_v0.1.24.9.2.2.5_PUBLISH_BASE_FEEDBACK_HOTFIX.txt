@@ -1,0 +1,24 @@
+JRPG.WORLD Emerald Live v0.1.24.9.2.2.5 — Publish Base feedback/reliability hotfix
+Baseline: v0.1.24.9.2.2.4 HOENN RETURN TO GAME.
+
+Problem reproduced in code path:
+- Publish Base had no visible in-flight or success state.
+- Its first step unnecessarily requested a full forced Save Vault server backup even though publishing is read-only.
+- A slow/unreachable Hoenn API therefore looked exactly like a dead button.
+- Per-render button listeners were also replaced with one stable panel event delegate.
+
+Fix:
+- Immediate staged feedback: reading save -> checking base -> publishing -> published.
+- Explicit success: BASE PUBLISHED ✓ · READY FOR YOUR SECOND SAVE.
+- Explicit timeout/network/server errors instead of indefinite silence.
+- Publish reads the active mGBA save with serverBackup:false because it does not mutate the save.
+- ADD TO MY HOENN still uses Save Vault applyMutation(), which retains the pre-write server backup / rollback barrier.
+- Stable delegated Hoenn panel button handling survives innerHTML re-renders.
+- Server list refresh after successful publish can no longer erase the confirmed success message.
+
+UNCHANGED:
+- save-vault-v0.1.13.7.js
+- mGBA/WASM runtime
+- ROM loading
+- PokéField / My Field / DEX / Team Lab / transfer pipeline
+- HOENN console button and BACK TO GAME behavior from v0.1.24.9.2.2.4

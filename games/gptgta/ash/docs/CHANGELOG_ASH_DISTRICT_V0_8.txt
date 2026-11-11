@@ -1,0 +1,19 @@
+Ash District v0.8 — Diablo Grid + Vendor Economy Pass
+
+Changed
+- Removed the large top-left debug/status HUD from normal play. Life, level and stamina stay in the bottom Diablo-style orb HUD.
+- Hid the large controls hint during play to reduce screen clutter on mobile.
+- Fixed forest/tree flicker by assigning every tree/bush a stable sprite at map generation instead of randomly choosing a sprite every frame.
+- Calmed the Uzi SFX: the weapon still fires fast, but the sound is throttled so it no longer machine-triggers every bullet.
+- Reworked inventory into compact Diablo-style square grids instead of large cards.
+- Inventory squares use rarity colors: common light, magic/uncommon blue, rare gold/yellow, epic purple, legendary orange.
+- Accessory/money-style items render as round icons where possible.
+- Added selected-item details/actions in the character panel: Equip, Store, Take and Sell.
+- Reworked vendors into a two-grid trade view: player bag on the left, merchant stock on the right.
+- Clicking player bag items inside a vendor panel sells them; clicking merchant stock buys.
+- Kept roaming zombie packs and leader packs; no wave counter or wave progression was reintroduced.
+
+Known limitations
+- Vendor selling is currently click-to-sell, not full drag-and-drop yet.
+- Inventory items are represented as one-square icons; multi-cell Diablo/Tetris item footprints are not implemented yet.
+- Merchant stock refreshes on a new game start, not on a timed town refresh.

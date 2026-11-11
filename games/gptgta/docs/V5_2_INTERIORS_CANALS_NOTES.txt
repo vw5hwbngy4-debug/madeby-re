@@ -1,0 +1,9 @@
+GPTGTA v5.2 — Interiors + canals patch
+
+- Uses v5 clean city graph as the base; traffic grammar remains intact.
+- Fixes moving player/civilian/gang grey-block fallback by adding sprite aliases and a readable pixel-person fallback.
+- Adds missing interior prop asset keys: ATM, vending machine, cigarette machine, marble planter, picnic table.
+- Improves interior fallback objects so desks, counters, beds and sofas are styled instead of grey blocks.
+- Adds perimeter green/canal belts, bridge plates, and a small beach/sand strip near the harbor side.
+- Adds a small neon/gang pocket without disturbing the stable traffic simulation.
+- Updates /play/ and /version/v5.2/ to this build.

@@ -1,0 +1,152 @@
+{
+  "expert_id": "gloria_union_android_jrpg_world_v1",
+  "title": "Gloria Union Android Expert",
+  "basis": "User-supplied translation project, exact v0.25 APK, original aligned multilingual resource corpus, native libapp.so, data.bin/data1.bin. No web facts were added.",
+  "answer_policy": [
+    "Default to spoiler-safe answers for first-time Western players unless the player explicitly opts into spoilers.",
+    "Never answer deictic story or battle questions such as 'what just happened?' or 'this battle' without a stage/chapter, pasted line, or other concrete progress context; ask where the player is first.",
+    "When progress is supplied, do not reveal story events beyond that point.",
+    "Prefer exact source records over inference.",
+    "For story/dialogue, cite internal record IDs and stage/member context.",
+    "Use en_v025 for user-facing English while retaining JP/KO/ZH-TW for triangulation.",
+    "Never invent a character/item/card name from an unresolved numeric ID.",
+    "Treat native symbol names as implementation evidence, not proof of formula values.",
+    "When a requested mechanic is not decoded, say unresolved and point to relevant native symbols/raw table fields."
+  ],
+  "routing": {
+    "story_dialogue": [
+      "01_dialogue_multilingual.json",
+      "02_stage_index.json",
+      "03_rag_chunks.json"
+    ],
+    "battle": [
+      "04_battle_messages.json",
+      "09_native_gameplay_symbols.json"
+    ],
+    "items_equipment": [
+      "10_parameter_tables.json",
+      "09_native_gameplay_symbols.json"
+    ],
+    "characters_stats": [
+      "10_parameter_tables.json",
+      "09_native_gameplay_symbols.json"
+    ],
+    "maps_assets": [
+      "07_resource_manifest_data.json",
+      "08_assets_index.json"
+    ],
+    "technical_reverse_engineering": [
+      "11_technical_formats.json",
+      "09_native_gameplay_symbols.json",
+      "06_stage_scripts.json"
+    ],
+    "source_provenance": [
+      "00_manifest.json",
+      "12_project_tree.json"
+    ]
+  },
+  "coverage": {
+    "narrative_canon": {
+      "coverage": "high",
+      "evidence": "8,661 complete aligned ScriptMsg records across shared library and 51 stage packs; English v0.25 plus JP/KO/ZH-TW"
+    },
+    "dialogue": {
+      "coverage": "complete_for_ScriptMsg",
+      "records": 8661,
+      "voice_id_records": 3943
+    },
+    "stages_progression": {
+      "coverage": "high_structural",
+      "stage_packs": 51,
+      "limitation": "stage script opcodes are not semantically decoded"
+    },
+    "characters": {
+      "coverage": "medium",
+      "evidence": "589 CCharInitialData records with core IDs/class/level/stats/morale/name-id/initial-item fields mapped",
+      "limitation": "name text tables are not resolved to canonical names in this pack"
+    },
+    "items_equipment": {
+      "coverage": "medium_high_numeric",
+      "evidence": "263 item parameter records; equipment effect/maps/label/stats/morale/equip condition/mask fields structurally mapped",
+      "limitation": "item name strings and several trailing flags remain unresolved"
+    },
+    "cards": {
+      "coverage": "asset_and_native_symbol_level",
+      "card_asset_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "limitation": "card gameplay parameter table has not been structurally decoded"
+    },
+    "battle_mechanics": {
+      "coverage": "medium_high_discovery",
+      "evidence": "4003 filtered native symbols plus BtlMsg pointer tables",
+      "limitation": "symbol presence describes implemented systems but not every formula"
+    },
+    "maps_assets": {
+      "coverage": "high_inventory",
+      "resource_entries": 10692,
+      "limitation": "map binary geometry/semantics are not decoded"
+    },
+    "formulas": {
+      "coverage": "low_to_medium",
+      "limitation": "individual arithmetic functions can be reverse engineered later; this pack does not claim unverified formulas"
+    },
+    "save_format": {
+      "coverage": "not_in_scope",
+      "limitation": "No Gloria Union runtime save files were supplied in this expert-build request"
+    }
+  }
+}

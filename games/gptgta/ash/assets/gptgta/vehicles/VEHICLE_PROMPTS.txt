@@ -1,0 +1,15 @@
+
+Generate top-down pixel vehicles:
+- sedan
+- taxi
+- police car
+- ambulance
+- van
+- bus
+- motorcycle
+- helicopter
+
+States:
+clean damaged destroyed burned
+
+Readable while moving fast.

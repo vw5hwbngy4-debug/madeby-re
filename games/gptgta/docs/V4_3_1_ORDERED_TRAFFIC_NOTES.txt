@@ -1,0 +1,15 @@
+GPTGTA v4.3.1 — Ordered Traffic / Big City Harbor
+
+This build keeps the v4.3 large city and Harbor Scrap objective, but changes the traffic model.
+
+Changes:
+- Traffic cars now spawn onto soft lane centers instead of random road pixels.
+- Cars follow ordered loops through the city grid.
+- Traffic uses simple two-phase stoplights at intersections.
+- Cars keep spacing and wait behind cars ahead.
+- Ambient traffic no longer destroys itself through normal traffic-to-traffic contact.
+- Carjacker ambient hijacks are much rarer.
+- The player can still crash into traffic, steal cars with drivers, and cash cars at Harbor Scrap.
+
+Design goal:
+The city should feel alive and structured, more like GTA 1/2 traffic: many cars, loops, rules, occasional chaos.

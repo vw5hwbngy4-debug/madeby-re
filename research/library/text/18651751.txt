@@ -1,0 +1,499 @@
+=== PDF PAGE 1 ===
+AP₁-Y v1.1 — Yellow Navigation Engine
+
+Direction as a State of Will
+
+Ambient Era Standard · Canonical Specification (2026)
+
+Raynor Eissens
+
+⸻
+
+Abstract
+
+AP₁-Y specifies the Yellow Navigation Engine of Ambient OS.
+
+Where AP₁ defines the structural field topology and AP₁.1 defines semantic grammar and phase-
+
+relative truth, AP₁-Y formalizes direction as a temporary state of activated human will rather
+
+than as a map, task, route, or command system.
+
+Navigation in Ambient OS is not continuous, automatic, or agent-driven.
+
+It exists only when the user explicitly permits directional meaning to appear.
+
+AP₁-Y defines how directional intent becomes legible through color-field vectors, bleed
+
+mechanics, and reversible transitions, while preserving human presence, autonomy, and ΔR
+
+stability.
+
+AP₁-Y is normative.
+
+⸻
+
+1. Scope and Relationship
+
+AP₁-Y specifies:
+
+• Yellow as a voluntary navigation state
+
+• Directional semantics and vector logic
+
+• Bleed as directional expression
+
+• Navigational attractors
+
+• Entry and exit conditions
+
+• Reversibility during navigation
+
+AP₁-Y implements AP₁ within the Yellow field.
+
+AP₁-Y is constrained by AP₁.1 semantic grammar.
+
+=== PDF PAGE 2 ===
+AP₁-Y does not specify:
+
+• mapping technologies
+
+• routing algorithms
+
+• location databases
+
+• GPS, sensors, or data sources
+
+• applications or UI layouts
+
+⸻
+
+2. Foundational Principle
+
+Navigation in Ambient OS is not automatic movement awareness.
+
+Navigation is will made directional.
+
+Yellow represents a state in which the user permits direction to appear.
+
+If no such permission is given, no navigation exists — regardless of motion.
+
+⸻
+
+3. Ontology of Yellow
+
+Yellow is defined as:
+
+• Intent
+
+• Direction
+
+• Choice
+
+• Orientation
+
+• Activated will
+
+Yellow is not:
+
+• A background mode
+
+• A movement detector
+
+• A destination container
+
+• A content or data field
+
+Yellow exists only while directional intent is actively held.
+
+=== PDF PAGE 3 ===
+⸻
+
+4. Voluntary Activation
+
+Yellow may be entered only through explicit user activation
+
+(e.g. depth-press from Orange or equivalent intentional gesture).
+
+Yellow must never activate automatically due to:
+
+• walking
+
+• running
+
+• location change
+
+• sensor input
+
+Without explicit activation, the system remains in Red or ChronoSense.
+
+⸻
+
+5. Directional Vector Semantics
+
+Within Yellow, intent is expressed as directional vectors.
+
+Canonical vector mapping:
+
+• Left → Green (body / regulation)
+
+• Right → Blue (information / cognition)
+
+• Up → Pink (relation / contact)
+
+Additional access:
+
+• Diagonal deviation → Purple (infrastructure)
+
+• Pinch-in → Gray (legacy containment)
+
+Vectors express orientation, not instruction.
+
+No vector constitutes:
+
+• an order
+
+• a task
+
+• a locked destination
+
+⸻
+
+=== PDF PAGE 4 ===
+6. Bleed Mechanics
+
+Bleed is the only visual mechanism of navigation.
+
+Bleed properties:
+
+• Exists only in Yellow
+
+• Is directional, not representational
+
+• Is transient and intent-bound
+
+• Has no persistence outside activation
+
+Bleed expresses possibility, not obligation.
+
+⸻
+
+7. Prohibition of Bleed Outside Yellow
+
+Bleed is strictly forbidden in:
+
+• ChronoSense
+
+• Red
+
+• Orange
+
+• Pink
+
+• Green
+
+• Blue
+
+• Purple
+
+Directional influence outside Yellow constitutes semantic violation.
+
+⸻
+
+8. Fade vs Bleed (Orthogonality Rule)
+
+Navigation uses bleed.
+
+Presence uses fade.
+
+Fade:
+
+• Appears only toward Red
+
+• Is non-directional
+
+• Represents environmental presence
+
+=== PDF PAGE 5 ===
+Bleed:
+
+• Appears only in Yellow
+
+• Is directional
+
+• Represents potential movement
+
+Fade and bleed must never co-exist.
+
+⸻
+
+9. Navigational Attractors (Yellow-only)
+
+Navigational attractors are emergent coherence points within Yellow.
+
+They:
+
+• Exist only during active navigation
+
+• Are expressed through bleed
+
+• Indicate reduced resistance in a direction
+
+• Do not represent places or destinations
+
+Navigational attractors dissolve immediately upon exit from Yellow.
+
+⸻
+
+10. Environmental Attractors (Residency)
+
+Environmental attractors represent places, infrastructures, or contexts.
+
+They:
+
+• May appear while the system is in Red
+
+• Are expressed exclusively through fade
+
+• Are non-directional
+
+• Do not imply intent or movement
+
+Environmental attractors commit the system to presence, not navigation.
+
+⸻
+
+10.1 Voluntary Navigation Activation (Yellow Constraint)
+
+=== PDF PAGE 6 ===
+Environmental presence does not activate Yellow.
+
+Walking, running, standing still, or entering a physical environment does not constitute
+
+navigational intent and must never cause Yellow to appear.
+
+Environmental attractors may express themselves through fade while the system remains in Red.
+
+Such expression represents presence only and carries no directional meaning.
+
+Yellow may be entered only through explicit voluntary activation by the user.
+
+Yellow must never activate due to:
+
+•
+physical proximity
+
+•
+location change
+
+•
+environmental context
+
+•
+sensor input
+
+•
+background motion
+
+Without explicit activation:
+
+•
+no bleed may appear
+
+•
+no directional vectors may be rendered
+
+•
+no navigational attractors may exist
+
+Navigation in Ambient OS exists only while the user actively permits directional
+
+meaning to appear.
+
+⸻
+
+Orthogonality Enforcement
+
+Fade may occur while the system remains in Red.
+
+Fade never implies navigation.
+
+When Yellow is active, environmental fade is suspended rather than overridden.
+
+Bleed may appear only while Yellow is active.
+
+Bleed never implies presence.
+
+Any appearance of bleed outside Yellow constitutes a violation of AP₁-Y.
+
+⸻
+
+=== PDF PAGE 7 ===
+Canonical Closure
+
+Presence does not request permission.
+
+Navigation always does.
+
+The world may appear without intent.
+
+Direction never does.
+
+⸻
+
+11. Chaos and Coherence
+
+AP₁-Y permits uncertainty.
+
+• Hesitation is valid
+
+• Exploration is valid
+
+• Ambiguity is valid
+
+Navigation does not require:
+
+• predefined routes
+
+• optimal paths
+
+• explicit goals
+
+Coherence emerges through continued intent, not planning.
+
+⸻
+
+12. Exit Conditions (Corrected)
+
+Yellow must exit when directional intent is no longer actively held.
+
+Exit triggers include:
+
+• Intent dissolves
+
+• User withdraws activation
+
+• Direction is no longer relevant
+
+Motion alone does not force exit.
+
+Standing still does not force exit.
+
+=== PDF PAGE 8 ===
+Yellow is exited by withdrawal of will, not by lack of movement.
+
+⸻
+
+13. Exit Outcomes
+
+Possible exits from Yellow:
+
+• Yellow → Orange
+
+Occurs only when experiential closure, satisfaction, or celebration is present.
+
+• Yellow → Red
+
+Occurs when navigation is aborted or dissolves without closure.
+
+Orange is optional, not mandatory.
+
+Not all navigation produces celebration.
+
+⸻
+
+14. Reversibility During Navigation
+
+Navigation must remain fully reversible.
+
+Constraints:
+
+• No forced continuation
+
+• No irreversible commitment
+
+• No hidden progression
+
+Exit must restore the system to a neutral or warmer state.
+
+Violation constitutes ΔR failure.
+
+⸻
+
+15. Non-Agentic Navigation
+
+Navigation in AP₁-Y is not agent-driven.
+
+There is:
+
+=== PDF PAGE 9 ===
+• No assistant authority
+
+• No command issuer
+
+• No optimization agent
+
+AI may:
+
+• maintain stability
+
+• regulate timing
+
+• preserve coherence
+
+AI must never:
+
+• decide direction
+
+• choose destinations
+
+• override intent
+
+AP₁-Y governs expression, not discovery.
+
+⸻
+
+16. Relationship to Legacy Navigation
+
+Legacy systems treat navigation as task execution.
+
+AP₁-Y separates:
+
+• Motion (Yellow)
+
+• Experience (Orange)
+
+• Record (Green)
+
+This separation preserves human scale and presence.
+
+⸻
+
+17. Status
+
+AP₁-Y v1.1 is normative.
+
+Any Ambient OS implementation claiming compatibility must:
+
+• Restrict navigation to Yellow
+
+• Require voluntary activation
+
+=== PDF PAGE 10 ===
+• Enforce bleed constraints
+
+• Preserve reversibility
+
+• Prevent agentic control
+
+⸻
+
+Canonical Statement
+
+Navigation is not movement.
+
+Navigation is permission for direction.
+
+Yellow is not where you are.
+
+Yellow is when you choose to orient.

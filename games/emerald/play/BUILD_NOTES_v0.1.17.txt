@@ -1,0 +1,57 @@
+EMERALD v0.1.17 — MY POKEFIELD P0
+
+PARTY ONLY. No real PC box extraction or Trainer Card MY BOX population.
+
+Adapter
+Consumes JRPGWorldEmeraldState initially and jrpg:emerald-state thereafter.
+Copies non-null, valid public party records, maximum six; retains rawReference
+without modifying it. Uses existing assets/pokemon/{dexNo}.png. No decoder fork.
+
+Identity
+specimenId = unsigned PID + ':' + unsigned OT ID. partySlot is a current locator,
+never persistent identity. Checksums do not affect identity. Focus survives slot
+reordering and training updates. Exact clones sharing PID and OT cannot be
+distinguished durably by this policy; P0 does not invent a permanent slot identity.
+
+CALL
+Deterministic category/value/comparison pickers. Each predicate intersects the
+current active scope and previous predicates. Nonresponders stay in place,
+subdued; responders brighten. EV TRAINED means EV total > 0, not a competitive
+judgment. Eggs match PARTY controls only and show an egg indicator.
+
+FOCUS
+Stores responder identities as the new field membership and clears CALL chain.
+An empty response can focus an empty field; SCATTER remains available.
+Live updates re-evaluate predicates against latest values within the focus.
+New specimens enter the wider party, accessible with SCATTER.
+
+RANK
+Descending numeric projection of active field, with actual metric values.
+Party slot provides deterministic tie ordering. Unknown/egg values sort last.
+No competitive tiers or rank-band semantics are invented.
+SCATTER clears calls, focus and rank, restoring the complete current party.
+
+Selection
+Cells dispatch jrpg:emerald-select-party with partySlot and specimenId.
+Small listener in active pokefield-live-v0.1.9.js validates selection, updates
+selectedParty and invokes existing render(). Opens canonical .pf-detail sections;
+during wild encounters it reveals the existing owned drawer. No second passport.
+
+Navigation
+Small LIVE / MY FIELD / TRAINER CARD strip below update trail. Original header,
+Compact/Expand, live content and Trainer Card implementation retained.
+Existing Trainer Card controls also exit MY FIELD. Field CSS is scoped.
+
+Debug
+?debug=1 exposes lazy fixtures for six, one or zero specimens. Six includes two
+Ralts, perfect/weak IVs, different natures/levels, shiny, active/cured/no Pokerus
+and ribbons. Fixtures never publish to global Emerald state, save or Trainer Card.
+Fixture clicks explain that real-data mode is needed for the canonical passport.
+
+Limits / validation
+Review build: deterministic tests and browser fixture checks pass; real-game,
+save/restore and loaded-game device acceptance remains pending (see QA report).
+No type CALL added: P0 public records do not expose species types; supported
+categories are the ten requested specimen categories. No general dex data added.
+Party only; no save edits, RAM writes, drag/drop, AI/API, voice or population import.
+The next milestone is P1 real native-save PC Storage extraction; not built here.

@@ -1,0 +1,19 @@
+JRPG.WORLD EMERALD — v0.1.24.4 MOBILE UX QA
+Date: 2026-09-12
+
+PASS — mobile starts compact on each fresh page load
+PASS — desktop preference behavior preserved
+PASS — expanded LIVE bounded to 46dvh / 430px with internal scroll
+PASS — mobile Save Vault moved to compact top control beside DEX
+PASS — mobile duplicate Trainer Card header entry hidden
+PASS — redundant per-Pokemon TRAINER CARD flip removed
+PASS — TRAINER CARD navigation button toggles back to LIVE on second tap
+PASS — card's own LIVE exit resynchronizes navigation state
+PASS — MY BOX renamed SAVED FINDS
+PASS — SAVE TO BOX renamed SAVE FIND
+PASS — JS syntax checks for all three changed modules
+PASS — v0.1.9 pure decoder regression test (24 permutations + checksum/data decoding)
+PASS — Save Vault durable-import module remains unchanged
+
+Save Vault module SHA-256:
+49a29e6c77ba5fba2d7e37f0656ea38cc32a181010f737b91c07b2169539fb28  save-vault-v0.1.13.4.js

@@ -1,0 +1,20 @@
+JRPG.WORLD Emerald Live v0.1.9.1 - SAVE VAULT TEST
+
+Goal: make save persistence visible and independent of the ROM filename.
+
+- Visible three-slot Save Vault UI
+- Reads existing mGBA IndexedDB saves and imports valid Emerald saves
+- Stable canonical cartridge-save path: /data/saves/JRPG_WORLD_EMERALD_BPEE_REV0.sav
+- Existing valid legacy save is copied, not deleted, into the canonical path
+- SAVE 1 mirrors the active cartridge save
+- SAVE 2 / SAVE 3 are manual/recovery copies
+- Trainer name, play time, Trainer ID, save counter, update time and storage path are shown
+- Download .sav backup per slot
+- Import .sav into vault
+- Restore a stored slot as active
+- Site file deployments on the same origin do not delete IndexedDB
+
+Safety boundary:
+Browser/site-data deletion can still remove local IndexedDB. BACKUP .SAV is the external safety copy.
+
+No existing save file is deleted during migration.

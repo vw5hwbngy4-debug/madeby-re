@@ -1,0 +1,210 @@
+{
+  "runtime_version": "1.0",
+  "source_pack": "Xenosaga_DS_Expert_FullStack_JSON_v1.0",
+  "source_pack_sha256": "012439fdccb616f1c0460a770bdeb3629a9bb9e06b2731bf859aab6b0bee6e22",
+  "source_validation": true,
+  "statistics": {
+    "rom": {
+      "bytes": 67108864,
+      "fat_files": 9830,
+      "named_files": 9826,
+      "extensions_top": [
+        [
+          ".nanr",
+          1550
+        ],
+        [
+          ".ncer",
+          1550
+        ],
+        [
+          ".evc",
+          1470
+        ],
+        [
+          ".ncbc",
+          1018
+        ],
+        [
+          ".psc",
+          788
+        ],
+        [
+          ".nclc",
+          513
+        ],
+        [
+          ".ncgp",
+          492
+        ],
+        [
+          ".pcg",
+          418
+        ],
+        [
+          ".nclr",
+          399
+        ],
+        [
+          ".rsc",
+          310
+        ],
+        [
+          ".rcl",
+          267
+        ],
+        [
+          ".nclp",
+          238
+        ],
+        [
+          ".pat",
+          160
+        ],
+        [
+          ".pcl",
+          151
+        ],
+        [
+          ".pal",
+          73
+        ],
+        [
+          ".bin",
+          59
+        ],
+        [
+          ".ppc",
+          47
+        ],
+        [
+          ".rsb",
+          40
+        ],
+        [
+          ".nscr",
+          35
+        ],
+        [
+          ".ppz",
+          33
+        ]
+      ]
+    },
+    "variants": {
+      "japanese_source": {
+        "sha256": "938d07521cfc937d179402e85c8b0b43f3e929a494838ff1455b29126b56d356",
+        "validation_ok": true
+      },
+      "public_beta_2026_03_30": {
+        "sha256": "cb7a75c08c60ea64e131cdddef1f6da17e50bb78b72da60e2e7f0719ff52f2ee",
+        "validation_ok": true
+      },
+      "english_final_v1_0": {
+        "sha256": "5cfe164aea57174ad47801e90f7fd53dccca4d30db2680991d54ec232aac4a61",
+        "validation_ok": true
+      },
+      "dutch_final_v1_0_17": {
+        "sha256": "ab4b66928073ff6caa61dc0c4f2fcbafa0150a69f003133d252c3737efb26a0b",
+        "validation_ok": true
+      }
+    },
+    "narrative": {
+      "encyclopedia_entries": 352,
+      "dialogue_logical_units": 18078,
+      "dialogue_unique_source_strings": 13126,
+      "choice_options": 1286,
+      "chapter_markers": 20,
+      "mail_records": 59
+    },
+    "gameplay": {
+      "fixed_database_name_records": 1819,
+      "fixed_display_records": 784,
+      "enemies": 208,
+      "enemy_attacks": 571,
+      "enemy_ai_records": 196,
+      "enemy_group_records": 501
+    },
+    "entities_relationships": {
+      "entities": 352,
+      "encyclopedia_co_mention_edges": 889,
+      "relation_evidence_sentences": 118,
+      "dialogue_character_co_mention_edges": 31
+    },
+    "assets": {
+      "top_directory_counts": {
+        "<unnamed>": 4,
+        "0": 5554,
+        "1": 4050,
+        "2": 222
+      },
+      "enemy_asset_groups": 186,
+      "character_asset_groups": 180,
+      "bust_portrait_groups": 250
+    },
+    "binary_databases": {
+      "exact_header_databases": 58
+    },
+    "tools": {
+      "factory_python_tools": 21
+    }
+  },
+  "canon_index": {
+    "game": "Xenosaga I & II (Nintendo DS, Japanese source ROM)",
+    "canon_sources_in_pack": [
+      {
+        "source": "xenodict encyclopedia",
+        "records": 352,
+        "use": "named people, organizations, locations, technology, events, cultural concepts"
+      },
+      {
+        "source": "EVC logical corpus",
+        "records": 18078,
+        "use": "story/dialogue/event text with English reference and Dutch localization"
+      },
+      {
+        "source": "choice corpus",
+        "records": 1286,
+        "use": "interactive choices and branch-bearing menus"
+      },
+      {
+        "source": "mail corpus",
+        "records": 59,
+        "use": "tutorial mechanics, unlocks, side challenge, diegetic messages"
+      },
+      {
+        "source": "map database",
+        "records": 220,
+        "use": "location/system labels and 20 chapter-end markers"
+      }
+    ],
+    "chapter_count_from_map_markers": 20,
+    "chronology_status": "Partial structural chronology only. File and record order are preserved; a global event load graph has not been proven and is not invented."
+  },
+  "trust_rules": {
+    "explicit_canon": "Encyclopedia and dialogue can support direct canon claims.",
+    "relationships": "Co-mention edges and pattern-extracted relation sentences are evidence pointers; do not silently upgrade them into stronger predicates.",
+    "chronology": "Partial structural chronology only. A global event load graph is not proven.",
+    "symbolism": "Allowed only as clearly labeled interpretation grounded in multiple supplied passages.",
+    "mechanics": "Prefer explicit in-ROM tutorial/mail rules and semantically resolved database fields.",
+    "inferred_fields": "Repeat confidence labels. Never rename unresolved numeric slots as facts.",
+    "translation": "JP / English reference/final / Dutch records may be compared exactly when present.",
+    "rom": "Technical database/file names are allowed for explicit technical questions; do not expose server filesystem or retrieval internals."
+  },
+  "runtime_chunk_counts": {
+    "lore": 5275,
+    "guide": 3363,
+    "translation_rom": 7295
+  },
+  "runtime_search_files": {
+    "lore": "lore.jsonl",
+    "lore_dialogue": "lore_dialogue.jsonl",
+    "lore_relationships": "lore_relationships.jsonl",
+    "guide": "guide.jsonl",
+    "translation_rom": "translation_rom.jsonl"
+  },
+  "runtime_subset_counts": {
+    "lore_dialogue.jsonl": 4596,
+    "lore_relationships.jsonl": 327
+  }
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Game Info — GACHIGASM!</title>
+<meta content="GACHIGASM! is a music-driven arcade racing game built around original music, wide rainbow roads, beat-synced pickups, and surreal muscle-comedy arcade worlds." name="description"/>
+<meta content="Raynor Eissens" name="author"/>
+<meta content="Game Info — GACHIGASM!" property="og:title"/>
+<meta content="Ride the beat, collect rhythm samples, and race through flowing chroma worlds." property="og:description"/>
+<meta content="website" property="og:type"/>
+<style>
+    :root{
+      --bg0:#090013;
+      --bg1:#18002c;
+      --card:rgba(255,255,255,.10);
+      --card2:rgba(255,255,255,.16);
+      --line:rgba(255,255,255,.24);
+      --text:#fff8ff;
+      --muted:#f2d9ff;
+      --hot:#ff55d6;
+      --gold:#ffe66d;
+      --cyan:#6df7ff;
+      --green:#84ff9a;
+      --purple:#b37cff;
+      --orange:#ff9f43;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-rounded, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(255,0,130,.55), transparent 28%),
+        radial-gradient(circle at 88% 8%, rgba(0,200,255,.45), transparent 30%),
+        radial-gradient(circle at 50% 38%, rgba(255,230,0,.26), transparent 26%),
+        linear-gradient(135deg,#16002c 0%,#2a0055 20%,#0065c8 42%,#00a86b 58%,#f4cf00 72%,#ff6b00 86%,#b0004b 100%);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"♂ ♂ ♂ ♀ ♂ ⚧ ♂ ♂";
+      position:fixed;
+      inset:-5vh -10vw auto -10vw;
+      height:160vh;
+      font-size:72px;
+      line-height:1.4;
+      letter-spacing:28px;
+      color:rgba(255,255,255,.09);
+      transform:rotate(-18deg);
+      pointer-events:none;
+      white-space:pre-wrap;
+      text-shadow:0 0 18px rgba(255,255,255,.18);
+      z-index:0;
+    }
+    body:after{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.50));
+      pointer-events:none;
+      z-index:0;
+    }
+    .wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:28px 18px 64px}
+    header{padding:48px 0 28px;text-align:center}
+    .badge{
+      display:inline-flex;gap:10px;align-items:center;
+      border:1px solid var(--line);border-radius:999px;
+      padding:10px 14px;background:rgba(0,0,0,.24);backdrop-filter:blur(16px);
+      font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:12px;
+    }
+    h1{
+      margin:22px 0 10px;
+      font-size:clamp(46px,9vw,104px);
+      line-height:.88;
+      letter-spacing:-.08em;
+      text-transform:uppercase;
+      text-shadow:0 8px 0 rgba(0,0,0,.22),0 0 36px rgba(255,255,255,.35);
+    }
+    .rainbow-text{
+      background:linear-gradient(90deg,#ff3fd8,#ff8a00,#fff23d,#47ff88,#54eaff,#9d75ff,#ff3fd8);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .subtitle{max-width:820px;margin:0 auto;color:var(--muted);font-size:clamp(18px,2.4vw,28px);line-height:1.35;font-weight:650}
+    .hero-line{
+      margin:30px auto 0;max-width:880px;padding:22px;border:1px solid rgba(255,255,255,.35);
+      border-radius:28px;background:rgba(0,0,0,.26);box-shadow:0 20px 80px rgba(0,0,0,.24), inset 0 0 42px rgba(255,255,255,.08);
+      font-size:clamp(23px,4.4vw,46px);font-weight:900;line-height:1.04;letter-spacing:-.04em;
+    }
+    nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:28px 0}
+    nav a,.button{
+      color:white;text-decoration:none;border:1px solid var(--line);border-radius:999px;background:rgba(0,0,0,.24);
+      padding:10px 14px;font-weight:800;box-shadow:0 8px 24px rgba(0,0,0,.18)
+    }
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:22px}
+    .card{
+      grid-column:span 6;
+      padding:24px;border:1px solid var(--line);border-radius:30px;background:var(--card);backdrop-filter:blur(18px);
+      box-shadow:0 16px 54px rgba(0,0,0,.22), inset 0 0 42px rgba(255,255,255,.055);
+    }
+    .card.full{grid-column:1/-1}.card.third{grid-column:span 4}
+    h2{font-size:clamp(28px,4vw,50px);line-height:1;margin:0 0 14px;letter-spacing:-.04em}
+    h3{font-size:24px;margin:0 0 10px;color:#fff}
+    p{font-size:17px;line-height:1.65;color:#fff2ff;margin:0 0 14px}
+    ul{margin:10px 0 0;padding-left:22px;color:#fff2ff;font-size:17px;line-height:1.65}
+    .icons{font-size:34px;letter-spacing:8px;margin:0 0 16px;color:#fff;text-shadow:0 0 20px rgba(255,255,255,.6)}
+    .cycle{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}
+    .step{padding:16px;border-radius:22px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);text-align:center;font-weight:900;min-height:110px;display:flex;flex-direction:column;justify-content:center}
+    .step small{display:block;margin-top:8px;color:#f4ddff;font-weight:650;line-height:1.35}
+    .quote{font-size:clamp(24px,4vw,42px);line-height:1.08;font-weight:950;letter-spacing:-.045em;margin:0;color:#fff;text-shadow:0 0 24px rgba(255,255,255,.25)}
+    .faq details{border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:16px 18px;background:rgba(0,0,0,.18);margin:12px 0}
+    .faq summary{font-size:18px;font-weight:900;cursor:pointer;color:#fff}
+    .faq details p{margin-top:12px}
+    .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .pill{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.2);font-weight:800;font-size:13px}
+    footer{text-align:center;margin-top:32px;color:#f9dcff;font-size:14px;line-height:1.6}
+    a{color:#fff;text-decoration-thickness:2px;text-underline-offset:3px}
+    @media(max-width:820px){.card,.card.third{grid-column:1/-1}.cycle{grid-template-columns:1fr}.hero-line{border-radius:22px}.wrap{padding:20px 14px 50px}body:before{font-size:48px;letter-spacing:16px}}
+  </style>
+<link href="https://madeby.re/games/gachigasm/about/" rel="canonical"/><meta content="https://madeby.re/games/gachigasm/about/" property="og:url"/><meta content="Gachigasm" name="aiprojectfiles:game"/></head>
+<body>
+<div class="wrap">
+<header>
+<div class="badge">♂ rainbow arcade rhythm racer ♂</div>
+<h1><span class="rainbow-text">GACHIGASM!</span></h1>
+<p class="subtitle">A music-driven arcade racing game where the soundtrack is not a static tracklist, but a living collection you return to, restore, and wake back up.</p>
+<div class="hero-line">Ride the beat, collect rhythm samples, and race through flowing chroma worlds.</div>
+<nav>
+<a href="#game">Game</a><a href="#rc">Reversible Collection</a><a href="#levels">Why it matters</a><a href="#faq">FAQ</a><a href="https://aigamecompanion.com/reversible-collection">RC-1</a><a href="https://doi.org/10.5281/zenodo.20736718">DOI</a>
+</nav>
+</header>
+<main class="grid">
+<section class="card full" id="game">
+<div class="icons">♂ ♂ ⚧ ♂ ♂</div>
+<h2>About the game</h2>
+<p><strong>GACHIGASM!</strong> is a browser-based music racing game by Raynor Eissens. You ride through a shifting road of rhythm objects, pickups, biomes, tunnels, morning light, sunset, mist, desert silence, and dome-like atmospheres.</p>
+<p>The game is funny, physical, colorful, electronic, and personal. It uses music as a road. It treats each track as a place you travel through rather than a file you simply select.</p>
+</section>
+<section class="card" id="rc">
+<h2>Reversible Collection</h2>
+<p><strong>GACHIGASM!</strong> is the first implementation of <strong>RC-1 — Reversible Collection</strong>, a progression framework for finite content libraries.</p>
+<p>Classic games often begin with scarcity: locked tracks, locked racers, locked cups, locked galleries. The player unlocks everything, reaches 100%, and the collection becomes complete but static.</p>
+<p>Reversible Collection begins from abundance. The collection is available first. Absence lets parts of it soften, sleep, fade, or relock. Playing restores it.</p>
+<div class="pillrow"><span class="pill">broad access first</span><span class="pill">absence decay</span><span class="pill">restorative replay</span><span class="pill">no FOMO</span><span class="pill">rediscovery</span></div>
+</section>
+<section class="card">
+<h2>Against completion stress</h2>
+<p>Completionism can become stress. Players map everything, optimize everything, and rush to know everything before the world has even had time to breathe.</p>
+<p>Reversible Collection changes the question. If everything is already visible, the culture shifts away from “who found it first?” and toward “can I return, play well, and bring it back?”</p>
+<p>The game is no longer a panic map. It becomes a returning ritual.</p>
+</section>
+<section class="card full">
+<h2>The participation cycle</h2>
+<div class="cycle">
+<div class="step">Broad Access<small>the library begins open</small></div>
+<div class="step">Absence<small>time away is allowed</small></div>
+<div class="step">Soft Decay<small>tracks sleep or fade</small></div>
+<div class="step">Replay<small>racing becomes recovery</small></div>
+<div class="step">Restoration<small>the collection wakes up</small></div>
+</div>
+</section>
+<section class="card third" id="levels">
+<h3>For players</h3>
+<p>You do not start poor. You start with the music. The fun is not only unlocking more, but returning later and waking the soundtrack back up through play.</p>
+</section>
+<section class="card third">
+<h3>For game designers</h3>
+<p>Reversible Collection gives finite content replay value without requiring endless DLC, seasonal pressure, or daily-login punishment.</p>
+</section>
+<section class="card third">
+<h3>For a platform pitch</h3>
+<p>The mechanic is simple to explain: the soundtrack is alive. It sleeps when ignored. It wakes through racing. That is readable, playful, and platform-friendly.</p>
+</section>
+<section class="card full">
+<p class="quote">Permanent ownership says: “I have it.”<br/>Maintained participation says: “I can return to it.”</p>
+</section>
+<section class="card" id="ai">
+<h2>Beyond games</h2>
+<p>The same principle can apply to AI companions, learning systems, music libraries, digital museums, knowledge archives, and offline-first living.</p>
+<p>A companion does not need to give every memory back instantly. It can help you restore what matters. A collection does not need to scream for attention. It can sleep, wait, and become meaningful again when you return.</p>
+</section>
+<section class="card">
+<h2>Links</h2>
+<p><strong>RC-1 page:</strong><br/><a href="https://aigamecompanion.com/reversible-collection">aigamecompanion.com/reversible-collection</a></p>
+<p><strong>DOI:</strong><br/><a href="https://doi.org/10.5281/zenodo.20736718">10.5281/zenodo.20736718</a></p>
+<p><strong>Citation:</strong><br/>Eissens, R. (2026). <em>RC-1 — Reversible Collection: Participation-Based Replayability for Finite Content Libraries</em> (1.0). Zenodo.</p>
+</section>
+<section class="card full faq" id="faq">
+<h2>FAQ</h2>
+<details open="">
+<summary>Is Reversible Collection just another unlock system?</summary>
+<p>No. Classic unlock systems usually move from locked content to permanent ownership. Reversible Collection starts from broad access and lets absence create soft states that can be restored through play.</p>
+</details>
+<details>
+<summary>Is it punishment for not playing?</summary>
+<p>It should not be. If it feels like confiscation or a daily-login penalty, the design has failed. The goal is rediscovery, not pressure.</p>
+</details>
+<details>
+<summary>Why is this interesting for players?</summary>
+<p>Because returning becomes meaningful. Instead of waiting for DLC after completion, players can reawaken the collection they already love.</p>
+</details>
+<details>
+<summary>Why is this interesting for game designers?</summary>
+<p>It gives small teams and finite games a way to extend replayability without endless new assets, battle passes, or artificial scarcity.</p>
+</details>
+<details>
+<summary>How does this fit GACHIGASM?</summary>
+<p>The music is the world. Tracks, medals, routes, biomes, collectibles, and soundtrack states can sleep and be restored by racing.</p>
+</details>
+<details>
+<summary>Why mention Nintendo or platform pitching?</summary>
+<p>Because the pitch is immediately understandable: all music is available, but the soundtrack sleeps when ignored. Race to wake it back up. That is simple, playful, and mechanically distinct.</p>
+</details>
+<details>
+<summary>Can this apply to AI companions?</summary>
+<p>Yes. A companion can treat memory as maintained participation rather than permanent foregrounding. Dormant context can be restored through interaction instead of dumped back as a static archive.</p>
+</details>
+</section>
+</main>
+<footer>
+<p>GACHIGASM! / Kashi Kassam — independent browser game by Raynor Eissens.</p>
+<p>RC-1 — Reversible Collection is archived at Zenodo under DOI 10.5281/zenodo.20736718.</p>
+</footer>
+</div>
+</body>
+</html>

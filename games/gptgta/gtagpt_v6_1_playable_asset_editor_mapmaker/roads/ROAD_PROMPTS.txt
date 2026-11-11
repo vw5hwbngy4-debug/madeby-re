@@ -1,0 +1,12 @@
+
+Generate modular road tiles:
+- straight roads
+- intersections
+- lane markings
+- dirty asphalt
+- wet asphalt
+- skidmark overlays
+- sewer drains
+- cracked roads
+
+32x32 seamless tiles.

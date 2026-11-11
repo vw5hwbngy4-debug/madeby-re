@@ -1,0 +1,25 @@
+EMERALD v0.1.22.2 — SEAMLESS REGULAR ↔ DEX
+Date: 2026-09-09
+
+FIXED
+- REGULAR and DEX are now two presentation modes inside ONE index.html document.
+- The top-right DEX control is a button, not a link.
+- Switching mode does NOT navigate, reload, recreate #root, recreate the emulator, or request the ROM again.
+- The already-loaded ROM and live mGBA/WASM session remain running while the layout changes around them.
+- DEX desktop cockpit styling is scoped to html[data-emerald-mode="dex"].
+- Returning to REGULAR removes the cockpit class and restores the standard emulator/page layout.
+- My Field rebuilds only its control presentation when the display mode changes:
+  REGULAR = previous full controls and previous party/box click behavior.
+  DEX = field-first folded controls and shared specimen selection.
+- TeamLab remains one live instance. DEX-only collapsible wrappers are added/removed without page navigation.
+- Shared strategy context is mounted once and hidden outside DEX.
+- dex.html remains only as a backwards-compatible entry point to /?mode=dex. The in-app switch never uses it.
+
+CACHE / VERSION
+- VERSION.txt = 0.1.22.2
+- New mode switch, Strategy Pokédex, My Field, TeamLab and live-reader cache keys.
+
+QA
+PASS: JavaScript syntax checks for new/updated modules.
+PASS: existing My Field / Passport / EV Coach / TeamLab v0.1.20 / v0.1.21 / v0.1.21.1 regressions.
+PASS: tests/seamless-mode-v0.1.22.2.cjs verifies no navigation in the mode switch and DEX-only cockpit scoping.

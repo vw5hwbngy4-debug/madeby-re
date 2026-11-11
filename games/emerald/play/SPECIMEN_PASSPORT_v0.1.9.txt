@@ -1,0 +1,59 @@
+JRPG.WORLD EMERALD LIVE v0.1.9 — SPECIMEN PASSPORT
+====================================================
+
+Scope
+-----
+Additive read-only expansion of the validated Emerald BPEE rev0 live Pokémon decoder.
+The mGBA WebAssembly runtime bridge, Emerald RAM addresses, save handling, audio recovery,
+and write boundary are intentionally unchanged from v0.1.8.1.
+
+Newly surfaced Gen III specimen facts
+--------------------------------------
+- PID/personality, displayed as hexadecimal
+- Trainer ID / Secret ID split from OT ID
+- deterministic shiny value and shiny flag
+- friendship (0–255)
+- experience
+- PP Up counts per move from ppBonuses
+- Pokérus raw value, strain, days remaining and none/active/cured state
+- contest condition: Cool, Beauty, Cute, Smart, Tough, Sheen
+- ribbons:
+  - Cool / Beauty / Cute / Smart / Tough contest ribbon rank
+  - Champion, Winning, Victory, Artist, Effort
+  - Marine, Land, Sky, Country, National, Earth, World
+  - modern fateful encounter bit
+  - total ribbon count using Gen III ribbon-count semantics
+- provenance:
+  - met location ID with Hoenn/common special-location labels where known
+  - met level
+  - origin game ID/name
+  - Poké Ball ID/name
+  - OT gender bit
+  - fateful encounter bit
+- language ID/name
+- markings byte
+- BoxPokemon header flags
+- party status label
+- mail byte
+- current HP / max HP / Attack / Defense / Speed / Sp. Atk / Sp. Def already retained
+
+UI
+--
+DETAILS now contains a compact Specimen Passport with:
+SPECIMEN / ORIGIN / POKÉRUS / CONTEST CONDITION / RIBBONS.
+Shiny, active/cured Pokérus and ribbon count can surface as badges.
+Compact mode remains intentionally small and hides the passport details.
+Trainer Card / My Box retain the richer public state; visible Trainer Card rows and Share PNG
+also mark shiny Pokémon and ribbon counts without expanding card height substantially.
+
+Validation
+----------
+Synthetic decoder QA passes all 24 Gen III encrypted substructure permutations and verifies:
+checksum rejection, IVs, EVs, held item, friendship, PP Ups, contest condition, Pokérus,
+met provenance, ribbons, shiny logic, party status, Hidden Power, National Dex mapping and gender.
+
+Runtime boundary
+----------------
+This build has deterministic/unit validation in the development environment.
+A real Pokémon Emerald BPEE rev0 runtime test in the browser is still required before public release.
+No ROM is included.

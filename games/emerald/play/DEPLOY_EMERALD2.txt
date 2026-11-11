@@ -1,0 +1,4 @@
+FULL STANDALONE TEST BUILD
+Version: 0.1.9
+Purpose: deploy directly into emerald2 document root.
+This is NOT a patch. It includes the complete site payload, emulator assets, Pokemon sprites, data, UI, tests, and .htaccess.

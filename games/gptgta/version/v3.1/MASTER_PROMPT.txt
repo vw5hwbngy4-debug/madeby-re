@@ -1,0 +1,35 @@
+
+MASTER PIXEL ART GENERATION RULES
+
+STRICT TOP-DOWN.
+NO ISOMETRIC.
+NO MODERN REALISM.
+NO PAINTERLY RENDERING.
+NO CINEMATIC LIGHTING.
+
+STYLE:
+- GTA1/GTA2/GBC readability
+- 16-bit arcade clarity
+- readable during fast movement
+- bright silhouette-driven palette
+- modular reusable tiles
+- production-friendly
+
+EXPORT:
+- PNG
+- alpha background
+- sprite-sheet aligned
+- power-of-two dimensions
+
+WORLD TILE SIZE:
+32x32
+
+CHARACTER SIZE:
+32x32
+
+VEHICLE SIZE:
+48x48 or 64x64
+
+ATMOSPHERE:
+alive sandbox city
+late-90s DMA Design energy

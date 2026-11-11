@@ -1,0 +1,25 @@
+RICO NARRATIVE INTEGRATION AUDIT — JRPG.WORLD v0.9.15
+
+SOURCE PACKAGE
+- Game: Phantasy Star Online Episode I & II
+- Exact raw source bytes: 527263
+- Source SHA-256: 27ffff25632c328a9e821a066e7a31f6257b94383585342f85eef847edab20e7
+- Exact source reconstruction: True
+- Known quest/event/shop titles: 56/56
+- Quest/event/shop records: 56
+- Explicit headings: 345
+- Content blocks: 7108
+
+RICO ROUTING
+- Narrative queries route to the complete script canon.
+- Character, quest, and area names are recognized through a compact entity index.
+- Relationship/theme/meta-pattern answers may synthesize across passages, but interpretations must be labeled as interpretations.
+- Drop/MAG/platform facts remain governed by their deterministic and platform-scoped modules.
+
+SMOKE QUERIES
+- Who is Heathcliff Flowen?
+- What is the relationship between Elly and Calus?
+- Explain Kireek and what changes him.
+- What do Rico's messages reveal about Ragol?
+- What does the script tell us about Dark Falz?
+- What patterns connect Episode I and Episode II?

@@ -1,0 +1,13 @@
+Create a transparent PNG spritesheet of top-down construction zone props.
+
+Sheet rules:
+- 32x32 cells
+- transparent background
+- high visibility yellow/orange hazard palette
+- reusable across roads, alleys, industrial zones
+
+Assets:
+traffic cones, striped barriers, cement blocks, scaffolding, generators, construction lights, portable toilets, warning signs, construction fencing, piles of dirt, rebar stacks, cement mixers.
+
+Gameplay role:
+clear obstacles, roadblocks, mission set dressing, chase blockers.

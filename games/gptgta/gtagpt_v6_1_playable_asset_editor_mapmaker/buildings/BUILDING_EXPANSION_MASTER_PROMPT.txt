@@ -1,0 +1,16 @@
+Create modular top-down building sprite sheets for a late-90s GTA-style sandbox.
+
+Production rules:
+- modular building chunks
+- reusable roofs, edges, windows, entrances
+- 128x128 building chunks
+- 32x32 detail tiles
+- shadows baked as separate optional overlay cells
+- strong roof/wall separation
+- visual clarity over realism
+
+Building types:
+apartment blocks, office towers, police station, hospital, gang hideout, warehouse, strip club, pizza shop, gas station, nightclub, hotel, convenience store, bank, harbor building, subway entrance, parking garage, prison, radio station.
+
+Variants:
+small, medium, large, damaged, dirty, luxury, industrial, slum.

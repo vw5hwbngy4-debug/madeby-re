@@ -1,0 +1,14 @@
+{
+  "schema": "kys.adapter.v2",
+  "gameId": "kloojo",
+  "version": "kloojo-luna-core-v0.1.0",
+  "runtime": "index.html",
+  "events": ["bag.collected", "graffiti.tagged", "coin.collected", "player.respawn"],
+  "state": ["scoreDelta", "respawns", "maxSpeedKmh", "coins", "bags", "graffiti"],
+  "setup": ["playerSpawn", "bagSpawn", "graffitiIds", "coinIds"],
+  "hostMessages": ["KYS_CHALLENGE_GENERATE", "KYS_CHALLENGE_LOAD", "KYS_CHALLENGE_RETRY", "KYS_CHALLENGE_STOP", "KYS_CHALLENGE_LEADERBOARD", "KYS_WINNER_TRACES"],
+  "winnerPersonalization": {
+    "type": "graffiti_tag",
+    "grammar": "luna/creation-grammar.js"
+  }
+}

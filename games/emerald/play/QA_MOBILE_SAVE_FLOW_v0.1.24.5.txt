@@ -1,0 +1,18 @@
+EMERALD v0.1.24.5 — MOBILE + SAVE FLOW QA
+Date: 2026-09-12
+
+PASS: index points to save-vault-v0.1.13.5.js/css
+PASS: durable iOS/Safari global .sav picker remains present
+PASS: Save Vault launch docks inside PokéField header below the emulator
+PASS: undocked mobile Vault launch is hidden and cannot cover the game screen
+PASS: Expanded mode no longer creates a nested scroll container
+PASS: mobile document scrolling is explicitly restored
+PASS: fresh mobile page load starts Compact
+PASS: selected slot bytes stage on isolated mGBA .sav path
+PASS: active mGBA path + SHA-256 are verified before server slot mutation
+PASS: successful switch swaps previous active SAVE 1 into the selected source slot
+PASS: duplicate-slot condition exposes Previous Saves recovery
+PASS: historical snapshot recovery targets an empty SAVE 2/3 slot without overwriting another visible save
+PASS: JS syntax checks for save-vault 0.1.13.5 and PokéField Live 0.1.24.5
+
+NOTE: Runtime Safari behavior still requires device testing because this QA environment cannot execute the iOS Files picker or mGBA/WASM inside Mobile Safari.

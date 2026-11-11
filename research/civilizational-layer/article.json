@@ -1,0 +1,67 @@
+{
+  "title": "The Civilizational Layer",
+  "short_title": "The Civilizational Layer",
+  "subtitle": "From Ambient Coordination to Civilizational Carrying Capacity",
+  "author": "Raynor Eissens",
+  "date_published": "2026-09-30",
+  "publication_type": "Independent conceptual bridge web article",
+  "doi": null,
+  "canonical_url": "https://madeby.re/research/civilizational-layer/",
+  "description": "A conceptual bridge linking RFL-5's civilizational ambient coordination layer to later work on carrying layers, superartifacts and civilizational carrying capacity.",
+  "thesis": "A civilization can itself become a carrying layer.",
+  "core_proposition": "A civilization can itself become a carrying layer.",
+  "lineage": {
+    "earlier_layer": "RFL-5 — Civilizational Ambient Coordination",
+    "later_mechanics": [
+      "carrying layer",
+      "superartifact",
+      "civilizational carrying capacity",
+      "compression of civilizational time"
+    ],
+    "relationship": "Longitudinal synthesis rather than an additive new layer."
+  },
+  "sequence": [
+    "RFL-1 through RFL-4 scale coordination outward from person to relation to household to civic field.",
+    "RFL-5 marks the point where those fields interoperate into a civilizational ambient layer.",
+    "The carrying layer models how systems absorb practical complexity without continually transferring reconstruction costs to human attention.",
+    "Superartifacts provide a model for addressable, lineage-preserving capability across changing implementations.",
+    "Improving intelligence may increase the density of coherent research and transformation civilization can sustain per unit of time."
+  ],
+  "closing_sequence": [
+    "The environment carries the person.",
+    "Artifacts carry capability.",
+    "Civilization carries coordination.",
+    "Improved intelligence increases what the civilization can carry."
+  ],
+  "keywords": [
+    "civilizational layer",
+    "RFL-5",
+    "ambient coordination",
+    "carrying layer",
+    "civilizational carrying capacity",
+    "superartifact",
+    "reversibility",
+    "civilizational time",
+    "intelligence substrate"
+  ],
+  "references": [
+    {
+      "citation": "Raynor Eissens (2026), RFL-5 — Civilizational Ambient Coordination.",
+      "url": "https://madeby.re/research/library/papers/19286058.html",
+      "doi": "10.5281/zenodo.19286058"
+    },
+    {
+      "citation": "Raynor Eissens (2026), The Artifact Layer of the Intelligence Stack.",
+      "url": "https://madeby.re/research/artifact-layer-intelligence-stack/"
+    },
+    {
+      "citation": "Raynor Eissens (2026), When the Carrier Improves Itself.",
+      "url": "https://madeby.re/research/when-the-carrier-improves-itself/"
+    },
+    {
+      "citation": "Carrying Layer.",
+      "url": "https://carryinglayer.com/"
+    }
+  ],
+  "evidence_boundary": "Conceptual synthesis across the author's own corpus. The article does not establish that a civilizational ambient layer exists or that this trajectory is inevitable."
+}

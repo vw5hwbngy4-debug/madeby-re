@@ -1,0 +1,82 @@
+JRPG.WORLD · EMERALD v0.1.24 · PAL PARK STRING/TRASH-BYTE PARITY
+Date: 2026-09-09
+Status: PASS
+
+SOURCE ORACLE
+-------------
+User-supplied: PKHeX-master.zip
+SHA-256: d93a040fcc4960ee9d41b1ed8aa27643e658396e85d8f88917952291be0e7b5e
+
+Exact behavior was derived/audited from this supplied PKHeX snapshot, principally:
+- PKHeX.Core/PKM/PK3.cs · PK3.ConvertToPK4()
+- PKHeX.Core/PKM/PK4.cs · PK4.ConvertToPK5() / TransferTrash
+- PKHeX.Core/PKM/Strings/StringConverter345.cs
+- PKHeX.Core/PKM/Strings/StringConverter3.cs
+- PKHeX.Core/PKM/Strings/StringConverter4.cs
+- PKHeX.Core/PKM/Strings/StringConverter4Util.cs
+- PKHeX.Core/PKM/Strings/StringConverter5.cs
+- PKHeX.Core/PKM/Util/SpeciesName.cs
+- PKHeX.Core/Resources/text/other/{ja,en,fr,it,de,es}/text_Species_*.txt
+
+PAL PARK BUFFER SEMANTICS NOW REPRODUCED
+----------------------------------------
+PK3 -> PK4 does not simply write clean UTF-16 names.
+The v0.1.24 compiler now reproduces the PKHeX-modeled Pal Park behavior:
+
+1. Start with the language-specific Pal Park nickname buffer residue.
+2. Copy that residue into the PK4 nickname trash buffer beginning at byte +4.
+3. Convert the original Gen III nickname glyphs into Gen IV glyph values and overlay only the used prefix.
+4. Copy the first 16 bytes of the resulting nickname buffer into the OT trash buffer.
+5. Convert and overlay the Gen III OT prefix into that inherited OT buffer.
+
+Language-specific initial nickname trash used by the oracle:
+EN (2): 18 20 0D 02 42 00 00 00 00 00 00 00 48 A1 0C 02 E0 FF
+FR (3): 74 20 0D 02 42 00 00 00 00 00 00 00 A4 A1 0C 02 E0 FF
+IT (4): 54 20 0D 02 42 00 00 00 00 00 00 00 84 A1 0C 02 E0 FF
+DE (5): 74 20 0D 02 42 00 00 00 00 00 00 00 A4 A1 0C 02 E0 FF
+ES (7): 74 20 0D 02 42 00 00 00 00 00 00 00 A4 A1 0C 02 E0 FF
+JP (1): no initial trash residue in this code path.
+
+GLYPH PARITY NOW REPRODUCED
+---------------------------
+- Exact Gen III international and Japanese glyph tables from the supplied source.
+- Language-dependent left/right quote mapping.
+- Gen III Japanese-range bytes are interpreted through the Japanese glyph table even when the Pokémon's language is non-Japanese, matching StringConverter345.TransferGlyphs34.
+- Invalid/unmappable Gen III input uses the same question-mark fallback behavior.
+- Gen IV glyph encoding uses the first matching TableINT value, matching Span.IndexOf semantics.
+- Half-width Gen IV gender glyph handling is reproduced.
+- Gen IV -> Gen V TransferTrash decodes the actual PK4 buffer, applies the exact invalid-character replacement set, then writes the Gen V UTF-16 buffer.
+
+DEFAULT-NAME / NICKNAMED BIT PARITY
+-----------------------------------
+The earlier v0.1.24 draft compared the Gen III nickname to the UI display name (for example TREECKO vs Treecko). That incorrectly marked normal English Gen III species names as nicknamed.
+
+Fixed now:
+- Default species names are derived from the supplied PKHeX localized species resources.
+- Non-Japanese Gen III species names are uppercased.
+- Gen III French È/É/Ê/Ï legacy normalization is reproduced.
+- Gen III/IV Farfetch'd straight-apostrophe behavior is reproduced for EN/IT/ES.
+- PK4 IV32 bit31 now reflects the actual Gen III nickname status.
+
+SOURCE/SPECIMEN GUARD
+---------------------
+The compiler now rejects a UI/specimen National Dex mismatch against the decoded PK3 species before creating any derived entity.
+
+PARITY TEST RESULT
+------------------
+PASS · 4,554 string/glyph/trash checks
+  - all 256 Gen III source-byte values across JP/EN/FR/IT/DE/ES
+  - Pal Park nickname/OT buffer-reuse fixtures
+  - quote/gender/Japanese-byte/invalid-byte cases
+  - all 493 Gen IV TableINT values across six Gen III/IV languages through PK4 -> PK5 TransferTrash
+
+PASS · 2,322 Gen III default species-name checks
+  - National Dex 0..386 across JP/EN/FR/IT/DE/ES
+  - compared against the supplied PKHeX species resources after the exact generation-3 formatting rules
+
+TOTAL: 6,876 / 6,876 parity checks PASS
+
+BOUNDARY
+--------
+This parity result covers the string/trash-byte and default-name semantics described above relative to the supplied PKHeX snapshot.
+It is not a claim that Pokémon HOME has accepted a generated Pokémon. v0.1.24 still deliberately stops before creating a fabricated PK6 target context or HOME server identity.

@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AgentMelodies · Shell Ricochet Melody</title>
+<style>
+:root{color-scheme:dark;--gold:#ffd37c;--mint:#9be6c7;--rose:#ff978d;--panel:#0e2033;--ink:#eef7ff;--muted:#abc1d8}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(#6fc2ff,#1e3d69 78%);font:15px/1.45 system-ui,sans-serif;color:var(--ink)}
+main{max-width:1120px;margin:auto;padding:18px 14px 36px}h1{font:normal clamp(31px,5vw,56px)/1.04 Georgia,serif;margin:4px 0}h1 em{color:var(--gold)}
+p{margin:6px 0 0;color:#ddf3ff}.eyebrow{font-size:11px;letter-spacing:.22em;color:#fce49c;font-weight:800}
+.shell{border:1px solid #355574;background:#10243ac8;border-radius:18px;overflow:hidden;box-shadow:0 18px 60px #03111e88}
+svg{display:block;width:100%;height:auto;aspect-ratio:16/9;background:linear-gradient(#80d7ff,#6eb1ff 72%,#6a94d8)}.progress{height:6px;background:#1a3552}.progress div{height:100%;width:0;background:var(--gold)}
+.controls{padding:12px;display:flex;gap:9px;flex-wrap:wrap;align-items:center}button{padding:10px 13px;border-radius:10px;border:1px solid #597594;background:#203d59;color:#eef7ff;font-weight:700;cursor:pointer}
+button.primary{background:var(--gold);color:#162635;border-color:var(--gold)}label{display:flex;align-items:center;gap:6px;color:#d7ebff;font-size:13px}.status{padding:0 14px 14px;color:#a8e8d3;font-size:13px}
+.panels{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;margin-top:14px}.panel{border:1px solid #345574;background:#10243ad9;border-radius:16px;padding:18px}.panel h2{font:normal 24px Georgia,serif;margin:0 0 8px}
+.stats{display:flex;gap:18px;flex-wrap:wrap;margin:8px 0 8px}.stat strong{display:block;font:normal 28px Georgia,serif;color:var(--mint)}.stat small{color:var(--muted)}
+.log{height:160px;overflow:auto;background:#071523;border-radius:9px;padding:10px;white-space:pre-wrap;font:11px/1.7 ui-monospace,Consolas,monospace;color:#cfe4ff}.note{font-size:12px;color:#aac5de;line-height:1.6}
+.pill{display:inline-block;border:1px solid #4d6884;border-radius:999px;padding:4px 8px;font-size:11px;color:#dcecff;margin-right:6px}.good{color:var(--mint)}.bad{color:var(--rose)}
+@media(max-width:760px){.panels{grid-template-columns:1fr}.controls button{flex:1}svg{aspect-ratio:4/3}}
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">AGENTMELODIES · EXPERIMENT D · SHELL RICOCHET</div>
+  <h1>Shell <em>Ricochet</em> Melody 🔴🐢</h1>
+  <p>Een rood schild wordt afgeschoten door een smal platformlevel. Botsingen met muren en landingen na vallen door gaten veroorzaken de 67 melodienoten van Super Mario World.</p>
+  <section class="shell">
+    <svg id="stage" viewBox="0 0 960 540" aria-label="Mario-achtig SVG-platformlevel met een rood schild dat kaatst, door gaten valt en noten speelt">
+      <defs>
+        <linearGradient id="ground" x2="0" y2="1"><stop stop-color="#f0d37d"/><stop offset="1" stop-color="#b8863f"/></linearGradient>
+        <linearGradient id="brick" x2="0" y2="1"><stop stop-color="#f1a261"/><stop offset="1" stop-color="#c86d3d"/></linearGradient>
+      </defs>
+      <rect width="2000" height="5000" fill="url(#sky)"/>
+      <g id="bg"></g><g id="world"></g><g id="actors"></g><g id="fx"></g>
+    </svg>
+    <div class="progress"><div id="bar"></div></div>
+    <div class="controls">
+      <button id="play" class="primary">▶ PLAY</button>
+      <button id="reset">↺ RESET</button>
+      <label><input id="loop" type="checkbox"> LOOP</label>
+      <button id="sabotage">⚙ Verplaats één gat</button>
+      <button id="repair">✦ REPAIR</button>
+      <button id="validate">✓ VALIDATE</button>
+      <span id="clock" class="pill">0.00 s</span><span id="gradePill" class="pill">—</span>
+    </div>
+    <div class="status" id="status">Klaar voor de eerste shell-run.</div>
+  </section>
+  <div class="panels">
+    <section class="panel">
+      <h2>Musical proof</h2>
+      <div class="stats">
+        <div class="stat"><strong id="score">0/67</strong><small>Correcte noten</small></div>
+        <div class="stat"><strong id="timing">—</strong><small>Max. timingfout</small></div>
+        <div class="stat"><strong id="events">0</strong><small>Gebeurtenissen</small></div>
+      </div>
+      <p class="note">Alleen twee zichtbare gebeurtenissen maken een noot: <b>wall bounce</b> en <b>ground landing</b>. Geen verborgen MIDI-audio.</p>
+    </section>
+    <section class="panel">
+      <h2>Event log</h2>
+      <div id="log" class="log">Nog geen run uitgevoerd.</div>
+      <p class="note">Sabotage verplaatst één gat zodat een landing verschuift. Repair herstelt de geconstrueerde opstelling.</p>
+    </section>
+  </div>
+</main>
+
+<script>
+'use strict';
+const NOTES = [{"pitch": 98, "time": 0.0, "duration": 0.166667, "velocity": 0.787}, {"pitch": 98, "time": 0.25, "duration": 0.166667, "velocity": 0.787}, {"pitch": 98, "time": 0.5, "duration": 0.166667, "velocity": 0.787}, {"pitch": 86, "time": 0.75, "duration": 0.166667, "velocity": 0.787}, {"pitch": 98, "time": 1.0, "duration": 0.166667, "velocity": 0.787}, {"pitch": 98, "time": 1.25, "duration": 0.166667, "velocity": 0.787}, {"pitch": 98, "time": 1.5, "duration": 0.166667, "velocity": 0.787}, {"pitch": 86, "time": 1.75, "duration": 0.166667, "velocity": 0.787}, {"pitch": 99, "time": 2.0, "duration": 1.0, "velocity": 0.787}, {"pitch": 98, "time": 3.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 3.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 4.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 4.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 4.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 4.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 5.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 5.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 5.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 5.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 6.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 6.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 6.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 6.75, "duration": 0.125, "velocity": 0.787}, {"pitch": 96, "time": 6.875, "duration": 0.125, "velocity": 0.787}, {"pitch": 95, "time": 7.0, "duration": 0.5, "velocity": 0.787}, {"pitch": 93, "time": 7.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 7.754167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 8.004167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 8.254167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 8.504167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 8.754167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 9.004167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 9.254167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 9.504167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 9.754167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 10.004167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 10.254167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 10.504167, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 10.754167, "duration": 0.125, "velocity": 0.787}, {"pitch": 95, "time": 10.879167, "duration": 0.125, "velocity": 0.787}, {"pitch": 93, "time": 11.004167, "duration": 0.495833, "velocity": 0.787}, {"pitch": 91, "time": 11.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 11.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 12.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 12.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 12.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 12.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 13.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 13.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 13.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 13.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 14.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 14.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 95, "time": 14.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 93, "time": 14.75, "duration": 0.125, "velocity": 0.787}, {"pitch": 95, "time": 14.875, "duration": 0.125, "velocity": 0.787}, {"pitch": 96, "time": 15.0, "duration": 0.5, "velocity": 0.787}, {"pitch": 100, "time": 15.5, "duration": 0.5, "velocity": 0.787}, {"pitch": 98, "time": 16.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 98, "time": 16.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 98, "time": 16.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 86, "time": 16.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 96, "time": 17.0, "duration": 0.1875, "velocity": 0.787}, {"pitch": 96, "time": 17.25, "duration": 0.1875, "velocity": 0.787}, {"pitch": 96, "time": 17.5, "duration": 0.1875, "velocity": 0.787}, {"pitch": 90, "time": 17.75, "duration": 0.1875, "velocity": 0.787}, {"pitch": 91, "time": 18.0, "duration": 1.0, "velocity": 0.787}];
+const PRE = 0.55, VX = 220, G = 2200, DROP_H = 18, TIER_STEP = 64, WORLD_W = 960;
+const BASE_X = 430, BASE_Y = 72, SHELL_R = 10, WALL_W = 18, FLOOR_TH = 12, EVENT_TOL = 0.012;
+const stage = document.getElementById('stage'), $ = id => document.getElementById(id), NS='http://www.w3.org/2000/svg';
+const tf = Math.sqrt(2*DROP_H/G);
+function svg(tag, attrs, parent){ const n=document.createElementNS(NS, tag); for(const [k,v] of Object.entries(attrs||{})) n.setAttribute(k,v); if(parent) parent.appendChild(n); return n; }
+function pitchName(n){ return ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'][n%12] + (Math.floor(n/12)-1); }
+
+function buildLevel(){
+  const tiers=[]; let x=BASE_X, y=BASE_Y, dir=1;
+  let wallX = x + dir*VX*(PRE + NOTES[0].time);
+  let tier={index:0,y,entryX:x,entryDir:dir,wallX,wallSide:dir>0?'right':'left'};
+  if(NOTES[1]){
+    const dtDrop = NOTES[1].time - NOTES[0].time, runDt=Math.max(0.02, dtDrop-tf), gapTravel=VX*runDt;
+    tier.gapX = wallX - dir*gapTravel; tier.nextLandingX = tier.gapX - dir*VX*tf; tier.nextY = y + TIER_STEP; tiers.push(tier);
+    x=tier.nextLandingX; y=tier.nextY; dir=-dir;
+  } else tiers.push(tier);
+  for(let i=2,tIdx=1;i<NOTES.length;i+=2,tIdx++){
+    const wallDt = NOTES[i].time - NOTES[i-1].time;
+    wallX = x + dir*VX*wallDt;
+    tier={index:tIdx,y,entryX:x,entryDir:dir,wallX,wallSide:dir>0?'right':'left'};
+    if(NOTES[i+1]){
+      const dtDrop=NOTES[i+1].time-NOTES[i].time, runDt=Math.max(0.02, dtDrop-tf), gapTravel=VX*runDt;
+      tier.gapX = wallX - dir*gapTravel; tier.nextLandingX = tier.gapX - dir*VX*tf; tier.nextY=y+TIER_STEP; tiers.push(tier);
+      x=tier.nextLandingX; y=tier.nextY; dir=-dir;
+    } else tiers.push(tier);
+  }
+  return {tiers,maxY:(tiers.at(-1)?.y||BASE_Y)+120,totalTime:PRE+NOTES.at(-1).time+NOTES.at(-1).duration+0.6};
+}
+const originalLevel = buildLevel(); let level = JSON.parse(JSON.stringify(originalLevel));
+let playing=false, raf=0, last=0, acc=0, t=0, state=null, eventLog=[], bursts=[], ctx=null, voices=[], sabotaged=false, actors={}, currentViewY=0;
+let worldG, bgG, fxG;
+
+function initWorld(){
+  worldG = document.getElementById('world'); worldG.replaceChildren();
+  bgG = document.getElementById('bg'); bgG.replaceChildren();
+  fxG = document.getElementById('fx'); fxG.replaceChildren();
+  [[140,60],[330,130],[730,90],[810,180],[200,230],[670,250],[520,30]].forEach(([x,y])=>{
+    const g=svg('g',{transform:`translate(${x} ${y})`}, bgG);
+    [[-40,0,22],[-10,-8,26],[25,0,20]].forEach(([cx,cy,r])=>svg('circle',{cx,cy,r,fill:'#ffffff99'}, g));
+  });
+  for(const tier of level.tiers){
+    const left = Math.min(tier.wallX, tier.gapX ?? tier.wallX+260) - 80;
+    const right = Math.max(tier.wallX, tier.gapX ?? tier.wallX-260) + 80;
+    const floorLeft=Math.min(left,right), floorRight=Math.max(left,right), gapHalf=16;
+    if(tier.gapX !== undefined){
+      const gx=tier.gapX;
+      svg('rect',{x:floorLeft,y:tier.y,width:Math.max(0,gx-gapHalf-floorLeft),height:FLOOR_TH,fill:'url(#ground)',stroke:'#89642c'}, worldG);
+      svg('rect',{x:gx+gapHalf,y:tier.y,width:Math.max(0,floorRight-(gx+gapHalf)),height:FLOOR_TH,fill:'url(#ground)',stroke:'#89642c'}, worldG);
+      svg('rect',{x:gx-gapHalf,y:tier.y,width:gapHalf*2,height:FLOOR_TH,fill:'#1b4a85',opacity:.35}, worldG);
+      svg('path',{d:`M ${gx-10} ${tier.y+8} q 10 16 20 0`,fill:'none',stroke:'#84d0ff','stroke-width':2,opacity:.55}, worldG);
+    } else {
+      svg('rect',{x:floorLeft,y:tier.y,width:floorRight-floorLeft,height:FLOOR_TH,fill:'url(#ground)',stroke:'#89642c'}, worldG);
+    }
+    svg('rect',{x:tier.wallX-(WALL_W/2),y:tier.y-28,width:WALL_W,height:40,rx:3,fill:'url(#brick)',stroke:'#8f4c2f'}, worldG);
+    const txt=svg('text',{x:Math.min(WORLD_W-24, Math.max(20,tier.wallX+26)),y:tier.y-10,fill:'#13314d','font-size':11}, worldG); txt.textContent=`T${tier.index+1}`;
+  }
+  svg('rect',{x:0,y:level.maxY+20,width:WORLD_W,height:200,fill:'#396522'}, worldG);
+  actors.group = svg('g',{}, document.getElementById('actors'));
+  actors.shell = svg('g',{}, actors.group);
+  svg('ellipse',{cx:0,cy:0,rx:12,ry:10,fill:'#d43f3f',stroke:'#fff2da','stroke-width':2}, actors.shell);
+  svg('ellipse',{cx:0,cy:-1,rx:7,ry:5,fill:'#ff8080',opacity:.5}, actors.shell);
+  svg('ellipse',{cx:-10,cy:3,rx:4,ry:3,fill:'#fff6df'}, actors.shell);
+  svg('ellipse',{cx:10,cy:3,rx:4,ry:3,fill:'#fff6df'}, actors.shell);
+}
+
+function resetSim(){
+  stopAudio(); playing=false; cancelAnimationFrame(raf); t=0; acc=0; last=0; eventLog=[]; bursts=[]; currentViewY=0;
+  const tier0=level.tiers[0];
+  state={tier:0,x:tier0.entryX,y:tier0.y-SHELL_R,vx:tier0.entryDir*VX,vy:0,phase:'toWall',grounded:true,noteIndex:0,done:false};
+  draw(); updatePanels(); $('status').textContent=sabotaged?'Sabotage actief: één gat staat verkeerd.':'Klaar voor de eerste shell-run.';
+}
+function noteFromIndex(i){ const n=NOTES[i]; return {pitch:n.pitch,duration:n.duration,velocity:n.velocity,targetTime:n.time}; }
+function logEvent(kind){
+  const note=noteFromIndex(state.noteIndex);
+  eventLog.push({index:state.noteIndex,kind,time:t-PRE,physicalTime:t,pitch:note.pitch,duration:note.duration,velocity:note.velocity,tier:state.tier});
+  bursts.push({x:state.x,y:state.y,at:t,kind}); playNote(eventLog.at(-1)); state.noteIndex++;
+}
+function playNote(ev){
+  if(!playing) return;
+  try { ctx ??= new (window.AudioContext||window.webkitAudioContext)(); ctx.resume(); } catch(e) { return; }
+  const when=ctx.currentTime+.008, f=440*Math.pow(2,(ev.pitch-69)/12), len=Math.max(.08,Math.min(2,ev.duration));
+  function tone(ratio,type,lvl,end){ const osc=ctx.createOscillator(), gain=ctx.createGain(); osc.type=type; osc.frequency.value=f*ratio; gain.gain.setValueAtTime(.0001,when); gain.gain.exponentialRampToValueAtTime(lvl*ev.velocity*.18,when+.015); gain.gain.exponentialRampToValueAtTime(.0001,when+end); osc.connect(gain); gain.connect(ctx.destination); osc.start(when); osc.stop(when+end+.03); voices.push(osc);}
+  if(ev.kind==='wall'){ tone(1,'triangle',1,len*.65); tone(2,'sine',.22,Math.max(.08,len*.25)); }
+  else { tone(1,'sine',1,len); tone(2,'sine',.16,Math.max(.08,len*.45)); }
+}
+function stopAudio(){ for(const v of voices){ try{v.stop()}catch(e){} } voices=[]; }
+
+function step(dt){
+  if(state.done) return; t += dt; if(t < PRE) return;
+  const tier=level.tiers[state.tier];
+  if(state.grounded){
+    state.x += state.vx*dt; state.y = tier.y-SHELL_R;
+    if(state.phase==='toWall'){
+      const hit = (state.vx>0 && state.x>=tier.wallX) || (state.vx<0 && state.x<=tier.wallX);
+      if(hit){ state.x=tier.wallX; logEvent('wall'); state.vx*=-1; state.phase=tier.gapX!==undefined?'toGap':'done'; if(state.noteIndex>=NOTES.length) state.done=true; }
+    } else if(state.phase==='toGap'){
+      const drop=(state.vx>0 && state.x>=tier.gapX) || (state.vx<0 && state.x<=tier.gapX);
+      if(drop){ state.x=tier.gapX; state.grounded=false; state.vy=0; }
+    }
+  } else {
+    state.x += state.vx*dt; state.vy += G*dt; state.y += state.vy*dt;
+    const nextTier = level.tiers[state.tier+1];
+    if(!nextTier){ state.done=true; state.grounded=true; }
+    else if(state.y >= nextTier.y-SHELL_R){ state.y=nextTier.y-SHELL_R; state.grounded=true; state.tier += 1; state.phase='toWall'; logEvent('land'); if(state.noteIndex>=NOTES.length) state.done=true; }
+  }
+  bursts = bursts.filter(b=>t-b.at<0.6); if(t>level.totalTime || state.noteIndex>=NOTES.length) state.done=true;
+}
+function validate(){
+  const checks = NOTES.map((n,i)=>{ const e=eventLog[i]; return !!(e && e.pitch===n.pitch && Math.abs(e.time-n.time)<=EVENT_TOL); });
+  const maxMs = eventLog.length ? Math.max(...eventLog.slice(0,NOTES.length).map((e,i)=>Math.abs((e?.time ?? 999)-NOTES[i].time)*1000)) : null;
+  return {passed:eventLog.length===NOTES.length && checks.every(Boolean), checks, maxMs, good:checks.filter(Boolean).length, actual:eventLog.length};
+}
+function updatePanels(){
+  const v=validate(); $('score').textContent=`${v.good}/67`; $('events').textContent=String(eventLog.length); $('timing').textContent=v.maxMs===null?'—':`${v.maxMs.toFixed(2)} ms`;
+  $('gradePill').textContent = v.passed ? 'PASS' : (eventLog.length?`RUN ${v.good}/67`:'—'); $('gradePill').className='pill ' + (v.passed?'good':(eventLog.length?'bad':''));
+  $('bar').style.width=`${Math.min(100,t/level.totalTime*100)}%`; $('clock').textContent=`${Math.max(0,t-PRE).toFixed(2)} s`;
+  $('log').textContent = eventLog.slice(-18).map(e=>`${e.time.toFixed(3)}s  ${e.kind==='wall'?'WALL ':'LAND '}  ${pitchName(e.pitch).padEnd(4)}  tier-${String(e.tier+1).padStart(2,'0')}`).join('\n') || 'Nog geen run uitgevoerd.';
+}
+function draw(){
+  if(!actors.shell) return;
+  actors.shell.setAttribute('transform', `translate(${state.x.toFixed(2)} ${state.y.toFixed(2)}) rotate(${(t*380)%360})`);
+  fxG.replaceChildren();
+  for(const b of bursts){ const u=(t-b.at)/0.6, color=b.kind==='wall'?'#ffdb84':'#98e7ff'; svg('circle',{cx:b.x,cy:b.y,r:10+u*28,fill:'none',stroke:color,'stroke-width':3*(1-u),opacity:1-u}, fxG); }
+  const wantY=Math.max(0,Math.min(level.maxY-540,state.y-160)); currentViewY += (wantY-currentViewY)*0.16; stage.setAttribute('viewBox', `0 ${currentViewY.toFixed(2)} 960 540`);
+}
+function frame(now){
+  if(!playing) return; if(!last) last=now; acc += Math.min(0.05,(now-last)/1000); last=now;
+  while(acc >= 1/240){ step(1/240); acc -= 1/240; } draw(); updatePanels();
+  if(state.done){ playing=false; $('play').textContent='▶ PLAY'; const v=validate(); $('status').textContent=v.passed?'PASS: alle 67 noten ontstaan uit wall-bounces en landingen.':`Run gestopt: ${v.good}/67 correcte noten uit ${eventLog.length} events.`; if($('loop').checked) start(); return; }
+  raf=requestAnimationFrame(frame);
+}
+function start(){ resetSim(); playing=true; $('play').textContent='♫ PLAYING'; $('status').textContent=sabotaged?'Sabotage actief · het schild volgt een fout levelpad.':'Shell onderweg · botsingen maken de melodie.'; requestAnimationFrame(frame); }
+function repair(){ sabotaged=false; level=JSON.parse(JSON.stringify(originalLevel)); initWorld(); resetSim(); }
+function sabotage(){
+  repair(); sabotaged=true;
+  if(level.tiers[2] && level.tiers[2].gapX!==undefined){
+    level.tiers[2].gapX += 34;
+    let dir=1;
+    for(let ti=0; ti<level.tiers.length-1; ti++){
+      const tier=level.tiers[ti], landingX = tier.gapX - dir*VX*tf; tier.nextLandingX=landingX;
+      const nxt=level.tiers[ti+1]; nxt.entryX=landingX; nxt.y = BASE_Y + (ti+1)*TIER_STEP; nxt.entryDir=-dir;
+      const wallNoteIdx=(ti+1)*2, prevLandIdx=wallNoteIdx-1; if(NOTES[wallNoteIdx]) nxt.wallX = nxt.entryX + nxt.entryDir*VX*(NOTES[wallNoteIdx].time-NOTES[prevLandIdx].time);
+      nxt.wallSide=nxt.entryDir>0?'right':'left'; dir=-dir;
+    }
+  }
+  initWorld(); resetSim(); $('status').textContent='Sabotage actief: gat op tier 3 verplaatst.';
+}
+
+$('play').onclick = ()=>{ if(playing){ playing=false; cancelAnimationFrame(raf); $('play').textContent='▶ PLAY'; $('status').textContent='Gepauzeerd.'; } else start(); };
+$('reset').onclick = ()=>repair();
+$('repair').onclick = repair;
+$('sabotage').onclick = sabotage;
+$('validate').onclick = ()=>{
+  playing=false; cancelAnimationFrame(raf); resetSim(); while(!state.done) step(1/240); draw(); updatePanels(); const v=validate();
+  $('status').textContent = v.passed ? `VALIDATE PASS · 67/67 · max ${v.maxMs.toFixed(2)} ms` : `VALIDATE ${sabotaged?'(saboteerd) ':''}FAIL · ${v.good}/67 · max ${(v.maxMs??0).toFixed(2)} ms`;
+  $('play').textContent='▶ PLAY';
+};
+initWorld(); resetSim();
+</script>
+</body></html>

@@ -1,0 +1,13 @@
+Ash District v0.10 — Tower Road / Dialogue Camp Pass
+
+Changed:
+- Removed playable/drivable car context. Vehicles are only abandoned scenery.
+- Replaced the grid-like forest feel with a smoother green wilds background and a long dirt road from Ember Camp to Skyspine Tower.
+- Skyspine Tower is now the travel object/corridor to the city environment.
+- Vendors/persons in camp no longer open buy/sell grids; they provide short dialogue only. Stash remains interactive.
+- Zombie roaming avoids the town edge more aggressively, especially while the player is near the gates.
+
+Known limitations:
+- Tower corridor is represented as a transition object, not a full indoor dungeon yet.
+- Inventory grid is unchanged from v0.8/v0.9; future pass should simplify mobile use.
+- Cars still appear as static obstacles/scenery.

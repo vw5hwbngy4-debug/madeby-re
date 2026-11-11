@@ -1,0 +1,12 @@
+{
+  "release": "JRPG.WORLD PSO RICO Intelligence v0.5.1",
+  "target": "https://madeby.re/games/pso/pso/",
+  "deployment": "extract top-level pso/ over public_html/pso/",
+  "file_count": 55,
+  "uncompressed_bytes": 12452608,
+  "tests": "65/65 PASS",
+  "save_import_scope": "Original Xbox PSO Episode I & II only",
+  "raw_save_upload_to_backend": false,
+  "api_key_bundled": false,
+  "shared_assets": "uses existing /pso/assets/pso and /pso/assets/world-nav from JRPG.WORLD"
+}

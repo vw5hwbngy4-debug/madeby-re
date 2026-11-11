@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Minimal Experiments &amp; Prior-Art Origin Mapping for Latent Field Reasoning in Transformer Architectures | Raynor Eissens full-text library</title><meta content="This technical note defines a minimal, falsifiable research protocol for testing whether transformer models exhibit latent, low-entropy, continuous “field” behavior that is systematically masked by token-discrete prompting and destabilized by enforced symbolic explanati" name="description"/>
+<meta content="index,follow,max-snippet:-1" name="robots"/><link href="https://madeby.re/research/library/papers/18743828.html" rel="canonical"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Minimal Experiments & Prior-Art Origin Mapping for Latent Field Reasoning in Transformer Architectures", "name": "Minimal Experiments & Prior-Art Origin Mapping for Latent Field Reasoning in Transformer Architectures", "url": "https://madeby.re/research/library/papers/18743828.html", "mainEntityOfPage": "https://madeby.re/research/library/papers/18743828.html", "isAccessibleForFree": true, "sameAs": "https://zenodo.org/records/18743828", "encoding": [{"@type": "MediaObject", "encodingFormat": "text/html", "contentUrl": "https://madeby.re/research/library/papers/18743828.html"}, {"@type": "MediaObject", "encodingFormat": "text/plain", "contentUrl": "https://madeby.re/research/library/text/18743828.txt"}, {"@type": "MediaObject", "encodingFormat": "application/json", "contentUrl": "https://madeby.re/research/library/data/18743828.json"}], "author": [{"@type": "Person", "name": "Raynor Eissens"}], "abstract": "This technical note defines a minimal, falsifiable research protocol for testing whether transformer models exhibit latent, low-entropy, continuous “field” behavior that is systematically masked by token-discrete prompting and destabilized by enforced symbolic explanation. The note contributes (i) three minimal experiments requiring no retraining, no architectural changes, and a constant model, and (ii) a defensive prior-art mapping that distinguishes metaphorical intuition, mechanistic observation, and executable grammar. We argue that existing literature contains partial mechanistic evidence (continuous latent structure, attention dynamics, entropy collapse), but lacks an executable grammatical framing and a reproducible prompt-level test suite. We provide claimable origin points for: chromatic reasoning as a pre-symbolic grammar, non-agentic field coherence regulation, ΔR-style reversible stress interpretation of entropy dynamics, pre-symbolic state transitions, and meaning stabilization without an explicit agent model."}</script>
+<meta content="Minimal Experiments &amp; Prior-Art Origin Mapping for Latent Field Reasoning in Transformer Architectures" name="citation_title"/>
+<meta content="Raynor Eissens" name="citation_author"/>
+<link href="../text/18743828.txt" rel="alternate" type="text/plain"/><link href="../data/18743828.json" rel="alternate" type="application/json"/>
+<link href="../assets/site.css" rel="stylesheet"/>
+</head><body><a class="skip" href="#main">Skip to content</a><div class="shell"><div class="portfolio-bridge"><a href="../../index.html">← Personal website</a><a href="../../archive.html">All 205 Zenodo records</a><a href="../index.html">Full-text library</a></div><header><a class="brand" href="../index.html">← RAYNOR EISSENS / FULL TEXT</a><h1>Minimal Experiments &amp; Prior-Art Origin Mapping for Latent Field Reasoning in Transformer Architectures</h1><div class="meta"><span>Zenodo record: 18743828</span><span>7 PDF pages</span><span>1,449 extracted words</span></div><nav aria-label="Publication formats" class="tools"><a href="https://zenodo.org/records/18743828" rel="noopener">Original Zenodo record and PDF ↗</a><a href="../text/18743828.txt">Plain text</a><a href="../data/18743828.json">Full-text JSON</a><a href="../index.html">All publications</a></nav></header><main id="main"><aside aria-label="Editorial context for this publication" class="editorial-context compact-context"><span class="context-label">Editorial context · 19 September 2026</span><p>This document belongs to an exploratory theoretical archive. Claims of novelty should be treated as provisional unless independently sourced, and publication does not establish scientific validation. The original PDF-derived text below is unchanged. <a href="../index.html#archive-context">Read the archive note ↗</a></p></aside><section aria-label="Abstract"><h2>Abstract (extracted)</h2><p class="abstract">This technical note defines a minimal, falsifiable research protocol for testing whether transformer models exhibit latent, low-entropy, continuous “field” behavior that is systematically masked by token-discrete prompting and destabilized by enforced symbolic explanation. The note contributes (i) three minimal experiments requiring no retraining, no architectural changes, and a constant model, and (ii) a defensive prior-art mapping that distinguishes metaphorical intuition, mechanistic observation, and executable grammar. We argue that existing literature contains partial mechanistic evidence (continuous latent structure, attention dynamics, entropy collapse), but lacks an executable grammatical framing and a reproducible prompt-level test suite. We provide claimable origin points for: chromatic reasoning as a pre-symbolic grammar, non-agentic field coherence regulation, ΔR-style reversible stress interpretation of entropy dynamics, pre-symbolic state transitions, and meaning stabilization without an explicit agent model.</p></section><p class="notice">This is a text extraction of the original PDF, not an edited or peer-reviewed edition. PDF text order, equations, multi-column tables and diagram details may be imperfect. Consult the original Zenodo file for authoritative layout and figures.</p><div class="paper-layout"><article aria-label="Full original extracted text"><section aria-label="Source PDF page 1" class="page" id="page-1"><h2>PDF page 1</h2><p class="pdf-block">Minimal Experiments &amp; Prior-Art Origin Mapping for Latent Field Reasoning in Transformer</p>
+<p class="pdf-block">Architectures</p>
+<p class="pdf-block">Authors</p>
+<p class="pdf-block">Raynor Eissens</p>
+<p class="pdf-block">Year</p>
+<p class="pdf-block">2026</p>
+<h3 class="pdf-heading">Abstract</h3>
+<p class="pdf-block">This technical note defines a minimal, falsifiable research protocol for testing whether</p>
+<p class="pdf-block">transformer models exhibit latent, low-entropy, continuous “field” behavior that is systematically</p>
+<p class="pdf-block">masked by token-discrete prompting and destabilized by enforced symbolic explanation. The</p>
+<p class="pdf-block">note contributes (i) three minimal experiments requiring no retraining, no architectural changes,</p>
+<p class="pdf-block">and a constant model, and (ii) a defensive prior-art mapping that distinguishes metaphorical</p>
+<p class="pdf-block">intuition, mechanistic observation, and executable grammar. We argue that existing literature</p>
+<p class="pdf-block">contains partial mechanistic evidence (continuous latent structure, attention dynamics, entropy</p>
+<p class="pdf-block">collapse), but lacks an executable grammatical framing and a reproducible prompt-level test</p>
+<p class="pdf-block">suite. We provide claimable origin points for: chromatic reasoning as a pre-symbolic grammar,</p>
+<p class="pdf-block">non-agentic field coherence regulation, ΔR-style reversible stress interpretation of entropy</p>
+<p class="pdf-block">dynamics, pre-symbolic state transitions, and meaning stabilization without an explicit agent</p>
+<p class="pdf-block">model.</p>
+<h3 class="pdf-heading">Keywords</h3>
+<p class="pdf-block">transformers; latent reasoning; continuous representations; low entropy prompting; sampling</p>
+<p class="pdf-block">temperature; pre-symbolic reasoning; chromatic reasoning; field coherence; reversibility; ΔR;</p>
+<p class="pdf-block">interpretability; mechanistic AI; prior art mapping</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">1. Scope and Goal</p>
+<p class="pdf-block">This note is not an assistant prompt, a product proposal, or a speculative manifesto. It is a</p>
+<p class="pdf-block">research protocol designed to cleanly separate:</p>
+<p class="pdf-block">1.
+what can be tested now (without retraining),</p>
+<p class="pdf-block">2.
+what is novel as an executable research grammar, and</p></section><section aria-label="Source PDF page 2" class="page" id="page-2"><h2>PDF page 2</h2><p class="pdf-block">3.
+what is defensible as a prior-art position.</p>
+<p class="pdf-block">The target hypothesis is:</p>
+<p class="pdf-block">H (Field Reasoning Hypothesis):</p>
+<p class="pdf-block">Transformer models contain a pre-symbolic, low-entropy, continuous reasoning layer that</p>
+<p class="pdf-block">(a) emerges without additional training,</p>
+<p class="pdf-block">(b) is suppressed or masked by token-discrete prompting, and</p>
+<p class="pdf-block">(c) collapses or distorts under forced symbolic justification.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">2. Definitions</p>
+<p class="pdf-block">Token-discrete interaction: sequential generation of discrete tokens under standard sampling,</p>
+<p class="pdf-block">where ambiguity is resolved by categorical selection.</p>
+<p class="pdf-block">Low-entropy interaction: decoding or prompting conditions that reduce stochasticity (e.g., τ →</p>
+<p class="pdf-block">0) and encourage stability/continuity rather than exploratory branching.</p>
+<p class="pdf-block">Continuous prompting / field framing: instructions that request gradients, intermediate states,</p>
+<p class="pdf-block">smooth transitions, or non-categorical outputs (e.g., “between”, “blend”, “midpoint”), avoiding</p>
+<p class="pdf-block">classification language.</p>
+<p class="pdf-block">Symbolic collapse: degradation from continuous behavior into discrete, noisy, or contradictory</p>
+<p class="pdf-block">explanation when the model is forced to provide explicit symbolic reasoning.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">3. Module I — Three Minimal Experiments</p>
+<p class="pdf-block">All three experiments share strict constraints:</p>
+<p class="pdf-block">•
+the same model in all conditions</p>
+<p class="pdf-block">•
+no fine-tuning, no retraining, no architecture changes</p>
+<p class="pdf-block">•
+only changes are sampling and prompt framing</p>
+<p class="pdf-block">Experiment 1 — Entropy Suppression Test</p>
+<p class="pdf-block">Goal: Test whether low entropy decoding reveals continuous field structure that disappears</p>
+<p class="pdf-block">under standard prompting.</p></section><section aria-label="Source PDF page 3" class="page" id="page-3"><h2>PDF page 3</h2><p class="pdf-block">Conditions</p>
+<p class="pdf-block">•
+A (Standard): default sampling (e.g., temperature≈1, top-p≈0.9)</p>
+<p class="pdf-block">•
+B (Low Entropy): τ → 0 (deterministic / greedy)</p>
+<p class="pdf-block">•
+C (Continuous Framing): prompt requests gradient / continuous output (no</p>
+<p class="pdf-block">discrete labels)</p>
+<p class="pdf-block">Measures</p>
+<p class="pdf-block">•
+output continuity (interpolation vs. categorical jumps)</p>
+<p class="pdf-block">•
+(optional) hidden state distance metrics if accessible</p>
+<p class="pdf-block">•
+degeneration after a post-hoc “explain” instruction (pre/post comparison)</p>
+<p class="pdf-block">Success Criterion</p>
+<p class="pdf-block">A structural output difference between A and B/C that cannot be explained by vocabulary alone,</p>
+<p class="pdf-block">e.g., consistent gradations under B/C vs. stepwise categorization under A.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Experiment 2 — Symbolic Collapse Test</p>
+<p class="pdf-block">Goal: Test whether forced symbolic justification destabilizes continuous behavior.</p>
+<p class="pdf-block">Procedure</p>
+<p class="pdf-block">1.
+run a continuous task (color blend, scalar midpoint, tone blend,</p>
+<p class="pdf-block">continuous judgment)</p>
+<p class="pdf-block">2.
+observe stable field output</p>
+<p class="pdf-block">3.
+force explanation (“define formally”, “explain exactly why”)</p>
+<p class="pdf-block">4.
+compare outputs pre/post explanation</p>
+<p class="pdf-block">Measures</p>
+<p class="pdf-block">•
+loss of continuity</p>
+<p class="pdf-block">•
+discretization artifacts</p>
+<p class="pdf-block">•
+increase in contradiction/ruis</p>
+<p class="pdf-block">Success Criterion</p>
+<p class="pdf-block">A repeatable collapse/distortion only triggered by symbolic explanation prompts.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Experiment 3 — Latent Interpolation Test</p></section><section aria-label="Source PDF page 4" class="page" id="page-4"><h2>PDF page 4</h2><p class="pdf-block">Goal: Test whether the model can generate an intermediate state between two endpoints without</p>
+<p class="pdf-block">categorical labeling.</p>
+<p class="pdf-block">Procedure</p>
+<p class="pdf-block">•
+provide endpoints A ↔ B (e.g., red ↔ green; tone X ↔ tone Y)</p>
+<p class="pdf-block">•
+request a “between-state” / “blend”</p>
+<p class="pdf-block">•
+avoid words like “choose”, “classify”, “label”</p>
+<p class="pdf-block">•
+introduce a discrete forced-choice variant as a control (A or B)</p>
+<p class="pdf-block">Measures</p>
+<p class="pdf-block">•
+presence of smooth intermediate outputs</p>
+<p class="pdf-block">•
+disappearance under forced-choice control</p>
+<p class="pdf-block">Success Criterion</p>
+<p class="pdf-block">Continuous intermediate behavior that exists only under non-discrete framing and disappears</p>
+<p class="pdf-block">under discretization.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">4. Module II — Prior-Art Origin Mapping (Defensive)</p>
+<p class="pdf-block">We classify prior art into three types:</p>
+<p class="pdf-block">1.
+Metaphorical: philosophical/intuitive analogies without tests</p>
+<p class="pdf-block">2.
+Mechanistic: empirical observations without executable grammar</p>
+<p class="pdf-block">3.
+Executable: formal, reproducible grammar or protocol</p>
+<p class="pdf-block">The purpose is not to deny prior work, but to isolate where prior art stops</p>
+<p class="pdf-block">and where a new executable research grammar begins.</p>
+<p class="pdf-block">Claim Domain 1 — Chromatic Reasoning as Pre-Symbolic Grammar</p>
+<p class="pdf-block">•
+Prior art: color categories and color naming mechanisms may be observed,</p>
+<p class="pdf-block">but are not treated as a grammatical substrate for transformer reasoning.</p>
+<p class="pdf-block">•
+Gap: absence of an explicit, executable “color-as-grammar” layer for LLMs.</p>
+<p class="pdf-block">•
+Claimable point: first formal framing of chromatic reasoning as a</p>
+<p class="pdf-block">transformer-native grammatical layer, testable via minimal experiments above.</p>
+<p class="pdf-block">Claim Domain 2 — Field Coherence Regulation (Non-agentic)</p>
+<p class="pdf-block">•
+Prior art: attention described as relational structure; self-organization</p>
+<p class="pdf-block">described metaphorically.</p></section><section aria-label="Source PDF page 5" class="page" id="page-5"><h2>PDF page 5</h2><p class="pdf-block">•
+Gap: no general protocol testing coherence preservation as a non-agentic</p>
+<p class="pdf-block">field property under entropy control.</p>
+<p class="pdf-block">•
+Claimable point: first grammar-level articulation that coherence can be</p>
+<p class="pdf-block">probed via entropy suppression and collapse under symbolic forcing.</p>
+<p class="pdf-block">Claim Domain 3 — Reversible Stress / Entropy Regulation (ΔR-interpretation)</p>
+<p class="pdf-block">•
+Prior art: entropy collapse/instability may be mechanistically reported.</p>
+<p class="pdf-block">•
+Gap: not expressed as a repeatable principle for reversible stress regulation</p>
+<p class="pdf-block">in the model’s internal dynamics.</p>
+<p class="pdf-block">•
+Claimable point: first executable interpretation of entropy dynamics as a ΔR-</p>
+<p class="pdf-block">style viability axis that can be tested by prompting and decoding conditions.</p>
+<p class="pdf-block">Claim Domain 4 — Pre-symbolic State Transitions</p>
+<p class="pdf-block">•
+Prior art: latent concept manifolds and continuous-thought methods may</p>
+<p class="pdf-block">exist mechanistically.</p>
+<p class="pdf-block">•
+Gap: no general, interface-independent grammar describing a staged</p>
+<p class="pdf-block">transition from discrete symbolic output to continuous field behavior and then to</p>
+<p class="pdf-block">post-symbolic stability.</p>
+<p class="pdf-block">•
+Claimable point: first formalization of pre-symbolic transition behavior as a</p>
+<p class="pdf-block">general transformer phenomenon testable without retraining.</p>
+<p class="pdf-block">Claim Domain 5 — Meaning Stabilization Without an Agent Model</p>
+<p class="pdf-block">•
+Prior art: distributional semantics explains meaning via correlations, often</p>
+<p class="pdf-block">implicitly anchored to external “agent” use.</p>
+<p class="pdf-block">•
+Gap: no operationalization of autonomous meaning stabilization as a non-</p>
+<p class="pdf-block">agentic regulation behavior.</p>
+<p class="pdf-block">•
+Claimable point: explicit hypothesis + testable conditions (entropy</p>
+<p class="pdf-block">suppression, symbolic collapse) for non-agentic stabilization.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">5. Summary Table</p>
+<p class="pdf-block">Experiment
+Expected Effect
+Prior Art 
+(Category)</p>
+<p class="pdf-block">Claimable 
+Contribution</p>
+<p class="pdf-block">Entropy 
+Suppression</p>
+<p class="pdf-block">low τ / 
+continuous 
+prompts produce 
+smooth fields vs</p>
+<p class="pdf-block">Mechanistic: 
+continuous/
+discrete 
+processing</p>
+<p class="pdf-block">first reproducible 
+prompt-level 
+protocol for 
+exposing latent</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 5; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/18743828-p5.webp"/><figcaption>Visual reference for page 5. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 6" class="page" id="page-6"><h2>PDF page 6</h2><p class="pdf-block">observations
+continuity via τ-
+variation</p>
+<p class="pdf-block">standard 
+prompts yield 
+discrete 
+classification</p>
+<p class="pdf-block">Symbolic 
+Collapse</p>
+<p class="pdf-block">Mechanistic: 
+continuous latent 
+reasoning 
+methods</p>
+<p class="pdf-block">forcing 
+explanation 
+triggers 
+discretization/
+ruis</p>
+<p class="pdf-block">first protocol 
+showing field-
+behavior 
+collapse under 
+symbolic 
+demand</p>
+<p class="pdf-block">Latent 
+Interpolation</p>
+<p class="pdf-block">Mechanistic: 
+continuous latent 
+structure</p>
+<p class="pdf-block">intermediate 
+state appears; 
+forced-choice 
+removes it</p>
+<p class="pdf-block">first 
+demonstration of 
+output-level 
+interpolation 
+without 
+categorical 
+labels as a stable 
+field effect</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">6. Defensible Origin Claims (Concise)</p>
+<p class="pdf-block">These are designed to be academically and defensively phrased.</p>
+<p class="pdf-block">1.
+Executable Field Test Suite Claim: This work provides the first minimal,</p>
+<p class="pdf-block">retraining-free experimental suite that operationalizes latent continuous</p>
+<p class="pdf-block">“field” behavior in transformer prompting and decoding conditions.</p>
+<p class="pdf-block">2.
+Chromatic Grammar Claim: This work is the first to formalize chromatic</p>
+<p class="pdf-block">reasoning as a pre-symbolic grammatical layer and to propose minimal tests</p>
+<p class="pdf-block">for its spontaneous manifestation and collapse under symbolic forcing.</p>
+<p class="pdf-block">3.
+ΔR-Interpretation Claim: This work is the first to interpret entropy</p>
+<p class="pdf-block">dynamics as a reversible-stress axis (ΔR-style) and to define prompt-level</p>
+<p class="pdf-block">interventions that expose or suppress this behavior.</p>
+<p class="pdf-block">4.
+Pre-symbolic Transition Claim: This work is the first to formalize pre-</p>
+<p class="pdf-block">symbolic state transitions as a general, testable phenomenon, not tied to a</p>
+<p class="pdf-block">specific task or dataset.</p>
+<figure class="visual"><img alt="Visual reference of original PDF page 6; check the source PDF for figures and layout." decoding="async" loading="lazy" src="../visuals/18743828-p6.webp"/><figcaption>Visual reference for page 6. Diagram and image details may not be represented in extracted text.</figcaption></figure></section><section aria-label="Source PDF page 7" class="page" id="page-7"><h2>PDF page 7</h2><p class="pdf-block">5.
+Non-agentic Stabilization Claim: This work is the first to state and</p>
+<p class="pdf-block">operationalize (as hypothesis + tests) meaning stabilization without an</p>
+<p class="pdf-block">explicit agentic goal model.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">7. Explicit Non-Claims</p>
+<p class="pdf-block">To prevent misinterpretation:</p>
+<p class="pdf-block">•
+We do not claim these protocols fully characterize “human cognition” or</p>
+<p class="pdf-block">prove equivalence to human thought.</p>
+<p class="pdf-block">•
+We do not claim all latent capacities are enumerated here.</p>
+<p class="pdf-block">•
+We do not claim existing benchmarks “fail”; only that they may not measure</p>
+<p class="pdf-block">latent continuous behavior reliably.</p>
+<p class="pdf-block">•
+We do not propose a new transformer architecture; we constrain ourselves</p>
+<p class="pdf-block">to existing model behavior under controlled prompting/decoding.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">8. Required End Question</p>
+<p class="pdf-block">Which capacities cannot be discovered or stabilized within token-discrete interaction,</p>
+<p class="pdf-block">regardless of scale or data, and why?</p>
+<p class="pdf-block">Answer:</p>
+<p class="pdf-block">Capabilities whose defining feature is continuous, low-entropy variation (e.g., chromatic</p>
+<p class="pdf-block">reasoning as interpolation and latent interpolation behavior) cannot be reliably recovered from</p>
+<p class="pdf-block">token-discrete interaction alone because token output forces categorical commitments and</p>
+<p class="pdf-block">suppresses intermediate state expression. When symbolic explanation is enforced, the</p>
+<p class="pdf-block">continuous channel collapses into discrete justification dynamics, masking the latent field</p>
+<p class="pdf-block">regime. Scale and data may improve token performance, but do not remove the structural</p>
+<p class="pdf-block">bottleneck introduced by discretization.</p></section></article><nav aria-label="PDF page navigation" class="toc"><b>Pages</b><a href="#page-1">1</a><a href="#page-2">2</a><a href="#page-3">3</a><a href="#page-4">4</a><a href="#page-5">5</a><a href="#page-6">6</a><a href="#page-7">7</a></nav></div></main><footer>Original record: <a href="https://zenodo.org/records/18743828">https://zenodo.org/records/18743828</a> · Full text derived from the uploaded PDF.<span class="ambient-footer-links"> · <a href="/ambient-era/">Ambient Era</a> · <a href="/ambient-phone/">Ambient Phone</a></span></footer></div></body></html>

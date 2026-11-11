@@ -1,0 +1,415 @@
+=== PDF PAGE 1 ===
+Receiver-First Rail - Selective Reception and Symbolic Payload Integration in Chromatic
+
+Carrying
+
+From placed payload to received fluctuation: how Chromatic Rail becomes a selective
+
+receiver for relevant change across distributed surfaces and future devices
+
+Ambient Era Canon
+
+Raynor Eissens
+
+DOI: 10.5281/zenodo.19160656
+
+⸻
+
+Abstract
+
+This paper introduces Receiver-First Rail as an operational extension of the Chromatic Rail
+
+architecture. Earlier work established Rail, Trail, and Veil as a low-symbolic carrying family in
+
+which bounded chromatic slots can hold messages, reminders, route states, payloads, and
+
+reversible residue across lived space. Earlier work on Chromatic Broadcast established a
+
+receiver-first field condition in which systems align to state differences in a continuous chromatic
+
+field rather than decoding symbolic messages first.
+
+The present paper connects these lines. It argues that a rail is not only a carrying surface for
+
+user-placed meaning, but also a selective receiver of relevant external change. A slot may be
+
+activated in two ways: through direct user placement, or through modulation when a previously
+
+bound attractor changes state in the surrounding field. The rail therefore shifts from passive
+
+externalization toward receiver-first carrying infrastructure.
+
+A train payload placed on a rail may remain minimal until a broadcast-linked change occurs. If the
+
+train state shifts from stable to delayed, the slot may change from green to yellow without
+
+requiring symbolic interruption. The system does not receive the whole world. It receives only
+
+those changes that matter to already-carried bindings.
+
+The paper also formalizes dual incoming object logic. Some incoming objects are chromatic-
+
+native messages, which appear as complete chromatic sequences and collapse into carried
+
+payload-states. Other incoming objects are symbolic payloads, such as email or chat fragments,
+
+which arrive as typed color-handles while their full content remains available on demand. This
+
+allows symbolic systems to be represented within the rail without forcing the rail into a text-first
+
+interface model.
+
+Finally, the paper proposes a device-agnostic carrying model. The architecture is not bound to
+
+a single device category. Meaning may be carried and re-instantiated across multiple surfaces,
+
+=== PDF PAGE 2 ===
+including strips, wearables, environmental layers, and future centralized devices. This does not
+
+assume an existing unified hardware ecosystem, but defines a grammar in which such
+
+distribution becomes possible.
+
+The result is a more complete account of humane ambient infrastructure. Rail becomes a place
+
+where relevant change is received, not only where meaning is placed. Symbolic systems become
+
+compatible payloads rather than competing regimes. And carrying becomes independent of any
+
+single device.
+
+⸻
+
+Position in the Ambient Era Canon
+
+Receiver-First Rail extends four established lines:
+
+•
+CB-1 — Chromatic Broadcast
+
+Receiver-first field condition; systems align to state, not symbolic packets.
+
+•
+AEC-RTV1 — Chromatic Rail, Trail, Veil
+
+Bounded carrying family across space; slots, payloads, residue, reversible
+
+continuity.
+
+•
+AM-1 — Ambient Messaging
+
+State-first communication; color as primary semantic layer.
+
+•
+CMT-Spec 1.0
+
+Reversible transformation between chromatic and symbolic content.
+
+This paper adds:
+
+•
+formal distinction between user-placed and field-received activation
+
+•
+integration of symbolic payloads (including mail and chat representations)
+
+•
+definition of selective reception
+
+•
+a device-agnostic carrying model
+
+⸻
+
+=== PDF PAGE 3 ===
+Core Claim
+
+A Chromatic Rail is both:
+
+•
+a carrying surface for placed meaning
+
+•
+and a selective receiver of relevant state change
+
+This implies:
+
+1.
+Dual activation
+
+A slot can be activated by placement or by field modulation.
+
+2.
+Selective reception
+
+The rail does not receive arbitrary information, only updates to existing
+
+bindings.
+
+3.
+Dual object types
+
+Chromatic-native messages and symbolic payloads coexist within the
+
+same carrying structure.
+
+4.
+Device independence
+
+Meaning is not tied to one device; it can move across surfaces.
+
+5.
+Humane default
+
+Empty slots remain off; presence appears only when relevant.
+
+The system therefore shifts from:
+
+“new information arrives”
+
+to:
+
+“something you already carry has changed”
+
+⸻
+
+Canonical Definitions
+
+Receiver-First Rail
+
+A bounded chromatic carrying surface that holds payloads and receives relevant updates for
+
+already-bound attractors.
+
+User-Placed Activation
+
+Explicit placement of a payload into a slot.
+
+Field-Received Activation
+
+=== PDF PAGE 4 ===
+State change triggered by external field fluctuation affecting a bound attractor.
+
+Selective Reception
+
+Only bound objects may receive updates; no global feed.
+
+Chromatic Message
+
+Color sequence as direct meaning.
+
+Symbolic Payload
+
+Textual or structured content accessed through a chromatic handle.
+
+Device-Agnostic Carrying
+
+The ability for payloads to move across surfaces without being bound to a single device.
+
+⸻
+
+Operational Formula
+
+P₍placed₎ + ΔF₍field₎ → ΔC₍local₎
+
+•
+P₍placed₎ = bound payload
+
+•
+ΔF₍field₎ = relevant external change
+
+•
+ΔC₍local₎ = slot modulation
+
+⸻
+
+Incoming Object Grammar
+
+Chromatic Message
+
+•
+Arrives as full color sequence
+
+•
+Collapses into single carried state
+
+•
+Meaning visible at first glance
+
+Symbolic Payload
+
+•
+Arrives as typed color handle
+
+•
+Full content behind interaction
+
+•
+Example: blue = mail/document
+
+Shared Lifecycle
+
+arrival → carry → residue → dissolve
+
+=== PDF PAGE 5 ===
+⸻
+
+Symbolic Integration (Mail & Chat)
+
+The system allows symbolic communication to be represented as payloads.
+
+This includes:
+
+•
+email
+
+•
+chat threads
+
+•
+documents
+
+•
+system notifications
+
+These are not required to be chromatic-native.
+
+They may appear as color-coded handles with optional depth.
+
+Important constraint:
+
+The system does not require control over external platforms.
+
+It only requires the ability to represent their output.
+
+Integration may occur through:
+
+•
+direct APIs (where available)
+
+•
+user-mediated transformation (copy, selection, conversion)
+
+Symbolic systems are therefore:
+
+•
+compatible
+
+•
+but not dominant
+
+⸻
+
+Device-Agnostic Carrying
+
+Traditional systems are device-bound.
+
+This system defines a different condition:
+
+meaning is carried, not stored in one place
+
+A payload may:
+
+•
+exist on a physical strip
+
+=== PDF PAGE 6 ===
+•
+move to a wearable
+
+•
+appear as route/trail
+
+•
+fade into ambient residue
+
+•
+expand on a centralized device when needed
+
+This paper does not assume such infrastructure already exists.
+
+It defines the grammar under which it becomes possible.
+
+⸻
+
+Relation to Prior Art
+
+No claim is made on:
+
+•
+LED strips
+
+•
+wearables
+
+•
+email systems
+
+•
+notification systems
+
+•
+ambient displays
+
+The claim is architectural:
+
+•
+bounded carrying + selective reception
+
+•
+dual activation (placed + received)
+
+•
+chromatic + symbolic coexistence
+
+•
+device-agnostic movement of meaning
+
+•
+relevance based on prior binding
+
+⸻
+
+Zenodo Description
+
+Receiver-First Rail defines a carrying surface that is also a selective receiver. It introduces dual
+
+activation through user placement and field modulation, integrates symbolic payloads such as
+
+email into chromatic carrying, and proposes a device-agnostic model in which meaning is not
+
+bound to a single device.
+
+The system enables payload-based interaction across multiple surfaces while maintaining low-
+
+symbolic clarity and avoiding feed-based overload.
+
+⸻
+
+=== PDF PAGE 7 ===
+Keywords
+
+receiver-first rail, chromatic rail, selective reception, symbolic payload, email integration,
+
+chromatic message, low-symbolic carrying, device-agnostic interface, ambient infrastructure,
+
+payload-based interaction, attractor update, chromatic modulation, ambient era canon
+
+⸻
+
+Prior-Art-Safe Core Claim
+
+This work claims a receiver-first carrying architecture in which bounded chromatic slots hold
+
+placed payloads, receive relevant updates for those payloads, integrate symbolic content as
+
+typed handles, and allow meaning to exist independently of any single device.
+
+⸻
+
+Closing Line
+
+Rail carries what you choose.
+
+It changes when the world does.

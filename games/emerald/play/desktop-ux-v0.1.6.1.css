@@ -1,0 +1,370 @@
+/* JRPG.WORLD Emerald Live v0.1.6.1
+   Desktop-only UX overlay. Mobile below 960px is intentionally untouched. */
+
+@media (min-width: 960px) {
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  body.pf-mobile-first {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    min-height: 100dvh !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    touch-action: auto !important;
+    overscroll-behavior-y: auto !important;
+    padding: 0 0 1.1rem !important;
+  }
+
+  body.pf-mobile-first #root {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    min-height: 0 !important;
+  }
+
+  body.pf-mobile-first .app-container {
+    width: 100% !important;
+    max-width: 1100px !important;
+    min-height: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  body.pf-mobile-first .main-content {
+    flex: 0 0 auto !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: .6rem 1rem 0 !important;
+  }
+
+  body.pf-mobile-first .emulator-container.game-playing {
+    width: 100% !important;
+    max-width: 1000px !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  /* Top screen. Keep the native 3:2 framebuffer and stop the desktop build from
+     expanding until the intelligence screen is pushed far below the fold. */
+  body.pf-mobile-first .emulator-layout.only-keyboard.game-playing {
+    width: min(960px, 100%) !important;
+    max-width: min(960px, calc((100dvh - 170px) * 1.5)) !important;
+    min-width: 0 !important;
+    margin: .4rem auto 0 !important;
+  }
+
+  body.pf-mobile-first .emulator-layout.only-keyboard .console-center,
+  body.pf-mobile-first .emulator-layout.only-keyboard .screen-bezel,
+  body.pf-mobile-first .emulator-layout.only-keyboard .bezel-inner,
+  body.pf-mobile-first .emulator-layout.only-keyboard .canvas-wrapper {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  body.pf-mobile-first .emulator-layout.only-keyboard .screen-bezel {
+    margin-bottom: 0 !important;
+    padding: .72rem .9rem !important;
+    border-radius: 12px 12px 15px 15px !important;
+  }
+
+  body.pf-mobile-first .emulator-layout.only-keyboard canvas {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3 / 2 !important;
+    object-fit: contain !important;
+  }
+
+  /* The upstream keyboard legend is visually noisy and semantically backwards
+     for a PC player. The working mappings are unchanged; we present them below
+     the live screen instead. */
+  body.pf-mobile-first .keyboard-instructions {
+    display: none !important;
+  }
+
+  /* Bottom screen. No fixed positioning, no floating card, no overlap. */
+  body.pf-mobile-first #pokefield-live-panel {
+    position: relative !important;
+    inset: auto !important;
+    z-index: 1 !important;
+    flex: 0 0 auto !important;
+    width: min(960px, calc(100% - 2rem)) !important;
+    max-width: 960px !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: .82rem auto 0 !important;
+    padding: 13px 16px 15px !important;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    border-radius: 15px !important;
+    background: rgba(6,10,18,.985) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,.34), inset 0 1px rgba(255,255,255,.025) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    touch-action: auto !important;
+  }
+
+  /* restrained hinge: one visual clue that both surfaces belong together */
+  body.pf-mobile-first #pokefield-live-panel::before {
+    content: "";
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    width: 116px;
+    height: 5px;
+    transform: translateX(-50%);
+    border: 1px solid rgba(255,255,255,.12);
+    border-bottom: 0;
+    border-radius: 5px 5px 0 0;
+    background: #151923;
+    box-shadow: 0 -2px 8px rgba(0,0,0,.28);
+  }
+
+  body.pf-mobile-first #pokefield-live-panel .pf-head {
+    margin-bottom: 6px !important;
+    gap: 10px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel .pf-brand strong {
+    font-size: 0 !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel .pf-brand strong::after {
+    content: "JRPG.WORLD / EMERALD";
+    font-size: 13px;
+    letter-spacing: .085em;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel .pf-head span {
+    margin-left: 8px !important;
+    font-size: 8px !important;
+    padding: 3px 6px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel .pf-head small {
+    font-size: 8px !important;
+    white-space: nowrap;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel .pf-status {
+    margin-bottom: 6px !important;
+    padding: 6px 8px !important;
+    font-size: 10.5px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel .pf-kicker {
+    margin-top: 6px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel .pf-card {
+    margin: 6px 0 !important;
+    padding: 10px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel .pf-grid {
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 4px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel .pf-stat {
+    text-align: center;
+    padding: 5px 3px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel .pf-hp {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 7px 9px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel .pf-drawer {
+    margin-top: 7px !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel .pf-drawer > summary {
+    padding: 7px 2px 4px !important;
+  }
+
+  /* The original long explainer stays untouched for mobile, but does not occupy
+     the desktop live screen. ABOUT below carries the same product context. */
+  body.pf-mobile-first #pokefield-live-panel .pf-explainer {
+    display: none !important;
+  }
+
+  body.pf-mobile-first #pokefield-live-panel #pf-owned-drawer.pf-desktop-empty {
+    display: none !important;
+  }
+
+  .pf-desktop-only {
+    display: block;
+  }
+
+  .pf-desktop-idle {
+    margin: 7px 0 3px;
+    padding: 12px 13px 11px;
+    border: 1px solid rgba(113,240,170,.18);
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(113,240,170,.055), rgba(255,255,255,.018));
+  }
+
+  .pf-desktop-idle[hidden] {
+    display: none !important;
+  }
+
+  .pf-desktop-idle-title {
+    color: #c9ffe0;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .14em;
+  }
+
+  .pf-desktop-idle-copy {
+    max-width: 62ch;
+    margin-top: 5px;
+    color: #c5cedb;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .pf-desktop-idle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 9px;
+  }
+
+  .pf-desktop-idle-item {
+    padding: 7px 8px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 8px;
+    background: rgba(255,255,255,.028);
+    color: #98a3b5;
+    font-size: 9.5px;
+    line-height: 1.4;
+  }
+
+  .pf-desktop-idle-item b {
+    display: block;
+    margin-bottom: 2px;
+    color: #dce5f0;
+    font-size: 8px;
+    letter-spacing: .12em;
+  }
+
+  .pf-desktop-resume {
+    margin-top: 7px;
+    color: #7f8999;
+    font-size: 9px;
+  }
+
+  .pf-desktop-about-copy {
+    margin: 5px 2px 3px;
+    color: #8f99aa;
+    font-size: 9.5px;
+    line-height: 1.5;
+  }
+
+  .pf-desktop-about-copy strong {
+    color: #c7d0dd;
+  }
+
+  /* Third priority: compact physical-key-first guide. */
+  .pf-desktop-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex: 0 0 auto;
+    width: min(960px, calc(100% - 2rem));
+    margin: .55rem auto 0;
+    padding: 8px 10px;
+    border: 1px solid rgba(255,255,255,.11);
+    border-radius: 10px;
+    background: rgba(8,10,14,.92);
+    box-shadow: 0 5px 16px rgba(0,0,0,.2);
+    font-family: Outfit, Inter, system-ui, sans-serif;
+  }
+
+  .pf-desktop-controls-title {
+    margin-right: 2px;
+    color: #7f8999;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: .15em;
+  }
+
+  .pf-desktop-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-width: 0;
+  }
+
+  .pf-desktop-control kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    min-height: 24px;
+    padding: 3px 6px;
+    border: 1px solid #4c5262;
+    border-bottom-width: 2px;
+    border-radius: 5px;
+    background: linear-gradient(#2d3140,#222633);
+    color: #dfffe9;
+    box-shadow: 0 1px 0 #090b10;
+    font: 800 10px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  .pf-desktop-control span {
+    color: #8993a4;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .055em;
+    white-space: nowrap;
+  }
+
+  @media (max-height: 800px) {
+    body.pf-mobile-first .main-content {
+      padding-top: .35rem !important;
+    }
+
+    body.pf-mobile-first .emulator-layout.only-keyboard.game-playing {
+      max-width: min(900px, calc((100dvh - 160px) * 1.5)) !important;
+    }
+
+    body.pf-mobile-first #pokefield-live-panel {
+      margin-top: .68rem !important;
+      padding-top: 11px !important;
+      padding-bottom: 12px !important;
+    }
+
+    .pf-desktop-idle {
+      padding: 10px 11px 9px;
+    }
+
+    .pf-desktop-idle-grid {
+      margin-top: 7px;
+    }
+
+    .pf-desktop-controls {
+      margin-top: .42rem;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+  }
+}
+
+/* Explicit mobile no-op: desktop helper elements may exist in the DOM, but they
+   never alter or occupy space in the proven phone implementation. */
+@media (max-width: 959px) {
+  .pf-desktop-only,
+  .pf-desktop-controls {
+    display: none !important;
+  }
+}

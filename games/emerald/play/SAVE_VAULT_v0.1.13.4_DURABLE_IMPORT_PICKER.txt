@@ -1,0 +1,26 @@
+JRPG.WORLD Emerald v0.1.24.3 — SAVE VAULT DURABLE IMPORT PICKER
+
+ROOT CAUSE
+The Save Vault redraws its slot cards repeatedly while the game/save bridge is live. On iPhone, the native Files picker can stay open long enough for those redraws to replace the exact <input type=file> element that launched the picker. When Safari returns the selected File to that detached input, the old delegated modal change handler is no longer in its DOM ancestry. Result: the user visibly selects a .sav, but importSav() never runs, no progress appears, and SAVE 2 / SAVE 3 remain EMPTY.
+
+WHY v0.1.24.2 DID NOT SOLVE IT
+v0.1.24.2 correctly delayed clearing input.value until after File.arrayBuffer(), but that only helps after the change handler has fired. The real iOS failure can happen earlier: the file input itself is replaced while the Files sheet is open.
+
+FIX
+- one durable global file input now lives outside the re-rendered Save Vault slot DOM;
+- IMPORT .SAV buttons target that persistent picker;
+- its change handler is attached directly to the persistent input, not delegated through a slot card;
+- the target slot is stored in JS state before opening Files;
+- the File object is captured before later UI redraws can matter;
+- after upload, the client downloads the exact slot again and SHA-256 verifies the round trip;
+- the import is only declared successful if the saved slot also appears in the refreshed server slot list.
+
+TEST FILE
+EMERALD-with-STEPHEN-base(2).sav is 131,072 bytes and passes the same Emerald parser used by Save Vault. Its embedded trainer metadata parses as EMERALD, Trainer ID 31415, play time 999:59:59, save counter 1659. Therefore this supplied file itself is not the reason the import UI stayed empty.
+
+EXPECTED MOBILE FLOW
+SAVE 2 -> IMPORT .SAV -> choose file -> READ ... -> VALID ... -> UPLOADING ... -> SERVER STORED · VERIFYING ... -> IMPORTED ...
+Then SAVE 2 becomes a real card with USE THIS SAVE.
+
+SCOPE
+Static /emerald client patch only. No Save Vault Node/database schema change is required for this client-side picker-lifetime bug.

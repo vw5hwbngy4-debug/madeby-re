@@ -1,0 +1,244 @@
+{
+  "areas": [
+    {
+      "title": "Journey Sunset Beatway",
+      "file": "tracks/ultrarare/Battle 02.mp3",
+      "color": "#ff78a8",
+      "bg": "#ff9466",
+      "biome": "journey",
+      "duration": 219.836,
+      "bpm": 117.454,
+      "beatStart": 2.183
+    },
+    {
+      "title": "GachiXplorer",
+      "file": "tracks/ultrarare/GachiXplorer.m4a",
+      "color": "#66ccff",
+      "bg": "#061628",
+      "biome": "tube",
+      "duration": 217.7,
+      "bpm": 143.555,
+      "beatStart": 2.276
+    },
+    {
+      "title": "Saw U The Other Day Or Night",
+      "file": "tracks/ultrarare/Saw U The Other Day Or Night.mp3",
+      "color": "#ffe066",
+      "bg": "#292000",
+      "biome": "dream",
+      "duration": 240.399,
+      "bpm": 117.454,
+      "beatStart": 2.09
+    },
+    {
+      "title": "Russian Docks",
+      "file": "tracks/ultrarare/Russian Docks.mp3",
+      "color": "#b98cff",
+      "bg": "#160826",
+      "biome": "oceanwire",
+      "duration": 192.0,
+      "bpm": 143.555,
+      "beatStart": 2.229
+    },
+    {
+      "title": "The Gym (Paragon X9 Remix)",
+      "file": "tracks/ultrarare/The Gym (ParagonX9 Remix).mp3",
+      "color": "#ff7a2a",
+      "bg": "#201006",
+      "biome": "gym",
+      "duration": 164.52,
+      "bpm": 143.555,
+      "beatStart": 2.183,
+      "roadGrammar": "chroma-gym-temple"
+    },
+    {
+      "title": "CHUKICHUKI",
+      "file": "tracks/ultrarare/CHUKICHUKI.mp3",
+      "color": "#ff6a00",
+      "bg": "#1a0800",
+      "biome": "desert",
+      "duration": 421.228,
+      "bpm": 117.454,
+      "beatStart": 2.229
+    },
+    {
+      "title": "Gachi-G-SM",
+      "file": "tracks/ultrarare/Gachi-G-SM.mp3",
+      "color": "#7cf9ff",
+      "bg": "#081a22",
+      "biome": "white",
+      "duration": 198.857,
+      "bpm": 143.555,
+      "beatStart": 2.043
+    },
+    {
+      "title": "Drowsy Deep Forest",
+      "file": "tracks/ultrarare/Drowsy Deep Forest.mp3",
+      "color": "#c48cff",
+      "bg": "#120820",
+      "biome": "forest",
+      "duration": 187.029,
+      "bpm": 99.384,
+      "beatStart": 9.288
+    },
+    {
+      "title": "in the beginning",
+      "file": "tracks/ultrarare/in the beginning.mp3",
+      "color": "#d0d0d0",
+      "bg": "#111111",
+      "biome": "desert",
+      "duration": 478.088,
+      "bpm": 99.384,
+      "beatStart": 2.508
+    },
+    {
+      "title": "Gachi Refurbished",
+      "file": "tracks/ultrarare/Gachi Refurbished.mp3",
+      "color": "#ffffff",
+      "bg": "#20242a",
+      "biome": "white",
+      "duration": 107.001,
+      "bpm": 99.384,
+      "beatStart": 2.136
+    },
+    {
+      "title": "Mortal Kumbed",
+      "file": "tracks/ultrarare/Mortal Kumbed.mp3",
+      "color": "#2ee66b",
+      "bg": "#05240f",
+      "biome": "lava",
+      "duration": 267.096,
+      "bpm": 129.199,
+      "beatStart": 2.276
+    },
+    {
+      "title": "Stel",
+      "file": "tracks/ultrarare/Stel.mp3",
+      "color": "#ff66cc",
+      "bg": "#260016",
+      "biome": "castle",
+      "duration": 354.045,
+      "bpm": 143.555,
+      "beatStart": 2.415
+    },
+    {
+      "title": "Take Me Down",
+      "file": "tracks/ultrarare/Take Me Down.mp3",
+      "color": "#ffe066",
+      "bg": "#292000",
+      "biome": "journey",
+      "duration": 274.501,
+      "bpm": 107.666,
+      "beatStart": 2.276
+    },
+    {
+      "title": "Ritual Beat",
+      "file": "tracks/ultrarare/Ritual Beat.mp3",
+      "color": "#ff4444",
+      "bg": "#290404",
+      "biome": "ritual",
+      "duration": 344.375,
+      "bpm": 117.454,
+      "beatStart": 2.043
+    },
+    {
+      "title": "Battle 02",
+      "file": "tracks/ultrarare/Battle 02.mp3",
+      "color": "#7dffea",
+      "bg": "#03231f",
+      "biome": "lava",
+      "duration": 219.836,
+      "bpm": 117.454,
+      "beatStart": 2.183
+    },
+    {
+      "title": "Leather Today",
+      "file": "tracks/ultrarare/Leather Today.mp3",
+      "color": "#ff6a00",
+      "bg": "#1a0800",
+      "biome": "desert",
+      "duration": 331.086,
+      "bpm": 117.454,
+      "beatStart": 2.276
+    },
+    {
+      "title": "Surgal Baba",
+      "file": "tracks/ultrarare/Surgal Baba.mp3",
+      "color": "#7cf9ff",
+      "bg": "#081a22",
+      "biome": "tube",
+      "duration": 411.429,
+      "bpm": 143.555,
+      "beatStart": 2.229
+    },
+    {
+      "title": "Chrystal Forest",
+      "file": "tracks/ultrarare/Chrystal Forest.mp3",
+      "color": "#c48cff",
+      "bg": "#120820",
+      "biome": "crystal",
+      "duration": 284.822,
+      "bpm": 161.499,
+      "beatStart": 2.136
+    },
+    {
+      "title": "The Beauty and the Gachi",
+      "file": "tracks/ultrarare/The Beauty and the Gachi.mp3",
+      "color": "#d0d0d0",
+      "bg": "#111111",
+      "biome": "dream",
+      "duration": 215.707,
+      "bpm": 143.555,
+      "beatStart": 2.229
+    },
+    {
+      "title": "Reversible",
+      "file": "tracks/ultrarare/Reversible.mp3",
+      "color": "#ffffff",
+      "bg": "#20242a",
+      "biome": "white",
+      "duration": 178.493,
+      "bpm": 143.555,
+      "beatStart": 2.276
+    },
+    {
+      "title": "Cumboi · Prism Muscle Cathedral",
+      "file": "music/new/Cumboi.mp3",
+      "color": "#ff58d6",
+      "bg": "#22002f",
+      "biome": "prismcathedral",
+      "duration": 266.867,
+      "bpm": 123.047,
+      "beatStart": 1.718,
+      "roadGrammar": "prism-muscle-cathedral"
+    },
+    {
+      "title": "Gaybeat Central Dome · Drum And Ass",
+      "file": "music/new/Gaybeat Central Dome - Drum And Ass.mp3",
+      "color": "#7d5cff",
+      "bg": "#070018",
+      "biome": "centraldome",
+      "duration": 190.668,
+      "bpm": 117.454,
+      "beatStart": 1.579,
+      "roadGrammar": "central-dome"
+    },
+    {
+      "title": "GAYSTELVANIA",
+      "file": "music/new/GAYSTELVANIA.m4a",
+      "color": "#ff3aa7",
+      "bg": "#08000d",
+      "biome": "gaystelvania",
+      "duration": 81.451,
+      "bpm": 99.384,
+      "beatStart": 0.07,
+      "roadGrammar": "psychedelic-gothic-castle"
+    }
+  ],
+  "samples": [
+    {
+      "file": "samples/gaybeat.mp3",
+      "text": "Gaybeat"
+    }
+  ]
+}

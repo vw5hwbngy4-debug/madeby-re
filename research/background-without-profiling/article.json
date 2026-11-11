@@ -1,0 +1,152 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "id": "background-without-profiling-2026-10-01",
+  "title": "Background Without Profiling",
+  "subtitle": "Human-Bound Persistent State for Agentic Systems",
+  "headline": "Background Without Profiling: Human-Bound Persistent State for Agentic Systems",
+  "author": {
+    "@type": "Person",
+    "name": "Raynor Eissens",
+    "url": "https://madeby.re/research/"
+  },
+  "datePublished": "2026-10-01",
+  "dateModified": "2026-10-01",
+  "canonicalUrl": "https://madeby.re/research/background-without-profiling/",
+  "language": "en",
+  "publicationStatus": "independent web article",
+  "doi": null,
+  "articleType": [
+    "conceptual architecture",
+    "terminological note",
+    "governance abstraction"
+  ],
+  "abstract": "Defines Background as persistent human-bound state from which replaceable agents, models, services, devices and artifacts receive bounded context, and distinguishes it from profiles, agent memory, personal data stores and AI twins.",
+  "concept": {
+    "name": "Background",
+    "aliases": [
+      "AI Background",
+      "human-bound persistent state"
+    ],
+    "canonicalDefinition": "Background is persistent human-bound state from which replaceable agents, models, services, devices, and artifacts can receive purpose-bounded context. It is not itself a profile, agent memory, or simulation of the person.",
+    "continuityRoot": "human principal",
+    "accessPattern": "bounded projection",
+    "designPrinciple": "Background Without Profiling",
+    "coreRule": "Carry explicit and provenance-bearing personal state without making broad inference about the person a prerequisite for useful assistance."
+  },
+  "distinctions": [
+    {
+      "concept": "Profile",
+      "function": "describes or classifies the person",
+      "contrast": "Background preserves durable state for the person rather than primarily compressing the person for prediction or categorization."
+    },
+    {
+      "concept": "User model",
+      "function": "adapts one system to a user",
+      "contrast": "Background is not subordinate to one application or service."
+    },
+    {
+      "concept": "Agent memory",
+      "function": "maintains continuity for an agent or agentic system",
+      "contrast": "Background survives replacement of the consuming agent and can serve multiple agents."
+    },
+    {
+      "concept": "Personal data store",
+      "function": "stores and controls access to personal data",
+      "contrast": "A personal data store can implement Background storage, but Background names the continuity and governance layer rather than a storage mechanism."
+    },
+    {
+      "concept": "Personal knowledge graph",
+      "function": "structures personal entities, facts and relationships",
+      "contrast": "A knowledge graph can be one representation inside Background but does not define its complete state, lifecycle or access model."
+    },
+    {
+      "concept": "AI twin",
+      "function": "simulates or reproduces aspects of a specific person",
+      "contrast": "Background need not simulate the person or act as the person."
+    },
+    {
+      "concept": "Human Context Layer",
+      "function": "structured permissioned context enabling personal agents",
+      "contrast": "Strong overlap; Background makes human-bound continuity and replaceable consuming systems the explicit organizing principle."
+    }
+  ],
+  "architecture": {
+    "humanBound": "human -> Background -> bounded projection -> consuming system",
+    "agentBoundContrast": "human -> agent -> agent memory",
+    "formalProjection": "pi(B_t, Q_i,t, P_i)",
+    "controlledWriteBack": "S_i -> proposed delta B_t -> validation/policy -> B_t+1"
+  },
+  "properties": [
+    "persistent across sessions",
+    "independent of a single model",
+    "independent of a single agent",
+    "usable across applications",
+    "device-independent in principle",
+    "portable across providers in the strong form",
+    "selectively disclosed",
+    "permissioned",
+    "provenance-aware",
+    "supports controlled write-back",
+    "supports revocation and deletion",
+    "can distinguish declared, observed, derived and inferred state"
+  ],
+  "substitutionTests": [
+    "model replacement",
+    "agent replacement",
+    "application replacement",
+    "device replacement",
+    "provider migration",
+    "multiple consumers",
+    "temporary consumers",
+    "revocation",
+    "provenance preservation",
+    "partial deletion"
+  ],
+  "nonClaims": [
+    "No claim that persistent personal context is new.",
+    "No claim that personal data stores or Solid-like architectures are new.",
+    "No claim that selective disclosure, capability security, or verifiable credentials are new.",
+    "No claim that agent memory or personal knowledge graphs are new.",
+    "No claim that Background requires one universal database or identifier.",
+    "No claim that all personalization should avoid inference."
+  ],
+  "noveltyBoundary": "Conceptual and governance abstraction built from substantial prior art; not claimed as a new storage, identity, memory, or cryptographic primitive.",
+  "relatedWork": [
+    "https://www.bcg.com/x/the-multiplier/personal-ai-agents-compete-on-trust",
+    "https://solidproject.org/about",
+    "https://www.w3.org/TR/vc-data-model/",
+    "https://arxiv.org/abs/2504.19413",
+    "https://arxiv.org/abs/2402.07540",
+    "https://www.sciencedirect.com/science/article/pii/S2212473X2600088X",
+    "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
+  ],
+  "relatedInternal": [
+    "https://madeby.re/research/ambient-phone/",
+    "https://madeby.re/research/agent-offload-ambient-field/",
+    "https://madeby.re/research/artifact-layer-intelligence-stack/",
+    "https://carryinglayer.com/",
+    "https://superartifact.si/"
+  ],
+  "encodings": {
+    "html": "https://madeby.re/research/background-without-profiling/",
+    "plainText": "https://madeby.re/research/background-without-profiling/article.txt",
+    "json": "https://madeby.re/research/background-without-profiling/article.json"
+  },
+  "keywords": [
+    "AI Background",
+    "Background Without Profiling",
+    "human-bound state",
+    "persistent personal state",
+    "agent memory",
+    "Human Context Layer",
+    "personal data store",
+    "personal knowledge graph",
+    "AI twin",
+    "bounded projection",
+    "data portability",
+    "selective disclosure",
+    "personal AI",
+    "agentic systems"
+  ]
+}

@@ -1,0 +1,49 @@
+EMERALD v0.1.24.8 — TRUE POKÉFIELD MERGE
+Date: 2026-09-12
+
+PURPOSE
+Merge the authentic spatial PokéField grammar from the user-supplied totalfield.zip into the Emerald live client without turning the field into a scroll list.
+
+CANONICAL FIELD MODEL
+- Population is exactly National Dex 001..386 (Generation III universe).
+- Field is one spatial SVG Poké Ball / hex-cell organism.
+- Emerald party and PC-owned specimens are semantic metadata attached to species cells.
+- An owned specimen never replaces the canonical species population.
+- CALL answers in place; non-responders remain dimmed in the same field.
+- FOCUS promotes the current responders into the working field.
+- SCATTER restores ALL 386.
+- RANK transforms the current field into vertical SS / S / A / B / C tier bands.
+
+TOTALFIELD DONOR MERGE
+- true-pokefield-projection-v0.1.24.8.js is a byte-identical copy of totalfield.zip / pokemon/src/ultimate/ultimate-projection.js.
+- Poké Ball layout, projection/viewBox behavior and field geometry therefore use the real donor projection engine.
+- CALL/FIELD controller is an Emerald adapter around that donor geometry so live save semantics can be attached safely.
+- Authentic CALL instrument visual grammar and flute assets are ported into the Emerald panel.
+
+EMERALD SEMANTICS
+Per species the adapter can expose:
+- owned specimen count
+- party presence/count
+- shiny-owned count
+- best owned IV total
+- owned specimen IV filters (including single stat numeric filters)
+- owned Hidden Power type
+- owned Nature
+- owned Level
+
+CALL TARGETS
+OWNED / PARTY / SHINY OWNED / TYPE / MOVE / ABILITY / TIER / OWNED IV /
+HIDDEN POWER / NATURE / LEVEL / POKÉMON / RANK
+
+MOBILE
+- POKÉFIELD brand gets its own header row.
+- COMPACT/EXPAND, SAVE VAULT and DEX get a separate action row.
+- LIVE / FIELD / TEAM LAB / TRAINER CARD are a separate four-cell navigation row.
+- DEX is moved out of the game canvas on mobile and restored to its original overlay position on desktop.
+- SVG receives an explicit height instead of height:auto to avoid the known iOS Safari replaced-element collapse.
+- Numeric CALL inputs use type=number + inputmode=numeric.
+
+PRESERVED
+- v0.1.24.3+ durable Safari Save Vault import picker.
+- v0.1.24.5 save-switch verification / recovery path.
+- Live intelligence, Trainer Card, Team Lab, DEX and HOME/transfer work remain in the app.

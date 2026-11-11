@@ -1,0 +1,17 @@
+Ash District v0.5 — Ember Camp Town Pass
+
+Changed the former green safe-zone into a first-town structure:
+- Larger walkable safe town named Ember Camp.
+- Barricaded perimeter with north/south gates.
+- Campfire, tents, stash chest, healer, armorer and supplier NPCs.
+- Grove/forest objects around the camp so the town sits between wilderness and city.
+- Zombies remain outside the camp boundary.
+- Wave progression waits while the player is inside town, then begins after leaving.
+- Stash access is restricted to Ember Camp.
+- Added E key camp supplies purchase: bullets, shells and healing for $35.
+- Updated HUD, hint text and README.
+
+Known limitations:
+- Vendors are functional only through the simple E-key supply purchase for now.
+- Camp objects are mostly visual; town collision remains open/walkable by design.
+- No full quest/NPC dialogue system yet.

@@ -1,0 +1,245 @@
+#hoenn-online-switch{display:none!important;position:fixed;z-index:2400;left:max(10px,env(safe-area-inset-left));top:max(10px,env(safe-area-inset-top));border:1px solid rgba(255,255,255,.28);border-radius:10px;background:#152536;color:#f5f0d0;font:800 12px/1 system-ui,sans-serif;letter-spacing:.08em;padding:10px 12px;box-shadow:0 4px 18px rgba(0,0,0,.24)}
+#hoenn-online-switch[aria-pressed="true"]{background:#f0e5a7;color:#172637}
+#hoenn-online-panel{position:fixed;z-index:2399;inset:max(52px,calc(env(safe-area-inset-top) + 48px)) max(10px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));margin-left:auto;width:min(430px,calc(100vw - 20px));overflow:auto;border:1px solid rgba(255,255,255,.2);border-radius:16px;background:rgba(11,21,31,.97);color:#f7f3df;box-shadow:0 18px 70px rgba(0,0,0,.45);padding:14px;font:14px/1.45 system-ui,sans-serif}
+#hoenn-online-panel[hidden]{display:none!important}#hoenn-online-panel header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:10px}#hoenn-online-panel header div{display:flex;flex-direction:column}#hoenn-online-panel header small,#hoenn-online-panel article small,#hoenn-online-panel .hoenn-own small{opacity:.68}#hoenn-online-panel header button{background:transparent;color:inherit;border:0;font-size:25px}#hoenn-online-panel h3{font-size:11px;letter-spacing:.12em;opacity:.65;margin:18px 0 8px}#hoenn-online-panel .hoenn-own,#hoenn-online-panel .hoenn-trainer{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(255,255,255,.055);border-radius:11px;padding:10px 11px;margin:7px 0}#hoenn-online-panel .hoenn-own>span,#hoenn-online-panel .hoenn-own>b,#hoenn-online-panel article div{display:flex;flex-direction:column}#hoenn-online-panel button[data-publish],#hoenn-online-panel button[data-add]{border:1px solid rgba(255,255,255,.22);border-radius:8px;background:#eef0d1;color:#172637;font-weight:800;font-size:11px;padding:8px 10px}#hoenn-online-panel .hoenn-event{margin:5px 0;padding:8px 10px;border-left:2px solid rgba(238,240,209,.55);background:rgba(255,255,255,.035)}#hoenn-online-panel .hoenn-muted{opacity:.6}#hoenn-online-panel .hoenn-error{background:#4b2025;border-radius:8px;padding:8px 10px}#hoenn-online-panel footer{margin-top:18px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1);font-size:11px;opacity:.58}
+@media(max-width:600px){#hoenn-online-panel{width:auto;left:max(8px,env(safe-area-inset-left));right:max(8px,env(safe-area-inset-right));top:max(52px,calc(env(safe-area-inset-top) + 46px))}}
+
+/* v0.1.24.9.2.2.3: visual-only MENU -> HOENN relabel; no DOM observer. */
+[data-gba-btn="Menu"] + .sys-btn-label{font-size:0!important}
+[data-gba-btn="Menu"] + .sys-btn-label::after{content:"HOENN";font-size:.5rem;letter-spacing:.05rem;font-family:Outfit,sans-serif;font-weight:700;color:var(--gba-theme-accent,#3d416b)}
+
+/* v0.1.24.9.2.2.4: obvious, always-reachable return path from HOENN to Emerald. */
+#hoenn-online-panel header{position:sticky;top:-14px;z-index:2;background:rgba(11,21,31,.985);padding-top:14px}
+#hoenn-online-panel header button[data-close]{min-width:44px;min-height:44px;display:grid;place-items:center;border-radius:999px;cursor:pointer;touch-action:manipulation}
+#hoenn-online-panel .hoenn-return-game{position:sticky;z-index:3;bottom:0;width:100%;min-height:50px;margin:16px 0 0;border:1px solid rgba(238,240,209,.5);border-radius:12px;background:#eef0d1;color:#172637;font:900 12px/1 system-ui,sans-serif;letter-spacing:.09em;box-shadow:0 -8px 24px rgba(11,21,31,.94);cursor:pointer;touch-action:manipulation}
+#hoenn-online-panel .hoenn-return-game span{font-size:16px;vertical-align:-1px;margin-right:5px}
+@media(max-width:600px){#hoenn-online-panel .hoenn-return-game{min-height:54px;margin-bottom:max(0px,env(safe-area-inset-bottom))}}
+
+/* v0.1.24.9.2.2.5: Publish Base must never look inert. */
+#hoenn-online-panel .hoenn-feedback{display:flex;flex-direction:column;gap:2px;margin:12px 0 2px;padding:10px 12px;border:1px solid rgba(238,240,209,.26);border-radius:10px;background:rgba(238,240,209,.08);font-size:12px;font-weight:800;letter-spacing:.025em}
+#hoenn-online-panel .hoenn-feedback.hoenn-success{background:rgba(79,190,116,.14);border-color:rgba(95,220,137,.48);color:#ddffe8}
+#hoenn-online-panel .hoenn-feedback.hoenn-error{background:#4b2025;border-color:rgba(255,150,160,.35);color:#fff0f1}
+#hoenn-online-panel .hoenn-feedback span{font-weight:650;letter-spacing:0;opacity:.92}
+#hoenn-online-panel button[data-publish][disabled],#hoenn-online-panel button[data-add][disabled]{opacity:.6;cursor:wait}
+
+/* v0.1.24.9.2.2.6: HOENN overlay escape + publish lock. */
+#hoenn-online-escape{
+  position:fixed;
+  z-index:2505;
+  top:max(10px,env(safe-area-inset-top));
+  right:max(10px,env(safe-area-inset-right));
+  min-width:76px;
+  min-height:38px;
+  padding:0 12px;
+  border:1px solid rgba(255,255,255,.32);
+  border-radius:999px;
+  background:#eef0d1;
+  color:#172637;
+  box-shadow:0 5px 18px rgba(0,0,0,.35);
+  font:900 11px/1 system-ui,sans-serif;
+  letter-spacing:.08em;
+  cursor:pointer;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+#hoenn-online-escape[hidden]{display:none!important}
+#hoenn-online-panel header{top:0;padding-top:0;min-height:42px}
+#hoenn-online-panel header button[data-close]{min-width:38px;min-height:38px;font-size:22px}
+#hoenn-online-panel .hoenn-return-game{display:none!important}
+#hoenn-online-panel .hoenn-feedback{
+  gap:1px;
+  margin:8px 0 4px;
+  padding:6px 8px;
+  border-radius:8px;
+  font-size:10px;
+  line-height:1.25;
+  letter-spacing:.04em;
+}
+#hoenn-online-panel .hoenn-feedback b{font-size:10px;line-height:1.2}
+#hoenn-online-panel .hoenn-feedback span{font-size:10px;line-height:1.25;font-weight:650;opacity:.82}
+#hoenn-online-panel button[data-publish][disabled]{pointer-events:none}
+@media(max-width:600px){
+  #hoenn-online-escape{top:max(8px,env(safe-area-inset-top));right:max(8px,env(safe-area-inset-right));min-width:72px;min-height:36px;padding:0 10px}
+  #hoenn-online-panel{padding-top:10px}
+}
+/* Keep HOENN above the live PokéField surface, but below Save Vault dialogs. */
+#hoenn-online-panel{z-index:100010;overscroll-behavior:contain}
+#hoenn-online-escape{z-index:100040}
+
+/* v0.1.24.9.2.2.7: native relation state. */
+#hoenn-online-panel .hoenn-trainer[data-relation="PRESENT_CURRENT"]{outline:1px solid rgba(95,220,137,.32);background:rgba(79,190,116,.08)}
+#hoenn-online-panel .hoenn-trainer[data-relation="PRESENT_OUTDATED"]{outline:1px solid rgba(238,240,209,.28)}
+#hoenn-online-panel .hoenn-trainer[data-relation="NO_SAFE_SLOT"]{opacity:.78}
+#hoenn-online-panel button.hoenn-relation-current{border:1px solid rgba(95,220,137,.5);border-radius:8px;background:rgba(79,190,116,.14);color:#ddffe8;font-weight:900;font-size:11px;padding:8px 10px;white-space:nowrap}
+#hoenn-online-panel button.hoenn-relation-noslot{border:1px solid rgba(255,180,120,.32);border-radius:8px;background:rgba(120,80,40,.18);color:#ffe6ce;font-weight:900;font-size:11px;padding:8px 10px;white-space:nowrap}
+#hoenn-online-panel .hoenn-relation-note{display:block;margin-top:3px;max-width:210px;font-size:10px;line-height:1.25;color:#f3d8bd;opacity:.88}
+#hoenn-online-panel button[data-add][disabled],#hoenn-online-panel .hoenn-relation-current[disabled],#hoenn-online-panel .hoenn-relation-noslot[disabled]{cursor:default}
+
+/* v0.1.24.9.2.2.8: desktop fallback entry, shared with mobile HOENN state. */
+#pokefield-live-panel #hoenn-desktop-launch{
+  display:none!important;
+  white-space:nowrap;
+}
+@media (min-width:960px){
+  #pokefield-live-panel #hoenn-desktop-launch{
+    display:inline-flex!important;
+    align-items:center;
+    justify-content:center;
+  }
+  #pokefield-live-panel #hoenn-desktop-launch[aria-pressed="true"]{
+    border-color:rgba(114,240,169,.48);
+    background:rgba(114,240,169,.14);
+    color:#8dffba;
+    box-shadow:0 0 0 1px rgba(114,240,169,.08) inset;
+  }
+}
+
+/* v0.4.1 Mobile BUZZ ------------------------------------------------------ */
+#hoenn-online-panel .hoenn-view-tabs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin:10px 0 4px;
+  padding:4px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:12px;
+  background:rgba(0,0,0,.16);
+}
+#hoenn-online-panel .hoenn-view-tabs button{
+  min-height:38px;
+  border:1px solid transparent;
+  border-radius:9px;
+  background:transparent;
+  color:rgba(247,243,223,.62);
+  font:900 10px/1 system-ui,sans-serif;
+  letter-spacing:.12em;
+  cursor:pointer;
+  touch-action:manipulation;
+}
+#hoenn-online-panel .hoenn-view-tabs button[aria-pressed="true"]{
+  border-color:rgba(238,240,209,.28);
+  background:rgba(238,240,209,.10);
+  color:#f7f3df;
+}
+#hoenn-online-panel .hoenn-buzz-feed{display:grid;gap:9px;margin-top:12px}
+#hoenn-online-panel .hoenn-buzz-story{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:14px;
+  padding:12px;
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
+}
+#hoenn-online-panel .hoenn-buzz-story.is-lead{
+  border-color:rgba(238,240,209,.26);
+  background:linear-gradient(145deg,rgba(238,240,209,.10),rgba(255,255,255,.035));
+}
+#hoenn-online-panel .hoenn-buzz-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+#hoenn-online-panel .hoenn-buzz-meta span,#hoenn-online-panel .hoenn-buzz-meta time{
+  font:900 8px/1 system-ui,sans-serif;
+  letter-spacing:.12em;
+  color:rgba(247,243,223,.54);
+}
+#hoenn-online-panel .hoenn-buzz-story>b{display:block;font:950 13px/1.15 system-ui,sans-serif;letter-spacing:.045em;color:#fff9dd}
+#hoenn-online-panel .hoenn-buzz-story>p{margin:7px 0 8px;color:rgba(247,243,223,.88);font-size:12px;line-height:1.42}
+#hoenn-online-panel .hoenn-buzz-story>small{display:block;margin-top:4px;padding-top:5px;border-top:1px solid rgba(255,255,255,.065);font-size:10px;line-height:1.35;color:rgba(247,243,223,.58)}
+#hoenn-online-panel .hoenn-buzz-empty{margin:14px 0;padding:18px 14px;border:1px dashed rgba(238,240,209,.22);border-radius:14px;text-align:center;background:rgba(255,255,255,.025)}
+#hoenn-online-panel .hoenn-buzz-empty>b{font:950 12px/1 system-ui,sans-serif;letter-spacing:.11em}
+#hoenn-online-panel .hoenn-buzz-empty p{margin:8px 0 0;font-size:12px;line-height:1.45;color:rgba(247,243,223,.64)}
+#hoenn-online-panel footer a{color:#eef0d1;font-weight:850;text-decoration:none}
+
+@media(max-width:959px){
+  #emerald-dex-switch[data-mobile-action="buzz"]{
+    border-color:rgba(255,216,104,.28)!important;
+    background:linear-gradient(180deg,rgba(67,45,18,.90),rgba(34,27,17,.92))!important;
+    color:#fff4c2!important;
+  }
+  #emerald-dex-switch[data-mobile-action="buzz"] b{letter-spacing:.08em!important}
+  #hoenn-online-panel[data-buzz],html[data-hoenn-view="buzz"] #hoenn-online-panel{background:linear-gradient(180deg,rgba(22,25,28,.985),rgba(10,20,28,.985))}
+}
+#hoenn-online-panel .hoenn-buzz-scope{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin:12px 1px 4px;padding:0 2px}
+#hoenn-online-panel .hoenn-buzz-scope b{font:950 9px/1 system-ui,sans-serif;letter-spacing:.13em;color:#fff4c2}
+#hoenn-online-panel .hoenn-buzz-scope span{max-width:62%;text-align:right;font-size:9px;line-height:1.25;color:rgba(247,243,223,.50)}
+#hoenn-online-panel .hoenn-buzz-story[data-accent="battle"]{border-left:3px solid rgba(255,166,103,.72)}
+#hoenn-online-panel .hoenn-buzz-story[data-accent="card"]{border-left:3px solid rgba(117,219,255,.70)}
+#hoenn-online-panel .hoenn-buzz-story[data-accent="base"]{border-left:3px solid rgba(141,255,188,.52)}
+
+
+/* v0.4.2.1 Presence UI Hotfix ------------------------------------------- */
+#hoenn-online-panel .hoenn-presence{
+  margin:12px 0 8px;padding:12px;border:1px solid rgba(114,240,169,.20);border-radius:14px;
+  background:linear-gradient(145deg,rgba(42,88,65,.18),rgba(255,255,255,.025));
+}
+#hoenn-online-panel .hoenn-presence-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#hoenn-online-panel .hoenn-presence-head>div{display:flex;flex-direction:column;gap:5px}
+#hoenn-online-panel .hoenn-presence-head small{font:900 8px/1 system-ui,sans-serif;letter-spacing:.14em;color:rgba(247,243,223,.52)}
+#hoenn-online-panel .hoenn-presence-head b{font:950 12px/1.15 system-ui,sans-serif;letter-spacing:.045em;color:#efffe8}
+#hoenn-online-panel .hoenn-presence-pulse{width:11px;height:11px;border-radius:50%;background:rgba(247,243,223,.28);box-shadow:0 0 0 4px rgba(247,243,223,.045)}
+#hoenn-online-panel .hoenn-presence[data-live="1"] .hoenn-presence-pulse{background:#72f0a9;box-shadow:0 0 0 4px rgba(114,240,169,.10),0 0 16px rgba(114,240,169,.30);animation:hoennPresencePulse 1.8s ease-in-out infinite}
+@keyframes hoennPresencePulse{0%,100%{transform:scale(.9);opacity:.72}50%{transform:scale(1.12);opacity:1}}
+#hoenn-online-panel .hoenn-presence-stats{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+#hoenn-online-panel .hoenn-presence-stats span{padding:5px 8px;border:1px solid rgba(255,255,255,.08);border-radius:999px;background:rgba(0,0,0,.16);font-size:9px;color:rgba(247,243,223,.64)}
+#hoenn-online-panel .hoenn-presence-stats b{color:#f7f3df;font-size:10px}
+#hoenn-online-panel .hoenn-presence-trainers{display:grid;gap:5px;margin-top:10px}
+#hoenn-online-panel .hoenn-presence-trainers span{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:6px;border-top:1px solid rgba(255,255,255,.06)}
+#hoenn-online-panel .hoenn-presence-trainers b{font-size:10px;letter-spacing:.035em}
+#hoenn-online-panel .hoenn-presence-trainers i{font-style:normal;font:900 8px/1 system-ui,sans-serif;letter-spacing:.08em;color:rgba(247,243,223,.46)}
+#hoenn-online-panel .hoenn-presence-trainers i[data-status="online"]{color:#8dffba}
+#hoenn-online-panel .hoenn-presence-note{display:block;margin-top:9px;font-size:9px;line-height:1.4;color:rgba(247,243,223,.48)}
+@media(max-width:959px){
+  #emerald-dex-switch[data-mobile-action="buzz"][data-presence-live="1"]{position:relative;padding-right:26px!important}
+  #emerald-dex-switch[data-mobile-action="buzz"][data-presence-live="1"]::after{content:"";position:absolute;right:12px;top:50%;width:7px;height:7px;margin-top:-4px;border-radius:50%;background:#72f0a9;box-shadow:0 0 10px rgba(114,240,169,.55)}
+}
+
+
+/* v0.4.2.1 mobile presence readability ----------------------------------- */
+@media(max-width:959px){
+  #hoenn-online-panel .hoenn-presence{
+    margin:14px 0 10px;
+    padding:14px 12px;
+  }
+  #hoenn-online-panel .hoenn-presence-head{
+    align-items:flex-start;
+    gap:12px;
+  }
+  #hoenn-online-panel .hoenn-presence-head>div{
+    display:grid;
+    gap:7px;
+    min-width:0;
+    flex:1 1 auto;
+  }
+  #hoenn-online-panel .hoenn-presence-head small{
+    display:block;
+    font-size:8px;
+    line-height:1.2;
+  }
+  #hoenn-online-panel .hoenn-presence-head b{
+    display:block;
+    font-size:12px;
+    line-height:1.25;
+    overflow-wrap:anywhere;
+  }
+  #hoenn-online-panel .hoenn-presence-pulse{
+    flex:0 0 auto;
+    margin-top:3px;
+  }
+  #hoenn-online-panel .hoenn-presence-stats{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:7px;
+    margin-top:11px;
+  }
+  #hoenn-online-panel .hoenn-presence-stats span{
+    display:block;
+    min-width:0;
+    text-align:center;
+    line-height:1.25;
+  }
+}
+@media(max-width:420px){
+  #hoenn-online-panel .hoenn-presence-stats{grid-template-columns:1fr}
+}
+
+/* v0.4.3.1 live-place label */
+#hoenn-online-panel .hoenn-presence-trainers b{display:flex;flex-direction:column;gap:2px}
+#hoenn-online-panel .hoenn-presence-trainers b small{font:800 8px/1.1 system-ui,sans-serif;letter-spacing:.035em;color:rgba(141,255,186,.62)}

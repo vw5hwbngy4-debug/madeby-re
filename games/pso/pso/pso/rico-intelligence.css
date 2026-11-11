@@ -1,0 +1,42 @@
+
+.ricoServiceTop{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;z-index:2;margin:0 0 8px 5px}
+.ricoServiceTop .promptLabel{margin:0}.saveMagCoachCompact{min-width:0;max-width:min(100%,460px)}
+.ricoIntelligenceHeadless{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;pointer-events:none!important}
+.xboxSaveControl{display:flex;align-items:center;justify-content:flex-end;gap:7px;min-height:30px}
+.xboxSaveButton,.xboxSaveChip,.xboxSaveUnlink{appearance:none;border:1px solid #3f719b;background:#07192a;color:#d8ebf8;border-radius:999px;font:800 10px/1 system-ui,-apple-system,Segoe UI,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.xboxSaveButton{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;transition:border-color .16s ease,box-shadow .16s ease,color .16s ease}
+.xboxSaveButton:hover,.xboxSaveButton:focus-visible{border-color:#6ce5ff;color:#fff;box-shadow:0 0 0 2px #55dfff16,0 0 15px #55dfff14;outline:none}
+.xboxSaveGlyph{display:grid;place-items:center;width:17px;height:17px;border:1px solid #70dffc;border-radius:50%;font-size:10px;line-height:1;color:#85e9ff}
+.xboxSaveHint{color:#829db4;font-size:10px;white-space:nowrap}.xboxSaveLinked{display:flex;align-items:center;justify-content:flex-end;gap:6px;min-width:0}
+.xboxSaveChip{display:flex;align-items:center;gap:7px;padding:7px 10px;border-color:#458c68;background:#071d19;color:#c9f7dc;min-width:0;max-width:100%}
+.xboxSaveCheck{color:#75efaa}.xboxSaveIdentity{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:310px}
+.xboxSaveUnlink{padding:7px 8px;color:#9fb8c9;background:#071522}.xboxSaveUnlink:hover,.xboxSaveUnlink:focus-visible{border-color:#e47d8a;color:#fff;outline:none}
+.xboxSaveStatus{font-size:10px;color:#f1c878;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.xboxSaveDetail{position:absolute;right:14px;top:44px;z-index:20;width:min(370px,calc(100% - 28px));border:1px solid #356889;border-radius:15px;background:#061522f5;box-shadow:0 18px 50px #000a;padding:12px 13px;color:#cfe3f1}
+.xboxSaveDetail[hidden]{display:none!important}.xboxSaveDetail b{display:block;color:#fff;font-size:13px;margin-bottom:4px}
+.xboxSaveDetail p{margin:4px 0;color:#9fb9cd;font-size:11px;line-height:1.45}.xboxSaveDetail small{color:#73d9ee}
+.xboxSaveDetailActions{display:flex;gap:7px;margin-top:9px}.xboxSaveAsk{border:1px solid #8e7ac9;border-radius:999px;background:#181331;color:#eee7ff;padding:7px 10px;font-size:10px;font-weight:900;cursor:pointer}
+.xboxSaveAsk:hover{border-color:#b6a1ff}
+@media(max-width:720px){.ricoServiceTop{align-items:flex-start;flex-direction:column;gap:7px;margin-left:2px}.saveMagCoachCompact{width:100%;max-width:none}.xboxSaveControl,.xboxSaveLinked{justify-content:flex-start}.xboxSaveHint{white-space:normal}.xboxSaveDetail{left:14px;right:14px;top:67px;width:auto}}
+@media(max-width:460px){.xboxSaveHint{display:none}.xboxSaveIdentity{max-width:205px}}
+
+
+/* v0.5.3 — Ragol Link v0.1.3 public release surface */
+.ragolRelease{
+  display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:16px;align-items:stretch;
+  margin:0 0 14px;padding:17px 18px;border:1px solid #327b9d;border-radius:20px;
+  background:linear-gradient(100deg,rgba(7,35,53,.97),rgba(7,23,38,.98) 62%,rgba(102,35,51,.23));
+  box-shadow:0 14px 38px #0006,inset 0 1px rgba(255,255,255,.05);position:relative;overflow:hidden
+}
+.ragolRelease:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(#72e8ff,#e95a70)}
+.ragolReleaseCopy{min-width:0}.ragolReleaseKicker{color:#7be6fb;font-size:10px;font-weight:1000;letter-spacing:.16em}
+.ragolRelease h2{margin:5px 0 5px;color:#ffe58b;font-size:20px;line-height:1.15}
+.ragolRelease p{margin:0;color:#c8dce9;font-size:12px;line-height:1.48;max-width:760px}.ragolRelease code{color:#9cecff}
+.ragolReleaseActions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.ragolReleaseActions a{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:8px 11px;border:1px solid #3c7193;border-radius:999px;background:#071725;color:#cfe8f5;text-decoration:none;font-size:10px;font-weight:900;letter-spacing:.07em}
+.ragolReleaseActions a:hover,.ragolReleaseActions a:focus-visible{border-color:#75e8ff;color:#fff;outline:none}
+.ragolReleaseActions .ragolReleasePrimary{border-color:#7de9ff;background:linear-gradient(135deg,#0e5577,#523d99);color:#fff;box-shadow:0 0 18px rgba(71,211,246,.12)}
+.ragolHow{margin-top:10px;color:#8eacc0;font-size:11px}.ragolHow summary{cursor:pointer;color:#a9cadd;font-weight:800}.ragolHow ol{margin:8px 0 0;padding-left:19px;line-height:1.55}.ragolHow b{color:#dceef7}
+.ragolReleaseSeal{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid rgba(116,226,246,.38);border-radius:15px;background:#061723b8;padding:12px}
+.ragolReleaseSeal strong{font-size:27px;color:#fff;line-height:1}.ragolReleaseSeal span{margin-top:6px;color:#75efaa;font-size:9px;font-weight:1000;letter-spacing:.13em}.ragolReleaseSeal small{margin-top:10px;color:#7f9daf;font-size:9px;line-height:1.45}
+@media(max-width:720px){.ragolRelease{grid-template-columns:1fr;padding:14px;border-radius:16px}.ragolReleaseSeal{display:none}.ragolRelease h2{font-size:17px}.ragolReleaseActions a{flex:1 1 auto}.ragolReleaseActions .ragolReleasePrimary{flex-basis:100%}}

@@ -1,0 +1,14 @@
+Create a transparent PNG spritesheet of top-down urban clutter.
+
+Sheet rules:
+- 32x32 cells
+- 8 columns x 8 rows minimum
+- transparent background
+- reusable small props
+- clean/damaged/burned/wet/rusty variants
+
+Assets:
+trash cans, dumpsters, garbage bags, cardboard boxes, broken cardboard, wooden crates, metal crates, pallets, barrels, oil barrels, toxic barrels, tires, stacked tires, shopping carts, debris piles, junk heaps, broken appliances, broken TVs, refrigerators, alley clutter.
+
+Mood:
+dirty alley density, urban sandbox, criminal city atmosphere, readable clutter rhythm.

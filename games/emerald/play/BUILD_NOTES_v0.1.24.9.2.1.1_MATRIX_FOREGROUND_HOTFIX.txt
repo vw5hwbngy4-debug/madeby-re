@@ -1,0 +1,17 @@
+EMERALD v0.1.24.9.2.1.1 — MATRIX FOREGROUND HOTFIX
+
+Problem
+- Sprite Coverage Matrix rendered correctly but used z-index 9999.
+- The current Emerald/PokéField shell contains overlays above 100000.
+- On iOS Safari the matrix was therefore visible behind FIELD but could not receive taps.
+
+Fix
+- Matrix overlay now uses z-index 1000000.
+- JS also assigns the stacking level inline as a defensive fallback.
+- Existing html.tpf-matrix-open scroll lock remains active.
+- Sticky FIELD back button remains inside the full-screen matrix.
+
+Scope
+- No coverage math changed.
+- No practical-move ranking changed.
+- No TeamLab, FIELD, CALL/FOCUS/SCATTER, DEX or emulator behavior changed.

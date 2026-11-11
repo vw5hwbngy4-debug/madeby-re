@@ -1,0 +1,10 @@
+GPTGTA v4.3.2 — Mega City Streaming Traffic
+
+Changes:
+- Enlarged the Big City map from 84x64 to 156x112 tiles.
+- Added enclosed building-wall boundaries so the player and traffic cannot drift out of the city.
+- Reworked traffic into a streaming population: far/stuck ambient cars are recycled offscreen and replaced near the player, keeping the city alive without permanent offscreen pileups.
+- Raised traffic density and added bus traffic.
+- Softened traffic-vs-traffic collisions so city cars behave like lane flow instead of crash physics.
+- Added richer rendering from the prepared asset families: road tiles, roof tiles, building edges, windows, storefronts, construction props, harbor industrial props and micro-detail overlays.
+- Kept Harbor Scrap as a world objective.

@@ -1,0 +1,14 @@
+
+Generate top-down pixel characters:
+- player
+- civilians
+- gangs
+- police
+- swat
+- medics
+
+Animations:
+idle walk run punch shoot death
+
+32x32.
+Strong silhouette readability.

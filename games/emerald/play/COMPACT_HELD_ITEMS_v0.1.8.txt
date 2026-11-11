@@ -1,0 +1,33 @@
+JRPG.WORLD EMERALD v0.1.8 — COMPACT + HELD ITEMS
+2026-09-07
+
+FEATURE 1 — COMPACT LIVE MODE
+- New COMPACT / EXPAND control in the PokéField header.
+- Full remains the default unless the user has previously chosen compact mode.
+- Preference is stored locally in the browser and applied only when the mode changes / UI mounts (no polling writes).
+- On mobile, compact mode collapses the live intelligence panel to one small Pokémon strip.
+- Compact strip keeps: species, gender, level, Nature, Ability, signal, IV average, perfect-31 count, Hidden Power, and held item when present.
+- Party drawer, large IV grid, EV row, details, explainer and live action buttons are hidden only while compact mode is active.
+- Trainer Card remains independently accessible from the header and is not compacted.
+
+FEATURE 2 — HELD ITEM DISCOVERY
+- No new RAM address or write path was added.
+- The existing Gen III decryptor already decoded heldItem from Growth substructure offset +2.
+- v0.1.8 now carries that value through enrich() and JRPGWorldEmeraldState.
+- Actual held items are surfaced on wild and owned Pokémon cards.
+- Trainer Card / My Box records preserve the held item at capture time.
+- Share PNG includes the held item when present.
+- Item names cover every item ID observed in the exact Emerald species held-item extraction, the complete berry range, and the complete battle-held range. Unknown/manual IDs fall back to Item #ID rather than guessing.
+
+NO-REGRESSION BOUNDARY
+- mGBA JS/WASM untouched.
+- Safari v0.1.7.4 audio recovery logic retained.
+- desktop keyboard v0.1.7.2 untouched.
+- Trainer Card mobile v0.1.7.1 layout rules retained.
+- Trainer Card v0.1.7.3 MutationObserver freeze fix retained.
+- decoder/checksum/IV/EV/Nature/Ability/Gender/Hidden Power algorithms unchanged.
+
+DATA PROVENANCE
+- Numeric held item: exact live Gen III Pokémon Growth substructure already decoded by this build.
+- Emerald species held-item IDs: POKEFIELD_GEN3_FIRST_EXTRACTION_v0.1 exact Emerald ROM extraction.
+- Item constant naming/order: pret/pokeemerald include/constants/items.h.

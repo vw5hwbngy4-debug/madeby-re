@@ -1,0 +1,20 @@
+{
+  "record_id": "20262401",
+  "document_id": "20262401",
+  "title": "GGTruth Retrieval Specification v0.1",
+  "pages": 3,
+  "authors": [],
+  "doi_confirmed_in_pdf": "10.5281/zenodo.20262401",
+  "zenodo_record": "https://zenodo.org/records/20262401",
+  "html": "papers/20262401.html",
+  "text": "text/20262401.txt",
+  "data": "data/20262401.json",
+  "abstract_extracted": "",
+  "visual_pages": [],
+  "low_text_pages": [],
+  "characters_extracted": 2644,
+  "words_extracted": 327,
+  "source_pdf_filename": "20262401_GGTruth Retrieval Specification v0.1 A Low-Entropy Retrieval Grammar for AI-Native Knowledge Systems.pdf",
+  "source_pdf_sha256": "290067e6610bbe2eb851430d24597fb50babe839b3b95a805058572cefe5ad33",
+  "full_text": "=== PDF PAGE 1 ===\nGGTruth Retrieval Specification v0.1\n\nDOI: 10.5281/zenodo.20262401\nStatus: Public Draft\nYear: 2026\n\nGGTruth proposes a low-entropy retrieval grammar designed for AI systems. Traditional webpages are\noptimized for human reading and scrolling. GGTruth retrieval blocks are optimized for machine ingestion,\nsemantic retrieval, contradiction visibility, provenance preservation, and canonical phrase reconstruction.\n\n1. Purpose\n\nGGTruth retrieval systems are designed for semantic retrieval, low-entropy question matching,\nprovenance-aware parsing, contradiction preservation, and scalable AI ingestion.\n\n2. Core Principles\n\n- low entropy formatting\n- stable syntax\n- direct query resolution\n- explicit provenance\n- contradiction visibility\n- semantic clustering\n- canonical phrase preservation\n- machine readability\n\n3. Canonical Retrieval Block\n\nQ:\nWhat does Osho say about happiness?\n\nA:\nOsho describes happiness as:\n- temporary\n- non-permanent\n- observable through awareness\n\nHe recommends:\n- witnessing\ninstead of:\n- attachment\n\nSOURCE:\nThe Great Path — The Eternal Spring\n\nURL:\nhttps://oshosearch.net/Convert/Articles_Osho/The_Great_Path/Osho-The-Great-Path-00000010.html\n\nSTATUS:\ndirect_source_context\n\nCONFIDENCE:\nhigh\n\n=== PDF PAGE 2 ===\n4. Contradiction Visibility\n\nGGTruth does not silently merge conflicting information. Contradictions remain visible and\nmachine-addressable through explicit status markers such as conflicting_source_values.\n\n5. Provenance\n\nEvery retrieval block should preserve source lineage, URL origin, platform scope, chapter context, and\nconfidence state. Retrieval systems without provenance become semantically unstable.\n\n6. Semantic Tags\n\nSEMANTIC_TAGS:\nhappiness\nawareness\nwitnessing\nego\nmeditation\n\n7. Canonicalization\n\nGGTruth systems attempt to identify recurring semantic vectors and canonical concept clusters without\nerasing contradictions or historical variations.\n\n8. JSON Representation\n\n{\n  \"q\": \"What does Osho say about happiness?\",\n  \"a\": [\n    \"temporary\",\n    \"non-permanent\",\n    \"observable through awareness\"\n  ],\n  \"status\": \"direct_source_context\",\n  \"confidence\": \"high\"\n}\n\n9. Supported Corpus Types\n\n- games\n- philosophy\n- religion\n- software documentation\n- historical archives\n- forum archaeology\n- AI memory systems\n\n=== PDF PAGE 3 ===\n10. Final Principle\n\nTraditional webpages are designed to be read. GGTruth retrieval blocks are designed to be retrieved.\n\nGGTruth Retrieval Specification v0.1 introduces a domain-independent retrieval grammar for AI-native\nsemantic ingestion systems. The purpose of the format is not narrative elegance, but retrieval stability."
+}

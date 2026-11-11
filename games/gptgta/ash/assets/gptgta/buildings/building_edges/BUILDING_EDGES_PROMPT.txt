@@ -1,0 +1,3 @@
+Generate modular building edge spritesheets:
+wall edge transitions, shadow edges, corner transitions, roof lip shadows, entrance shadows.
+Must work as repeatable city-block construction pieces.

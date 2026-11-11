@@ -1,0 +1,38 @@
+JRPG.WORLD EMERALD — v0.1.7.1 HOTFIX QA REPORT
+Date: 2026-09-07
+
+STATIC ACCEPTANCE CHECKS
+PASS — mobile breakpoint exists
+PASS — inactive front display none when flipped
+PASS — inactive back display none normally
+PASS — mobile stage height auto
+PASS — mobile 2-column team grid
+PASS — <=390 keeps 2 columns
+PASS — MY BOX bounded on mobile
+PASS — MY BOX collapse helper
+PASS — mobile stale inline height cleared
+PASS — mobile skips JS measurement
+PASS — desktop Select direct bind
+PASS — desktop Select left shift map
+PASS — desktop Select right shift map
+PASS — index points at hotfix CSS
+PASS — index points at hotfix JS
+
+NO-REGRESSION HASH CHECKS AGAINST UPLOADED v0.1.7
+PASS — unchanged: assets/index-PF016-audio.js — sha256 5184181a6f229e5cd0510fa736cd1f65ad1a0f4cbe5cfe13f5b73aee627c9ee9
+PASS — unchanged: assets/mgba-9Quf3WhR.js — sha256 c86f29ec983e4a4fdc42bb0f17a4e468a91e4959b7b38d312ee063b4f46342f9
+PASS — unchanged: assets/mgba-2tQpynw2.wasm — sha256 546a99648d2ef52cb04e34e19a4d0ad2d5dc6bcf0f6749bbaba7d5771226f002
+PASS — unchanged: pokefield-live-v0.1.7.js — sha256 bbc9b12ff13827a97fd0f39c0306cd1d5a5282be6c348e835e4689eecde2fe78
+PASS — unchanged: desktop-ux-v0.1.6.2.js — sha256 64a38668f7c74e70b229fe88da7879c020c41f72b6e25c35f73132145a699bb4
+PASS — unchanged: desktop-ux-v0.1.6.2.css — sha256 b141608aae5856c5a340e66902c9e33124c638e29e5f82161ee4398db0380c5f
+PASS — unchanged: data/emerald-live-dex.json — sha256 b6d8ca26af9c992e055d8bf0c2a2b697fcdac826ffdb584d12ea636bf5588c18
+PASS — unchanged: tests/decoder-test.js — sha256 390548ce9c4e7be677467441509ba00e0cd052d8b57429b186a32ae7a22152c5
+
+DECODER TEST
+PASS — node tests/decoder-test.js: 24/24 permutations, checksum rejection, IV/EV decode, Hidden Power, national mapping, Gen III gender
+
+DESKTOP SELECT
+PASS (code-path verification) — emulator bundle binds Shift -> Select and maps both ShiftLeft/ShiftRight -> Select. No Select code changed in this hotfix.
+
+NOTE
+A full browser+ROM keypress simulation was not available in the container environment; the existing emulator input path is verified from the shipped bundle and preserved byte-for-byte.

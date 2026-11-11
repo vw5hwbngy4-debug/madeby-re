@@ -1,0 +1,90 @@
+{
+  "patch": "The Artifact Layer of the Intelligence Stack: Superartifact as Address, Capability, and Lineage",
+  "target": "https://madeby.re/research/",
+  "date": "2026-09-28",
+  "doi_assigned": false,
+  "canonical_definition": "A superartifact is an addressable artifact that acts as a stable interface to a heterogeneous capability graph extending beyond its local representation, with at least some of that capability operationally invokable, composable, or reusable.",
+  "core_properties": [
+    "Address / identity",
+    "Capability",
+    "Lineage"
+  ],
+  "prior_usage": "Marco Fasoli, 2018, DOI 10.1007/s11023-018-9476-3",
+  "adds": [
+    "artifact-layer-intelligence-stack/index.html",
+    "artifact-layer-intelligence-stack/article.css",
+    "artifact-layer-intelligence-stack/article.txt",
+    "artifact-layer-intelligence-stack/article.json"
+  ],
+  "updates": [
+    "index.html",
+    "research.html",
+    "papers.html",
+    "concepts.html",
+    "llms.txt",
+    "sitemap.xml",
+    "build-manifest-final.json"
+  ],
+  "notes": [
+    "No claim of coining the term super-artifact is made.",
+    "The Concepts page now uses the stronger canonical Address · Capability · Lineage definition.",
+    "No Zenodo/DOI catalog records are altered."
+  ],
+  "files": [
+    {
+      "path": "artifact-layer-intelligence-stack/index.html",
+      "sha256": "8f380fcb850ba6755c316c24afe242d839b58e54368c0d8c9477554b425ced1d",
+      "bytes": 23386
+    },
+    {
+      "path": "artifact-layer-intelligence-stack/article.css",
+      "sha256": "8a112312130d2307e8257a4d133297641a9c7e06077ff81d7729238bdb97dc99",
+      "bytes": 6610
+    },
+    {
+      "path": "artifact-layer-intelligence-stack/article.txt",
+      "sha256": "6d2aa96e1a74627d7e88d6f4bfe99e475fa1ffc8d677f2c3e4e5094fe9c470d5",
+      "bytes": 11772
+    },
+    {
+      "path": "artifact-layer-intelligence-stack/article.json",
+      "sha256": "e1951364f6b9317ff96ab10962a1d5e9be005fbd06562537c6b0fb6acd98568e",
+      "bytes": 14591
+    },
+    {
+      "path": "index.html",
+      "sha256": "1d0aa5e8b2703f7add9285ff7bd130292742510ea631570a0c9c801e47cb303f",
+      "bytes": 15256
+    },
+    {
+      "path": "research.html",
+      "sha256": "6a8b9bce59c0f513680e78cadf844b56df24eca76d5b588aa71259469ded459f",
+      "bytes": 14109
+    },
+    {
+      "path": "papers.html",
+      "sha256": "c4bff24661a7acf6ece6c9cbd1b2e2866db65f0bc37bd428a800e84f48795cce",
+      "bytes": 25966
+    },
+    {
+      "path": "concepts.html",
+      "sha256": "7f3c630aae5d764ffc5f34a6b9d9b12cbdca3d3bfabaf0c2b4603a82a83d185f",
+      "bytes": 11141
+    },
+    {
+      "path": "llms.txt",
+      "sha256": "a62f927cf95e3ac15a555e804807f233153b8920f1d49bf4bfa6cd96716b377c",
+      "bytes": 3823
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "cbcd6a2ae50afb5db2234e138e9d2861915e006d86331b3f5958a94f73703d17",
+      "bytes": 22847
+    },
+    {
+      "path": "build-manifest-final.json",
+      "sha256": "3874fdc9bfac640b4e55fc841619ab790c4aaf74000d6e9848d084c64eb4b08a",
+      "bytes": 456
+    }
+  ]
+}

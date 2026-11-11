@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>GTAGPT Mobile Demo v2 Directional</title>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" name="viewport"/>
+<style>
+html,body{margin:0;width:100%;height:100%;background:#090909;overflow:hidden;touch-action:none;overscroll-behavior:none;font-family:monospace;color:white}
+#game{position:fixed;inset:0;width:100vw;height:100vh;image-rendering:pixelated;image-rendering:crisp-edges;background:#222}
+.panel{position:fixed;background:rgba(0,0,0,.65);border:2px solid #f4b642;color:#fff3a0;padding:6px 8px;font-size:12px;line-height:1.25;pointer-events:none}
+#stats{left:calc(10px + env(safe-area-inset-left));top:calc(10px + env(safe-area-inset-top));min-width:116px}
+#mini{right:calc(10px + env(safe-area-inset-right));top:calc(10px + env(safe-area-inset-top));width:72px;height:72px}
+#msg{left:50%;transform:translateX(-50%);bottom:calc(120px + env(safe-area-inset-bottom));width:min(78vw,380px);text-align:center}
+#touch{position:fixed;inset:0;pointer-events:none}
+#stickBase{position:absolute;left:24px;bottom:calc(28px + env(safe-area-inset-bottom));width:112px;height:112px;border-radius:50%;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.25);pointer-events:auto}
+#stickKnob{position:absolute;left:35px;top:35px;width:42px;height:42px;border-radius:50%;background:rgba(255,220,90,.75);border:2px solid rgba(0,0,0,.5)}
+.btn{position:absolute;width:76px;height:76px;border-radius:50%;background:rgba(244,182,66,.22);border:2px solid rgba(244,182,66,.8);color:#fff3a0;display:grid;place-items:center;font-weight:bold;font-size:14px;pointer-events:auto;user-select:none}
+#btnE{right:24px;bottom:calc(28px + env(safe-area-inset-bottom))}
+#btnBoost{right:112px;bottom:calc(100px + env(safe-area-inset-bottom));width:66px;height:66px;font-size:11px}
+#title{position:fixed;left:50%;top:calc(8px + env(safe-area-inset-top));transform:translateX(-50%);background:rgba(0,0,0,.55);border:1px solid #555;padding:4px 8px;font-size:11px;color:#ddd;pointer-events:none}
+</style>
+<link href="https://madeby.re/games/gptgta/version/v2/v2.html" rel="canonical"/><meta content="https://madeby.re/games/gptgta/version/v2/v2.html" property="og:url"/><meta content="GPTGTA" name="madeby:game"/></head>
+<body>
+<canvas id="game"></canvas>
+<div class="panel" id="stats">$001250<br/>AMMO 060<br/>HP ███████░</div>
+<div class="panel" id="mini"></div>
+<div class="panel" id="msg">Touch joystick. Tap ENTER near car.</div>
+<div id="touch">
+<div id="stickBase"><div id="stickKnob"></div></div>
+<div class="btn" id="btnBoost">BOOST</div>
+<div class="btn" id="btnE">ENTER</div>
+</div>
+<div id="title">GTAGPT mobile slice v2 · directional sprites</div>
+<script>
+const GPTGTA_ASSET_BASE='/gptgta/assets/gptgta/';
+const ASSETS = {"player": "gta_topdown_characters/player/player_idle.png", "sedan": "vehicles/sedan/sedan_clean.png"};
+const canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
+ctx.imageSmoothingEnabled=false;
+let W=0,H=0,DPR=1;
+function resize(){DPR=Math.min(devicePixelRatio||1,2);W=Math.floor(innerWidth);H=Math.floor(innerHeight);canvas.width=Math.floor(W*DPR);canvas.height=Math.floor(H*DPR);canvas.style.width=W+'px';canvas.style.height=H+'px';ctx.setTransform(DPR,0,0,DPR,0,0);ctx.imageSmoothingEnabled=false}
+addEventListener('resize',resize);resize();
+
+function imgLoad(src){return new Promise(res=>{if(!src)return res(null);let i=new Image();i.onload=()=>res(i);i.onerror=()=>res(null);i.src=(src && !/^(?:https?:|data:|\/)/.test(src)) ? GPTGTA_ASSET_BASE+src : src;});}
+const imgs={};
+const TILE=32;
+function road(tx,ty){return tx%8===3||tx%8===4||ty%8===3||ty%8===4}
+function rnd(n){let x=Math.sin(n*999.123)*10000;return x-Math.floor(x)}
+function overlap(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
+
+const world={w:80,h:80,props:[],peds:[]};
+const player={x:9*TILE,y:9*TILE,w:18,h:22,speed:1.6675,inCar:false,wanted:0,money:1250,ammo:60,angle:0};
+const car={x:11*TILE,y:9*TILE,w:28,h:42,vx:0,vy:0,angle:0};
+let cam={x:0,y:0}, msg="Touch joystick. Tap ENTER near car.";
+let input={x:0,y:0,boost:false,enter:false};
+
+function quantizeAngle(dx,dy,current){
+  if(Math.hypot(dx,dy)<0.08) return current;
+  // Base sprite points upward. Canvas angle: 0 = up, PI/2 = right, PI = down, -PI/2 = left.
+  let a = Math.atan2(dx, -dy);
+  let step = Math.PI/4; // 8 directions
+  return Math.round(a/step)*step;
+}
+
+function init(){
+ for(let y=2;y<world.h-2;y++)for(let x=2;x<world.w-2;x++){
+   if(!road(x,y)&&rnd(x*13+y*47)>.97)world.props.push({x:x*TILE+8,y:y*TILE+8,w:16,h:16,type:'clutter'});
+   if(road(x,y)&&rnd(x*31+y*17)>.99)world.props.push({x:x*TILE+10,y:y*TILE+10,w:12,h:12,type:'cone'});
+ }
+ for(let i=0;i<24;i++){
+   let x=(6+Math.floor(rnd(i+1)*65))*TILE+8,y=(6+Math.floor(rnd(i+2)*65))*TILE+8;
+   world.peds.push({x,y,w:14,h:18,vx:(rnd(i+3)-.5)*.5,vy:(rnd(i+4)-.5)*.5,t:i*20,dead:false,angle:0});
+ }
+}
+function solid(nx,ny,w,h){let b={x:nx,y:ny,w,h};for(const p of world.props)if(overlap(b,p))return true;return false}
+function doEnter(){let near=Math.hypot((player.x+9)-(car.x+14),(player.y+11)-(car.y+21))<46;if(!player.inCar&&near){player.inCar=true;msg="Vehicle acquired. Drive!"}else if(player.inCar){player.inCar=false;player.x=car.x+34;player.y=car.y+8;msg="On foot."}else msg="Move closer to the car."}
+
+function update(){
+ if(input.enter){input.enter=false;doEnter()}
+ if(player.inCar){
+   const boost=input.boost?1.7:1;
+   car.vx=car.vx*.88+input.x*.598*boost;car.vy=car.vy*.88+input.y*.598*boost;
+   const max=5.525*boost;car.vx=Math.max(-max,Math.min(max,car.vx));car.vy=Math.max(-max,Math.min(max,car.vy));
+   car.angle=quantizeAngle(car.vx,car.vy,car.angle);
+   let nx=car.x+car.vx,ny=car.y+car.vy;
+   if(!solid(nx,car.y,car.w,car.h))car.x=nx;else car.vx*=-.35;
+   if(!solid(car.x,ny,car.w,car.h))car.y=ny;else car.vy*=-.35;
+   player.x=car.x+5;player.y=car.y+8;player.angle=car.angle;
+   for(const p of world.peds){if(!p.dead&&overlap({x:car.x,y:car.y,w:car.w,h:car.h},p)){p.dead=true;player.wanted=Math.min(6,player.wanted+1);msg="WANTED! Police heat rising."}}
+ } else {
+   let dx=input.x,dy=input.y,l=Math.hypot(dx,dy)||1;if(l>1){dx/=l;dy/=l}
+   player.angle=quantizeAngle(dx,dy,player.angle);
+   dx*=player.speed;dy*=player.speed;
+   if(!solid(player.x+dx,player.y,player.w,player.h))player.x+=dx;
+   if(!solid(player.x,player.y+dy,player.w,player.h))player.y+=dy;
+ }
+ for(const p of world.peds){if(p.dead)continue;p.t++;if(p.t%90===0){p.vx=(Math.random()-.5)*.7;p.vy=(Math.random()-.5)*.7}p.angle=quantizeAngle(p.vx,p.vy,p.angle);p.x+=p.vx;p.y+=p.vy}
+ let target=player.inCar?car:player;cam.x+=((target.x+target.w/2-W/2)-cam.x)*.12;cam.y+=((target.y+target.h/2-H/2)-cam.y)*.12;
+ document.getElementById('stats').innerHTML='$'+String(player.money).padStart(6,'0')+'<br>AMMO '+String(player.ammo).padStart(3,'0')+'<br>HP ███████░';
+ document.getElementById('msg').textContent=msg;
+}
+
+function drawTile(tx,ty,sx,sy){if(road(tx,ty)){ctx.fillStyle='#565656';ctx.fillRect(sx,sy,TILE,TILE);ctx.fillStyle='#e8d46c';if(ty%8===3||ty%8===4)ctx.fillRect(sx,sy+15,TILE,2);if(tx%8===3||tx%8===4)ctx.fillRect(sx+15,sy,2,TILE)}else{ctx.fillStyle='#3b7a43';ctx.fillRect(sx,sy,TILE,TILE);ctx.fillStyle='#2c5d34';if((tx+ty)%2===0)ctx.fillRect(sx+2,sy+2,4,4)}}
+
+function sprite(img,x,y,w,h,color,label,angle=0){
+ const cx=Math.round(x+w/2),cy=Math.round(y+h/2);
+ ctx.save();ctx.translate(cx,cy);ctx.rotate(angle);
+ ctx.fillStyle='rgba(0,0,0,.35)';ctx.fillRect(Math.round(-w/2+2),Math.round(h/2-5),w,5);
+ if(img)ctx.drawImage(img,Math.round(-w/2),Math.round(-h/2),w,h);
+ else{ctx.fillStyle=color;ctx.fillRect(Math.round(-w/2),Math.round(-h/2),w,h);if(label){ctx.fillStyle='#111';ctx.fillText(label,Math.round(-w/2+4),Math.round(-h/2+13))}}
+ // tiny nose marker so direction is always readable, even with placeholder sprites
+ ctx.fillStyle='rgba(255,240,120,.9)';
+ ctx.fillRect(-3,Math.round(-h/2),6,4);
+ ctx.restore();
+}
+
+function drawPed(p){
+ if(p.dead){ctx.fillStyle='#991111';ctx.fillRect(Math.round(p.x),Math.round(p.y+10),16,6);return}
+ sprite(null,p.x,p.y,14,18,'#74d878','',p.angle);
+ ctx.save();ctx.translate(Math.round(p.x+7),Math.round(p.y+9));ctx.rotate(p.angle);ctx.fillStyle='#e0b48c';ctx.fillRect(-4,-9,8,8);ctx.restore();
+}
+
+function draw(){
+ ctx.clearRect(0,0,W,H);
+ ctx.save();ctx.translate(-Math.floor(cam.x),-Math.floor(cam.y));
+ let sx=Math.floor(cam.x/TILE)-1,sy=Math.floor(cam.y/TILE)-1,ex=sx+Math.ceil(W/TILE)+3,ey=sy+Math.ceil(H/TILE)+3;
+ for(let y=sy;y<ey;y++)for(let x=sx;x<ex;x++)if(x>=0&&y>=0&&x<world.w&&y<world.h)drawTile(x,y,x*TILE,y*TILE);
+ for(const p of world.props){ctx.fillStyle=p.type==='cone'?'#ff8a2a':'#7b6a50';ctx.fillRect(Math.round(p.x),Math.round(p.y),p.w,p.h);ctx.fillStyle='#222';ctx.fillRect(Math.round(p.x+2),Math.round(p.y+2),p.w-4,2)}
+ sprite(imgs.sedan,car.x,car.y,car.w,car.h,'#3d8cff','',car.angle);
+ for(const p of world.peds)drawPed(p);
+ if(!player.inCar)sprite(imgs.player,player.x,player.y,player.w,player.h,'#4c8cff','',player.angle);
+ ctx.restore();
+
+ for(let i=0;i<6;i++){ctx.fillStyle=i<player.wanted?'#ffe05a':'#444';ctx.beginPath();let cx=170+i*18,cy=24;for(let k=0;k<5;k++){let a=-Math.PI/2+k*Math.PI*2/5,x=cx+Math.cos(a)*7,y=cy+Math.sin(a)*7;if(k===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)}ctx.closePath();ctx.fill()}
+ let miniX=W-86,miniY=18;ctx.fillStyle='#555';ctx.fillRect(miniX,miniY,58,58);ctx.fillStyle='#ff4444';let mx=miniX+((player.inCar?car.x:player.x)/(world.w*TILE))*58,my=miniY+((player.inCar?car.y:player.y)/(world.h*TILE))*58;ctx.fillRect(mx-2,my-2,4,4)
+}
+
+function loop(){update();draw();requestAnimationFrame(loop)}
+
+const base=document.getElementById('stickBase'),knob=document.getElementById('stickKnob');let activeStick=null;
+function setStick(clientX,clientY){const r=base.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;let dx=clientX-cx,dy=clientY-cy,dist=Math.hypot(dx,dy),max=42;if(dist>max){dx=dx/dist*max;dy=dy/dist*max}input.x=dx/max;input.y=dy/max;knob.style.left=(35+dx)+'px';knob.style.top=(35+dy)+'px'}
+function resetStick(){input.x=0;input.y=0;knob.style.left='35px';knob.style.top='35px'}
+base.addEventListener('touchstart',e=>{activeStick=e.changedTouches[0].identifier;setStick(e.changedTouches[0].clientX,e.changedTouches[0].clientY);e.preventDefault()},{passive:false});
+base.addEventListener('touchmove',e=>{for(const t of e.changedTouches)if(t.identifier===activeStick)setStick(t.clientX,t.clientY);e.preventDefault()},{passive:false});
+base.addEventListener('touchend',e=>{for(const t of e.changedTouches)if(t.identifier===activeStick){activeStick=null;resetStick()}e.preventDefault()},{passive:false});
+base.addEventListener('touchcancel',()=>{activeStick=null;resetStick()});
+document.getElementById('btnE').addEventListener('touchstart',e=>{input.enter=true;e.preventDefault()},{passive:false});
+document.getElementById('btnBoost').addEventListener('touchstart',e=>{input.boost=true;e.preventDefault()},{passive:false});
+document.getElementById('btnBoost').addEventListener('touchend',e=>{input.boost=false;e.preventDefault()},{passive:false});
+document.getElementById('btnBoost').addEventListener('touchcancel',()=>input.boost=false);
+
+const keys=new Set();
+addEventListener('keydown',e=>{keys.add(e.key.toLowerCase());if(e.key.toLowerCase()==='e')input.enter=true;if(e.key===' ')input.boost=true});
+addEventListener('keyup',e=>{keys.delete(e.key.toLowerCase());if(e.key===' ')input.boost=false});
+setInterval(()=>{if(activeStick===null){let x=0,y=0;if(keys.has('w')||keys.has('arrowup'))y--;if(keys.has('s')||keys.has('arrowdown'))y++;if(keys.has('a')||keys.has('arrowleft'))x--;if(keys.has('d')||keys.has('arrowright'))x++;input.x=x;input.y=y}},16);
+
+async function boot(){for(const [k,v] of Object.entries(ASSETS))imgs[k]=await imgLoad(v);init();loop()}
+boot();
+</script>
+</body>
+</html>

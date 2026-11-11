@@ -1,0 +1,24 @@
+QA — v0.1.24.9.2.2.6 HOENN OVERLAY ESCAPE + PUBLISH LOCK HOTFIX
+
+PASS — hoenn-online-v0.1.6.js parses with node --check.
+PASS — index.html loads hoenn-online-v0.1.6.js with v0.1.24.9.2.2.6 cache bust.
+PASS — HOENN fixed escape is a body-level control, outside the panel's scroll content.
+PASS — `GAME ×` is hidden when HOENN is closed and visible whenever HOENN is open.
+PASS — active JS contains no bottom BACK TO GAME renderer.
+PASS — in-panel × remains available as a redundant exit.
+PASS — desktop Escape key also closes HOENN.
+PASS — HOENN panel z-index 100010 > PokéField live panel z-index 99999.
+PASS — HOENN escape z-index 100040 > PokéField live panel z-index 99999.
+PASS — Save Vault gate/modal remain above HOENN at z-index 100050 / 100100.
+PASS — publishBase() guards both busy state and post-success publishLocked state.
+PASS — successful publish sets publishLocked before releasing busy state.
+PASS — locked publish button reads PUBLISHED ✓ and is disabled.
+PASS — closing/reopening HOENN deliberately unlocks UPDATE BASE for a later explicit update.
+PASS — committed save events also unlock UPDATE BASE.
+PASS — success feedback is compact and no longer carries the long all-caps sentence as one large block.
+PASS — Save Vault runtime byte-identical to v0.1.24.9.2.2.5.
+PASS — mGBA JS/WASM runtime byte-identical to v0.1.24.9.2.2.5.
+PASS — selected PokéField / True PokéField / Team Lab runtime files byte-identical to v0.1.24.9.2.2.5.
+PASS — VERSION.txt = 0.1.24.9.2.2.6.
+
+NOTE — external production API behavior is unchanged by this patch; this is a client overlay/navigation + submit-state hotfix.

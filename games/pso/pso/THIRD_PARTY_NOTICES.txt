@@ -1,0 +1,13 @@
+JRPG.WORLD PSO SAVE-AWARE GEAR PROGRESSION v0.5
+
+newserv
+=======
+Project: https://github.com/fuzziqersoftware/newserv
+Copyright (c) 2024 Martin Michelsen
+License: MIT (full text in third-party/newserv-LICENSE.txt)
+
+V0.5 uses a deliberately curated subset of exact Xbox v3 ItemPMT parameter rows and LevelTableV3 semantics as technical reference. It does not bundle the complete newserv parameter table.
+
+Published class display-stat calibration
+=======================================
+The display-scale level-1 class stat calibration used to turn LevelTableV3 save-growth bytes into player-facing ATP/MST/ATA values is documented in PSO community class-stat references. The verified save itself remains authoritative: already-equipped items are always treated as proven equipable.

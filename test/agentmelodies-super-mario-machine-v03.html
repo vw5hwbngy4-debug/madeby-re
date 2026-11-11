@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgentMelodies · Super Mario World MIDI Machine</title>
+<style>
+  :root{color-scheme:dark;--bg:#111c2b;--panel:#1a2a39;--line:#365160;--ink:#e9f5ed;--muted:#9ab1b3;--gold:#e6ba70;--mint:#83dbba;--rose:#eb9782}
+  *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -30%,#2d4850,transparent 60%),var(--bg);color:var(--ink);font:14px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+  main{max-width:1230px;margin:auto;padding:26px 18px 50px}header{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+  h1{font:normal clamp(35px,5vw,59px)/1.04 Georgia,serif;letter-spacing:-.05em;margin:6px 0 9px}h1 em{color:var(--gold);font-style:italic}
+  h2{font:normal 25px Georgia,serif;letter-spacing:-.02em;margin:0 0 10px}p{margin:0;color:var(--muted)}.overline{text-transform:uppercase;letter-spacing:.18em;font-size:11px;color:#c5ad86;font-weight:700}
+  .tag{padding:7px 12px;border:1px solid #506574;border-radius:30px;color:#b7d8ca;font-size:12px;background:#263c48}
+  .card{background:linear-gradient(135deg,#1d303e,#152534);border:1px solid #39515a;border-radius:19px;overflow:hidden;box-shadow:0 13px 50px #08121d44}
+  .stage{position:relative;overflow:hidden;background:linear-gradient(#102536,#183b47 66%,#1c4444)}svg{width:100%;height:auto;display:block;min-height:290px;max-height:570px}
+  .stageLabel{position:absolute;left:15px;top:12px;display:flex;gap:7px;flex-wrap:wrap;pointer-events:none}.stageLabel span{padding:5px 9px;font-size:11px;border:1px solid #4e7478;border-radius:9px;background:#102b38c9;color:#b7d8ce}
+  .bar{padding:14px 16px;display:flex;gap:9px;flex-wrap:wrap;align-items:center;border-top:1px solid #345361}
+  button{border:1px solid #4d6976;border-radius:10px;padding:10px 13px;background:#263e4a;color:#e3f1ea;cursor:pointer;font:600 13px system-ui;white-space:nowrap}button:hover{background:#35505d}button.primary{background:#dfb069;color:#182b33;border-color:#dfb069}button:disabled{opacity:.6;cursor:not-allowed}
+  .progress{height:4px;background:#17343c}.progress i{display:block;height:100%;background:var(--gold);width:0;transition:width .04s linear}
+  #status{margin-left:auto;color:#b8d6ca;font-size:12px;min-width:140px;text-align:right}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}.pane{padding:19px 20px}.sectionTop{display:flex;justify-content:space-between;gap:8px;align-items:start;flex-wrap:wrap;margin-bottom:8px}
+  .large{font:normal 27px Georgia,serif;color:var(--mint)}.fail{color:var(--rose)!important}.small{font-size:12px}.muted{color:var(--muted)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.chip{background:#274454;border:1px solid #496571;padding:4px 8px;border-radius:8px;font-size:11px;color:#cde6db}.chip.bad{border-color:#b96960;color:#f3aaa2}.chip.good{border-color:#5b9f89}
+  .log{max-height:165px;overflow:auto;background:#102432;border:1px solid #3a5662;border-radius:10px;padding:11px 12px;color:#c9e9da;font:11px/1.7 ui-monospace,Consolas,monospace;white-space:pre-wrap}
+  textarea{width:100%;height:220px;resize:vertical;background:#102331;color:#c7ebe0;border:1px solid #45606a;border-radius:12px;padding:11px;font:11px/1.5 ui-monospace,Consolas,monospace}
+  select{background:#294453;color:#e2f0e9;border:1px solid #4b6c76;border-radius:10px;padding:10px;font:inherit;max-width:100%;cursor:pointer}
+  .row{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:11px 0}.note{margin-top:14px;font-size:12px;color:#9fbeb7;line-height:1.6}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:13px 0}.stat{border:1px solid #3c5863;border-radius:9px;padding:9px;background:#1a3442}.stat b{display:block;font:normal 24px Georgia,serif;color:#f2d2a0}.stat small{color:#9eb9b1}
+  .footer{font-size:12px;color:#7fa39d;margin-top:15px;line-height:1.7}
+  @media(max-width:770px){.cols{grid-template-columns:1fr}#status{width:100%;text-align:left}svg{min-height:225px}.stats{grid-template-columns:1fr 1fr 1fr}}
+</style>
+</head>
+<body><main>
+  <header><div><div class="overline">AgentMelodies · MIDI Machine Proof 03</div><h1>The <em>Mario</em> Machine</h1><p>Echte Super Mario World MIDI-melodieën. Een hoofdknikker activeert kanonnen. Iedere geraakte bel maakt een noot.</p></div><span class="tag">Echte MIDI-bron · Browser-only · v0.2</span></header>
+  <section class="card">
+    <div class="stage">
+      <svg id="world" viewBox="0 0 1000 500" aria-label="Mechanische muziekmachine met bewegende hoofdknikker, schakelaars, kanonnen, knikkers en bellen">
+        <defs>
+          <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#133041"/><stop offset="1" stop-color="#20474b"/></linearGradient>
+          <radialGradient id="marble"><stop stop-color="#f4ffff"/><stop offset=".45" stop-color="#8de8d2"/><stop offset="1" stop-color="#2da399"/></radialGradient>
+        </defs>
+        <rect id="stageBg" width="20000" height="3000" fill="url(#bg)"/>
+        <g id="grid"></g><g id="machine"></g><g id="actors"></g>
+      </svg>
+      <div class="stageLabel"><span id="clock">0.000 s</span><span>Δt 1/240 s</span><span>Mechanische aanloop 0.25 s</span></div>
+    </div>
+    <div class="progress"><i id="progress"></i></div>
+    <div class="bar">
+      <button class="primary" id="play">▶ PLAY</button><label style="display:flex;gap:6px;align-items:center;font-size:12px"><input id="loop" type="checkbox"> LOOP</label><button id="reset">↺ RESET</button><button id="rebuild">✦ CONSTRUCT</button><button id="sabotage">⚙ Verstel één bel</button><button id="validate">✓ VALIDATE</button><button id="export">↓ Machine JSON</button>
+      <span id="status">Geldige basismachine gereed</span>
+    </div>
+  </section>
+  <div class="cols">
+    <section class="card pane">
+      <div class="sectionTop"><h2>Musical proof</h2><div id="grade" class="large">—</div></div>
+      <p class="small">Deze eventreeks komt uitsluitend uit mechanische contacten. De validator ontvangt geen machinegeometrie.</p>
+      <div class="stats"><div class="stat"><b id="notesCount">—</b><small>Doelnoten</small></div><div class="stat"><b id="switchCount">—</b><small>Schakelaars</small></div><div class="stat"><b id="timing">—</b><small>Max. timingfout</small></div></div>
+      <div id="chips" class="chips"></div><div id="log" class="log"></div>
+      <p class="note">Validatie: elke toon, onset, duur, aanslagsterkte en klanktype moet overeenkomen; ±3 ms op de simulatie-onsets, zonder ontbrekende of extra noten. Browseraudio heeft afzonderlijke timingjitter.</p>
+    </section>
+    <section class="card pane">
+      <h2>De melodie is het probleem</h2><p class="small">Kies een echte MIDI-extractie. Alleen één melodielijn, zonder bas, drums of akkoorden. De JSON is zichtbaar en bewerkbaar.</p>
+      <div class="row"><select id="preset"><option value="title">Super Mario World · Title Screen (zonder 2 slotnoten)</option><option value="donut">Super Mario World · Donut Plains (20 s)</option></select><button id="load">↑ Bouw uit JSON</button></div>
+      <textarea id="melody" spellcheck="false" aria-label="Gestructureerde melodie JSON"></textarea>
+      <p class="note">Bron: aangeleverde title-screen.mid (Lead) en donut-plains.mid (Low Bells). Per gelijktijdige aanslag is de hoogste noot gekozen. Het resultaat is een vereenvoudigde monofone extractie, nog te beoordelen op herkenbaarheid.</p>
+    </section>
+  </div>
+  <div class="footer">MIDI → monofone noten → machinegeometrie → gesimuleerde botsingen → geluid. Dit is een speelbare machineproef, nog geen autonome agents-verkiezing. De oorspronkelijke MIDI wordt niet als audiotrack afgespeeld.</div>
+</main>
+<script>
+// @@CORE_START
+'use strict';
+const ENGINE='agentmelodies-machine-0.2', DT=1/240, BALL_R=5, PRE_ROLL=.25;
+const INSTRUMENTS=['glass','pluck','bell'];
+const clone=x=>JSON.parse(JSON.stringify(x));
+function secAtBeat(beat,tempo){
+  let sum=0,previous=0,bpm=tempo[0].bpm;
+  for(let i=1;i<tempo.length&&tempo[i].beat<beat;i++){
+    sum+=(tempo[i].beat-previous)*60/bpm;
+    previous=tempo[i].beat;bpm=tempo[i].bpm;
+  }
+  return sum+(beat-previous)*60/bpm;
+}
+function normalizeMelody(melody){
+  if(!melody||melody.schema!=='agentmelodies-melody-1'||!Array.isArray(melody.notes)||melody.notes.length<1||melody.notes.length>256)throw Error('Melodie: versie of notenaantal ongeldig');
+  const tempo=melody.tempoMap||[{beat:0,bpm:melody.bpm??120}];
+  if(!Array.isArray(tempo)||tempo.length<1||tempo[0].beat!==0)throw Error('Tempo moet bij beat 0 beginnen');
+  for(let i=0;i<tempo.length;i++)if(!Number.isFinite(tempo[i].beat)||!Number.isFinite(tempo[i].bpm)||tempo[i].bpm<30||tempo[i].bpm>300||(i&&tempo[i].beat<=tempo[i-1].beat))throw Error('Ongeldige tempokaart');
+  const out=melody.notes.map((n,i)=>{
+    if(!Number.isInteger(n.pitch)||n.pitch<36||n.pitch>108||!Number.isFinite(n.startBeat)||n.startBeat<0||n.startBeat>256||!Number.isFinite(n.durationBeats)||n.durationBeats<=0||n.durationBeats>16||n.startBeat+n.durationBeats>256)throw Error('Ongeldige noot '+i);
+    const v=n.velocity??.75,ins=n.instrument??'glass';
+    if(!Number.isFinite(v)||v<=0||v>1||!INSTRUMENTS.includes(ins))throw Error('Ongeldige aanslag of klank '+i);
+    const time=secAtBeat(n.startBeat,tempo),duration=secAtBeat(n.startBeat+n.durationBeats,tempo)-time;
+    if(!Number.isFinite(time)||!Number.isFinite(duration)||duration<=0)throw Error('Niet-eindige noottijd');
+    return {id:`note-${i+1}`,time,pitch:n.pitch,duration,velocity:v,instrument:ins};
+  }).sort((a,b)=>a.time-b.time||a.pitch-b.pitch||a.id.localeCompare(b.id));
+  if(Math.max(...out.map(n=>n.time+n.duration))>60)throw Error('Compositie duurt langer dan 60 seconden');
+  let polyphony=0;const edges=[];for(const n of out){edges.push([n.time,1],[n.time+n.duration,-1]);}
+  edges.sort((a,b)=>a[0]-b[0]||a[1]-b[1]);for(const [,d] of edges){polyphony+=d;if(polyphony>16)throw Error('Meer dan 16 gelijktijdige noten');}
+  return out;
+}
+// An exact constructive grammar: master marble -> swept switch -> cannon ->
+// gravitational striker -> real bell contact -> note event. No note scheduler.
+function buildMachine(melody){
+  const target=normalizeMelody(melody),vx=155,x0=70,masterY=80,g=640,shotVy=160,flight=PRE_ROLL;
+  const machine={version:ENGINE,step:DT,preroll:flight,master:{x:x0,y:masterY,vx},gravity:g,shotVy,switches:[],cannons:[],bells:[],target};
+  const laneLast=[];let group=null;
+  for(const note of target){
+    if(!group||Math.abs(group.time-note.time)>1e-9){
+      group={id:`switch-${machine.switches.length+1}`,time:note.time,x:x0+vx*note.time,y:masterY,cannonIds:[]};
+      machine.switches.push(group);
+    }
+    const x=group.x;
+    let lane=laneLast.findIndex(last=>x-last>34);if(lane<0){lane=laneLast.length;laneLast.push(-999999);}laneLast[lane]=x;
+    const sy=154+lane*66,bellY=sy+shotVy*flight+.5*g*flight*flight+BALL_R;
+    const cannonId=`cannon-${note.id}`,bellId=`bell-${note.id}`;
+    machine.cannons.push({id:cannonId,switchId:group.id,x,y:sy,vx:0,vy:shotVy,bellId,lane});
+    machine.bells.push({id:bellId,x,y:bellY,width:26,pitch:note.pitch,duration:note.duration,velocity:note.velocity,instrument:note.instrument,cannonId,lane});
+    group.cannonIds.push(cannonId);
+  }
+  machine.width=Math.max(1020,...machine.switches.map(s=>s.x+150));
+  machine.height=Math.max(460,...machine.bells.map(b=>b.y+66));
+  return machine;
+}
+function collisionTime(y,vy,gravity,surface,remaining){
+  const distance=surface-y;if(distance<-1e-9)return null;
+  const root=gravity===0?(vy>0?distance/vy:null):(-vy+Math.sqrt(vy*vy+2*gravity*distance))/gravity;
+  return Number.isFinite(root)&&root>=-1e-8&&root<=remaining+1e-8?Math.max(0,root):null;
+}
+function simulateMachine(machine){
+  const triggers=[],shots=[],contacts=[],active=[];
+  const bells=new Map(machine.bells.map(b=>[b.id,b]));
+  const cannons=new Map(machine.cannons.map(c=>[c.id,c]));
+  // Runtime horizon is determined by physical switches and bells, not targets.
+  const last=Math.max(...machine.switches.map(s=>(s.x-machine.master.x)/machine.master.vx))+
+    Math.max(...machine.bells.map(b=>b.duration))+machine.preroll+.5;
+  let switchIndex=0;
+  for(let k=0;k<Math.ceil(last/machine.step);k++){
+    const ta=k*machine.step,tb=Math.min(last,(k+1)*machine.step);
+    const xa=machine.master.x+machine.master.vx*ta,xb=machine.master.x+machine.master.vx*tb;
+    while(switchIndex<machine.switches.length&&machine.switches[switchIndex].x<=xb+1e-9){
+      const sw=machine.switches[switchIndex++];
+      if(sw.x<xa-1e-8)continue;
+      const fireTime=ta+(sw.x-xa)/machine.master.vx;
+      triggers.push({time:fireTime,sourceObjectId:sw.id,x:sw.x});
+      for(const id of sw.cannonIds){
+        const c=cannons.get(id);if(!c)continue;
+        const shot={id:`ball-${id}`,cannonId:c.id,bellId:c.bellId,x:c.x,y:c.y,vy:c.vy,spawnTime:fireTime,impactTime:null};
+        shots.push(shot);active.push(shot);
+      }
+    }
+    for(let i=active.length-1;i>=0;i--){
+      const p=active[i],b=bells.get(p.bellId);
+      const from=Math.max(ta,p.spawnTime),h=tb-from;
+      if(h<=1e-10)continue;
+      const hit=b&&Math.abs(p.x-b.x)<=b.width/2+BALL_R?
+        collisionTime(p.y,p.vy,machine.gravity,b.y-BALL_R,h):null;
+      if(hit!==null){
+        const impact=from+hit;p.y=b.y-BALL_R;p.impactTime=impact;
+        contacts.push({time:impact-machine.preroll,physicalTime:impact,pitch:b.pitch,duration:b.duration,velocity:b.velocity,instrument:b.instrument,sourceObjectId:b.id,cause:[...triggers.filter(t=>t.sourceObjectId===machine.cannons.find(c=>c.id===p.cannonId)?.switchId).slice(-1).map(t=>t.sourceObjectId),p.cannonId,p.id]});
+        active.splice(i,1);
+      }else{
+        p.y+=p.vy*h+.5*machine.gravity*h*h;p.vy+=machine.gravity*h;
+        if(p.y>machine.height+500)active.splice(i,1);
+      }
+    }
+  }
+  contacts.sort((a,b)=>Math.abs(a.time-b.time)<1e-7?a.pitch-b.pitch||a.sourceObjectId.localeCompare(b.sourceObjectId):a.time-b.time);
+  return {events:contacts,triggers,shots,totalSimTime:last};
+}
+// Independent from geometry and physical mechanism; compares only event contracts.
+function validateEvents(actual,target,tolerance=.003){
+  // A simultaneous chord remains a chord despite sub-nanosecond float drift.
+  const musicalOrder=(x,y)=>Math.abs(x.time-y.time)<1e-7?x.pitch-y.pitch:x.time-y.time;
+  const a=[...actual].sort(musicalOrder);
+  const b=[...target].sort(musicalOrder);
+  const checks=b.map((want,i)=>{
+    const got=a[i];return Boolean(got&&got.pitch===want.pitch&&Math.abs(got.time-want.time)<=tolerance&&Math.abs(got.duration-want.duration)<=.00001&&Math.abs(got.velocity-want.velocity)<=.00001&&got.instrument===want.instrument);
+  });
+  return {passed:a.length===b.length&&checks.every(Boolean),checks,expected:b.length,actual:a.length,extras:Math.max(0,a.length-b.length),missing:Math.max(0,b.length-a.length),maxTimingErrorMs:a.length===b.length?Math.max(0,...b.map((want,i)=>Math.abs(a[i].time-want.time)*1000)):null};
+}
+function presets(){return {"title":{"schema":"agentmelodies-melody-1","title":"Super Mario World \u00b7 Title Screen","bpm":120,"notes":[{"pitch":98,"startBeat":0.0,"durationBeats":0.333334,"instrument":"glass","velocity":0.787},{"pitch":98,"startBeat":0.5,"durationBeats":0.333334,"instrument":"glass","velocity":0.787},{"pitch":98,"startBeat":1.0,"durationBeats":0.333334,"instrument":"glass","velocity":0.787},{"pitch":86,"startBeat":1.5,"durationBeats":0.333334,"instrument":"glass","velocity":0.787},{"pitch":98,"startBeat":2.0,"durationBeats":0.333334,"instrument":"glass","velocity":0.787},{"pitch":98,"startBeat":2.5,"durationBeats":0.333334,"instrument":"glass","velocity":0.787},{"pitch":98,"startBeat":3.0,"durationBeats":0.333334,"instrument":"glass","velocity":0.787},{"pitch":86,"startBeat":3.5,"durationBeats":0.333334,"instrument":"glass","velocity":0.787},{"pitch":99,"startBeat":4.0,"durationBeats":2.0,"instrument":"glass","velocity":0.787},{"pitch":98,"startBeat":6.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":86,"startBeat":7.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":8.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":8.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":9.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":86,"startBeat":9.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":10.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":10.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":11.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":86,"startBeat":11.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":12.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":12.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":13.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":13.5,"durationBeats":0.25,"instrument":"glass","velocity":0.787},{"pitch":96,"startBeat":13.75,"durationBeats":0.25,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":14.0,"durationBeats":1.0,"instrument":"glass","velocity":0.787},{"pitch":93,"startBeat":15.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":86,"startBeat":15.508334,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":93,"startBeat":16.008334,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":93,"startBeat":16.508334,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":93,"startBeat":17.008334,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":86,"startBeat":17.508334,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":93,"startBeat":18.008334,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":93,"startBeat":18.508334,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":93,"startBeat":19.008334,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":86,"startBeat":19.508334,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":93,"startBeat":20.008334,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":93,"startBeat":20.508334,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":93,"startBeat":21.008334,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":93,"startBeat":21.508334,"durationBeats":0.25,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":21.758334,"durationBeats":0.25,"instrument":"glass","velocity":0.787},{"pitch":93,"startBeat":22.008334,"durationBeats":0.991666,"instrument":"glass","velocity":0.787},{"pitch":91,"startBeat":23.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":86,"startBeat":23.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":24.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":24.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":25.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":86,"startBeat":25.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":26.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":26.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":27.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":86,"startBeat":27.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":28.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":28.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":29.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":93,"startBeat":29.5,"durationBeats":0.25,"instrument":"glass","velocity":0.787},{"pitch":95,"startBeat":29.75,"durationBeats":0.25,"instrument":"glass","velocity":0.787},{"pitch":96,"startBeat":30.0,"durationBeats":1.0,"instrument":"glass","velocity":0.787},{"pitch":100,"startBeat":31.0,"durationBeats":1.0,"instrument":"glass","velocity":0.787},{"pitch":98,"startBeat":32.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":98,"startBeat":32.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":98,"startBeat":33.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":86,"startBeat":33.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":96,"startBeat":34.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":96,"startBeat":34.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":96,"startBeat":35.0,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":90,"startBeat":35.5,"durationBeats":0.375,"instrument":"glass","velocity":0.787},{"pitch":91,"startBeat":36.0,"durationBeats":2.0,"instrument":"glass","velocity":0.787},{"pitch":83,"startBeat":39.0,"durationBeats":0.75,"instrument":"glass","velocity":0.787},{"pitch":81,"startBeat":39.75,"durationBeats":0.25,"instrument":"glass","velocity":0.787}]},"donut":{"schema":"agentmelodies-melody-1","title":"Super Mario World \u00b7 Donut Plains","bpm":120,"notes":[{"pitch":60,"startBeat":1.625,"durationBeats":0.75,"instrument":"glass","velocity":0.504},{"pitch":71,"startBeat":2.5,"durationBeats":0.75,"instrument":"glass","velocity":0.504},{"pitch":60,"startBeat":3.25,"durationBeats":0.875,"instrument":"glass","velocity":0.504},{"pitch":71,"startBeat":4.125,"durationBeats":3.375,"instrument":"glass","velocity":0.504},{"pitch":69,"startBeat":7.5,"durationBeats":4.125,"instrument":"glass","velocity":0.504},{"pitch":62,"startBeat":11.625,"durationBeats":0.875,"instrument":"glass","velocity":0.504},{"pitch":72,"startBeat":12.5,"durationBeats":0.75,"instrument":"glass","velocity":0.504},{"pitch":62,"startBeat":13.25,"durationBeats":0.875,"instrument":"glass","velocity":0.504},{"pitch":72,"startBeat":14.125,"durationBeats":3.375,"instrument":"glass","velocity":0.504},{"pitch":71,"startBeat":17.5,"durationBeats":4.125,"instrument":"glass","velocity":0.504},{"pitch":60,"startBeat":21.625,"durationBeats":0.875,"instrument":"glass","velocity":0.504},{"pitch":71,"startBeat":22.5,"durationBeats":0.75,"instrument":"glass","velocity":0.504},{"pitch":60,"startBeat":23.375,"durationBeats":0.75,"instrument":"glass","velocity":0.504},{"pitch":71,"startBeat":24.125,"durationBeats":3.375,"instrument":"glass","velocity":0.504},{"pitch":69,"startBeat":27.5,"durationBeats":2.5,"instrument":"glass","velocity":0.504},{"pitch":72,"startBeat":30.0,"durationBeats":1.625,"instrument":"glass","velocity":0.504},{"pitch":69,"startBeat":31.625,"durationBeats":1.75,"instrument":"glass","velocity":0.504},{"pitch":65,"startBeat":33.375,"durationBeats":1.625,"instrument":"glass","velocity":0.504},{"pitch":64,"startBeat":35.0,"durationBeats":2.5,"instrument":"glass","velocity":0.504},{"pitch":62,"startBeat":37.5,"durationBeats":2.5,"instrument":"glass","velocity":0.504}]}};}
+// @@CORE_END
+
+const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
+const el=(type,attrs={},parent)=>{const o=document.createElementNS(NS,type);for(const [k,v] of Object.entries(attrs))o.setAttribute(k,v);if(parent)parent.appendChild(o);return o;};
+const originalPresets=presets(); originalPresets.title.notes=originalPresets.title.notes.slice(0,-2); originalPresets.title.title+=' · Corrected ending'; const originals=originalPresets;let melody=clone(originals.title),machine,run,verdict,playing=false,start=0,frame=0,heard=0,ctx=null,oscillators=[],parts={};
+function stopAudio(){for(const osc of oscillators){try{osc.stop()}catch{}}oscillators=[];}
+function stop(){playing=false;cancelAnimationFrame(frame);stopAudio();$('play').textContent='▶ PLAY';}
+function pitchName(n){return ['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'][n%12]+(Math.floor(n/12)-1);}
+function sound(ev,scheduledTime){
+  if(!ctx)return;
+  const now=scheduledTime,f=440*Math.pow(2,(ev.pitch-69)/12),volume=.12*ev.velocity;
+  const tone=(ratio,kind,level,length)=>{
+    const osc=ctx.createOscillator(),gain=ctx.createGain();osc.type=kind;osc.frequency.value=f*ratio;
+    gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(Math.max(.001,volume*level),now+.012);
+    gain.gain.exponentialRampToValueAtTime(.0001,now+length);osc.connect(gain);gain.connect(ctx.destination);
+    osc.start(now);osc.stop(now+length+.02);oscillators.push(osc);
+  };
+  const length=Math.max(.08,Math.min(3,ev.duration));
+  if(ev.instrument==='glass'){tone(1,'sine',1,length);tone(2,'sine',.20,length*.7);}
+  else if(ev.instrument==='pluck'){tone(1,'triangle',.9,Math.min(.45,length));tone(2,'sine',.13,.13);}
+  else{tone(1,'sine',.9,length);tone(2.99,'sine',.17,length*.66);}
+}
+function positionFlight(s,t){
+  if(t<s.spawnTime||s.impactTime===null||t>s.impactTime)return null;
+  const u=t-s.spawnTime,c=machine.cannons.find(c=>c.id===s.cannonId);return {x:s.x,y:c.y+c.vy*u+.5*machine.gravity*u*u};
+}
+function drawStatic(){
+  const root=$('machine');root.replaceChildren();
+  const grid=$('grid');grid.replaceChildren();
+  for(let x=0;x<=machine.width;x+=100)el('line',{x1:x,x2:x,y1:42,y2:machine.height,stroke:'#5c8a8a','stroke-opacity':'.13','stroke-dasharray':'4 9'},grid);
+  el('line',{x1:0,x2:machine.width,y1:80,y2:80,stroke:'#a5d3b5','stroke-width':5,'stroke-opacity':.65},root);
+  for(const sw of machine.switches){
+    el('line',{x1:sw.x,x2:sw.x,y1:90,y2:131,stroke:'#cea96f','stroke-width':1.5,'stroke-dasharray':'4 4','stroke-opacity':.65},root);
+    el('circle',{cx:sw.x,cy:80,r:10,fill:'#28444e',stroke:'#e2bb7e','stroke-width':2},root);
+    el('path',{d:`M ${sw.x-4} 80 L ${sw.x+1} 85 L ${sw.x+7} 74`,stroke:'#e8d7aa','stroke-width':1.5,fill:'none'},root);
+  }
+  for(const c of machine.cannons){
+    el('line',{x1:c.x,x2:c.x,y1:95,y2:c.y-9,stroke:'#8da9a5','stroke-opacity':.28,'stroke-dasharray':'3 7'},root);
+    const g=el('g',{transform:`translate(${c.x} ${c.y})`},root);
+    el('rect',{x:-11,y:-15,width:22,height:22,rx:7,fill:'#9b7353',stroke:'#edc589','stroke-width':1.5},g);
+    el('rect',{x:-6,y:2,width:12,height:13,rx:3,fill:'#1a3442',stroke:'#deb66b','stroke-width':2},g);
+  }
+  for(const b of machine.bells){
+    const g=el('g',{transform:`translate(${b.x} ${b.y})`},root);
+    el('path',{d:'M -17 0 Q -14 -17 0 -20 Q 14 -17 17 0 Z',fill:'#d1a866',stroke:'#ffe2a0','stroke-width':1.5},g);
+    el('line',{x1:-20,x2:20,y1:0,y2:0,stroke:'#ffdb98','stroke-width':4,'stroke-linecap':'round'},g);
+    const t=el('text',{x:0,y:22,fill:'#b8dbc8','font-size':11,'text-anchor':'middle'},g);t.textContent=pitchName(b.pitch);
+  }
+  const actors=$('actors');actors.replaceChildren();
+  parts.master=el('circle',{cx:machine.master.x,cy:machine.master.y,r:8,fill:'url(#marble)',stroke:'#d7fff3','stroke-width':1.5},actors);
+  parts.shots=el('g',{},actors);
+  const viewH=Math.max(480,machine.height);
+  $('world').setAttribute('viewBox',`0 0 1000 ${viewH}`);
+}
+function drawMoment(t){
+  const masterX=machine.master.x+machine.master.vx*t;
+  parts.master.setAttribute('cx',masterX);
+  const root=parts.shots;root.replaceChildren();
+  for(const s of run.shots){
+    const p=positionFlight(s,t);if(!p)continue;
+    el('circle',{cx:p.x,cy:p.y,r:BALL_R,fill:'#edce88',stroke:'#fff5c5','stroke-width':1.3},root);
+  }
+  const maxX=Math.max(0,machine.width-1000),left=Math.max(0,Math.min(maxX,masterX-220));
+  $('world').setAttribute('viewBox',`${left.toFixed(2)} 0 1000 ${Math.max(480,machine.height)}`);
+  $('clock').textContent=t.toFixed(3)+' s';$('progress').style.width=Math.min(100,t/run.totalSimTime*100)+'%';
+}
+function showResults(){
+  const target=machine.target;verdict=validateEvents(run.events,target);
+  $('grade').textContent=verdict.passed?'PASS · 100%':`FAIL · ${verdict.checks.filter(Boolean).length}/${target.length}`;
+  $('grade').className='large'+(verdict.passed?'':' fail');
+  $('notesCount').textContent=target.length;$('switchCount').textContent=machine.switches.length;
+  $('timing').textContent=verdict.maxTimingErrorMs===null?'—':verdict.maxTimingErrorMs.toFixed(3)+' ms';
+  $('chips').replaceChildren();target.slice(0,64).forEach((n,i)=>{
+    const b=document.createElement('span');b.className='chip '+(verdict.checks[i]?'good':'bad');b.textContent=pitchName(n.pitch)+' @'+n.time.toFixed(2);$('chips').appendChild(b);
+  });
+  $('log').textContent=run.events.slice(0,40).map(e=>`${e.time.toFixed(4)}s  ${pitchName(e.pitch).padEnd(4)}  ${e.sourceObjectId}  ← ${e.cause.join(' > ')}`).join('\n')+(run.events.length>40?'\n… meer events in de geëxporteerde configuratie':'');
+  $('status').textContent=verdict.passed?'Geldige machineconstructie':'Validatie mislukt — herbouw mogelijk';
+}
+function rebuild(){
+  stop();machine=buildMachine(melody);run=simulateMachine(machine);drawStatic();drawMoment(0);showResults();
+}
+function animate(now){
+  if(!playing)return;
+  const elapsed=Math.max(0,Math.min((now-start)/1000,run.totalSimTime));
+  while(heard<run.events.length&&run.events[heard].physicalTime<=elapsed)heard++;
+  drawMoment(elapsed);
+  if(elapsed<run.totalSimTime)frame=requestAnimationFrame(animate);
+  else{stop();$('status').textContent=`Afgespeeld: ${heard} werkelijke botsingsnoten`;if($('loop').checked) $('play').click();}
+}
+$('play').addEventListener('click',()=>{
+  stop();rebuild();
+  try{
+    ctx??=new (window.AudioContext||window.webkitAudioContext)();ctx.resume();
+    // Audio is scheduled from the simulated collision log, NEVER from target notes.
+    // Web Audio clock beats frame-by-frame dispatch for audible onset accuracy.
+    const audioStart=ctx.currentTime+.100;
+    run.events.forEach(e=>sound(e,audioStart+e.physicalTime));
+  }catch(e){$('status').textContent='Browseraudio niet beschikbaar: '+e.message;}
+  heard=0;playing=true;start=performance.now()+100;$('play').textContent='♫ SPEELT';frame=requestAnimationFrame(animate);
+});
+$('reset').addEventListener('click',()=>{stop();drawMoment(0);$('status').textContent='Machine gereset';});
+$('rebuild').addEventListener('click',rebuild);
+$('validate').addEventListener('click',()=>{run=simulateMachine(machine);showResults();});
+$('sabotage').addEventListener('click',()=>{
+  stop();if(machine.bells.length){machine.bells[0].y+=18;run=simulateMachine(machine);drawStatic();drawMoment(0);showResults();$('status').textContent='Bel verplaatst; valideer of herbouw';}
+});
+$('preset').addEventListener('change',e=>{melody=clone(originals[e.target.value]);$('melody').value=JSON.stringify(melody,null,2);rebuild();});
+$('load').addEventListener('click',()=>{try{const candidate=JSON.parse($('melody').value);normalizeMelody(candidate);melody=candidate;rebuild();}catch(e){$('status').textContent='JSON fout: '+e.message;}});
+$('export').addEventListener('click',()=>{
+  const data={melody,machine,result:run.events,validation:validateEvents(run.events,machine.target)};
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download='agentmelodies-machine-artifact.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+$('melody').value=JSON.stringify(melody,null,2);rebuild();
+</script></body></html>

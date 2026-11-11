@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brown Link · o-vvv-o</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#fffaf0;color:#20160e;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{width:min(720px,calc(100% - 32px));margin:0 auto;padding:32px 0 60px}a{color:#714315}.back{text-decoration:none;font-weight:800}h1{font-size:clamp(38px,8vw,68px);letter-spacing:-.06em;margin:48px 0 8px;color:#9a5d12}.sub{color:#6c5845;margin:0 0 28px;font-size:18px}label{display:block;font-weight:800;margin:18px 0 8px}input,textarea{width:100%;border:2px solid #e6c58d;border-radius:12px;background:#fff;padding:14px;font:inherit;color:inherit}textarea{min-height:150px;resize:vertical}.modes{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}.modes label{margin:0;border:1px solid #e6c58d;border-radius:12px;padding:12px 14px;background:#fff;cursor:pointer}button{border:0;border-radius:12px;background:#d88912;color:#fff;font:900 18px inherit;padding:15px 20px;cursor:pointer}.result{display:none;margin-top:28px;padding:18px;border:2px solid #e6c58d;border-radius:14px;background:#fff}.result input{margin:8px 0 12px}.actions{display:flex;gap:10px;flex-wrap:wrap}.actions a,.actions button{display:inline-block;text-decoration:none;border-radius:10px;padding:11px 14px;font-weight:800}.actions a{background:#f4e4c5;color:#51300f}.note{font-size:14px;color:#766653;margin-top:24px}
+</style>
+</head>
+<body><main class="wrap">
+<a class="back" href="../">← Back to field</a>
+<h1>🪏 Brown Link</h1>
+<p class="sub">Bury a message in somebody else's field.</p>
+<label for="payload">Message or link</label>
+<textarea id="payload" maxlength="3000" placeholder="Paste an idea, note or URL…"></textarea>
+<label for="title">Title <span style="font-weight:400">(optional)</span></label>
+<input id="title" maxlength="120" placeholder="A small label">
+<div class="modes">
+<label><input type="radio" name="mode" value="guided" checked> Guided</label>
+<label><input type="radio" name="mode" value="hidden"> Hidden treasure</label>
+</div>
+<button id="bury" type="button">BURY IT</button>
+<section class="result" id="result">
+<strong>Your Brown Link</strong>
+<input id="url" readonly>
+<div class="actions"><button id="copy" type="button">Copy</button><a id="open" href="#">Open it</a></div>
+</section>
+<p class="note">Static edition: the buried message is encoded inside the link itself. Nothing is uploaded to a server.</p>
+</main>
+<script>
+const $=s=>document.querySelector(s);
+function b64urlUtf8(value){
+  const bytes=new TextEncoder().encode(value);
+  let binary="";
+  for(let i=0;i<bytes.length;i+=0x8000) binary+=String.fromCharCode(...bytes.subarray(i,i+0x8000));
+  return btoa(binary).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/," ").trim();
+}
+function makeId(){
+  const a=new Uint8Array(6); crypto.getRandomValues(a);
+  return Array.from(a,b=>b.toString(16).padStart(2,"0")).join("");
+}
+$("#bury").addEventListener("click",()=>{
+  const fullText=$("#payload").value.trim();
+  if(!fullText){$("#payload").focus();return;}
+  const mode=document.querySelector('input[name="mode"]:checked').value;
+  let title=$("#title").value.trim();
+  if(!title) title=fullText.replace(/\s+/g," ").slice(0,42);
+  const hidden=mode==="hidden";
+  const artifact={format:"ovvvo-brown-hyperlink-1.0",kind:hidden?"hidden-brown-hyperlink":"brown-hyperlink",deliveryMode:mode,delivery_mode:mode,mode,hiddenTreasure:hidden,guideArrow:!hidden,renderArrow:!hidden,title,fullText,createdAt:new Date().toISOString().slice(0,10),id:makeId()};
+  const token=b64urlUtf8(JSON.stringify(artifact));
+  const url=new URL("../index.html",location.href); url.searchParams.set("bury",token);
+  $("#url").value=url.href; $("#open").href=url.href; $("#result").style.display="block";
+});
+$("#copy").addEventListener("click",async()=>{try{await navigator.clipboard.writeText($("#url").value);$("#copy").textContent="Copied ✓"}catch(e){$("#url").select();document.execCommand("copy")}});
+</script></body></html>

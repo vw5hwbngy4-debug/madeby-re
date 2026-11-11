@@ -1,0 +1,123 @@
+CURRENT PRESENTATION UPDATE — 2026-09-09
+Supersedes the three-state presentation descriptions below.
+Binary COMPACT / EXPANDED button, no select menu. Button names its next action.
+Compact: existing Pokemon sprite + one abbreviated line. Optional facts are
+removed from the end when space is insufficient; full summary remains accessible
+via the row label/title and the existing expanded passport. Saved collapsed
+preference migrates to compact. All other presentation preferences remain valid.
+Browser checked at 390px: BUTTON element, compact/expanded switching, 32px sprite
+asset and single text line; no horizontal document overflow. Syntax check passed.
+
+MY POKEFIELD UX v0.1.18 — QA
+Date: 2026-09-08
+Result: automated logic, canonical-renderer and browser fixture checks PASS.
+Real-game capture/save/restore acceptance remains unverified in this environment.
+
+SOURCE
+Extracted directly from EMERALD_v0.1.17_FULL_SITE_MY_POKEFIELD_P0.zip.
+SHA-256: 8754dfd3c7987d260f21bb58e9f3e40f61bbf5594d0aaaecc8e4a7b1ee126fe5
+No earlier build substituted. Existing v0.1.17 assets remain as inactive history.
+
+EXISTING FILES MODIFIED (complete list, byte comparison against source ZIP)
+index.html: activate v0.1.18 field assets; load shared notability helper before
+  module execution; add presentation module; cache-bust modified live module.
+pokefield-live-v0.1.9.js: visible release/update labels; specimen notability in
+  enrichment/public output; evidence badges and Mirage value in existing DETAILS;
+  replace public legacy status with SPECIAL/CHECK/CLEAR; simplify public status.
+VERSION.txt: 0.1.18.
+All other source files are byte-identical; no source file is missing.
+
+FILES ADDED
+owned-pokefield-v0.1.18.js
+owned-pokefield-v0.1.18.css
+owned-pokefield-fixtures-v0.1.18.js
+specimen-notability-v0.1.18.js
+presentation-v0.1.18.js
+tests/owned-polish-v0.1.18.cjs
+tests/passport-polish-v0.1.18.cjs
+tests/browser-polish-v0.1.18.js
+QA_MY_POKEFIELD_UX_v0.1.18.txt
+BUILD_NOTES_v0.1.18.txt
+
+ACCEPTANCE A–T
+A PASS: initial controls neutral; CALL/RANK/FOCUS disabled; six fixture cells.
+B PASS: SCATTER clears focus, predicates, rank, tier, selectors, comparator/value,
+  chips and answering indication. Unit and desktop/mobile browser assertions.
+C PASS: Hidden Power Fire replaces Ghost; one facet/chip remains.
+D PASS: species and IV facets intersect; individual IV stats are separate facets.
+E PASS: repeating a predicate leaves one chip/predicate.
+F PASS: nonzero CALL enables and visually highlights FOCUS.
+G PASS: absent Ice gives zero responders; FOCUS disabled; six cells remain.
+H PASS: Ghost matches supplied hiddenPower.type values.
+I PASS: actual supplied hiddenPower.power matched; input rejects 29 and 71.
+J PASS: type and power coexist/intersect; comparator replacement tested.
+K PASS: vertical S/A/B/C/D/E rows; all individual IV band boundaries tested.
+L PASS: Hidden Power power rank and all band boundaries tested; 70 is S.
+M PASS: selecting A highlights its specimens; FOCUS narrows and clears answering.
+N PASS: actual collapsed height 94px desktop / 91px mobile in browser; workspace
+  hidden. No inherited empty stage remains. Header/update/control remain.
+O PASS: compact selected-specimen summary, 179px with populated synthetic public
+  state at 390px; includes nature, ability, IVs, Hidden Power and flag reasons.
+P PASS: expanded restores the field workspace and controls.
+Q PARTIAL: canonical card() renderer tested with weak IVs + active Pokerus + ribbon;
+  SPECIAL, badge reasons, Mirage 43981 and existing DETAILS sections all present.
+  v0.1.17 party-selection hook unchanged. Real-game click-through not run here.
+R PARTIAL: event-driven listener and identity retention tested using synthetic
+  public records including adding a specimen; focus retained until SCATTER.
+  No real capture performed: no ROM/save provided in workspace.
+S PARTIAL: every Save Vault/emulator/save-routing asset byte-identical; existing
+  native save path test PASS. Actual authenticated store/restore NOT RUN: static
+  preview reports Save Vault unavailable and no ROM/save/backend is available.
+T PARTIAL: desktop Trainer Card flip and LIVE return pass; three presentation
+  states pass. Browser mock input records C/X/Z/Enter/Q/W as A/B/Select/Start/L/R.
+  Input module unchanged. Loaded-game audio, touch and keyboard not exercised.
+
+ADDITIONS 28–31
+28 PASS: primary action text is exactly "🪈 CALL"; flute cue confined to this action.
+29 PASS: individually asserted shiny, active/cured Pokerus, ribbons, held item,
+  one-or-more perfect IVs, Hidden Power 70, rare female and proven fateful origin.
+  Combined evidence retained as badges, not hidden behind a score.
+30 PASS for supported fallback: PID & 0xFFFF surfaced in canonical DETAILS and
+  public record/debug. Test PID 0x1234abcd yields 43981. No Mirage capability claim.
+  MIRAGE TODAY and its CALL are intentionally absent: the active reader has no
+  validated current daily Mirage-value source. No guessed RAM offset or RTC use.
+31 PASS: weak IV + shiny/active Pokerus => SPECIAL; weak IV + ribbon/cured Pokerus
+  or held item => CHECK; no configured flags => CLEAR with exact explanation
+  "No configured noteworthy hidden-value flags detected."
+  CLEAR is never described as safe to release.
+
+REGRESSIONS / SCOPE
+Existing decoder suite PASS: 24 permutations, checksum, IV/EV, held items,
+friendship, PP Ups, contest, Pokerus, origin, ribbons, shiny and status.
+Existing native save-path test PASS. Modified/new runtime JS syntax checks PASS.
+Mobile viewport: 390x844; document scrollWidth 390, no horizontal overflow.
+Desktop/mobile browser assertions cover neutral, replacement, dedup, chip removal,
+HP bounds, tier focus, reset and all presentation transitions.
+No uncaught JS errors reported during completed browser checks.
+Field queries remain local, deterministic, event-driven and read-only.
+No PC storage, generic dex population, save editor or AI runtime added.
+
+SAVE-ROUTING CODE CHANGED: NO.
+SAVE VAULT / RESTORE / RTC / LOGIN / DATABASE CODE CHANGED: NO.
+EMULATOR / TOUCH / AUDIO / KEYBOARD CODE CHANGED: NO.
+TRAINER CARD IMPLEMENTATION CHANGED: NO.
+
+TEST METHOD / LIMITS
+Browser: local static preview with COOP/COEP; existing unavailable Save Vault gate
+hidden only in disposable browser DOM for testing. No shipped authentication
+bypass. Public-record injections and keyboard bridge mocks did not touch RAM/save.
+Fixtures are synthetic publicMon-like test records, never published to real game
+state, Trainer Card or saves. They test the supplied decoded values, not encryption.
+Native iPhone Safari and real loaded-game save/restore remain runtime QA tasks.
+
+REPRODUCE FROM EXTRACTED BUILD
+node tests/owned-polish-v0.1.18.cjs
+node tests/passport-polish-v0.1.18.cjs
+node tests/save-vault-v0.1.11-path-test.js
+node -e "global.location={search:''};require('./specimen-notability-v0.1.18.js');require('./tests/decoder-test-v0.1.9.js')"
+Browser: ?debug=1 > MY FIELD > DEBUG FIXTURES > SIX SPECIMENS, then run the
+tests/browser-polish-v0.1.18.js assertions in that disposable test page.
+
+Label update 2026-09-09: MINIMAL / SUMMARY / FULL. Internal state keys and saved presentation preference remain compatible.
+
+Gender clipping fix: increased compact text line-height and vertical padding; explicit symbol font for passport gender symbols; field name line-height adjusted. No behavior or save changes.

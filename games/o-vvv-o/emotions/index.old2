@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>o-vvv-o · emotion mascot</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<style>
+  :root{
+    --ink:#111;
+    --soft:#f5f1e8;
+    --card:#ffffff;
+    --shadow:#ded8ca;
+    --gold:#eadfc4;
+    --purple:#6d4cff;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{
+    margin:0;
+    min-height:100vh;
+    min-height:100svh;
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:radial-gradient(circle at top,#fff 0,#fff 38%,#f7f3ea 100%);
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .stage{
+    width:min(94vw,680px);
+    height:min(96svh,920px);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    text-align:center;
+    padding:24px 14px max(18px,env(safe-area-inset-bottom));
+  }
+  .topline{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    opacity:.55;
+    font-weight:950;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    font-size:12px;
+    position:relative;
+  }
+  .dig-link{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    border-radius:999px;
+    text-decoration:none;
+    font-size:24px;
+    background:rgba(255,255,255,.78);
+    box-shadow:0 6px 0 var(--shadow),0 15px 32px rgba(0,0,0,.07);
+    opacity:1;
+  }
+  .dig-link:active{
+    transform:translate(-50%,-50%) translateY(4px);
+    box-shadow:0 2px 0 var(--shadow);
+  }
+  .toybox{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+  }
+  #face{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-weight:1000;
+    font-size:clamp(58px,17vw,128px);
+    line-height:1;
+    letter-spacing:.035em;
+    user-select:none;
+    cursor:pointer;
+    transform-origin:center;
+    filter:drop-shadow(0 12px 0 rgba(0,0,0,.055));
+  }
+  #face.pop{animation:pop .34s cubic-bezier(.2,1.7,.2,1) both}
+  #face.boop{animation:boop .55s ease both}
+  #face.shake{animation:shake .23s linear infinite}
+  #face.wiggle{animation:wiggle .72s ease-in-out infinite}
+  #face.sleepy{animation:sleepy 1.6s ease-in-out infinite}
+  @keyframes pop{0%{transform:scale(.92)}55%{transform:scale(1.13) translateY(-8px)}100%{transform:scale(1)}}
+  @keyframes boop{0%,100%{transform:translateY(0)}35%{transform:translateY(-18px) rotate(-2deg)}70%{transform:translateY(4px) rotate(2deg)}}
+  @keyframes shake{0%{transform:translateX(0)}25%{transform:translateX(-5px)}50%{transform:translateX(5px)}75%{transform:translateX(-3px)}100%{transform:translateX(0)}}
+  @keyframes wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+  @keyframes sleepy{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(8px) scale(.98)}}
+  #speech{
+    min-height:64px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 18px;
+    border-radius:28px;
+    background:rgba(255,255,255,.78);
+    border:2px solid rgba(0,0,0,.06);
+    box-shadow:0 14px 40px rgba(0,0,0,.07);
+    font-size:clamp(18px,4.8vw,28px);
+    font-weight:950;
+  }
+  .strip{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:9px;
+    margin:0 auto;
+    width:100%;
+  }
+  button{
+    border:0;
+    border-radius:22px;
+    padding:14px 6px;
+    background:#fff;
+    color:#111;
+    font-weight:1000;
+    font-size:15px;
+    box-shadow:0 6px 0 var(--shadow),0 15px 32px rgba(0,0,0,.07);
+    cursor:pointer;
+  }
+  button:active{transform:translateY(4px);box-shadow:0 2px 0 var(--shadow)}
+  button.sound{background:#111;color:#fff;box-shadow:0 6px 0 #444,0 15px 32px rgba(0,0,0,.12)}
+  .talk{
+    display:flex;
+    gap:8px;
+    width:100%;
+    margin-top:12px;
+  }
+  input{
+    min-width:0;
+    flex:1;
+    border:3px solid #111;
+    border-radius:24px;
+    padding:16px;
+    font-size:17px;
+    font-weight:850;
+    background:#fff;
+  }
+  .send{width:82px;background:var(--gold);box-shadow:0 6px 0 #d7c89f}
+  .tiny{
+    margin-top:12px;
+    font-size:13px;
+    font-weight:950;
+    opacity:.45;
+  }
+</style>
+</head>
+<body>
+  <main class="stage">
+    <div class="topline"><span>tap · talk · boop</span><a class="dig-link" href="https://o-vvv-o.com" aria-label="Dig">🪏</a><span>o-vvv-o</span></div>
+
+    <section class="toybox">
+      <div id="face" role="button" aria-label="o-vvv-o mascot" onclick="sequence('hello')">o-vvv-o</div>
+      <div id="speech">Hi. I am the URL.</div>
+    </section>
+
+    <section>
+      <div class="strip">
+        <button onclick="sequence('happy')">Happy</button>
+        <button onclick="sequence('shy')">Shy</button>
+        <button onclick="sequence('wow')">Wow</button>
+        <button onclick="sequence('bite')">Bite</button>
+        <button onclick="sequence('side')">Side eye</button>
+        <button onclick="sequence('sleep')">Sleep</button>
+        <button onclick="sequence('angry')">Grrr</button>
+        <button onclick="sequence('dance')">Dance</button>
+      </div>
+
+      <div class="strip" style="margin-top:10px">
+        <button class="sound" onclick="soundMood('boop')">Boop</button>
+        <button class="sound" onclick="soundMood('pop')">Pop</button>
+        <button class="sound" onclick="soundMood('chomp')">Chomp</button>
+        <button class="sound" onclick="soundMood('wee')">Wee!</button>
+      </div>
+
+      <div class="talk">
+        <input id="text" placeholder="Say: login, register, account, send, dig!" onkeydown="if(event.key==='Enter') talk()">
+        <button class="send" onclick="talk()">Say</button>
+      </div>
+      <div class="tiny" id="tinyHint">type login · register · account · send · dig!</div>
+    </section>
+  </main>
+
+<script>
+const face = document.getElementById('face');
+const speech = document.getElementById('speech');
+const tinyHint = document.getElementById('tinyHint');
+let timers = [];
+let audioCtx;
+
+function clearAll(){
+  timers.forEach(t => clearTimeout(t));
+  timers = [];
+  face.className = '';
+}
+
+function setFace(text, effect){
+  face.textContent = text;
+  face.className = '';
+  if(effect) face.classList.add(effect);
+}
+
+function say(text){ speech.textContent = text; }
+
+function wait(ms, fn){ timers.push(setTimeout(fn, ms)); }
+
+function tone(freq=440, dur=.08, type='sine', gain=.08, slideTo=null){
+  audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+  const now = audioCtx.currentTime;
+  const osc = audioCtx.createOscillator();
+  const vol = audioCtx.createGain();
+  osc.type = type;
+  osc.frequency.setValueAtTime(freq, now);
+  if(slideTo) osc.frequency.exponentialRampToValueAtTime(slideTo, now + dur);
+  vol.gain.setValueAtTime(0.0001, now);
+  vol.gain.exponentialRampToValueAtTime(gain, now + .012);
+  vol.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+  osc.connect(vol).connect(audioCtx.destination);
+  osc.start(now);
+  osc.stop(now + dur + .02);
+}
+
+function playSound(name){
+  if(name === 'boop') { tone(520,.07,'sine',.09,720); wait(90,()=>tone(780,.06,'sine',.06)); }
+  if(name === 'pop') { tone(180,.055,'triangle',.11,520); wait(65,()=>tone(900,.035,'sine',.05)); }
+  if(name === 'chomp') { tone(95,.08,'sawtooth',.08,55); wait(70,()=>tone(140,.05,'square',.055)); }
+  if(name === 'wee') { tone(360,.18,'sine',.07,1180); wait(170,()=>tone(860,.10,'triangle',.04,620)); }
+  if(name === 'sleep') { tone(240,.14,'sine',.035,180); wait(180,()=>tone(190,.16,'sine',.025,150)); }
+  if(name === 'wow') { tone(430,.12,'triangle',.06,820); wait(130,()=>tone(820,.13,'triangle',.06,430)); }
+}
+
+const sequences = {
+  hello: [
+    [0,'o-vvv-o','Oh! You tapped me.','pop','boop'],
+    [450,'o-vvvo','I can look sideways.','',null],
+    [900,'ovvv-o','Both ways.','',null],
+    [1350,'o-vvv-o','I am awake.','pop',null]
+  ],
+  happy: [
+    [0,'o-vvv-o','Hmm...','',null],
+    [550,'o-vv-o','Hehe.','pop','boop'],
+    [1000,'o-vvv-o','My cheeks are happy.','boop',null],
+    [1500,'o-vv-o','Again!','pop','pop'],
+    [2100,'o-vvv-o','Happy little teeth.','',null]
+  ],
+  shy: [
+    [0,'o-vv-o','Tiny teeth.','',null],
+    [650,'o-vvo','Do not look.','wiggle','boop'],
+    [1200,'ovv-o','Okay maybe look.','',null],
+    [1850,'o-vv-o','Shy monster.','',null]
+  ],
+  wow: [
+    [0,'o-vvv-o','Wait...','',null],
+    [500,'0-vvv-0','WOOOOW!','pop','wow'],
+    [950,'0-vvvv-0','Big eyes!','pop',null],
+    [1450,'0-vvv-0','Still wow.','',null],
+    [2050,'o-vvv-o','Okay. I am back.','',null]
+  ],
+  bite: [
+    [0,'o-vvv-o','I smell a snack.','wiggle',null],
+    [550,'o-vvvv-o','Open...','shake','chomp'],
+    [950,'o-vvvvv-o','CHOMP!','shake','chomp'],
+    [1350,'0-vvvv-0','Oops.','pop',null],
+    [2100,'o-vvv-o','I am polite again.','',null]
+  ],
+  side: [
+    [0,'o-vvv-o','Hmm.','',null],
+    [550,'o-vvvo','Side eye.','wiggle','boop'],
+    [1200,'o-vvv-o','Normal.','',null],
+    [1700,'ovvv-o','Other side.','wiggle','boop'],
+    [2400,'o-vvv-o','Suspicious but cute.','',null]
+  ],
+  sleep: [
+    [0,'o-vvv-o','I am getting sleepy.','',null],
+    [700,'o-v-o','Small mouth.','sleepy','sleep'],
+    [1500,'o---o','Zzz...','sleepy',null],
+    [2500,'o-v-o','Tiny dream.','sleepy','sleep'],
+    [3600,'o-vvv-o','Awake again.','pop','boop']
+  ],
+  angry: [
+    [0,'o-vvv-o','Nope.','',null],
+    [450,'0-vvv-0','Grrrr.','shake','chomp'],
+    [850,'0-vvvv-0','BIG TEETH.','shake','chomp'],
+    [1350,'0-vvvvv-0','BIGGER.','shake',null],
+    [2100,'o-vvv-o','Okay, soft now.','',null]
+  ],
+  dance: [
+    [0,'o-vvv-o','Dance time.','pop','wee'],
+    [350,'o-vvvo','Left?','wiggle',null],
+    [700,'o-vvv-o','Middle.','pop','boop'],
+    [1050,'ovvv-o','Right?','wiggle',null],
+    [1400,'o-v-v-o','Wobble teeth!','pop','pop'],
+    [1900,'o-vvv-o','Again later.','',null]
+  ],
+  silly: [
+    [0,'o-vvv-o','Blblbl.','wiggle','wee'],
+    [400,'o-v-v-o','Teeth are dancing.','pop',null],
+    [850,'o-vvvo','I forgot my face.','wiggle','boop'],
+    [1300,'ovvv-o','Found it.','wiggle','pop'],
+    [1900,'o-vvv-o','Perfectly normal.','',null]
+  ],
+  love: [
+    [0,'o-vv-o','Aww.','pop','boop'],
+    [650,'o-vvv-o','Warm cheeks.','boop',null],
+    [1250,'o-vv-o','Thank you.','pop','pop'],
+    [1900,'o-vvv-o','Tiny happy monster.','',null]
+  ],
+  confused: [
+    [0,'o-vvvo','Huh?','wiggle','boop'],
+    [600,'o-vvv-o','Wait.','',null],
+    [1100,'ovvv-o','What was that?','wiggle','boop'],
+    [1750,'0-vvv-0','Oh!','pop','wow'],
+    [2450,'o-vvv-o','I think I know.','',null]
+  ]
+};
+
+function sequence(name){
+  clearAll();
+  const seq = sequences[name] || sequences.hello;
+  seq.forEach(([at, glyph, words, effect, sound]) => {
+    wait(at, () => {
+      setFace(glyph, effect);
+      say(words);
+      if(sound) playSound(sound);
+    });
+  });
+  const end = Math.max(...seq.map(s=>s[0])) + 1600;
+  wait(end, () => { setFace('o-vvv-o',''); say('Tap my feelings.'); });
+}
+
+function soundMood(name){
+  if(name === 'boop') sequence('happy');
+  if(name === 'pop') sequence('wow');
+  if(name === 'chomp') sequence('bite');
+  if(name === 'wee') sequence('dance');
+}
+
+function talk(){
+  const input = document.getElementById('text');
+  const raw = input.value.trim();
+  const command = raw.trim().toLowerCase();
+
+  if(command === 'dig!' || command === 'dig'){
+    input.value = '';
+    clearAll();
+    setFace('0-vvv-0','pop');
+    say('The sand opens.');
+    playSound('chomp');
+    wait(650,()=>{ window.location.href = 'https://o-vvv-o.com'; });
+    return;
+  }
+
+  if(command === 'login' || command === 'log in'){
+    input.value = '';
+    clearAll();
+    setFace('o-vvvo','pop');
+    say('Opening login...');
+    playSound('boop');
+    wait(520,()=>{ window.location.href = '/login.php'; });
+    return;
+  }
+
+  if(command === 'register' || command === 'signup' || command === 'sign up'){
+    input.value = '';
+    clearAll();
+    setFace('0-vvv-0','pop');
+    say('Opening register...');
+    playSound('pop');
+    wait(520,()=>{ window.location.href = '/register.php'; });
+    return;
+  }
+
+  if(command === 'account' || command === 'friend' || command === 'friends'){
+    input.value = '';
+    clearAll();
+    setFace('o-vvv-o','boop');
+    say('Opening account...');
+    playSound('boop');
+    wait(520,()=>{ window.location.href = '/account.php'; });
+    return;
+  }
+
+  if(command === 'send' || command === 'message' || command === 'buried message'){
+    input.value = '';
+    clearAll();
+    setFace('o-vvvv-o','pop');
+    say('Opening buried message sender...');
+    playSound('wee');
+    wait(520,()=>{ window.location.href = '/send_test.html'; });
+    return;
+  }
+
+  const t = raw.toLowerCase();
+  input.value = '';
+  if(!t) return sequence('confused');
+  if(t.includes('cute') || t.includes('love') || t.includes('nice') || t.includes('sweet')) return sequence('love');
+  if(t.includes('bite') || t.includes('chomp') || t.includes('teeth') || t.includes('attack')) return sequence('bite');
+  if(t.includes('wow') || t.includes('omg') || t.includes('big')) return sequence('wow');
+  if(t.includes('sleep') || t.includes('tired') || t.includes('zzz')) return sequence('sleep');
+  if(t.includes('angry') || t.includes('mad') || t.includes('grr')) return sequence('angry');
+  if(t.includes('?') || t.includes('what') || t.includes('why') || t.includes('how')) return sequence('confused');
+  if(t.includes('dance') || t.includes('move') || t.includes('party')) return sequence('dance');
+  if(t.includes('haha') || t.includes('lol') || t.includes('funny')) return sequence('happy');
+  return sequence('silly');
+}
+
+
+const quietHints = [
+  'type login · register · account · send · dig!',
+  'sometimes the sand listens',
+  'not everything is visible',
+  'there is more under the surface',
+  'the field opens only to a sharp little shout',
+  'a secret needs a tiny mark at the end',
+  'the ground likes excited words',
+  'one small symbol can open the sand',
+  'try speaking like you found something',
+  'the door is under the word, not inside it',
+  'some holes only answer when the sentence jumps',
+  'the mascot hears punctuation',
+  'buried things wake when the word has teeth'
+];
+
+function rotateTinyHint(){
+  if(!tinyHint) return;
+  const rare = Math.random() < 0.28;
+  if(rare){
+    tinyHint.textContent = quietHints[Math.floor(Math.random() * quietHints.length)];
+  }else{
+    tinyHint.textContent = 'type login · register · account · send · dig!';
+  }
+}
+setInterval(rotateTinyHint, 5200);
+wait(1600, rotateTinyHint);
+
+wait(700,()=>sequence('hello'));
+</script>
+</body>
+</html>

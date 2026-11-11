@@ -1,0 +1,41 @@
+EMERALD v0.1.24.9.2.2.3 — HOENN CONSOLE SAFE HOTFIX
+=====================================================
+
+Goal
+----
+Move HOENN from the floating top-left launcher to the existing center console
+button between SELECT and START without touching Save Vault or emulator startup.
+
+Root-cause containment
+----------------------
+The broken v0.1.24.9.2.2.2 added a page-wide MutationObserver that repeatedly
+rescanned emulator controls while the rest of the app was mounting/updating.
+That integration was removed completely.
+
+This build is based on the previous known-good v0.1.24.9.2.2.1 package.
+
+What changed
+------------
+- Floating HOENN launcher is hidden.
+- Existing MENU control is visually labeled HOENN using CSS only.
+- One document-level capture delegate intercepts MENU/HOENN touch/click before
+  the emulator settings handler.
+- No MutationObserver.
+- No polling or rewriting of emulator button DOM.
+- Save Vault JavaScript is byte-for-byte inherited from v0.1.24.9.2.2.1.
+- mGBA core bundle is byte-for-byte inherited from v0.1.24.9.2.2.1.
+- Save routing, server lookup, save mirroring and hard-load logic are unchanged.
+
+Behavior
+--------
+SELECT | HOENN | START
+
+Tap HOENN:
+- closed -> open Emerald · MadeBy
+- open -> close Emerald · MadeBy
+
+Safety
+------
+The Hoenn console integration has no authority over save selection/loading.
+It only toggles the Hoenn panel. Existing Save Vault remains the sole save
+bridge/transaction surface.

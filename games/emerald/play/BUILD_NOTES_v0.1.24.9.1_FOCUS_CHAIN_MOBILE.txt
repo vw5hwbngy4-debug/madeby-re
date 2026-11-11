@@ -1,0 +1,70 @@
+EMERALD v0.1.24.9.1 · FOCUS CHAIN · MOBILE REFINEMENT
+=========================================================
+Date: 2026-09-12
+Base: v0.1.24.9 COVERAGE LENS
+
+WHY THIS BUILD
+--------------
+The Field engine already supported CALL -> PRESENT -> FOCUS and Coverage already painted arbitrary
+populations, but the mobile interaction still had three friction points:
+
+1. A Coverage type could paint the Field without giving the user an obvious, persistent subset to FOCUS.
+2. Deep refinement had no visible committed history, so chained filters were powerful but hard to understand or rewind.
+3. The CALL picker was a tall grid. POKEMON lived near the bottom, which was awkward in iPhone Safari because the
+   browser chrome and local picker scrolling made the last rows difficult to reach.
+
+FOCUS CHAIN
+-----------
+- Every committed FOCUS is now pushed onto a visible Focus Stack.
+- Example:
+  ALL 386 > GRASS 4x 20 > HP S 5
+- Each stack step is tappable and restores that committed population.
+- SCATTER still means the canonical hard reset to ALL 386.
+- CALL remains temporary; FOCUS remains the commit operation.
+
+COVERAGE -> FOCUS
+-----------------
+- A selected defensive Coverage type now exposes persistent one-tap population chips above the Field:
+  4x / 2x / RESIST / IMMUNE.
+- These chips create a PRESENT population and arm FOCUS directly.
+- After FOCUS, the Coverage anchor moves to the newly focused population, so another Coverage split can be made
+  immediately. This makes chains such as:
+  COVERAGE GRASS -> 94 WEAK -> FOCUS -> 20 4x -> FOCUS -> TIER HP -> SS -> FOCUS
+  mechanically natural.
+- Offensive Coverage retains SUPER EFFECTIVE / NEUTRAL+ population handoffs.
+- Starting a normal CALL or TIER analysis cleanly leaves the previous Coverage lens while preserving the committed
+  Focus population.
+
+MOBILE CALL PICKER
+------------------
+- POKEMON is now the first, full-width action in CALL instead of the last row.
+- High-frequency filters stay on the first screen: POKEMON, TYPE, MOVE, STAB AXIS, ABILITY, OWNED, PARTY.
+- Lower-frequency filters move behind MORE FILTERS.
+- The picker is shorter on mobile and uses contained overscroll so Safari browser chrome does not make the primary
+  actions unreachable.
+- POKEMON now has a sticky search field and supports one or several selected species in a single CALL.
+- The LOAD action stays reachable at the bottom of the local picker surface.
+
+GRAMMAR RETAINED
+----------------
+CALL = ask the current population.
+PRESENT = responders.
+FOCUS = make responders the new working population.
+TIER = rank the current working population.
+COVERAGE = explain/split the current working population.
+SCATTER = return to ALL 386.
+
+CUMULATIVE BASE RETAINED
+------------------------
+- TRUE POKEFIELD spatial 386 field
+- Coverage Lens + DEX Coverage
+- ability-aware defense
+- vertical tier lists and tier -> Focus handoff
+- ADV STAB Axis
+- App Calm single-surface navigation
+- Team Lab return toggle
+- Transfer Back + truthful export UI
+- My Party default-open
+- Saved Finds removal
+- Compact return paths
+- durable iOS/Safari Save Vault picker and save-switch work

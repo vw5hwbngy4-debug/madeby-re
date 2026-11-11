@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Xenosaga I+II DS English | Complete Translation v1.0</title>
+<meta name="description" content="Complete English fan localization for Xenosaga I+II on Nintendo DS. Final v1.0 browser patcher, runtime proof, release hashes and technical documentation.">
+<link rel="canonical" href="https://madeby.re/localizations/xenosaga/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#315f83">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Xenosaga I+II DS — Complete English Translation v1.0">
+<meta property="og:description" content="Complete English localization with local browser patcher, runtime-tested tutorial flow, clean chapter cards and final P/E battle UI.">
+<meta property="og:url" content="https://madeby.re/localizations/xenosaga/">
+<meta property="og:image" content="https://madeby.re/localizations/xenosaga/assets/images/xenosaga-ds-cover.jpeg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site.css?v=20260905-final">
+<script type="module" src="js/app.js?v=20260905-final"></script>
+</head>
+<body>
+<a class="skip-link" href="#patcher">Skip to patcher</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand-row">
+      <a class="brand" href="#top">
+        <span class="brand-icon">XI+II</span>
+        <span class="brand-text">
+          <strong>Xenosaga DS</strong>
+          <small>English localization archive</small>
+        </span>
+      </a>
+      <div class="lang-switch" aria-label="Language sites">
+        <a class="lang" href="https://madeby.re/localizations/#xenosaga-dutch">NL</a>
+        <a class="lang active" href="https://madeby.re/localizations/xenosaga/" aria-current="page">EN</a>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="Primary">
+      <a class="active" href="#top">HOME</a>
+      <a href="#patcher">PATCH</a>
+      <a href="#proof">PROOF</a>
+      <a href="#technical">TECH</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero section-shell">
+  <div class="hero-visual">
+    <div class="case-card">
+      <div class="case-art">
+        <img class="cover" src="assets/images/xenosaga-ds-cover.jpeg" alt="Xenosaga I+II Nintendo DS cover art">
+      </div>
+      <div class="case-bar"><span>NINTENDO DS</span><span>AXSJ · JAPAN</span></div>
+    </div>
+    <div class="sprite-badge">
+      <img src="assets/images/xenosaga-pixel-character.png" alt="Xenosaga pixel character">
+    </div>
+  </div>
+
+  <div class="hero-copy">
+    <div class="breadcrumb">MADEBY.RE › LOCALIZATIONS › ENGLISH</div>
+    <h1>Xenosaga I+II <span>English</span></h1>
+    <p class="hero-lede">
+      The complete English Nintendo DS localization. Story, choices, chapter cards,
+      battle UI, item descriptions and the opening tutorial path come together in
+      <strong>v1.0 Final</strong>.
+    </p>
+    <div class="hero-actions">
+      <a class="button primary" href="#patcher">PATCH v1.0</a>
+      <a class="button gold" href="https://github.com/vw5hwbngy4-debug/Xenosaga-I-II-DS-English" rel="noopener">GITHUB</a>
+      <a class="button" href="#proof">SEE PROOF</a>
+    </div>
+    <div class="release-strip">
+      <div><small>PUBLIC BUILD</small><strong>v1.0 FINAL</strong></div>
+      <div><small>RUNTIME QA</small><strong>PASS · TESTED</strong></div>
+      <div><small>ROM DISTRIBUTED</small><strong>NO · BPS ONLY</strong></div>
+    </div>
+  </div>
+</section>
+
+<section id="patcher" class="patch-section section-shell">
+  <div class="section-head">
+    <span class="section-kicker">LOCAL-ONLY PATCHER</span>
+    <h2>Patch your own ROM</h2>
+    <p>
+      The browser verifies your clean Japanese ROM, applies the final English v1.0 BPS
+      locally, verifies the generated ROM and gives it back to you. Your ROM never leaves
+      your device.
+    </p>
+  </div>
+
+  <div class="patch-console">
+    <div class="console-title">🎮 PATCHER · ENGLISH v1.0</div>
+    <div class="privacy-banner">
+      <span class="privacy-dot"></span><strong>Private by design.</strong>
+      No ROM upload endpoint, server-side patching or telemetry.
+    </div>
+    <div class="patch-grid">
+      <div class="drop-panel" id="dropZone" tabindex="0" role="button" aria-describedby="drop-help">
+        <div class="panel-heading">STEP 1 · SELECT YOUR ROM</div>
+        <input id="romInput" type="file" accept=".nds,application/octet-stream" hidden>
+        <div class="rom-slot">
+          <div>
+            <div class="drop-icon">▾</div>
+            <h3>DROP XENOSAGA I+II (JAPAN) .NDS</h3>
+            <p id="drop-help">Supported clean ROM only · expected size 64 MiB</p>
+            <button class="button primary" id="selectRom" type="button">SELECT ROM</button>
+            <p class="micro">SHA-256 source verification is mandatory.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="patch-status" aria-live="polite">
+        <div class="panel-heading">STEP 2 · VERIFY + PATCH</div>
+        <div class="status-topline">
+          <span id="stateBadge" class="status-badge idle">Waiting</span>
+          <span id="percent">0%</span>
+        </div>
+        <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+        <ol class="steps" id="steps">
+          <li data-step="reading">Reading ROM</li>
+          <li data-step="source">Checking ROM</li>
+          <li data-step="patch">Loading English patch</li>
+          <li data-step="apply">Applying patch</li>
+          <li data-step="output">Verifying English ROM</li>
+          <li data-step="ready">Ready</li>
+        </ol>
+        <div id="statusMessage" class="status-message">Select your clean Japanese ROM to begin.</div>
+        <div id="resultPanel" class="result-panel" hidden>
+          <h3>English v1.0 ready</h3>
+          <p>Output SHA-256 verified:</p>
+          <code>5cfe164aea57174ad47801e90f7fd53dccca4d30db2680991d54ec232aac4a61</code>
+          <a id="downloadRom" class="button primary wide" href="#">DOWNLOAD PATCHED ROM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <details class="hash-details">
+    <summary>Verification hashes</summary>
+    <dl>
+      <div><dt>Clean Japanese source SHA-256</dt><dd><code>938d07521cfc937d179402e85c8b0b43f3e929a494838ff1455b29126b56d356</code></dd></div>
+      <div><dt>English v1.0 BPS SHA-256</dt><dd><code>d0188e2abf13ba81496ec0e387ad3eba3180c7b65af61c2a0dbac96efa71919e</code></dd></div>
+      <div><dt>Patched English v1.0 ROM SHA-256</dt><dd><code>5cfe164aea57174ad47801e90f7fd53dccca4d30db2680991d54ec232aac4a61</code></dd></div>
+    </dl>
+  </details>
+  <p class="mobile-note">Mobile patching works where browser memory allows it. Desktop remains the safest option for a 64 MiB ROM plus patch buffers.</p>
+</section>
+
+<section id="proof" class="feature-band">
+  <div class="section-shell feature-grid">
+    <div class="feature-copy">
+      <span class="section-kicker">FINAL v1.0 · RUNTIME PROOF</span>
+      <h2>English in the game, not just in a spreadsheet.</h2>
+      <p>
+        The final build was tested from cold boot through New Game, the YES warm-up/tutorial
+        route and the first battle. The battle type display now uses <strong>P = Physical</strong>
+        and <strong>E = Ether</strong>, with no Japanese glyph residue in the tested battle path.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#technical">VIEW QA</a>
+        <a class="button" href="#about">PROJECT NOTES</a>
+      </div>
+    </div>
+    <figure class="proof-card">
+      <img src="assets/images/runtime-final-battle.png" alt="Final English runtime battle screenshot" onerror="this.src='assets/images/runtime-english.jpg'">
+      <figcaption>Final v1.0 runtime path · tutorial and first battle verified.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-head">
+    <span class="section-kicker">WHAT v1.0 DELIVERS</span>
+    <h2>From rough RC1 to finished release</h2>
+  </div>
+  <div class="cards">
+    <article class="info-card">
+      <div class="num">0</div><h3>PLAYER-FACING EVC JP</h3>
+      <p>Structured scans report zero Japanese in the supported player-facing normal, KJM/title and deep-EVC layers.</p>
+    </article>
+    <article class="info-card">
+      <div class="num">910</div><h3>WRAP FIXES</h3>
+      <p>Mechanically safe one-word-tail dialogue blocks were reflowed without changing the underlying words or event spans.</p>
+    </article>
+    <article class="info-card">
+      <div class="num">P / E</div><h3>BATTLE TYPES</h3>
+      <p>The actual battle spritebank now renders Physical and Ether as P and E.</p>
+    </article>
+  </div>
+</section>
+
+<section class="media-section section-shell">
+  <div class="section-head">
+    <span class="section-kicker">VISUAL QA</span>
+    <h2>Clean presentation</h2>
+  </div>
+  <div class="media-grid">
+    <figure class="screen-frame wide">
+      <img src="assets/images/chapter-cards-final.png" alt="English chapter-card montage" onerror="this.style.display='none'">
+      <figcaption><span>CHAPTER CARDS</span>Rebuilt from the original palette/map structure with safe compression.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="technical" class="section-shell verification">
+  <div class="section-head">
+    <span class="section-kicker">TECHNICAL RECORD</span>
+    <h2>Final v1.0 status</h2>
+  </div>
+  <div class="verification-table">
+    <div><strong>Cold boot / New Game</strong><span class="pass">PASS</span></div>
+    <div><strong>Opening YES tutorial branch</strong><span class="pass">PASS</span></div>
+    <div><strong>First battle reached</strong><span class="pass">PASS</span></div>
+    <div><strong>Battle P / E glyphs</strong><span class="pass">PASS</span></div>
+    <div><strong>Normal EVC Japanese</strong><span class="pass">0</span></div>
+    <div><strong>KJM/title Japanese</strong><span class="pass">0</span></div>
+    <div><strong>Deep player-facing EVC Japanese</strong><span class="pass">0</span></div>
+    <div><strong>Item-description Japanese</strong><span class="pass">0</span></div>
+    <div><strong>BPS roundtrip</strong><span class="pass">PASS</span></div>
+  </div>
+  <div class="doc-links">
+    <a href="docs/PATCHING.md">PATCHING</a>
+    <a href="docs/TECHNICAL_RECORD.md">TECHNICAL RECORD</a>
+    <a href="docs/VALIDATION_REPORT.md">VALIDATION</a>
+  </div>
+</section>
+
+<section id="about" class="about-section">
+  <div class="section-shell about-grid">
+    <div>
+      <span class="section-kicker">ABOUT</span>
+      <h2 class="section-title">Two languages. Two clean homes.</h2>
+      <p>
+        This is the English branch of the Xenosaga I+II DS localization project.
+        The completed Dutch localization remains separate, with its own release and site.
+      </p>
+    </div>
+    <div class="switch-card">
+      <strong>🇳🇱 Looking for the Dutch final?</strong>
+      <p>Xenosaga I+II DS Nederlands v1.0.17 lives at its own canonical subdomain.</p>
+      <a href="https://madeby.re/localizations/#xenosaga-dutch">OPEN DUTCH SITE</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div>
+    <strong>Xenosaga I+II DS English localization</strong>
+    <p>Unofficial fan localization. No original or patched commercial ROM is distributed by the project. Supply your own supported Japanese copy.</p>
+  </div>
+  <div class="footer-links">
+    <a href="https://github.com/vw5hwbngy4-debug/Xenosaga-I-II-DS-English">GitHub</a>
+    <a href="#patcher">Patcher</a>
+    <a href="https://madeby.re/localizations/#xenosaga-dutch">NL site</a>
+  </div>
+</footer>
+</body>
+</html>

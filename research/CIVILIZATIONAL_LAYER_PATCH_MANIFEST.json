@@ -1,0 +1,90 @@
+{
+  "patch": "The Civilizational Layer: From Ambient Coordination to Civilizational Carrying Capacity",
+  "target": "https://madeby.re/research/",
+  "date": "2026-09-30",
+  "base": "research-madeby-footer-meta-cleanup-FULL.zip",
+  "doi_assigned": false,
+  "adds": [
+    "civilizational-layer/index.html",
+    "civilizational-layer/article.css",
+    "civilizational-layer/article.txt",
+    "civilizational-layer/article.json"
+  ],
+  "updates": [
+    "index.html",
+    "research.html",
+    "papers.html",
+    "concepts.html",
+    "llms.txt",
+    "sitemap.xml",
+    "build-manifest-final.json"
+  ],
+  "notes": [
+    "The new article uses 'personal field' instead of 'personal aura'.",
+    "RFL-5 remains the earlier source and is linked internally.",
+    "No Zenodo catalog/library source records are changed.",
+    "The article is a conceptual bridge, not a claim of independent empirical validation."
+  ],
+  "files": [
+    {
+      "path": "CIVILIZATIONAL_LAYER_UPLOAD.txt",
+      "sha256": "ce1a1b7e626acd94fb9ae3d0fa21cf2b2331cd33526a69fdb535fa25497a589f",
+      "bytes": 803
+    },
+    {
+      "path": "build-manifest-final.json",
+      "sha256": "7aef24f4f6a5c534883c9785e1a977f1da0c7aebc58372d650aeadd4cc66796d",
+      "bytes": 442
+    },
+    {
+      "path": "civilizational-layer/article.css",
+      "sha256": "8a112312130d2307e8257a4d133297641a9c7e06077ff81d7729238bdb97dc99",
+      "bytes": 6610
+    },
+    {
+      "path": "civilizational-layer/article.json",
+      "sha256": "11ece7e0c944892f2c1f7fef9b10a0ee6ef357389deac2cc62b1f6b124b8cd8c",
+      "bytes": 3009
+    },
+    {
+      "path": "civilizational-layer/article.txt",
+      "sha256": "10aa23fe7632defcb629fb41ce68005680209bca8b8a381889312184285acac6",
+      "bytes": 4045
+    },
+    {
+      "path": "civilizational-layer/index.html",
+      "sha256": "9fad3c0e03767b629a27f55eb512427d03b0bf297bb5b01da7217234a357579c",
+      "bytes": 15411
+    },
+    {
+      "path": "concepts.html",
+      "sha256": "65e0d4958208bfbb96b7d1ee9cf7d07aeca4521135e4dcc0096b851be2eed8e0",
+      "bytes": 11739
+    },
+    {
+      "path": "index.html",
+      "sha256": "3297534e6af35c738a51ed94258b57febaa3c3f41799191f454a1040af2b950a",
+      "bytes": 15781
+    },
+    {
+      "path": "llms.txt",
+      "sha256": "6c30188b0ae06cfcca8c88440e2c5ba26def6d57d46094464e4cf2dd2126c199",
+      "bytes": 4303
+    },
+    {
+      "path": "papers.html",
+      "sha256": "92a94ebca0207add5709b01f5f3e9d626f7e6c3bb9917cdd567920a9de9a2d6f",
+      "bytes": 26814
+    },
+    {
+      "path": "research.html",
+      "sha256": "8145f59d1fbf25d3a684bb531aa15b4f7b2c20555d58e33e6d7b5f18841332db",
+      "bytes": 14425
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "dec8b2b3745c661543437d0b7dd0b5d9b398ded55459d18cdc9ace06c4a455e0",
+      "bytes": 23223
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#16122f">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="stylesheet" href="./world.css?v=19">
+  <style>.birth{top:68%}/* Keep the timer completely unobstructed during Tilt Machine. */.game-layer.tilt-active #gameTip{display:none!important}</style>
+  <meta name="description" content="Hatch inside a cosmic egg, explore SlopWorm and discover tiny games hidden inside the world.">
+  <link rel="canonical" href="https://madeby.re/games/slopworm/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SlopWorm">
+  <meta property="og:title" content="SlopWorm | Hatch, explore, discover">
+  <meta property="og:description" content="Hatch a Starworm inside a cosmic egg and discover little games across SlopWorm World.">
+  <meta property="og:url" content="https://madeby.re/games/slopworm/">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>SlopWorm | Hatch, explore, discover.</title>
+</head>
+<body>
+  <main id="world" aria-label="SlopWorm World">
+    <canvas id="worldCanvas" width="1280" height="720" aria-label="A small world to explore as a rainbow worm"></canvas>
+    <canvas id="hatchCanvas" width="1280" height="720" aria-label="The inside of a gigantic cosmic egg"></canvas>
+    <header class="hud">
+      <div class="brand"><b>SLOPWORM</b><span id="zoneName">SLOPWORM SPACE</span></div>
+      <div class="coin-pill" aria-label="World coins"><span>✦</span><b id="coinCount">0</b><small>/ 24</small></div>
+      <button id="soundButton" class="round" type="button" aria-label="Toggle sound" aria-pressed="true">♫</button>
+      <button id="collectionButton" class="round" type="button" aria-label="Open discoveries">9</button>
+      <button id="passportButton" class="round" type="button" aria-label="Open Worm O Passport">ID</button>
+    </header>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <section id="birth" class="card birth">
+      <div class="worm-mark" aria-hidden="true">🌈<span>〰</span>🐍</div>
+      <p class="eyebrow">INSIDE A VERY LARGE EGG</p>
+      <h1>WAKE UP,<br>STARWORM.</h1>
+      <p>Something enormous is breathing around you. Hold on until the shell cannot take it anymore.</p>
+      <button id="hatchButton" class="primary hatch-button" type="button">HOLD TO HATCH ✦</button>
+      <div class="hatch-meter" aria-hidden="true"><i id="hatchFill"></i></div>
+      <small>Keep mouse, finger, Space or Enter held down</small>
+    </section>
+    <section id="prompt" class="enter-prompt" hidden>
+      <span id="promptIcon">?</span><div><b id="promptTitle">STRANGE THING</b><small id="promptText">Enter?</small></div>
+      <button id="enterButton" type="button">ENTER ▶</button>
+    </section>
+    <button id="actionButton" class="action" type="button" aria-label="Enter nearby place">ENTER</button>
+  </main>
+
+  <section id="collection" class="sheet" hidden aria-label="Discovery collection">
+    <div class="sheet-card">
+      <button class="close" data-close="collection" type="button" aria-label="Close">×</button>
+      <p class="eyebrow">A SEPARATE WORLD-SAVE</p>
+      <h2>DISCOVERIES</h2>
+      <p id="collectionSummary">Swim into odd creatures to find games.</p>
+      <div id="discoveryCards" class="discoveries"></div>
+      <p class="fine">Nine discoveries belong to this world. The original SlopSnake arcade lives separately at slopsnake.com.</p>
+    </div>
+  </section>
+
+  <section id="passport" class="sheet passport-sheet" hidden aria-label="Worm O Passport">
+    <article class="passport-book">
+      <button class="close" data-close="passport" type="button" aria-label="Close passport">×</button>
+      <div class="passport-heading"><span>✦</span><div><small>INTERCOSMIC WORM AUTHORITY</small><h2>WORM’O’<br>PASSPORT</h2></div></div>
+      <div class="passport-photo" aria-label="A badly framed profile photo of Starworm, attached with a paperclip">
+        <canvas id="passportPhoto" width="320" height="240"></canvas>
+      </div>
+      <dl class="passport-facts">
+        <div><dt>SERIES / WEBSITE</dt><dd>SLOPWORM</dd></div>
+        <div><dt>NEW GAME</dt><dd>SLOPWORM WORLD</dd></div>
+        <div><dt>CHARACTER</dt><dd>STARWORM</dd></div>
+        <div><dt>SPECIES</dt><dd>SLOPWORM</dd></div>
+        <div class="wide"><dt>RAINBOW FORM</dt><dd>RAINBOW STARWORM<br><small>also known as LIMITBREAK STARWORM</small></dd></div>
+      </dl>
+      <div class="passport-stamp">HATCHED<br><b>✦ WORLD ✦</b></div>
+      <p class="passport-note">Photo quality officially classified as “good enough for a worm.”</p>
+    </article>
+  </section>
+
+  <section id="entryConfirm" class="sheet entry-confirm" hidden aria-label="Confirm entering this discovery">
+    <div class="sheet-card">
+      <div id="confirmIcon" class="game-icon">?</div>
+      <p class="eyebrow">YOU BUMPED INTO SOMETHING</p>
+      <h2>DO YOU WANT<br>TO ENTER?</h2>
+      <p id="confirmName" class="confirm-name">STRANGE THING</p>
+      <button id="confirmEnter" class="primary" type="button">YES, GO INSIDE ▶</button>
+      <button id="confirmCancel" class="secondary" type="button">NOT YET</button>
+    </div>
+  </section>
+
+  <section id="gameLayer" class="game-layer" hidden aria-label="Microgame">
+    <canvas id="gameCanvas" width="960" height="600"></canvas>
+    <header class="game-hud"><button id="leaveGame" type="button">← WORLD</button><b id="gameTitle">GAME</b><span id="gameStat">READY</span></header>
+    <div id="gameTip" class="game-tip" hidden>HOLD THE PINK BALL → DRAW AROUND BLOBS → RELEASE IN THE STAR</div>
+    <section id="gameCard" class="card game-card">
+      <div id="gameIcon" class="game-icon">✦</div><p class="eyebrow" id="gameKicker">NEW DISCOVERY</p>
+      <h2 id="gameCardTitle">STAR RINGS</h2><p id="gameInstructions">Fly through the rings.</p>
+      <button id="startGame" class="primary" type="button">PLAY ▶</button>
+      <button id="backToWorld" class="secondary" type="button">BACK TO WORLD</button>
+    </section>
+    <button id="sonarButton" class="sonar" type="button" hidden>🛜 ECHO</button>
+  </section>
+  <script src="./world.js?v=521"></script>
+</body>
+</html>

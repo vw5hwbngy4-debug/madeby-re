@@ -1,0 +1,424 @@
+=== PDF PAGE 1 ===
+Ambient Displays → Ambient Systems (1997–2026):
+
+A Boundary Review of Mobile Peripheral Awareness and Post-Semantic Ambient Architecture
+
+Raynor Eissens
+
+Ambientphone Canon • 2026
+
+⸻
+
+ABSTRACT
+
+Since the late 1990s, Human–Computer Interaction (HCI) research has explored ambient
+
+displays and peripheral awareness technologies: systems that communicate information subtly,
+
+aesthetically, and without requiring focal attention. Early work focused on abstract
+
+representations (AROMA, 1997), informative art (DARE 2000), heuristic evaluation (CHI 2003),
+
+and personalized peripheral information (UbiComp 2004).
+
+By 2006, researchers extended these ideas to mobile phones as ambient displays, using
+
+screensavers and subtle metaphors to visualize personal communication patterns while
+
+preserving privacy.
+
+This review delineates the historical boundaries of this field (1997–2013) and clarifies its
+
+conceptual distance from Ambient Architecture (ambientphone.com, 2025–2026), a framework
+
+that reconceives phones as thermodynamic, coherence-bearing ambient systems rather than
+
+information displays. Where ambient displays were symbolic, aesthetic, and peripheral, ambient
+
+systems are post-semantic, pressure-regulated, and field-based.
+
+This paper establishes a clear lineage, identifies defining themes, and articulates the divergence
+
+between symbolic ambient displays and post-symbolic ambient systems. It positions Ambient
+
+Architecture as a new research domain emerging naturally from, but fundamentally beyond,
+
+earlier ambient-display paradigms.
+
+Keywords: ambient displays, peripheral awareness, mobile HCI, persuasive technology,
+
+informative art, ambient persuasion, ambient systems, ambient architecture, thermodynamic
+
+interaction, ΔR, coherence design
+
+=== PDF PAGE 2 ===
+⸻
+
+1. Introduction
+
+Ambient displays emerged in HCI as a response to the growing cognitive load of graphical
+
+interfaces. Instead of demanding focal attention, these systems communicated information
+
+through:
+
+•
+subtle motion
+
+•
+gentle color gradients
+
+•
+abstract shapes
+
+•
+peripheral metaphors
+
+The goal was awareness without interruption.
+
+By the mid-2000s, researchers recognized that the mobile phone — always carried,
+
+always on — offered a unique canvas for ambient, peripheral visualization of
+
+personal meta-data. The seminal CHI 2006 paper “Utilizing Mobile Phones as
+
+Ambient Information Displays” (Schmidt et al.) demonstrated screensaver-based
+
+abstractions of communication behavior (Solar System, Circles, Aquarium, Flowers)
+
+that informed users without intruding.
+
+This formed a coherent line of research across ambient displays, persuasive
+
+computing, peripheral awareness, and informative art.
+
+From 2008 onward, ambient persuasion technologies expanded the field.
+
+Wearables, eco-visualizations, and low-effort behavior-change metaphors explored
+
+how ambient signals could shape awareness gently.
+
+This review maps that evolution and establishes its boundary relative to Ambient
+
+Architecture, a contemporary framework (2025–2026) that transforms ambient
+
+interaction into a thermodynamic, post-semantic system: not displaying information,
+
+but regulating interaction pressure (ΔR), warmth, ambience, and aura.
+
+=== PDF PAGE 3 ===
+⸻
+
+2. Historical Evolution of Ambient Displays (1997–2013)
+
+2.1 Early Foundations (1997–2000)
+
+The earliest work emphasized abstract representation and artistic forms:
+
+•
+AROMA (Pedersen & Sokoler,
+
+1997) — abstract presence
+
+awareness
+
+•
+Informative Art (Redström et al.,
+
+2000) — artworks as peripheral
+
+displays
+
+These studies defined the aesthetics and subtlety central to ambient interaction.
+
+2.2 Heuristic and Evaluation Frameworks (2003–2004)
+
+•
+Mankoff et al. (CHI 2003) —
+
+heuristic evaluation for ambient
+
+displays
+
+•
+Stasko et al. (UbiComp 2004) —
+
+personalized peripheral
+
+information via informative art
+
+These formalized ambient displays as a distinct subfield in HCI.
+
+2.3 Mobile Phones as Ambient Displays (2006)
+
+Schmidt et al.’s CHI 2006 work marked a turning point:
+
+phones became ambient displays for personal meta-data.
+
+Key qualities:
+
+•
+glanceability
+
+•
+privacy preservation
+
+=== PDF PAGE 4 ===
+•
+abstract aesthetic metaphors
+
+•
+peripherality over attention
+
+demand
+
+2.4 Ambient Persuasion (2008–2013)
+
+•
+Consolvo et al. (UbiComp 2008)
+
+— activity awareness through
+
+flower metaphors
+
+•
+Ham & Midden (2010) — ambient
+
+persuasion requiring minimal
+
+cognitive effort
+
+•
+Kim et al. (2010) — eco-
+
+visualization through ambient cues
+
+•
+Burns et al. (2013) — color-based
+
+persuasive ambient displays
+
+Ambient displays expanded into behavior change, sustainability, and wellness.
+
+⸻
+
+3. Defining Characteristics of Ambient Display Research
+
+Across two decades, key themes remained stable:
+
+1.
+Subtlety — non-intrusive,
+
+glanceable cues
+
+2.
+Peripherality — information
+
+remains outside focal
+
+awareness
+
+3.
+Aesthetic mapping — artistic
+
+metaphors translate data into
+
+visuals
+
+4.
+Low cognitive load — minimal
+
+mental effort
+
+5.
+Privacy sensitivity — no
+
+explicit personal identifiers
+
+6.
+Symbolic representation —
+
+information encoded in visual
+
+symbols
+
+This final point becomes the critical departure from Ambient Systems.
+
+=== PDF PAGE 5 ===
+⸻
+
+4. From Ambient Displays to Ambient Systems (2025–2026)
+
+Ambient Architecture (2025–2026) represents a categorical shift:
+
+Ambient Displays
+
+symbolic → visual metaphors → information about behavior
+
+Ambient Systems
+
+post-semantic → thermodynamic → conditions shaping presence itself
+
+Displays represent.
+
+Systems regulate.
+
+Key innovations:
+
+•
+ΔR (interaction pressure) — a measurable condition of cognitive/attentional
+
+strain
+
+•
+warmth as user-state stability
+
+•
+ambience as non-extractive
+
+environment
+
+•
+aura as post-semantic presence
+
+field
+
+•
+boundary laws (SBL, ASB-1,
+
+ABL-1) safeguarding meaning,
+
+cognition, identity
+
+•
+WCL ensuring compatibility at
+
+world-scale rhythms
+
+These phenomena have no equivalent in symbolic ambient-display research.
+
+Thus:
+
+Ambient displays → symbolic, aesthetic, information-centric
+
+Ambient systems → post-semantic, thermodynamic, condition-centric
+
+This establishes Ambient Architecture as a fundamentally new field, though
+
+historically continuous.
+
+=== PDF PAGE 6 ===
+⸻
+
+5. Field Boundary (Afbakening)
+
+This review proposes the following boundary:
+
+Inside the historical field (1997–2013)
+
+•
+peripheral display of information
+
+•
+phones as ambient screens
+
+•
+persuasive ambient art
+
+•
+eco-visualization
+
+•
+behavior-awareness metaphors
+
+•
+symbolic visual encoding
+
+Outside / Beyond the field (2025–2026)
+
+•
+thermodynamic interaction models
+
+(ΔR, reversibility)
+
+•
+post-semantic meaning (AMG)
+
+•
+aura fields and boundary laws
+
+•
+warmth/ambience as system
+
+conditions
+
+•
+world compatibility layers
+
+•
+non-extractive, post-identity
+
+design
+
+This boundary cleanly separates the symbolic era of ambient displays
+
+from the post-symbolic era of ambient systems.
+
+⸻
+
+6. Conclusion
+
+This review establishes the historical lineage and precise boundary of the ambient display field,
+
+clarifying its contributions and limitations. It shows how contemporary Ambient Architecture
+
+diverges fundamentally from symbolic, representational approaches, defining a new research era
+
+grounded in thermodynamic interaction, post-semantic meaning, coherence, and non-extractive
+
+design.
+
+Ambient Systems do not display information.
+
+They shape the conditions under which information becomes livable.
+
+=== PDF PAGE 7 ===
+This paper positions the field clearly for future research, citation, and architectural development.
+
+⸻
+
+References
+
+Pedersen, E.R., & Sokoler, T. (1997). AROMA: Abstract Representation of Presence Supporting
+
+Mutual Awareness. CHI ‘97.
+
+Redström, J., Skog, T., & Hallnäs, L. (2000). Informative Art. DARE 2000.
+
+Mankoff, J., et al. (2003). Heuristic Evaluation of Ambient Displays. CHI 2003.
+
+PDF: https://faculty.washington.edu/garyhs/docs/mankoff-CHI2003-heuristics.pdf
+
+Stasko, J., Miller, T., Plaue, C., Pousman, Z., & Ullah, O. (2004). Personalized Peripheral
+
+Information Awareness Through Information Art. UbiComp 2004.
+
+Schmidt, A., Rukzio, E., Häkkilä, J., Holleis, P., & Atterer, R. (2006). Utilizing Mobile Phones as
+
+Ambient Information Displays. CHI 2006.
+
+Consolvo, S., et al. (2008). Flowers or a Robot Army? Encouraging Awareness & Activity with
+
+Personal, Mobile Displays. UbiComp ‘08.
+
+Ham, J., & Midden, C. (2010). Ambient Persuasive Technology Needs Little Cognitive Effort.
+
+Persuasive ‘10.
+
+Kim, T., et al. (2010). Designing for Persuasion: Toward Ambient Eco-Visualization. Persuasive
+
+‘10.
+
+Burns, P., et al. (2013). Colours That Move You: Persuasive Ambient Activity Displays. Persuasive
+
+‘13.

@@ -1,0 +1,358 @@
+WORLD: Xenosaga I+II DS English
+EXPERT SCOPE: translation release, patching, validation, technical and currently packaged site knowledge. Narrative/script answers must not be invented if the full extracted game script is not present in this bundle.
+
+### README.md
+# xenosaga.wolken.page
+
+Official English site for **Xenosaga I+II DS — Complete English Translation v1.0**.
+
+Canonical English site:
+https://xenosaga.wolken.page/xenosaga/
+
+Dutch counterpart:
+https://xenosaga.wolken.page/xenosaga-nederlands/
+
+Hashes:
+- Source ROM SHA-256: `938d07521cfc937d179402e85c8b0b43f3e929a494838ff1455b29126b56d356`
+- English v1.0 BPS SHA-256: `d0188e2abf13ba81496ec0e387ad3eba3180c7b65af61c2a0dbac96efa71919e`
+- Patched English v1.0 ROM SHA-256: `5cfe164aea57174ad47801e90f7fd53dccca4d30db2680991d54ec232aac4a61`
+
+The browser patcher runs locally and does not upload ROM data.
+
+### LINKS_VERIFIED.txt
+EN canonical: https://xenosaga.wolken.page/xenosaga/
+NL toggle target: https://xenosaga.wolken.page/xenosaga-nederlands/
+Old xenosaga-eng references: 0
+
+### COMPLETENESS.md
+# Completeness
+
+## Supported localization layers
+
+- Core/story EVC text: complete English coverage
+- Choice options in supported layer: complete
+- EVC branch relocation: preserved from known-good English RC1
+- Chapter/title cards: English
+- Opening/location presentation: English
+- Battle attack-type glyphs: P/E
+- Item descriptions: English
+- Visible first-run/title/options/status fixes: applied
+
+## Final structured residue audit
+
+- Normal EVC player-facing Japanese: 0
+- KJM/title Japanese: 0
+- Deep EVC player-facing Japanese: 0
+- BDY Japanese runs: 0
+- Item-description Japanese: 0
+
+Known intentional non-player residue:
+- 13 internal/SFX-style Japanese 0x4D cues
+- developer/config comments in `param00.txt`, `param01.txt`, `param02.txt`
+
+These are not ordinary player-facing localization strings.
+
+### HOSTINGER_DEPLOYMENT.md
+# Hostinger Deployment
+
+Target: `https://xenosaga.wolken.page/xenosaga/`
+
+1. In Hostinger, open the document root assigned to the `xenosaga.wolken.page` subdomain.
+2. Remove or rename any placeholder `index.html` in that document root.
+3. Upload `xenosaga_wolken_page_v0.1-rc1.zip`.
+4. Extract the ZIP directly into the document root. The root must contain `index.html`, `css/`, `js/`, `assets/`, `docs/`, `robots.txt`, `sitemap.xml` and `favicon.svg`. Do not leave the site inside an extra nested folder.
+5. Confirm HTTPS is active.
+6. Open the live site and confirm the homepage renders.
+7. Click `Download BPS` to verify the 56,540,257-byte patch is served correctly.
+8. Perform a patch smoke test with the exact clean Japanese source. The site should reject a random/wrong file, accept the supported source, and only offer the generated ROM after the output SHA-256 matches the canonical RC1.
+
+If Hostinger has aggressive caching enabled, purge cache after replacing JavaScript or the BPS file.
+
+### KNOWN_ISSUES.md
+# Known Issues
+
+No known visible blocker remains in the tested release path.
+
+The final binary still contains a small amount of intentional non-player Japanese data:
+- internal/SFX-style event cues
+- developer/config comments
+
+These are classified as non-player-facing and were not translated.
+
+As with any large fan localization, late-game edge states not exercised in the reported runtime path may still reveal issues.
+
+### PATCHING.md
+# Patching
+
+1. Obtain an unmodified Japanese copy of **Xenosaga I+II** for Nintendo DS.
+2. Verify the source SHA-256:
+
+   `938d07521cfc937d179402e85c8b0b43f3e929a494838ff1455b29126b56d356`
+
+3. Apply:
+
+   `Xenosaga_I_II_DS_English_v1.0.bps`
+
+   using a BPS-compatible patcher such as Floating IPS.
+4. Optional: verify the resulting ROM SHA-256:
+
+   `5cfe164aea57174ad47801e90f7fd53dccca4d30db2680991d54ec232aac4a61`
+
+No ROM is included in this release.
+
+### RELEASE_MANIFEST.md
+# Release Manifest
+
+## Identity
+
+- Project: Xenosaga I+II DS Rough English
+- Release: v0.1 RC1
+- QA state: PUBLIC QA / RC1
+- Platform: Nintendo DS
+- Supported source: Xenosaga I+II (Japan)
+- Game code: AXSJ
+- Package date: 2026-08-29
+- Website target: https://xenosaga.wolken.page/xenosaga/
+- GitHub: https://github.com/vw5hwbngy4-debug/Xenosaga-I-II-DS-English
+- Runtime gameplay: https://youtu.be/WXCLkwqY2JU
+
+## Canonical artifacts
+
+- Clean source SHA-256: `938d07521cfc937d179402e85c8b0b43f3e929a494838ff1455b29126b56d356`
+- Clean source size: 67,108,864 bytes
+- BPS filename: `xenosaga_i_ii_ds_rough_english_v0.1-rc1.bps`
+- BPS size: 56,540,257 bytes
+- BPS SHA-256: `8864d3e9035b92c55148da9870b531f4387defa8153b3d274fbac3469acad464`
+- BPS source CRC32: `6BCE1271`
+- BPS target CRC32: `6C14E0BF`
+- BPS metadata: `Xenosaga I+II DS runtime bugfix pass 1`
+- Expected patched ROM size: 67,108,864 bytes
+- Expected patched ROM SHA-256: `67c0fe831083ccfe2da21768fecafd31fb68b7e809964157d175147b3f3f1db1`
+
+## Corpus record
+
+- Translatable EVC records: 29,461
+- EVC units: 18,078
+- Dialogue blocks: 12,836
+- Standalone EVC text units: 5,242
+- Unique source strings: 13,126
+- Choice menus: 459
+- Choice options identified: 1,286
+- Japanese options remaining in supported translated choice layer: 0
+- Branch opcodes identified: 1,322
+- Absolute branch targets relocated: 1,304
+- Unresolved/invalid targets in completed relocation pass: 0
+
+## Runtime state
+
+- Boot: PASS
+- Early English dialogue: PASS
+- Opening Yes/No menu: PASS
+- YES branch: PASS
+- Previous YES-route freeze: FIXED
+- Word wrapping improvement: PASS in tested opening runtime
+- Battle scene: reached / demonstrated
+- Complete start-to-finish playthrough: NOT YET VERIFIED
+
+### RELEASE_NOTES.md
+# Xenosaga I+II DS - Complete English Translation v1.0
+
+## Final engineering changes
+
+This release replaces the earlier Rough English v0.1 RC1 line with a runtime-tested v1.0 build.
+
+Key fixes include:
+
+- reconstructed chapter cards using the original indexed palette/map structure and safe LZ encoding
+- preserved the known-good RC1 YES-training branch behavior
+- cleaned the first-battle tutorial wrapping across the EVC corpus
+- reflowed 910 mechanically safe one-word-tail dialogue blocks
+- removed remaining player-facing Japanese from normal and deep EVC text layers
+- translated item descriptions in `1/db/item.bin`
+- changed the battle type glyphs to **P / E** using the actual battle spritebank
+- preserved fixed event/text field spans where required to avoid branch regressions
+- independently verified the final BPS by reapplying it to the clean Japanese ROM
+
+## Residue classification
+
+Structured player-facing scans at release time:
+- normal EVC Japanese text: 0
+- KJM/title Japanese text: 0
+- player-facing deep EVC Japanese text: 0
+- BDY Japanese text runs: 0
+- item-description Japanese: 0
+
+Thirteen Japanese 0x4D fields remain intentionally because they are internal/SFX-style cues such as impact/rumble sounds rather than translatable player-facing prose.
+
+Three `param00/01/02.txt` files retain Japanese developer/config comments. They are not normal in-game player text.
+
+## Runtime status
+
+The final candidate was user-tested and reported to work excellently, including the opening YES tutorial path and first battle.
+
+This is not a formal exhaustive every-state full-game certification.
+
+### RUNTIME_TESTING.md
+# Runtime Testing
+
+Final v1.0 candidate test coverage reported by the project owner:
+
+PASS:
+- cold boot
+- title/menu
+- New Game
+- opening dialogue
+- YES warm-up/tutorial branch
+- tutorial/refresher progression
+- first battle reached
+- battle Physical/Ether display as P/E
+- chapter/title presentation
+- general text wrapping/readability
+- no visible kanji reported in the tested battle path
+
+The user reported the A7 final candidate as working correctly with nothing further to flag in the tested route.
+
+This does not claim an exhaustive every-state, every-branch full-game certification.
+
+### TECHNICAL_RECORD.md
+# Technical Record
+
+## EVC corpus
+
+The project catalogued 29,461 translatable EVC records across 18,078 units. This includes 12,836 dialogue blocks and 5,242 standalone EVC text units, representing 13,126 unique source strings.
+
+## Choice layer
+
+459 choice menus were identified with 1,286 Japanese choice options. The supported translated choice layer has 0 remaining Japanese options.
+
+## Absolute branch relocation
+
+The key runtime failure in an earlier test build was not a translation-content problem. Variable-length English text changed EVC byte offsets, while absolute branch targets still referenced their old positions. The opening YES route therefore jumped to an invalid location and froze.
+
+The relocation pass identified 1,322 branch opcodes and relocated 1,304 absolute targets, with 0 unresolved or invalid targets in the completed pass.
+
+Opening YES target example:
+
+- Original Japanese: `0x0D57`
+- Vector beta reference: `0x0F2C`
+- Broken earlier test build: `0x0D57`
+- RC1 runtime fix: `0x0E3A`
+
+## BPS verification
+
+The browser implementation follows the BPS1 format, including source/target size parsing, metadata, SourceRead, TargetRead, SourceCopy, TargetCopy, signed relative offsets, and the three footer CRC32 checks. SHA-256 is used as an additional canonical source, patch and output gate.
+
+The canonical patch was independently applied to the clean source with Floating IPS during package validation. The resulting SHA-256 matched the expected runtime-tested RC1 exactly.
+
+### VALIDATION_REPORT.md
+# Final Validation Report
+
+Package validation date: 2026-08-29
+
+## Patch artifact
+
+- Attached BPS exists: **PASS**
+- BPS size = 56,540,257 bytes: **PASS**
+- BPS SHA-256 = `8864d3e9035b92c55148da9870b531f4387defa8153b3d274fbac3469acad464`: **PASS**
+- Floating IPS accepted BPS header/footer integrity: **PASS**
+- BPS metadata = `Xenosaga I+II DS runtime bugfix pass 1`: **PASS**
+- BPS source CRC32 = `6BCE1271`: **PASS**
+- BPS target CRC32 = `6C14E0BF`: **PASS**
+
+## Source and target
+
+- Clean Japanese source located in a private validation directory: **PASS**
+- Source size = 67,108,864 bytes: **PASS**
+- Source SHA-256 = `938d07521cfc937d179402e85c8b0b43f3e929a494838ff1455b29126b56d356`: **PASS**
+- Canonical BPS applied to clean source with Floating IPS: **PASS**
+- Generated target SHA-256 = `67c0fe831083ccfe2da21768fecafd31fb68b7e809964157d175147b3f3f1db1`: **PASS**
+- Original source excluded from public package: **PASS**
+- Patched full ROM excluded from public package: **PASS**
+
+## Exact JavaScript BPS implementation tests
+
+The exact `js/bps.js` shipped in this package was executed under Node.js against the real clean 64 MiB source and the canonical 56,540,257-byte BPS.
+
+- Real source accepted: **PASS**
+- Real target generated: **PASS**
+- Generated target SHA-256 matched canonical RC1: **PASS**
+- Same-size source with one corrupted byte rejected by source CRC32: **PASS**
+- BPS with one corrupted byte rejected by patch CRC32: **PASS**
+
+A second synthetic BPS was generated with Floating IPS specifically to exercise the non-linear commands. Its disassembly contained `SourceCopy`, `TargetRead`, `TargetCopy`, and a second `SourceCopy`. The exact shipped JavaScript reproduced the synthetic target byte-for-byte.
+
+- BPS1 header validation: **PASS**
+- Source/target size parsing: **PASS**
+- Metadata parsing: **PASS**
+- SourceRead: **PASS** on canonical RC1
+- TargetRead: **PASS** on canonical RC1 and synthetic test
+- SourceCopy: **PASS** on synthetic test
+- TargetCopy including overlapping-copy behavior: **PASS** on synthetic test
+- Signed relative offsets: **PASS** on synthetic test
+- Patch CRC32 verification: **PASS**
+- Source CRC32 verification: **PASS**
+- Target CRC32 verification: **PASS**
+
+The exact `js/hashing.js` shipped in this package was also run against the real source, patch, and target.
+
+- Source SHA-256 helper result: **PASS**
+- Patch SHA-256 helper result: **PASS**
+- Target SHA-256 helper result: **PASS**
+
+## Browser flow implementation
+
+- Source-size early rejection implemented before worker patching: **PASS by code inspection**
+- Source SHA-256 gate occurs before BPS fetch: **PASS by code inspection**
+- Patch SHA-256 gate occurs before BPS application: **PASS by code inspection**
+- Output SHA-256 gate occurs before success/download: **PASS by code inspection**
+- Output download is created from a local `Blob`: **PASS by code inspection**
+- Original `File` object is never modified: **PASS by code inspection**
+- Patching is performed in a module Web Worker: **PASS by code inspection**
+- Full file-picker end-to-end run in desktop Chrome inside this container: **NOT TESTED** because the installed headless Chromium process did not complete rendering reliably in the container environment
+- Full interactive run on iPhone Safari: **NOT TESTED**
+
+## Privacy/network audit
+
+- ROM patching uses local browser memory only: **PASS**
+- Public JavaScript contains no ROM upload endpoint: **PASS**
+- Only runtime `fetch()` is the public BPS asset download: **PASS**
+- Analytics: **NONE**
+- Telemetry: **NONE**
+- `sendBeacon`: **NONE**
+- Server-side ROM processor: **NONE**
+
+## Static site checks
+
+- Static HTML/CSS/vanilla JavaScript: **PASS**
+- No runtime framework: **PASS**
+- No CDN dependency: **PASS**
+- Public BPS loads only after a valid-size ROM enters the patch flow: **PASS**
+- Local asset/link existence scan: **PASS**
+- Local HTTP server returned `index.html`: **PASS**
+- Local HTTP server returned BPS with `Content-Length: 56540257`: **PASS**
+- GitHub link included: **PASS**
+- YouTube runtime proof link included: **PASS**
+- Canonical/meta/robots/sitemap present: **PASS**
+- Responsive CSS breakpoints for phone/tablet/desktop present: **PASS**
+- Browser-specific visual QA at 375 px / 430 px: **NOT TESTED** due the headless Chromium limitation above
+- iPhone memory limitation documented: **PASS**
+
+## Release claims
+
+- v0.1 RC1 / Public QA wording retained: **PASS**
+- No complete-playthrough claim: **PASS**
+- No zero-Japanese-everywhere claim: **PASS**
+- Known issues visible: **PASS**
+- No unsupported absolute world-first claim: **PASS**
+- Prior Vector Translations work acknowledged: **PASS**
+
+## Copyright package scan
+
+A final recursive package scan is performed after the ZIP is built.
+
+Required result:
+
+- `.nds` files in final public package: **0**
+- Original Japanese commercial ZIP in final public package: **0**
+- Patched commercial ROM in final public package: **0**
+- Canonical RC1 BPS included: **YES**

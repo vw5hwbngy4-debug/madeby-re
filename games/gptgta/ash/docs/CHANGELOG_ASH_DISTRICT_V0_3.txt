@@ -1,0 +1,32 @@
+Ash District v0.3 — Diablo-like polish pass
+
+Changed files:
+- public_html/index.html
+- public_html/zombies/index.html
+- public_html/ash-district.js
+- public_html/ash-district.css
+- public_html/README.txt
+- public_html/docs/CHANGELOG_ASH_DISTRICT_V0_3.txt
+
+Changes:
+- Added world camera scaling: desktop now renders at 0.72 scale, mobile at 0.66 scale, showing more of the city.
+- Corrected mouse/world targeting for the new zoom level.
+- Added Safari/iOS anti-zoom guards: gesturestart/gesturechange/gestureend prevention, double-tap prevention, and controlled touchmove prevention outside inventory.
+- Slowed zombie speeds substantially:
+  - Walker: 62 -> 34
+  - Runner: 108 -> 58
+  - Brute: 48 -> 26
+  - Spitter: 54 -> 30
+  - Boss base: 42 -> 22
+- Reduced zombie wave speed scaling from 1.8% per wave to 0.6% per wave.
+- Added stamina system for sprinting.
+- Added red life orb, blue level/XP orb, and center stamina bar.
+- Added item power scoring and comparison against equipped item.
+- Added affix/suffix generator for equipment names and stats.
+- Added visible affix lines in inventory and equipment slots.
+- Added special modifiers: burn chance, bleed chance, knockback, pickup radius, crit, fire rate, movement, armor, max HP, damage.
+
+Known limitations:
+- The blue orb currently represents level/XP rather than a full mana system.
+- Buildings remain exterior obstacles; interior loot rooms are not implemented in this pass.
+- Safari zoom prevention is best-effort; iOS Safari behavior can vary by browser settings and embedding context.

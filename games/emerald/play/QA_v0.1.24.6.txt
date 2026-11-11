@@ -1,0 +1,19 @@
+EMERALD v0.1.24.6 — FIELD GRAMMAR + IDENTITY FIX
+
+PASS
+- Save Vault v0.1.13.5 retained, including durable iOS/Safari file picker.
+- Mobile flow v0.1.24.5 retained.
+- My Field default population is party + all PC boxes.
+- CALL restored as explicit action; selecting a filter does not mutate the field.
+- CALL highlights responders while nonresponders remain visible.
+- FOCUS commits responders; SCATTER restores all owned Pokémon.
+- Reactive dropdown wall, Dual Rank and Cross removed from normal My Field UX.
+- Call configuration moved to a bottom sheet so the Field remains visible behind it.
+- Exact Emerald internal species ID -> National Dex mapping generated from supplied emerald-live-dex + TeamLab datasets.
+- This fixes identity/sprite/strategy mismatches such as Slaking->Crawdaunt and Milotic->Aggron caused by the old arithmetic mapping.
+- 385 Gen III shiny front sprites generated from the supplied pret/pokeemerald front art + shiny palettes (Unown default form included; Castform normal form included).
+- Live, My Field and Trainer Card route shiny specimens to shiny sprite assets.
+- Node syntax checks PASS.
+- My Field regression test PASS.
+
+Boundary: Mobile Safari + mGBA runtime behavior still requires device smoke testing after deployment.

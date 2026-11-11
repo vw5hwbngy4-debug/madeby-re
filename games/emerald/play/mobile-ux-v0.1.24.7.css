@@ -1,0 +1,17 @@
+/* v0.1.24.7 mobile polish: game canvas stays clean; PokéField controls live below it. */
+@media(max-width:959px){
+  html,body{overflow-x:hidden!important;overflow-y:auto!important;height:auto!important;min-height:100%!important}body.pf-mobile-first{touch-action:pan-y!important}
+  #pokefield-live-panel,#pokefield-live-panel:not(.pf-compact):not(.tc-showing-card):not(.opf-show){max-height:none!important;height:auto!important;overflow:visible!important;overscroll-behavior:auto!important;touch-action:auto!important}
+  #pokefield-live-panel .pf-head{display:grid!important;grid-template-columns:minmax(0,1fr) auto;gap:7px!important;align-items:center!important}
+  #pokefield-live-panel .pf-head-actions{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:5px!important;min-width:0!important;flex-wrap:nowrap!important}
+  #pokefield-live-panel .pf-head-actions>small{display:none!important}
+  #pokefield-live-panel #save-vault-launch.sv-docked{position:static!important;inset:auto!important;min-width:0!important;height:34px!important;padding:5px 8px!important;border-radius:10px!important}
+  #pokefield-live-panel #save-vault-launch.sv-docked b{font-size:7px!important;letter-spacing:.06em!important}#pokefield-live-panel #save-vault-launch.sv-docked small{display:none!important}
+  #pokefield-live-panel #emerald-dex-switch{position:static!important;inset:auto!important;min-width:48px!important;height:34px!important;padding:6px 8px!important;border-radius:10px!important;box-shadow:none!important}#pokefield-live-panel #emerald-dex-switch b{font-size:9px!important}#pokefield-live-panel #emerald-dex-switch small{display:none!important}
+  #pokefield-live-panel #pf-compact-toggle{min-width:58px!important;height:34px!important;padding:5px 8px!important;border-radius:10px!important;font-size:7.5px!important}
+  /* Compact = header + updates + one intelligence line, full stop. */
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card):not(.opf-show) #pf-primary,#pokefield-live-panel.pf-compact:not(.tc-showing-card):not(.opf-show) #pf-party,#pokefield-live-panel.pf-compact:not(.tc-showing-card):not(.opf-show) #pf-selected,#pokefield-live-panel.pf-compact:not(.tc-showing-card):not(.opf-show) #pf-owned-drawer,#pokefield-live-panel.pf-compact:not(.tc-showing-card):not(.opf-show) .opf-nav,#pokefield-live-panel.pf-compact:not(.tc-showing-card):not(.opf-show) .pf-tech,#pokefield-live-panel.pf-compact:not(.tc-showing-card):not(.opf-show) .pf-explainer{display:none!important}
+  #pf-glance{display:none}
+  #pokefield-live-panel.pf-compact:not(.tc-showing-card):not(.opf-show) #pf-glance{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:4px 0 0;padding:8px 9px;border:1px solid #ffffff12;border-radius:9px;background:#ffffff08;color:#dff6ef;font:800 10px/1.25 system-ui;letter-spacing:.015em}
+}
+@media(max-width:430px){#pokefield-live-panel .pf-brand strong{font-size:15px!important}#pokefield-live-panel .pf-brand span{font-size:7px!important;margin-left:5px!important}.opf-nav button{min-height:38px;font-size:9px}}

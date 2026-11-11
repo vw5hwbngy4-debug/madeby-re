@@ -1,0 +1,46 @@
+/* JRPG.WORLD Emerald v0.1.24.4 — mobile navigation + game-first layout */
+@media (max-width: 959px) {
+  /* The navigation row owns entry into Trainer Card. Remove legacy duplicate
+     entry points from the live header. */
+  #pokefield-live-panel .tc-header-button { display:none !important; }
+
+  /* Expanded means "more intelligence", not "replace the game with a page".
+     Keep it as a bounded scroll surface so emulator/global controls remain
+     reachable on short iPhone viewports. */
+  #pokefield-live-panel:not(.pf-compact):not(.tc-showing-card):not(.opf-show) {
+    max-height:min(46dvh,430px);
+    overflow-y:auto;
+    overflow-x:hidden;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  /* Keep the global Save Vault away from the expanding lower intelligence
+     surface. On phones it becomes a compact top control beside DEX. */
+  #save-vault-launch {
+    z-index:100020 !important;
+    top:max(8px,env(safe-area-inset-top)) !important;
+    bottom:auto !important;
+    right:max(82px,calc(env(safe-area-inset-right) + 82px)) !important;
+    padding:7px 9px !important;
+    border-radius:13px !important;
+    grid-template-columns:auto auto !important;
+  }
+  #save-vault-launch small { display:none !important; }
+  #save-vault-launch b { font-size:8px !important; }
+  #save-vault-launch span { font-size:14px !important; }
+
+  /* Trainer Card contains its own explicit LIVE return. Avoid a second header
+     toggle competing for the same action. */
+  #pokefield-live-panel.tc-showing-card .pf-head-actions {
+    min-height:26px;
+  }
+
+  /* The old local capture bucket is not a game save and not a PC Box. Keep it
+     visually secondary to the actual Trainer Card. */
+  #pokefield-live-panel .tc-box > summary {
+    opacity:.82;
+  }
+}
+
+/* Compact is the startup state on mobile; expanded remains fully available. */

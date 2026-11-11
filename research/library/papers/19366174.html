@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>ARC-1 — Ambient Residue Collectibles: MVP Specification for Field-First AR Discovery, Single-Take Transfer, and Afterfield Decay | Raynor Eissens full-text library</title><meta content="This document specifies the minimum viable architecture for a user-placed augmented-reality collectible system based on field-first discovery rather than map-first spawn logic. In ARC-1, a user places a hidden collectible entity into a real environment through AR anchor" name="description"/>
+<meta content="index,follow,max-snippet:-1" name="robots"/><link href="https://madeby.re/research/library/papers/19366174.html" rel="canonical"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "ARC-1 — Ambient Residue Collectibles: MVP Specification for Field-First AR Discovery, Single-Take Transfer, and Afterfield Decay", "name": "ARC-1 — Ambient Residue Collectibles: MVP Specification for Field-First AR Discovery, Single-Take Transfer, and Afterfield Decay", "url": "https://madeby.re/research/library/papers/19366174.html", "mainEntityOfPage": "https://madeby.re/research/library/papers/19366174.html", "isAccessibleForFree": true, "sameAs": ["https://zenodo.org/records/19366174", "https://doi.org/10.5281/zenodo.19366174"], "encoding": [{"@type": "MediaObject", "encodingFormat": "text/html", "contentUrl": "https://madeby.re/research/library/papers/19366174.html"}, {"@type": "MediaObject", "encodingFormat": "text/plain", "contentUrl": "https://madeby.re/research/library/text/19366174.txt"}, {"@type": "MediaObject", "encodingFormat": "application/json", "contentUrl": "https://madeby.re/research/library/data/19366174.json"}], "author": [{"@type": "Person", "name": "Raynor Eissens"}], "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.5281/zenodo.19366174"}, "abstract": "This document specifies the minimum viable architecture for a user-placed augmented-reality collectible system based on field-first discovery rather than map-first spawn logic. In ARC-1, a user places a hidden collectible entity into a real environment through AR anchoring. The entity is not immediately visible to others. Discovery begins through a short haptic pulse and a chromatic bleed that signals type, state, or field identity before any visual reveal occurs. Only after proximity and orientation thresholds are satisfied does the entity appear as a lightweight anchored visual presence. The collectible can then be claimed once and transferred into the finder’s personal box or inventory layer. Immediately after claim, the original world instance disappears. If the entity is not claimed before expiry, it decays into a transparent non-interactive afterfield. This afterfield remains softly detectable as residue but can no longer be collected or interacted with as an active object. ARC-1 therefore defines a new interaction grammar for AR collectibles: hidden placement, pre- visual sens"}</script>
+<meta content="ARC-1 — Ambient Residue Collectibles: MVP Specification for Field-First AR Discovery, Single-Take Transfer, and Afterfield Decay" name="citation_title"/>
+<meta content="Raynor Eissens" name="citation_author"/>
+<meta content="10.5281/zenodo.19366174" name="citation_doi"/>
+<link href="../text/19366174.txt" rel="alternate" type="text/plain"/><link href="../data/19366174.json" rel="alternate" type="application/json"/>
+<link href="../assets/site.css" rel="stylesheet"/>
+</head><body><a class="skip" href="#main">Skip to content</a><div class="shell"><div class="portfolio-bridge"><a href="../../index.html">← Personal website</a><a href="../../archive.html">All 205 Zenodo records</a><a href="../index.html">Full-text library</a></div><header><a class="brand" href="../index.html">← RAYNOR EISSENS / FULL TEXT</a><h1>ARC-1 — Ambient Residue Collectibles: MVP Specification for Field-First AR Discovery, Single-Take Transfer, and Afterfield Decay</h1><div class="meta"><span>Zenodo record: 19366174</span><span>12 PDF pages</span><span>2,313 extracted words</span><span>DOI: <a href="https://doi.org/10.5281/zenodo.19366174">10.5281/zenodo.19366174</a></span></div><nav aria-label="Publication formats" class="tools"><a href="https://zenodo.org/records/19366174" rel="noopener">Original Zenodo record and PDF ↗</a><a href="../text/19366174.txt">Plain text</a><a href="../data/19366174.json">Full-text JSON</a><a href="../index.html">All publications</a></nav></header><main id="main"><aside aria-label="Editorial context for this publication" class="editorial-context compact-context"><span class="context-label">Editorial context · 19 September 2026</span><p>This document belongs to an exploratory theoretical archive. Claims of novelty should be treated as provisional unless independently sourced, and publication does not establish scientific validation. The original PDF-derived text below is unchanged. <a href="../index.html#archive-context">Read the archive note ↗</a></p></aside><section aria-label="Abstract"><h2>Abstract (extracted)</h2><p class="abstract">This document specifies the minimum viable architecture for a user-placed augmented-reality collectible system based on field-first discovery rather than map-first spawn logic. In ARC-1, a user places a hidden collectible entity into a real environment through AR anchoring. The entity is not immediately visible to others. Discovery begins through a short haptic pulse and a chromatic bleed that signals type, state, or field identity before any visual reveal occurs. Only after proximity and orientation thresholds are satisfied does the entity appear as a lightweight anchored visual presence. The collectible can then be claimed once and transferred into the finder’s personal box or inventory layer. Immediately after claim, the original world instance disappears. If the entity is not claimed before expiry, it decays into a transparent non-interactive afterfield. This afterfield remains softly detectable as residue but can no longer be collected or interacted with as an active object. ARC-1 therefore defines a new interaction grammar for AR collectibles: hidden placement, pre- visual sens</p></section><p class="notice">This is a text extraction of the original PDF, not an edited or peer-reviewed edition. PDF text order, equations, multi-column tables and diagram details may be imperfect. Consult the original Zenodo file for authoritative layout and figures.</p><div class="paper-layout"><article aria-label="Full original extracted text"><section aria-label="Source PDF page 1" class="page" id="page-1"><h2>PDF page 1</h2><p class="pdf-block">ARC-1 — Ambient Residue Collectibles</p>
+<p class="pdf-block">MVP Specification for Field-First AR Discovery, Single-Take Transfer, and Afterfield Decay</p>
+<p class="pdf-block">Author</p>
+<p class="pdf-block">Raynor Eissens</p>
+<p class="pdf-block">Version</p>
+<p class="pdf-block">1.0</p>
+<p class="pdf-block">DOI</p>
+<p class="pdf-block">10.5281/zenodo.19366174</p>
+<p class="pdf-block">Year</p>
+<p class="pdf-block">2026</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">One-sentence definition</p>
+<p class="pdf-block">Ambient Residue Collectibles (ARC-1) defines a field-first augmented-reality collectible system</p>
+<p class="pdf-block">in which user-placed hidden entities are discovered through haptic and chromatic pre-reveal</p>
+<p class="pdf-block">signals, revealed in situ, transferred once into a personal collection layer, and reduced over time</p>
+<p class="pdf-block">to a non-interactive fading afterfield.</p>
+<p class="pdf-block">ARC-1 is a playful applied branch of the Ambient Era Canon: a field-first residue collectible</p>
+<p class="pdf-block">architecture that translates chromatic detection, single-take transfer, and afterfield decay</p>
+<p class="pdf-block">into a living AR loop.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Zenodo Description</p>
+<h3 class="pdf-heading">Abstract</h3>
+<p class="pdf-block">This document specifies the minimum viable architecture for a user-placed augmented-reality</p>
+<p class="pdf-block">collectible system based on field-first discovery rather than map-first spawn logic. In ARC-1, a</p>
+<p class="pdf-block">user places a hidden collectible entity into a real environment through AR anchoring. The entity</p>
+<p class="pdf-block">is not immediately visible to others. Discovery begins through a short haptic pulse and a</p>
+<p class="pdf-block">chromatic bleed that signals type, state, or field identity before any visual reveal occurs. Only</p>
+<p class="pdf-block">after proximity and orientation thresholds are satisfied does the entity appear as a lightweight</p>
+<p class="pdf-block">anchored visual presence.</p></section><section aria-label="Source PDF page 2" class="page" id="page-2"><h2>PDF page 2</h2><p class="pdf-block">The collectible can then be claimed once and transferred into the finder’s personal box or</p>
+<p class="pdf-block">inventory layer. Immediately after claim, the original world instance disappears. If the entity is not</p>
+<p class="pdf-block">claimed before expiry, it decays into a transparent non-interactive afterfield. This afterfield</p>
+<p class="pdf-block">remains softly detectable as residue but can no longer be collected or interacted with as an</p>
+<p class="pdf-block">active object.</p>
+<p class="pdf-block">ARC-1 therefore defines a new interaction grammar for AR collectibles: hidden placement, pre-</p>
+<p class="pdf-block">visual sensing, reveal through field intensity, single-take transfer, disappearance from world</p>
+<p class="pdf-block">state, and persistence through decay residue rather than perpetual visibility. The system is</p>
+<p class="pdf-block">positioned as a lightweight ambient alternative to centrally spawned, map-visible, infinitely</p>
+<p class="pdf-block">reproducible collectible logic.</p>
+<p class="pdf-block">Core definition</p>
+<p class="pdf-block">ARC-1 is not a conventional location-based game mechanic in which a central system spawns</p>
+<p class="pdf-block">entities onto a map. It is a user-placed residue architecture in which presence is carried into the</p>
+<p class="pdf-block">environment, sensed before it is seen, and transferred out of the environment upon discovery.</p>
+<p class="pdf-block">The system is built on seven principles:</p>
+<p class="pdf-block">1.
+Field-first discovery</p>
+<p class="pdf-block">The environment does not present collectibles as explicit icons or map</p>
+<p class="pdf-block">markers. Detection begins as environmental signal.</p>
+<p class="pdf-block">2.
+Haptic-first thresholding</p>
+<p class="pdf-block">The first meaningful signal is a minimal haptic pulse indicating that an</p>
+<p class="pdf-block">anchored collectible is within discovery range.</p>
+<p class="pdf-block">3.
+Chromatic pre-reveal</p>
+<p class="pdf-block">Before any sprite or visual entity appears, the system emits a type-color or</p>
+<p class="pdf-block">chromatic bleed indicating the collectible’s field identity.</p>
+<p class="pdf-block">4.
+Reveal by proximity and alignment</p>
+<p class="pdf-block">The collectible becomes visible only when the user enters sufficient spatial</p>
+<p class="pdf-block">and visual relation to the anchor.</p>
+<p class="pdf-block">5.
+Single-take transfer</p>
+<p class="pdf-block">A collectible can be claimed once. After claim, it is transferred into a personal</p>
+<p class="pdf-block">collection layer and removed from the world state.</p>
+<p class="pdf-block">6.
+Decay and expiry</p>
+<p class="pdf-block">Unclaimed collectibles do not persist indefinitely. They degrade through time.</p>
+<p class="pdf-block">7.
+Afterfield residue</p>
+<p class="pdf-block">After expiry, the object no longer exists as an active collectible. Only a faint,</p>
+<p class="pdf-block">non-interactive trace remains.</p></section><section aria-label="Source PDF page 3" class="page" id="page-3"><h2>PDF page 3</h2><p class="pdf-block">⸻</p>
+<p class="pdf-block">Problem statement</p>
+<p class="pdf-block">Most AR collectible systems rely on one or more of the following assumptions: centralized spawn</p>
+<p class="pdf-block">logic, explicit map visibility, repeated availability for multiple users, and immediate object</p>
+<p class="pdf-block">visibility. These assumptions make discovery legible, but they also flatten environmental surprise</p>
+<p class="pdf-block">and reduce the phenomenological distinction between world presence and interface</p>
+<p class="pdf-block">presentation.</p>
+<p class="pdf-block">ARC-1 proposes a different model. Rather than asking the system to calculate what should</p>
+<p class="pdf-block">appear in a location, ARC-1 allows a user to place a collectible into a specific environment.</p>
+<p class="pdf-block">Rather than making the collectible visible from the outset, the system lets the finder first feel its</p>
+<p class="pdf-block">existence through haptics and chromatic field bleed. Rather than leaving the collectible</p>
+<p class="pdf-block">permanently available, ARC-1 makes the object transferable, finite, and time-bound. Rather than</p>
+<p class="pdf-block">erasing expired placements entirely, it preserves weak residue as an environmental memory</p>
+<p class="pdf-block">layer.</p>
+<p class="pdf-block">The result is a collectible architecture closer to hiding, finding, carrying, and losing than to</p>
+<p class="pdf-block">conventional spawn-and-capture loops.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">MVP scope</p>
+<p class="pdf-block">The MVP is intentionally narrow.</p>
+<p class="pdf-block">ARC-1 does not attempt to solve city-scale mapping, public moderation, multiplayer economies,</p>
+<p class="pdf-block">or complex battle mechanics. It defines the smallest playable loop required to validate the</p>
+<p class="pdf-block">grammar.</p>
+<p class="pdf-block">The MVP includes:</p>
+<p class="pdf-block">•
+one placer</p>
+<p class="pdf-block">•
+one finder</p>
+<p class="pdf-block">•
+one anchored collectible entity</p>
+<p class="pdf-block">•
+one physical environment or image-anchored surface</p>
+<p class="pdf-block">•
+one haptic detection pulse</p>
+<p class="pdf-block">•
+one chromatic bleed phase</p>
+<p class="pdf-block">•
+one reveal phase</p>
+<p class="pdf-block">•
+one “take it with me” transfer action</p>
+<p class="pdf-block">•
+one personal box destination</p></section><section aria-label="Source PDF page 4" class="page" id="page-4"><h2>PDF page 4</h2><p class="pdf-block">•
+one post-transfer disappearance</p>
+<p class="pdf-block">•
+one post-expiry afterfield</p>
+<p class="pdf-block">The MVP excludes:</p>
+<p class="pdf-block">•
+battles</p>
+<p class="pdf-block">•
+throwing or projectile mechanics</p>
+<p class="pdf-block">•
+rarity economies</p>
+<p class="pdf-block">•
+multiplayer combat</p>
+<p class="pdf-block">•
+map-based radar</p>
+<p class="pdf-block">•
+infinite respawns</p>
+<p class="pdf-block">•
+large-scale community systems</p>
+<p class="pdf-block">•
+procedural biome classification</p>
+<p class="pdf-block">•
+complex social or monetization layers</p>
+<p class="pdf-block">The goal of the MVP is not feature completeness. The goal is to validate the feel and</p>
+<p class="pdf-block">coherence of the loop.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">System model</p>
+<p class="pdf-block">ARC-1 can be described as a state machine:</p>
+<p class="pdf-block">Hidden → Sensed → Bleeding → Revealed → Claimed → Transferred → Vanished</p>
+<p class="pdf-block">or, if not claimed:</p>
+<p class="pdf-block">Hidden → Sensed → Bleeding → Revealed → Expired → Afterfield → Dissolved</p>
+<p class="pdf-block">Where:</p>
+<p class="pdf-block">•
+Hidden = the collectible is placed and anchored but not visible.</p>
+<p class="pdf-block">•
+Sensed = a haptic pulse indicates nearby presence.</p>
+<p class="pdf-block">•
+Bleeding = a chromatic field begins to appear on screen.</p>
+<p class="pdf-block">•
+Revealed = the anchored visual presence becomes visible.</p>
+<p class="pdf-block">•
+Claimed = the user actively chooses to take the collectible.</p>
+<p class="pdf-block">•
+Transferred = the collectible moves into the personal box layer.</p>
+<p class="pdf-block">•
+Vanished = the original world instance is removed.</p>
+<p class="pdf-block">•
+Expired = the collectible’s active life has elapsed.</p>
+<p class="pdf-block">•
+Afterfield = only a fading non-interactive residue remains.</p>
+<p class="pdf-block">•
+Dissolved = the residue fully disappears.</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 5" class="page" id="page-5"><h2>PDF page 5</h2><p class="pdf-block">Entity model</p>
+<p class="pdf-block">Each collectible in ARC-1 may be represented by the following minimal structure:</p>
+<p class="pdf-block">E = { id, anchor, type, chroma, state, decay, payload, owner }</p>
+<p class="pdf-block">Where:</p>
+<p class="pdf-block">•
+id = unique collectible identifier</p>
+<p class="pdf-block">•
+anchor = environment anchor or image-space anchor</p>
+<p class="pdf-block">•
+type = classification or field category</p>
+<p class="pdf-block">•
+chroma = color profile used during bleed/reveal</p>
+<p class="pdf-block">•
+state = current lifecycle state</p>
+<p class="pdf-block">•
+decay = time-to-expiry and fade parameters</p>
+<p class="pdf-block">•
+payload = optional attached data</p>
+<p class="pdf-block">•
+owner = current holder or null if still in world</p>
+<p class="pdf-block">A more formal field expression may be written as:</p>
+<p class="pdf-block">E(t) = A × C × R(t) × P</p>
+<p class="pdf-block">Where:</p>
+<p class="pdf-block">•
+A = anchor validity</p>
+<p class="pdf-block">•
+C = chromatic/type identity</p>
+<p class="pdf-block">•
+R(t) = residue intensity over time</p>
+<p class="pdf-block">•
+P = payload structure</p>
+<p class="pdf-block">If decay is modeled exponentially:</p>
+<p class="pdf-block">R(t) = e^(-λt)</p>
+<p class="pdf-block">Where λ is the decay constant.</p>
+<p class="pdf-block">This gives three practical thresholds:</p>
+<p class="pdf-block">•
+R(t) &gt; θ₁: fully active and claimable</p>
+<p class="pdf-block">•
+θ₂ &lt; R(t) ≤ θ₁: visible but weakening</p>
+<p class="pdf-block">•
+0 &lt; R(t) ≤ θ₂: afterfield only, non-claimable</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 6" class="page" id="page-6"><h2>PDF page 6</h2><p class="pdf-block">Detection grammar</p>
+<p class="pdf-block">ARC-1 discovery does not begin with image recognition of a visible object. It begins with a</p>
+<p class="pdf-block">layered signal grammar.</p>
+<p class="pdf-block">1. Haptic pulse</p>
+<p class="pdf-block">When the user enters the collectible’s detection radius, the device emits one short pulse. This</p>
+<p class="pdf-block">confirms nearby presence without yet revealing identity.</p>
+<p class="pdf-block">The haptic pulse should be minimal. It is a threshold event, not a continuous feedback loop.</p>
+<p class="pdf-block">2. Chromatic bleed</p>
+<p class="pdf-block">After the pulse, the screen begins to receive a type-specific or field-specific color bleed. This is</p>
+<p class="pdf-block">not yet the object itself. It is the collectible’s ambient signature.</p>
+<p class="pdf-block">The chromatic bleed serves three functions:</p>
+<p class="pdf-block">•
+it confirms that the pulse corresponds to a meaningful nearby placement</p>
+<p class="pdf-block">•
+it communicates field identity before full reveal</p>
+<p class="pdf-block">•
+it gives the user a directional and atmospheric cue</p>
+<p class="pdf-block">3. Visual reveal</p>
+<p class="pdf-block">Once the device orientation and anchor alignment cross reveal threshold, the collectible appears</p>
+<p class="pdf-block">in situ as a lightweight anchored visual presence.</p>
+<p class="pdf-block">For the MVP, this presence may be a 2D sprite-like image rather than a full 3D animated asset.</p>
+<p class="pdf-block">This is deliberate. The system prioritizes legibility, speed, low friction, and environmental fit over</p>
+<p class="pdf-block">cinematic realism.</p>
+<p class="pdf-block">4. Transfer interaction</p>
+<p class="pdf-block">The MVP uses a single affirmative action:</p>
+<p class="pdf-block">Take it with me</p>
+<p class="pdf-block">No projectile logic is required. No multi-step capture ritual is required. Transfer is sufficient to</p>
+<p class="pdf-block">validate the architecture.</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 7" class="page" id="page-7"><h2>PDF page 7</h2><p class="pdf-block">Personal box layer</p>
+<p class="pdf-block">Once claimed, the collectible is no longer part of the environment. It moves into a personal</p>
+<p class="pdf-block">storage layer.</p>
+<p class="pdf-block">The personal box layer performs four roles:</p>
+<p class="pdf-block">•
+confirms successful acquisition</p>
+<p class="pdf-block">•
+preserves collected entities after world removal</p>
+<p class="pdf-block">•
+separates world-presence from owned-presence</p>
+<p class="pdf-block">•
+enables later browsing, indexing, or future gameplay</p>
+<p class="pdf-block">In the MVP, the box can remain minimal. It does not need battle systems, sorting</p>
+<p class="pdf-block">logic, breeding logic, or progression systems. It only needs to prove world-to-box</p>
+<p class="pdf-block">transfer.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Decay and afterfield</p>
+<p class="pdf-block">Decay is not an error state. It is a core mechanic.</p>
+<p class="pdf-block">If a placed collectible is not claimed before expiry, it should not simply disappear without trace.</p>
+<p class="pdf-block">Instead it passes into an afterfield phase.</p>
+<p class="pdf-block">Active phase</p>
+<p class="pdf-block">The collectible is claimable and visible after reveal.</p>
+<p class="pdf-block">Expiry threshold</p>
+<p class="pdf-block">The collectible becomes non-claimable.</p>
+<p class="pdf-block">Afterfield phase</p>
+<p class="pdf-block">A faint transparent residue remains. This residue may still be sensed or visually noticed, but it</p>
+<p class="pdf-block">cannot be taken.</p>
+<p class="pdf-block">Dissolution</p>
+<p class="pdf-block">The residue fades out completely.</p></section><section aria-label="Source PDF page 8" class="page" id="page-8"><h2>PDF page 8</h2><p class="pdf-block">This transforms the environment from a binary field of present/absent objects into a temporally</p>
+<p class="pdf-block">layered field of active presence, fading memory, and disappearance.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Payload logic</p>
+<p class="pdf-block">ARC-1 allows a collectible to carry optional payload.</p>
+<p class="pdf-block">Examples of payload include:</p>
+<p class="pdf-block">•
+a short message</p>
+<p class="pdf-block">•
+a creator signature</p>
+<p class="pdf-block">•
+a route hint</p>
+<p class="pdf-block">•
+a stat card</p>
+<p class="pdf-block">•
+a collectible category</p>
+<p class="pdf-block">•
+an environmental tag</p>
+<p class="pdf-block">•
+a timestamp</p>
+<p class="pdf-block">•
+a soft invitation to another location</p>
+<p class="pdf-block">For the MVP, payload should remain lightweight. The point is not content volume but</p>
+<p class="pdf-block">transferable meaning.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Placement logic</p>
+<p class="pdf-block">ARC-1 is user-placed rather than centrally spawned.</p>
+<p class="pdf-block">This design choice is critical. It avoids the need for the system to infer what should appear in</p>
+<p class="pdf-block">every location. Instead, meaning enters the environment through placement.</p>
+<p class="pdf-block">Placement therefore includes:</p>
+<p class="pdf-block">•
+choosing a location or image anchor</p>
+<p class="pdf-block">•
+assigning a collectible entity</p>
+<p class="pdf-block">•
+assigning type/chroma</p>
+<p class="pdf-block">•
+defining active duration</p>
+<p class="pdf-block">•
+optionally defining payload</p>
+<p class="pdf-block">The placer performs the semantic act. The system then carries, reveals, transfers,</p>
+<p class="pdf-block">and decays that act.</p></section><section aria-label="Source PDF page 9" class="page" id="page-9"><h2>PDF page 9</h2><p class="pdf-block">⸻</p>
+<p class="pdf-block">Visual design constraints for MVP</p>
+<p class="pdf-block">The MVP should remain visually lightweight.</p>
+<p class="pdf-block">Preferred visual logic:</p>
+<p class="pdf-block">•
+one short haptic pulse</p>
+<p class="pdf-block">•
+one clear chromatic bleed</p>
+<p class="pdf-block">•
+one low-friction reveal</p>
+<p class="pdf-block">•
+one simple transfer button</p>
+<p class="pdf-block">•
+one faint residue veil on expiry</p>
+<p class="pdf-block">The system should avoid:</p>
+<p class="pdf-block">•
+map clutter</p>
+<p class="pdf-block">•
+radar clutter</p>
+<p class="pdf-block">•
+excessive HUD</p>
+<p class="pdf-block">•
+complex 3D character animation</p>
+<p class="pdf-block">•
+dense menus during discovery</p>
+<p class="pdf-block">•
+long interaction chains</p>
+<p class="pdf-block">ARC-1 depends on softness, not interface overload.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Technical MVP architecture</p>
+<p class="pdf-block">A minimal implementation may use:</p>
+<p class="pdf-block">•
+ARKit or ARCore for anchoring</p>
+<p class="pdf-block">•
+a lightweight environment or image anchor</p>
+<p class="pdf-block">•
+one collectible asset layer</p>
+<p class="pdf-block">•
+one chromatic overlay layer</p>
+<p class="pdf-block">•
+one haptic trigger</p>
+<p class="pdf-block">•
+one box/inventory storage layer</p>
+<p class="pdf-block">•
+one local or test backend for persistence</p>
+<p class="pdf-block">Suggested MVP modules:</p>
+<p class="pdf-block">1.
+Anchor Module</p>
+<p class="pdf-block">Stores and restores entity placement.</p>
+<p class="pdf-block">2.
+Detection Module</p></section><section aria-label="Source PDF page 10" class="page" id="page-10"><h2>PDF page 10</h2><p class="pdf-block">Calculates proximity and threshold crossing.</p>
+<p class="pdf-block">3.
+Bleed Module</p>
+<p class="pdf-block">Renders type-color field before reveal.</p>
+<p class="pdf-block">4.
+Reveal Module</p>
+<p class="pdf-block">Displays entity at anchor.</p>
+<p class="pdf-block">5.
+Transfer Module</p>
+<p class="pdf-block">Removes entity from world and adds to personal box.</p>
+<p class="pdf-block">6.
+Decay Module</p>
+<p class="pdf-block">Controls expiry, afterfield visibility, and dissolution.</p>
+<p class="pdf-block">7.
+Box Module</p>
+<p class="pdf-block">Stores claimed entities.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Success criteria for the MVP</p>
+<p class="pdf-block">ARC-1 MVP succeeds if the following can be demonstrated in one coherent loop:</p>
+<p class="pdf-block">•
+a user places a collectible at a real anchor</p>
+<p class="pdf-block">•
+another user or later session enters discovery range</p>
+<p class="pdf-block">•
+the device emits one short haptic pulse</p>
+<p class="pdf-block">•
+a type-specific chromatic bleed appears</p>
+<p class="pdf-block">•
+the collectible reveals at the anchored location</p>
+<p class="pdf-block">•
+the user presses “Take it with me”</p>
+<p class="pdf-block">•
+the collectible is added to the personal box</p>
+<p class="pdf-block">•
+the original placement disappears</p>
+<p class="pdf-block">•
+after expiry, only a non-interactive afterfield remains</p>
+<p class="pdf-block">If these nine conditions are satisfied, the grammar is validated.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">What ARC-1 is not</p>
+<p class="pdf-block">ARC-1 is not:</p>
+<p class="pdf-block">•
+a generic AR object anchoring demo</p>
+<p class="pdf-block">•
+a map-first collectible game</p>
+<p class="pdf-block">•
+a central spawn system</p>
+<p class="pdf-block">•
+a standard scavenger hunt</p>
+<p class="pdf-block">•
+a full battle game</p>
+<p class="pdf-block">•
+an infinitely persistent world-object architecture</p>
+<p class="pdf-block">•
+a conventional inventory collector without environmental memory</p></section><section aria-label="Source PDF page 11" class="page" id="page-11"><h2>PDF page 11</h2><p class="pdf-block">ARC-1 is specifically an ambient residue-collectible architecture.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Conceptual contribution</p>
+<p class="pdf-block">The conceptual novelty of ARC-1 lies not in any single component taken alone, but in the</p>
+<p class="pdf-block">integration of the following sequence:</p>
+<p class="pdf-block">•
+user placement</p>
+<p class="pdf-block">•
+hidden presence</p>
+<p class="pdf-block">•
+haptic detection</p>
+<p class="pdf-block">•
+chromatic pre-reveal</p>
+<p class="pdf-block">•
+local reveal</p>
+<p class="pdf-block">•
+single-take transfer</p>
+<p class="pdf-block">•
+disappearance from world state</p>
+<p class="pdf-block">•
+decaying non-interactive afterfield</p>
+<p class="pdf-block">This produces a collectible logic that behaves more like a temporary environmental</p>
+<p class="pdf-block">trace than like a conventional spawn.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Future expansions</p>
+<p class="pdf-block">Future versions may include:</p>
+<p class="pdf-block">•
+multi-user city-scale layers</p>
+<p class="pdf-block">•
+route-based residue systems</p>
+<p class="pdf-block">•
+team or bundle placements</p>
+<p class="pdf-block">•
+rarity classes</p>
+<p class="pdf-block">•
+collaborative trails</p>
+<p class="pdf-block">•
+box-to-world redeployment</p>
+<p class="pdf-block">•
+reputation fields</p>
+<p class="pdf-block">•
+social permissions</p>
+<p class="pdf-block">•
+creator identity gradients</p>
+<p class="pdf-block">•
+broader ambient carry systems beyond collectibles</p>
+<p class="pdf-block">These are not required for the MVP.</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 12" class="page" id="page-12"><h2>PDF page 12</h2><h3 class="pdf-heading">Conclusion</h3>
+<p class="pdf-block">ARC-1 defines the smallest coherent implementation of a field-first AR collectible system based</p>
+<p class="pdf-block">on user placement, pre-visual sensing, single-take transfer, and residue decay. Its contribution is</p>
+<p class="pdf-block">the shift from map-visible spawn logic to hidden environmental presence; from direct visual</p>
+<p class="pdf-block">object presentation to haptic and chromatic approach; and from indefinite persistence to</p>
+<p class="pdf-block">reversible, fading, temporally layered world memory.</p>
+<p class="pdf-block">The MVP is therefore sufficient not because it is feature-rich, but because it proves a complete</p>
+<p class="pdf-block">new loop:</p>
+<p class="pdf-block">place → sense → bleed → reveal → transfer → vanish → afterfield</p>
+<p class="pdf-block">⸻</p>
+<h3 class="pdf-heading">Keywords</h3>
+<p class="pdf-block">ambient AR, augmented reality collectibles, field-first discovery, haptic detection, chromatic</p>
+<p class="pdf-block">reveal, residue systems, ephemeral collectibles, single-take transfer, afterfield decay, user-</p>
+<p class="pdf-block">placed AR entities, ambient interaction design, ubicomp, HCI, AR persistence, environmental</p>
+<p class="pdf-block">anchoring</p>
+<p class="pdf-block">⸻</p></section></article><nav aria-label="PDF page navigation" class="toc"><b>Pages</b><a href="#page-1">1</a><a href="#page-2">2</a><a href="#page-3">3</a><a href="#page-4">4</a><a href="#page-5">5</a><a href="#page-6">6</a><a href="#page-7">7</a><a href="#page-8">8</a><a href="#page-9">9</a><a href="#page-10">10</a><a href="#page-11">11</a><a href="#page-12">12</a></nav></div></main><footer>Original record: <a href="https://zenodo.org/records/19366174">https://zenodo.org/records/19366174</a> · Full text derived from the uploaded PDF.<span class="ambient-footer-links"> · <a href="/ambient-era/">Ambient Era</a> · <a href="/ambient-phone/">Ambient Phone</a></span></footer></div></body></html>

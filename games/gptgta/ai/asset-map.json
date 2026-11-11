@@ -1,0 +1,30 @@
+{
+  "project": "GPTGTA",
+  "canonical_asset_root": "/gptgta/assets/gptgta/",
+  "version_demos": [
+    "/gptgta/version/v1/v1.html",
+    "/gptgta/version/v2/v2.html",
+    "/gptgta/version/v3/v3.html",
+    "/gptgta/version/v3.1/v3.1.html",
+    "/gptgta/version/v4/v4.html",
+    "/gptgta/version/v4.2/index.html"
+  ],
+  "current_demo": "/gptgta/version/v4.2/index.html",
+  "editor": "/gptgta/gtagpt_v6_1_playable_asset_editor_mapmaker/",
+  "speed_patch": {
+    "player": "1.45 -> 1.6675 (+15%)",
+    "vehicles": "handling accel/reverse/max/reverseMax * 1.3"
+  },
+  "asset_dirs": [
+    "buildings",
+    "environmental_props",
+    "gta_ambient_life",
+    "gta_combat_effects",
+    "gta_topdown_characters",
+    "micro_detail_overlays",
+    "roads",
+    "ui",
+    "vehicles",
+    "gtagpt_plain_base_tiles"
+  ]
+}

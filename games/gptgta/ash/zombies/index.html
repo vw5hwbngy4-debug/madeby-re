@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover,interactive-widget=overlays-content" name="viewport"/>
+<meta content="telephone=no" name="format-detection"/>
+<title>Ash District — Firepath Stash</title>
+<link href="../ash-district-v0131.css?v=ash131" rel="stylesheet"/>
+<link href="https://madeby.re/games/gptgta/ash/zombies/" rel="canonical"/><meta content="https://madeby.re/games/gptgta/ash/zombies/" property="og:url"/><meta content="GPTGTA" name="madeby:game"/></head>
+<body>
+<canvas id="game"></canvas>
+<div id="hud">
+<div class="hudTitle">ASH DISTRICT · EMBER CAMP</div>
+<div class="bar hp"><div class="fill" id="hpFill"></div><div class="barText" id="hpText"></div></div>
+<div class="bar xp"><div class="fill" id="xpFill"></div><div class="barText" id="xpText"></div></div>
+<div class="hudRows" id="hudRows"></div>
+</div>
+<div id="toast"></div>
+<div id="centerMsg"></div>
+<div aria-hidden="true" id="orbHud">
+<div class="orbWrap"><div class="orb redOrb"><div class="orbFill" id="lifeOrb"></div><div class="orbText" id="lifeOrbText"></div></div><div class="orbLabel">LIFE</div></div>
+<div class="staminaWrap"><div class="staminaTop">SPRINT</div><div class="staminaBar"><div id="stamFill"></div><div id="stamText"></div></div></div>
+<div class="orbWrap"><div class="orb blueOrb"><div class="orbFill" id="xpOrb"></div><div class="orbText" id="xpOrbText"></div></div><div class="orbLabel">LEVEL</div></div>
+</div>
+<button class="audioBtn" id="audioBtn" type="button">TAP FOR SOUND</button>
+<div id="contextPanel"><button id="contextBtn" type="button">E · Context</button></div>
+<div id="hint">Move · attack · F Firepath · E context · I/B stash · R restart.</div>
+<div id="inventory">
+<div id="invPanel">
+<button class="invClose" id="closeInv" type="button">×</button>
+<div class="invCol">
+<h2>Loadout</h2>
+<div class="portrait">☠️</div>
+<div class="statBlock" id="statBlock"></div>
+<div id="slots"></div>
+</div>
+<div class="invCol">
+<h2>Bag</h2>
+<div class="grid" id="bagGrid"></div>
+</div>
+<div class="invCol">
+<h2>Depot Stash</h2>
+<div class="grid stashGrid" id="stashGrid"></div>
+<h2 class="skillTitle">Skills</h2>
+<div class="skillPanel" id="skillPanel"></div>
+</div>
+</div>
+</div>
+<div id="vendorPanel">
+<div id="vendorBox">
+<button class="invClose" id="closeVendor" type="button">×</button>
+<h2 id="vendorTitle">Vendor</h2>
+<div id="vendorGoods"></div>
+</div>
+</div>
+<div id="touchControls">
+<div class="touchPad" id="pad"><div class="touchKnob" id="knob"></div></div>
+<div class="touchBtn" id="fireBtn">FIRE</div>
+<div class="touchBtn skillBtn" id="skillBtn">PATH</div>
+<div class="touchBtn" id="swapBtn">SWAP</div>
+</div>
+<script>window.ASH_ASSET_BASE='../assets/';window.ASH_AUDIO_BASE='../audio/';window.ASH_BUILD='ash13.1';window.addEventListener('error',function(e){var b=document.getElementById('bootError');if(!b){b=document.createElement('div');b.id='bootError';b.style.cssText='position:fixed;left:10px;right:10px;top:10px;z-index:99999;background:rgba(20,0,0,.94);border:2px solid #ff6b6b;color:#ffdede;padding:10px;font:12px monospace;white-space:pre-wrap;max-height:42vh;overflow:auto';document.body.appendChild(b);}b.textContent='Boot error: '+(e.error&&e.error.stack?e.error.stack:e.message);});</script>
+<script src="../ash-district-v0131.js?v=ash131"></script>
+</body>
+</html>

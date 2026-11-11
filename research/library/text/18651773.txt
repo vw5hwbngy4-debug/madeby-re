@@ -1,0 +1,452 @@
+=== PDF PAGE 1 ===
+AP₁-C — Color-Field Telephony
+
+Relation-First Communication in Ambient OS
+
+Ambient Era Standard · Canonical Application Specification (2026)
+
+Raynor Eissens
+
+⸻
+
+Abstract
+
+AP₁-C specifies a relation-first telephony interface for Ambient OS in which incoming telephone
+
+calls are represented as semantic color fields rather than identity-first user interface elements.
+
+Calls enter through a universal relational base field, with additional semantic differentiation
+
+expressed through color-based auras that convey the nature of the interaction prior to language,
+
+icons, branding, or caller identity. Color functions as a primary pre-linguistic semantic layer,
+
+while identity and text are explicitly secondary.
+
+The specification preserves the traditional full-screen call interrupt, but redefines its meaning:
+
+not “who is calling,” but “what kind of relational event is entering the user’s field.”
+
+AP₁-C is a canonical application of the Ambient OS core grammar (AP₁). It demonstrates how Pink
+
+functions as a relational field, how institutional and system-originated calls are represented
+
+without relational inflation, and how reversibility (ΔR) and human safety are maintained under
+
+interruption.
+
+⸻
+
+1. Scope and Status
+
+AP₁-C defines:
+
+•
+The semantic ontology of incoming telephone calls in Ambient OS
+
+•
+The role of Pink as the default relational field
+
+•
+Canonical color-field mappings for different call types
+
+•
+Aura modulation rules for calls
+
+•
+Expressivity limits and safety regulation (AN₀–AN₂)
+
+AP₁-C does not define:
+
+•
+Messaging systems
+
+•
+Chat interfaces
+
+=== PDF PAGE 2 ===
+•
+Notification design beyond calls
+
+•
+Contact management or identity systems
+
+Status: Normative, canonical application of AP₁.
+
+⸻
+
+2. Relation to AP₁ (Normative Reference)
+
+AP₁-C implements the Ambient OS core grammar defined in AP₁ — Ambient OS: Structural
+
+Definition.
+
+Specifically:
+
+•
+Pink is instantiated as a full-screen relational interrupt
+
+•
+Calls are treated as structural events, not notifications
+
+•
+Meaning precedes language and identity
+
+•
+Reversibility (ΔR) is preserved under interruption
+
+•
+Artificial intelligence remains environmental and non-agentic
+
+No behavior in AP₁-C overrides or extends AP₁.
+
+AP₁-C is an application-level realization of AP₁ semantics.
+
+⸻
+
+3. Core Principle: Relation Before Identity
+
+In Ambient OS, a telephone call is not defined primarily by who is calling, but by what kind of
+
+relational event is occurring.
+
+Legacy systems are identity-first:
+
+•
+Caller name
+
+•
+Phone number
+
+•
+Logo or badge
+
+•
+Spam label
+
+AP₁-C inverts this hierarchy.
+
+Canonical rule:
+
+Meaning is presented before identity.
+
+Relation is presented before attribution.
+
+=== PDF PAGE 3 ===
+Identity remains available, but never precedes relational meaning.
+
+⸻
+
+4. Pink as the Universal Relational Field
+
+4.1 Definition
+
+Pink is the universal relational field of Ambient OS.
+
+•
+It represents reciprocal human presence
+
+•
+It is not decorative, emotional, or stylistic
+
+•
+It is ontological: the condition of relation itself
+
+4.2 Default Call Entry
+
+All human-to-human calls must enter through Pink.
+
+Pink is:
+
+•
+Full-screen
+
+•
+Interruptive
+
+•
+Non-negotiable
+
+•
+Immediate
+
+Calls never appear as banners, cards, edge lights, or partial overlays.
+
+⸻
+
+5. Call Aura Semantics
+
+Within Pink, additional semantic information may be expressed through color auras. These auras
+
+do not replace Pink unless explicitly allowed (see §6).
+
+5.1 Canonical Aura Modulation
+
+Call TypeCanonical Representation
+
+Family, friend, colleague Pink (neutral or warm tint)
+
+Work call Pink + Blue aura
+
+Group call
+Pink + blended multi-field aura
+
+Personal healthcare call Pink + Green aura
+
+Unknown caller
+Pink with low-saturation Gray aura
+
+=== PDF PAGE 4 ===
+Auras convey context, not urgency.
+
+⸻
+
+6. Institution-First and System-Originated Calls
+
+6.1 Canonical Exception Rule
+
+Pink is mandatory only for human relational calls.
+
+Calls in which reciprocal human relation is secondary or absent may bypass Pink entirely.
+
+Formal rule:
+
+Pink is mandatory for human relational calls.
+
+Fully saturated non-pink calls indicate institution-first or system-originated
+
+relations.
+
+6.2 Fully Saturated Non-Pink Calls
+
+Call Origin
+Canonical Field
+
+Hospital system / automated care Green
+
+Government, utilities, infrastructure
+Purple
+
+Emergency system alert Green → Red transition
+
+IVR / robot / legacy system
+Purple or Gray
+
+These representations:
+
+•
+Do not imply urgency by color alone
+
+•
+Do not masquerade as personal relation
+
+•
+Prevent relational inflation
+
+A fully Green or Purple call explicitly communicates:
+
+“This is not a personal relational event.”
+
+⸻
+
+7. Expressivity Regulation: AN₀–AN₂
+
+7.1 Definition
+
+=== PDF PAGE 5 ===
+AN₀–AN₂ (Ambient Presence Levels) regulate the intensity and visibility of call auras.
+
+They do not define call semantics.
+
+7.2 Levels
+
+•
+AN₀ — Minimal aura, subdued presence
+
+•
+AN₁ — Normal expressive presence
+
+•
+AN₂ — Maximum safe expressivity
+
+7.3 Purpose
+
+AN₀–AN₂ exist to:
+
+•
+Prevent overstimulation
+
+•
+Maintain reversibility (ΔR)
+
+•
+Avoid emotional overload
+
+•
+Preserve human scale
+
+Canonical positioning:
+
+Ambient Presence Levels regulate expressivity, not meaning.
+
+They are orthogonal to the telephony grammar.
+
+⸻
+
+8. Artificial Intelligence (Environmental Role)
+
+AI in AP₁-C is strictly non-agentic.
+
+AI does not:
+
+•
+Decide call meaning
+
+•
+Rank callers
+
+•
+Act as an assistant
+
+•
+Speak or present itself
+
+AI functions as environmental substrate to:
+
+•
+Stabilize field transitions
+
+•
+Regulate aura intensity
+
+•
+Maintain ΔR
+
+•
+Prevent residual pressure after call exit
+
+If AI becomes perceptible as an actor, the system is in violation of AP₁.
+
+=== PDF PAGE 6 ===
+⸻
+
+9. Reversibility and Exit Behavior
+
+All calls must satisfy ΔR constraints:
+
+•
+No retained emotional pressure after exit
+
+•
+No forced follow-up actions
+
+•
+No irreversible state transitions
+
+Exiting a call returns the user cleanly to the prior field without residue.
+
+⸻
+
+10. Relation to Prior Art
+
+10.1 Color Semantics in UI Design
+
+Existing design systems use color as a modifier for status, hierarchy, or alerts. Color is applied to
+
+UI elements.
+
+AP₁-C differs fundamentally:
+
+color fields are the primary representational substrate, not decoration.
+
+10.2 Caller Identification Systems
+
+Modern call systems remain identity-first, even when category labels or spam filters are used.
+
+AP₁-C is relation-first, with identity explicitly secondary.
+
+10.3 Ambient and Calm Technology
+
+Prior work in calm and ambient displays uses color and light peripherally. These systems do not
+
+re-architect the ontology of telephony or preserve the full-screen interrupt.
+
+AP₁-C applies pre-linguistic semantics to a core, interruptive system event.
+
+10.4 Conclusion
+
+No known academic publication, patent, or commercial operating system formally specifies a
+
+telephony interface in which:
+
+=== PDF PAGE 7 ===
+1.
+Calls are represented as relational semantic fields
+
+2.
+Color is the primary pre-linguistic meaning carrier
+
+3.
+Identity is secondary by design
+
+4.
+Full-screen interrupt behavior is preserved
+
+5.
+Interaction is governed by an explicit reversible grammar
+
+AP₁-C constitutes a novel synthesis and likely world-first formalization
+
+of relation-first telephony.
+
+⸻
+
+11. Canonical Novelty Claim
+
+Primary contribution:
+
+This work presents the first formal interface grammar in which incoming
+
+telephone calls are represented as semantic relational color fields rather than
+
+identity-first UI elements, with meaning conveyed pre-linguistically and
+
+identity explicitly subordinated, while preserving the traditional full-screen
+
+telephony interrupt.
+
+⸻
+
+12. Status
+
+AP₁-C is normative.
+
+Any Ambient OS implementation claiming compatibility with AP₁-C must:
+
+•
+Preserve Pink as the relational base field
+
+•
+Respect institution-first exceptions
+
+•
+Enforce AN₀–AN₂ expressivity limits
+
+•
+Maintain ΔR under interruption
+
+•
+Treat AI as environmental, not agentic
+
+⸻
+
+Canonical Statement
+
+Telephony is not an identity problem.
+
+It is a relational event.
+
+=== PDF PAGE 8 ===
+Color is not decoration.
+
+It is meaning before language.

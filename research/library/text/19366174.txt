@@ -1,0 +1,834 @@
+=== PDF PAGE 1 ===
+ARC-1 — Ambient Residue Collectibles
+
+MVP Specification for Field-First AR Discovery, Single-Take Transfer, and Afterfield Decay
+
+Author
+
+Raynor Eissens
+
+Version
+
+1.0
+
+DOI
+
+10.5281/zenodo.19366174
+
+Year
+
+2026
+
+⸻
+
+One-sentence definition
+
+Ambient Residue Collectibles (ARC-1) defines a field-first augmented-reality collectible system
+
+in which user-placed hidden entities are discovered through haptic and chromatic pre-reveal
+
+signals, revealed in situ, transferred once into a personal collection layer, and reduced over time
+
+to a non-interactive fading afterfield.
+
+ARC-1 is a playful applied branch of the Ambient Era Canon: a field-first residue collectible
+
+architecture that translates chromatic detection, single-take transfer, and afterfield decay
+
+into a living AR loop.
+
+⸻
+
+Zenodo Description
+
+Abstract
+
+This document specifies the minimum viable architecture for a user-placed augmented-reality
+
+collectible system based on field-first discovery rather than map-first spawn logic. In ARC-1, a
+
+user places a hidden collectible entity into a real environment through AR anchoring. The entity
+
+is not immediately visible to others. Discovery begins through a short haptic pulse and a
+
+chromatic bleed that signals type, state, or field identity before any visual reveal occurs. Only
+
+after proximity and orientation thresholds are satisfied does the entity appear as a lightweight
+
+anchored visual presence.
+
+=== PDF PAGE 2 ===
+The collectible can then be claimed once and transferred into the finder’s personal box or
+
+inventory layer. Immediately after claim, the original world instance disappears. If the entity is not
+
+claimed before expiry, it decays into a transparent non-interactive afterfield. This afterfield
+
+remains softly detectable as residue but can no longer be collected or interacted with as an
+
+active object.
+
+ARC-1 therefore defines a new interaction grammar for AR collectibles: hidden placement, pre-
+
+visual sensing, reveal through field intensity, single-take transfer, disappearance from world
+
+state, and persistence through decay residue rather than perpetual visibility. The system is
+
+positioned as a lightweight ambient alternative to centrally spawned, map-visible, infinitely
+
+reproducible collectible logic.
+
+Core definition
+
+ARC-1 is not a conventional location-based game mechanic in which a central system spawns
+
+entities onto a map. It is a user-placed residue architecture in which presence is carried into the
+
+environment, sensed before it is seen, and transferred out of the environment upon discovery.
+
+The system is built on seven principles:
+
+1.
+Field-first discovery
+
+The environment does not present collectibles as explicit icons or map
+
+markers. Detection begins as environmental signal.
+
+2.
+Haptic-first thresholding
+
+The first meaningful signal is a minimal haptic pulse indicating that an
+
+anchored collectible is within discovery range.
+
+3.
+Chromatic pre-reveal
+
+Before any sprite or visual entity appears, the system emits a type-color or
+
+chromatic bleed indicating the collectible’s field identity.
+
+4.
+Reveal by proximity and alignment
+
+The collectible becomes visible only when the user enters sufficient spatial
+
+and visual relation to the anchor.
+
+5.
+Single-take transfer
+
+A collectible can be claimed once. After claim, it is transferred into a personal
+
+collection layer and removed from the world state.
+
+6.
+Decay and expiry
+
+Unclaimed collectibles do not persist indefinitely. They degrade through time.
+
+7.
+Afterfield residue
+
+After expiry, the object no longer exists as an active collectible. Only a faint,
+
+non-interactive trace remains.
+
+=== PDF PAGE 3 ===
+⸻
+
+Problem statement
+
+Most AR collectible systems rely on one or more of the following assumptions: centralized spawn
+
+logic, explicit map visibility, repeated availability for multiple users, and immediate object
+
+visibility. These assumptions make discovery legible, but they also flatten environmental surprise
+
+and reduce the phenomenological distinction between world presence and interface
+
+presentation.
+
+ARC-1 proposes a different model. Rather than asking the system to calculate what should
+
+appear in a location, ARC-1 allows a user to place a collectible into a specific environment.
+
+Rather than making the collectible visible from the outset, the system lets the finder first feel its
+
+existence through haptics and chromatic field bleed. Rather than leaving the collectible
+
+permanently available, ARC-1 makes the object transferable, finite, and time-bound. Rather than
+
+erasing expired placements entirely, it preserves weak residue as an environmental memory
+
+layer.
+
+The result is a collectible architecture closer to hiding, finding, carrying, and losing than to
+
+conventional spawn-and-capture loops.
+
+⸻
+
+MVP scope
+
+The MVP is intentionally narrow.
+
+ARC-1 does not attempt to solve city-scale mapping, public moderation, multiplayer economies,
+
+or complex battle mechanics. It defines the smallest playable loop required to validate the
+
+grammar.
+
+The MVP includes:
+
+•
+one placer
+
+•
+one finder
+
+•
+one anchored collectible entity
+
+•
+one physical environment or image-anchored surface
+
+•
+one haptic detection pulse
+
+•
+one chromatic bleed phase
+
+•
+one reveal phase
+
+•
+one “take it with me” transfer action
+
+•
+one personal box destination
+
+=== PDF PAGE 4 ===
+•
+one post-transfer disappearance
+
+•
+one post-expiry afterfield
+
+The MVP excludes:
+
+•
+battles
+
+•
+throwing or projectile mechanics
+
+•
+rarity economies
+
+•
+multiplayer combat
+
+•
+map-based radar
+
+•
+infinite respawns
+
+•
+large-scale community systems
+
+•
+procedural biome classification
+
+•
+complex social or monetization layers
+
+The goal of the MVP is not feature completeness. The goal is to validate the feel and
+
+coherence of the loop.
+
+⸻
+
+System model
+
+ARC-1 can be described as a state machine:
+
+Hidden → Sensed → Bleeding → Revealed → Claimed → Transferred → Vanished
+
+or, if not claimed:
+
+Hidden → Sensed → Bleeding → Revealed → Expired → Afterfield → Dissolved
+
+Where:
+
+•
+Hidden = the collectible is placed and anchored but not visible.
+
+•
+Sensed = a haptic pulse indicates nearby presence.
+
+•
+Bleeding = a chromatic field begins to appear on screen.
+
+•
+Revealed = the anchored visual presence becomes visible.
+
+•
+Claimed = the user actively chooses to take the collectible.
+
+•
+Transferred = the collectible moves into the personal box layer.
+
+•
+Vanished = the original world instance is removed.
+
+•
+Expired = the collectible’s active life has elapsed.
+
+•
+Afterfield = only a fading non-interactive residue remains.
+
+•
+Dissolved = the residue fully disappears.
+
+⸻
+
+=== PDF PAGE 5 ===
+Entity model
+
+Each collectible in ARC-1 may be represented by the following minimal structure:
+
+E = { id, anchor, type, chroma, state, decay, payload, owner }
+
+Where:
+
+•
+id = unique collectible identifier
+
+•
+anchor = environment anchor or image-space anchor
+
+•
+type = classification or field category
+
+•
+chroma = color profile used during bleed/reveal
+
+•
+state = current lifecycle state
+
+•
+decay = time-to-expiry and fade parameters
+
+•
+payload = optional attached data
+
+•
+owner = current holder or null if still in world
+
+A more formal field expression may be written as:
+
+E(t) = A × C × R(t) × P
+
+Where:
+
+•
+A = anchor validity
+
+•
+C = chromatic/type identity
+
+•
+R(t) = residue intensity over time
+
+•
+P = payload structure
+
+If decay is modeled exponentially:
+
+R(t) = e^(-λt)
+
+Where λ is the decay constant.
+
+This gives three practical thresholds:
+
+•
+R(t) > θ₁: fully active and claimable
+
+•
+θ₂ < R(t) ≤ θ₁: visible but weakening
+
+•
+0 < R(t) ≤ θ₂: afterfield only, non-claimable
+
+⸻
+
+=== PDF PAGE 6 ===
+Detection grammar
+
+ARC-1 discovery does not begin with image recognition of a visible object. It begins with a
+
+layered signal grammar.
+
+1. Haptic pulse
+
+When the user enters the collectible’s detection radius, the device emits one short pulse. This
+
+confirms nearby presence without yet revealing identity.
+
+The haptic pulse should be minimal. It is a threshold event, not a continuous feedback loop.
+
+2. Chromatic bleed
+
+After the pulse, the screen begins to receive a type-specific or field-specific color bleed. This is
+
+not yet the object itself. It is the collectible’s ambient signature.
+
+The chromatic bleed serves three functions:
+
+•
+it confirms that the pulse corresponds to a meaningful nearby placement
+
+•
+it communicates field identity before full reveal
+
+•
+it gives the user a directional and atmospheric cue
+
+3. Visual reveal
+
+Once the device orientation and anchor alignment cross reveal threshold, the collectible appears
+
+in situ as a lightweight anchored visual presence.
+
+For the MVP, this presence may be a 2D sprite-like image rather than a full 3D animated asset.
+
+This is deliberate. The system prioritizes legibility, speed, low friction, and environmental fit over
+
+cinematic realism.
+
+4. Transfer interaction
+
+The MVP uses a single affirmative action:
+
+Take it with me
+
+No projectile logic is required. No multi-step capture ritual is required. Transfer is sufficient to
+
+validate the architecture.
+
+⸻
+
+=== PDF PAGE 7 ===
+Personal box layer
+
+Once claimed, the collectible is no longer part of the environment. It moves into a personal
+
+storage layer.
+
+The personal box layer performs four roles:
+
+•
+confirms successful acquisition
+
+•
+preserves collected entities after world removal
+
+•
+separates world-presence from owned-presence
+
+•
+enables later browsing, indexing, or future gameplay
+
+In the MVP, the box can remain minimal. It does not need battle systems, sorting
+
+logic, breeding logic, or progression systems. It only needs to prove world-to-box
+
+transfer.
+
+⸻
+
+Decay and afterfield
+
+Decay is not an error state. It is a core mechanic.
+
+If a placed collectible is not claimed before expiry, it should not simply disappear without trace.
+
+Instead it passes into an afterfield phase.
+
+Active phase
+
+The collectible is claimable and visible after reveal.
+
+Expiry threshold
+
+The collectible becomes non-claimable.
+
+Afterfield phase
+
+A faint transparent residue remains. This residue may still be sensed or visually noticed, but it
+
+cannot be taken.
+
+Dissolution
+
+The residue fades out completely.
+
+=== PDF PAGE 8 ===
+This transforms the environment from a binary field of present/absent objects into a temporally
+
+layered field of active presence, fading memory, and disappearance.
+
+⸻
+
+Payload logic
+
+ARC-1 allows a collectible to carry optional payload.
+
+Examples of payload include:
+
+•
+a short message
+
+•
+a creator signature
+
+•
+a route hint
+
+•
+a stat card
+
+•
+a collectible category
+
+•
+an environmental tag
+
+•
+a timestamp
+
+•
+a soft invitation to another location
+
+For the MVP, payload should remain lightweight. The point is not content volume but
+
+transferable meaning.
+
+⸻
+
+Placement logic
+
+ARC-1 is user-placed rather than centrally spawned.
+
+This design choice is critical. It avoids the need for the system to infer what should appear in
+
+every location. Instead, meaning enters the environment through placement.
+
+Placement therefore includes:
+
+•
+choosing a location or image anchor
+
+•
+assigning a collectible entity
+
+•
+assigning type/chroma
+
+•
+defining active duration
+
+•
+optionally defining payload
+
+The placer performs the semantic act. The system then carries, reveals, transfers,
+
+and decays that act.
+
+=== PDF PAGE 9 ===
+⸻
+
+Visual design constraints for MVP
+
+The MVP should remain visually lightweight.
+
+Preferred visual logic:
+
+•
+one short haptic pulse
+
+•
+one clear chromatic bleed
+
+•
+one low-friction reveal
+
+•
+one simple transfer button
+
+•
+one faint residue veil on expiry
+
+The system should avoid:
+
+•
+map clutter
+
+•
+radar clutter
+
+•
+excessive HUD
+
+•
+complex 3D character animation
+
+•
+dense menus during discovery
+
+•
+long interaction chains
+
+ARC-1 depends on softness, not interface overload.
+
+⸻
+
+Technical MVP architecture
+
+A minimal implementation may use:
+
+•
+ARKit or ARCore for anchoring
+
+•
+a lightweight environment or image anchor
+
+•
+one collectible asset layer
+
+•
+one chromatic overlay layer
+
+•
+one haptic trigger
+
+•
+one box/inventory storage layer
+
+•
+one local or test backend for persistence
+
+Suggested MVP modules:
+
+1.
+Anchor Module
+
+Stores and restores entity placement.
+
+2.
+Detection Module
+
+=== PDF PAGE 10 ===
+Calculates proximity and threshold crossing.
+
+3.
+Bleed Module
+
+Renders type-color field before reveal.
+
+4.
+Reveal Module
+
+Displays entity at anchor.
+
+5.
+Transfer Module
+
+Removes entity from world and adds to personal box.
+
+6.
+Decay Module
+
+Controls expiry, afterfield visibility, and dissolution.
+
+7.
+Box Module
+
+Stores claimed entities.
+
+⸻
+
+Success criteria for the MVP
+
+ARC-1 MVP succeeds if the following can be demonstrated in one coherent loop:
+
+•
+a user places a collectible at a real anchor
+
+•
+another user or later session enters discovery range
+
+•
+the device emits one short haptic pulse
+
+•
+a type-specific chromatic bleed appears
+
+•
+the collectible reveals at the anchored location
+
+•
+the user presses “Take it with me”
+
+•
+the collectible is added to the personal box
+
+•
+the original placement disappears
+
+•
+after expiry, only a non-interactive afterfield remains
+
+If these nine conditions are satisfied, the grammar is validated.
+
+⸻
+
+What ARC-1 is not
+
+ARC-1 is not:
+
+•
+a generic AR object anchoring demo
+
+•
+a map-first collectible game
+
+•
+a central spawn system
+
+•
+a standard scavenger hunt
+
+•
+a full battle game
+
+•
+an infinitely persistent world-object architecture
+
+•
+a conventional inventory collector without environmental memory
+
+=== PDF PAGE 11 ===
+ARC-1 is specifically an ambient residue-collectible architecture.
+
+⸻
+
+Conceptual contribution
+
+The conceptual novelty of ARC-1 lies not in any single component taken alone, but in the
+
+integration of the following sequence:
+
+•
+user placement
+
+•
+hidden presence
+
+•
+haptic detection
+
+•
+chromatic pre-reveal
+
+•
+local reveal
+
+•
+single-take transfer
+
+•
+disappearance from world state
+
+•
+decaying non-interactive afterfield
+
+This produces a collectible logic that behaves more like a temporary environmental
+
+trace than like a conventional spawn.
+
+⸻
+
+Future expansions
+
+Future versions may include:
+
+•
+multi-user city-scale layers
+
+•
+route-based residue systems
+
+•
+team or bundle placements
+
+•
+rarity classes
+
+•
+collaborative trails
+
+•
+box-to-world redeployment
+
+•
+reputation fields
+
+•
+social permissions
+
+•
+creator identity gradients
+
+•
+broader ambient carry systems beyond collectibles
+
+These are not required for the MVP.
+
+⸻
+
+=== PDF PAGE 12 ===
+Conclusion
+
+ARC-1 defines the smallest coherent implementation of a field-first AR collectible system based
+
+on user placement, pre-visual sensing, single-take transfer, and residue decay. Its contribution is
+
+the shift from map-visible spawn logic to hidden environmental presence; from direct visual
+
+object presentation to haptic and chromatic approach; and from indefinite persistence to
+
+reversible, fading, temporally layered world memory.
+
+The MVP is therefore sufficient not because it is feature-rich, but because it proves a complete
+
+new loop:
+
+place → sense → bleed → reveal → transfer → vanish → afterfield
+
+⸻
+
+Keywords
+
+ambient AR, augmented reality collectibles, field-first discovery, haptic detection, chromatic
+
+reveal, residue systems, ephemeral collectibles, single-take transfer, afterfield decay, user-
+
+placed AR entities, ambient interaction design, ubicomp, HCI, AR persistence, environmental
+
+anchoring
+
+⸻

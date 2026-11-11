@@ -1,0 +1,14 @@
+PokéSprite source used by Emerald v0.1.19
+Source: user-supplied pokesprite-master.zip
+Project: PokéSprite by msikma and contributors
+Project/code license: MIT (see source license.md)
+Source README note: sprite images are © Nintendo/Creatures Inc./GAME FREAK Inc.
+
+Copied UI assets:
+- HP Up, Protein, Iron, Calcium, Zinc, Carbos
+- Pomeg, Kelpsy, Qualot, Hondew, Grepa, Tamato berries
+- Macho Brace
+- Soothe Bell
+- friendship icon
+
+No Generation IV+ Power item mechanics are used by the Emerald EV Coach.

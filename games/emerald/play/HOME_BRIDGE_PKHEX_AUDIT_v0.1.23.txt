@@ -1,0 +1,98 @@
+JRPG.WORLD · EMERALD HOME BRIDGE · PKHeX SOURCE AUDIT v0.1.23
+Date: 2026-09-09
+Input supplied by user: PKHeX-master.zip
+ZIP SHA-256: d93a040fcc4960ee9d41b1ed8aa27643e658396e85d8f88917952291be0e7b5e
+Archive snapshot marker observed in ZIP: 556e2c142cdee41dbd092c2f9e7efc17e9456938
+
+PURPOSE
+This audit answers one engineering question:
+Can the old physical game-to-game migration chain be represented as deterministic Pokémon format transformations rather than requiring JRPG.WORLD to emulate entire intermediate playthroughs?
+
+SOURCE-DERIVED RESULT
+PASS, for the entity conversion layer.
+The supplied PKHeX.Core source contains an EntityConverter which walks mainline Pokémon formats sequentially:
+  PK3 -> PK4 -> PK5 -> PK6 -> PK7
+when a direct destination is requested and an official conversion route exists.
+
+IMPORTANT: this proves that the data transformation layer is tractable. It does NOT prove that Pokémon HOME will accept arbitrary generated save data, and it does not bypass HOME/Bank/server-side provenance requirements.
+
+PK3 -> PK4 BEHAVIOR FOUND IN SOURCE
+PKHeX.Core/PKM/PK3.cs ConvertToPK4() explicitly handles, among other fields:
+- PID, species, Trainer ID and Secret ID;
+- experience, gender/form, language;
+- all six EVs and IV data;
+- contest condition;
+- moves and PP Ups;
+- ability, source game, ball, Pokérus and OT gender;
+- Pal Park-style transfer met location and transfer date/level;
+- Gen III ribbons and contest-ribbon expansion;
+- nickname / OT string remapping;
+- transferable held-item filtering;
+- Gen III HM removal and move/PP repair;
+- checksum refresh.
+
+PK4 -> PK5 BEHAVIOR FOUND IN SOURCE
+PKHeX.Core/PKM/PK4.cs ConvertToPK5() includes:
+- copying the stored entity into the Gen V structure;
+- friendship reset;
+- optional transfer-date update;
+- mail removal;
+- held-item filtering/removal;
+- nature becoming independent of PID;
+- transfer met-location mapping;
+- Gen IV/HGSS-only metadata cleanup;
+- nickname and OT encoding transfer;
+- met-level update;
+- transfer-HM removal with special handling around Defog/Whirlpool;
+- move/PP repair and checksum refresh.
+
+PK5 -> PK6 BEHAVIOR FOUND IN SOURCE
+PKHeX.Core/PKM/PK5.cs ConvertToPK6() includes:
+- Encryption Constant initialized from the previous PID;
+- PID transfer handling;
+- Trainer IDs, experience, language, contest data;
+- Gen VI EV cap normalization to 252 per stat;
+- moves / PP Ups / IVs;
+- nature, form, source version, dates and locations;
+- Pokérus, ball and OT encounter fields;
+- ribbon conversion/memory-ribbon counts;
+- Gen VI handler/memory/region metadata;
+- nickname and OT string remapping;
+- friendship reset to species base friendship;
+- ability refresh for changed/bugged ability slots;
+- move/PP and checksum repair.
+
+WHY v0.1.23 STOPS BEFORE CONVERSION
+The exact original Gen III Pokémon should become an immutable transfer root before any generation semantics are applied.
+The current build therefore exports the real 80-byte PK3 entity plus SHA-256 provenance instead of recreating a Pokémon from displayed values.
+
+That gives the next converter a strict invariant:
+  SOURCE PK3 bytes are fixed -> every later format is derived -> every derivation can be regression-tested.
+
+HOME TRACKER BOUNDARY
+The supplied PKHeX source contains HOMETransferSettings where a missing HOME Tracker is considered invalid by default for cases where a tracker is expected.
+JRPG.WORLD must therefore not invent a HOME tracker value. The supported final route needs an official game/HOME ingress point that causes HOME itself to create/recognize the modern server-side identity.
+
+LICENSE BOUNDARY
+The supplied PKHeX repository is GPL v3.
+v0.1.23 does not copy or bundle PKHeX.Core code into the browser build.
+The repository is used as a research/test oracle only.
+Before a later build directly distributes or links PKHeX code, the project's distribution/licensing strategy must be chosen deliberately.
+
+NEXT ENGINEERING TARGET
+1. Turn one v0.1.23 source capsule into PK4 using audited transfer semantics.
+2. Turn that exact PK4 into PK5.
+3. Turn that exact PK5 into PK6.
+4. Cross-check every stage against PKHeX.Core on a machine with a .NET toolchain.
+5. Inject the PK6 into a user-supplied supported target save while preserving all unrelated save bytes.
+6. Run legality analysis and a real hardware/official-software acceptance test.
+7. Only after that may the UI say HOME READY.
+
+CURRENT PRODUCT STATUS
+EMERALD LIVE: PASS
+EXACT OWNED PK3 CAPTURE: PASS
+PK3 CHECKSUM VERIFICATION: PASS
+PROVENANCE ZIP: PASS
+PK3 -> PK4 -> PK5 -> PK6 CONVERTER: NOT YET SHIPPED
+TARGET SAVE INJECTION: NOT YET SHIPPED
+OFFICIAL BRIDGE/HOME ACCEPTANCE: NOT YET PROVEN

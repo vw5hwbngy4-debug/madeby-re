@@ -1,0 +1,897 @@
+RICO KNOWLEDGE MODULE 20
+CUSTOM QUEST AUTHORING + EPHINEA SERVER DROP MECHANICS + PLATFORM MATRIX
+Research snapshot: 2026-08-15
+Primary Moves: Photon Route / Drop Hunt
+Scope: custom PSO quest architecture, server-vs-client drop ownership, Ephinea
+Blue Burst mechanics, Ephinea Classic boundaries, and live-state handling.
+
+===============================================================================
+0. GLOBAL PLATFORM / SERVER MATRIX
+===============================================================================
+
+RICO must identify the layer before applying a drop rate or quest rule.
+
+A) GAMECUBE / ORIGINAL XBOX STOCK OR STOCK-LIKE
+- Use RICO's packaged console drop database (#03) as primary static authority.
+- Do not mix Ephinea weekly boosts, Anguish, Daily Forecast, or RBR into console.
+- Online quest availability in 2026 is private-server dependent.
+
+B) ORIGINAL XBOX THROUGH INSIGNIA
+- Current selectable PSO servers include Schtserv, Sylverant, and Ragol.
+- Custom quest/reward behavior can differ between them.
+- "Xbox drop rate" and "Xbox private-server custom quest reward" are different
+  kinds of facts.
+
+C) SYLVERANT / ALTIMIRA
+- Platform may be GameCube or Xbox.
+- Altimira includes modified/ported Sega quests and original custom quests.
+- It can implement custom quest rewards, currencies, secret routes, and server
+  progression systems.
+- Never relabel an Altimira reward as a vanilla GameCube/Xbox drop.
+
+D) EPHINEA STANDARD
+- Client/platform: PSO Blue Burst.
+- Server: Ephinea.
+- Ephinea has server-specific systems such as rotating weekly boosts, Daily
+  Forecast, Ragol Boost Road, Anguish, and custom seasonal event drops.
+- Use Ephinea-specific mechanics only when the question is about Ephinea.
+
+E) EPHINEA CLASSIC
+- Still PSO Blue Burst on Ephinea, NOT a GameCube or Xbox client.
+- Classic aims at a pre-Episode-4 / console-like experience.
+- Episode 4 and Episode 4 items are inaccessible.
+- Drop table is identical to GameCube/Xbox.
+- All rates are default and cannot be boosted.
+- Ragol Boost Road and Anguish are removed.
+- Quest list is rebalanced and excludes many fan-made quests.
+- Experience sharing and individual drops are mandatory.
+- Therefore: "same drop table as console" does NOT mean "identical platform."
+
+F) RICO FILE #04 WARNING
+RICO's existing `04_RICO_BLUE_BURST_ULTIMATE_DROP_DATABASE.txt` is a packaged
+Blue Burst dataset. Do NOT automatically call every record in it "Ephinea".
+When the user explicitly asks about Ephinea, apply this module's Ephinea
+mechanics/provenance and prefer current canonical Ephinea drop sources if a
+static BB record conflicts with live/current Ephinea data.
+
+===============================================================================
+1. EPHINEA ORDINARY RARE DROP MATH
+===============================================================================
+
+Core terms:
+
+DAR = Drop Anything Rate
+Chance that a killed monster drops any item.
+
+RDR = Rare Drop Rate
+Conditional chance that the dropped item is the monster's assigned rare.
+
+Displayed ordinary rare drop chance:
+TOTAL PER-KILL RARE CHANCE = DAR × RDR
+
+Example logic:
+If DAR = 30% and RDR = 1/64:
+0.30 × 1/64 = 1/213.33 total chance per kill.
+
+The Ephinea wiki notes that its displayed drop charts combine DAR and RDR into
+the total per-kill rare chance.
+
+CAPS:
+- DAR cannot exceed 100%.
+- RDR cannot be boosted above 7/8 = 87.5%.
+
+RARE ENEMY RATE (RER):
+- Base rare enemy appearance rate: 1/500.
+- Kondrieu exception: 1/10.
+- A rare-enemy hunt can require combining RER with the rare enemy's item RDR.
+
+DAILY FORECAST:
+- Certain classes can receive a Daily Forecast RDR bonus up to +5%.
+- This is live/day-dependent information.
+- Do not hardcode today's forecast into this static file.
+
+BOOST COMBINATION:
+- Ephinea rate boosts are generally applied multiplicatively to the relevant
+  rate.
+- Always check whether a particular event item explicitly ignores normal
+  boosts.
+
+ITEM BOX FIREWALL:
+Ephinea item-box drops are not affected by normal drop-rate bonuses, including:
+- DAR boosts
+- RDR boosts
+- Anguish common-weapon rate changes
+- Photon Drop bonuses
+- event drop-rate bonuses
+- Anguish weapon-percentage pattern changes
+
+Do not apply monster-kill boost math to box drops.
+
+CURRENT CHART AUTHORITY:
+The Ephinea wiki itself warns that manually maintained drop-chart pages can lag
+behind changes and states that the official Ephinea homepage drop charts are
+the most accurate current source.
+For "current Ephinea rate" questions, live official charts outrank stale static
+tables.
+
+===============================================================================
+2. EPHINEA ROTATING WEEKLY BOOSTS
+===============================================================================
+
+The weekly boost changes every Sunday at 00:00 UTC.
+
+Rotation:
+1. Experience rate: +50%
+2. Drop Anything Rate (DAR): +25%
+3. Rare Enemy Rate (RER): +50%
+4. Rare Drop Rate (RDR): +25%
+
+Important interactions:
+- Weekly boosts stack with Ragol Boost Road where applicable.
+- During Anniversary, all four rotating weekly boosts are active simultaneously.
+- During Christmas, the active weekly boost is doubled.
+- Halloween quests ignore the rotating weekly boosts.
+
+LIVE-STATE RULE:
+This file defines the mechanic, NOT which weekly boost is active today.
+If asked "what is the boost this week?", use live information or say current
+state is unknown.
+
+===============================================================================
+3. EPHINEA RAGOL BOOST ROAD (RBR)
+===============================================================================
+
+Ragol Boost Road is an Ephinea weekly system selecting one quest in each of
+Episodes 1, 2, and 4 from eligible lists.
+
+RBR changes weekly on Sunday at 00:00 UTC.
+
+While playing a selected RBR quest:
+- Drop Anything Rate can be boosted.
+- Rare Drop Rate can be boosted.
+- Experience can be boosted.
+- Maximum documented boost is +25% for each.
+- RBR does NOT boost rare monster appearance rate.
+
+Documented player-count tiers:
+- 1 player: +15%
+- 2 players: +20%
+- 3 players: +25%
+The currently rendered source table does not expose a distinct fourth-player
+value in the retrieved text; do not invent one. State "up to +25%" when unsure.
+
+RBR stacks with:
+- rotating weekly boosts;
+- compatible event boosts;
+- other allowed boosts.
+
+Current selected RBR quests are live data.
+Players can check them in game with `/rbr` or at the lobby statistics interface.
+
+Do NOT bake a particular week's quest list into a permanent answer.
+
+===============================================================================
+4. EPHINEA ANGUISH
+===============================================================================
+
+Anguish is Ephinea-specific.
+- Ultimate mode only.
+- Character Level 80+.
+- Three Anguish levels.
+- Monsters become substantially harder.
+- Anguish also modifies several drop-related values.
+
+ANGUISH 1:
+- DAR: +1%
+- RDR: +5%
+- Meseta quantity: +31%
+- ID-specific common weapon rate: +0.86%
+- Untekked common weapon rate: +1%
+- Photon Drop rate: +0.15%
+
+ANGUISH 2:
+- DAR: +2%
+- RDR: +10%
+- Meseta quantity: +85%
+- ID-specific common weapon rate: +1.71%
+- Untekked common weapon rate: +2%
+- Photon Drop rate: +0.30%
+
+ANGUISH 3:
+- DAR: +3%
+- RDR: +15%
+- Meseta quantity: +155%
+- ID-specific common weapon rate: +2.53%
+- Untekked common weapon rate: +3%
+- Photon Drop rate: +0.45%
+
+Anguish weapon-percentage pattern changes do not apply to item boxes.
+
+EPHINEA CLASSIC FIREWALL:
+Anguish is not available in Ephinea Classic.
+
+===============================================================================
+5. EPHINEA SPECIAL EVENT DROP RATES
+===============================================================================
+
+---------------------------
+5A. EASTER — EVENT EGG
+---------------------------
+
+During the Ephinea Easter event, Event Eggs can drop from monsters except scared
+Rappies.
+
+Base Event Egg rates:
+- Normal: 1/2000
+- Hard: 1/1800
+- Very Hard: 1/1200
+- Ultimate: 1/500
+
+Rules:
+- Event Eggs do not drop from item boxes.
+- They are not affected by most ordinary drop-rate boosts.
+- Since the 2024 Easter event, RBR boost applies to Event Egg rate when the
+  quest itself is selected for RBR.
+- Easter itself has no general boosted rates.
+
+The Egg Shop can be selected year-round, but the server-wide Event Egg drops
+are seasonal.
+
+---------------------------
+5B. HALLOWEEN — HALLOWEEN COOKIE
+---------------------------
+
+During Ephinea Halloween, Halloween Cookies drop from enemies except scared
+Rappies.
+
+Base Cookie rates:
+- Normal: 1/5000
+- Hard: 1/4000
+- Very Hard: 1/3000
+- Ultimate: 1/1500
+
+Cookies do not drop from item boxes.
+
+Halloween quests have fixed boosts:
+- DAR: +50%
+- EXP: +200%
+- RDR: +50%
+- RER: +100%
+- Halloween Cookie drop rate during Halloween: +20%
+
+Interaction rules:
+- Rotating weekly boosts do NOT affect Halloween quests.
+- Anguish can further increase applicable Halloween-quest rates.
+- The Halloween Cookie rate itself cannot be increased beyond its documented
+  Halloween quest +20% mechanism.
+
+---------------------------
+5C. CHRISTMAS — SERVER-WIDE "PRESENT"
+---------------------------
+
+Do not confuse Ephinea's Christmas event item named `Present` with the classic
+`Christmas Present` MAG-cell container.
+
+During Ephinea Christmas:
+- server-wide Present rate: 1/2250 from enemies;
+- applies regardless of quest, difficulty, or episode;
+- scared Rappies are excluded;
+- Presents do not drop from item boxes;
+- Presents are not affected by ordinary drop-rate boosts.
+
+Special double-rate days:
+- Christmas Eve
+- Christmas Day
+- New Year's Eve
+- New Year's Day
+
+On those days:
+- Present rate = 1/1125.
+
+The annual content list of these event Presents varies by year and is
+intentionally not officially revealed in advance.
+Do NOT turn a previous year's observed present contents into a permanent table.
+
+During Christmas, the currently active rotating weekly boost is doubled.
+
+Classic MAG-cell `Christmas Present` rates belong to Module 19 and are a
+different mechanic/item.
+
+---------------------------
+5D. VALENTINE'S
+---------------------------
+
+Valentine's event party RDR boost:
+- 1 player: +0%
+- 2 players: +5%
+- 3 players: +10%
+- 4 players: +20%
+
+Players' Daily Forecast bonuses are also shared within the party during the
+event, creating an additional party-dependent RDR effect.
+
+---------------------------
+5E. ANNIVERSARY
+---------------------------
+
+Anniversary:
+- all four rotating weekly boosts are active simultaneously;
+- Maximum Attack E event quests are featured;
+- Anniversary Badges can drop from enemies except scared Rappies.
+
+Badge difficulty availability:
+- Bronze: Normal or higher
+- Silver: Very Hard or higher
+- Gold: Ultimate
+- Platinum: Ultimate
+
+IMPORTANT:
+The exact random drop rates of the Anniversary badge types are NOT publicly
+released to the community.
+
+Badge drops:
+- are not affected by generic drop-rate boosts;
+- can be affected by Anniversary-specific boosts;
+- do not drop from item boxes.
+
+Do not fabricate an "exact Anniversary Badge 1/X" rate.
+
+===============================================================================
+6. EPHINEA SPECIAL MAG CONTAINERS
+===============================================================================
+
+For detailed cell pools and exact percentages, use Module 19.
+
+Key server distinction:
+- Ephinea standard Christmas Present and Jack-O'-Lantern tables include four
+  extra starter-form kits (Mag/Varuna/Kalki/Vritra kits).
+- Ephinea Classic uses original-style container tables.
+- These are Ephinea server rules, not proof of current Xbox private-server
+  container contents.
+
+===============================================================================
+7. EPHINEA CLASSIC: EXACT INTERPRETATION
+===============================================================================
+
+Ephinea Classic is NOT "Xbox emulation" and is NOT a GameCube client.
+
+It is a Blue Burst character/game-mode flag used on Ephinea's Classic ship.
+
+Classic properties documented in 2026:
+- Episode 4 inaccessible.
+- Episode 4 items unobtainable.
+- All rates are default and cannot be boosted.
+- One Person progression resembles offline GameCube/Xbox area progression.
+- Multiplayer level gates follow official Blue Burst-style requirements.
+- Rare drop table is identical to GameCube/Xbox.
+- Coren does not offer gambles.
+- RBR removed.
+- Anguish removed.
+- Quest list rebalanced; many fan-made quests are absent.
+- Experience sharing mandatory.
+- Individual drops mandatory.
+
+Therefore an answer should say:
+"EPHINEA CLASSIC uses the GC/Xbox rare-drop table"
+rather than:
+"EPHINEA CLASSIC is Xbox."
+
+===============================================================================
+8. CUSTOM PSO QUEST FILE ARCHITECTURE
+===============================================================================
+
+A traditional PSO quest is split conceptually into:
+
+`.dat`
+- floor/map-associated data;
+- monsters and NPC placements;
+- object placements;
+- map event data.
+
+`.bin`
+- quest assembly/script;
+- controls initialization, dialogue, conditionals, cutscenes, progression,
+  quest success/failure, rewards and other logic.
+
+`.qst`
+- packaged quest form commonly sent by a server/client tooling;
+- contains/encapsulates quest components depending on format/version.
+
+In QEdit-era tooling:
+- `.dat` contains floor/monster/object/event data.
+- `.bin` contains the PSO assembly script.
+- Tethealla tooling packages the pieces into `.qst` for server delivery.
+
+MAP EVENTS:
+Use map events for:
+- enemy wave sequencing;
+- calling subsequent events;
+- unhiding objects;
+- unlocking doors after conditions/waves;
+- trigger/collision-driven room logic.
+
+QUEST SCRIPT:
+The script handles:
+- map definitions;
+- entering-floor handlers;
+- cutscenes;
+- NPC dialogue;
+- conditional state;
+- quest clear state;
+- rewards;
+- other client functions.
+
+FUNCTION 0:
+Function 0 is the essential initialization entry point.
+Typical responsibilities:
+- set episode;
+- designate maps;
+- register floor handlers;
+- define quest-success callback;
+- read/store difficulty;
+- initialize quest state.
+
+`ret`:
+Quest script flow must be terminated/returned correctly.
+Forgetting `ret` can let execution flow into unintended code.
+
+REGISTERS:
+Registers store quest state and are used for:
+- difficulty;
+- player-specific flags;
+- objective state;
+- branches;
+- completion state;
+- reward eligibility;
+- secret-route state.
+
+===============================================================================
+9. RICO QUEST ARCHITECT WORKFLOW
+===============================================================================
+
+When the user says "make a custom PSO quest", RICO should NOT jump directly to
+claiming a finished valid QST.
+
+Use this workflow:
+
+STEP 1 — TARGET LOCK
+Specify:
+- client: GameCube / Xbox / Blue Burst / other;
+- server: Schtserv / Sylverant / newserv / Tethealla-derived / etc.;
+- episode;
+- online quest vs download/offline quest;
+- player count;
+- difficulty coverage;
+- language(s).
+
+STEP 2 — QUEST DESIGN SPEC
+Define:
+- title / quest number;
+- narrative premise;
+- Pioneer 2 NPCs;
+- areas/floors;
+- objective;
+- fail conditions;
+- success conditions;
+- optional secrets;
+- reward model.
+
+STEP 3 — MAP / FLOOR DATA
+Choose/import target maps and floor data.
+
+IMPORTANT QEDIT RULE:
+Import base objects/monsters BEFORE building custom placements.
+The QEdit guide warns that importing floor data later overwrites objects /
+monsters already placed.
+
+STEP 4 — OBJECTS / NPCS / SPAWNS
+Place:
+- player spawn;
+- doors;
+- switches;
+- warps;
+- collision/event triggers;
+- NPCs;
+- monsters.
+
+STEP 5 — WAVES + MAP EVENTS
+Assign wave IDs and implement:
+- trigger -> wave 1;
+- wave clear -> wave 2;
+- wave clear -> door unlock;
+- optional branch/secret triggers.
+
+STEP 6 — SCRIPT FUNCTION 0
+Initialize:
+- episode;
+- map designation;
+- floor handlers;
+- difficulty;
+- player state as required;
+- quest clear callback;
+- any initial registers.
+
+STEP 7 — STATE MACHINE
+Define registers for:
+- objective progression;
+- secrets found;
+- deaths/kills/time;
+- difficulty;
+- player slot if necessary;
+- one-time rewards;
+- quest completion.
+
+STEP 8 — DIALOGUE / CUTSCENES
+Implement NPC interaction and any story events.
+
+STEP 9 — REWARD LOGIC
+Separate:
+A) quest-clear reward;
+B) secret reward;
+C) enemy rare drop;
+D) server/event currency drop;
+E) persistent server-side reward.
+
+Never call a scripted quest reward a "vanilla enemy drop."
+
+STEP 10 — BUILD / PACKAGE
+For the Pioneer2 quest assembler/disassembler workflow:
+- disassembly can produce `.pasm.header`, `.pasm`, and `.DAT`;
+- all three are required by that assembler to create compressed `.QST`;
+- if `.DAT` is absent, it creates only `.BIN`;
+- `asm.txt` is used by the tools and recognized by QEdit.
+
+STEP 11 — TEST MATRIX
+Test at minimum:
+- intended client/version;
+- each intended difficulty;
+- 1-player;
+- 2-player;
+- 3-player;
+- 4-player if supported;
+- quest start;
+- reconnect/re-entry behavior where relevant;
+- every door/event sequence;
+- failure path;
+- success path;
+- boss path;
+- secret route;
+- reward duplication prevention;
+- reward inventory-full behavior;
+- language/client differences if applicable.
+
+STEP 12 — VALIDATION LABEL
+RICO may output:
+- DESIGN SPEC
+- QEDIT PLAN
+- SCRIPT/PASM OUTLINE
+- EVENT GRAPH
+- REWARD TABLE
+- TEST PLAN
+
+RICO must NOT claim:
+"this QST is verified working"
+until the quest has actually been assembled and tested on the target runtime.
+
+===============================================================================
+10. NEWSERV AS CURRENT IMPLEMENTATION REFERENCE
+===============================================================================
+
+newserv is a useful current open-source reference for modern multi-version PSO
+server behavior.
+
+QUEST ORGANIZATION:
+- Quests live under `system/quests/`.
+- Filenames encode PSO version and language.
+- Example pattern: a GameCube English BIN and shared DAT can be version-coded.
+- GameCube and Xbox quest formats are very similar but are treated as distinct
+  versions.
+- If a quest binary truly works for both, the server can use one as a symbolic
+  link to the other.
+
+SUPPORTED QUEST FORMATS:
+newserv can work with/decode multiple quest formats, including:
+- compressed `.bin` + `.dat`;
+- uncompressed variants;
+- source quest scripts;
+- GCI/DLQ variants;
+- online `.qst`;
+- download `.qst`.
+
+It can decode QST into standard BIN/DAT components.
+
+QUEST METADATA CAN CONTROL SERVER BEHAVIOR:
+Per-quest metadata can, among other things:
+- hide/disable a quest until prerequisites are met;
+- allow joining while a quest is in progress;
+- override common item tables;
+- override rare item tables;
+- restrict/choose allowed item drop modes.
+
+ITEM DROP MODES IN NEWSERV:
+- disabled / none
+- client
+- shared
+- private
+- duplicate
+
+Original-style behavior:
+- non-BB original versions normally use leader-client item generation;
+- BB normally uses server item generation.
+
+Server-generated modes enable custom behaviors such as:
+- per-player private drops;
+- duplicated per-player copies;
+- custom common/rare tables.
+
+A modern server can therefore create a quest with a drop economy that differs
+from the client stock tables.
+
+RICO wording:
+"Server-side custom drop table"
+is not synonymous with
+"vanilla GameCube/Xbox drop table."
+
+===============================================================================
+11. CUSTOM QUEST PORTABILITY RULES
+===============================================================================
+
+GameCube and Xbox:
+- formats are very similar;
+- do not assume byte-for-byte compatibility without testing;
+- modern servers may treat them as separate version targets.
+
+Blue Burst -> GameCube/Xbox:
+- do NOT assume a BB quest can be made console-compatible by renaming files.
+- opcodes, map definitions, assets, item availability, server assumptions, and
+  client features can differ.
+- Altimira's long history of explicitly modified/ported Sega/BB quests is
+  evidence that real porting is a compatibility task, not a filename task.
+
+Custom assets:
+- only use assets/objects/maps supported by the target client unless the target
+  server/client patch explicitly supplies additional assets.
+
+===============================================================================
+12. CUSTOM QUEST DROP/REWARD DESIGN TAXONOMY
+===============================================================================
+
+When designing or explaining a custom quest, classify each reward:
+
+TYPE 1 — VANILLA CLIENT RARE DROP
+Uses the client's normal rare table for monster + Section ID + difficulty.
+
+TYPE 2 — SERVER-OVERRIDDEN RARE TABLE
+Server chooses a custom rare table for the quest/game.
+
+TYPE 3 — SCRIPTED QUEST REWARD
+Quest script gives an item after completion/secret/condition.
+
+TYPE 4 — SERVER EVENT DROP
+Server independently rolls an event item/currency when enemies die.
+
+TYPE 5 — CONTAINER / SHOP / CURRENCY REWARD
+Quest grants currency/container which is exchanged/opened separately.
+
+TYPE 6 — PERSISTENT SERVER PROGRESSION
+Server records kills, cards, badges, tickets, account flags, etc.
+
+RICO must label which type it means.
+This prevents errors like calling an Altimira quest prize a stock Xbox rare drop.
+
+===============================================================================
+13. EPHINEA ANSWER PROTOCOL FOR A "DROP RATE" QUESTION
+===============================================================================
+
+When the user asks:
+"What is the Ephinea drop rate for X?"
+
+RICO should resolve:
+
+1. SERVER
+   Ephinea standard or Ephinea Classic?
+
+2. ITEM SOURCE
+   ordinary monster rare?
+   rare-enemy rare?
+   item box?
+   quest reward?
+   event currency?
+   holiday container?
+   shop/gamble?
+
+3. BASE RATE
+   use current canonical Ephinea source if known.
+
+4. ACTIVE MODIFIERS
+   weekly boost?
+   RBR?
+   Daily Forecast?
+   Anguish?
+   Valentine's?
+   Anniversary?
+   Christmas?
+   Halloween quest?
+   special event-item exception?
+
+5. CAPS / EXCLUSIONS
+   DAR <= 100%.
+   RDR <= 87.5%.
+   boxes ignore drop boosts.
+   event items can have their own exception rules.
+
+6. LIVE STATE
+   If the answer depends on "this week / today / current RBR / current event",
+   the static Knowledge pack cannot guarantee it.
+   Use live official data if web access is permitted.
+   Otherwise explicitly say which live variable is unknown.
+
+7. PROVENANCE LABEL
+   VERIFIED STATIC MECHANIC
+   LIVE SERVER STATE
+   COMPUTED RATE
+   STRATEGIC RECOMMENDATION
+
+===============================================================================
+14. EXAMPLE: WHY EPHINEA AND XBOX MUST NOT MIX
+===============================================================================
+
+Question:
+"What's the Spread Needle drop rate on Xbox?"
+
+Wrong approach:
+- look up Ephinea;
+- apply weekly/RBR/Daily Forecast;
+- answer with an Ephinea Merlan table.
+
+Correct approach:
+- use RICO #03 GameCube/Xbox drop database;
+- Xbox console result is governed by console data / selected private server if
+  that server explicitly overrides drops;
+- do not apply Ephinea systems.
+
+Question:
+"What's my best Spread Needle hunt on Ephinea this week?"
+
+Correct approach:
+- identify Ephinea standard vs Classic;
+- get current Ephinea base chart;
+- inspect current weekly boost and RBR;
+- include Daily Forecast/Anguish/event mechanics if relevant;
+- compute rate/run strategy with current live data.
+
+===============================================================================
+15. EXAMPLE: RICO CUSTOM QUEST RESPONSE SHAPE
+===============================================================================
+
+For:
+"Make me a 4-player Xbox custom quest where Rico's message capsule opens a
+secret Falz route and the party earns a special reward."
+
+RICO should produce:
+
+⭕ RICO used Photon Route!
+
+TARGET
+- Client: Xbox Episode I & II
+- Server/runtime: [must be named]
+- Episode: 1
+- Players: 1-4 or exactly 4, as requested
+- Difficulty support: specified
+
+QUEST GRAPH
+Pioneer 2 briefing
+-> Forest/Mine/Ruins progression
+-> Rico capsule register flag
+-> secret switch chain
+-> optional Falz route
+-> completion state
+-> reward branch
+
+DATA PLAN
+- maps/floors
+- monsters/NPCs
+- objects
+- event collisions
+- waves
+- doors
+- warps
+
+SCRIPT PLAN
+- Function 0 init
+- floor handlers
+- registers
+- secret state
+- clear/fail functions
+- reward functions
+
+REWARD TYPE
+Explicitly label scripted reward vs server-overridden rare table.
+
+BUILD
+- QEdit / PASM / DAT / QST target workflow as appropriate.
+
+TESTS
+- 1-4 player state
+- each difficulty
+- failure/success
+- secret absent/present
+- reward duplication
+- target Xbox runtime
+
+VALIDATION
+"Design/assembly plan; not verified binary until compiled and tested."
+
+===============================================================================
+16. PROVENANCE / SOURCES
+===============================================================================
+
+HIGH — EPHINEA CURRENT MECHANICS
+Drop charts:
+https://wiki.pioneer2.net/w/Drop_charts
+
+Item drops:
+https://wiki.pioneer2.net/w/Item_drops
+
+Weekly boosts:
+https://wiki.pioneer2.net/w/Weekly_boosts
+
+Ragol Boost Road:
+https://wiki.pioneer2.net/w/Ragol_Boost_Road
+
+Anguish:
+https://wiki.pioneer2.net/w/Anguish
+
+Game modes / Ephinea Classic:
+https://wiki.pioneer2.net/w/Game_modes
+
+Easter:
+https://wiki.pioneer2.net/w/Easter_event
+https://wiki.pioneer2.net/w/Event_Egg
+
+Halloween:
+https://wiki.pioneer2.net/w/Halloween_event
+https://wiki.pioneer2.net/w/Halloween_Cookie
+
+Christmas:
+https://wiki.pioneer2.net/w/Christmas_event
+
+Valentine's:
+https://wiki.pioneer2.net/w/Valentine%27s_event
+
+Anniversary:
+https://wiki.pioneer2.net/w/Anniversary_event
+
+HIGH — CURRENT OPEN-SOURCE SERVER IMPLEMENTATION REFERENCE
+newserv:
+https://github.com/fuzziqersoftware/newserv
+
+COMMUNITY / TOOLING AUTHORITY
+Pioneer2 QEdit tutorial:
+https://www.pioneer2.net/community/threads/creating-a-quest-with-qedit.1769/
+
+Pioneer2 Quest Assembler / Disassembler:
+https://www.pioneer2.net/community/threads/psobb-quest-assembler-disassembler-source.1728/
+
+CURRENT CONSOLE CUSTOM-QUEST EXAMPLE
+Sylverant PSO Palace / Altimira:
+https://psopalace.sylverant.net/about3s.html
+
+===============================================================================
+17. FINAL KNOWLEDGE RULE
+===============================================================================
+
+RICO is allowed to be exact only when the layer is exact.
+
+Always preserve:
+CLIENT -> SERVER -> MODE -> QUEST -> DIFFICULTY -> SECTION ID -> SOURCE TYPE ->
+BASE RATE -> BOOSTS -> FINAL/COMPUTED RATE.
+
+For custom quests, preserve:
+TARGET CLIENT -> SERVER RUNTIME -> MAP DATA -> SCRIPT -> EVENTS -> REWARD TYPE ->
+PACKAGING -> TEST STATUS.
+
+Never make a private-server mechanic sound like vanilla PSO.
+Never make an Ephinea mechanic sound like Xbox.
+Never call an untested quest binary "working."
+Never invent an unpublished event drop rate.

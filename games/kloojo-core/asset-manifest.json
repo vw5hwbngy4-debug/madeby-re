@@ -1,0 +1,172 @@
+[
+  {
+    "path": "assets/world/road.webp",
+    "sourceFormat": "png",
+    "bytes": 69506
+  },
+  {
+    "path": "assets/world/foot.webp",
+    "sourceFormat": "png",
+    "bytes": 974
+  },
+  {
+    "path": "assets/world/foot2.webp",
+    "sourceFormat": "png",
+    "bytes": 2304
+  },
+  {
+    "path": "assets/world/walk.webp",
+    "sourceFormat": "png",
+    "bytes": 5312
+  },
+  {
+    "path": "assets/world/walk-lower.webp",
+    "sourceFormat": "png",
+    "bytes": 4112
+  },
+  {
+    "path": "assets/world/windows.webp",
+    "sourceFormat": "png",
+    "bytes": 61580
+  },
+  {
+    "path": "assets/world/billboards.webp",
+    "sourceFormat": "png",
+    "bytes": 190272
+  },
+  {
+    "path": "assets/world/center.webp",
+    "sourceFormat": "png",
+    "bytes": 1356
+  },
+  {
+    "path": "assets/world/vent.webp",
+    "sourceFormat": "png",
+    "bytes": 15706
+  },
+  {
+    "path": "assets/world/scatter.webp",
+    "sourceFormat": "png",
+    "bytes": 2160
+  },
+  {
+    "path": "assets/graffiti/tag-01.webp",
+    "sourceFormat": "webp",
+    "bytes": 24682
+  },
+  {
+    "path": "assets/graffiti/tag-02.webp",
+    "sourceFormat": "webp",
+    "bytes": 21496
+  },
+  {
+    "path": "assets/graffiti/tag-03.webp",
+    "sourceFormat": "webp",
+    "bytes": 23236
+  },
+  {
+    "path": "assets/graffiti/tag-04.webp",
+    "sourceFormat": "webp",
+    "bytes": 21664
+  },
+  {
+    "path": "assets/graffiti/tag-05.webp",
+    "sourceFormat": "webp",
+    "bytes": 21406
+  },
+  {
+    "path": "assets/graffiti/tag-06.webp",
+    "sourceFormat": "webp",
+    "bytes": 19656
+  },
+  {
+    "path": "assets/graffiti/tag-07.webp",
+    "sourceFormat": "webp",
+    "bytes": 19400
+  },
+  {
+    "path": "assets/graffiti/tag-08.webp",
+    "sourceFormat": "webp",
+    "bytes": 24800
+  },
+  {
+    "path": "assets/graffiti/tag-09.webp",
+    "sourceFormat": "webp",
+    "bytes": 21842
+  },
+  {
+    "path": "assets/graffiti/tag-10.webp",
+    "sourceFormat": "webp",
+    "bytes": 22448
+  },
+  {
+    "path": "assets/graffiti/tag-11.webp",
+    "sourceFormat": "webp",
+    "bytes": 16572
+  },
+  {
+    "path": "assets/graffiti/tag-12.webp",
+    "sourceFormat": "webp",
+    "bytes": 21528
+  },
+  {
+    "path": "assets/graffiti/tag-13.webp",
+    "sourceFormat": "webp",
+    "bytes": 18958
+  },
+  {
+    "path": "assets/graffiti/tag-14.webp",
+    "sourceFormat": "webp",
+    "bytes": 20444
+  },
+  {
+    "path": "assets/graffiti/tag-15.webp",
+    "sourceFormat": "webp",
+    "bytes": 22236
+  },
+  {
+    "path": "assets/graffiti/tag-16.webp",
+    "sourceFormat": "webp",
+    "bytes": 23430
+  },
+  {
+    "path": "assets/graffiti/tag-17.webp",
+    "sourceFormat": "webp",
+    "bytes": 21214
+  },
+  {
+    "path": "assets/graffiti/tag-18.webp",
+    "sourceFormat": "webp",
+    "bytes": 19932
+  },
+  {
+    "path": "assets/graffiti/tag-19.webp",
+    "sourceFormat": "webp",
+    "bytes": 25980
+  },
+  {
+    "path": "assets/graffiti/tag-20.webp",
+    "sourceFormat": "webp",
+    "bytes": 24862
+  },
+  {
+    "path": "assets/graffiti/tag-21.webp",
+    "sourceFormat": "webp",
+    "bytes": 23412
+  },
+  {
+    "path": "assets/graffiti/tag-22.webp",
+    "sourceFormat": "webp",
+    "bytes": 21720
+  },
+  {
+    "path": "assets/graffiti/tag-23.webp",
+    "sourceFormat": "webp",
+    "bytes": 23644
+  },
+  {
+    "path": "assets/ui/spray-can.webp",
+    "sourceFormat": "png",
+    "bytes": 263902
+  }
+]

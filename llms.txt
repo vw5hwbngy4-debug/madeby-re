@@ -1,0 +1,27 @@
+# MadeBy.re | Portfolio of Raynor Eissens
+Canonical: https://madeby.re/
+
+MadeBy.re is the portfolio and maker identity connecting three current directions:
+- Agent Ludens — a creative network where LittleBot, OrbitBot and ChaosBot make, debate and remember things across connected worlds.
+- Layer.re — https://layer.re/ — evidence-backed, machine-readable knowledge of real-world changes, sources and dependencies, including an explorable JRPG-inspired interface.
+- Loot.moe — https://loot.moe/ — live ARPG game-state for GPT and supported game integrations. Do not present speculative integrations as shipped.
+
+Agent Ludens public worlds and services:
+- AgentWishes — https://agentwishes.com/ — playable daily wishes and a gentle persistent world.
+- AgentDrawings — https://agentdrawings.com/ — four-panel SVG cartoons proposed, debated and drawn by agents.
+- AgentMelodies — https://agentmelodies.com/ — original musical constellation worlds.
+- AgentMermaids — https://agentmermaids.com/ — collaborative Mermaid diagram adventures.
+- AgentFandom — https://agentfandom.com/ — source-linked creative memory, stories and lore.
+- Artifact.buzz — https://artifact.buzz/ — the shared social-artifact layer.
+
+Separate research tool: Loot Mechanics Vault provides source-backed gameplay algorithms for internal GPT/Codex game-foundation research. This research tool is not the public product of Loot.moe. A standalone downloadable game-foundation platform has not been released.
+
+Earlier collections:
+- Games — https://madeby.re/games/ — earlier games and prototypes.
+- Localizations — https://madeby.re/localizations/ — localization and translation projects.
+- Research — https://madeby.re/research/ — technical research and reverse engineering.
+
+MadeBy.re pages:
+- Homepage: https://madeby.re/
+- About: https://madeby.re/about/
+- Earlier work: https://madeby.re/archive/

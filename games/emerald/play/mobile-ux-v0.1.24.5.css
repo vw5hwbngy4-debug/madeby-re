@@ -1,0 +1,35 @@
+/* JRPG.WORLD Emerald v0.1.24.5 — mobile scroll + navigation repair */
+@media (max-width: 959px) {
+  /* One Trainer Card entry point: the mode nav. */
+  #pokefield-live-panel .tc-header-button { display:none !important; }
+
+  /* Expanded content belongs to normal document flow. Do not create an inner
+     scroll container that traps iPhone gestures or feels like an iframe. */
+  #pokefield-live-panel,
+  #pokefield-live-panel:not(.pf-compact):not(.tc-showing-card):not(.opf-show) {
+    max-height:none !important;
+    height:auto !important;
+    overflow:visible !important;
+    overscroll-behavior:auto !important;
+    touch-action:auto !important;
+    -webkit-overflow-scrolling:auto !important;
+  }
+  html, body {
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+    height:auto !important;
+    min-height:100% !important;
+    overscroll-behavior-y:auto !important;
+  }
+  body.pf-mobile-first { touch-action:pan-y !important; }
+
+  /* Save Vault now docks in the PokéField header, below the game. The game
+     viewport is never covered by the Vault control. */
+  #pokefield-live-panel .pf-head-actions {
+    display:flex !important;align-items:center !important;gap:5px !important;flex-wrap:nowrap !important;
+  }
+  #pokefield-live-panel .pf-head-actions > small { display:none !important; }
+
+  #pokefield-live-panel.tc-showing-card .pf-head-actions { min-height:26px; }
+  #pokefield-live-panel .tc-box > summary { opacity:.82; }
+}

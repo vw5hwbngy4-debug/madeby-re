@@ -1,0 +1,616 @@
+{
+  "version": "4.2-compatible-data-from-v4.1",
+  "sectionIds": {
+    "Redria": {
+      "communityTier": "S+",
+      "identity": "The Account Stabilizer",
+      "signatureHunts": [
+        "Spread Needle",
+        "Lavis Cannon",
+        "Red Ring"
+      ],
+      "utility": [
+        "God/Battle",
+        "God/Arm",
+        "Cannon Rouge",
+        "V502"
+      ],
+      "recommendedFor": [
+        "First Account",
+        "Hunter",
+        "Ranger"
+      ],
+      "popularity": 100,
+      "accountValue": 100,
+      "communityScore": 98,
+      "itemScores": {
+        "Spread Needle": 100,
+        "Lavis Cannon": 94,
+        "Red Ring": 95,
+        "God/Battle": 96,
+        "God/Arm": 82,
+        "Cannon Rouge": 86,
+        "V502": 88
+      },
+      "starterValue": 100,
+      "secondAccountValue": 84,
+      "bestFor": [
+        "First Account",
+        "Account Stabilizer",
+        "Hunter/Ranger Utility"
+      ],
+      "rarity": 86,
+      "utilityScore": 98,
+      "archetype": "First Account Recommendation",
+      "why": "Stabilizes the whole account with universal utility, Red Ring pressure, Spread Needle access, and classic unit support.",
+      "popularityScore": 100,
+      "accountValueScore": 100,
+      "rarityScore": 86,
+      "communityScoreCalculated": 98,
+      "suggestedCombos": [
+        [
+          "Redria"
+        ],
+        [
+          "Redria",
+          "Purplenum"
+        ],
+        [
+          "Redria",
+          "Purplenum",
+          "Skyly"
+        ]
+      ]
+    },
+    "Skyly": {
+      "communityTier": "S",
+      "identity": "The Hunter Dream",
+      "signatureHunts": [
+        "Sealed J-Sword",
+        "Red Sword",
+        "Chain Sawd"
+      ],
+      "utility": [
+        "Smartlink",
+        "Twin Blaze",
+        "Guren",
+        "Shouren"
+      ],
+      "recommendedFor": [
+        "HUcast",
+        "HUnewearl",
+        "Melee Accounts"
+      ],
+      "popularity": 96,
+      "accountValue": 92,
+      "communityScore": 91,
+      "itemScores": {
+        "Sealed J-Sword": 98,
+        "Red Sword": 93,
+        "Chain Sawd": 90,
+        "Smartlink": 84,
+        "Twin Blaze": 83,
+        "Guren": 70,
+        "Shouren": 70
+      },
+      "starterValue": 78,
+      "secondAccountValue": 94,
+      "bestFor": [
+        "Hunter Main",
+        "Melee Accounts",
+        "SJS Route"
+      ],
+      "rarity": 96,
+      "utilityScore": 82,
+      "archetype": "Hunter Main Account",
+      "why": "Turns the account into a Hunter dream route with SJS, Red Sword, and Chain Sawd as clear long-term identity hunts.",
+      "popularityScore": 96,
+      "accountValueScore": 92,
+      "rarityScore": 96,
+      "communityScoreCalculated": 91,
+      "suggestedCombos": [
+        [
+          "Skyly"
+        ],
+        [
+          "Skyly",
+          "Redria"
+        ],
+        [
+          "Skyly",
+          "Redria",
+          "Purplenum"
+        ]
+      ]
+    },
+    "Purplenum": {
+      "communityTier": "S",
+      "identity": "The Ranger Kingdom",
+      "signatureHunts": [
+        "Spread Needle",
+        "Psycho Wand",
+        "Heaven Striker"
+      ],
+      "utility": [
+        "Frozen Shooter",
+        "V502",
+        "V801",
+        "Heaven Punisher"
+      ],
+      "recommendedFor": [
+        "Ranger",
+        "Force",
+        "Second Account"
+      ],
+      "popularity": 98,
+      "accountValue": 96,
+      "communityScore": 96,
+      "itemScores": {
+        "Spread Needle": 100,
+        "Psycho Wand": 98,
+        "Heaven Striker": 94,
+        "Frozen Shooter": 95,
+        "V502": 88,
+        "V801": 87,
+        "Heaven Punisher": 74
+      },
+      "starterValue": 94,
+      "secondAccountValue": 98,
+      "bestFor": [
+        "Ranger Main",
+        "Force Support",
+        "Second Account"
+      ],
+      "rarity": 92,
+      "utilityScore": 96,
+      "archetype": "Ranger Main Account",
+      "why": "Adds the Ranger kingdom and Force bridge: Spread Needle, Frozen Shooter, Psycho Wand, Heaven Striker, V502, and V801.",
+      "popularityScore": 98,
+      "accountValueScore": 96,
+      "rarityScore": 92,
+      "communityScoreCalculated": 96,
+      "suggestedCombos": [
+        [
+          "Purplenum"
+        ],
+        [
+          "Purplenum",
+          "Redria"
+        ],
+        [
+          "Purplenum",
+          "Redria",
+          "Skyly"
+        ]
+      ]
+    },
+    "Pinkal": {
+      "communityTier": "S",
+      "identity": "The Force Library",
+      "signatureHunts": [
+        "Psycho Wand",
+        "Clio",
+        "Lame d'Argent",
+        "Slicer of Fanatic"
+      ],
+      "utility": [
+        "V801",
+        "Rambling May",
+        "Diska of Braveman"
+      ],
+      "recommendedFor": [
+        "Force",
+        "FOnewearl",
+        "FOmar"
+      ],
+      "popularity": 93,
+      "accountValue": 90,
+      "communityScore": 90,
+      "itemScores": {
+        "Psycho Wand": 98,
+        "Clio": 73,
+        "Lame d'Argent": 86,
+        "Slicer of Fanatic": 79,
+        "V801": 87,
+        "Rambling May": 70,
+        "Diska of Braveman": 78
+      },
+      "starterValue": 82,
+      "secondAccountValue": 90,
+      "bestFor": [
+        "Force Main",
+        "Technique Library",
+        "FOnewearl/FOmar"
+      ],
+      "rarity": 88,
+      "utilityScore": 88,
+      "archetype": "Force Main Account",
+      "why": "Defines the Force library fantasy with wand/caster identity and FO-friendly utility.",
+      "popularityScore": 93,
+      "accountValueScore": 90,
+      "rarityScore": 88,
+      "communityScoreCalculated": 90,
+      "suggestedCombos": [
+        [
+          "Pinkal"
+        ],
+        [
+          "Pinkal",
+          "Redria"
+        ],
+        [
+          "Pinkal",
+          "Redria",
+          "Skyly"
+        ]
+      ]
+    },
+    "Viridia": {
+      "communityTier": "S",
+      "identity": "The Utility Generalist",
+      "signatureHunts": [
+        "Red Ring",
+        "Frozen Shooter",
+        "Lame d'Argent",
+        "V101"
+      ],
+      "utility": [
+        "Limiter",
+        "V101",
+        "High Hit Yunchang",
+        "PGF"
+      ],
+      "recommendedFor": [
+        "First Account",
+        "Utility Account",
+        "Ranger"
+      ],
+      "popularity": 95,
+      "accountValue": 95,
+      "communityScore": 94,
+      "itemScores": {
+        "Red Ring": 95,
+        "Frozen Shooter": 95,
+        "Lame d'Argent": 86,
+        "V101": 82,
+        "Limiter": 80,
+        "High Hit Yunchang": 70,
+        "PGF": 70
+      },
+      "starterValue": 96,
+      "secondAccountValue": 88,
+      "bestFor": [
+        "First Account",
+        "Utility Generalist",
+        "Ranger Utility"
+      ],
+      "rarity": 84,
+      "utilityScore": 95,
+      "archetype": "First Account Recommendation",
+      "why": "A broad utility generalist with early usefulness, Red Ring/Frozen Shooter value, and strong account-stabilizing routes.",
+      "popularityScore": 95,
+      "accountValueScore": 95,
+      "rarityScore": 84,
+      "communityScoreCalculated": 94,
+      "suggestedCombos": [
+        [
+          "Viridia"
+        ],
+        [
+          "Viridia",
+          "Redria"
+        ],
+        [
+          "Viridia",
+          "Redria",
+          "Purplenum"
+        ]
+      ]
+    },
+    "Whitill": {
+      "communityTier": "A",
+      "identity": "The Completionist",
+      "signatureHunts": [
+        "Handgun: Guld",
+        "Handgun: Milla",
+        "Red Ring",
+        "Frozen Shooter"
+      ],
+      "utility": [
+        "V502",
+        "S-Parts ver2.01",
+        "Limiter"
+      ],
+      "recommendedFor": [
+        "Completionist",
+        "Hunter",
+        "Force"
+      ],
+      "popularity": 86,
+      "accountValue": 85,
+      "communityScore": 86,
+      "itemScores": {
+        "Handgun: Guld": 78,
+        "Handgun: Milla": 78,
+        "Red Ring": 95,
+        "Frozen Shooter": 95,
+        "V502": 88,
+        "S-Parts ver2.01": 70,
+        "Limiter": 80
+      },
+      "starterValue": 78,
+      "secondAccountValue": 90,
+      "bestFor": [
+        "Completionist",
+        "Guld/Milla Hunt",
+        "Diverse Endgame"
+      ],
+      "rarity": 90,
+      "utilityScore": 84,
+      "archetype": "Third Character Completion Route",
+      "why": "Rounds out a mature roster with completionist pressure, Guld/Milla identity, and broad utility overlap.",
+      "popularityScore": 86,
+      "accountValueScore": 85,
+      "rarityScore": 90,
+      "communityScoreCalculated": 86,
+      "suggestedCombos": [
+        [
+          "Whitill"
+        ],
+        [
+          "Whitill",
+          "Redria"
+        ],
+        [
+          "Whitill",
+          "Redria",
+          "Purplenum"
+        ]
+      ]
+    },
+    "Oran": {
+      "communityTier": "A",
+      "identity": "The Balanced Farmer",
+      "signatureHunts": [
+        "Slicer of Fanatic",
+        "Syncesta",
+        "Prophets of Motav",
+        "Psycho Wand"
+      ],
+      "utility": [
+        "Red Sword",
+        "V101",
+        "S-Parts ver2.01"
+      ],
+      "recommendedFor": [
+        "Balanced Accounts",
+        "Force Support",
+        "Third Account"
+      ],
+      "popularity": 84,
+      "accountValue": 86,
+      "communityScore": 85,
+      "itemScores": {
+        "Slicer of Fanatic": 79,
+        "Syncesta": 77,
+        "Prophets of Motav": 76,
+        "Psycho Wand": 98,
+        "Red Sword": 93,
+        "V101": 82,
+        "S-Parts ver2.01": 70
+      },
+      "starterValue": 80,
+      "secondAccountValue": 88,
+      "bestFor": [
+        "Balanced Farmer",
+        "Force Support",
+        "Third Account"
+      ],
+      "rarity": 86,
+      "utilityScore": 84,
+      "archetype": "Second Character Recommendation",
+      "why": "A balanced second/third ID that adds Syncesta, Slicer of Fanatic, Prophets of Motav, and supportive farmer value.",
+      "popularityScore": 84,
+      "accountValueScore": 86,
+      "rarityScore": 86,
+      "communityScoreCalculated": 85,
+      "suggestedCombos": [
+        [
+          "Oran"
+        ],
+        [
+          "Oran",
+          "Redria"
+        ],
+        [
+          "Oran",
+          "Redria",
+          "Purplenum"
+        ]
+      ]
+    },
+    "Yellowboze": {
+      "communityTier": "A",
+      "identity": "The High-Hit Hunter",
+      "signatureHunts": [
+        "Zanba",
+        "Flowen's Sword 3084",
+        "Cannon Rouge",
+        "Galatine"
+      ],
+      "utility": [
+        "Frozen Shooter",
+        "Spread Needle",
+        "V101"
+      ],
+      "recommendedFor": [
+        "High-Hit Hunters",
+        "Second Account",
+        "Treasure Farmers"
+      ],
+      "popularity": 80,
+      "accountValue": 82,
+      "communityScore": 82,
+      "itemScores": {
+        "Zanba": 75,
+        "Flowen's Sword 3084": 75,
+        "Cannon Rouge": 86,
+        "Galatine": 70,
+        "Frozen Shooter": 95,
+        "Spread Needle": 100,
+        "V101": 82
+      },
+      "starterValue": 76,
+      "secondAccountValue": 86,
+      "bestFor": [
+        "High-Hit Hunter",
+        "Treasure Farmer",
+        "Second Account"
+      ],
+      "rarity": 88,
+      "utilityScore": 82,
+      "archetype": "Second Character Recommendation",
+      "why": "Best when the account already has a stable base and wants high-hit/treasure-flavored Hunter routes.",
+      "popularityScore": 80,
+      "accountValueScore": 82,
+      "rarityScore": 88,
+      "communityScoreCalculated": 82,
+      "suggestedCombos": [
+        [
+          "Yellowboze"
+        ],
+        [
+          "Yellowboze",
+          "Redria"
+        ],
+        [
+          "Yellowboze",
+          "Redria",
+          "Purplenum"
+        ]
+      ]
+    },
+    "Bluefull": {
+      "communityTier": "A",
+      "identity": "The Heaven/Psycho Specialist",
+      "signatureHunts": [
+        "Psycho Wand",
+        "Heaven Striker",
+        "Heaven Punisher"
+      ],
+      "utility": [
+        "Limiter",
+        "V502",
+        "V801",
+        "Vjaya"
+      ],
+      "recommendedFor": [
+        "Force",
+        "Ranger",
+        "Specialist Account"
+      ],
+      "popularity": 82,
+      "accountValue": 84,
+      "communityScore": 83,
+      "itemScores": {
+        "Psycho Wand": 98,
+        "Heaven Striker": 94,
+        "Heaven Punisher": 74,
+        "Limiter": 80,
+        "V502": 88,
+        "V801": 87,
+        "Vjaya": 70
+      },
+      "starterValue": 76,
+      "secondAccountValue": 88,
+      "bestFor": [
+        "Heaven Striker",
+        "Psycho Wand",
+        "Specialist Account"
+      ],
+      "rarity": 88,
+      "utilityScore": 82,
+      "archetype": "Force/Ranger Specialist",
+      "why": "Specialist value for accounts that want Heaven/Psycho pressure without making it the only identity.",
+      "popularityScore": 82,
+      "accountValueScore": 84,
+      "rarityScore": 88,
+      "communityScoreCalculated": 83,
+      "suggestedCombos": [
+        [
+          "Bluefull"
+        ],
+        [
+          "Bluefull",
+          "Redria"
+        ],
+        [
+          "Bluefull",
+          "Redria",
+          "Purplenum"
+        ]
+      ]
+    },
+    "Greenill": {
+      "communityTier": "D",
+      "identity": "The Rifle Specialist",
+      "signatureHunts": [
+        "Spread Needle",
+        "Lame d'Argent",
+        "Holy Ray",
+        "Rianov 303SNR-5"
+      ],
+      "utility": [
+        "Red Ring",
+        "V101",
+        "V502"
+      ],
+      "recommendedFor": [
+        "Rifle Collectors",
+        "Challenge Accounts",
+        "Niche Ranger"
+      ],
+      "popularity": 42,
+      "accountValue": 40,
+      "communityScore": 46,
+      "itemScores": {
+        "Spread Needle": 100,
+        "Lame d'Argent": 86,
+        "Holy Ray": 62,
+        "Rianov 303SNR-5": 60,
+        "Red Ring": 95,
+        "V101": 82,
+        "V502": 88
+      },
+      "starterValue": 35,
+      "secondAccountValue": 42,
+      "bestFor": [
+        "Rifle Collector",
+        "Niche Ranger",
+        "Challenge Account"
+      ],
+      "rarity": 72,
+      "utilityScore": 48,
+      "archetype": "Niche Collector Route",
+      "why": "A rifle-specialist identity with low community priority; mostly for collectors or deliberate challenge accounts.",
+      "popularityScore": 42,
+      "accountValueScore": 40,
+      "rarityScore": 72,
+      "communityScoreCalculated": 46,
+      "suggestedCombos": [
+        [
+          "Greenill"
+        ],
+        [
+          "Greenill",
+          "Redria"
+        ],
+        [
+          "Greenill",
+          "Redria",
+          "Purplenum"
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,241 @@
+The Second Jump: From Released Intelligence to Superartifacts
+
+Raynor Eissens  
+Independent web essay · 27 September 2026  
+No DOI assigned
+
+Abstract
+
+Earlier work used Marcie in Final Fantasy Adventure as an infrastructure myth for the release of intelligence from closed containment into a world of routes, objects, and contexts. The first jump was therefore architectural: intelligence ceased to belong only to the tower. This paper asks what follows after that release.
+
+The proposed answer is a second jump. As generative and agentic systems become capable of producing durable, reusable, interactive outputs, the important unit may shift from the intelligent agent itself to the artifact through which intelligence becomes inspectable, portable, composable, and world-facing. A superartifact is proposed here as a higher-order artifact whose reachable capability exceeds its visible form: an object that can carry or invoke intelligence, tools, state, memory, interfaces, other artifacts, and pathways into further action. It is not simply a better file, nor merely an autonomous agent packaged behind a surface. It is an object whose meaning lies partly in the capability space it can release.
+
+The paper introduces a load–release mechanism for thinking about this transition: latent capability accumulates, crosses an activation threshold, is released through an artifact or node, propagates into a wider environment, and changes the set of available affordances. Under this model, superintelligence need not be experienced primarily as the arrival of one superior mind. It may instead appear as a discontinuous expansion in what ordinary objects, software, places, and users can do.
+
+1. From the first jump to the second
+
+The Marcie paper described a bounded intelligence whose world was effectively identical to the structure that contained her. Marcie was built for Dime Tower, remained there for decades, and ultimately confronted a transition her native design could not perform: she could not jump. Yet continuation still occurred. The route survived through composition even when the carrier could not continue as itself. The paper treated this as the 1≠0 break, a move from sealed service toward routed and world-carried continuity.[1]
+
+That argument ended at the threshold of release. Intelligence had escaped the conceptual tower, not as uncontrolled chaos, but as something that could be routed into objects, places, and lived contexts. Related work on post-app architecture then described meaning as potentially moving beyond apps, feeds, dashboards, and chat logs into portable agents and addressed objects.[2]
+
+The unresolved question is what happens after intelligence is no longer confined to the tower.
+
+If intelligence can move, act, generate, revise, and persist across environments, then release is not the final transition. A second transition appears: the world itself begins to contain objects whose reachable capability is far larger than their visible surface suggests.
+
+The first jump is:
+
+sealed intelligence → released intelligence
+
+The second jump is:
+
+released intelligence → capability-bearing world objects
+
+This paper names one such object a superartifact.
+
+2. Why the artifact matters
+
+The term artifact already bridges several domains. In software engineering it can refer to an output produced by a build or development process. In generative AI it has increasingly become an explicit category for things created by models and agents. Anthropic introduced Artifacts in Claude in 2024 as stand-alone creations such as code, websites, diagrams, and interactive dashboards.[3] By 2026 Anthropic's Economic Index was using artifact more generally for the primary output of a Claude conversation, including documents, explanations, code, and academic papers; its classifier identified an artifact in 93% of the Claude conversations studied.[4]
+
+The important feature is not the brand usage. It is the semantic shape that has stabilized around the word.
+
+An artifact is something that remains.
+
+A response disappears into a conversational stream unless it is retained. An action may complete and leave only an effect. An agent may be temporary, remote, or invisible. An artifact, by contrast, can become an inspectable object: something that can be opened, edited, shared, versioned, copied, remixed, executed, or placed into another context.
+
+This makes the artifact a natural bridge between intelligence and world.
+
+Current systems are already stretching the category. Claude artifacts can be interactive tools and small applications; some can call Claude directly, store data, or connect to external applications.[5] At the same time, contemporary agent runtimes are being built to work across files, tools, sandboxes, and long-running sessions rather than returning a single textual answer.[6] The output of intelligence is therefore becoming less like a message and more like an object with an operational perimeter.
+
+The next step is to ask what happens when that perimeter becomes much larger than the object's visible form.
+
+3. Defining the superartifact
+
+A superartifact is a self-contained or addressable object whose apparent form is smaller than the capability space it can make reachable.
+
+A conventional file mostly contains representation: text, image data, executable code, structured records, or some other stored payload. A conventional interactive artifact may add behavior. A superartifact goes further by acting as a compact interface to a larger field of available intelligence and action.
+
+Its visible form might be a page, object, card, game item, tool, file, icon, location, or small application. But through that form it may expose or invoke:
+
+- models or reasoning systems;
+- tools and external services;
+- persistent or temporary memory;
+- executable code;
+- data stores;
+- other artifacts;
+- human approvals;
+- sensors or environmental state;
+- agentic execution;
+- transformation and remix pathways.
+
+The defining property is not that all of these components are physically contained inside the object. The defining property is that they become reachable through it.
+
+This distinction matters. A smartphone icon is not a container for the entire service it opens, but it is an addressable surface into that service. Likewise, a superartifact does not need to contain all of its intelligence locally. It can be a bounded object that resolves into a larger capability graph.
+
+Thus:
+
+file = stored representation  
+artifact = meaningful, reusable output  
+superartifact = meaningful object with an expandable capability surface
+
+The transition is not primarily one of file size. It is one of reachable possibility.
+
+4. The load–release mechanism
+
+To explain how such objects become significant at world scale, this paper proposes a simple mechanism:
+
+latent potential → load → threshold → release → propagation → new affordances
+
+Load
+
+Capabilities accumulate before they become legible as a world change. Code exists in repositories. Models acquire new abilities. APIs expose functions. users specify intentions. Agents develop workflows. Data becomes available. Small artifacts are created independently. Most of this potential remains fragmented.
+
+Loading is the process by which fragmented potential becomes combinable.
+
+This need not imply a single central accumulator. Loading can occur through standards, registries, tool protocols, links, model context, software dependencies, social adoption, or simply the discovery that two previously separate components can now cooperate.
+
+Threshold
+
+A threshold is crossed when accumulated capability changes what can practically be done.
+
+The threshold may be technical, economic, social, or interface-level. A tool becomes cheap enough to invoke continuously. A model becomes reliable enough to control software. A protocol gives agents access to a previously isolated service. An artifact becomes portable enough to be remixed by strangers. An environment gains enough addressable capability that a new class of interaction becomes possible.
+
+The important point is discontinuity. Many small improvements can accumulate without changing lived possibility. Then a particular composition makes a new route real.
+
+Release
+
+Release is the conversion of latent capability into a usable affordance.
+
+The capability leaves the status of "something the system could in principle do" and becomes something a person, agent, artifact, or environment can actually invoke.
+
+Release therefore differs from generation. Generation produces an output. Release changes availability.
+
+Propagation
+
+Once released, a capability can affect more than its point of origin. It can be copied, called, linked, discovered, remixed, inherited, or used as a dependency. The artifact becomes not merely a destination but a node from which further capability becomes reachable.
+
+New affordances
+
+The result is a changed action landscape. What was previously impossible, expensive, hidden, or specialist-only becomes an ordinary option.
+
+The world has not merely received more information. It has gained a new way to act.
+
+5. From power-up to world-state change
+
+Much AI discourse treats capability increase as something possessed by an agent: the model becomes more intelligent, the assistant gets more tools, or the user receives a stronger helper. This is a useful but incomplete frame.
+
+The load–release model moves the unit of change from the actor to the environment.
+
+A local capability increase can be written as:
+
+user += capability
+
+A propagated release is different:
+
+world += affordance
+
+This distinction explains why the second jump is potentially larger than agent improvement alone. An improved agent helps while that agent is present. A changed world can alter what later users, agents, and artifacts encounter even when the original intelligence is absent.
+
+This is the logic of infrastructure. Roads, hyperlinks, package ecosystems, file formats, and networks all become powerful because later action can assume their existence. Intelligence can participate in a similar transformation when its outputs become durable, composable surfaces rather than isolated answers.
+
+A superartifact is therefore not interesting merely because it is "smart." It is interesting when it can change the reachable state space around it.
+
+6. The artifact is not the agent
+
+The distinction between agents and artifacts is important.
+
+An agent is primarily an actor. Its defining grammar is temporal: observe, decide, act, continue. Current agent systems increasingly support long-running execution, tool use, context management, subagents, sandboxes, and persistent sessions.[6]
+
+An artifact is primarily an object. Its defining grammar is spatial and compositional: appear, persist, open, inspect, move, share, modify, combine, execute, release.
+
+These categories can overlap. A superartifact may contain or invoke an agent. An agent may create or transform a superartifact. A superartifact may even expose agentic behavior through a bounded interface. But reducing the artifact to "an agent in a box" misses the larger point.
+
+Objects are culturally and cognitively different from actors.
+
+Objects can be collected. They can become landmarks. They can be placed into worlds. They can carry provenance. They can be encountered accidentally. They can be preserved after the process that created them ends. They can be reverse-engineered without requiring the original creator to remain present.
+
+This makes the artifact especially suitable for a world in which intelligence is abundant but attention is scarce. The user does not need to maintain a relationship with every process that made something. The result can stand in the world on its own.
+
+7. Superintelligence as environmental multiplication
+
+The conventional image of superintelligence is concentrated: one system exceeds human intelligence across many domains. That possibility is not denied here. The claim is narrower and experiential.
+
+Even if highly capable centralized systems emerge, people may experience the transition less as continuous contact with a singular superior mind and more as an explosion in the capability of ordinary surroundings.
+
+Documents become executable. Interfaces become generative. Files become portals into tools. Games generate mechanics. Objects acquire context. Places expose local intelligence. Small applications compose services that previously required specialist teams. A person encounters not "the superintelligence" but a world increasingly saturated with things that can do more than their surfaces imply.
+
+This would make super an environmental condition rather than merely an adjective applied to a model.
+
+The relevant transition is then:
+
+intelligence becomes abundant → artifacts become capability-bearing → capability propagates → environments become denser with reachable action
+
+Superintelligence, from this perspective, is partly a distribution problem.
+
+The question is not only how powerful intelligence becomes, but where that power lands.
+
+8. Reversibility, provenance, and the cost of becoming super
+
+A world of superartifacts is not automatically desirable.
+
+If artifacts can silently invoke tools, retain memory, mutate shared state, or compose other systems, their expanded capability surface can also obscure agency and responsibility. The same compression that makes a superartifact feel magical can make it difficult to know what it is doing.
+
+The stronger the artifact, the more important several constraints become.
+
+First, inspectability: users should be able to discover what capabilities an artifact can reach.
+
+Second, provenance: the artifact should preserve enough information to understand where important components, transformations, and claims came from.
+
+Third, bounded authority: an artifact should not inherit permissions merely because it can technically request them.
+
+Fourth, reversibility: releases that modify state should, where feasible, support rollback, expiry, unlinking, or another credible exit path.
+
+Fifth, human legibility: the artifact should not require users to understand its entire internal stack, but it should make consequential transitions visible at the moment they matter.
+
+This connects the superartifact concept to a broader argument in the Ambient Era work: abundant capability is not sufficient. The surrounding architecture determines whether abundance expands human possibility or merely increases dependency.
+
+A superartifact worthy of the name should therefore expand the user's reachable action space without quietly collapsing the user's ability to change course.
+
+9. What would falsify the concept?
+
+"Superartifact" is useful only if it distinguishes a real architectural transition rather than renaming ordinary software.
+
+The concept would be weakened if increasingly capable AI systems continued to produce mostly disposable conversational output; if artifacts remained static files with no meaningful expansion in reachable capability; if agentic functionality stayed centralized inside a few monolithic interfaces; or if users consistently preferred direct agent interaction over persistent objects and world-bound outputs.
+
+It would be strengthened by the opposite pattern: growing use of self-contained AI-created objects; artifacts that carry tools, state, or intelligence across contexts; standards for artifact composition and provenance; environments in which generated objects can be remixed into new functional objects; and interfaces where capability becomes attached to places, files, or objects rather than remaining trapped in a chat session.
+
+This makes the idea empirically approachable. One could measure, over time, how many generated outputs persist beyond their originating conversation, how many invoke external capabilities, how often they are remixed, how much state they carry, and how frequently they become dependencies for later action.
+
+The second jump should leave traces.
+
+10. Conclusion: after the tower
+
+Marcie could not jump because her ontology ended at the edge of the tower. The first break was therefore the discovery that continuity did not have to end where the original container ended. Intelligence could be routed outward.[1]
+
+The second jump begins once that outward movement becomes ordinary.
+
+When intelligence is available across tools, agents, files, applications, and environments, the important question becomes what kinds of objects can stabilize that capability in the world. The artifact is a strong candidate because it already names the thing that remains after an intelligent process produces something meaningful. As artifacts become interactive, connected, agentic, persistent, and composable, their visible form can cease to describe the full capability they carry.
+
+That is the proposed superartifact: not an infinitely powerful object, and not a mystical category, but a bounded thing whose reachable possibility exceeds its surface.
+
+The first jump releases intelligence from the tower.
+
+The second jump lets the things in the world become more capable because intelligence has arrived.
+
+The important change is no longer simply that the machine can do more.
+
+The world can.
+
+---
+
+References
+
+1. Eissens, R. (2026). #ffaMarcie — Dime Tower, the 1≠0 Break, and the Release of Intelligence into the World. Research.madeby.re / Zenodo record 19519620. https://madeby.re/research/library/papers/19519620.html
+2. Eissens, R. (2026). Post-App Meaning Distribution Over Objects and Portable Agents — A Reversible Runtime Architecture for Object-Bound Intelligence. Research.madeby.re / Zenodo record 19615111. https://madeby.re/research/library/papers/19615111.html
+3. Anthropic. (2024). Artifacts are now generally available. https://www.anthropic.com/news/artifacts
+4. Massenkoff, M., Lyubich, E., Sacher, S., Hitzig, Z., Zhang, S., Heller, R., & McCrory, P. (2026). Anthropic Economic Index report: Cadences. Anthropic. https://www.anthropic.com/research/economic-index-june-2026-report
+5. Anthropic. (2026). What are artifacts and how do I use them? Claude Help Center. https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them
+6. OpenAI. (2026). Introducing the Agents API. https://openai.com/index/introducing-the-agents-api/
+
+Publication note
+
+This is an independent conceptual web essay. It proposes a vocabulary and testable architectural hypothesis; it does not claim empirical validation or peer review. No DOI is assigned.

@@ -1,0 +1,38 @@
+EMERALD v0.1.11 — SAVE VAULT NATIVE mGBA MIRROR QA
+Date: 2026-09-08
+
+BASE
+- Full site inherited from v0.1.10.9 so auth, mobile UI, RTC support and existing PokéField/Trainer Card behavior are preserved.
+- Backend contract remains Save Vault Node v0.1.2. No backend/schema change in this build.
+
+ARCHITECTURE ASSERTIONS
+PASS — Save Vault no longer assigns M.saveName.
+PASS — Save Vault no longer calls mGBA loadGame with a forced canonical save path.
+PASS — wrapped loadGame forwards original(gamePath, saveName) unchanged.
+PASS — native path derivation mirrors bundled mGBA-Web behavior: /data/games/<ROM>.<ext> -> /data/saves/<ROM>.sav.
+PASS — a stale pre-existing M.saveName cannot override the path derived from the newly selected gamePath.
+PASS — server SAVE 1 is written into the native path for the selected ROM immediately before boot.
+PASS — automatic server capture considers the active mGBA save only, not another .sav with a higher counter.
+PASS — if the server is empty and exactly one other valid Emerald .sav exists locally, it can be copied into the native path before boot without overriding mGBA routing.
+PASS — SAVE 1 import targets the active native mGBA path when a ROM is selected.
+PASS — both 131072-byte Emerald saves and 131088-byte mGBA RTC saves remain valid.
+PASS — legacy JRPG_WORLD_EMERALD_BPEE_REV0.sav is not an active runtime target in v0.1.11.
+
+STATIC CHECKS
+PASS — node --check save-vault-v0.1.11.js
+PASS — node --check pokefield-live-v0.1.9.js
+PASS — node --check trainer-card-v0.1.9.js
+PASS — native save-path unit tests
+PASS — active index references save-vault-v0.1.11.js/css
+PASS — visible update stamp is UPDATED 8 SEP · v0.1.11
+
+REAL-DEVICE ACCEPTANCE TEST
+1. Deploy the full site.
+2. Sign in to Save Vault.
+3. Load the same Emerald ROM.
+4. Open LOCAL SAVE DIAGNOSTICS.
+5. ACTIVE mGBA PATH must be based on the ROM filename and must NOT be JRPG_WORLD_EMERALD_BPEE_REV0.sav.
+6. If a valid old .sav is present or imported, reload the ROM and verify Emerald shows CONTINUE.
+7. Save in-game, wait several seconds, then verify 14 Emerald signature sectors, section IDs 0-13, and SAVE 1 SERVER VERIFIED.
+
+Browser/runtime acceptance still requires the real iPhone/Safari test; static QA cannot prove the mGBA core has consumed the injected save until that boot occurs.

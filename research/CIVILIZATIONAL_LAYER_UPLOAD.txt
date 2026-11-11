@@ -1,0 +1,31 @@
+THE CIVILIZATIONAL LAYER — research.madeby.re patch
+Date: 2026-09-30
+
+Target:
+  document root of research.madeby.re
+
+Deploy:
+  extract this ZIP into the research.madeby.re document root
+  allow overwrite of the root HTML/TXT/XML/JSON files included in the patch
+
+Adds:
+  civilizational-layer/index.html
+  civilizational-layer/article.css
+  civilizational-layer/article.txt
+  civilizational-layer/article.json
+
+Updates:
+  index.html
+  research.html
+  papers.html
+  concepts.html
+  llms.txt
+  sitemap.xml
+  build-manifest-final.json
+
+Notes:
+  - Uses "personal field" in the new article, not "personal aura".
+  - No existing Zenodo/library records are modified.
+  - RFL-5 remains linked as the earlier source.
+  - Existing article/footer cleanup is preserved.
+  - No DOI is assigned to this web article.

@@ -1,0 +1,2675 @@
+RICO KNOWLEDGE MODULE
+SOURCE MODULE: 15_PSO_HUNTER_GOALS_ENDPOINTS.txt
+MOVE ROUTING: See 18_RICO_KNOWLEDGE_INDEX_QUERY_MAP.txt
+
+PSO HUNTER GOALS, ENDPOINTS, AND CORRECTION ENGINE
+==================================================
+
+PURPOSE
+Hunter-first progression backend: endpoint catalog, goal templates, Section-ID planner, MAG route, correction states, goal resolver, query index, and integration/source policy. This is route synthesis rather than a replacement for current verified drop rows.
+
+SOURCE BASIS
+pso-hunter-goals.json from Hunter Goals v0.3.
+
+RETRIEVAL RULE
+Treat explicit platform labels, verification/status fields, source labels, and warnings as part of the fact. Never silently remove them.
+
+{
+  "schema": "pso-hunter-goals-v0.2",
+  "generated": "2026-05-24",
+  "purpose": "Hunter-first PSO backend: resolve weapons, Section IDs, MAG/PB routes, handoffs, mistakes, account coverage and next safe actions from any player entry point.",
+  "coverageWarning": "This backend is structurally complete for Hunter routing, but item coverage equals the currently imported GGTruth/source corpus. Expand by importing full canonical drop tables; do not pretend missing rows are verified.",
+  "hunterClasses": [
+    "HUmar",
+    "HUnewearl",
+    "HUcast",
+    "HUcaseal"
+  ],
+  "hunterEndpointCatalog": [
+    {
+      "endpointId": "chain_sawd",
+      "name": "Chain Sawd",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "sustain",
+        "caves",
+        "sword",
+        "solo_hunter",
+        "healing_special"
+      ],
+      "usableByHunter": true,
+      "recommendedHunterClasses": [
+        "HUmar",
+        "HUnewearl",
+        "HUcast",
+        "HUcaseal"
+      ],
+      "sectionIds": [
+        "Skyly"
+      ],
+      "dropRoutes": [
+        "drop_chain_sawd_vulmer_skyly_caves_ultimate",
+        "drop_chain_sawd_vulmer_skyly_caves_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_chain_sawd_vulmer_skyly_caves_ultimate",
+        "itemId": "chain_sawd",
+        "itemName": "Chain Sawd",
+        "enemyOrSource": "Vulmer",
+        "sectionIds": [
+          "Skyly"
+        ],
+        "platformScope": "GameCube / Xbox / shared v3 Blue Burst where chart-supported",
+        "episode": "Episode I",
+        "area": "Caves",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "1/1051",
+          "percentage": "0.095147%",
+          "expectedKills": "1051.0"
+        },
+        "probabilities": {
+          "after100": "9.080235%",
+          "after500": "37.871407%",
+          "after1000": "61.400379%",
+          "after5000": "99.143129%"
+        },
+        "bestRoute": "Vulmer-heavy Addicting Food / Caves route",
+        "classFit": [
+          "HUcast",
+          "HUnewearl",
+          "HUmar"
+        ],
+        "routeRole": "hunter_sustain_utility",
+        "whyItMatters": "Some route records cite 1/1050; show both where relevant.",
+        "platformWarning": "GC_Xbox_grouped_only_with_v3_source_support",
+        "sourceKey": "SRC_PSW_V3 / SRC_TYCHO",
+        "status": "conflicting_source_values",
+        "confidence": "high",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "conflicting_source_values"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "demolition_comet",
+      "name": "Demolition Comet",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "power_spike",
+        "twin_saber",
+        "single_target"
+      ],
+      "usableByHunter": true,
+      "recommendedHunterClasses": [
+        "HUmar",
+        "HUnewearl",
+        "HUcast",
+        "HUcaseal"
+      ],
+      "sectionIds": [
+        "Bluefull"
+      ],
+      "dropRoutes": [
+        "drop_demolition_comet_mil_lily_bluefull_caves_temple_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_demolition_comet_mil_lily_bluefull_caves_temple_ultimate",
+        "itemId": "demolition_comet",
+        "itemName": "Demolition Comet",
+        "enemyOrSource": "Mil Lily",
+        "sectionIds": [
+          "Bluefull"
+        ],
+        "platformScope": "GameCube / Xbox / shared v3 Blue Burst where chart-supported",
+        "episode": "Episode I",
+        "area": "Caves / Temple",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "1/2",
+          "percentage": "50.000000%",
+          "expectedKills": "2.0"
+        },
+        "probabilities": {
+          "after100": "100.000000%",
+          "after500": "100.000000%",
+          "after1000": "100.000000%",
+          "after5000": "100.000000%"
+        },
+        "bestRoute": "Mil Lily piping route",
+        "classFit": [
+          "Hunter classes"
+        ],
+        "routeRole": "hunter_power_spike",
+        "whyItMatters": "Strong melee progression weapon with high rare-enemy conversion.",
+        "platformWarning": "GC_Xbox_grouped_only_with_v3_source_support",
+        "sourceKey": "SRC_PSW_V3 / SRC_TYCHO",
+        "status": "verified_for_cited_rows",
+        "confidence": "high",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "verified_for_cited_rows"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "excalibur",
+      "name": "Excalibur",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "endgame_saber",
+        "unseal",
+        "single_target"
+      ],
+      "usableByHunter": false,
+      "recommendedHunterClasses": [],
+      "sectionIds": [
+        "Oran",
+        "Pinkal",
+        "Skyly",
+        "Viridia",
+        "Yellowboze"
+      ],
+      "dropRoutes": [
+        "drop_excalibur_lame_d_argent_10000_kills_viridia_skyly_pinkal_oran_yellowboze_needs_verification_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_excalibur_lame_d_argent_10000_kills_viridia_skyly_pinkal_oran_yellowboze_needs_verification_ultimate",
+        "itemId": "excalibur",
+        "itemName": "Excalibur",
+        "enemyOrSource": "Lame d'Argent + 10000 kills",
+        "sectionIds": [
+          "Viridia",
+          "Skyly",
+          "Pinkal",
+          "Oran",
+          "Yellowboze"
+        ],
+        "platformScope": "Blue Burst / Ephinea-only in current basis",
+        "episode": "Episode IV",
+        "area": "needs_verification",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "derived_from_Lame_d_Argent_unseal",
+          "percentage": "needs_verification",
+          "expectedKills": "needs_verification"
+        },
+        "probabilities": {
+          "after100": "needs_verification",
+          "after500": "needs_verification",
+          "after1000": "needs_verification",
+          "after5000": "needs_verification"
+        },
+        "bestRoute": "needs_verification",
+        "classFit": [
+          "route-dependent"
+        ],
+        "routeRole": "unseal_route",
+        "whyItMatters": "Excalibur route depends on Lame d'Argent acquisition and unseal progress.",
+        "platformWarning": "BB_Ephinea_only_do_not_backport_to_console / exact_fraction_not_available_or_derived",
+        "sourceKey": "SRC_USER_PDF / source expansion needed",
+        "status": "community_synthesis",
+        "confidence": "medium_high",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "community_synthesis"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "frozen_shooter",
+      "name": "Frozen Shooter",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "ranger_support",
+        "account_support",
+        "control"
+      ],
+      "usableByHunter": false,
+      "recommendedHunterClasses": [],
+      "sectionIds": [
+        "Greenill",
+        "Purplenum",
+        "Whitill",
+        "Yellowboze"
+      ],
+      "dropRoutes": [
+        "drop_frozen_shooter_hildetorr_greenill_purplenum_yellowboze_whitill_forest_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_frozen_shooter_hildetorr_greenill_purplenum_yellowboze_whitill_forest_ultimate",
+        "itemId": "frozen_shooter",
+        "itemName": "Frozen Shooter",
+        "enemyOrSource": "Hildetorr",
+        "sectionIds": [
+          "Greenill",
+          "Purplenum",
+          "Yellowboze",
+          "Whitill"
+        ],
+        "platformScope": "GameCube / Xbox / shared v3 Blue Burst where chart-supported",
+        "episode": "Episode I",
+        "area": "Forest",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "1/2",
+          "percentage": "50.000000%",
+          "expectedKills": "2.0"
+        },
+        "probabilities": {
+          "after100": "100.000000%",
+          "after500": "100.000000%",
+          "after1000": "100.000000%",
+          "after5000": "100.000000%"
+        },
+        "bestRoute": "Forest of Sorrow piping / targeted Hildetorr route",
+        "classFit": [
+          "RAmar",
+          "RAmarl",
+          "RAcast",
+          "RAcaseal"
+        ],
+        "routeRole": "utility_stabilizer",
+        "whyItMatters": "Frozen Shooter is a route-defining Ranger control weapon.",
+        "platformWarning": "GC_Xbox_grouped_only_with_v3_source_support",
+        "sourceKey": "SRC_PSW_V3 / SRC_TYCHO / SRC_USER_PDF",
+        "status": "verified_for_cited_rows",
+        "confidence": "high",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "verified_for_cited_rows"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "god_battle",
+      "name": "God/Battle",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "possible_hunter_or_account_support"
+      ],
+      "usableByHunter": true,
+      "recommendedHunterClasses": [
+        "HUmar",
+        "HUnewearl",
+        "HUcast",
+        "HUcaseal"
+      ],
+      "sectionIds": [
+        "Redria",
+        "others"
+      ],
+      "dropRoutes": [
+        "drop_god_battle_various_drops_redria_others_various_very_hard",
+        "drop_god_battle_various_bb_ephinea_higher_rate_route_redria_others_various_very_hard"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_god_battle_various_drops_redria_others_various_very_hard",
+        "itemId": "god_battle",
+        "itemName": "God/Battle",
+        "enemyOrSource": "various drops",
+        "sectionIds": [
+          "Redria",
+          "others"
+        ],
+        "platformScope": "GameCube / Xbox conceptually important; BB/Ephinea also exists",
+        "episode": "Episode I / II",
+        "area": "various",
+        "difficulty": "Very Hard",
+        "dropRate": {
+          "fraction": "1/213",
+          "percentage": "0.469484%",
+          "expectedKills": "213.0"
+        },
+        "probabilities": {
+          "after100": "37.536581%",
+          "after500": "90.491134%",
+          "after1000": "99.095815%",
+          "after5000": "100.000000%"
+        },
+        "bestRoute": "Redria classic speed-unit route where applicable",
+        "classFit": [
+          "all physical classes"
+        ],
+        "routeRole": "20_percent_attack_speed_milestone",
+        "whyItMatters": "Console speed milestone; does not stack with stronger battle-speed units.",
+        "platformWarning": "BB_Ephinea_only_do_not_backport_to_console",
+        "sourceKey": "SRC_EPH_ITEMS / SRC_USER_PDF",
+        "status": "verified_for_cited_rows",
+        "confidence": "medium_high",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "verified_for_cited_rows"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "heavenly_battle",
+      "name": "Heavenly/Battle",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "possible_hunter_or_account_support"
+      ],
+      "usableByHunter": true,
+      "recommendedHunterClasses": [
+        "HUmar",
+        "HUnewearl",
+        "HUcast",
+        "HUcaseal"
+      ],
+      "sectionIds": [
+        "Purplenum",
+        "Redria",
+        "various"
+      ],
+      "dropRoutes": [
+        "drop_heavenly_battle_dorphon_purplenum_desert_ultimate",
+        "drop_heavenly_battle_hildelt_redria_forest_ultimate",
+        "drop_heavenly_battle_bulclaw_gibbles_alternate_listed_source_various_various_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_heavenly_battle_dorphon_purplenum_desert_ultimate",
+        "itemId": "heavenly_battle",
+        "itemName": "Heavenly/Battle",
+        "enemyOrSource": "Dorphon",
+        "sectionIds": [
+          "Purplenum"
+        ],
+        "platformScope": "Blue Burst / Ephinea-only",
+        "episode": "Episode IV",
+        "area": "Desert",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "1/284",
+          "percentage": "0.352113%",
+          "expectedKills": "284.0"
+        },
+        "probabilities": {
+          "after100": "29.723593%",
+          "after500": "82.858543%",
+          "after1000": "97.061704%",
+          "after5000": "99.999998%"
+        },
+        "bestRoute": "Purplenum Dorphon route",
+        "classFit": [
+          "all physical classes"
+        ],
+        "routeRole": "40_percent_attack_speed_unit",
+        "whyItMatters": "Second-best cited speed unit behind V101.",
+        "platformWarning": "BB_Ephinea_only_do_not_backport_to_console",
+        "sourceKey": "SRC_EPH_ITEMS",
+        "status": "verified",
+        "confidence": "high",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "verified",
+        "verified_for_cited_rows"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "lame_d_argent",
+      "name": "Lame d'Argent",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "conversion",
+        "excalibur_route"
+      ],
+      "usableByHunter": false,
+      "recommendedHunterClasses": [],
+      "sectionIds": [
+        "Oran",
+        "Pinkal",
+        "Skyly",
+        "Viridia",
+        "Yellowboze"
+      ],
+      "dropRoutes": [
+        "drop_lame_d_argent_needs_verification_viridia_skyly_pinkal_oran_yellowboze_needs_verification_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_lame_d_argent_needs_verification_viridia_skyly_pinkal_oran_yellowboze_needs_verification_ultimate",
+        "itemId": "lame_d_argent",
+        "itemName": "Lame d'Argent",
+        "enemyOrSource": "needs_verification",
+        "sectionIds": [
+          "Viridia",
+          "Skyly",
+          "Pinkal",
+          "Oran",
+          "Yellowboze"
+        ],
+        "platformScope": "Blue Burst / Ephinea-only in current basis",
+        "episode": "Episode IV",
+        "area": "needs_verification",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "needs_verification",
+          "percentage": "needs_verification",
+          "expectedKills": "needs_verification"
+        },
+        "probabilities": {
+          "after100": "needs_verification",
+          "after500": "needs_verification",
+          "after1000": "needs_verification",
+          "after5000": "needs_verification"
+        },
+        "bestRoute": "needs_verification",
+        "classFit": [
+          "route-dependent"
+        ],
+        "routeRole": "Excalibur_route",
+        "whyItMatters": "Lame d'Argent is route-defining for Excalibur but exact fraction was not verified in current source slice.",
+        "platformWarning": "BB_Ephinea_only_do_not_backport_to_console / exact_fraction_not_available_or_derived",
+        "sourceKey": "SRC_USER_PDF / source expansion needed",
+        "status": "needs_verification",
+        "confidence": "medium",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "needs_verification"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "lavis_cannon",
+      "name": "Lavis Cannon",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "prestige",
+        "single_target",
+        "saber",
+        "conversion_chain"
+      ],
+      "usableByHunter": true,
+      "recommendedHunterClasses": [
+        "HUmar",
+        "HUnewearl",
+        "HUcast",
+        "HUcaseal"
+      ],
+      "sectionIds": [
+        "Redria"
+      ],
+      "dropRoutes": [
+        "drop_lavis_cannon_pouilly_slime_redria_caves_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_lavis_cannon_pouilly_slime_redria_caves_ultimate",
+        "itemId": "lavis_cannon",
+        "itemName": "Lavis Cannon",
+        "enemyOrSource": "Pouilly Slime",
+        "sectionIds": [
+          "Redria"
+        ],
+        "platformScope": "GameCube / Xbox / shared v3 Blue Burst where chart-supported",
+        "episode": "Episode I",
+        "area": "Caves",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "1/22",
+          "percentage": "4.545455%",
+          "expectedKills": "22.0"
+        },
+        "probabilities": {
+          "after100": "99.045752%",
+          "after500": "100.000000%",
+          "after1000": "100.000000%",
+          "after5000": "100.000000%"
+        },
+        "bestRoute": "Addicting Food slime rooms / slime splitting route",
+        "classFit": [
+          "HUcast",
+          "HUnewearl",
+          "HUmar",
+          "HUcaseal"
+        ],
+        "routeRole": "prestige_and_conversion_hunt",
+        "whyItMatters": "Classic Redria Lavis route; Ephinea-adjacent records may cite 1/21.3.",
+        "platformWarning": "GC_Xbox_grouped_only_with_v3_source_support",
+        "sourceKey": "SRC_PSW_V3 / SRC_TYCHO / SRC_USER_PDF",
+        "status": "conflicting_source_values",
+        "confidence": "high",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "conflicting_source_values"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "limiter",
+      "name": "Limiter",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "possible_hunter_or_account_support"
+      ],
+      "usableByHunter": true,
+      "recommendedHunterClasses": [
+        "HUmar",
+        "HUnewearl",
+        "HUcast",
+        "HUcaseal"
+      ],
+      "sectionIds": [
+        "Pinkal",
+        "Viridia",
+        "Whitill"
+      ],
+      "dropRoutes": [
+        "drop_limiter_kondrieu_whitill_desert_ultimate",
+        "drop_limiter_girtablulu_viridia_pinkal_desert_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_limiter_kondrieu_whitill_desert_ultimate",
+        "itemId": "limiter",
+        "itemName": "Limiter",
+        "enemyOrSource": "Kondrieu",
+        "sectionIds": [
+          "Whitill"
+        ],
+        "platformScope": "Blue Burst / Ephinea-only",
+        "episode": "Episode IV",
+        "area": "Desert",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "1/8",
+          "percentage": "12.500000%",
+          "expectedKills": "8.0"
+        },
+        "probabilities": {
+          "after100": "99.999841%",
+          "after500": "100.000000%",
+          "after1000": "100.000000%",
+          "after5000": "100.000000%"
+        },
+        "bestRoute": "Whitill Kondrieu route",
+        "classFit": [
+          "all classes",
+          "Adept route"
+        ],
+        "routeRole": "unseals_to_Adept",
+        "whyItMatters": "Route-defining BB/Ephinea unit progression.",
+        "platformWarning": "BB_Ephinea_only_do_not_backport_to_console",
+        "sourceKey": "SRC_EPH_ITEMS",
+        "status": "verified",
+        "confidence": "high",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "verified",
+        "verified_for_cited_rows"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "red_handgun",
+      "name": "Red Handgun",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "utility",
+        "ranged_backup",
+        "all_class"
+      ],
+      "usableByHunter": false,
+      "recommendedHunterClasses": [],
+      "sectionIds": [
+        "Purplenum",
+        "Redria"
+      ],
+      "dropRoutes": [
+        "drop_red_handgun_pal_rappy_redria_forest_ultimate",
+        "drop_red_handgun_el_rappy_purplenum_forest_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_red_handgun_pal_rappy_redria_forest_ultimate",
+        "itemId": "red_handgun",
+        "itemName": "Red Handgun",
+        "enemyOrSource": "Pal Rappy",
+        "sectionIds": [
+          "Redria"
+        ],
+        "platformScope": "GameCube / Xbox / shared v3 Blue Burst where chart-supported",
+        "episode": "Episode I",
+        "area": "Forest",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "1/2",
+          "percentage": "50.000000%",
+          "expectedKills": "2.0"
+        },
+        "probabilities": {
+          "after100": "100.000000%",
+          "after500": "100.000000%",
+          "after1000": "100.000000%",
+          "after5000": "100.000000%"
+        },
+        "bestRoute": "Fake in Yellow Pal Rappy piping",
+        "classFit": [
+          "broad_all_class_utility"
+        ],
+        "routeRole": "early_ultimate_precision_utility",
+        "whyItMatters": "A major early Ultimate stabilizer.",
+        "platformWarning": "GC_Xbox_grouped_only_with_v3_source_support",
+        "sourceKey": "SRC_PSW_V3 / SRC_TYCHO",
+        "status": "verified_for_cited_rows",
+        "confidence": "high",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "verified_for_cited_rows"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "red_ring",
+      "name": "Red Ring",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "endgame_barrier",
+        "all_class",
+        "prestige"
+      ],
+      "usableByHunter": true,
+      "recommendedHunterClasses": [
+        "HUmar",
+        "HUnewearl",
+        "HUcast",
+        "HUcaseal"
+      ],
+      "sectionIds": [
+        "Greenill",
+        "Redria",
+        "Skyly",
+        "Viridia",
+        "Whitill"
+      ],
+      "dropRoutes": [
+        "drop_red_ring_dark_falz_viridia_greenill_skyly_redria_whitill_dark_falz_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_red_ring_dark_falz_viridia_greenill_skyly_redria_whitill_dark_falz_ultimate",
+        "itemId": "red_ring",
+        "itemName": "Red Ring",
+        "enemyOrSource": "Dark Falz",
+        "sectionIds": [
+          "Viridia",
+          "Greenill",
+          "Skyly",
+          "Redria",
+          "Whitill"
+        ],
+        "platformScope": "Blue Burst / Ephinea",
+        "episode": "Episode I",
+        "area": "Dark Falz",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "1/186",
+          "percentage": "0.537634%",
+          "expectedKills": "186.0"
+        },
+        "probabilities": {
+          "after100": "41.671821%",
+          "after500": "93.248627%",
+          "after1000": "99.544190%",
+          "after5000": "100.000000%"
+        },
+        "bestRoute": "Dark Falz route on qualifying IDs",
+        "classFit": [
+          "all classes"
+        ],
+        "routeRole": "best_barrier_endgame",
+        "whyItMatters": "Ephinea has extra skins/platings; keep BB/Ephinea-marked.",
+        "platformWarning": "BB_Ephinea_only_do_not_backport_to_console",
+        "sourceKey": "SRC_EPH_ITEMS",
+        "status": "verified_for_cited_rows",
+        "confidence": "high",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "verified_for_cited_rows"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "red_sword",
+      "name": "Red Sword",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "aoe",
+        "sword",
+        "solo_hunter",
+        "broad_sweep"
+      ],
+      "usableByHunter": true,
+      "recommendedHunterClasses": [
+        "HUmar",
+        "HUnewearl",
+        "HUcast",
+        "HUcaseal"
+      ],
+      "sectionIds": [
+        "Redria",
+        "Skyly",
+        "Viridia",
+        "Whitill",
+        "Yellowboze"
+      ],
+      "dropRoutes": [
+        "drop_red_sword_nano_dragon_viridia_caves_ultimate",
+        "drop_red_sword_govulmer_skyly_redria_yellowboze_whitill_caves_ultimate",
+        "drop_red_sword_melqueek_skyly_redria_yellowboze_whitill_caves_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_red_sword_nano_dragon_viridia_caves_ultimate",
+        "itemId": "red_sword",
+        "itemName": "Red Sword",
+        "enemyOrSource": "Nano Dragon",
+        "sectionIds": [
+          "Viridia"
+        ],
+        "platformScope": "GameCube / Xbox / shared v3 Blue Burst where chart-supported",
+        "episode": "Episode I",
+        "area": "Caves",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "1/573",
+          "percentage": "0.174520%",
+          "expectedKills": "573.0"
+        },
+        "probabilities": {
+          "after100": "16.026804%",
+          "after500": "58.245488%",
+          "after1000": "82.565607%",
+          "after5000": "99.983892%"
+        },
+        "bestRoute": "Nano Dragon Caves route / Endless Nightmare 2-style routing",
+        "classFit": [
+          "Hunter classes"
+        ],
+        "routeRole": "broad_hunter_sweep_weapon",
+        "whyItMatters": "Classic Hunter sweep weapon route.",
+        "platformWarning": "GC_Xbox_grouped_only_with_v3_source_support",
+        "sourceKey": "SRC_PSW_V3 / SRC_TYCHO",
+        "status": "verified_for_cited_rows",
+        "confidence": "high",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "verified_for_cited_rows"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "sealed_j_sword",
+      "name": "Sealed J-Sword",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "possible_hunter_or_account_support"
+      ],
+      "usableByHunter": true,
+      "recommendedHunterClasses": [
+        "HUmar",
+        "HUnewearl",
+        "HUcast",
+        "HUcaseal"
+      ],
+      "sectionIds": [
+        "Skyly"
+      ],
+      "dropRoutes": [
+        "drop_sealed_j_sword_gi_gue_skyly_central_control_area_seaside_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_sealed_j_sword_gi_gue_skyly_central_control_area_seaside_ultimate",
+        "itemId": "sealed_j_sword",
+        "itemName": "Sealed J-Sword",
+        "enemyOrSource": "Gi Gue",
+        "sectionIds": [
+          "Skyly"
+        ],
+        "platformScope": "GameCube / Xbox / shared v3 Blue Burst where chart-supported",
+        "episode": "Episode II",
+        "area": "Central Control Area / Seaside",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "1/12604",
+          "percentage": "0.007934%",
+          "expectedKills": "12604.0"
+        },
+        "probabilities": {
+          "after100": "0.790291%",
+          "after500": "3.889491%",
+          "after1000": "7.627700%",
+          "after5000": "32.747447%"
+        },
+        "bestRoute": "Gi Gue-focused CCA / Seaside route",
+        "classFit": [
+          "HUcast",
+          "HUmar",
+          "HUnewearl"
+        ],
+        "routeRole": "ultra_prestige_hunt",
+        "whyItMatters": "One of the rarest classic PSO hunts; Ephinea records may cite 1/12603.",
+        "platformWarning": "GC_Xbox_grouped_only_with_v3_source_support",
+        "sourceKey": "SRC_PSW_V3 / SRC_TYCHO / SRC_USER_PDF",
+        "status": "conflicting_source_values",
+        "confidence": "high",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "conflicting_source_values"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "spread_needle",
+      "name": "Spread Needle",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "ranger_support",
+        "account_support",
+        "crowd_control"
+      ],
+      "usableByHunter": false,
+      "recommendedHunterClasses": [],
+      "sectionIds": [
+        "Greenill",
+        "Purplenum",
+        "Redria",
+        "Yellowboze"
+      ],
+      "dropRoutes": [
+        "drop_spread_needle_dark_bringer_redria_ruins_ultimate",
+        "drop_spread_needle_merlan_greenill_purplenum_yellowboze_ruins_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_spread_needle_dark_bringer_redria_ruins_ultimate",
+        "itemId": "spread_needle",
+        "itemName": "Spread Needle",
+        "enemyOrSource": "Dark Bringer",
+        "sectionIds": [
+          "Redria"
+        ],
+        "platformScope": "GameCube / Xbox / shared v3 Blue Burst where chart-supported",
+        "episode": "Episode I",
+        "area": "Ruins",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "1/359",
+          "percentage": "0.278552%",
+          "expectedKills": "359.0"
+        },
+        "probabilities": {
+          "after100": "24.341486%",
+          "after500": "75.209286%",
+          "after1000": "93.854205%",
+          "after5000": "99.999912%"
+        },
+        "bestRoute": "Ruins / Dark Bringer focused route",
+        "classFit": [
+          "RAmar",
+          "RAmarl",
+          "RAcast",
+          "RAcaseal"
+        ],
+        "routeRole": "crowd_control_utility",
+        "whyItMatters": "Redria Dark Bringer is the strongest cited Spread Needle line; Ephinea records may use 1/358.",
+        "platformWarning": "GC_Xbox_grouped_only_with_v3_source_support",
+        "sourceKey": "SRC_PSW_V3 / SRC_TYCHO / SRC_USER_PDF",
+        "status": "conflicting_source_values",
+        "confidence": "high",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "conflicting_source_values",
+        "verified_for_cited_rows"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "syncesta",
+      "name": "Syncesta",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "conversion",
+        "lavis_series"
+      ],
+      "usableByHunter": false,
+      "recommendedHunterClasses": [],
+      "sectionIds": [
+        "Oran"
+      ],
+      "dropRoutes": [
+        "drop_syncesta_hildetorr_oran_forest_ultimate",
+        "drop_syncesta_girtablulu_oran_desert_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_syncesta_hildetorr_oran_forest_ultimate",
+        "itemId": "syncesta",
+        "itemName": "Syncesta",
+        "enemyOrSource": "Hildetorr",
+        "sectionIds": [
+          "Oran"
+        ],
+        "platformScope": "Blue Burst / Ephinea-only cited; v3 routes need separate verification",
+        "episode": "Episode I",
+        "area": "Forest",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "1/21.3",
+          "percentage": "4.694836%",
+          "expectedKills": "21.3"
+        },
+        "probabilities": {
+          "after100": "99.184088%",
+          "after500": "100.000000%",
+          "after1000": "100.000000%",
+          "after5000": "100.000000%"
+        },
+        "bestRoute": "Oran Hildetorr route",
+        "classFit": [
+          "Lavis series users"
+        ],
+        "routeRole": "Lavis_conversion_tool",
+        "whyItMatters": "Do not silently back-port this exact rate to console.",
+        "platformWarning": "BB_Ephinea_only_do_not_backport_to_console",
+        "sourceKey": "SRC_EPH_ITEMS",
+        "status": "verified_for_cited_rows",
+        "confidence": "medium",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "verified_for_cited_rows"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    },
+    {
+      "endpointId": "v101",
+      "name": "V101",
+      "endpointType": "item_or_route_item",
+      "hunterRelevance": [
+        "speed_unit",
+        "blue_burst",
+        "physical"
+      ],
+      "usableByHunter": false,
+      "recommendedHunterClasses": [],
+      "sectionIds": [
+        "Greenill",
+        "Purplenum",
+        "Redria",
+        "Whitill"
+      ],
+      "dropRoutes": [
+        "drop_v101_dorphon_other_bb_ephinea_sources_purplenum_redria_greenill_whitill_needs_verification_ultimate"
+      ],
+      "bestKnownRoute": {
+        "routeId": "drop_v101_dorphon_other_bb_ephinea_sources_purplenum_redria_greenill_whitill_needs_verification_ultimate",
+        "itemId": "v101",
+        "itemName": "V101",
+        "enemyOrSource": "Dorphon / other BB/Ephinea sources",
+        "sectionIds": [
+          "Purplenum",
+          "Redria",
+          "Greenill",
+          "Whitill"
+        ],
+        "platformScope": "Blue Burst / Ephinea-only",
+        "episode": "Episode IV / BB route ecosystem",
+        "area": "needs_verification",
+        "difficulty": "Ultimate",
+        "dropRate": {
+          "fraction": "needs_verification",
+          "percentage": "needs_verification",
+          "expectedKills": "needs_verification"
+        },
+        "probabilities": {
+          "after100": "needs_verification",
+          "after500": "needs_verification",
+          "after1000": "needs_verification",
+          "after5000": "needs_verification"
+        },
+        "bestRoute": "needs_verification",
+        "classFit": [
+          "route-dependent"
+        ],
+        "routeRole": "bb_speed_core",
+        "whyItMatters": "V101 is route-defining but exact fraction was not machine-verified in current source slice.",
+        "platformWarning": "BB_Ephinea_only_do_not_backport_to_console / exact_fraction_not_available_or_derived",
+        "sourceKey": "SRC_USER_PDF / source expansion needed",
+        "status": "needs_verification",
+        "confidence": "medium",
+        "retrievalAngles": [
+          "exact_drop_rate_lookup",
+          "section_id_lookup",
+          "enemy_lookup",
+          "route_lookup",
+          "platform_scope_lookup",
+          "hunt_classification",
+          "class_fit_lookup",
+          "solo_priority_lookup",
+          "expected_kill_count",
+          "probability_after_100",
+          "probability_after_500",
+          "probability_after_1000",
+          "probability_after_5000",
+          "verification_status_lookup",
+          "platform_warning_lookup",
+          "route_importance_lookup",
+          "area_lookup",
+          "difficulty_lookup",
+          "episode_lookup",
+          "machine_record_lookup",
+          "platform_merge_warning",
+          "account_stabilization_lookup",
+          "alternative_route_lookup",
+          "ai_routing_importance",
+          "provenance_lookup"
+        ]
+      },
+      "statuses": [
+        "needs_verification"
+      ],
+      "sourceConfidence": "from_ggtruth_routegraph_v01",
+      "notes": "Hunter endpoint row generated from GGTruth drop corpus and route roles. Add source-specific expansions as more drop tables are imported."
+    }
+  ],
+  "hunterGoalTemplates": [
+    {
+      "goalId": "hunter_best_first_account",
+      "label": "Best first Hunter account",
+      "intent": "Build a self-found Hunter account with broad survivability and good early-to-endgame options.",
+      "preferredSectionIds": [
+        "Redria",
+        "Skyly",
+        "Whitill",
+        "Purplenum"
+      ],
+      "coreEndpoints": [
+        "red_handgun",
+        "god/battle",
+        "red_sword",
+        "chain_sawd",
+        "lavis_cannon"
+      ],
+      "magRoute": "mag_pow_physical_mylla_pilla_estlla_5_145_50_0",
+      "photonBlasts": [
+        "Estlla",
+        "Pilla",
+        "Mylla & Youlla"
+      ],
+      "endpointRows": [
+        {
+          "endpointId": "red_handgun",
+          "name": "Red Handgun",
+          "kind": "item",
+          "sectionIds": [
+            "Purplenum",
+            "Redria"
+          ],
+          "routes": [
+            "drop_red_handgun_pal_rappy_redria_forest_ultimate",
+            "drop_red_handgun_el_rappy_purplenum_forest_ultimate"
+          ],
+          "available": true
+        },
+        {
+          "endpointId": "god/battle",
+          "name": "god/battle",
+          "kind": "item",
+          "sectionIds": [],
+          "routes": [],
+          "available": false
+        },
+        {
+          "endpointId": "red_sword",
+          "name": "Red Sword",
+          "kind": "item",
+          "sectionIds": [
+            "Redria",
+            "Skyly",
+            "Viridia",
+            "Whitill",
+            "Yellowboze"
+          ],
+          "routes": [
+            "drop_red_sword_nano_dragon_viridia_caves_ultimate",
+            "drop_red_sword_govulmer_skyly_redria_yellowboze_whitill_caves_ultimate",
+            "drop_red_sword_melqueek_skyly_redria_yellowboze_whitill_caves_ultimate"
+          ],
+          "available": true
+        },
+        {
+          "endpointId": "chain_sawd",
+          "name": "Chain Sawd",
+          "kind": "item",
+          "sectionIds": [
+            "Skyly"
+          ],
+          "routes": [
+            "drop_chain_sawd_vulmer_skyly_caves_ultimate",
+            "drop_chain_sawd_vulmer_skyly_caves_ultimate"
+          ],
+          "available": true
+        },
+        {
+          "endpointId": "lavis_cannon",
+          "name": "Lavis Cannon",
+          "kind": "item",
+          "sectionIds": [
+            "Redria"
+          ],
+          "routes": [
+            "drop_lavis_cannon_pouilly_slime_redria_caves_ultimate"
+          ],
+          "available": true
+        }
+      ],
+      "missingCoverage": [
+        "god/battle"
+      ]
+    },
+    {
+      "goalId": "hunter_sustain_weapon",
+      "label": "Sustain weapon for Android Hunter",
+      "intent": "Get a weapon that heals or stabilizes a no-tech Hunter.",
+      "preferredSectionIds": [
+        "Skyly"
+      ],
+      "coreEndpoints": [
+        "chain_sawd"
+      ],
+      "magRoute": "mag_pow_physical_mylla_pilla_estlla_5_145_50_0",
+      "photonBlasts": [
+        "Estlla",
+        "Pilla",
+        "Mylla & Youlla"
+      ],
+      "endpointRows": [
+        {
+          "endpointId": "chain_sawd",
+          "name": "Chain Sawd",
+          "kind": "item",
+          "sectionIds": [
+            "Skyly"
+          ],
+          "routes": [
+            "drop_chain_sawd_vulmer_skyly_caves_ultimate",
+            "drop_chain_sawd_vulmer_skyly_caves_ultimate"
+          ],
+          "available": true
+        }
+      ],
+      "missingCoverage": []
+    },
+    {
+      "goalId": "hunter_big_sword_route",
+      "label": "Big sword / room sweep route",
+      "intent": "Build toward strong sword sweep options.",
+      "preferredSectionIds": [
+        "Skyly",
+        "Redria",
+        "Whitill",
+        "Viridia",
+        "Yellowboze"
+      ],
+      "coreEndpoints": [
+        "red_sword",
+        "chain_sawd",
+        "sealed_j-sword"
+      ],
+      "magRoute": "mag_pow_physical_mylla_pilla_estlla_5_145_50_0",
+      "photonBlasts": [
+        "Estlla",
+        "Pilla",
+        "Mylla & Youlla"
+      ],
+      "endpointRows": [
+        {
+          "endpointId": "red_sword",
+          "name": "Red Sword",
+          "kind": "item",
+          "sectionIds": [
+            "Redria",
+            "Skyly",
+            "Viridia",
+            "Whitill",
+            "Yellowboze"
+          ],
+          "routes": [
+            "drop_red_sword_nano_dragon_viridia_caves_ultimate",
+            "drop_red_sword_govulmer_skyly_redria_yellowboze_whitill_caves_ultimate",
+            "drop_red_sword_melqueek_skyly_redria_yellowboze_whitill_caves_ultimate"
+          ],
+          "available": true
+        },
+        {
+          "endpointId": "chain_sawd",
+          "name": "Chain Sawd",
+          "kind": "item",
+          "sectionIds": [
+            "Skyly"
+          ],
+          "routes": [
+            "drop_chain_sawd_vulmer_skyly_caves_ultimate",
+            "drop_chain_sawd_vulmer_skyly_caves_ultimate"
+          ],
+          "available": true
+        },
+        {
+          "endpointId": "sealed_j-sword",
+          "name": "sealed_j-sword",
+          "kind": "item",
+          "sectionIds": [],
+          "routes": [],
+          "available": false
+        }
+      ],
+      "missingCoverage": [
+        "sealed_j-sword"
+      ]
+    },
+    {
+      "goalId": "hunter_prestige_lavis_route",
+      "label": "Lavis / Double Cannon style prestige route",
+      "intent": "Build toward Lavis Cannon and its conversion ecosystem.",
+      "preferredSectionIds": [
+        "Redria",
+        "Oran"
+      ],
+      "coreEndpoints": [
+        "lavis_cannon",
+        "syncesta"
+      ],
+      "magRoute": "mag_pow_physical_mylla_pilla_estlla_5_145_50_0",
+      "photonBlasts": [
+        "Estlla",
+        "Pilla",
+        "Mylla & Youlla"
+      ],
+      "endpointRows": [
+        {
+          "endpointId": "lavis_cannon",
+          "name": "Lavis Cannon",
+          "kind": "item",
+          "sectionIds": [
+            "Redria"
+          ],
+          "routes": [
+            "drop_lavis_cannon_pouilly_slime_redria_caves_ultimate"
+          ],
+          "available": true
+        },
+        {
+          "endpointId": "syncesta",
+          "name": "Syncesta",
+          "kind": "item",
+          "sectionIds": [
+            "Oran"
+          ],
+          "routes": [
+            "drop_syncesta_hildetorr_oran_forest_ultimate",
+            "drop_syncesta_girtablulu_oran_desert_ultimate"
+          ],
+          "available": true
+        }
+      ],
+      "missingCoverage": []
+    },
+    {
+      "goalId": "hunter_speed_unit_route",
+      "label": "Attack speed unit route",
+      "intent": "Find Battle/V101 style attack-speed milestones for physical Hunters.",
+      "preferredSectionIds": [
+        "Redria",
+        "Purplenum",
+        "Whitill",
+        "Greenill"
+      ],
+      "coreEndpoints": [
+        "god/battle",
+        "heavenly/battle",
+        "v101"
+      ],
+      "magRoute": "mag_pow_physical_mylla_pilla_estlla_5_145_50_0",
+      "photonBlasts": [
+        "Estlla",
+        "Pilla",
+        "Mylla & Youlla"
+      ],
+      "endpointRows": [
+        {
+          "endpointId": "god/battle",
+          "name": "god/battle",
+          "kind": "item",
+          "sectionIds": [],
+          "routes": [],
+          "available": false
+        },
+        {
+          "endpointId": "heavenly/battle",
+          "name": "heavenly/battle",
+          "kind": "item",
+          "sectionIds": [],
+          "routes": [],
+          "available": false
+        },
+        {
+          "endpointId": "v101",
+          "name": "V101",
+          "kind": "item",
+          "sectionIds": [
+            "Greenill",
+            "Purplenum",
+            "Redria",
+            "Whitill"
+          ],
+          "routes": [
+            "drop_v101_dorphon_other_bb_ephinea_sources_purplenum_redria_greenill_whitill_needs_verification_ultimate"
+          ],
+          "available": true
+        }
+      ],
+      "missingCoverage": [
+        "god/battle",
+        "heavenly/battle"
+      ]
+    },
+    {
+      "goalId": "hunter_ranged_backup",
+      "label": "Hunter ranged backup route",
+      "intent": "Get safe handgun/ranged utility for bosses and awkward rooms.",
+      "preferredSectionIds": [
+        "Redria",
+        "Purplenum"
+      ],
+      "coreEndpoints": [
+        "red_handgun"
+      ],
+      "magRoute": "mag_pow_physical_mylla_pilla_estlla_5_145_50_0",
+      "photonBlasts": [
+        "Estlla",
+        "Pilla",
+        "Mylla & Youlla"
+      ],
+      "endpointRows": [
+        {
+          "endpointId": "red_handgun",
+          "name": "Red Handgun",
+          "kind": "item",
+          "sectionIds": [
+            "Purplenum",
+            "Redria"
+          ],
+          "routes": [
+            "drop_red_handgun_pal_rappy_redria_forest_ultimate",
+            "drop_red_handgun_el_rappy_purplenum_forest_ultimate"
+          ],
+          "available": true
+        }
+      ],
+      "missingCoverage": []
+    },
+    {
+      "goalId": "hunter_account_support_ranger_unlock",
+      "label": "Second-character Ranger support unlocks",
+      "intent": "Create Ranger-side support endpoints that make Hunter farming safer across the account.",
+      "preferredSectionIds": [
+        "Redria",
+        "Purplenum",
+        "Whitill",
+        "Greenill",
+        "Yellowboze"
+      ],
+      "coreEndpoints": [
+        "frozen_shooter",
+        "spread_needle"
+      ],
+      "magRoute": "mag_ranger_dex_pow_mylla_pilla_estlla_5_125_70_0",
+      "photonBlasts": [
+        "Estlla",
+        "Pilla",
+        "Mylla & Youlla"
+      ],
+      "endpointRows": [
+        {
+          "endpointId": "frozen_shooter",
+          "name": "Frozen Shooter",
+          "kind": "item",
+          "sectionIds": [
+            "Greenill",
+            "Purplenum",
+            "Whitill",
+            "Yellowboze"
+          ],
+          "routes": [
+            "drop_frozen_shooter_hildetorr_greenill_purplenum_yellowboze_whitill_forest_ultimate"
+          ],
+          "available": true
+        },
+        {
+          "endpointId": "spread_needle",
+          "name": "Spread Needle",
+          "kind": "item",
+          "sectionIds": [
+            "Greenill",
+            "Purplenum",
+            "Redria",
+            "Yellowboze"
+          ],
+          "routes": [
+            "drop_spread_needle_dark_bringer_redria_ruins_ultimate",
+            "drop_spread_needle_merlan_greenill_purplenum_yellowboze_ruins_ultimate"
+          ],
+          "available": true
+        }
+      ],
+      "missingCoverage": []
+    },
+    {
+      "goalId": "hunter_mag_safe_physical",
+      "label": "Safe physical Hunter MAG",
+      "intent": "Create a physical Hunter MAG with low DEF, enough DEX, strong POW and the stable PB trio.",
+      "preferredSectionIds": [
+        "any_with_correct_handoff"
+      ],
+      "coreEndpoints": [
+        "mag_pow_physical_mylla_pilla_estlla_5_145_50_0"
+      ],
+      "magRoute": "mag_pow_physical_mylla_pilla_estlla_5_145_50_0",
+      "photonBlasts": [
+        "Estlla",
+        "Pilla",
+        "Mylla & Youlla"
+      ],
+      "endpointRows": [
+        {
+          "endpointId": "mag_pow_physical_mylla_pilla_estlla_5_145_50_0",
+          "kind": "magRoute",
+          "available": true
+        }
+      ],
+      "missingCoverage": []
+    }
+  ],
+  "hunterSectionIdPlanner": [
+    {
+      "sectionId": "Redria",
+      "hunterEndpointCount": 8,
+      "hunterScore": 17,
+      "opensEndpoints": [
+        "god_battle",
+        "heavenly_battle",
+        "lavis_cannon",
+        "red_handgun",
+        "red_ring",
+        "red_sword",
+        "spread_needle",
+        "v101"
+      ]
+    },
+    {
+      "sectionId": "Skyly",
+      "hunterEndpointCount": 6,
+      "hunterScore": 13,
+      "opensEndpoints": [
+        "chain_sawd",
+        "excalibur",
+        "lame_d_argent",
+        "red_ring",
+        "red_sword",
+        "sealed_j_sword"
+      ]
+    },
+    {
+      "sectionId": "Whitill",
+      "hunterEndpointCount": 5,
+      "hunterScore": 11,
+      "opensEndpoints": [
+        "frozen_shooter",
+        "limiter",
+        "red_ring",
+        "red_sword",
+        "v101"
+      ]
+    },
+    {
+      "sectionId": "Viridia",
+      "hunterEndpointCount": 5,
+      "hunterScore": 10,
+      "opensEndpoints": [
+        "excalibur",
+        "lame_d_argent",
+        "limiter",
+        "red_ring",
+        "red_sword"
+      ]
+    },
+    {
+      "sectionId": "Greenill",
+      "hunterEndpointCount": 4,
+      "hunterScore": 7,
+      "opensEndpoints": [
+        "frozen_shooter",
+        "red_ring",
+        "spread_needle",
+        "v101"
+      ]
+    },
+    {
+      "sectionId": "Purplenum",
+      "hunterEndpointCount": 5,
+      "hunterScore": 7,
+      "opensEndpoints": [
+        "frozen_shooter",
+        "heavenly_battle",
+        "red_handgun",
+        "spread_needle",
+        "v101"
+      ]
+    },
+    {
+      "sectionId": "Yellowboze",
+      "hunterEndpointCount": 5,
+      "hunterScore": 7,
+      "opensEndpoints": [
+        "excalibur",
+        "frozen_shooter",
+        "lame_d_argent",
+        "red_sword",
+        "spread_needle"
+      ]
+    },
+    {
+      "sectionId": "Pinkal",
+      "hunterEndpointCount": 3,
+      "hunterScore": 4,
+      "opensEndpoints": [
+        "excalibur",
+        "lame_d_argent",
+        "limiter"
+      ]
+    },
+    {
+      "sectionId": "Oran",
+      "hunterEndpointCount": 3,
+      "hunterScore": 3,
+      "opensEndpoints": [
+        "excalibur",
+        "lame_d_argent",
+        "syncesta"
+      ]
+    },
+    {
+      "sectionId": "Bluefull",
+      "hunterEndpointCount": 1,
+      "hunterScore": 2,
+      "opensEndpoints": [
+        "demolition_comet"
+      ]
+    }
+  ],
+  "magFlipbookRoutes": [
+    {
+      "routeId": "mag_pow_physical_mylla_pilla_estlla_5_145_50_0",
+      "routeKind": "immutable_flipbook_template",
+      "endpoint": "Physical Hunter MAG 5/145/50/0 with Estlla/Pilla/Mylla & Youlla",
+      "status": "template_needs_exact_table_expansion",
+      "why": "Frontend should keep a pointer to a verified frame, not run a fragile full live simulation. Each frame exposes max two safe feed buttons.",
+      "frames": [
+        {
+          "frame": 0,
+          "levelRange": "5-10",
+          "target": "Reach first evolution/PB safely",
+          "visibleStats": "DEF 5 / POW low / DEX rising / MIND 0",
+          "safeFeedOptions": [
+            "Antidote",
+            "Antiparalysis"
+          ],
+          "routeState": "safe",
+          "checkpoint": "Lv10 PB target: Estlla if using Kalki route",
+          "correction": "If DEF starts rising, stop and recompute from current stat bars."
+        },
+        {
+          "frame": 1,
+          "levelRange": "10-35",
+          "target": "Build DEX/POW without duplicate PB risk",
+          "visibleStats": "Keep DEF at 5 where possible; DEX stable; POW begins rising",
+          "safeFeedOptions": [
+            "Antidote",
+            "Dimate"
+          ],
+          "routeState": "safe",
+          "checkpoint": "Lv35 second PB target: Pilla or compatible route PB",
+          "correction": "Duplicate PB risk must be checked before Lv35."
+        },
+        {
+          "frame": 2,
+          "levelRange": "35-50",
+          "target": "Secure third PB and preserve physical endpoint",
+          "visibleStats": "DEX sufficient for ATA; POW becomes dominant",
+          "safeFeedOptions": [
+            "Dimate",
+            "Antiparalysis"
+          ],
+          "routeState": "safe",
+          "checkpoint": "Lv50 third PB target: Mylla & Youlla through correct feeder/handoff",
+          "correction": "If M&Y missed, route is still usable but optimized Hunter route is PB-broken."
+        },
+        {
+          "frame": 3,
+          "levelRange": "50-100",
+          "target": "Prepare fourth evolution / rare MAG handoff",
+          "visibleStats": "Approach desired stat formula; avoid DEF drift",
+          "safeFeedOptions": [
+            "Dimate",
+            "Trimate"
+          ],
+          "routeState": "handoff_sensitive",
+          "checkpoint": "Lv100 fourth evolution check",
+          "correction": "Wrong feeder can change form; endpoint may still be recoverable at later 10-level checks."
+        },
+        {
+          "frame": 4,
+          "levelRange": "100-200",
+          "target": "Finish final spread",
+          "visibleStats": "Final target 5/145/50/0 or adjusted Hunter variant",
+          "safeFeedOptions": [
+            "Trimate",
+            "Sol Atomizer"
+          ],
+          "routeState": "finish",
+          "checkpoint": "Final endpoint lock for stat spread; form may re-check every 10 levels",
+          "correction": "Stat spread errors may be recoverable; PB errors are not recoverable."
+        }
+      ]
+    }
+  ],
+  "magCorrectionEngine": {
+    "engineId": "mag_correction_v02",
+    "inputFields": [
+      "magLevel",
+      "def",
+      "pow",
+      "dex",
+      "mind",
+      "knownPhotonBlasts",
+      "currentMagName",
+      "feederClass",
+      "feederSectionId",
+      "targetRouteId"
+    ],
+    "decisionStates": [
+      {
+        "state": "safe",
+        "meaning": "Current stats and PB slots still align with endpoint; show max two feed choices."
+      },
+      {
+        "state": "recoverable",
+        "meaning": "Stats drifted but endpoint can be corrected by changing feed/handoff."
+      },
+      {
+        "state": "pb_broken",
+        "meaning": "Photon Blast slot was duplicated or desired PB missed; physical MAG may still be useful, optimized endpoint failed."
+      },
+      {
+        "state": "handoff_required",
+        "meaning": "Endpoint requires feeding with another class/gender/Section ID before next checkpoint."
+      },
+      {
+        "state": "impossible_for_platform",
+        "meaning": "Endpoint depends on platform-specific systems unavailable here."
+      },
+      {
+        "state": "needs_exact_table",
+        "meaning": "Backend lacks exact per-feed table for this frame; route must not claim certainty."
+      }
+    ],
+    "hardRules": [
+      "Photon Blasts unlock at level 10, 35 and 50; duplicate PBs can waste slots.",
+      "Fourth evolution MAGs unlock at level 100 and can re-check every 10 levels.",
+      "Fourth evolutions can revert if wrong class/Section ID/stat formula feeds them.",
+      "Stats can often be corrected; PB mistakes are the most dangerous irreversible errors.",
+      "Live UI must expose no more than two feed options per frame."
+    ],
+    "evaluatePseudoCode": [
+      "if target PB missing after its checkpoint -> pb_broken",
+      "if route requires feeder and current feeder mismatch before checkpoint -> handoff_required",
+      "if platform excludes endpoint -> impossible_for_platform",
+      "if stats within route tolerance and PB state OK -> safe",
+      "if stats outside tolerance but before hard checkpoint -> recoverable"
+    ]
+  },
+  "goalResolver": {
+    "engineId": "hunter_goal_resolver_v02",
+    "purpose": "Answer player entry questions for building a strong Hunter: desired class, weapon, MAG, Photon Blast, Section ID, mistake, or account-wide gear coverage.",
+    "entryQuestions": [
+      "I am a Hunter. What good weapons can I get on this Section ID?",
+      "I am HUcast/HUmar/HUnewearl/HUcaseal. What should I hunt first?",
+      "I want Chain Sawd / Red Sword / Lavis Cannon / Sealed J-Sword. Which Section ID and route?",
+      "I want Mylla & Youlla. What MAG path and when do I switch feeders?",
+      "I made a MAG mistake. Is the route still recoverable?",
+      "Which Section IDs do I need if I want broad Hunter coverage?",
+      "What can Redria/Skyly/Purplenum/Whitill open for a Hunter?",
+      "Is this endpoint GameCube/Xbox, Blue Burst, or Ephinea-specific?"
+    ],
+    "resolutionOrder": [
+      "platform_scope",
+      "class_fit",
+      "section_id_fit",
+      "endpoint_availability",
+      "drop_route",
+      "mag_pb_support",
+      "handoff_or_second_character",
+      "correction_state",
+      "next_safe_action"
+    ],
+    "outputShape": {
+      "canStart": "boolean",
+      "routeStatus": "direct | needs_swap | needs_second_character | impossible | needs_verification",
+      "recommendedSectionIds": "array",
+      "endpointRows": "array",
+      "magRoute": "object",
+      "photonBlastPlan": "array",
+      "warnings": "array",
+      "nextSafeActions": "array"
+    }
+  },
+  "queryIndex": [
+    {
+      "kind": "endpoint",
+      "id": "chain_sawd",
+      "label": "Chain Sawd",
+      "tokens": [
+        "caves",
+        "chain sawd",
+        "healing special",
+        "skyly",
+        "solo hunter",
+        "sustain",
+        "sword"
+      ],
+      "sectionIds": [
+        "Skyly"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "demolition_comet",
+      "label": "Demolition Comet",
+      "tokens": [
+        "bluefull",
+        "demolition comet",
+        "power spike",
+        "single target",
+        "twin saber"
+      ],
+      "sectionIds": [
+        "Bluefull"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "excalibur",
+      "label": "Excalibur",
+      "tokens": [
+        "endgame saber",
+        "excalibur",
+        "oran",
+        "pinkal",
+        "single target",
+        "skyly",
+        "unseal",
+        "viridia",
+        "yellowboze"
+      ],
+      "sectionIds": [
+        "Oran",
+        "Pinkal",
+        "Skyly",
+        "Viridia",
+        "Yellowboze"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "frozen_shooter",
+      "label": "Frozen Shooter",
+      "tokens": [
+        "account support",
+        "control",
+        "frozen shooter",
+        "greenill",
+        "purplenum",
+        "ranger support",
+        "whitill",
+        "yellowboze"
+      ],
+      "sectionIds": [
+        "Greenill",
+        "Purplenum",
+        "Whitill",
+        "Yellowboze"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "god_battle",
+      "label": "God/Battle",
+      "tokens": [
+        "god battle",
+        "god/battle",
+        "others",
+        "possible hunter or account support",
+        "redria"
+      ],
+      "sectionIds": [
+        "Redria",
+        "others"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "heavenly_battle",
+      "label": "Heavenly/Battle",
+      "tokens": [
+        "heavenly battle",
+        "heavenly/battle",
+        "possible hunter or account support",
+        "purplenum",
+        "redria",
+        "various"
+      ],
+      "sectionIds": [
+        "Purplenum",
+        "Redria",
+        "various"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "lame_d_argent",
+      "label": "Lame d'Argent",
+      "tokens": [
+        "conversion",
+        "excalibur route",
+        "lame d argent",
+        "lame d'argent",
+        "oran",
+        "pinkal",
+        "skyly",
+        "viridia",
+        "yellowboze"
+      ],
+      "sectionIds": [
+        "Oran",
+        "Pinkal",
+        "Skyly",
+        "Viridia",
+        "Yellowboze"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "lavis_cannon",
+      "label": "Lavis Cannon",
+      "tokens": [
+        "conversion chain",
+        "lavis cannon",
+        "prestige",
+        "redria",
+        "saber",
+        "single target"
+      ],
+      "sectionIds": [
+        "Redria"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "limiter",
+      "label": "Limiter",
+      "tokens": [
+        "limiter",
+        "pinkal",
+        "possible hunter or account support",
+        "viridia",
+        "whitill"
+      ],
+      "sectionIds": [
+        "Pinkal",
+        "Viridia",
+        "Whitill"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "red_handgun",
+      "label": "Red Handgun",
+      "tokens": [
+        "all class",
+        "purplenum",
+        "ranged backup",
+        "red handgun",
+        "redria",
+        "utility"
+      ],
+      "sectionIds": [
+        "Purplenum",
+        "Redria"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "red_ring",
+      "label": "Red Ring",
+      "tokens": [
+        "all class",
+        "endgame barrier",
+        "greenill",
+        "prestige",
+        "red ring",
+        "redria",
+        "skyly",
+        "viridia",
+        "whitill"
+      ],
+      "sectionIds": [
+        "Greenill",
+        "Redria",
+        "Skyly",
+        "Viridia",
+        "Whitill"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "red_sword",
+      "label": "Red Sword",
+      "tokens": [
+        "aoe",
+        "broad sweep",
+        "red sword",
+        "redria",
+        "skyly",
+        "solo hunter",
+        "sword",
+        "viridia",
+        "whitill",
+        "yellowboze"
+      ],
+      "sectionIds": [
+        "Redria",
+        "Skyly",
+        "Viridia",
+        "Whitill",
+        "Yellowboze"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "sealed_j_sword",
+      "label": "Sealed J-Sword",
+      "tokens": [
+        "possible hunter or account support",
+        "sealed j sword",
+        "sealed j-sword",
+        "skyly"
+      ],
+      "sectionIds": [
+        "Skyly"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "spread_needle",
+      "label": "Spread Needle",
+      "tokens": [
+        "account support",
+        "crowd control",
+        "greenill",
+        "purplenum",
+        "ranger support",
+        "redria",
+        "spread needle",
+        "yellowboze"
+      ],
+      "sectionIds": [
+        "Greenill",
+        "Purplenum",
+        "Redria",
+        "Yellowboze"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "syncesta",
+      "label": "Syncesta",
+      "tokens": [
+        "conversion",
+        "lavis series",
+        "oran",
+        "syncesta"
+      ],
+      "sectionIds": [
+        "Oran"
+      ]
+    },
+    {
+      "kind": "endpoint",
+      "id": "v101",
+      "label": "V101",
+      "tokens": [
+        "blue burst",
+        "greenill",
+        "physical",
+        "purplenum",
+        "redria",
+        "speed unit",
+        "v101",
+        "whitill"
+      ],
+      "sectionIds": [
+        "Greenill",
+        "Purplenum",
+        "Redria",
+        "Whitill"
+      ]
+    },
+    {
+      "kind": "goal",
+      "id": "hunter_best_first_account",
+      "label": "Best first Hunter account",
+      "tokens": [
+        "best first hunter account",
+        "chain sawd",
+        "god/battle",
+        "hunter best first account",
+        "lavis cannon",
+        "purplenum",
+        "red handgun",
+        "red sword",
+        "redria",
+        "skyly",
+        "whitill"
+      ],
+      "sectionIds": [
+        "Redria",
+        "Skyly",
+        "Whitill",
+        "Purplenum"
+      ]
+    },
+    {
+      "kind": "goal",
+      "id": "hunter_sustain_weapon",
+      "label": "Sustain weapon for Android Hunter",
+      "tokens": [
+        "chain sawd",
+        "hunter sustain weapon",
+        "skyly",
+        "sustain weapon for android hunter"
+      ],
+      "sectionIds": [
+        "Skyly"
+      ]
+    },
+    {
+      "kind": "goal",
+      "id": "hunter_big_sword_route",
+      "label": "Big sword / room sweep route",
+      "tokens": [
+        "big sword / room sweep route",
+        "chain sawd",
+        "hunter big sword route",
+        "red sword",
+        "redria",
+        "sealed j-sword",
+        "skyly",
+        "viridia",
+        "whitill",
+        "yellowboze"
+      ],
+      "sectionIds": [
+        "Skyly",
+        "Redria",
+        "Whitill",
+        "Viridia",
+        "Yellowboze"
+      ]
+    },
+    {
+      "kind": "goal",
+      "id": "hunter_prestige_lavis_route",
+      "label": "Lavis / Double Cannon style prestige route",
+      "tokens": [
+        "hunter prestige lavis route",
+        "lavis / double cannon style prestige route",
+        "lavis cannon",
+        "oran",
+        "redria",
+        "syncesta"
+      ],
+      "sectionIds": [
+        "Redria",
+        "Oran"
+      ]
+    },
+    {
+      "kind": "goal",
+      "id": "hunter_speed_unit_route",
+      "label": "Attack speed unit route",
+      "tokens": [
+        "attack speed unit route",
+        "god/battle",
+        "greenill",
+        "heavenly/battle",
+        "hunter speed unit route",
+        "purplenum",
+        "redria",
+        "v101",
+        "whitill"
+      ],
+      "sectionIds": [
+        "Redria",
+        "Purplenum",
+        "Whitill",
+        "Greenill"
+      ]
+    },
+    {
+      "kind": "goal",
+      "id": "hunter_ranged_backup",
+      "label": "Hunter ranged backup route",
+      "tokens": [
+        "hunter ranged backup",
+        "hunter ranged backup route",
+        "purplenum",
+        "red handgun",
+        "redria"
+      ],
+      "sectionIds": [
+        "Redria",
+        "Purplenum"
+      ]
+    },
+    {
+      "kind": "goal",
+      "id": "hunter_account_support_ranger_unlock",
+      "label": "Second-character Ranger support unlocks",
+      "tokens": [
+        "frozen shooter",
+        "greenill",
+        "hunter account support ranger unlock",
+        "purplenum",
+        "redria",
+        "second-character ranger support unlocks",
+        "spread needle",
+        "whitill",
+        "yellowboze"
+      ],
+      "sectionIds": [
+        "Redria",
+        "Purplenum",
+        "Whitill",
+        "Greenill",
+        "Yellowboze"
+      ]
+    },
+    {
+      "kind": "goal",
+      "id": "hunter_mag_safe_physical",
+      "label": "Safe physical Hunter MAG",
+      "tokens": [
+        "any_with_correct_handoff",
+        "hunter mag safe physical",
+        "mag pow physical mylla pilla estlla 5 145 50 0",
+        "safe physical hunter mag"
+      ],
+      "sectionIds": [
+        "any_with_correct_handoff"
+      ]
+    }
+  ],
+  "integrationContract": {
+    "frontendMustNot": "simulate full MAG growth as mutable global state unless exact route frame engine is loaded",
+    "frontendShould": "load routegraph, select endpoint, show direct/needs-swap/impossible state, show a flipbook frame and max two safe feed buttons",
+    "routePointerState": {
+      "routeId": "string",
+      "frameIndex": "number",
+      "playerSnapshot": "optional object"
+    }
+  },
+  "sourcePolicy": {
+    "neverGuessDropRates": true,
+    "fractionIsPrimary": true,
+    "percentageDerivedOnlyWhenFractionExists": true,
+    "ifConflictShowBoth": true,
+    "platformSeparationRequired": true,
+    "bbEphineaNotSilentlyVanillaBlueBurst": true
+  },
+  "sources": [
+    "src_ggtruth_drop_rates_1000",
+    "src_pso_faq",
+    "src_magatama_beta9",
+    "src_sec_id_calculator",
+    "src_mag_planner",
+    "src_pso_world",
+    "src_pioneer2_wiki",
+    "src_gamefaqs",
+    "src_fandom"
+  ]
+}

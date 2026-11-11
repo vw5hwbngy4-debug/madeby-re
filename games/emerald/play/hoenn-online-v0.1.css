@@ -1,0 +1,95 @@
+#hoenn-online-switch{display:none!important;position:fixed;z-index:2400;left:max(10px,env(safe-area-inset-left));top:max(10px,env(safe-area-inset-top));border:1px solid rgba(255,255,255,.28);border-radius:10px;background:#152536;color:#f5f0d0;font:800 12px/1 system-ui,sans-serif;letter-spacing:.08em;padding:10px 12px;box-shadow:0 4px 18px rgba(0,0,0,.24)}
+#hoenn-online-switch[aria-pressed="true"]{background:#f0e5a7;color:#172637}
+#hoenn-online-panel{position:fixed;z-index:2399;inset:max(52px,calc(env(safe-area-inset-top) + 48px)) max(10px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));margin-left:auto;width:min(430px,calc(100vw - 20px));overflow:auto;border:1px solid rgba(255,255,255,.2);border-radius:16px;background:rgba(11,21,31,.97);color:#f7f3df;box-shadow:0 18px 70px rgba(0,0,0,.45);padding:14px;font:14px/1.45 system-ui,sans-serif}
+#hoenn-online-panel[hidden]{display:none!important}#hoenn-online-panel header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:10px}#hoenn-online-panel header div{display:flex;flex-direction:column}#hoenn-online-panel header small,#hoenn-online-panel article small,#hoenn-online-panel .hoenn-own small{opacity:.68}#hoenn-online-panel header button{background:transparent;color:inherit;border:0;font-size:25px}#hoenn-online-panel h3{font-size:11px;letter-spacing:.12em;opacity:.65;margin:18px 0 8px}#hoenn-online-panel .hoenn-own,#hoenn-online-panel .hoenn-trainer{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(255,255,255,.055);border-radius:11px;padding:10px 11px;margin:7px 0}#hoenn-online-panel .hoenn-own>span,#hoenn-online-panel .hoenn-own>b,#hoenn-online-panel article div{display:flex;flex-direction:column}#hoenn-online-panel button[data-publish],#hoenn-online-panel button[data-add]{border:1px solid rgba(255,255,255,.22);border-radius:8px;background:#eef0d1;color:#172637;font-weight:800;font-size:11px;padding:8px 10px}#hoenn-online-panel .hoenn-event{margin:5px 0;padding:8px 10px;border-left:2px solid rgba(238,240,209,.55);background:rgba(255,255,255,.035)}#hoenn-online-panel .hoenn-muted{opacity:.6}#hoenn-online-panel .hoenn-error{background:#4b2025;border-radius:8px;padding:8px 10px}#hoenn-online-panel footer{margin-top:18px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1);font-size:11px;opacity:.58}
+@media(max-width:600px){#hoenn-online-panel{width:auto;left:max(8px,env(safe-area-inset-left));right:max(8px,env(safe-area-inset-right));top:max(52px,calc(env(safe-area-inset-top) + 46px))}}
+
+/* v0.1.24.9.2.2.3: visual-only MENU -> HOENN relabel; no DOM observer. */
+[data-gba-btn="Menu"] + .sys-btn-label{font-size:0!important}
+[data-gba-btn="Menu"] + .sys-btn-label::after{content:"HOENN";font-size:.5rem;letter-spacing:.05rem;font-family:Outfit,sans-serif;font-weight:700;color:var(--gba-theme-accent,#3d416b)}
+
+/* v0.1.24.9.2.2.4: obvious, always-reachable return path from HOENN to Emerald. */
+#hoenn-online-panel header{position:sticky;top:-14px;z-index:2;background:rgba(11,21,31,.985);padding-top:14px}
+#hoenn-online-panel header button[data-close]{min-width:44px;min-height:44px;display:grid;place-items:center;border-radius:999px;cursor:pointer;touch-action:manipulation}
+#hoenn-online-panel .hoenn-return-game{position:sticky;z-index:3;bottom:0;width:100%;min-height:50px;margin:16px 0 0;border:1px solid rgba(238,240,209,.5);border-radius:12px;background:#eef0d1;color:#172637;font:900 12px/1 system-ui,sans-serif;letter-spacing:.09em;box-shadow:0 -8px 24px rgba(11,21,31,.94);cursor:pointer;touch-action:manipulation}
+#hoenn-online-panel .hoenn-return-game span{font-size:16px;vertical-align:-1px;margin-right:5px}
+@media(max-width:600px){#hoenn-online-panel .hoenn-return-game{min-height:54px;margin-bottom:max(0px,env(safe-area-inset-bottom))}}
+
+/* v0.1.24.9.2.2.5: Publish Base must never look inert. */
+#hoenn-online-panel .hoenn-feedback{display:flex;flex-direction:column;gap:2px;margin:12px 0 2px;padding:10px 12px;border:1px solid rgba(238,240,209,.26);border-radius:10px;background:rgba(238,240,209,.08);font-size:12px;font-weight:800;letter-spacing:.025em}
+#hoenn-online-panel .hoenn-feedback.hoenn-success{background:rgba(79,190,116,.14);border-color:rgba(95,220,137,.48);color:#ddffe8}
+#hoenn-online-panel .hoenn-feedback.hoenn-error{background:#4b2025;border-color:rgba(255,150,160,.35);color:#fff0f1}
+#hoenn-online-panel .hoenn-feedback span{font-weight:650;letter-spacing:0;opacity:.92}
+#hoenn-online-panel button[data-publish][disabled],#hoenn-online-panel button[data-add][disabled]{opacity:.6;cursor:wait}
+
+/* v0.1.24.9.2.2.6: HOENN overlay escape + publish lock. */
+#hoenn-online-escape{
+  position:fixed;
+  z-index:2505;
+  top:max(10px,env(safe-area-inset-top));
+  right:max(10px,env(safe-area-inset-right));
+  min-width:76px;
+  min-height:38px;
+  padding:0 12px;
+  border:1px solid rgba(255,255,255,.32);
+  border-radius:999px;
+  background:#eef0d1;
+  color:#172637;
+  box-shadow:0 5px 18px rgba(0,0,0,.35);
+  font:900 11px/1 system-ui,sans-serif;
+  letter-spacing:.08em;
+  cursor:pointer;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+#hoenn-online-escape[hidden]{display:none!important}
+#hoenn-online-panel header{top:0;padding-top:0;min-height:42px}
+#hoenn-online-panel header button[data-close]{min-width:38px;min-height:38px;font-size:22px}
+#hoenn-online-panel .hoenn-return-game{display:none!important}
+#hoenn-online-panel .hoenn-feedback{
+  gap:1px;
+  margin:8px 0 4px;
+  padding:6px 8px;
+  border-radius:8px;
+  font-size:10px;
+  line-height:1.25;
+  letter-spacing:.04em;
+}
+#hoenn-online-panel .hoenn-feedback b{font-size:10px;line-height:1.2}
+#hoenn-online-panel .hoenn-feedback span{font-size:10px;line-height:1.25;font-weight:650;opacity:.82}
+#hoenn-online-panel button[data-publish][disabled]{pointer-events:none}
+@media(max-width:600px){
+  #hoenn-online-escape{top:max(8px,env(safe-area-inset-top));right:max(8px,env(safe-area-inset-right));min-width:72px;min-height:36px;padding:0 10px}
+  #hoenn-online-panel{padding-top:10px}
+}
+/* Keep HOENN above the live PokéField surface, but below Save Vault dialogs. */
+#hoenn-online-panel{z-index:100010;overscroll-behavior:contain}
+#hoenn-online-escape{z-index:100040}
+
+/* v0.1.24.9.2.2.7: native relation state. */
+#hoenn-online-panel .hoenn-trainer[data-relation="PRESENT_CURRENT"]{outline:1px solid rgba(95,220,137,.32);background:rgba(79,190,116,.08)}
+#hoenn-online-panel .hoenn-trainer[data-relation="PRESENT_OUTDATED"]{outline:1px solid rgba(238,240,209,.28)}
+#hoenn-online-panel .hoenn-trainer[data-relation="NO_SAFE_SLOT"]{opacity:.78}
+#hoenn-online-panel button.hoenn-relation-current{border:1px solid rgba(95,220,137,.5);border-radius:8px;background:rgba(79,190,116,.14);color:#ddffe8;font-weight:900;font-size:11px;padding:8px 10px;white-space:nowrap}
+#hoenn-online-panel button.hoenn-relation-noslot{border:1px solid rgba(255,180,120,.32);border-radius:8px;background:rgba(120,80,40,.18);color:#ffe6ce;font-weight:900;font-size:11px;padding:8px 10px;white-space:nowrap}
+#hoenn-online-panel .hoenn-relation-note{display:block;margin-top:3px;max-width:210px;font-size:10px;line-height:1.25;color:#f3d8bd;opacity:.88}
+#hoenn-online-panel button[data-add][disabled],#hoenn-online-panel .hoenn-relation-current[disabled],#hoenn-online-panel .hoenn-relation-noslot[disabled]{cursor:default}
+
+/* v0.1.24.9.2.2.8: desktop fallback entry, shared with mobile HOENN state. */
+#pokefield-live-panel #hoenn-desktop-launch{
+  display:none!important;
+  white-space:nowrap;
+}
+@media (min-width:960px){
+  #pokefield-live-panel #hoenn-desktop-launch{
+    display:inline-flex!important;
+    align-items:center;
+    justify-content:center;
+  }
+  #pokefield-live-panel #hoenn-desktop-launch[aria-pressed="true"]{
+    border-color:rgba(114,240,169,.48);
+    background:rgba(114,240,169,.14);
+    color:#8dffba;
+    box-shadow:0 0 0 1px rgba(114,240,169,.08) inset;
+  }
+}

@@ -1,0 +1,23 @@
+RESEARCH.MADEBY.RE — FOOTER + META CLEANUP PATCH
+Date: 2026-09-28
+
+What this patch does
+- Replaces the legacy footer-grid on article pages with the known-good responsive footer used by the main site.
+- Cleans the SuperArtifact artifact-layer article of backstage retrieval/Grok/search-index discussion.
+- Renumbers its remaining sections and updates HTML, plain text, JSON and metadata consistently.
+- Removes conversation/build-process wording from Ambient Power metadata.
+- Rephrases archive evidence notices to stay transparent about evidentiary status without exposing chat/model-production process.
+- Cleans Query-Native News footer copy and containment.
+
+Upload
+Extract into the document root of research.madeby.re and allow overwrite.
+No URLs are removed or renamed.
+
+QA
+- SuperArtifact article now contains 9 substantive sections plus references.
+- No remaining targeted strings for Grok retrieval, model-retrieval observations, conversation-source wording, GPT-5.1 production notes, or AI-generated novelty commentary.
+- All standard research article pages now use footer-inner / footer-links / foot-last responsive structure.
+- Sitemap URLs are unchanged.
+
+One pre-existing unrelated issue was detected but intentionally not guessed/fixed:
+- papers.html contains a broken Conduits href ending in /library/papers/22215393.htmlconduits/. The intended destination is unclear.

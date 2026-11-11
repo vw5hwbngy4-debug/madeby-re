@@ -1,0 +1,19 @@
+JRPG.WORLD EMERALD — v0.1.14 DESKTOP INTERACTION REPAIR
+Date: 2026-09-08
+
+Scope: desktop UI only (>= 960px). Save Vault and native mGBA save ownership are unchanged from the proven v0.1.13/v0.1.11 lineage.
+
+FIXES
+- COMPACT / EXPAND now changes the desktop PokéField layout instead of only changing button text.
+- Desktop compact mode collapses the second screen to a small live strip.
+- TRAINER CARD header button is now a true toggle. Open card -> same button becomes LIVE -> press again to flip back.
+- Fixed persistent black/dead height after returning from a tall Trainer Card. The desktop stage now measures actual active content instead of the absolute 3D face that inherited the previous height.
+- Compact toggle hides while Trainer Card is open because the header LIVE control owns the return action.
+- Mobile layouts are not changed.
+
+UNCHANGED
+- mGBA native save path ownership
+- Save Vault mirror/server behavior
+- 131072 + 131088 RTC-aware save support
+- Specimen Passport / Pokérus / ribbons / IVs / EVs
+- keyboard mapping and emulator core

@@ -1,0 +1,67 @@
+EMERALD v0.1.24.9 · COVERAGE LENS — QA
+=======================================
+Date: 2026-09-12
+
+RESULT
+------
+27 / 27 targeted coverage/regression assertions PASS.
+All new JavaScript files pass `node --check`.
+All local src/href references in index.html resolve to files in the build.
+
+MECHANICAL COVERAGE TESTS
+-------------------------
+PASS 386 species loaded.
+PASS 17 Gen III types used.
+PASS Every species produces 17 finite defensive coverage states.
+PASS 386 × 17 typing/legal offensive checks produce finite results.
+
+KNOWN TYPE SANITY TESTS
+-----------------------
+PASS Swampert: Grass 4×.
+PASS Swampert: Electric 0×.
+PASS Swampert: Fire / Poison / Rock / Steel ½×.
+PASS Gengar: raw Ground weakness becomes 0× through Levitate.
+PASS Flygon: Ground becomes 0× through deterministic Levitate.
+PASS Thick Fat sample: Ice ½× becomes effective ¼×.
+PASS Flash Fire / Volt Absorb / Water Absorb immunity hooks.
+
+GROUP / TEAM TESTS
+------------------
+PASS Six-species test party Ground result is ability-aware:
+     1 weak · 1 resist · 2 immune · 2 neutral · ROBUST.
+PASS pairFit recognizes Gengar covering Metagross's Ground weakness.
+
+CURRENT MOVE COVERAGE TESTS
+---------------------------
+PASS Exact Hidden Power Dark survives current-moveset parsing.
+PASS Hidden Power Dark is selected as a super-effective current answer vs Psychic.
+PASS Earthquake is selected as a super-effective current answer vs Steel.
+
+POKÉFIELD INTEGRATION TESTS
+---------------------------
+PASS Permanent COVERAGE quick access exists.
+PASS DEFENSE + OFFENSE modes exist.
+PASS Coverage subset -> PRESENT -> FOCUS handoff exists.
+PASS Coverage population derives from current CALL responders / FOCUS / active Field.
+PASS Species detail shows Weak / Resists / Immune.
+
+DEX / TEAM LAB INTEGRATION TESTS
+--------------------------------
+PASS DEX has per-Pokémon COVERAGE · DEFENSE card.
+PASS Team Lab matrix is labeled ability-aware.
+PASS Team Lab can OPEN COVERAGE IN FIELD.
+
+CUMULATIVE REGRESSION GUARDS
+----------------------------
+PASS My Party remains default-open.
+PASS Transfer Back route retained.
+PASS index.html loads the v0.1.24.9 coverage assets.
+PASS all active v0.1.24.9 JS syntax checks.
+PASS all index.html local assets exist.
+
+RUNTIME NOTE
+------------
+A container Chromium smoke attempt was not used as a shipping gate because the available
+headless Chromium process did not terminate reliably in this environment. The build therefore
+ships on deterministic engine assertions, syntax validation, static integration checks and asset
+resolution checks. Real iOS/Safari + mGBA interaction remains the final device smoke test.

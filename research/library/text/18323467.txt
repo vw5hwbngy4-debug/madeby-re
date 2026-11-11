@@ -1,0 +1,68 @@
+=== PDF PAGE 1 ===
+Ambient Canon 1.0 — Structural Definition
+
+Raynor Eissens (2026)
+
+The Ambient Canon defines a dual architecture for humane technology built on two
+
+interdependent domains:
+
+1.
+The Thermodynamic Field — the structural and operational substrate
+
+that specifies the viability constraints for socio-technical systems. It
+
+describes the thermodynamic, attentional and coherence conditions under
+
+which environments, interfaces and intelligent agents remain stable and non-
+
+extractive.
+
+2.
+The Ambient Phone — the phenomenological and interface-oriented
+
+domain. It provides the first humane interaction model designed to operate
+
+inside the Thermodynamic Field. It expresses warmth, presence, ambience
+
+and aura as functional interface primitives.
+
+Together they form a coherent framework for post-smartphone, viability-
+
+driven technological systems.
+
+The Field defines the substrate; the Ambient Phone provides the form.
+
+Neither domain is sufficient alone; each completes the other.
+
+Boundary Condition
+
+The Thermodynamic Field is a structural and operational framework for humane, viability-based
+
+socio-technical systems; it borrows thermodynamic terminology to describe stability constraints,
+
+but does not make claims about fundamental physics.
+
+Core Elements
+
+•
+Field Stack: Temporal, Semantic, Viability, Ontological, Affective layers
+
+•
+Operators: ΔR (transition rupture), Ψ(t) (stability over time), W₀ (warmth
+
+threshold)
+
+•
+Emergence sequence: A↑ → W₀ → C∞ → F₁
+
+•
+Viability relation: AP₀ = K·D·R
+
+Purpose
+
+Ambient Canon 1.0 establishes the minimal structural grammar required for humane, warm, non-
+
+extractive technological architectures. It provides foundations for future ambient interfaces,
+
+coherent AI systems and field-based environments.

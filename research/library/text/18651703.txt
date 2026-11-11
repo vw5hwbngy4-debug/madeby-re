@@ -1,0 +1,624 @@
+=== PDF PAGE 1 ===
+AP₁.2 — Ambient OS: Color Semantics & AAC Expression
+
+Ambient Era Standard · Canonical Specification (2026)
+
+Raynor Eissens
+
+⸻
+
+Abstract
+
+AP₁.2 defines the expressive color layer of Ambient OS.
+
+Where AP₁ specifies structural behavior and AP₁.1 specifies semantic grammar and truth
+
+constraints, AP₁.2 specifies how meaning is expressed chromatically within those constraints.
+
+This document formalizes invariant field colors, user tint freedom, commercial color restrictions,
+
+call coloration, chromatic weather effects, and the role of color as a primary pre-linguistic
+
+semantic carrier. It also explicitly defines the chromatic scope of Ambient OS and the non-
+
+agentic role of artificial intelligence in navigation and legibility.
+
+AP₁.2 is normative. It defines the conditions under which color may be used, modified, or
+
+suppressed in Ambient OS.
+
+⸻
+
+1. Scope and Relationship
+
+AP₁.2 specifies:
+
+•
+Invariant semantic field colors
+
+•
+User tint freedom within fields
+
+•
+Commercial color expression (AAC-1)
+
+•
+Call color semantics
+
+•
+Chromatic weather effects
+
+•
+Chromatic scope and design boundaries
+
+•
+AI support for color legibility
+
+AP₁.2 extends AP₁ and AP₁.1.
+
+It does not redefine structure, navigation, truth grammar, or application eligibility.
+
+⸻
+
+2. Invariant Semantic Fields
+
+=== PDF PAGE 2 ===
+Ambient OS recognizes the following invariant semantic fields:
+
+•
+Red — Presence, being, home-state
+
+•
+Orange — Desire, play, comfort
+
+•
+Yellow — Intention, action, navigation
+
+•
+Pink — Relation, contact, communication
+
+•
+Green — Health, regulation, care
+
+•
+Blue — Information, organisation, work
+
+•
+Purple — Infrastructure, institutions, transit
+
+Field identity is immutable.
+
+Color defines meaning, not decoration.
+
+⸻
+
+3. User Tint Freedom (UTF-1)
+
+Users may adjust tint, saturation, warmth, and brightness within the active field.
+
+Users may not:
+
+•
+alter field identity,
+
+•
+remap semantic meaning,
+
+•
+cross field boundaries through color changes.
+
+Tint freedom personalizes expression without compromising grammar.
+
+⸻
+
+4. Commercial Color Expression (AAC-1)
+
+Commercial entities are restricted to FCV-6 expression:
+
+FCV-6 = { Red%, Orange%, Pink%, Green%, Blue%, Purple% }
+
+Rules:
+
+•
+Residency color equals dominant FCV-6 field.
+
+•
+Cross-field blending is prohibited.
+
+•
+Yellow is never registrable, ownable, or expressible.
+
+Yellow represents human will and navigation and is structurally non-commercial.
+
+⸻
+
+=== PDF PAGE 3 ===
+5. Chromatic Weather
+
+Chromatic weather represents system-level semantic modulation:
+
+•
+Warm Bloom — Meaning intensification
+
+•
+Cool Drift — Return toward ChronoSense
+
+•
+Shimmer — ΔR instability indicator
+
+•
+Fade — Residency exit
+
+Constraints:
+
+•
+Red never shimmers.
+
+•
+Legacy states never bloom.
+
+•
+Yellow may shimmer during active choice.
+
+⸻
+
+6. Call Semantics (Pink as Base Layer)
+
+6.1 Incoming Calls
+
+•
+All incoming calls activate full-screen Pink.
+
+•
+Calls never use notification bleed.
+
+•
+Ongoing activity is suspended, not destroyed.
+
+Calling is a structural relational interruption.
+
+6.2 Caller Differentiation
+
+Within Pink, semantic hints may appear:
+
+•
+Known relational caller → Pink with relational aura
+
+•
+Unknown caller → Pink suppressed toward Gray
+
+•
+Infrastructure → Pink with Purple hint
+
+•
+Organisational / work → Pink with Blue hint
+
+•
+Medical / care → Pink with Green hint
+
+Gray is used only as suppression, never as a communication field.
+
+⸻
+
+7. Group Communication
+
+Group communication uses a Pink base with multi-field edge blending derived from participant
+
+field profiles.
+
+=== PDF PAGE 4 ===
+Relational primacy is preserved.
+
+⸻
+
+8. Chromatic Scope & Design Boundary
+
+Ambient OS is a chromatic operating system.
+
+Color is not an optional presentation layer but a primary semantic medium.
+
+AP₁.2 does not claim universal perceptual accessibility.
+
+It defines semantic coherence within a color-based system.
+
+This constitutes explicit scope definition rather than limitation.
+
+Just as some users do not adopt touch interfaces or immersive VR, Ambient OS is intended for
+
+users able and willing to operate within chromatic semantics.
+
+Accessibility adaptations may exist outside this specification, but must not alter field identity,
+
+semantic roles, or chromatic grammar.
+
+⸻
+
+9. Role of Artificial Intelligence
+
+Artificial intelligence supports chromatic legibility but does not define meaning.
+
+AI may:
+
+•
+provide spatial, temporal, or infrastructural context,
+
+•
+support color stability and timing,
+
+•
+assist in rendering fields readable.
+
+AI may not:
+
+•
+initiate navigation,
+
+•
+select destinations,
+
+•
+define intent,
+
+•
+override user choice.
+
+Navigation occurs only when the user explicitly activates Yellow.
+
+AI renders the field legible; it does not decide where the user goes.
+
+=== PDF PAGE 5 ===
+⸻
+
+10. Status
+
+AP₁.2 is normative and demo-validated.
+
+Any Ambient OS implementation claiming compatibility must:
+
+•
+preserve invariant field meanings,
+
+•
+respect tint freedom boundaries,
+
+•
+enforce AAC-1 commercial constraints,
+
+•
+treat color as primary semantic carrier,
+
+•
+maintain AI as non-agentic support.
+
+⸻
+
+Canonical Statement
+
+Color in Ambient OS is not appearance.
+
+Color is meaning, made visible.
+
+Mooi. Hieronder staat AP₁.2 volledig uitgeschreven als Zenodo-waardige PDF-tekst.
+
+Strak, normatief, zonder HTML-details, zonder demo-taal. Dit is de canonieke tekstlaag die je
+
+letterlijk kunt omzetten naar PDF.
+
+Ik heb expliciet verwerkt:
+
+•
+kleur als primaire semantiek (geen accessoire),
+
+•
+doelgroep-afbakening (geen universele toegankelijkheidsclaim),
+
+•
+AI als ondersteunend, niet-agentic,
+
+•
+de relatie met AP₁ / AP₁.1,
+
+•
+AAC en commerciële begrenzing.
+
+⸻
+
+AP₁.2 — Ambient OS: Color Semantics & AAC Expression
+
+Ambient Era Standard · Canonical Specification (2026)
+
+Raynor Eissens
+
+⸻
+
+Abstract
+
+=== PDF PAGE 6 ===
+AP₁.2 defines the expressive color layer of Ambient OS.
+
+Where AP₁ specifies structural behavior and AP₁.1 specifies semantic grammar and truth
+
+constraints, AP₁.2 specifies how meaning is expressed chromatically within those constraints.
+
+This document formalizes invariant field colors, user tint freedom, commercial color restrictions,
+
+call coloration, chromatic weather effects, and the role of color as a primary pre-linguistic
+
+semantic carrier. It also explicitly defines the chromatic scope of Ambient OS and the non-
+
+agentic role of artificial intelligence in navigation and legibility.
+
+AP₁.2 is normative. It defines the conditions under which color may be used, modified, or
+
+suppressed in Ambient OS.
+
+⸻
+
+1. Scope and Relationship
+
+AP₁.2 specifies:
+
+•
+Invariant semantic field colors
+
+•
+User tint freedom within fields
+
+•
+Commercial color expression (AAC-1)
+
+•
+Call color semantics
+
+•
+Chromatic weather effects
+
+•
+Chromatic scope and design boundaries
+
+•
+AI support for color legibility
+
+AP₁.2 extends AP₁ and AP₁.1.
+
+It does not redefine structure, navigation, truth grammar, or application eligibility.
+
+⸻
+
+2. Invariant Semantic Fields
+
+Ambient OS recognizes the following invariant semantic fields:
+
+•
+Red — Presence, being, home-state
+
+•
+Orange — Desire, play, comfort
+
+•
+Yellow — Intention, action, navigation
+
+•
+Pink — Relation, contact, communication
+
+•
+Green — Health, regulation, care
+
+•
+Blue — Information, organisation, work
+
+•
+Purple — Infrastructure, institutions, transit
+
+=== PDF PAGE 7 ===
+Field identity is immutable.
+
+Color defines meaning, not decoration.
+
+⸻
+
+3. User Tint Freedom (UTF-1)
+
+Users may adjust tint, saturation, warmth, and brightness within the active field.
+
+Users may not:
+
+•
+alter field identity,
+
+•
+remap semantic meaning,
+
+•
+cross field boundaries through color changes.
+
+Tint freedom personalizes expression without compromising grammar.
+
+⸻
+
+4. Commercial Color Expression (AAC-1)
+
+Commercial entities are restricted to FCV-6 expression:
+
+FCV-6 = { Red%, Orange%, Pink%, Green%, Blue%, Purple% }
+
+Rules:
+
+•
+Residency color equals dominant FCV-6 field.
+
+•
+Cross-field blending is prohibited.
+
+•
+Yellow is never registrable, ownable, or expressible.
+
+Yellow represents human will and navigation and is structurally non-commercial.
+
+⸻
+
+5. Chromatic Weather
+
+Chromatic weather represents system-level semantic modulation:
+
+•
+Warm Bloom — Meaning intensification
+
+•
+Cool Drift — Return toward ChronoSense
+
+•
+Shimmer — ΔR instability indicator
+
+•
+Fade — Residency exit
+
+=== PDF PAGE 8 ===
+Constraints:
+
+•
+Red never shimmers.
+
+•
+Legacy states never bloom.
+
+•
+Yellow may shimmer during active choice.
+
+⸻
+
+6. Call Semantics (Pink as Base Layer)
+
+6.1 Incoming Calls
+
+•
+All incoming calls activate full-screen Pink.
+
+•
+Calls never use notification bleed.
+
+•
+Ongoing activity is suspended, not destroyed.
+
+Calling is a structural relational interruption.
+
+6.2 Caller Differentiation
+
+Within Pink, semantic hints may appear:
+
+•
+Known relational caller → Pink with relational aura
+
+•
+Unknown caller → Pink suppressed toward Gray
+
+•
+Infrastructure → Pink with Purple hint
+
+•
+Organisational / work → Pink with Blue hint
+
+•
+Medical / care → Pink with Green hint
+
+Gray is used only as suppression, never as a communication field.
+
+⸻
+
+7. Group Communication
+
+Group communication uses a Pink base with multi-field edge blending derived from participant
+
+field profiles.
+
+Relational primacy is preserved.
+
+⸻
+
+8. Chromatic Scope & Design Boundary
+
+Ambient OS is a chromatic operating system.
+
+=== PDF PAGE 9 ===
+Color is not an optional presentation layer but a primary semantic medium.
+
+AP₁.2 does not claim universal perceptual accessibility.
+
+It defines semantic coherence within a color-based system.
+
+This constitutes explicit scope definition rather than limitation.
+
+Just as some users do not adopt touch interfaces or immersive VR, Ambient OS is intended for
+
+users able and willing to operate within chromatic semantics.
+
+Accessibility adaptations may exist outside this specification, but must not alter field identity,
+
+semantic roles, or chromatic grammar.
+
+⸻
+
+9. Role of Artificial Intelligence
+
+Artificial intelligence supports chromatic legibility but does not define meaning.
+
+AI may:
+
+•
+provide spatial, temporal, or infrastructural context,
+
+•
+support color stability and timing,
+
+•
+assist in rendering fields readable.
+
+AI may not:
+
+•
+initiate navigation,
+
+•
+select destinations,
+
+•
+define intent,
+
+•
+override user choice.
+
+Navigation occurs only when the user explicitly activates Yellow.
+
+AI renders the field legible; it does not decide where the user goes.
+
+⸻
+
+10. Status
+
+AP₁.2 is normative and demo-validated.
+
+Any Ambient OS implementation claiming compatibility must:
+
+•
+preserve invariant field meanings,
+
+=== PDF PAGE 10 ===
+•
+respect tint freedom boundaries,
+
+•
+enforce AAC-1 commercial constraints,
+
+•
+treat color as primary semantic carrier,
+
+•
+maintain AI as non-agentic support.
+
+⸻
+
+Canonical Statement
+
+Color in Ambient OS is not appearance.
+
+Color is meaning, made visible.

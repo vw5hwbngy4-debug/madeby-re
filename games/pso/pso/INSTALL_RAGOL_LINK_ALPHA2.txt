@@ -1,0 +1,10 @@
+INSTALL RAGOL LINK ALPHA 2 WEBSITE HOTFIX
+
+1. Upload JRPG_WORLD_PSO_RAGOL_LINK_ALPHA2_BRIDGE_HOTFIX.zip to public_html.
+2. Extract/merge it so files land inside public_html/pso/.
+3. Visit https://madeby.re/games/pso/pso/smoke-check.html
+4. Expect 11/11 checks passed.
+5. Run the Alpha 2 Windows companion with the Xbox-formatted USB plugged in.
+6. The companion opens /pso/ with a one-time localhost bridge token.
+7. If Chrome asks for local network / localhost permission for jrpg.world, choose Allow.
+8. The Xbox save should link automatically. No file picker is required.

@@ -1,0 +1,9 @@
+EMERALD v0.1.22 QA
+PASS mechanical regressions inherited from v0.1.21.1.
+PASS shared-context static wiring.
+PASS My Field field-first markup and no forced LIVE navigation on specimen click.
+PASS TeamLab wild transient specimen bridge.
+PASS progressive disclosure preserves Threat Lab and Six-Stack DOM/features.
+PASS desktop live-play dock selectors and mobile/tablet breakpoints present.
+PASS JS syntax checks.
+Browser screenshot harness: NOT RUN TO COMPLETION because container Chromium hangs independently of the app; not reported as PASS.

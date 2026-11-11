@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>ChromaPrompt: From Disposable Text to Reusable Semantic Deployment - A Technical Note on Placed Chroma Configurations, Chromagents, Chroma Bank, and Visual Prompting Above Runtime Primitives | Raynor Eissens full-text library</title><meta content="This technical note defines ChromaPrompt as a higher-level coordination grammar in which prompting no longer needs to remain bound to a vertical chatbox or a single textual input stream. In conventional transformer use, prompts are usually expressed as sentences, paragr" name="description"/>
+<meta content="index,follow,max-snippet:-1" name="robots"/><link href="https://madeby.re/research/library/papers/19192992.html" rel="canonical"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "ChromaPrompt: From Disposable Text to Reusable Semantic Deployment - A Technical Note on Placed Chroma Configurations, Chromagents, Chroma Bank, and Visual Prompting Above Runtime Primitives", "name": "ChromaPrompt: From Disposable Text to Reusable Semantic Deployment - A Technical Note on Placed Chroma Configurations, Chromagents, Chroma Bank, and Visual Prompting Above Runtime Primitives", "url": "https://madeby.re/research/library/papers/19192992.html", "mainEntityOfPage": "https://madeby.re/research/library/papers/19192992.html", "isAccessibleForFree": true, "sameAs": ["https://zenodo.org/records/19192992", "https://doi.org/10.5281/zenodo.19192992"], "encoding": [{"@type": "MediaObject", "encodingFormat": "text/html", "contentUrl": "https://madeby.re/research/library/papers/19192992.html"}, {"@type": "MediaObject", "encodingFormat": "text/plain", "contentUrl": "https://madeby.re/research/library/text/19192992.txt"}, {"@type": "MediaObject", "encodingFormat": "application/json", "contentUrl": "https://madeby.re/research/library/data/19192992.json"}], "author": [{"@type": "Person", "name": "Raynor Eissens"}], "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.5281/zenodo.19192992"}, "abstract": "This technical note defines ChromaPrompt as a higher-level coordination grammar in which prompting no longer needs to remain bound to a vertical chatbox or a single textual input stream. In conventional transformer use, prompts are usually expressed as sentences, paragraphs, or threads inside chat interfaces. They are linear, transient, and easily lost in the vertical flow of ongoing interaction. The present note proposes a narrower and more placeable alternative: prompting can be externalized and arranged through chromas, payload chromas, and chromagents on a rail or other meaning-bearing surface. Unlike canvas-bound or cockpit-bound orchestration systems, ChromaPrompt is intended to extend into lived environments, where placed semantic arrangements may inhabit counters, desks, thresholds, wearables, vehicle edges, wall surfaces, and other everyday locations. The claim made here is not that text prompting disappears, nor that multimodal prompting, visual programming, agent orchestration, or reusable task objects are novel in isolation. The claim is narrower. It is that the ChromaRai"}</script>
+<meta content="ChromaPrompt: From Disposable Text to Reusable Semantic Deployment - A Technical Note on Placed Chroma Configurations, Chromagents, Chroma Bank, and Visual Prompting Above Runtime Primitives" name="citation_title"/>
+<meta content="Raynor Eissens" name="citation_author"/>
+<meta content="10.5281/zenodo.19192992" name="citation_doi"/>
+<link href="../text/19192992.txt" rel="alternate" type="text/plain"/><link href="../data/19192992.json" rel="alternate" type="application/json"/>
+<link href="../assets/site.css" rel="stylesheet"/>
+</head><body><a class="skip" href="#main">Skip to content</a><div class="shell"><div class="portfolio-bridge"><a href="../../index.html">← Personal website</a><a href="../../archive.html">All 205 Zenodo records</a><a href="../index.html">Full-text library</a></div><header><a class="brand" href="../index.html">← RAYNOR EISSENS / FULL TEXT</a><h1>ChromaPrompt: From Disposable Text to Reusable Semantic Deployment - A Technical Note on Placed Chroma Configurations, Chromagents, Chroma Bank, and Visual Prompting Above Runtime Primitives</h1><div class="meta"><span>Zenodo record: 19192992</span><span>14 PDF pages</span><span>2,579 extracted words</span><span>DOI: <a href="https://doi.org/10.5281/zenodo.19192992">10.5281/zenodo.19192992</a></span></div><nav aria-label="Publication formats" class="tools"><a href="https://zenodo.org/records/19192992" rel="noopener">Original Zenodo record and PDF ↗</a><a href="../text/19192992.txt">Plain text</a><a href="../data/19192992.json">Full-text JSON</a><a href="../index.html">All publications</a></nav></header><main id="main"><aside aria-label="Editorial context for this publication" class="editorial-context compact-context"><span class="context-label">Editorial context · 19 September 2026</span><p>This document belongs to an exploratory theoretical archive. Claims of novelty should be treated as provisional unless independently sourced, and publication does not establish scientific validation. The original PDF-derived text below is unchanged. <a href="../index.html#archive-context">Read the archive note ↗</a></p></aside><section aria-label="Abstract"><h2>Abstract (extracted)</h2><p class="abstract">This technical note defines ChromaPrompt as a higher-level coordination grammar in which prompting no longer needs to remain bound to a vertical chatbox or a single textual input stream. In conventional transformer use, prompts are usually expressed as sentences, paragraphs, or threads inside chat interfaces. They are linear, transient, and easily lost in the vertical flow of ongoing interaction. The present note proposes a narrower and more placeable alternative: prompting can be externalized and arranged through chromas, payload chromas, and chromagents on a rail or other meaning-bearing surface. Unlike canvas-bound or cockpit-bound orchestration systems, ChromaPrompt is intended to extend into lived environments, where placed semantic arrangements may inhabit counters, desks, thresholds, wearables, vehicle edges, wall surfaces, and other everyday locations. The claim made here is not that text prompting disappears, nor that multimodal prompting, visual programming, agent orchestration, or reusable task objects are novel in isolation. The claim is narrower. It is that the ChromaRai</p></section><p class="notice">This is a text extraction of the original PDF, not an edited or peer-reviewed edition. PDF text order, equations, multi-column tables and diagram details may be imperfect. Consult the original Zenodo file for authoritative layout and figures.</p><div class="paper-layout"><article aria-label="Full original extracted text"><section aria-label="Source PDF page 1" class="page" id="page-1"><h2>PDF page 1</h2><p class="pdf-block">ChromaPrompt</p>
+<p class="pdf-block">From Disposable Text to Reusable Semantic Deployment</p>
+<p class="pdf-block">A Technical Note on Placed Chroma Configurations, Chromagents, Chroma Bank, and Visual</p>
+<p class="pdf-block">Prompting Above Runtime Primitives</p>
+<p class="pdf-block">Raynor Eissens</p>
+<p class="pdf-block">DOI: 10.5281/zenodo.19192992</p>
+<p class="pdf-block">Ambient Era Canon · 2026</p>
+<p class="pdf-block">⸻</p>
+<h3 class="pdf-heading">Abstract</h3>
+<p class="pdf-block">This technical note defines ChromaPrompt as a higher-level coordination grammar in which</p>
+<p class="pdf-block">prompting no longer needs to remain bound to a vertical chatbox or a single textual input stream.</p>
+<p class="pdf-block">In conventional transformer use, prompts are usually expressed as sentences, paragraphs, or</p>
+<p class="pdf-block">threads inside chat interfaces. They are linear, transient, and easily lost in the vertical flow of</p>
+<p class="pdf-block">ongoing interaction. The present note proposes a narrower and more placeable alternative:</p>
+<p class="pdf-block">prompting can be externalized and arranged through chromas, payload chromas, and</p>
+<p class="pdf-block">chromagents on a rail or other meaning-bearing surface.</p>
+<p class="pdf-block">Unlike canvas-bound or cockpit-bound orchestration systems, ChromaPrompt is intended to</p>
+<p class="pdf-block">extend into lived environments, where placed semantic arrangements may inhabit counters,</p>
+<p class="pdf-block">desks, thresholds, wearables, vehicle edges, wall surfaces, and other everyday locations.</p>
+<p class="pdf-block">The claim made here is not that text prompting disappears, nor that multimodal prompting, visual</p>
+<p class="pdf-block">programming, agent orchestration, or reusable task objects are novel in isolation. The claim is</p>
+<p class="pdf-block">narrower. It is that the ChromaRail grammar allows prompts to become reusable semantic</p>
+<p class="pdf-block">deployments rather than disposable text instructions. A prompt may therefore exist as a visible</p>
+<p class="pdf-block">configuration composed of subject chromas, optional payload-bearing chromas, optional filters</p>
+<p class="pdf-block">or location-bound chromas, and one or more chromagents that perform active operations such</p>
+<p class="pdf-block">as search, comparison, planning, monitoring, summarization, or evaluation.</p>
+<p class="pdf-block">Under this view, prompting becomes visual, portable, configurable, and environmental. A user</p>
+<p class="pdf-block">may place three shoe-related chromas beside a comparison chromagent. A user may attach</p>
+<p class="pdf-block">plant photos to a plant-care chromagent on a household rail. A user may place route state,</p>
+<p class="pdf-block">location state, and a route-evaluation chromagent on a car-edge field. In such cases, the prompt</p>
+<p class="pdf-block">is no longer only a sentence. It becomes a placed semantic arrangement that can persist, be</p>
+<p class="pdf-block">reorganized, be unsocketed, be moved back to a mobile bank, and be redeployed in another</p></section><section aria-label="Source PDF page 2" class="page" id="page-2"><h2>PDF page 2</h2><p class="pdf-block">context without needing to be rewritten from zero.</p>
+<p class="pdf-block">This note also introduces the practical extension of Chroma Bank, unsocketing, redeployment,</p>
+<p class="pdf-block">and reusable prompt objects. A prompt no longer has to be consumed once and disappear into</p>
+<p class="pdf-block">scroll history. A chroma or prompt arrangement can be kept, moved, reused, recombined, or</p>
+<p class="pdf-block">reassigned to a different rail, location, or active chromagent. In this way, prompting shifts from</p>
+<p class="pdf-block">disposable text toward reusable semantic infrastructure.</p>
+<p class="pdf-block">This does not replace runtime primitives such as text prompts, tool calls, event streams, model</p>
+<p class="pdf-block">execution, graph orchestration, or transport protocols. Those remain lower implementation</p>
+<p class="pdf-block">layers. The contribution here is a semantic reframing: prompting can be treated as a placeable</p>
+<p class="pdf-block">and composable coordination layer above runtime, where chromas hold semantic state,</p>
+<p class="pdf-block">chromagents act as active operators, and rails serve as habitats in which those configurations</p>
+<p class="pdf-block">can remain visible, bounded, and environmentally legible.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Core Claim</p>
+<p class="pdf-block">ChromaPrompt names the use of chromas, payload chromas, and chromagents as a visual and</p>
+<p class="pdf-block">portable prompt arrangement above runtime primitives.</p>
+<p class="pdf-block">A text prompt asks through sequence.</p>
+<p class="pdf-block">A chroma prompt arranges through placement.</p>
+<p class="pdf-block">ChromaRail turns prompting from disposable text into reusable semantic deployment.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Definitions</p>
+<p class="pdf-block">Text Prompt</p>
+<p class="pdf-block">A linear symbolic request expressed inside a chatbox, command field, or textual input stream.</p>
+<p class="pdf-block">Chroma Prompt</p>
+<p class="pdf-block">A placed semantic arrangement composed of one or more chromas, optional payload-bearing</p>
+<p class="pdf-block">chromas, and optional chromagents, such that the arrangement itself functions as the prompt</p>
+<p class="pdf-block">condition for a human-agent task.</p></section><section aria-label="Source PDF page 3" class="page" id="page-3"><h2>PDF page 3</h2><p class="pdf-block">Chroma</p>
+<p class="pdf-block">A bounded semantic object with visible state. A chroma is read first through color as the</p>
+<p class="pdf-block">primary low-symbolic substrate of state, while label, payload, and deeper symbolic content</p>
+<p class="pdf-block">remain secondary and optional. A chroma may carry identity, presence, relevance, subject</p>
+<p class="pdf-block">matter, or situational meaning through color, placement, and carry.</p>
+<p class="pdf-block">Payload Chroma</p>
+<p class="pdf-block">A chroma that carries optional hidden symbolic depth, such as a product page, photo, note,</p>
+<p class="pdf-block">route detail, prompt fragment, media object, or other attached content. The visible chroma</p>
+<p class="pdf-block">remains the public handle; the attachment remains secondary and opens only when needed.</p>
+<p class="pdf-block">Chromagent</p>
+<p class="pdf-block">An active operator that works on one or more chromas. A chromagent may search, compare,</p>
+<p class="pdf-block">evaluate, summarize, plan, monitor, recommend, or otherwise transform a placed semantic</p>
+<p class="pdf-block">arrangement into new output states.</p>
+<p class="pdf-block">Rail</p>
+<p class="pdf-block">A placeable habitat or distributed meaning surface in which chromas and chromagents can be</p>
+<p class="pdf-block">placed, grouped, moved, and softened into continuity.</p>
+<p class="pdf-block">Chroma Bank</p>
+<p class="pdf-block">A storage and redeployment layer in which chromas, payload chromas, and chromagents may</p>
+<p class="pdf-block">remain available when not actively socketed into a rail or surface.</p>
+<p class="pdf-block">Unsocketing</p>
+<p class="pdf-block">The act of removing a chroma or chromagent from an active rail while preserving it as a reusable</p>
+<p class="pdf-block">semantic object.</p>
+<p class="pdf-block">Redeployment</p>
+<p class="pdf-block">The act of placing a previously stored or unsocketed chroma or chromagent into a new</p>
+<p class="pdf-block">configuration, rail, or context.</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 4" class="page" id="page-4"><h2>PDF page 4</h2><p class="pdf-block">Color First, Attachment Second</p>
+<p class="pdf-block">In ChromaPrompt, color is not decoration and not auxiliary metadata. Color is the first readable</p>
+<p class="pdf-block">substrate of state. A user should be able to recognize a chroma at first glance through chromatic</p>
+<p class="pdf-block">identity, grouping, and placement before opening any symbolic content.</p>
+<p class="pdf-block">Attachments remain optional and secondary. A payload, note, image, prompt fragment, or route</p>
+<p class="pdf-block">detail may deepen a chroma, but should not replace its visible chromatic legibility. In this sense,</p>
+<p class="pdf-block">ChromaPrompt remains chromatic-first and attachment-second.</p>
+<p class="pdf-block">In a Chroma Bank, recognition should happen before reading. Chromas should therefore remain</p>
+<p class="pdf-block">identifiable through color, clustering, and field relation before labels, icons, or symbolic</p>
+<p class="pdf-block">inspection are required.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Why This Matters</p>
+<p class="pdf-block">Prompting in the transformer era remains heavily text-bound. Even when files, images, memory,</p>
+<p class="pdf-block">and tool calls are involved, the dominant surface grammar is still the sentence inside the</p>
+<p class="pdf-block">chatbox. This makes prompting:</p>
+<p class="pdf-block">•
+linear</p>
+<p class="pdf-block">•
+transient</p>
+<p class="pdf-block">•
+difficult to revisit at a glance</p>
+<p class="pdf-block">•
+dependent on scroll position and memory</p>
+<p class="pdf-block">•
+poorly externalized into lived environment</p>
+<p class="pdf-block">•
+disposable rather than reusable</p>
+<p class="pdf-block">ChromaPrompt proposes a higher coordination layer in which prompts can become:</p>
+<p class="pdf-block">•
+visible</p>
+<p class="pdf-block">•
+modular</p>
+<p class="pdf-block">•
+placeable</p>
+<p class="pdf-block">•
+recombinable</p>
+<p class="pdf-block">•
+portable</p>
+<p class="pdf-block">•
+persistent without becoming heavy archive burden</p>
+<p class="pdf-block">•
+shared across human-readable and agent-readable surfaces</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 5" class="page" id="page-5"><h2>PDF page 5</h2><p class="pdf-block">Beyond Chat, Canvas, and Cockpit</p>
+<p class="pdf-block">ChromaPrompt is not limited to a chat interface, a node canvas, or an agent cockpit. Those may</p>
+<p class="pdf-block">function as transitional authoring environments, but they are not the final habitat of the system.</p>
+<p class="pdf-block">The deeper aim is environmental deployment: chromas and chromagents should be able to live</p>
+<p class="pdf-block">on placed rails and meaning surfaces across lived space, including household rails, desk rails,</p>
+<p class="pdf-block">car-edge fields, wearable bands, wall projections, threshold surfaces, and other ambient</p>
+<p class="pdf-block">locations.</p>
+<p class="pdf-block">In this sense, ChromaPrompt is not only a visual arrangement system. It is a grammar for moving</p>
+<p class="pdf-block">semantic coordination out of the box and into the environment.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Reusable Prompt Objects</p>
+<p class="pdf-block">A central extension proposed here is that prompt structures do not need to vanish after use.</p>
+<p class="pdf-block">Once a chroma has been made, it does not need to be deleted as if it were only a temporary</p>
+<p class="pdf-block">sentence. It may remain available for reuse.</p>
+<p class="pdf-block">A reusable prompt object may be:</p>
+<p class="pdf-block">•
+kept in a Chroma Bank</p>
+<p class="pdf-block">•
+unsocketed from one rail</p>
+<p class="pdf-block">•
+returned to a phone or watch</p>
+<p class="pdf-block">•
+redeployed on another rail</p>
+<p class="pdf-block">•
+recombined with other chromas</p>
+<p class="pdf-block">•
+paired with a different chromagent</p>
+<p class="pdf-block">•
+used in recurring workflows or domestic settings</p>
+<p class="pdf-block">This differs sharply from ordinary text prompting. A text prompt is usually consumed</p>
+<p class="pdf-block">by the moment of execution and then buried in scroll history. A chroma prompt can</p>
+<p class="pdf-block">remain as a semantic object that continues to exist after one execution cycle has</p>
+<p class="pdf-block">ended.</p>
+<p class="pdf-block">A prompt is consumed.</p>
+<p class="pdf-block">A chroma can be kept, moved, reused, and recombined.</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 6" class="page" id="page-6"><h2>PDF page 6</h2><p class="pdf-block">Object Types</p>
+<p class="pdf-block">For practical implementation, the system may initially be understood through three object</p>
+<p class="pdf-block">classes.</p>
+<p class="pdf-block">1. Plain Chroma</p>
+<p class="pdf-block">A visible semantic object carrying identity, state, or presence without required hidden depth.</p>
+<p class="pdf-block">Examples:</p>
+<p class="pdf-block">•
+plant</p>
+<p class="pdf-block">•
+coffee</p>
+<p class="pdf-block">•
+route home</p>
+<p class="pdf-block">•
+meeting later</p>
+<p class="pdf-block">•
+departure state</p>
+<p class="pdf-block">2. Payload Chroma</p>
+<p class="pdf-block">A plain chroma plus linked symbolic depth.</p>
+<p class="pdf-block">Examples:</p>
+<p class="pdf-block">•
+a product chroma linked to a product page</p>
+<p class="pdf-block">•
+a plant chroma linked to photos</p>
+<p class="pdf-block">•
+a route chroma linked to route detail</p>
+<p class="pdf-block">•
+a note chroma linked to text or context</p>
+<p class="pdf-block">•
+a reminder chroma linked to a deeper action</p>
+<p class="pdf-block">3. Chromagent</p>
+<p class="pdf-block">An active operator that works on one or more chromas.</p>
+<p class="pdf-block">Examples:</p>
+<p class="pdf-block">•
+compare</p>
+<p class="pdf-block">•
+search</p>
+<p class="pdf-block">•
+care</p>
+<p class="pdf-block">•
+summarize</p>
+<p class="pdf-block">•
+plan</p>
+<p class="pdf-block">•
+monitor</p>
+<p class="pdf-block">•
+recommend</p>
+<p class="pdf-block">•
+evaluate</p></section><section aria-label="Source PDF page 7" class="page" id="page-7"><h2>PDF page 7</h2><p class="pdf-block">⸻</p>
+<p class="pdf-block">Sources of Chromas</p>
+<p class="pdf-block">In practical use, chromas may arise from at least three sources.</p>
+<p class="pdf-block">A. User-Created Chromas</p>
+<p class="pdf-block">The user manually creates a chroma through an authoring interface.</p>
+<p class="pdf-block">Examples:</p>
+<p class="pdf-block">•
+“plant care”</p>
+<p class="pdf-block">•
+“shoe A”</p>
+<p class="pdf-block">•
+“route home”</p>
+<p class="pdf-block">•
+“research”</p>
+<p class="pdf-block">This may involve choosing:</p>
+<p class="pdf-block">•
+color</p>
+<p class="pdf-block">•
+name or label</p>
+<p class="pdf-block">•
+type</p>
+<p class="pdf-block">•
+optional payload</p>
+<p class="pdf-block">•
+rail or location</p>
+<p class="pdf-block">B. Derived Chromas</p>
+<p class="pdf-block">The system converts existing content into one or more chromas.</p>
+<p class="pdf-block">Examples:</p>
+<p class="pdf-block">•
+text prompt becomes a prompt chroma</p>
+<p class="pdf-block">•
+plant photo becomes a plant payload chroma</p>
+<p class="pdf-block">•
+three product links become three comparison chromas</p>
+<p class="pdf-block">•
+a route becomes a route chroma</p>
+<p class="pdf-block">This may appear in the interface as:</p>
+<p class="pdf-block">Turn this into chroma.</p>
+<p class="pdf-block">C. Agent-Generated Chromas</p>
+<p class="pdf-block">A model or service creates chromas from analysis, extraction, grouping, or recommendation.</p></section><section aria-label="Source PDF page 8" class="page" id="page-8"><h2>PDF page 8</h2><p class="pdf-block">Examples:</p>
+<p class="pdf-block">•
+three suggested products become three chromas</p>
+<p class="pdf-block">•
+four extracted tasks become four chromas</p>
+<p class="pdf-block">•
+commuting patterns become a route chroma cluster</p>
+<p class="pdf-block">•
+clustered summaries become grouped semantic objects</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Authoring Layer</p>
+<p class="pdf-block">In practical transition phases, the system would likely begin not as pure ambient infrastructure</p>
+<p class="pdf-block">but as an authoring and orchestration layer.</p>
+<p class="pdf-block">This may initially appear as:</p>
+<p class="pdf-block">•
+a Chroma app</p>
+<p class="pdf-block">•
+a Chroma editor</p>
+<p class="pdf-block">•
+a Rail composer</p>
+<p class="pdf-block">•
+a plugin or shell</p>
+<p class="pdf-block">•
+an OS-level composer</p>
+<p class="pdf-block">Its functions may include:</p>
+<p class="pdf-block">•
+creating chromas</p>
+<p class="pdf-block">•
+attaching payloads</p>
+<p class="pdf-block">•
+creating or assigning chromagents</p>
+<p class="pdf-block">•
+selecting rails or surfaces</p>
+<p class="pdf-block">•
+setting rules</p>
+<p class="pdf-block">•
+managing visibility</p>
+<p class="pdf-block">•
+storing objects in a Chroma Bank</p>
+<p class="pdf-block">•
+unsocketing and redeploying semantic objects</p>
+<p class="pdf-block">The app is not the habitat.</p>
+<p class="pdf-block">The app is the forge.</p>
+<p class="pdf-block">The rail is the habitat.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Placement of Chromagents</p>
+<p class="pdf-block">A chromagent may be placed on a rail in several ways.</p>
+<p class="pdf-block">Drag-and-Drop Placement</p></section><section aria-label="Source PDF page 9" class="page" id="page-9"><h2>PDF page 9</h2><p class="pdf-block">The user creates or selects a chromagent and places it directly beside one or more chromas.</p>
+<p class="pdf-block">Example:</p>
+<p class="pdf-block">•
+choose compare chromagent</p>
+<p class="pdf-block">•
+place beside three shoe chromas</p>
+<p class="pdf-block">Contextual Placement</p>
+<p class="pdf-block">The user selects one or more chromas and invokes a command such as:</p>
+<p class="pdf-block">•
+compare these</p>
+<p class="pdf-block">•
+monitor this</p>
+<p class="pdf-block">•
+search around this</p>
+<p class="pdf-block">•
+care for this</p>
+<p class="pdf-block">The system then creates or attaches an appropriate chromagent.</p>
+<p class="pdf-block">Template-Based Placement</p>
+<p class="pdf-block">The system provides predefined chromagent classes such as:</p>
+<p class="pdf-block">•
+compare</p>
+<p class="pdf-block">•
+route</p>
+<p class="pdf-block">•
+care</p>
+<p class="pdf-block">•
+calendar</p>
+<p class="pdf-block">•
+search</p>
+<p class="pdf-block">•
+draft</p>
+<p class="pdf-block">The user places these classes into rails as reusable modules.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Activation Modes</p>
+<p class="pdf-block">A chromagent does not always need to execute immediately. At least four activation modes are</p>
+<p class="pdf-block">possible.</p>
+<p class="pdf-block">1. Passive Mode</p>
+<p class="pdf-block">The chromagent is placed but idle.</p>
+<p class="pdf-block">It is visible, available, and semantically present, but does not yet execute.</p></section><section aria-label="Source PDF page 10" class="page" id="page-10"><h2>PDF page 10</h2><p class="pdf-block">2. Arrangement-Triggered Mode</p>
+<p class="pdf-block">The chromagent executes when a required semantic arrangement is complete.</p>
+<p class="pdf-block">Example:</p>
+<p class="pdf-block">•
+at least two shoe chromas present</p>
+<p class="pdf-block">•
+comparison chromagent present</p>
+<p class="pdf-block">•
+optional price or location chroma present</p>
+<p class="pdf-block">When the arrangement is complete, the compare process may begin automatically if</p>
+<p class="pdf-block">auto mode is enabled.</p>
+<p class="pdf-block">3. User-Triggered Mode</p>
+<p class="pdf-block">The chromagent executes only when the user explicitly invokes it.</p>
+<p class="pdf-block">Examples:</p>
+<p class="pdf-block">•
+run</p>
+<p class="pdf-block">•
+compare</p>
+<p class="pdf-block">•
+refresh</p>
+<p class="pdf-block">•
+evaluate</p>
+<p class="pdf-block">•
+update</p>
+<p class="pdf-block">4. Environment-Triggered Mode</p>
+<p class="pdf-block">The chromagent executes in response to external events or changing conditions.</p>
+<p class="pdf-block">Examples:</p>
+<p class="pdf-block">•
+a new plant photo is added</p>
+<p class="pdf-block">•
+a route changes</p>
+<p class="pdf-block">•
+the time of day changes</p>
+<p class="pdf-block">•
+a sensor update occurs</p>
+<p class="pdf-block">•
+the user arrives at a specific rail or location</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Input / Output Logic</p>
+<p class="pdf-block">A chromagent may be modeled through:</p>
+<p class="pdf-block">•
+input conditions</p></section><section aria-label="Source PDF page 11" class="page" id="page-11"><h2>PDF page 11</h2><p class="pdf-block">•
+execution rule</p>
+<p class="pdf-block">•
+output rule</p>
+<p class="pdf-block">Example: Compare Chromagent</p>
+<p class="pdf-block">Input</p>
+<p class="pdf-block">•
+minimum of two product chromas</p>
+<p class="pdf-block">•
+optional price filter chroma</p>
+<p class="pdf-block">•
+optional location chroma</p>
+<p class="pdf-block">Execute When</p>
+<p class="pdf-block">•
+user taps run</p>
+<p class="pdf-block">or</p>
+<p class="pdf-block">•
+arrangement complete and auto mode is enabled</p>
+<p class="pdf-block">Output</p>
+<p class="pdf-block">•
+ranking chroma</p>
+<p class="pdf-block">•
+cheapest-store chroma</p>
+<p class="pdf-block">•
+best-fit chroma</p>
+<p class="pdf-block">•
+trail of comparison or recent reasoning state</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Example Structures</p>
+<p class="pdf-block">Comparison Prompt</p>
+<p class="pdf-block">•
+Chroma 1: shoe model A</p>
+<p class="pdf-block">•
+Chroma 2: shoe model B</p>
+<p class="pdf-block">•
+Chroma 3: shoe model C</p>
+<p class="pdf-block">•
+Chromagent: compare price, fit, and store availability</p>
+<p class="pdf-block">The prompt is the arrangement, not only the sentence.</p>
+<p class="pdf-block">Plant-Care Prompt</p>
+<p class="pdf-block">•
+Chroma: plant identity</p>
+<p class="pdf-block">•
+Payload chromas: current and past photos</p>
+<p class="pdf-block">•
+Chromagent: evaluate plant condition and suggest care</p>
+<p class="pdf-block">The prompt is not lost in chat history. It remains placed and revisitable.</p>
+<p class="pdf-block">Route Prompt</p></section><section aria-label="Source PDF page 12" class="page" id="page-12"><h2>PDF page 12</h2><p class="pdf-block">•
+Chroma: destination or repeated commute</p>
+<p class="pdf-block">•
+Chroma: timing or traffic condition</p>
+<p class="pdf-block">•
+Chromagent: evaluate best path or compare route options</p>
+<p class="pdf-block">The prompt exists as a field composition rather than only a typed request.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">System Model</p>
+<p class="pdf-block">A practical implementation may involve at least three system objects.</p>
+<p class="pdf-block">Chroma Object</p>
+<p class="pdf-block">•
+id</p>
+<p class="pdf-block">•
+color</p>
+<p class="pdf-block">•
+label</p>
+<p class="pdf-block">•
+category</p>
+<p class="pdf-block">•
+payload reference (optional)</p>
+<p class="pdf-block">•
+rail binding or location</p>
+<p class="pdf-block">•
+state</p>
+<p class="pdf-block">•
+tags or semantic family</p>
+<p class="pdf-block">Chromagent Object</p>
+<p class="pdf-block">•
+id</p>
+<p class="pdf-block">•
+role</p>
+<p class="pdf-block">•
+input schema</p>
+<p class="pdf-block">•
+activation mode</p>
+<p class="pdf-block">•
+payload access rules</p>
+<p class="pdf-block">•
+output mode</p>
+<p class="pdf-block">•
+rail binding</p>
+<p class="pdf-block">•
+state</p>
+<p class="pdf-block">Rail Object</p>
+<p class="pdf-block">•
+id</p>
+<p class="pdf-block">•
+type</p>
+<p class="pdf-block">•
+placement context</p>
+<p class="pdf-block">•
+visible slots or free layout</p>
+<p class="pdf-block">•
+local rules</p>
+<p class="pdf-block">•
+linked surfaces</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 13" class="page" id="page-13"><h2>PDF page 13</h2><p class="pdf-block">Relation to Existing ChromaRail Grammar</p>
+<p class="pdf-block">ChromaPrompt does not replace ChromaRail, Chromagent, Rail, Trail, or Veil. It extends and</p>
+<p class="pdf-block">clarifies one of their practical consequences.</p>
+<p class="pdf-block">•
+Rail remains the habitat in which prompt arrangements can live.</p>
+<p class="pdf-block">•
+Chroma remains the bounded semantic entity that can carry prompt-relevant</p>
+<p class="pdf-block">state.</p>
+<p class="pdf-block">•
+Payload chroma gives a chroma optional hidden depth.</p>
+<p class="pdf-block">•
+Chromagent remains the active operator that can work on one or more</p>
+<p class="pdf-block">chromas.</p>
+<p class="pdf-block">•
+Trail may record prompt evolution, handoff, or recent active transformation.</p>
+<p class="pdf-block">•
+Veil may preserve softened continuity after the active prompt phase has</p>
+<p class="pdf-block">passed.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Prior-Art-Safe Position</p>
+<p class="pdf-block">This work should be read as a narrow and conservative extension rather than as a broad claim</p>
+<p class="pdf-block">over all prompting systems, multimodal interfaces, or visual programming traditions.</p>
+<p class="pdf-block">It does not claim novelty for:</p>
+<p class="pdf-block">•
+text prompting</p>
+<p class="pdf-block">•
+multimodal prompting</p>
+<p class="pdf-block">•
+node systems</p>
+<p class="pdf-block">•
+visual programming</p>
+<p class="pdf-block">•
+agent dashboards</p>
+<p class="pdf-block">•
+orchestration frameworks</p>
+<p class="pdf-block">•
+reusable saved tasks</p>
+<p class="pdf-block">•
+content boards or object banks in isolation</p>
+<p class="pdf-block">The strongest claim retained here is narrower:</p>
+<p class="pdf-block">ChromaPrompt defines a named semantic extension in which prompt structures become</p>
+<p class="pdf-block">reusable, placeable semantic arrangements composed of chromas, payload chromas, and</p>
+<p class="pdf-block">chromagents, intended to operate as a higher-abstraction coordination layer above</p>
+<p class="pdf-block">conventional runtime primitives in human-agent systems.</p>
+<p class="pdf-block">⸻</p></section><section aria-label="Source PDF page 14" class="page" id="page-14"><h2>PDF page 14</h2><p class="pdf-block">Implementation Boundary</p>
+<p class="pdf-block">This note does not claim to replace:</p>
+<p class="pdf-block">•
+text prompting</p>
+<p class="pdf-block">•
+tool calls</p>
+<p class="pdf-block">•
+event streams</p>
+<p class="pdf-block">•
+model runtime</p>
+<p class="pdf-block">•
+orchestration frameworks</p>
+<p class="pdf-block">•
+graph execution</p>
+<p class="pdf-block">•
+transport protocols</p>
+<p class="pdf-block">•
+synchronization logic</p>
+<p class="pdf-block">A chroma prompt may still compile downward into:</p>
+<p class="pdf-block">•
+text</p>
+<p class="pdf-block">•
+hidden context</p>
+<p class="pdf-block">•
+tool calls</p>
+<p class="pdf-block">•
+event streams</p>
+<p class="pdf-block">•
+agent graph execution</p>
+<p class="pdf-block">•
+model runtime</p>
+<p class="pdf-block">The contribution here is not the lower execution layer.</p>
+<p class="pdf-block">It is the higher coordination grammar.</p>
+<p class="pdf-block">⸻</p>
+<p class="pdf-block">Closing Statement</p>
+<p class="pdf-block">A prompt does not need to remain a sentence inside a chatbox.</p>
+<p class="pdf-block">With chromas, prompts become placeable.</p>
+<p class="pdf-block">With chromagents, prompts become active.</p>
+<p class="pdf-block">With Chroma Bank, prompts become reusable.</p>
+<p class="pdf-block">With unsocketing and redeployment, prompts can move through life without being lost.</p>
+<p class="pdf-block">ChromaRail turns prompting from disposable text into reusable semantic deployment.</p></section></article><nav aria-label="PDF page navigation" class="toc"><b>Pages</b><a href="#page-1">1</a><a href="#page-2">2</a><a href="#page-3">3</a><a href="#page-4">4</a><a href="#page-5">5</a><a href="#page-6">6</a><a href="#page-7">7</a><a href="#page-8">8</a><a href="#page-9">9</a><a href="#page-10">10</a><a href="#page-11">11</a><a href="#page-12">12</a><a href="#page-13">13</a><a href="#page-14">14</a></nav></div></main><footer>Original record: <a href="https://zenodo.org/records/19192992">https://zenodo.org/records/19192992</a> · Full text derived from the uploaded PDF.<span class="ambient-footer-links"> · <a href="/ambient-era/">Ambient Era</a> · <a href="/ambient-phone/">Ambient Phone</a></span></footer></div></body></html>

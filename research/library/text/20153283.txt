@@ -1,0 +1,76 @@
+=== PDF PAGE 1 ===
+NSFWRun A Resolver-Based Roguelite Encounter Runtime
+for Adult Image Progression
+
+NSFWRun is an experimental mobile-first runtime that reframes adult image discovery as a roguelite encounter
+system rather than a passive gallery, infinite feed, or visual novel. The project combines randomized
+resolver-driven image encounters, branching dungeon progression, collectible modifiers, escalating pressure
+systems, boss attack patterns, and saveable session structure into a continuous “one more run” gameplay loop.
+This document is intended as a timestamped conceptual and architectural publication for prior-art and first-mover
+documentation purposes.
+
+1. Core Concept
+
+NSFWRun treats AI/image resolution as dungeon encounters. Instead of static image browsing, the user
+progresses through structured encounters composed of randomized image batches. Each encounter acts as a
+roguelite “room” with pacing, escalation, uncertainty, and branching outcomes. The runtime emphasizes: •
+randomized encounter flow • pressure and pacing • branching routes • collectible modifiers • boss encounters •
+endless replayability • mobile “one more run” psychology
+
+2. Resolver Dungeon Structure
+
+The dungeon is not driven primarily by narrative contracts or static stories. Instead, progression is created through
+resolver mutations and encounter routing. Each node modifies: • image pacing • resolver type • difficulty • pressure
+gain • image quantity • boss behavior • collectible outcomes Branching therefore occurs through resolver-state
+mutation rather than traditional dialogue trees.
+
+3. Encounter Loop
+
+Standard gameplay structure: 1. Start run 2. Survive image encounter 3. Choose next route 4. Receive
+randomized reward or curse 5. Encounter elite rooms and bosses 6. Save or continue progression 7. Repeat
+indefinitely Encounters may contain: • Light rooms • Heavy rooms • Elite encounters • Mystery boxes • Boss
+encounters
+
+4. Boss Architecture
+
+Bosses intentionally disrupt the stable viewing rhythm. Unlike normal encounters, boss rooms may: • remove
+manual user agency • disable navigation controls • introduce picture-in-picture attack windows • inject secondary
+image streams • accelerate pacing • increase pressure unpredictably This transforms the boss into a resolver
+destabilization event rather than a larger image batch.
+
+5. Collectibles and Relics
+
+NSFWRun includes roguelite-style collectible modifiers. Examples: • Less Images • Safe Fill • Cool Edge • Curse:
+More Images • Curse: Hot Pull These modifiers affect future resolver behavior and create strategic uncertainty
+between runs.
+
+=== PDF PAGE 2 ===
+6. Save-For-Now System
+
+The runtime introduces a soft-exit mechanic intended to interrupt compulsive endless continuation loops. Instead
+of a standard quit menu, the player can gradually fill a small “End For Now” bar through repeated interaction.
+When completed, the current run is saved and the system returns to the title screen. Re-entry cooldowns may
+delay immediate continuation to reduce automatic re-engagement.
+
+7. Genre Positioning
+
+NSFWRun does not fit cleanly into: • traditional NSFW galleries • visual novels • AI chat systems • standard
+roguelites • endless social feeds The project instead occupies a hybrid category between: • roguelite progression
+systems • resolver-driven AI/image systems • mobile encounter runtimes • adult interactive media
+
+8. Proposed Genre Terms
+
+Potential terminology explored for the category: • AI Resolver Roguelite • Endless Image Dungeon • Erotic
+Encounter Runtime • Dungeon Resolver Crawl • NSFW Encounter Engine
+
+9. Prior-Art Positioning
+
+The project acknowledges the existence of: • NSFW roguelites • AI-assisted erotic games • AI image generators •
+dungeon crawlers • endless feed systems However, NSFWRun proposes a distinct synthesis in which randomized
+resolver encounters themselves become the primary roguelite gameplay structure. This publication documents the
+architectural framing and interaction model as conceptual prior art.
+
+10. Attribution
+
+Created by Raynor Eissens 2026 This document describes an experimental interaction/runtime architecture and is
+published for conceptual, archival, and prior-art purposes.

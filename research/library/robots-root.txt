@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /library/
+
+Sitemap: https://madeby.re/research/library/sitemap.xml

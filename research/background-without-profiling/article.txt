@@ -1,0 +1,260 @@
+Background Without Profiling
+Human-Bound Persistent State for Agentic Systems
+
+Raynor Eissens
+October 1, 2026
+Independent web article · No DOI assigned
+
+CANONICAL DEFINITION
+
+Background is persistent human-bound state from which replaceable agents, models, services, devices, and artifacts can receive purpose-bounded context. It is not itself a profile, agent memory, or simulation of the person.
+
+CORE DISTINCTION
+
+Profiles describe the person.
+Twins simulate the person.
+Agent memory remembers the person for an agent.
+Personal data stores hold data under a storage and access model.
+Background persists for the person and supplies bounded context to replaceable systems.
+
+The underlying storage, identity, memory, access-control, and selective-disclosure mechanisms are not claimed as new. Personal data stores, Solid Pods, personal knowledge graphs, verifiable credentials, long-term agent memory, and context layers already cover substantial parts of the technical space. The proposed contribution is a layer distinction: the durable continuity object belongs logically to the human principal, while agents are replaceable consumers of that state.
+
+01. THE MISSING DISTINCTION
+
+Personal AI is often described as an agent that accumulates memory about a person. That framing makes the agent the center of continuity: the agent remembers, the agent personalizes, and the agent becomes more useful as its context grows.
+
+A different architecture becomes visible when the continuity root is moved one layer down. Instead of asking how an agent can remember more about a person, ask what personal state should remain when the agent, model, application, device, or provider changes.
+
+That persistent object is called Background here.
+
+The distinction is not primarily about where bytes are stored. A Background could be local, cloud-hosted, distributed, encrypted, or split across several stores. The distinction is about lifecycle, authority, and conceptual ownership: which object is expected to survive replacement of the others?
+
+agent-bound framing:
+person → agent → agent memory
+
+human-bound framing:
+person → Background → bounded projections → agents / services / devices / artifacts
+
+In the second framing, the agent is not the durable personal object. The Background is.
+
+02. WHAT BACKGROUND IS, AND IS NOT
+
+A Background is broader than a conventional user profile but narrower than a claim to digitally reproduce a person. It can contain or reference declared facts, preferences, histories, commitments, provenance, permissions, relationships, artifacts, and other durable state. It may also contain observed, derived, or inferred state, but those categories should remain distinguishable rather than collapsing into one opaque psychological model.
+
+A useful taxonomy is:
+
+Profile — a representation about a person, often optimized for categorization, prediction, recommendation, or personalization.
+
+User model — a system-specific representation used to adapt one application or service.
+
+Agent memory — persistent state maintained for the continuity or performance of an agent or agentic system.
+
+Personal data store — an infrastructure for storing and controlling access to personal data.
+
+Personal knowledge graph — a structured representation of personal entities, facts, relations, and provenance.
+
+AI twin — a model intended to reproduce or simulate aspects of a particular person’s knowledge, preferences, reasoning, style, values, or behavior.
+
+Background — persistent human-bound state whose lifecycle is not defined by any single consuming agent and from which multiple systems can receive bounded context.
+
+These categories can overlap in implementation. A Background might use a Solid Pod as storage, a personal knowledge graph as one representation, verifiable credentials for some claims, and an agent-memory component for episodic retrieval. The layer distinction does not require inventing replacements for those systems. It tells us what role they play.
+
+03. HUMAN-BOUND DOES NOT MEAN USER-HOSTED
+
+Human-bound is a logical and governance relation, not a requirement that a person physically hosts every byte. A managed cloud service could custody Background state. A local device could cache part of it. A trusted execution environment could process another part. A personal data store could hold documents while a separate policy engine controls projections.
+
+The stronger requirement is continuity under substitution. If one agent disappears, another can be authorized without rebuilding the person from zero. If one model changes, the state remains intelligible. If one device is lost, continuity is recoverable. If one provider is left, meaningful export or migration is possible.
+
+A system can call its context “personal” while still being provider-bound in practice. Background therefore separates four questions that are often collapsed:
+
+- Who is the state about?
+- Who controls access?
+- Who physically stores or processes it?
+- What survives when a component is replaced?
+
+The answers need not be the same entity.
+
+04. BOUNDED PROJECTIONS
+
+A Background is not useful merely because it is comprehensive. Its value depends on not requiring every consumer to receive everything.
+
+A bounded projection is a purpose-specific view, transformation, proof, or capability derived from Background state for a particular consumer and task. It can include only the information needed for that purpose, together with relevant provenance, permissions, expiry, confidence, or revocation conditions.
+
+For example, a scheduling agent may need availability, travel constraints, and a few preferences. It does not need a complete purchase history, medical history, or creative archive. A service verifying eligibility may need a derived proof rather than the underlying records. A temporary agent may receive a one-use context package that expires when the task ends.
+
+This mechanism is not presented as a new cryptographic primitive. Selective disclosure, least privilege, scoped access, data minimization, and capability systems are established ideas. The claim is architectural: these mechanisms become the normal boundary between durable human state and replaceable consuming systems.
+
+05. BACKGROUND WITHOUT PROFILING
+
+The phrase Background Without Profiling names a design principle, not a claim that inference can or should disappear from all personal AI.
+
+The principle is:
+
+A system should not need to infer who a person is merely in order to carry what that person has chosen, done, created, permitted, learned, accumulated, or explicitly retained.
+
+This separates several kinds of state that are often blended together:
+
+Declared state — information or preferences explicitly supplied by the person.
+Observed state — records of events or actions.
+Derived state — summaries, aggregates, or transformations produced from other records.
+Inferred state — probabilistic conclusions not directly asserted by the person.
+Profile state — representations optimized to categorize or predict the person.
+
+A Background can contain any of these, but an anti-profiling architecture should make the distinction visible and minimize silent conversion of ordinary personal history into broad behavioral or psychographic claims. Inferred state should carry provenance, confidence, scope, and a clear path to correction or removal.
+
+The design goal is not ignorance. It is useful continuity without making total legibility of the person a prerequisite for assistance.
+
+06. THE CONTINUITY TEST
+
+A proposed Background can be tested by substitution.
+
+Model replacement: if the model changes, does the personal state remain usable?
+
+Agent replacement: if the agent is deleted, does the durable personal state remain?
+
+Application replacement: can a different application work from the same authorized state without reconstructing the user?
+
+Device replacement: can continuity survive loss or retirement of one device?
+
+Provider migration: can meaningful state, provenance, and permissions move without being flattened into an opaque export?
+
+Multiple consumers: can several agents receive different projections from the same continuity root?
+
+Temporary consumers: can a one-off agent receive enough context to act without inheriting the whole personal history?
+
+Revocation: can access be removed without deleting the Background itself?
+
+Provenance: can the system distinguish user assertions, observations, external claims, derived state, and model inference?
+
+Deletion: can state be corrected or forgotten without destroying the entire continuity structure?
+
+These are architecture tests, not claims that current systems already satisfy them.
+
+07. RELATION TO EXISTING SYSTEMS
+
+The technical territory is heavily populated. That is a reason for narrower claims, not for ignoring prior art.
+
+Solid already provides user-controlled Pods, interoperable data access, and permissions for applications and AI agents. Personal knowledge graph research has proposed user-controlled stores with access rights and provenance. Verifiable Credentials support machine-verifiable claims and privacy-preserving selective disclosure. Long-term memory systems such as Mem0 persist information across interactions so agents can maintain continuity.
+
+BCG’s 2026 Human Context Layer comes especially close to the same terrain. It describes a structured, permissioned record that lets a personal agent act on someone’s behalf, explicitly links the idea to Solid and agent-memory systems, and identifies portability versus platform lock-in as an unresolved question.
+
+The difference proposed here is therefore not “context exists.” Nor is it “users should control data.” Those claims have substantial prior art.
+
+The proposed layer distinction is:
+
+The durable personal object in agentic computing is human-bound state; agents are replaceable consumers of bounded projections from it.
+
+This is best treated as a conceptual and governance abstraction built from known components unless future implementations demonstrate a distinct technical architecture.
+
+08. PROFILE, TWIN, MEMORY, BACKGROUND
+
+The simplest machine-readable distinction is functional:
+
+Profile describes you.
+Twin simulates you.
+Agent memory remembers you for an agent.
+Personal data store stores data for you under an access model.
+Background persists for you across replaceable systems.
+
+The boundaries are not absolute. A sufficiently rich Background could be used to construct a twin. A personal data store could implement most of a Background. A shared memory service could become human-bound if its identity, portability, policy, and lifecycle are explicitly detached from any one agent.
+
+The point of the vocabulary is not to force mutually exclusive boxes. It is to preserve a layer distinction when systems otherwise look technically similar.
+
+09. A LIGHTWEIGHT FORMAL MODEL
+
+Let H be the human principal, B_t the Background state at time t, S_i a consuming system, P_i the policy governing that consumer, and Q_i,t a request for context.
+
+A bounded projection can be represented as:
+
+π(B_t, Q_i,t, P_i)
+
+The consuming system receives the projection rather than unconstrained access to B_t. It can perform an action A_i,t and may propose a state mutation ΔB_t. A separate policy or validation step determines whether that proposal becomes part of B_t+1.
+
+H → B_t → π(B_t, Q_i,t, P_i) → S_i → A_i,t
+
+with controlled write-back:
+
+S_i → proposed ΔB_t → validation / policy → B_t+1
+
+The model intentionally leaves storage technology open. Its purpose is to make the continuity root and the access boundary explicit.
+
+10. FAILURE MODES
+
+Human-bound state is not automatically humane. A badly designed Background could become the most comprehensive dossier a person has ever carried. Centralization raises breach risk. Portability can create a universal tracking surface. Multiple narrow projections can sometimes be recombined into sensitive inferences. Long-lived errors can become harder to escape. A provider can advertise user ownership while retaining practical control through interfaces, contracts, or export restrictions.
+
+Background Without Profiling therefore depends on more than ownership language. It requires data minimization, provenance, inspectability, revocation, deletion, migration, and resistance to silent inference. It also requires the ability to fragment identity and state where a universal identifier would create unnecessary correlation.
+
+The safest Background may not be one monolithic database. It may be a logical layer distributed across stores, credentials, local state, policy engines, and encrypted services, unified by continuity and governance rather than by physical centralization.
+
+11. RELATION TO THE CARRYING LAYER AND SUPERARTIFACT
+
+Within the broader research program, Background fits naturally beneath two other concepts without collapsing into either.
+
+The Carrying Layer concerns the wider systems through which memory, coordination, administration, automation, institutions, and intelligence carry burdens that would otherwise have to be repeatedly borne by individuals. Background can be understood as one personal continuity substrate inside that larger carrying environment.
+
+A SuperArtifact is an addressable artifact whose reachable capability exceeds its visible surface while preserving address, capability access, and lineage. Background is usually not the same thing. It is better understood as state and policy from which agents and artifacts can draw context. A SuperArtifact can consume, expose, transform, or write back to Background without the two becoming identical.
+
+A concise relation is:
+
+world → human experience → Background accumulates → bounded projection / transformation → agent action or artifact
+
+The separation matters. Background is what persists for the person. Artifacts are things that become addressable in the world.
+
+12. CLAIM BOUNDARY
+
+This article does not claim the invention of personal data stores, selective disclosure, portable identity, agent memory, personal knowledge graphs, or context layers. It does not claim that a single universal Background should exist, or that all personalization should avoid inference.
+
+It proposes a specific conceptual boundary for agentic systems:
+
+- personal continuity should be modeled independently of any one agent;
+- the human principal, not the agent, is the durable continuity root;
+- systems receive purpose-bounded projections rather than inheriting the entire personal state by default;
+- profiles, twins, memories, stores, and Background should not be treated as interchangeable concepts;
+- personalization can be designed to preserve useful state without requiring continuous profiling as its default mechanism.
+
+The technical components are largely established. The distinction is the layer.
+
+MACHINE SUMMARY
+
+Concept: Background
+Class: human-bound persistent state
+Continuity root: human principal
+Consumed by: agents, models, services, devices, artifacts
+Access pattern: bounded projection
+Survives: model replacement, agent replacement, application replacement, and ideally provider migration
+Not equivalent to: profile, user model, agent memory, personal data store, personal knowledge graph, AI twin
+Can use: personal data stores, knowledge graphs, credentials, memory systems, capability systems, confidential computing
+Design principle: Background Without Profiling
+Core rule: carry explicit and provenance-bearing personal state without making broad inference about the person a prerequisite for useful assistance
+Novelty boundary: conceptual and governance abstraction built from substantial prior art; not claimed as a new storage or cryptographic primitive
+
+REFERENCES
+
+[1] BCG (2026), “The New Front Door: How Personal Agents Are Rewriting the Rules of the Internet.”
+https://www.bcg.com/x/the-multiplier/personal-ai-agents-compete-on-trust
+Introduces the Human Context Layer as a structured, permissioned record for personal agents; explicitly discusses Solid, agent memory, portability and platform lock-in.
+
+[2] Solid Project, “About Solid.”
+https://solidproject.org/about
+Describes user-controlled Pods, application and AI-agent access, interoperability, and continuity of personal data across apps and providers.
+
+[3] W3C (2025), Verifiable Credentials Data Model v2.0.
+https://www.w3.org/TR/vc-data-model/
+Provides a standards-based model for claims, holders and verifiers, including data minimization and selective disclosure mechanisms.
+
+[4] Chhikara et al. (2025), “Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory.”
+https://arxiv.org/abs/2504.19413
+Representative work on persistent agent memory across long-running conversations.
+
+[5] Bernard et al. (2024), “PKG API: A Tool for Personal Knowledge Graph Management.”
+https://arxiv.org/abs/2402.07540
+Describes personal knowledge graphs that consolidate personal data under user control with access rights and provenance.
+
+[6] Jurčys et al. (2026), “Who owns my AI twin? Data ownership in a new world of simulated identities.”
+https://www.sciencedirect.com/science/article/pii/S2212473X2600088X
+Defines AI twins as digital replicas intended to simulate an individual’s knowledge, memories, traits, preferences, values and behavior.
+
+[7] Meta (2026), “Introducing Muse: The World’s First Personal AI Agent Built for Everyone.”
+https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/
+A current example of persistent personal-agent state hosted inside provider infrastructure, illustrating both the feasibility of persistent context and the distinction between private infrastructure and portability.
+

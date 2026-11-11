@@ -1,0 +1,14 @@
+Ash District v0.13.1 — Cache-safe Rescue Bootfix
+
+Purpose:
+- Restore the v0.13 Firepath/Stash line after mobile showed UI over a black canvas.
+
+Fixes:
+- Added versioned JS/CSS filenames so Safari/mobile cannot keep an old broken cached script.
+- Added boot error overlay for future hard JS/runtime errors instead of silent black screen.
+- Added image-load timeout fallback so missing assets cannot permanently block game start.
+- Kept v0.13 gameplay: Firepath mobile button, stash interaction, compact smartphone stash, drag/drop/tap-move stash.
+
+Upload note:
+- Upload the full public_html folder, not only zombies/index.html.
+- Test with /zombies/index.html?v=ash131

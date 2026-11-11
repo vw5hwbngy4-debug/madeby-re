@@ -1,0 +1,41 @@
+{
+  "schema": "kloojo.luna-core.v1",
+  "gameId": "kloojo",
+  "version": "0.1.0",
+  "runtimeEntry": "index.html",
+  "architecture": {
+    "kernel": [
+      "core/kloojo-kernel.js",
+      "core/kys-challenge-engine.js",
+      "core/hardening.js",
+      "core/traversal.js"
+    ],
+    "lunaEditable": [
+      "luna/challenge-generator.js",
+      "luna/creation-grammar.js"
+    ],
+    "assets": ["assets/world/", "assets/graffiti/", "assets/ui/"]
+  },
+  "challengeProtocol": "kys.encounter.v2",
+  "hostMessages": [
+    "KYS_CHALLENGE_GENERATE",
+    "KYS_CHALLENGE_LOAD",
+    "KYS_CHALLENGE_RETRY",
+    "KYS_CHALLENGE_STOP",
+    "KYS_CHALLENGE_LEADERBOARD",
+    "KYS_WINNER_TRACES"
+  ],
+  "events": ["bag.collected", "graffiti.tagged", "coin.collected", "player.respawn"],
+  "winnerCreation": {
+    "type": "graffiti_tag",
+    "grammar": "luna/creation-grammar.js"
+  },
+  "invariants": [
+    "Challenges are descriptors, never copies of the game runtime.",
+    "Luna changes luna/* for normal iteration; core/* is frozen unless explicitly upgrading mechanics.",
+    "No base64/data-URI assets in JavaScript.",
+    "No video, promo site, docs site, multiplayer, profile, garage, crew, persistence or QA harness in the feed runtime.",
+    "Winner creation cannot change collision, placement, objective roles or competitive rules.",
+    "Same seed plus same runtime version must produce the same competitive encounter."
+  ]
+}

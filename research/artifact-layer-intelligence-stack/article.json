@@ -1,0 +1,99 @@
+{
+  "title": "The Artifact Layer of the Intelligence Stack",
+  "short_title": "The Artifact Layer",
+  "subtitle": "Superartifact as Address, Capability, and Lineage",
+  "author": "Raynor Eissens",
+  "date_published": "2026-09-28",
+  "publication_type": "Independent conceptual and terminological web note",
+  "doi": null,
+  "canonical_url": "https://madeby.re/research/artifact-layer-intelligence-stack/",
+  "description": "A terminological and architectural note defining the 2026 Eissens use of superartifact as an addressable artifact that provides a stable interface to a heterogeneous capability graph, while preserving capability access and lineage across changing models, agents, tools and providers. The note distinguishes this use from Marco Fasoli’s 2018 device-centered super-artifact concept.",
+  "thesis": "When the intelligence stack keeps changing, the durable object layer can be the artifact that preserves address, capability access, and lineage.",
+  "canonical_definition": "A superartifact is an addressable artifact that acts as a stable interface to a heterogeneous capability graph extending beyond its local representation, with at least some of that capability operationally invokable, composable, or reusable.",
+  "distinction": {
+    "file": "Stored representation.",
+    "artifact": "Meaningful, reusable output.",
+    "superartifact": "Meaningful, addressable object with an expandable capability surface."
+  },
+  "core_properties": {
+    "address_identity": "A stable creator-facing or user-facing identity through which the object remains recoverable across changing implementations.",
+    "capability": "A compact entry point into a wider heterogeneous graph of intelligence and action, with at least some capability operationally invokable, composable, or reusable.",
+    "lineage": "Provenance, version/remix history, permissions and reversibility that remain attached to the object as implementations change."
+  },
+  "prior_usage": {
+    "author": "Marco Fasoli",
+    "year": 2018,
+    "doi": "10.1007/s11023-018-9476-3",
+    "summary": "Fasoli characterizes personal computing devices as super-artifacts because they are intrinsically multifunctional, meta-representational and highly variable in structure.",
+    "relationship": "Prior use of the term. The 2026 Eissens definition does not claim coinage and shifts the focus from device multifunctionality to stable address, routed capability and lineage."
+  },
+  "keywords": [
+    "superartifact",
+    "artifact layer",
+    "capability graph",
+    "addressable artifact",
+    "lineage",
+    "provenance",
+    "reversibility",
+    "AI artifacts",
+    "intelligence stack",
+    "Marco Fasoli"
+  ],
+  "sections": [
+    {
+      "heading": "01. A term with a history",
+      "text": "Superartifact is not a blank word waiting for an origin story. The term has earlier uses, and any contemporary definition should begin by preserving that history rather than erasing it.\n\nThe most relevant academic precedent is Marco Fasoli’s 2018 paper “Super Artifacts: Personal Devices as Intrinsically Multifunctional, Meta-representational Artifacts with a Highly Variable Structure.” Fasoli’s object is the personal computing device: PCs, laptops, smartphones and tablets. His argument emphasizes intrinsic multifunctionality, meta-representation, variable structure and what he calls macro-functionality. A device can instantiate many representations and be used both as a cognitive artifact and as a tool for other functions. [1]\n\nThat is a substantial use of the term, and it is not the same use developed here.\n\nThe 2026 Eissens usage emerged from a different problem: what should remain stable at the object layer when models, agents, tools, memory systems, providers and execution environments are all becoming interchangeable or short-lived?\n\nThe answer proposed by the SuperArtifact project is not “the device with the most functions.” It is “the artifact that remains addressable while the capability graph behind it can change.”"
+    },
+    {
+      "heading": "02. From device multifunctionality to routed capability",
+      "text": "The distinction can be stated compactly.\n\nFasoli 2018:\n\ndevice → many functions\n\nEissens 2026:\n\nartifact → stable address → capability graph → lineage\n\nThe difference is not a claim that one concept supersedes the other historically. They describe different architectural emphases.\n\nA Fasoli-style super-artifact is remarkable because one personal device can adopt many functional roles. Its structure and representations can vary while the physical device remains a highly general-purpose object. [1]\n\nThe Eissens superartifact can be much smaller and need not be a device at all. Its visible form might be a page, file, tool, card, game item, icon, location, document or small application. What matters is that the surface is a stable entry point into capabilities that are not exhausted by the surface itself.\n\nThe object therefore does not need to contain all of its capability locally. It can route into models, tools, memory, executable code, data stores, other artifacts, human approvals, sensors or environmental state. The important transition is from contained functionality to reachable capability."
+    },
+    {
+      "heading": "03. File → Artifact → Superartifact",
+      "text": "A simple three-step distinction provides the conceptual spine:\n\nFile = stored representation\n\nArtifact = meaningful, reusable output\n\nSuperartifact = meaningful, addressable object with an expandable capability surface\n\nA file can contain text, media, code or structured data without doing anything beyond representation. An artifact adds human or operational significance: it is something made, kept, reused, inspected, shared, versioned, executed or remixed.\n\nA superartifact adds a further property. Its reachable capability is larger than its local representation.\n\nThat phrase matters. The superartifact is not defined by file size, autonomy or visual complexity. A tiny object can qualify if it serves as a stable interface into a much larger capability space. Conversely, a huge application with thousands of locally implemented features may still be better described simply as software if it lacks the architectural properties specified here.\n\nThe hierarchy is therefore semantic and operational, not merely quantitative."
+    },
+    {
+      "heading": "04. Address / identity",
+      "text": "The first durable property is address.\n\nAn artifact must be identifiable enough to be returned to. A URL, object identifier, file identity, game item, card, named tool, location or persistent handle can provide that stability.\n\nThe point is not metaphysical permanence. The content behind an address may evolve. Providers may change. Models may be swapped. Tools may be upgraded. Permissions may be revised. What persists is a creator-facing or user-facing identity through which the object remains recoverable.\n\nThis is why address is more than naming. It is continuity at the object layer.\n\nIf a useful capability exists only inside one temporary conversation or one disposable agent execution, the user may experience intelligence without gaining a durable artifact. The superartifact hypothesis says that some of the most valuable outputs of abundant intelligence will instead become things with addresses: objects that can be revisited even while the intelligence behind them changes."
+    },
+    {
+      "heading": "05. Capability beyond the surface",
+      "text": "The second property is capability.\n\nThe visible artifact is a compact surface over a heterogeneous graph of possible action. Through that surface a user or another system may reach models, reasoning systems, tools, APIs, databases, memory, code execution, agents, people or physical state.\n\nThis does not mean every linked object is automatically a superartifact. Reachability must become operationally meaningful. At least some of the capability should be invokable, composable or reusable rather than merely described.\n\nThis criterion separates a superartifact from a static directory of links. A page that says “these services exist” is representational. A page that can reliably resolve into authorized, usable capabilities begins to act as an interface to a capability graph.\n\nThe capability graph may also evolve without destroying the artifact’s identity. A model can improve. A tool can be replaced. A memory store can migrate. A human approval step can be added. The object can remain the same practical address while the graph behind it is recomposed.\n\nThat is why the artifact layer can outlive any particular model generation."
+    },
+    {
+      "heading": "06. Lineage",
+      "text": "The third property is lineage.\n\nCapability without lineage is powerful but fragile. If an artifact can invoke intelligence yet loses the history of where it came from, what changed, who may modify it, what permissions apply, or how to leave the current implementation, then the object becomes difficult to trust and difficult to inherit.\n\nLineage therefore includes provenance, version history, remix ancestry, permissions and reversibility.\n\nThis is not decorative metadata. It determines whether capability can move between carriers without becoming detached from the conditions that made it legitimate or intelligible.\n\nA useful superartifact should make it possible, where appropriate, to answer questions such as:\n\n- What produced this object?\n- What has changed since its earlier versions?\n- Which capabilities are currently connected?\n- Which permissions make those capabilities reachable?\n- Which parts can be exported, replaced or removed?\n- What survives if a provider or model disappears?\n\nLineage is what turns capability persistence into accountable continuity."
+    },
+    {
+      "heading": "07. The artifact layer of the intelligence stack",
+      "text": "The phrase “artifact layer of the intelligence stack” is useful because it separates the durable user-facing object from the volatile machinery underneath it.\n\nA contemporary intelligence stack may contain foundation models, specialized models, agents, tool runtimes, memory systems, databases, permission layers, human approval, sensors and external services. Those components can change rapidly.\n\nThe artifact layer asks a different question:\n\nWhat should remain addressable to the creator or user while the stack underneath keeps changing?\n\nThe proposed answer is the superartifact.\n\nThis is not an industry-standard layer and is not presented here as one. It is a creator-oriented architectural framing. The artifact gives the capability graph a stable place to land.\n\nThe deeper design goal is therefore not permanence of implementation. It is continuity of meaningful access.\n\nA model can disappear without the project disappearing. A tool can be replaced without the object losing its identity. A capability can migrate without requiring the user to rebuild the surrounding context from zero.\n\nIn this sense, the superartifact is a candidate object form for intelligence that has become infrastructural."
+    },
+    {
+      "heading": "08. A practical qualification test",
+      "text": "A candidate object can be tested against three questions.\n\nFirst: does it possess a stable enough address or identity that a user can return to the same object across changing sessions or implementations?\n\nSecond: does the object make meaningful capability reachable beyond what is locally represented, with at least some of that capability invokable, composable or reusable?\n\nThird: can relevant lineage survive change, including provenance, permissions, versions, remix ancestry and practical exit or migration?\n\nIf the answer is no to the first question, the capability may be powerful but ephemeral.\n\nIf the answer is no to the second, the object may be a perfectly good artifact but not a superartifact in this sense.\n\nIf the answer is no to the third, the object may expose large capability while remaining brittle, opaque or difficult to inherit.\n\nThese are not proposed as universal standards. They are the operational constraints of this particular 2026 definition."
+    },
+    {
+      "heading": "09. The stable surface and the changing river",
+      "text": "The superartifact is ultimately a proposal about what should persist when intelligence becomes abundant and interchangeable.\n\nThe answer is not necessarily the model. Models will change.\n\nIt is not necessarily the agent. Agents can be temporary.\n\nIt is not necessarily the provider. Providers can disappear.\n\nWhat can persist is the meaningful object through which capability remains addressable, and the lineage through which that capability remains intelligible and reversible.\n\nThis produces a concise architectural picture:\n\nstable artifact identity + expandable capability graph + preserved lineage\n\nThe visible surface can remain small while its operational reach grows.\n\nThe implementation can change while the address remains recognizable.\n\nThe capability can migrate while the lineage records how it got there.\n\nThe water changes. The river continues."
+    }
+  ],
+  "references": [
+    {
+      "citation": "Marco Fasoli (2018), “Super Artifacts: Personal Devices as Intrinsically Multifunctional, Meta-representational Artifacts with a Highly Variable Structure,” Minds and Machines 28(3), 589–604. DOI 10.1007/s11023-018-9476-3.",
+      "url": "https://doi.org/10.1007/s11023-018-9476-3"
+    },
+    {
+      "citation": "Sapienza University research record for Fasoli (2018), including abstract and publication metadata.",
+      "url": "https://iris.uniroma1.it/handle/11573/1646038"
+    },
+    {
+      "citation": "Raynor Eissens (2026), “The Second Jump: From Released Intelligence to Superartifacts.”",
+      "url": "https://madeby.re/research/the-second-jump-superartifacts/"
+    },
+    {
+      "citation": "SuperArtifact.si, project site for the current 2026 definition and artifact-layer framing.",
+      "url": "https://superartifact.si/"
+    }
+  ],
+  "evidence_boundary": "Terminological note. The term “super-artifact” predates this 2026 usage. Marco Fasoli used it in 2018 for personal computing devices characterized by intrinsic multifunctionality, meta-representation and highly variable structure. The contribution claimed here is narrower: an AI-era architectural definition organized around address, capability and lineage. No claim of coining the word is made."
+}

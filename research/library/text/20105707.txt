@@ -1,0 +1,175 @@
+=== PDF PAGE 1 ===
+Brown Hyperlinks / Burylinks
+
+DOI: 10.5281/zenodo.20105707
+Canonical page: o-vvv-o.com/brown-hyperlinks.html
+Status: First public interaction grammar proposal for recoverable
+hyperlinks and field-based hyperlink discovery.
+
+Blue hyperlinks open pages. Brown hyperlinks hide worlds.
+
+Abstract
+
+This document defines Brown Hyperlinks, also called Burylinks: a
+proposed hyperlink category for discoverable and recoverable
+navigation. Unlike traditional blue hyperlinks, which immediately open a
+destination page, a brown hyperlink inserts a recoverable field-state
+between user and destination. The destination becomes an artifact that
+must be dug up, revealed, or recovered before access.
+
+The proposal reframes web navigation from surfing toward digging. It
+introduces depth, delay, ritualized discovery, spoiler-safe access, and
+recoverable media states into hyperlink grammar.
+
+Core Definition
+
+A Brown Hyperlink is a recoverable hyperlink primitive.
+
+Blue hyperlinks:
+click → open → consume.
+
+=== PDF PAGE 2 ===
+Brown hyperlinks:
+click → enter field → dig → reveal.
+
+The linked object is not immediately surfaced. Instead, the destination
+becomes a buried artifact embedded in a field layer. The user performs
+a discovery action before the content becomes visible.
+
+Semantic Difference
+
+Traditional hyperlinks optimize directness, immediacy, and informational
+delivery. Brown hyperlinks optimize discovery, anticipation, uncertainty,
+and recoverability.
+
+A blue hyperlink assumes:
+“I know where this goes.”
+
+A brown hyperlink implies:
+“There is something buried here.”
+
+Why Brown
+
+The web standardized blue hyperlinks through browser convention and
+usability inertia. Brown hyperlinks propose a second semantic color
+state associated with soil, sediment, archaeology, buried memory,
+hidden lore, spoiler-safe media, stubs, uncertain sources, and delayed
+reveal.
+
+=== PDF PAGE 3 ===
+Brown does not replace blue. It adds an additional hyperlink state.
+
+The Brownweb
+
+The Brownweb is not a separate internet. It is the recoverable layer of
+the existing web.
+
+The traditional web behaves as a surface:
+feeds, streams, scrolling, surfing, timelines.
+
+The Brownweb introduces:
+depth, fields, excavation, buried memory, and recoverable artifacts.
+
+The old web was something users surfed. The Brownweb is something
+users dig.
+
+Primary Use Cases
+
+Natural use cases include:
+• spoilers and delayed reveals
+• leaks and anonymous archives
+• ARGs and hidden tracks
+• easter eggs and unlockable media
+• hidden fan lore and reconstructed archives
+• buried patch notes and community discoveries
+• reversible linking and ritualized sharing
+• uncertainty markers and “must be verified” references
+
+=== PDF PAGE 4 ===
+Distinction From Prior Art
+
+The proposal differs from:
+• accidental hidden links
+• legal “buried hyperlink” dark patterns
+• one-off scavenger hunts
+• isolated ARG puzzles
+• decorative hyperlink recoloring
+
+Brown hyperlinks are defined here as a generalized interaction grammar
+and hyperlink category rather than a puzzle mechanic or visual theme.
+
+Recoverable Memory
+
+A key property of brown hyperlinks is recoverability.
+
+Traditional links create immediate exposure. Brown hyperlinks create a
+temporary hidden state between sender and receiver. The linked
+content becomes a recoverable memory object rather than an instantly
+consumed page.
+
+This introduces a new semantic layer to hyperlinking:
+visited → unearthed.
+
+Implementation Model
+
+A brown hyperlink can be implemented without changing browsers or
+internet protocols.
+
+=== PDF PAGE 5 ===
+Example:
+A standard URL is wrapped into a recoverable field experience.
+
+normal URL → burylink → field reveal → normal URL
+
+This allows compatibility with the existing web while introducing a new
+hyperlink grammar.
+
+Canonical Vocabulary
+
+Blue hyperlink
+Brown hyperlink
+Burylink
+Artifact
+Field
+Recoverable memory
+Diggable media
+Unearth
+Excavate
+Field reveal
+The Brownweb
+
+Conclusion
+
+Brown hyperlinks establish a semantic distinction between direct access
+and recoverable access. They transform hyperlinking from pure surface
+navigation into discoverable field interaction.
+
+=== PDF PAGE 6 ===
+The proposal introduces a recoverable hyperlink state where page
+becomes artifact, click becomes excavation, and navigation becomes
+discovery.
+
+Comparative Grammar Table
+
+Blue Hyperlink
+Brown Hyperlink
+
+Direct navigation
+Recoverable discovery
+
+Surfing
+Digging
+
+Visited
+Unearthed
+
+Immediate exposure
+Delayed reveal
+
+Surface navigation
+Field interaction
+
+Page
+Artifact
+
+“The web had surfing. It never had digging.”

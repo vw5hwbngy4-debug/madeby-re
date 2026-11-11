@@ -1,0 +1,26 @@
+THE ARTIFACT LAYER OF THE INTELLIGENCE STACK — PATCH
+
+Target: https://madeby.re/research/
+Date: 2026-09-28
+
+Upload the contents of the patch ZIP into the document root, preserving folders and allowing overwrite of the updated root files.
+
+New article:
+https://madeby.re/research/artifact-layer-intelligence-stack/
+
+Canonical definition:
+A superartifact is an addressable artifact that acts as a stable interface to a heterogeneous capability graph extending beyond its local representation, with at least some of that capability operationally invokable, composable, or reusable.
+
+Core properties:
+ADDRESS / IDENTITY · CAPABILITY · LINEAGE
+
+Also updated:
+- Home selected research
+- Research map intro
+- Selected publications (19 entries)
+- Concepts / Superartifact definition
+- llms.txt
+- sitemap.xml
+- build manifest
+
+No DOI is assigned. No Zenodo catalog records are changed.

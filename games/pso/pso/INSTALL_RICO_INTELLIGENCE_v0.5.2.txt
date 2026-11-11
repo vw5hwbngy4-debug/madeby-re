@@ -1,0 +1,15 @@
+JRPG.WORLD /pso/ · RICO INTELLIGENCE v0.5.2
+
+This is a cumulative /pso/ folder upgrade.
+
+INSTALL
+1. Back up public_html/pso/.
+2. Upload the v0.5.2 PSO_FOLDER ZIP to public_html/.
+3. Extract it there and merge/overwrite the existing pso/ folder.
+4. Open https://madeby.re/games/pso/pso/smoke-check.html
+5. Expected result: 10/10 checks passed.
+6. Link the known Original Xbox save and ask a plural matrix question such as:
+   “Which 4th evo MAGs can I go for, including handoffs with other Section IDs, genders, Hunters, Rangers and Forces?”
+7. Rico should answer the complete option set rather than collapsing to Rukmin.
+
+The existing parent JRPG.WORLD private config is reused. Do not copy or expose API keys. Raw save bytes remain browser-local/read-only.

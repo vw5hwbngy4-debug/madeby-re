@@ -1,0 +1,30 @@
+KLOOJO CANON AUDIT v4 — 2026-08-26 17:32 +02:00
+
+RESULT: aligned with the latest physically verified Kloojo state known in this project.
+
+Verified lineage:
+- R7 canonical runtime + Social Presence v0.1.
+- 42 canonical functions remain the protected baseline lineage.
+- Real WebSocket social presence.
+- Physical two-device multiplayer verified 2026-08-26.
+- Live movement, names and wardrobe/appearance sync.
+- Remote idle/state reconstruction.
+- Runtime Test traversal includes an explicit climb wall with visible climbing animation onto a raised platform.
+- 23 hidden drive-by graffiti placements remain current.
+- Spray-summoned district portal remains current.
+- Shared authoritative coins/graffiti/portal state and automatic public 2-player Development micro-instancing remain NEXT infrastructure, not current.
+
+Package-specific checks:
+- Favicon assets/manifest are preserved from the supplied Kloojo favicon pack.
+- Clean URLs are canonical: /ai/, /about/, /docs/.
+- /ai/ contains the correct self-hosted 3:03 multiplayer proof.
+- /about/ now uses the requested YouTube privacy-enhanced embed: 2bMjEPjzEfc.
+- Old .html clean-URL forms remain only as intentional 301 redirect endpoints.
+- Production WSS target remains wss://multiplayer.kloojo.com/kloojo-ws for kloojo.com, while the public relay itself is still correctly documented as not yet deployed.
+
+Important scope note:
+This ZIP is a public_html/client package. It is not the full Codex engineering archive and therefore does not contain the Node relay server, automated test suite or Codex reports.
+
+FINAL PUBLIC-ENTRY CLEANUP v4.1
+- /kloojo.html remains byte-preserved as a frozen standalone baseline, but now 301 redirects to the current Development Zone so its old in-game 'networking not wired' copy cannot act as the public entry point.
+- Development and Runtime Test embedded JSON-LD are synchronized with the current social-multiplayer canon.

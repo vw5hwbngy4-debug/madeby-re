@@ -1,0 +1,80 @@
+EMERALD v0.1.21 — TEAM LAB FULL STACK
+Date: 2026-09-09
+Scope: additive read-only intelligence. No emulator/save writes.
+
+1. PC BOXES
+- Reads Emerald PokemonStorage through the BPEE runtime pointer, not a fixed EWRAM save-block address.
+- PokemonStorage layout is currentBox @ +0x0000, boxes @ +0x0001, 14 boxes × 30 BoxPokemon × 80 bytes.
+- One box is checksum-gated per live poll; cache converges over the 14 boxes without blocking the emulator.
+- Boxed level is derived from stored experience + extracted Emerald growth-rate tables.
+- Public state now contains state.boxes[], currentPcBox and pcBoxRevision.
+
+2. REACTIVE MY FIELD
+- Party + all decoded PC box specimens share one field.
+- Known deterministic predicates apply immediately: species/final form/type, nature, ability, IV, EV total, Hidden Power type/power, Pokérus, ribbons, shiny, level, friendship, location/box, tier, base stat, 101-Sub capability.
+- FOCUS is optional commitment. SCATTER resets.
+- RANK X and RANK Y are immediate.
+- DUAL RANK shows the same filtered population in two independent ordered tables.
+- CROSS plots two metrics on X/Y axes.
+- Clicking a boxed specimen opens that exact specimen in TeamLab.
+
+3. THREAT LAB
+- ADV OU + UUBL final species are a structural threat lens.
+- Current party receives inspectable structural coverage/holes. This is explicitly a heuristic, not a battle proof.
+- Select a threat, your move, foe move and field weather.
+
+4. EXACT SUPPORTED RSE BENCHMARKS
+- Gen III integer stat formulas with IV/EV/nature.
+- Showdown-style fixed-point modifier rounding for supported RSE multipliers.
+- Type-based Gen III physical/special categories.
+- Fixed-power damage ranges with burn, weather, STAB, type effectiveness, Reflect/Light Screen hooks, supported abilities/items and Gen III random roll order.
+- Seismic Toss/Night Shade/Dragon Rage/Sonic Boom fixed damage supported.
+- Hidden Power uses the exact live specimen type + power.
+- Variable-power/stateful moves are rejected instead of receiving fake precision.
+- Speed benchmark uses explicit max-Speed Lv100 opponent assumptions.
+- Damage benchmark uses an explicit 252 HP + 252 relevant-defense opponent.
+- Survival benchmark uses an explicit max-offense opponent.
+
+5. EV OPTIMIZER
+- Computes minimum Speed EV to outspeed the selected benchmark.
+- Computes minimum relevant attacking EV for guaranteed KO where reachable.
+- Computes minimum HP + Def/SpD pair to survive the selected maximum roll where reachable.
+- Merges those monotonic requirements into an exact minimum target from the current specimen.
+- Also shows a clean-spread target assuming EV-reducing berries/reset.
+- Never silently exceeds the 510 total; conflicts are surfaced.
+
+6. THEME-CONSTRAINED SIX-STACK OPTIMIZER
+Themes:
+- Balance
+- Rain
+- Sun
+- Baton Pass
+- SubSeed
+- Spikes / phaze
+
+Scopes:
+- OWNED ONLY: party + PC boxes, with specimen-readiness as a small tie/selection factor.
+- ALL EMERALD: all non-Uber final species in the knowledge core.
+
+Pins:
+- selected specimen
+- current party
+- no pins
+
+The optimizer uses beam search over theme fit, pair synergy, role diversity, shared weaknesses, STAB reach and ADV OU/UUBL structural coverage. When a theme-satisfying formation exists, unsatisfied formations are not returned ahead of it. The score is intentionally described as a structural heuristic, not solved competitive optimality.
+
+7. PRESERVED v0.1.20 TEAMLAB
+- Evolution routes
+- future worthwhile STAB + levels
+- TM/HM/tutor/egg acquisition
+- competitive archetypes
+- Smogon RS tactical labels where supplied/audited
+- owned partner fit
+- 101 HP Substitute breakpoint
+- current six Team Fabric
+
+SOURCE PRECEDENCE
+- Emerald acquisition/species/growth data: supplied pret/pokeemerald extraction + exact BPEE lineage.
+- Battle mechanics/tier context: supplied Pokemon Showdown Gen III lineage.
+- Tactical prose: supplied audited Smogon ADV200 tactical atlas only.
+- Partner/team/threat/optimizer scores: derived TeamLab heuristics, always labeled as derived.

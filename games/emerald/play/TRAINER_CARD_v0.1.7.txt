@@ -1,0 +1,31 @@
+JRPG.WORLD EMERALD — COMPETITIVE TRAINER CARD v0.1.7
+2026-09-06
+
+ADDED
+- Existing live IV specimen becomes the front of a flip card.
+- TRAINER CARD is the back side and is always reachable from the live-panel header.
+- ADD TO CARD saves the current live Pokémon privately and fills the first free Trainer Card slot.
+- SAVE TO BOX stores a live Pokémon privately without putting it on the six-slot showcase.
+- MY BOX keeps up to 120 local structured Pokémon finds in localStorage.
+- Six-slot Trainer Card stores Pokémon sprite, Nature, Ability, full IV spread, IV average and Hidden Power.
+- Team summary: team IV average, number of perfect 31 IVs, slots filled.
+- Card-full flow asks the player which slot to replace; no silent replacement.
+- Trainer name is editable and locally persisted.
+- SHARE PNG creates a 1200x675 card image; native file share is used when available, otherwise PNG download.
+- Future social integration hooks:
+  jrpg:emerald-state
+  jrpg:emerald-box-save
+  jrpg:emerald-trainer-card-changed
+  globalThis.JRPGWorldEmeraldTrainerCard
+- Saved finds expose a feed-ready structured payload but v0.1.7 sends nothing to a server.
+
+PRIVACY / PROVENANCE
+- Everything is private/local by default.
+- Records retain source kind (WILD / OWNED / EGG). A WILD saved find is not falsely labelled as caught.
+- No ROM, save file or Trainer Card data is uploaded by this feature.
+
+RUNTIME SAFETY
+- Gen III decryption, checksum validation, IV/EV parsing, Hidden Power, gender, mGBA ABI and input/audio code were not rewritten.
+- v0.1.7 adds a read-only decoded state publication bridge after normal render.
+- Existing v0.1.6.2 desktop data-first CSS remains loaded unchanged.
+- Existing mobile emulator/touch layout remains owned by the previous runtime CSS; Trainer Card CSS is additive.

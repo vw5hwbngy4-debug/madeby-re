@@ -1,0 +1,13 @@
+GPTGTA v5.3 — Collision + Asset Purge + Living Edge
+
+Changes:
+- Preserves v5.2 clean directed road graph, traffic manager, interiors and Harbor Scrap.
+- Adds robust human, vehicle and prop fallback renderers so missing assets no longer show as grey debug blocks.
+- Adds player vehicle vs pedestrian collision with shove / knockdown / fatal tiers.
+- Adds pedestrian dodge behavior for fast incoming vehicles.
+- Adds simple HEAT meter with slow decay.
+- Adds player vehicle damage from hard impacts and traffic collisions.
+- Adds custom biome assets from gptgta_tree_beach_asset_pack_v2: pine forest, sakura grove and beach props.
+- Adds beach/waterfront landmark with palms, parasols, towels, chairs, ball and ice cream cart/seller where the map supports sand.
+
+Future v5.4 suggestion: audio pass with engine hum, tire screech, horn, carjack door slam, pedestrian gasp, scrap cash and impact sounds.

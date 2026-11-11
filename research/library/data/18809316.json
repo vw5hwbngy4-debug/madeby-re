@@ -1,0 +1,22 @@
+{
+  "record_id": "18809316",
+  "document_id": "18809316",
+  "title": "CFC-0 — Chromatic Fieldcast Protocol Ambient Era Canon, 2026",
+  "pages": 2,
+  "authors": [
+    "Raynor Eissens"
+  ],
+  "doi_confirmed_in_pdf": null,
+  "zenodo_record": "https://zenodo.org/records/18809316",
+  "html": "papers/18809316.html",
+  "text": "text/18809316.txt",
+  "data": "data/18809316.json",
+  "abstract_extracted": "This document defines CFC-0, the Chromatic Fieldcast Protocol Zero, as the minimal operational layer enabling ambient broadcast under ABL-1. CFC-0 specifies how systems emit, maintain, and resolve Chromatic Field States (CFS) without symbolic encoding, data packets, or agent-based mediation. Unlike traditional protocols, CFC-0 does not transport information; it stabilizes perceptual state transmission. CFC-0 enables infrastructures such as transport systems, public spaces, devices, and services to broadcast their operational condition directly through color, allowing immediate interpretation without applications, interfaces, or linguistic processing. Description CFC-0 operates as a field protocol, not a data protocol. Its core properties: • Broadcast is continuous, passive, and non-addressed • Color is emitted as a field condition, not as content • Interpretation is local, perceptual, and reversible • Absence of signal is semantically meaningful • No identifiers, URLs, or message formats exist CFC-0 supports: • Transport state signaling (e.g. flow, delay, disruption) • Environmental ",
+  "visual_pages": [],
+  "low_text_pages": [],
+  "characters_extracted": 2044,
+  "words_extracted": 274,
+  "source_pdf_filename": "18809316_CFC-0 — Chromatic Fieldcast Protocol.pdf",
+  "source_pdf_sha256": "85af7b90d07ec4dd22f5f17b1db067b382741f8fe88e02f85e8dd49137e9148d",
+  "full_text": "=== PDF PAGE 1 ===\nCFC-0 — Chromatic Fieldcast Protocol\n\nAmbient Era Canon, 2026\n\nAuthors\n\nRaynor Eissens\n\nAbstract\n\nThis document defines CFC-0, the Chromatic Fieldcast Protocol Zero, as the minimal operational\n\nlayer enabling ambient broadcast under ABL-1.\n\nCFC-0 specifies how systems emit, maintain, and resolve Chromatic Field States (CFS) without\n\nsymbolic encoding, data packets, or agent-based mediation. Unlike traditional protocols, CFC-0\n\ndoes not transport information; it stabilizes perceptual state transmission.\n\nCFC-0 enables infrastructures such as transport systems, public spaces, devices, and services\n\nto broadcast their operational condition directly through color, allowing immediate interpretation\n\nwithout applications, interfaces, or linguistic processing.\n\nDescription\n\nCFC-0 operates as a field protocol, not a data protocol.\n\nIts core properties:\n\n•\nBroadcast is continuous, passive, and non-addressed\n\n•\nColor is emitted as a field condition, not as content\n\n•\nInterpretation is local, perceptual, and reversible\n\n•\nAbsence of signal is semantically meaningful\n\n•\nNo identifiers, URLs, or message formats exist\n\nCFC-0 supports:\n\n•\nTransport state signaling (e.g. flow, delay, disruption)\n\n•\nEnvironmental safety and trust gradients\n\n•\nGroup coherence and synchronization\n\n•\nHuman and non-human ambient participation\n\nCFC-0 functions independently of:\n\n•\nApps\n\n•\nServers\n\n•\nAccounts\n\n=== PDF PAGE 2 ===\n•\nAgent AI\n\n•\nCommand-based interaction\n\nIt is designed to be readable by:\n\n•\nHumans\n\n•\nAP₁-class devices\n\n•\nAmbient AI systems operating without agency\n\nCFC-0 underlies and connects:\n\n•\nABL-1 — Ambient Broadcast Law\n\n•\nFCCF — FieldCast ↔ ColorField Communication Loop\n\n•\nCFQR / Fieldcode concepts\n\n•\nAmbient OS architectures\n\nKeywords\n\nChromatic Fieldcast, Ambient Protocols, CFC-0, Field Communication, ColorField, Infrastructure\n\nSignaling, Post-Symbolic Systems\n\nLicense\n\nCC BY 4.0\n\nRelated Websites\n\n•\nhttps://fieldcast.org\n\n•\nhttps://chromaticfield.com\n\n•\nhttps://ambientphone.com\n\n•\nhttps://ambientera.com"
+}

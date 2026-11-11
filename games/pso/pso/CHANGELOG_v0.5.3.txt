@@ -1,0 +1,16 @@
+JRPG.WORLD PSO v0.5.3 — RAGOL LINK PUBLIC RELEASE SURFACE
+
+- Added first-party JRPG.WORLD mirror of Ragol-Link-Windows.zip.
+- Added SHA256SUMS.txt mirror.
+- Added public Ragol Link v0.1.3 download card above RICO.
+- Added GitHub Release link and checksum link.
+- Added compact three-step setup instructions.
+- Replaced user-facing Ragol Link Alpha 2 labels with v0.1.3.
+- Preserved existing RICO intelligence, save parser, MAG, hunt, account and gear behavior.
+- Direct local save-file import remains available as a fallback.
+
+Official GitHub release:
+https://github.com/vw5hwbngy4-debug/Ragol-Link/releases/tag/v0.1.3
+
+Ragol-Link-Windows.zip SHA-256:
+73f68dca5a2be921fc700bdcdc0f1080b1ec0d4c12a954c3b340695aef2262f7

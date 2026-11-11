@@ -1,0 +1,21 @@
+EMERALD v0.1.18.2 — DISPLAY STATE HOTFIX
+
+Corrects v0.1.18.1 presentation-label misunderstanding and cache reuse.
+
+VISIBLE PRESENTATION LABELS
+- Compact view displays: COMPACT
+- Expanded view displays: EXPAND
+- Clicking the button still toggles to the other view.
+- Accessibility text explains the click action separately.
+
+CACHE FIX
+- presentation-v0.1.18.2.js uses a new filename and cache key.
+- index.html references the new presentation module.
+- VERSION.txt is 0.1.18.2.
+
+UPDATE TRAIL
+- Visible stamp: UPDATED 9 SEP · v0.1.18.2
+- v0.1.18.2 is the first item in RECENT.
+
+PRESERVED FROM v0.1.18.1
+- Live panel/stage remeasurement when DETAILS changes height.

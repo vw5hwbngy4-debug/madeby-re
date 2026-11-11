@@ -1,0 +1,67 @@
+EMERALD v0.1.24 · TRANSFER COMPILER · FINAL PAL PARK PARITY QA
+Date: 2026-09-09
+Status: PASS
+
+TARGETED PARITY
+---------------
+PASS 6,876 / 6,876 source-parity checks against user-supplied PKHeX snapshot
+     4,554 Gen3->4 / Pal Park trash / Gen4->5 string-transfer checks
+     2,322 Gen3 default species-name checks
+
+COMPILER REGRESSION
+-------------------
+PASS tests/home-transfer-compiler-v0.1.24.cjs
+     - 24 / 24 Gen III block permutations
+     - source checksum validation
+     - National species mapping
+     - exact nickname / OT decode
+     - default TREECKO is NOT falsely nicknamed
+     - real custom nickname sets PK4 nicknamed bit31
+     - source/UI species mismatch rejected
+     - PID and OID preserved through Gen5
+     - Pal Park met location 0x0037
+     - Poké Transfer met location 30001
+     - Gen III HM removal + move compaction / PP repair
+     - Gen5 nature storage
+     - ability ID mapping
+     - native PK4 and PK5 encrypt/decrypt + checksum roundtrip
+     - Gen6 EV cap normalization
+     - PK6 target-bind safety boundary
+     - local transfer ZIP generation
+
+INTEGRATION / EXISTING PRODUCT REGRESSION
+-----------------------------------------
+PASS tests/home-bridge-integration-v0.1.24.cjs
+PASS tests/home-bridge-v0.1.23.cjs
+PASS tests/seamless-mode-v0.1.22.2.cjs
+SKIP tests/strategy-pokedex-v0.1.22.cjs (historical snapshot intentionally self-skips on current build)
+PASS tests/teamlab-v0.1.21.1.cjs
+PASS tests/teamlab-v0.1.20.cjs
+PASS tests/owned-pokefield-test-v0.1.17.cjs
+PASS tests/ev-coach-v0.1.19.cjs
+
+SYNTAX
+------
+PASS node --check home-transfer-compiler-v0.1.24.js
+PASS node --check home-bridge-v0.1.24.js
+PASS node --check pokefield-live-v0.1.24.js
+
+UI / VERSION COHERENCE
+----------------------
+PASS index.html now loads pokefield-live-v0.1.24.js
+PASS visible build label = Emerald v0.1.24 · TRANSFER COMPILER
+PASS release history includes v0.1.24 milestone
+PASS HOME Bridge compile result explicitly reports string parity verification
+PASS no fake PK6 / HOME Tracker claim introduced
+
+CURRENT PRODUCT BOUNDARY
+------------------------
+EMERALD LIVE: PASS
+EXACT OWNED PK3 SOURCE: PASS
+PK3 -> PK4: PASS
+PAL PARK STRING/TRASH PARITY: PASS
+PK4 -> PK5: PASS
+PK5 -> PK6 PRE-BIND CONTRACT: PASS
+COMPLETE DESTINATION-BOUND PK6: NOT YET EMITTED BY DESIGN
+GEN6 SAVE INJECTION: NEXT MILESTONE
+OFFICIAL HOME ACCEPTANCE: NOT YET PROVEN

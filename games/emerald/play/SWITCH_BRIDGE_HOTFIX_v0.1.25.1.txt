@@ -1,0 +1,13 @@
+JRPG.WORLD Emerald Switch Bridge UI Entrypoint Hotfix v0.1.25.1
+
+BUG FIXED
+The previous integration loaded switch-bridge-v0.1.25.js and rendered SEND TO SWITCH inside the Transfer Bridge modal, but did not expose any visible UI control that opened that modal.
+
+FIX
+- Adds a persistent SEND TO SWITCH button to the Emerald lower navigation.
+- Clicking any owned specimen now records that specimen as the transfer context before preserving the existing click behavior.
+- SEND TO SWITCH opens the existing Pokémon Transfer Bridge modal for that selected specimen.
+- If no specimen has been selected yet, the modal opens with the existing select/load guidance.
+
+DEPLOY
+Upload/overwrite these files at the SAME directory as your live emerald/index.html. Then hard-refresh (Ctrl+F5).

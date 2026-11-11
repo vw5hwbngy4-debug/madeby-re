@@ -1,0 +1,98 @@
+=== PDF PAGE 1 ===
+Environment -> Transparent Surface -> AI Runtime
+Reveal -> Local Meaning
+
+A Minimal Structural Sequence for Post-App Computing
+
+Raynor Eissens · Ambient Era Canon · 2026
+DOI: 10.5281/zenodo.19638021
+
+Canonical Definition
+
+Negative Principle
+
+This paper defines a minimal structural sequence for post-app
+computing:
+
+Without transparency, AI-generated interface collapses back
+into black-box media, overlay logic, feed logic, or smarter
+containment.
+
+Boundary
+
+environment -> transparent surface -> AI runtime reveal ->
+local meaning.
+
+The sequence describes a device and interface condition in
+which the world remains primary, transparent surface mediates
+reveal rather than replacement, AI operates as runtime
+modulation rather than opaque content generation, and
+meaning appears locally rather than as generalized feed
+content inside a black-box container.
+
+This paper does not claim the invention of transparent displays,
+HUDs, AR overlays, see-through hardware, or spatial
+computing as such. It claims a distinct structural sequence in
+which environment remains primary, transparent surface
+mediates reveal, AI becomes runtime modulation, and
+meaning becomes local. The novelty claim concerns the
+sequence as an integrated architectural formulation, not the
+isolated existence of its component technologies.
+
+Core Claim
+
+Why This Matters
+
+A runtime interface does not truly exist
+between AI and a black-box screen.
+It exists between transparency and the real
+environment.
+
+Main Principle
+
+Most current AI interfaces remain trapped in opaque
+containers. Even when AI becomes more capable, the
+dominant structure often remains unchanged: a screen, a feed,
+a prompt box, a generated overlay, or a bounded application
+surface. This preserves black-box interaction and keeps
+meaning detached from local context.
+
+When the world remains primary, AI no longer needs to
+generate a separate internal world of content, feeds, or
+screens. It can instead operate as a reveal layer that makes
+active meaning appear only where context, placement, and
+relevance make it necessary.
+
+The sequence proposed here identifies a different direction.
+Post-app computing becomes real only when the environment
+remains primary, the device surface becomes transparent, AI
+shifts from generation to reveal, and meaning becomes local.
+
+Structural Sequence
+
+One-Sentence Version
+
+A transparent runtime interface is an environment-first AI
+architecture in which the world remains primary, transparent
+surface mediates reveal, AI operates as runtime modulation,
+and meaning appears locally rather than inside opaque
+containers.
+
+Keywords
+
+Environment. The real world remains the primary perceptual
+field.
+Transparent Surface. The hardware surface becomes a
+reveal membrane rather than an opaque display container.
+AI Runtime Reveal. AI appears as runtime modulation rather
+than generalized content generation inside opacity.
+Local Meaning. Meaning appears in place, attached to object,
+situation, residue, or immediate context.
+
+post-app computing; transparent surface; runtime AI; local
+meaning; black-box containment; reveal interface; environment-first
+computing; transparent runtime interface; spatial interaction;
+Ambient Era Canon
+
+Ambient Era Canon
+DOI: 10.5281/zenodo.19638021

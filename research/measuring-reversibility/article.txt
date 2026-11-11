@@ -1,0 +1,902 @@
+# Measuring Reversibility in AI Systems: An Empirical Program for Affordable Variation and Exit
+
+**Raynor Eissens**  
+**Ambient Era Research · September 2026**
+
+## Abstract
+
+Artificial intelligence is making generation, inference, and software-mediated action dramatically cheaper. Yet falling execution costs do not imply that technological systems become easier to leave, replace, modify, or recombine. A system may offer nearly free generation while simultaneously accumulating identity, memory, workflow state, credentials, social dependencies, and institutional commitments that are expensive to move.
+
+This paper proposes **reversibility** as a measurable property of AI systems: the degree to which a person or organization can change, abandon, replace, or recombine an AI-mediated arrangement while preserving important state and avoiding disproportionate irreversible loss.
+
+It develops an empirical framework around five measurable dimensions: **exit cost, state portability, attentional burden, irreversible residue, and variation cost**. Together they operationalize two concepts from the Ambient Era framework: **reversible choice**, the ability to change technological arrangements without prohibitive loss, and **affordable variation**, the ability to generate and test meaningfully different viable alternatives without transferring the cost of complexity back onto human attention. These concepts were previously formulated as part of a broader hypothesis in which scarcity migrates from execution toward attention, coherence, trust, and exit as intelligence becomes abundant.
+
+The paper proposes controlled migration experiments, longitudinal field studies, protocol-level measurements, and failure-recovery tests capable of comparing agent-bound systems with more portable, protocol-mediated architectures. It does not assume that ambient or infrastructural AI is preferable or inevitable. The central empirical question is narrower: **as AI becomes cheaper to use, does meaningful technological choice become cheaper to reverse?**
+
+The answer is not currently known.
+
+---
+
+## 1. Introduction
+
+The economics of artificial intelligence are changing rapidly.
+
+The Stanford AI Index reported that the cost of querying a model performing at roughly GPT-3.5 level on MMLU fell from approximately $20 per million tokens in November 2022 to $0.07 by October 2024, a decline of more than 280-fold in roughly eighteen months. Depending on task and capability level, inference prices have fallen by orders of magnitude.
+
+This development encourages a straightforward intuition: if intelligence becomes cheaper, technological choice should become easier.
+
+That conclusion does not necessarily follow.
+
+An AI service may be inexpensive to invoke while becoming expensive to leave. A user may accumulate years of conversational memory in one provider, tool permissions in another, workflow automations in a third, credentials in a fourth, and persistent agent state in a fifth. An organization may discover that generating an alternative workflow costs pennies while migrating its accumulated context, audit trails, permissions, evaluation history, institutional knowledge, and human habits costs months.
+
+The economically significant transition may therefore not be from expensive intelligence to free intelligence. It may be from **expensive execution to cheap execution while other forms of scarcity remain or intensify**.
+
+The Ambient Era framework describes one version of this transition. As execution becomes abundant, bottlenecks may migrate toward attention, selection, trust, coherence, differentiation, and the ability to exit technological arrangements without disproportionate loss. Within that framework, **affordable variation** means more than producing many alternatives. Alternatives must be meaningfully viable, inexpensive to test, and sufficiently reversible that humans do not become permanent compensators for the complexity created by abundant generation.
+
+This paper isolates that claim from the broader theory and makes it testable.
+
+The key proposition is:
+
+> **Cheap generation and cheap exit are independent variables.**
+
+A system can score highly on one and poorly on the other.
+
+That distinction creates an empirical research program.
+
+---
+
+## 2. From Abundance to Reversibility
+
+Most measures of AI progress concern capability.
+
+They measure benchmark performance, latency, inference price, parameter efficiency, energy consumption, task completion, or autonomous operating duration. These are important variables, but they primarily measure what a system **can do** and what it costs to make it do it.
+
+They rarely measure what happens when the user wants to stop.
+
+Consider two hypothetical systems.
+
+System A can generate a working application for €0.20. Over a year it accumulates proprietary memory, undocumented workflow state, provider-specific tool integrations, and credentials that cannot be exported intact.
+
+System B costs €2.00 to perform the same generation. Its memory, authorization relationships, workflow definitions, provenance, and artifacts can be exported in interoperable formats and reconstructed elsewhere within minutes.
+
+By an execution-cost metric, A is ten times cheaper.
+
+By an exit-cost metric, B may be dramatically cheaper.
+
+The distinction recalls Albert Hirschman's separation between **exit** and **voice** as responses to deteriorating organizations and products. Exit is meaningful only when leaving is a practical option rather than a nominal one. The concept was originally institutional and economic rather than computational, but the underlying problem maps naturally onto increasingly persistent AI systems.
+
+The empirical question is therefore not merely:
+
+**How inexpensive is intelligence?**
+
+It is also:
+
+**How inexpensive is it to change your mind about the system providing it?**
+
+---
+
+## 3. Definition of Reversibility
+
+For the purposes of this research program:
+
+> **Reversibility is the degree to which an actor can modify, abandon, replace, fork, or recombine an AI-mediated arrangement while preserving relevant state, rights, capabilities, and future options at bounded cost.**
+
+Reversibility is not binary.
+
+Deleting an application is easy. Reconstructing the state accumulated through that application may not be.
+
+Likewise, data export alone does not establish reversibility. A fifty-gigabyte archive that no competing system can interpret provides technical extraction without practical exit.
+
+Reversibility therefore has at least five dimensions:
+
+1. **Exit Cost**
+2. **State Portability**
+3. **Attentional Burden**
+4. **Irreversible Residue**
+5. **Variation Cost**
+
+These dimensions should initially be measured separately rather than collapsed prematurely into a single universal score.
+
+---
+
+## 4. Exit Cost
+
+### 4.1 Definition
+
+**Exit Cost (EC)** is the total resource expenditure required to move from one AI-mediated arrangement to a viable alternative.
+
+It includes more than monetary switching fees.
+
+A first operational model is:
+
+\[
+EC = C_m + C_t + C_s + C_i + C_l + C_h
+\]
+
+where:
+
+- \(C_m\) = direct monetary migration cost
+- \(C_t\) = time required for migration
+- \(C_s\) = state reconstruction cost
+- \(C_i\) = identity and authorization reconstruction cost
+- \(C_l\) = capability or functionality loss
+- \(C_h\) = required human intervention
+
+Because these components have different units, empirical studies should report them individually and use normalized composite indices only after domain-specific calibration.
+
+### 4.2 Example measurement
+
+A participant uses AI System A for eight weeks.
+
+At a randomly assigned point, the participant must move to System B.
+
+Researchers measure:
+
+- elapsed migration time;
+- number of manual operations;
+- percentage of relevant history successfully transferred;
+- percentage of integrations restored;
+- credentials requiring reauthorization;
+- workflows requiring reconstruction;
+- direct cost;
+- task-performance degradation following migration;
+- subjective difficulty.
+
+The experiment produces an observable exit cost rather than an abstract claim about openness.
+
+---
+
+## 5. State Portability
+
+Persistent AI increasingly depends on state.
+
+State may include:
+
+- conversation history;
+- long-term memories;
+- preferences;
+- files;
+- embeddings;
+- tool connections;
+- workflow definitions;
+- agent plans;
+- task histories;
+- provenance;
+- authorization relationships;
+- evaluation records;
+- learned procedures.
+
+The importance of portable identity and credentials is already visible outside consumer AI. The W3C Verifiable Credentials 2.0 specifications formalize machine-verifiable credential exchange between issuers, holders, and verifiers. SPIFFE similarly specifies interoperable workload identities designed to operate across heterogeneous computing environments.
+
+These technologies do not prove that AI systems are becoming reversible. They demonstrate that some components traditionally bound to particular applications or machines **can be separated into infrastructure-level representations**.
+
+### 5.1 State Portability Ratio
+
+A simple experimental measure is:
+
+\[
+SPR = \frac{\text{usable critical state after migration}}
+{\text{critical state before migration}}
+\]
+
+The numerator should measure **functional recovery**, not merely exported bytes.
+
+If a system exports 100 percent of its memory but only 30 percent can be meaningfully reconstructed by the destination system, its effective portability is 0.30 rather than 1.00.
+
+Researchers should ask participants before migration which state they consider essential. This prevents the provider or researcher from defining success solely around what happened to be technically exportable.
+
+---
+
+## 6. Irreversible Residue
+
+AI systems do not merely store data. They generate consequences.
+
+An automated action may:
+
+- create accounts;
+- send messages;
+- make purchases;
+- change permissions;
+- modify production systems;
+- train downstream models;
+- create social commitments;
+- generate public artifacts;
+- alter organizational procedures.
+
+Some consequences cannot be undone simply by switching providers.
+
+This paper calls the accumulation of such consequences **irreversible residue**.
+
+An initial measure could record, during a fixed evaluation period:
+
+- number of externally consequential actions;
+- proportion automatically reversible;
+- proportion manually reversible;
+- proportion effectively irreversible;
+- expected cost of remediation;
+- number of downstream dependencies created.
+
+This distinction is increasingly important as agents acquire external tool access. Interoperability protocols such as MCP explicitly connect AI systems to external tools and data, while A2A is designed to enable independent agents from different vendors or frameworks to collaborate. These protocols increase composability, but composability alone does not guarantee reversibility.
+
+A system may become easier to connect while simultaneously becoming capable of creating more difficult-to-reverse consequences.
+
+That tension is empirically testable.
+
+---
+
+## 7. Attentional Burden
+
+A system should not count as highly reversible if maintaining reversibility requires continuous human vigilance.
+
+Suppose System A automatically preserves exportable state but forces the user to classify every interaction, approve dozens of synchronization requests, maintain compatibility files, and continuously verify replicas.
+
+Technically, the system is portable.
+
+Practically, humans are carrying the complexity.
+
+This motivates **Attentional Burden (AB)**.
+
+Possible measures include:
+
+- number of required user interventions;
+- verification actions per task;
+- interruption frequency;
+- migration decisions requiring manual resolution;
+- total active attention time;
+- error-correction workload;
+- subjective cognitive-load measures.
+
+The Ambient Era framework places particular emphasis on bounded human attention because cheap generation can otherwise externalize computational abundance into human selection work.
+
+The relevant design question is therefore not simply whether a system can produce alternatives.
+
+It is whether people can make use of those alternatives **without becoming the integration layer themselves**.
+
+---
+
+## 8. Affordable Variation
+
+Cheap variation is not the same as affordable variation.
+
+Generative systems can already produce vast numbers of options. The cost of producing another paragraph, interface, image, workflow, software component, or agent plan may approach negligible levels.
+
+But an alternative is economically meaningful only if it can be evaluated and adopted.
+
+Define a **viable variation** as an alternative that:
+
+1. differs materially from the baseline;
+2. satisfies a predefined minimum performance threshold;
+3. can be evaluated within the experimental environment;
+4. does not require disproportionate irreversible commitment merely to test.
+
+An empirical **Affordable Variation Rate (AVR)** could then be estimated as:
+
+\[
+AVR =
+\frac{\text{number of viable alternatives tested}}
+{\text{total monetary + human evaluation cost}}
+\]
+
+A stronger formulation would penalize irreversible commitment:
+
+\[
+AVR_R =
+\frac{N_v}
+{C_g + C_e + C_h + C_r}
+\]
+
+where:
+
+- \(N_v\) = viable alternatives evaluated;
+- \(C_g\) = generation cost;
+- \(C_e\) = evaluation cost;
+- \(C_h\) = human attention cost;
+- \(C_r\) = expected cost of reversing commitments created during testing.
+
+The important conceptual move is simple:
+
+> **Variation is not affordable merely because generation is cheap.**
+
+---
+
+## 9. Architecture as an Independent Variable
+
+The proposed empirical program compares different architectures rather than presuming that one architecture is superior.
+
+At minimum, researchers should distinguish:
+
+### 9.1 Agent-bound architecture
+
+Important state and functionality remain closely coupled to a persistent agent, application, or vendor environment.
+
+### 9.2 Protocol-mediated architecture
+
+Tools, credentials, data, state, or execution relationships are exposed through standardized or independently replaceable interfaces.
+
+### 9.3 Infrastructure-mediated architecture
+
+Continuity, authorization, storage, orchestration, or identity increasingly exist outside the currently active agent instance.
+
+These categories are ideal types rather than mutually exclusive products.
+
+Modern systems increasingly combine them.
+
+MCP was introduced as an open protocol for connecting AI systems to external data and tools rather than requiring a custom integration for every source. Google introduced A2A to support collaboration between agents built by different vendors and frameworks, and later transferred the protocol into independent Linux Foundation governance.
+
+These developments provide a natural experimental setting.
+
+If protocols actually increase reversibility, migrations between implementations using common interfaces should exhibit lower reconstruction costs than equivalent migrations between proprietary integrations.
+
+If they do not, protocol interoperability may improve connectivity without materially reducing lock-in.
+
+Either result is informative.
+
+---
+
+## 10. Research Questions
+
+This framework produces several direct research questions.
+
+### RQ1
+
+Do protocol-mediated AI architectures exhibit lower exit costs than otherwise comparable agent-bound architectures?
+
+### RQ2
+
+Does separating memory, identity, authorization, and tool relationships from the active model or agent increase effective state portability?
+
+### RQ3
+
+Does falling inference cost correlate with falling switching cost, or can the two diverge?
+
+### RQ4
+
+Does increased agent autonomy increase irreversible residue?
+
+### RQ5
+
+Does interoperability reduce human attentional burden during migration, or merely relocate integration work onto the user?
+
+### RQ6
+
+Can systems support greater affordable variation without proportionally increasing evaluation burden?
+
+### RQ7
+
+Does coordination-layer concentration reduce practical reversibility even when technical interoperability exists?
+
+The last question is particularly important. Farrell and Newman show how asymmetric networks can generate power through central hubs and chokepoints. A technically distributed AI ecosystem could therefore remain difficult to exit if identity, standards, payment, discovery, model access, or protocol governance concentrate around a small number of nodes.
+
+---
+
+## 11. Testable Hypotheses
+
+The research questions can be converted into preregisterable hypotheses.
+
+### H1: Portability Hypothesis
+
+Systems that externalize critical state through interoperable representations will exhibit higher effective state portability during provider migration than systems in which state remains application-bound.
+
+### H2: Exit-Cost Hypothesis
+
+Holding task complexity constant, protocol-mediated architectures will require less time and human intervention to migrate between providers than proprietary point-to-point integrations.
+
+### H3: Abundance–Exit Independence Hypothesis
+
+Declining inference cost will not necessarily predict declining exit cost.
+
+This is a core falsifiable proposition of the paper.
+
+If inference prices fall and switching costs reliably fall by a similar magnitude, reversibility may simply be a downstream consequence of technological abundance rather than a distinct economic variable.
+
+### H4: Autonomous Residue Hypothesis
+
+Increasing autonomous action capability will increase irreversible residue unless accompanied by explicit reversibility mechanisms such as transactions, staged execution, provenance, undo semantics, or bounded authorization.
+
+### H5: Affordable Variation Hypothesis
+
+Systems that combine cheap generation with low switching and evaluation costs will enable users to test more viable alternatives per unit of human attention than systems optimized only for generation cost.
+
+### H6: Coordination-Layer Hypothesis
+
+Nominal interoperability will produce weaker reductions in exit cost when identity, authorization, state formats, discovery, or execution remain concentrated under a single controlling platform.
+
+---
+
+## 12. Study I: Controlled Migration Experiment
+
+The first experiment should be deliberately mundane.
+
+Participants perform the same multi-session knowledge-work task using two system architectures.
+
+Possible domains include:
+
+- software development;
+- research synthesis;
+- personal productivity;
+- content production;
+- small-business workflow automation.
+
+Participants work long enough for meaningful state to accumulate.
+
+At an unannounced but ethically disclosed migration point, the active AI provider or agent implementation is replaced.
+
+### Conditions
+
+**Condition A:** application-bound state and proprietary integrations.
+
+**Condition B:** externally represented state and protocol-mediated integrations.
+
+The underlying model capability should be held as constant as practically possible.
+
+### Measurements
+
+Researchers record:
+
+- migration duration;
+- monetary cost;
+- number of user operations;
+- state recovery percentage;
+- lost memories;
+- integrations requiring manual reconstruction;
+- authorization rework;
+- human attention time;
+- post-migration task performance;
+- number of irreversible losses;
+- participant confidence that migration succeeded.
+
+A counterbalanced within-subject design could reduce variance caused by individual technical competence.
+
+The experiment succeeds scientifically regardless of which architecture wins.
+
+If no meaningful difference appears, the hypothesis that architectural externalization improves reversibility is weakened.
+
+---
+
+## 13. Study II: Affordable Variation Experiment
+
+Participants receive a design or planning problem for which multiple legitimate solutions exist.
+
+Examples might include:
+
+- designing a software architecture;
+- producing a communications strategy;
+- selecting a workflow;
+- constructing a user interface;
+- developing an organizational process.
+
+Different systems generate comparable numbers of alternatives.
+
+The experiment then measures the **entire variation cycle**, not merely generation:
+
+\[
+generation \rightarrow evaluation \rightarrow trial \rightarrow abandonment/adoption
+\]
+
+Researchers measure:
+
+- compute cost per alternative;
+- human evaluation time;
+- number of viable alternatives identified;
+- time required to prototype each;
+- cost of abandoning a tested alternative;
+- state or dependencies left behind;
+- final outcome quality.
+
+If generation becomes nearly free while evaluation dominates total cost, the experiment would provide direct evidence for scarcity migration.
+
+If evaluation costs decline proportionally with generation, that part of the theory would be weakened.
+
+---
+
+## 14. Study III: Longitudinal Exit Study
+
+Laboratory migrations cannot reproduce all forms of lock-in.
+
+A complementary longitudinal study should therefore follow real users or organizations over six to twenty-four months.
+
+Researchers would periodically measure:
+
+- number of AI providers in active use;
+- accumulated memories and state;
+- connected external services;
+- workflow dependencies;
+- provider-specific artifacts;
+- credential relationships;
+- switching attempts;
+- abandoned switching attempts;
+- successful migrations;
+- reasons for remaining with a provider.
+
+An important dependent variable is **latent exit cost**: users may never attempt to switch precisely because they expect switching to be costly.
+
+Surveys should therefore distinguish:
+
+> “I prefer this system”
+
+from:
+
+> “I would leave, but leaving would destroy too much accumulated state.”
+
+Those are economically very different forms of persistence.
+
+---
+
+## 15. Study IV: Failure-Recovery Test
+
+Reversibility matters most when something goes wrong.
+
+Researchers could deliberately introduce controlled failures such as:
+
+- agent misconfiguration;
+- corrupted memory;
+- revoked credentials;
+- failed provider;
+- incompatible model update;
+- incorrect automation;
+- tool compromise.
+
+The study then measures whether the user can return to a known-good state.
+
+Possible metrics include:
+
+### Mean Time to Reversal
+
+\[
+MTTR_v =
+\frac{\sum \text{time required to restore acceptable state}}
+{N}
+\]
+
+### Recovery Completeness
+
+Percentage of pre-failure functionality and state restored.
+
+### Residual Damage
+
+External consequences that remain after nominal recovery.
+
+This extends conventional reliability thinking. A system is not merely reliable when failure is rare. It is also resilient when failure remains **cheap to undo**.
+
+---
+
+## 16. Coordination-Layer Measurement
+
+Technical portability alone cannot establish practical reversibility.
+
+The institutional structure surrounding a protocol matters.
+
+A longitudinal dataset could therefore track:
+
+- number of independent implementations;
+- provider concentration;
+- governance structure;
+- specification licensing;
+- credential-provider concentration;
+- identity portability;
+- dependency on proprietary registries;
+- default-provider effects;
+- export/import compatibility;
+- switching fees;
+- API restrictions.
+
+This is where the empirical program intersects with the broader Ambient Power hypothesis.
+
+A distributed system can still contain highly centralized chokepoints. Farrell and Newman's work on weaponized interdependence provides a useful warning against equating network distribution with distributed power.
+
+Reversibility therefore needs to be measured at both:
+
+**the application layer**  
+and  
+**the coordination layer**.
+
+---
+
+## 17. Reversibility Profiles Rather Than a Universal Score
+
+There is a temptation to combine all variables into one number:
+
+\[
+R = f(EC, SPR, AB, IR, AVR)
+\]
+
+This paper recommends resisting that temptation initially.
+
+The dimensions are not obviously commensurable.
+
+A medical AI system may rationally sacrifice some portability for stringent audit requirements. A temporary creative tool may require almost no persistent state. A financial agent may need deliberate irreversibility for settlement finality.
+
+Therefore the initial empirical output should be a **Reversibility Profile**:
+
+| Dimension | Example measure |
+|---|---|
+| Exit Cost | time, money, operations required to migrate |
+| State Portability | percentage of critical state functionally recovered |
+| Attentional Burden | active human intervention time |
+| Irreversible Residue | non-recoverable commitments or state |
+| Affordable Variation | viable alternatives tested per unit total cost |
+
+Only after multiple domains have been studied should researchers determine whether a general composite index is useful.
+
+---
+
+## 18. Distinguishing Reversibility from Related Concepts
+
+### Portability is not reversibility
+
+A dataset can be portable while the surrounding workflow is impossible to reconstruct.
+
+### Interoperability is not reversibility
+
+Systems can communicate while remaining expensive to replace.
+
+### Reliability is not reversibility
+
+A highly reliable system can still produce catastrophic lock-in.
+
+### Privacy is not reversibility
+
+Strong privacy protections do not necessarily make exit inexpensive.
+
+### Decentralization is not reversibility
+
+A decentralized architecture can contain formats, governance structures, or economic dependencies that make switching difficult.
+
+### Cheap generation is not reversibility
+
+This is the central distinction.
+
+---
+
+## 19. Relation to Ubiquitous and Ambient Computing
+
+The idea that computation may retreat from focal attention has a substantial intellectual history.
+
+Mark Weiser's 1991 account of ubiquitous computing imagined computational elements becoming sufficiently embedded in everyday environments that their presence ceased to dominate conscious attention.
+
+The present framework does not claim that disappearance itself constitutes progress.
+
+An invisible system can be extraordinarily difficult to escape.
+
+Indeed, reduced interface salience could make dependencies less legible.
+
+The contribution of reversibility as a measurement program is therefore to ask a question that classic ubiquitous-computing visions do not answer:
+
+> **When computing disappears into the environment, can the user still meaningfully leave it?**
+
+Ambientness without reversibility could produce invisible lock-in.
+
+Ambientness with reversibility would be a substantially different architecture.
+
+---
+
+## 20. What Would Falsify the Program's Stronger Claims?
+
+A useful theory must risk failure.
+
+Several findings would weaken the underlying Ambient Era interpretation.
+
+### 20.1 Exit costs fall automatically
+
+If falling AI execution costs consistently produce proportional reductions in migration and switching costs, there may be little need to treat reversibility as an independent economic primitive.
+
+### 20.2 Proprietary agent systems remain highly reversible
+
+If tightly integrated persistent agents can achieve low migration costs without externalized state or open protocols, the architectural hypothesis would be weakened.
+
+### 20.3 Protocolization does not improve portability
+
+If MCP-, A2A-, credential-, or other protocol-mediated architectures show no measurable improvement in provider substitution or state recovery, interoperability may primarily improve connectivity rather than exit.
+
+### 20.4 Users do not value reversibility
+
+If users consistently choose irreversible systems even when equivalent reversible alternatives exist and fully understand the difference, reversibility may be less economically important than proposed.
+
+### 20.5 Variation remains easy to evaluate
+
+If evaluation and selection costs fall as rapidly as generation costs, the proposed migration of scarcity toward human attention would be substantially weaker.
+
+These are not edge cases to explain away.
+
+They are valid outcomes.
+
+---
+
+## 21. What Would Constitute Strong Evidence?
+
+Conversely, the framework would gain support if repeated studies found that:
+
+- inference costs continue to fall while exit costs remain stubbornly high;
+- accumulated AI state predicts provider lock-in;
+- protocol-mediated state significantly lowers migration cost;
+- identity and authorization externalization improves provider substitution;
+- autonomous systems increase irreversible residue without explicit reversal primitives;
+- users can generate vast numbers of alternatives but are constrained primarily by evaluation and integration;
+- architectures designed for reversibility enable more experimentation at equal or lower attentional cost.
+
+The strongest evidence would not be another conceptual analogy.
+
+It would be a reproducible dataset showing that **reversibility predicts meaningful technological freedom independently of raw AI capability or price**.
+
+---
+
+## 22. Implications for AI Engineering
+
+If reversibility proves measurable and consequential, it becomes an engineering property.
+
+Systems could then be designed around explicit reversal mechanisms:
+
+- exportable memory;
+- state schemas independent of model provider;
+- portable credentials;
+- provenance records;
+- bounded delegation;
+- reversible transactions;
+- staged execution;
+- undoable tool actions;
+- provider-neutral workflow definitions;
+- independent audit trails;
+- model-substitution tests;
+- standardized migration interfaces.
+
+This would alter how agent systems are evaluated.
+
+A benchmark might ask not only:
+
+**Can the agent complete the task?**
+
+but also:
+
+**Can another agent inherit the task tomorrow without reconstructing the world?**
+
+That second question becomes increasingly important as AI systems accumulate persistent responsibility.
+
+---
+
+## 23. Implications for AI Governance
+
+Reversibility also offers a governance lens that does not require agreement about the eventual capabilities of artificial intelligence.
+
+Governments, organizations, and standards bodies could measure:
+
+- practical switching costs;
+- portability obligations;
+- continuity rights;
+- credential independence;
+- dependency concentration;
+- availability of interoperable alternatives.
+
+This reframes some debates around AI competition.
+
+The relevant question is not merely how many AI providers exist.
+
+Ten nominal providers do not constitute meaningful variation if leaving one requires abandoning accumulated identity, history, permissions, and workflows.
+
+Competition requires **usable exit**.
+
+---
+
+## 24. The Agent as an Empirical Question
+
+The wider Ambient Era framework proposes that the explicit agent may be a transitional offload mechanism rather than the final architectural form of AI. The current evidence does not establish this. Existing trends support only the weaker observation that some context, identity, authorization, and coordination functions can move outside individual agent processes.
+
+This paper therefore does not assume an agent-to-ambient transition.
+
+Instead, it offers a way to detect one.
+
+If over time:
+
+- state increasingly survives agent replacement;
+- identity becomes independent of model instance;
+- tools become accessible through shared protocols;
+- switching between agents becomes inexpensive;
+- users interact less with persistent branded agent identities;
+- orchestration moves into shared infrastructure;
+
+then agent salience may indeed decline.
+
+If instead persistent agents accumulate identity, history, relationships, proprietary state, and ecosystem lock-in, agents may become more durable rather than transitional.
+
+Both futures are compatible with cheap intelligence.
+
+Reversibility measurements can help distinguish them.
+
+---
+
+## 25. A Minimal Empirical Program
+
+The research agenda can begin without large institutional resources.
+
+A minimal first study would require only:
+
+1. two AI architectures;
+2. one multi-session task;
+3. controlled accumulation of state;
+4. a forced migration;
+5. measurement of migration cost and state recovery.
+
+The smallest credible experiment could compare:
+
+**A.** an agent whose instructions, memories, files, tool state, and credentials are maintained inside one application;
+
+against
+
+**B.** an architecture where as much of that state as possible is maintained in provider-independent formats and external services.
+
+After several sessions, swap the underlying agent or provider.
+
+Measure what survives.
+
+That experiment alone would produce more empirical information about reversible AI architectures than another layer of abstract terminology.
+
+---
+
+## 26. Discussion
+
+AI abundance is often described in terms of what people will be able to create once cognition becomes inexpensive.
+
+That framing is incomplete.
+
+A civilization of cheap creation could still be characterized by expensive departure.
+
+Users might generate software instantly while remaining locked into identity systems. Organizations might deploy interchangeable models while being unable to migrate their operational history. Agents might communicate through open protocols while depending on concentrated authorization infrastructure. Infinite apparent variation could coexist with remarkably little practical freedom.
+
+The relevant measure of abundance may therefore not be the number of possibilities a system can generate.
+
+It may be the number of possibilities a person can **actually try without becoming trapped by each one**.
+
+This is the economic intuition behind affordable variation.
+
+Reversibility gives that intuition an empirical form.
+
+---
+
+## 27. Conclusion
+
+Falling inference costs are transforming the economics of computation. They do not tell us what happens to switching costs, accumulated state, identity dependencies, human attention, or irreversible commitments.
+
+Those variables need to be measured separately.
+
+This paper proposes **reversibility** as a research object for AI systems and decomposes it into:
+
+- exit cost;
+- state portability;
+- attentional burden;
+- irreversible residue;
+- affordable variation.
+
+The framework makes no claim that protocol-mediated, ambient, or infrastructural AI will inevitably replace persistent agents.
+
+Instead, it supplies experiments capable of determining whether such a transition is occurring.
+
+The central question is deliberately simple:
+
+> **As intelligence becomes cheaper, does changing our relationship to that intelligence become cheaper too?**
+
+If the answer is yes, technological abundance may broaden meaningful choice.
+
+If the answer is no, AI may create a peculiar economic condition in which alternatives become almost free to generate while existing arrangements become increasingly expensive to escape.
+
+That distinction may prove more important than abundance itself.
+
+---
+
+## References
+
+Anthropic. (2024). *Introducing the Model Context Protocol*. MCP was introduced as an open standard for connecting AI systems with external data sources and tools.
+
+Farrell, H., & Newman, A. L. (2019). *Weaponized Interdependence: How Global Economic Networks Shape State Coercion*. International Security, 44(1), 42–79.
+
+Google Cloud. (2025). *Announcing the Agent2Agent Protocol (A2A)*.
+
+Google Cloud. (2025). *Google Cloud donates A2A to Linux Foundation*.
+
+Hirschman, A. O. (1970). *Exit, Voice, and Loyalty: Responses to Decline in Firms, Organizations, and States*. Harvard University Press.
+
+Maslej, N., et al. (2025). *Artificial Intelligence Index Report 2025*. Stanford Institute for Human-Centered Artificial Intelligence.
+
+SPIFFE. *SPIFFE Workload API* and *SPIFFE Standard*. Specifications for portable and interoperable workload identity.
+
+W3C. (2025). *Verifiable Credentials Data Model v2.0*. W3C Recommendation.
+
+Weiser, M. (1991). *The Computer for the 21st Century*. Scientific American, 265(3).

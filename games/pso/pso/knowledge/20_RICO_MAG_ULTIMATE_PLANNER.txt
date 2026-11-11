@@ -1,0 +1,184 @@
+RICO KNOWLEDGE MODULE 20
+MAG LAB / CROSS-PLANNER CANON
+Primary Move: MAG Sense / Photon Route
+Scope: PSO Episode I & II GameCube / Original Xbox unless a different platform is explicitly stated.
+
+PURPOSE
+This module is a concise authority map for the MAG planner integrated into JRPG.WORLD. It reconciles the user's packaged MAG sources without pretending that unfinished prototypes are more authoritative than the underlying mechanics data.
+
+AUTHORITY ORDER
+
+1. PACKAGED MAG MECHANICS DATA
+The Magatama data set is the mechanical authority for:
+- all 76 packaged MAG forms
+- 8 Episode II feeding tables used by the GameCube/Xbox MAG planner
+- 12 classes
+- 10 Section IDs
+- first / second / third / fourth evolution mappings
+- fourth-evolution class, gender, Section-ID group and stat equations
+- Photon Blast mappings
+- support triggers / activation chance
+- default MAG start state
+- default feeding interval
+
+Default starting MAG:
+- DEF 5 / POW 0 / DEX 0 / MIND 0
+- Synchro 20
+- IQ 0
+
+Default feeding interval:
+- 210 seconds
+- 03:30
+
+The legacy Mag Timer application is a timer utility, not a mechanics authority. Its UI is for a repeating MAG-feed timer. The packaged MAG mechanics data independently gives the 210-second default used by the web MAG Timer.
+
+2. VERIFIED PB / HANDOFF ROUTE KNOWLEDGE
+The verified physical PB route skeleton is:
+
+Lv10:
+- the character holding the MAG on the feed that crosses Lv10 determines the first evolution
+- Hunter -> Varuna / Farlla
+- Ranger -> Kalki / Estlla
+- Force -> Vritra / Leilla
+
+For an Estlla route:
+- Ranger performs the feed that reaches Lv10
+- result: Kalki / Estlla
+
+Lv35:
+- the first-evolution family plus dominant stat determines second evolution
+- POW dominant -> Golla family
+- DEX dominant -> Pilla family
+- MIND dominant -> Mylla & Youlla family
+
+For the common Estlla + Pilla opening:
+- keep DEX dominant at Lv35
+- Kalki -> Mitra / Pilla
+
+Lv50:
+- third evolution depends on feeder class category, Section-ID A/B group and POW/DEX/MIND ordering
+- Type-A IDs: Viridia, Skyly, Purplenum, Redria, Yellowboze
+- Type-B IDs: Greenill, Bluefull, Pinkal, Oran, Whitill
+
+Useful Mylla & Youlla handoffs:
+- Hunter + Type-A + DEX > POW > MIND -> Ila / Mylla & Youlla
+- Ranger + Type-B + DEX >= POW > MIND -> Kaitabha / Mylla & Youlla
+
+The handoff is the feed that causes the checkpoint. RICO should say:
+"Raise to just below the checkpoint, transfer the MAG, and let the required character perform the feed that crosses the level."
+
+Lv100:
+- fourth evolutions require class category, gender, a specific Section-ID condition group and an exact stat equation
+- the planner must calculate the equation numerically
+- once a true fourth-evolution MAG such as Sato/Rati/Nidra exists, do not claim later stat-evolution reversion
+
+3. VERIFIED SATO PHYSICAL ROUTE SKELETON
+
+Example final target:
+5 DEF / 145 POW / 50 DEX / 0 MIND
+
+PB route:
+- Lv10 Ranger -> Kalki / Estlla
+- Lv35 DEX dominant -> Mitra / Pilla
+- Lv50:
+  - Hunter + Type-A + DEX > POW > MIND -> Ila / Mylla & Youlla
+  OR
+  - Ranger + Type-B + DEX >= POW > MIND -> Kaitabha / Mylla & Youlla
+
+Sato Lv100 requirements:
+- female Force
+- Viridia / Bluefull / Redria / Whitill
+- DEF + DEX = POW + MIND
+
+Verified physical Lv100 checkpoint:
+5 / 50 / 45 / 0
+because 5 + 45 = 50 + 0
+
+For a Redria Hunter:
+- Redria is already a valid Sato Section ID
+- a female Force with Redria can perform the Lv100 handoff
+- FOmarl or FOnewearl are both compatible class candidates
+- if the Hunter is on a Type-A ID such as Redria, that Hunter can also be used for the Lv50 Ila / Mylla & Youlla handoff when DEX > POW > MIND
+
+After Sato:
+- finish toward the requested Lv200 spread
+- for 5/145/50/0 from 5/50/45/0 this means +95 POW levels and +5 DEX levels while preserving DEF 5 and MIND 0
+
+4. COMMON STRATEGIC TEMPLATES
+These are community strategy, not universal law.
+
+Physical power-first:
+5 / 145 / 50 / 0
+
+Physical accuracy-heavier:
+5 / 125 / 70 / 0
+
+Force MIND concept:
+5 / 0 / 45 / 150
+
+Estlla / Pilla / Mylla & Youlla is a strong general-purpose physical PB default, especially for HUmar and Android classes, but should be presented as community consensus rather than a hard requirement.
+
+5. SNACK-SIZED FEEDING POLICY
+
+The integrated MAG Lab does not invent huge feed-by-feed routes from integer stat levels alone.
+
+Why:
+- MAG feeding tables operate on hidden progress points, not just displayed integer MAG stats
+- exact later feed counts depend on current form and progress bars
+- negative feeding deltas can reduce progress without reducing an already-earned stat level
+
+The tool therefore works in small safe chunks:
+- identify current MAG form
+- read the correct feeding table
+- compare current raw progress to the next checkpoint or final target
+- recommend one item and a small batch
+- recheck after the batch
+
+Fresh GameCube/Xbox starter:
+- a new MAG starts at 5/0/0/0
+- Episode II feeding table 0 Monomate gives DEF +5 progress, POW +40, DEX +5 per feed
+- 13 Monomates from a fresh MAG are sufficient to cross displayed MAG level 10
+- for the Estlla route, the Ranger must be the holder on the feed that crosses Lv10
+
+From Lv10 toward Lv35 on Kalki:
+- Antidote is a clean DEX-building option in feeding table 1:
+  DEF +0, POW +5, DEX +15, MIND +0 progress
+- use small batches and preserve DEX dominance for Mitra / Pilla
+
+After Lv35:
+- feeding choice must use the actual current MAG feeding table
+- the MAG Lab can compute the next snack from current form and current DEF/POW/DEX/MIND bars
+- exact whole-route counts should only be claimed when the current raw progress is available
+
+6. CROSS-PLANNER POLICY
+
+For a target fourth-evolution MAG:
+- enumerate every valid fourth-evolution row for that target
+- expand the allowed holder classes from class category + gender
+- expand allowed Section IDs from the condition group
+- if the user's existing Section ID is valid, prefer it to avoid an unnecessary ID handoff
+- solve a valid Lv100 checkpoint numerically for the requested final spread
+- if another valid condition group gives a substantially cleaner checkpoint, show it as an alternative
+- never hide the handoff character requirement
+
+7. SOURCE QUALITY NOTES
+
+The standalone modern MAG planner project supplied by the user implements feeding simulation and first evolution but its later evolution classes are explicitly TODO. Do not use it as authority for Lv35/Lv50/Lv100 evolution.
+
+The HunterGoals route cockpit supplies useful route/correction-state concepts and a physical MAG flipbook template, but that template explicitly says it needs exact feeding-table expansion. Use it for planner UX and correction states, not as replacement for the mechanics tables.
+
+The packaged MAG guide code contains useful player-facing ideas:
+- NOW -> NEXT -> IMPORTANT -> GOAL
+- small feed recommendations
+- 03:30 timer
+- cross-character handoffs
+but its route recommendations must remain subordinate to the canonical mechanics data and verified PB route rules above.
+
+8. RICO OUTPUT RULE
+
+When a deterministic MAG Lab fact block is supplied with the question:
+- treat it as machine-computed from the packaged MAG canon
+- do not say that class / Section ID / equation / Lv100 checkpoint is missing if it is present in that fact block
+- explain the route around the tool
+- distinguish exact facts from community build recommendations
+- do not expose internal filenames, module names, prototype names or source implementation details to the visitor

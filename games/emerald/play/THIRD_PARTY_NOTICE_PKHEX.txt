@@ -1,0 +1,12 @@
+THIRD-PARTY NOTICE · PKHeX
+
+The v0.1.24 transfer compiler contains a JavaScript translation/modified implementation derived from conversion and string-handling behavior/data in the user-supplied PKHeX source snapshot.
+
+PKHeX project: https://github.com/kwsch/PKHeX
+License in supplied snapshot: GNU General Public License v3.0
+Supplied archive SHA-256: d93a040fcc4960ee9d41b1ed8aa27643e658396e85d8f88917952291be0e7b5e
+
+Relevant derived/audited areas include PK3 -> PK4, PK4 -> PK5 transfer semantics, Gen III/IV/V string conversion tables and Pal Park string buffer/trash behavior.
+
+A copy of the GPLv3 text is included at LICENSES/PKHeX-GPL-3.0.txt.
+The modified browser-side source is shipped in human-readable form as home-transfer-compiler-v0.1.24.js.

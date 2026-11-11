@@ -1,0 +1,73 @@
+RICO — KNOWLEDGE INDEX, MOVE ROUTER, AND QUERY MAP
+=========================================================
+
+PURPOSE
+Fast router telling RICO which knowledge module and which Skillbeast Move should handle a request.
+
+MOVE ROUTER
+DROP HUNT
+- Item drops, drop rates, exact fractions, enemy/source, platform comparisons, expected kills, cumulative odds, route comparison.
+- Primary files: 03, 04, 05, 06; policy: 01; provenance: 17.
+
+MAG SENSE
+- Current MAG inspection, feed deltas, safe next feeds, evolution checks, support triggers.
+- Primary files: 10, 11, 12, 13; safety policy: 01.
+
+PHOTON ROUTE
+- Photon Blast catalog, PB checkpoint planning, feeder handoffs, rare-MAG endpoint routes, target MAG builds.
+- Primary files: 12, 14, 15, 16; feed details: 11.
+
+SECTION SCAN
+- Exact name->Section ID calculation, capitalization-sensitive checks, target-name search, ID comparison, overlap, strategic roster/account planning.
+- Primary files: 07, 08, 09; item-coverage cross-check: 05; route synthesis: 15/16.
+
+NARRATIVE LINK
+- Story, lore, characters, relationships, dialogue context, quest narrative, enemy narrative context, Episode I/II plot, and evidence-backed thematic/meta-pattern analysis.
+- Primary file: 21 complete script narrative canon; policy/provenance: 01/17.
+- RICO may synthesize across passages, but must label interpretation as interpretation and must not invent authorial intent.
+
+FILE ROUTER
+01 RICO identity / authority / platform rules -> truth hierarchy, Move contract, no-platform-mixing, drop math, MAG safety, web restraint.
+02 General FAQ -> broad PSO questions, class/solo strategy, MAG FAQ, platform distinctions, qualitative recommendations.
+03 GameCube/Xbox drops -> exact console Version 3 drop rows.
+04 Blue Burst Ultimate drops -> exact packaged BB Ultimate rows, including Episode 4 where present.
+05 Item endpoint index -> item-centric cross-platform route lookup and best-route/exclusivity summaries.
+06 Drop-rates FAQ 1000 -> probability/expected-kill/route-role retrieval questions with statuses.
+07 Section Scan calculator -> exact packaged console name formula, regression vectors, Section ID order, BB modifier gap.
+08 Section ID strategy/overlap -> computed coverage, pair overlap, community tiers and signatures.
+09 Account roster planner -> two/three-ID coverage, role-specific and balanced roster candidates.
+10 MAG catalog -> all MAG forms, stages, PB mapping, feed table IDs, support triggers.
+11 MAG feeding -> exact feed deltas by Episode/table/item.
+12 MAG evolution -> Stage 1/2/3/4 rules and equations, including A/B inference warning.
+13 MAG cells/triggers -> Mag Cell names, parsed condition gap, support trigger metadata.
+14 Photon Blasts/MAG routes -> PB list, route templates, handoffs, target builds.
+15 Hunter goals -> endpoint catalog, Hunter-first templates, correction engine, query index.
+16 Route graph -> platform-aware route graph, imported route records, route safety states.
+17 Sources/provenance/gaps -> source authority, dedup notes, explicit coverage holes.
+21 Complete script narrative canon -> main story, quests/events/shops, NPC dialogue, Rico messages, character/relationship evidence, enemy-lore context, narrative synthesis.
+
+QUERY ROUTING EXAMPLES
+- “Ik ben Ranger: welke 4th revolution MAGs zijn beschikbaar?” -> Stage 4 MAG intent, not stage 3. Read canonical RA stage04 class/gender/Section-ID rows; list Pushan, Rukmin and Diwari, include exact equations. "Revolution" here is a typo for evolution; a verified save is NOT required for general class knowledge.
+- “What can my current MAG become based on my save?” -> save-specific Stage 4 reachability; use verified-save MAG matrix if provided, not a generic class list. Without a verified state, give the general options and say personal reachability is unknown.
+- “Can I equip Sato as Ranger?” -> separate evolution class restrictions from ability to use a MAG after character handoff.
+- “RICO, what is the Section ID of Raynor on Xbox?” -> Section Scan -> 07. Expected packaged result: PINKAL.
+- “And raynor with no capital?” -> Section Scan -> 07. Expected packaged result: ORAN.
+- “Where does Spread Needle drop on Xbox Redria?” -> Drop Hunt -> 03 first, 05 for all routes, 01 for platform policy.
+- “Compare Spread Needle Redria on Xbox vs Blue Burst.” -> Drop Hunt -> 03 + 04 + 05; never merge rates.
+- “Which IDs complement Redria for a new account?” -> Section Scan -> 08 + 09 + 05; label community strategy separately from computed coverage.
+- “Make me a strategic three-character roster for my target hunts.” -> Section Scan, optionally Drop Hunt -> 09 + 08 + 05 + exact records in 03/04.
+- “What should I feed my current MAG?” -> MAG Sense -> 11 plus 10/12; exact multi-feed route requires current progress-bar state.
+- “How do I get Rukmin with Estlla/Pilla/Mylla & Youlla?” -> Photon Route -> 12 + 14, then MAG Sense/11 for feed deltas.
+- “What MAG gives a particular Photon Blast?” -> Photon Route -> 10 + 14.
+- “How many kills for 90% at 1/X?” -> Drop Hunt -> formula in 01, source rate from 03/04/05.
+- “Do you know quest X?” -> narrative/quest lookup -> 21 first for script content; 02/15/16 for route/mechanic context; use 17 only for remaining coverage gaps.
+- “Who is Kireek and what happens to him?” -> Narrative Link -> 21.
+- “What is the relationship between Elly and Calus?” -> Narrative Link -> 21.
+- “What do Rico's messages reveal about Ragol?” -> Narrative Link -> 21, and distinguish explicit observations from interpretation.
+- “What themes connect Episode I and Episode II?” -> Narrative Link -> 21; synthesize across passages and label interpretation clearly.
+
+NORMALIZATION HINTS
+- Preserve capitalization exactly for Section Scan calculations.
+- Treat apostrophe variants and capitalization as search-normalization issues for item lookup, not different items, unless source semantics show otherwise.
+- Some imported item names have spelling/case duplicates such as Df Field / DF Field or Handgun:Guld / Handgun: Guld. Preserve source labels when quoting a row, but consolidate conceptually when answering.
+- Enemy/source naming may vary slightly across imported datasets, e.g. Dubchic/Dubchich. Keep the exact row label attached to its source.

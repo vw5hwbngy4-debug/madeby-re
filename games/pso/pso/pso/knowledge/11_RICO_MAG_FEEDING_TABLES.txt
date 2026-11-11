@@ -1,0 +1,241 @@
+RICO KNOWLEDGE MODULE
+SOURCE MODULE: 11_PSO_MAG_FEEDING_TABLES.txt
+MOVE ROUTING: See 18_RICO_KNOWLEDGE_INDEX_QUERY_MAP.txt
+
+PSO MAG FEEDING TABLES
+======================
+
+PURPOSE
+All packaged Episode 1 and Episode 2 MAG feeding table deltas. Values are the truth-export feed effects and should be applied to the MAG feeding table associated with the current form.
+
+SOURCE BASIS
+MagatamaBeta9 truth export / pso-mag-core.json.
+
+RETRIEVAL RULE
+Treat explicit platform labels, verification/status fields, source labels, and warnings as part of the fact. Never silently remove them.
+
+EPISODE_FEEDING_TABLE_SET: EP1
+FEEDING_TABLE_ID: 0
+ITEM=Monomate | SYNCHRO=2 | IQ=3 | DEF=2 | POW=40 | DEX=5 | MIND=0
+ITEM=Dimate | SYNCHRO=2 | IQ=3 | DEF=10 | POW=45 | DEX=5 | MIND=0
+ITEM=Trimate | SYNCHRO=3 | IQ=4 | DEF=15 | POW=50 | DEX=10 | MIND=0
+ITEM=Monofluid | SYNCHRO=2 | IQ=3 | DEF=5 | POW=0 | DEX=5 | MIND=40
+ITEM=Difluid | SYNCHRO=2 | IQ=3 | DEF=10 | POW=0 | DEX=5 | MIND=45
+ITEM=Trifluid | SYNCHRO=3 | IQ=4 | DEF=15 | POW=0 | DEX=10 | MIND=50
+ITEM=Antidote | SYNCHRO=2 | IQ=3 | DEF=5 | POW=10 | DEX=40 | MIND=0
+ITEM=Antiparalysis | SYNCHRO=2 | IQ=3 | DEF=5 | POW=0 | DEX=40 | MIND=10
+ITEM=Sol Atomizer | SYNCHRO=3 | IQ=1 | DEF=15 | POW=30 | DEX=15 | MIND=25
+ITEM=Moon Atomizer | SYNCHRO=3 | IQ=1 | DEF=15 | POW=25 | DEX=15 | MIND=30
+ITEM=Star Atomizer | SYNCHRO=5 | IQ=5 | DEF=25 | POW=25 | DEX=25 | MIND=25
+END_FEEDING_TABLE
+
+FEEDING_TABLE_ID: 1
+ITEM=Monomate | SYNCHRO=0 | IQ=0 | DEF=5 | POW=10 | DEX=0 | MIND=0
+ITEM=Dimate | SYNCHRO=1 | IQ=1 | DEF=5 | POW=15 | DEX=3 | MIND=0
+ITEM=Trimate | SYNCHRO=2 | IQ=2 | DEF=8 | POW=20 | DEX=6 | MIND=-5
+ITEM=Monofluid | SYNCHRO=0 | IQ=0 | DEF=5 | POW=0 | DEX=0 | MIND=10
+ITEM=Difluid | SYNCHRO=1 | IQ=1 | DEF=5 | POW=0 | DEX=3 | MIND=15
+ITEM=Trifluid | SYNCHRO=2 | IQ=2 | DEF=8 | POW=-5 | DEX=6 | MIND=20
+ITEM=Antidote | SYNCHRO=0 | IQ=1 | DEF=0 | POW=5 | DEX=14 | MIND=0
+ITEM=Antiparalysis | SYNCHRO=1 | IQ=0 | DEF=0 | POW=0 | DEX=14 | MIND=5
+ITEM=Sol Atomizer | SYNCHRO=-2 | IQ=2 | DEF=9 | POW=9 | DEX=8 | MIND=0
+ITEM=Moon Atomizer | SYNCHRO=2 | IQ=-2 | DEF=9 | POW=0 | DEX=8 | MIND=9
+ITEM=Star Atomizer | SYNCHRO=3 | IQ=3 | DEF=14 | POW=14 | DEX=14 | MIND=14
+END_FEEDING_TABLE
+
+FEEDING_TABLE_ID: 2
+ITEM=Monomate | SYNCHRO=0 | IQ=-1 | DEF=0 | POW=9 | DEX=0 | MIND=-5
+ITEM=Dimate | SYNCHRO=1 | IQ=0 | DEF=4 | POW=12 | DEX=0 | MIND=-10
+ITEM=Trimate | SYNCHRO=2 | IQ=1 | DEF=6 | POW=16 | DEX=4 | MIND=-15
+ITEM=Monofluid | SYNCHRO=0 | IQ=-1 | DEF=0 | POW=-5 | DEX=0 | MIND=9
+ITEM=Difluid | SYNCHRO=1 | IQ=0 | DEF=4 | POW=-10 | DEX=0 | MIND=13
+ITEM=Trifluid | SYNCHRO=1 | IQ=2 | DEF=6 | POW=-15 | DEX=4 | MIND=16
+ITEM=Antidote | SYNCHRO=-1 | IQ=1 | DEF=-5 | POW=4 | DEX=11 | MIND=-5
+ITEM=Antiparalysis | SYNCHRO=0 | IQ=0 | DEF=-5 | POW=-5 | DEX=11 | MIND=4
+ITEM=Sol Atomizer | SYNCHRO=2 | IQ=-2 | DEF=0 | POW=11 | DEX=5 | MIND=-5
+ITEM=Moon Atomizer | SYNCHRO=-1 | IQ=1 | DEF=5 | POW=-5 | DEX=0 | MIND=11
+ITEM=Star Atomizer | SYNCHRO=2 | IQ=2 | DEF=6 | POW=8 | DEX=6 | MIND=8
+END_FEEDING_TABLE
+
+FEEDING_TABLE_ID: 3
+ITEM=Monomate | SYNCHRO=0 | IQ=-1 | DEF=0 | POW=4 | DEX=0 | MIND=0
+ITEM=Dimate | SYNCHRO=1 | IQ=0 | DEF=5 | POW=7 | DEX=0 | MIND=-5
+ITEM=Trimate | SYNCHRO=2 | IQ=1 | DEF=4 | POW=14 | DEX=4 | MIND=-10
+ITEM=Monofluid | SYNCHRO=0 | IQ=0 | DEF=0 | POW=0 | DEX=0 | MIND=4
+ITEM=Difluid | SYNCHRO=0 | IQ=1 | DEF=5 | POW=-5 | DEX=0 | MIND=7
+ITEM=Trifluid | SYNCHRO=1 | IQ=2 | DEF=4 | POW=-10 | DEX=4 | MIND=14
+ITEM=Antidote | SYNCHRO=-3 | IQ=3 | DEF=0 | POW=0 | DEX=5 | MIND=0
+ITEM=Antiparalysis | SYNCHRO=2 | IQ=0 | DEF=-5 | POW=-5 | DEX=20 | MIND=-5
+ITEM=Sol Atomizer | SYNCHRO=2 | IQ=-2 | DEF=-10 | POW=8 | DEX=5 | MIND=8
+ITEM=Moon Atomizer | SYNCHRO=-2 | IQ=2 | DEF=7 | POW=6 | DEX=-8 | MIND=6
+ITEM=Star Atomizer | SYNCHRO=2 | IQ=2 | DEF=7 | POW=7 | DEX=7 | MIND=7
+END_FEEDING_TABLE
+
+FEEDING_TABLE_ID: 4
+ITEM=Monomate | SYNCHRO=1 | IQ=-1 | DEF=-5 | POW=9 | DEX=-5 | MIND=0
+ITEM=Dimate | SYNCHRO=1 | IQ=0 | DEF=0 | POW=11 | DEX=0 | MIND=-10
+ITEM=Trimate | SYNCHRO=0 | IQ=1 | DEF=4 | POW=14 | DEX=0 | MIND=-15
+ITEM=Monofluid | SYNCHRO=1 | IQ=-1 | DEF=-5 | POW=0 | DEX=-5 | MIND=9
+ITEM=Difluid | SYNCHRO=1 | IQ=0 | DEF=0 | POW=-10 | DEX=0 | MIND=11
+ITEM=Trifluid | SYNCHRO=1 | IQ=0 | DEF=4 | POW=-15 | DEX=0 | MIND=14
+ITEM=Antidote | SYNCHRO=1 | IQ=-1 | DEF=-5 | POW=-5 | DEX=15 | MIND=-5
+ITEM=Antiparalysis | SYNCHRO=-2 | IQ=3 | DEF=6 | POW=-3 | DEX=0 | MIND=-3
+ITEM=Sol Atomizer | SYNCHRO=3 | IQ=-2 | DEF=5 | POW=22 | DEX=-5 | MIND=-20
+ITEM=Moon Atomizer | SYNCHRO=2 | IQ=0 | DEF=-5 | POW=-20 | DEX=5 | MIND=22
+ITEM=Star Atomizer | SYNCHRO=2 | IQ=2 | DEF=5 | POW=5 | DEX=5 | MIND=5
+END_FEEDING_TABLE
+
+FEEDING_TABLE_ID: 5
+ITEM=Monomate | SYNCHRO=1 | IQ=-1 | DEF=-4 | POW=13 | DEX=-5 | MIND=-5
+ITEM=Dimate | SYNCHRO=0 | IQ=1 | DEF=0 | POW=16 | DEX=0 | MIND=-15
+ITEM=Trimate | SYNCHRO=1 | IQ=0 | DEF=4 | POW=19 | DEX=0 | MIND=-20
+ITEM=Monofluid | SYNCHRO=1 | IQ=-1 | DEF=-4 | POW=-5 | DEX=-5 | MIND=13
+ITEM=Difluid | SYNCHRO=0 | IQ=1 | DEF=0 | POW=-15 | DEX=0 | MIND=16
+ITEM=Trifluid | SYNCHRO=1 | IQ=0 | DEF=4 | POW=-20 | DEX=0 | MIND=19
+ITEM=Antidote | SYNCHRO=0 | IQ=1 | DEF=5 | POW=-6 | DEX=6 | MIND=-5
+ITEM=Antiparalysis | SYNCHRO=-1 | IQ=1 | DEF=0 | POW=-4 | DEX=14 | MIND=-10
+ITEM=Sol Atomizer | SYNCHRO=3 | IQ=-1 | DEF=4 | POW=17 | DEX=-5 | MIND=-15
+ITEM=Moon Atomizer | SYNCHRO=1 | IQ=0 | DEF=-10 | POW=-15 | DEX=5 | MIND=21
+ITEM=Star Atomizer | SYNCHRO=2 | IQ=2 | DEF=4 | POW=6 | DEX=4 | MIND=6
+END_FEEDING_TABLE
+
+FEEDING_TABLE_ID: 6
+ITEM=Monomate | SYNCHRO=-1 | IQ=1 | DEF=-3 | POW=9 | DEX=-3 | MIND=-4
+ITEM=Dimate | SYNCHRO=1 | IQ=0 | DEF=0 | POW=11 | DEX=0 | MIND=-10
+ITEM=Trimate | SYNCHRO=1 | IQ=0 | DEF=3 | POW=14 | DEX=0 | MIND=-15
+ITEM=Monofluid | SYNCHRO=-1 | IQ=1 | DEF=-3 | POW=-4 | DEX=-3 | MIND=9
+ITEM=Difluid | SYNCHRO=1 | IQ=0 | DEF=0 | POW=-10 | DEX=0 | MIND=11
+ITEM=Trifluid | SYNCHRO=1 | IQ=0 | DEF=3 | POW=-15 | DEX=0 | MIND=14
+ITEM=Antidote | SYNCHRO=1 | IQ=-1 | DEF=0 | POW=6 | DEX=9 | MIND=-15
+ITEM=Antiparalysis | SYNCHRO=-2 | IQ=3 | DEF=0 | POW=-15 | DEX=9 | MIND=6
+ITEM=Sol Atomizer | SYNCHRO=2 | IQ=-1 | DEF=9 | POW=-20 | DEX=-5 | MIND=17
+ITEM=Moon Atomizer | SYNCHRO=0 | IQ=2 | DEF=-3 | POW=17 | DEX=7 | MIND=-20
+ITEM=Star Atomizer | SYNCHRO=2 | IQ=2 | DEF=0 | POW=10 | DEX=0 | MIND=10
+END_FEEDING_TABLE
+
+FEEDING_TABLE_ID: 7
+ITEM=Monomate | SYNCHRO=-1 | IQ=1 | DEF=-3 | POW=9 | DEX=-3 | MIND=-4
+ITEM=Dimate | SYNCHRO=1 | IQ=0 | DEF=0 | POW=11 | DEX=0 | MIND=-10
+ITEM=Trimate | SYNCHRO=1 | IQ=0 | DEF=4 | POW=14 | DEX=0 | MIND=-15
+ITEM=Monofluid | SYNCHRO=-1 | IQ=1 | DEF=-3 | POW=-4 | DEX=-3 | MIND=9
+ITEM=Difluid | SYNCHRO=1 | IQ=0 | DEF=0 | POW=-10 | DEX=0 | MIND=14
+ITEM=Trifluid | SYNCHRO=1 | IQ=0 | DEF=0 | POW=-15 | DEX=0 | MIND=14
+ITEM=Antidote | SYNCHRO=1 | IQ=-1 | DEF=0 | POW=9 | DEX=9 | MIND=-15
+ITEM=Antiparalysis | SYNCHRO=-2 | IQ=3 | DEF=0 | POW=-15 | DEX=9 | MIND=5
+ITEM=Sol Atomizer | SYNCHRO=2 | IQ=-1 | DEF=10 | POW=-20 | DEX=-5 | MIND=17
+ITEM=Moon Atomizer | SYNCHRO=0 | IQ=2 | DEF=-3 | POW=17 | DEX=8 | MIND=-20
+ITEM=Star Atomizer | SYNCHRO=2 | IQ=2 | DEF=0 | POW=10 | DEX=0 | MIND=10
+END_FEEDING_TABLE
+
+EPISODE_FEEDING_TABLE_SET: EP2
+FEEDING_TABLE_ID: 0
+ITEM=Monomate | SYNCHRO=3 | IQ=3 | DEF=5 | POW=40 | DEX=5 | MIND=0
+ITEM=Dimate | SYNCHRO=3 | IQ=3 | DEF=10 | POW=45 | DEX=5 | MIND=0
+ITEM=Trimate | SYNCHRO=4 | IQ=4 | DEF=15 | POW=50 | DEX=10 | MIND=0
+ITEM=Monofluid | SYNCHRO=3 | IQ=3 | DEF=5 | POW=0 | DEX=5 | MIND=40
+ITEM=Difluid | SYNCHRO=3 | IQ=3 | DEF=10 | POW=0 | DEX=5 | MIND=45
+ITEM=Trifluid | SYNCHRO=4 | IQ=4 | DEF=15 | POW=0 | DEX=10 | MIND=50
+ITEM=Antidote | SYNCHRO=3 | IQ=3 | DEF=5 | POW=10 | DEX=40 | MIND=0
+ITEM=Antiparalysis | SYNCHRO=3 | IQ=3 | DEF=5 | POW=0 | DEX=44 | MIND=10
+ITEM=Sol Atomizer | SYNCHRO=4 | IQ=1 | DEF=15 | POW=30 | DEX=15 | MIND=25
+ITEM=Moon Atomizer | SYNCHRO=4 | IQ=1 | DEF=15 | POW=25 | DEX=15 | MIND=30
+ITEM=Star Atomizer | SYNCHRO=6 | IQ=5 | DEF=25 | POW=25 | DEX=25 | MIND=25
+END_FEEDING_TABLE
+
+FEEDING_TABLE_ID: 1
+ITEM=Monomate | SYNCHRO=0 | IQ=0 | DEF=5 | POW=10 | DEX=0 | MIND=-1
+ITEM=Dimate | SYNCHRO=2 | IQ=1 | DEF=6 | POW=15 | DEX=3 | MIND=-3
+ITEM=Trimate | SYNCHRO=3 | IQ=2 | DEF=12 | POW=21 | DEX=4 | MIND=-7
+ITEM=Monofluid | SYNCHRO=0 | IQ=0 | DEF=5 | POW=0 | DEX=0 | MIND=8
+ITEM=Difluid | SYNCHRO=2 | IQ=1 | DEF=7 | POW=0 | DEX=3 | MIND=13
+ITEM=Trifluid | SYNCHRO=3 | IQ=2 | DEF=7 | POW=-7 | DEX=6 | MIND=19
+ITEM=Antidote | SYNCHRO=0 | IQ=1 | DEF=0 | POW=5 | DEX=15 | MIND=0
+ITEM=Antiparalysis | SYNCHRO=2 | IQ=0 | DEF=-1 | POW=0 | DEX=14 | MIND=5
+ITEM=Sol Atomizer | SYNCHRO=-2 | IQ=2 | DEF=10 | POW=11 | DEX=8 | MIND=0
+ITEM=Moon Atomizer | SYNCHRO=3 | IQ=-2 | DEF=9 | POW=0 | DEX=9 | MIND=11
+ITEM=Star Atomizer | SYNCHRO=4 | IQ=3 | DEF=14 | POW=9 | DEX=18 | MIND=11
+END_FEEDING_TABLE
+
+FEEDING_TABLE_ID: 2
+ITEM=Monomate | SYNCHRO=0 | IQ=-1 | DEF=1 | POW=9 | DEX=0 | MIND=-5
+ITEM=Dimate | SYNCHRO=3 | IQ=0 | DEF=1 | POW=13 | DEX=0 | MIND=-10
+ITEM=Trimate | SYNCHRO=4 | IQ=1 | DEF=8 | POW=16 | DEX=2 | MIND=-15
+ITEM=Monofluid | SYNCHRO=0 | IQ=-1 | DEF=0 | POW=-5 | DEX=0 | MIND=9
+ITEM=Difluid | SYNCHRO=3 | IQ=0 | DEF=4 | POW=-10 | DEX=0 | MIND=13
+ITEM=Trifluid | SYNCHRO=3 | IQ=2 | DEF=6 | POW=-15 | DEX=5 | MIND=17
+ITEM=Antidote | SYNCHRO=-1 | IQ=1 | DEF=-5 | POW=4 | DEX=12 | MIND=-5
+ITEM=Antiparalysis | SYNCHRO=0 | IQ=0 | DEF=-5 | POW=-6 | DEX=11 | MIND=4
+ITEM=Sol Atomizer | SYNCHRO=4 | IQ=-2 | DEF=0 | POW=11 | DEX=3 | MIND=-5
+ITEM=Moon Atomizer | SYNCHRO=-1 | IQ=1 | DEF=4 | POW=-5 | DEX=0 | MIND=11
+ITEM=Star Atomizer | SYNCHRO=4 | IQ=2 | DEF=7 | POW=8 | DEX=6 | MIND=9
+END_FEEDING_TABLE
+
+FEEDING_TABLE_ID: 3
+ITEM=Monomate | SYNCHRO=0 | IQ=-1 | DEF=0 | POW=3 | DEX=0 | MIND=0
+ITEM=Dimate | SYNCHRO=2 | IQ=0 | DEF=5 | POW=7 | DEX=0 | MIND=-5
+ITEM=Trimate | SYNCHRO=3 | IQ=1 | DEF=4 | POW=14 | DEX=6 | MIND=-10
+ITEM=Monofluid | SYNCHRO=0 | IQ=0 | DEF=0 | POW=0 | DEX=0 | MIND=4
+ITEM=Difluid | SYNCHRO=0 | IQ=1 | DEF=4 | POW=-5 | DEX=0 | MIND=8
+ITEM=Trifluid | SYNCHRO=2 | IQ=2 | DEF=4 | POW=-10 | DEX=3 | MIND=15
+ITEM=Antidote | SYNCHRO=-3 | IQ=3 | DEF=0 | POW=0 | DEX=7 | MIND=0
+ITEM=Antiparalysis | SYNCHRO=3 | IQ=0 | DEF=-4 | POW=-5 | DEX=20 | MIND=-5
+ITEM=Sol Atomizer | SYNCHRO=3 | IQ=-2 | DEF=-10 | POW=9 | DEX=6 | MIND=9
+ITEM=Moon Atomizer | SYNCHRO=-2 | IQ=2 | DEF=8 | POW=5 | DEX=-8 | MIND=7
+ITEM=Star Atomizer | SYNCHRO=3 | IQ=2 | DEF=7 | POW=7 | DEX=7 | MIND=7
+END_FEEDING_TABLE
+
+FEEDING_TABLE_ID: 4
+ITEM=Monomate | SYNCHRO=2 | IQ=-1 | DEF=-5 | POW=9 | DEX=-5 | MIND=0
+ITEM=Dimate | SYNCHRO=2 | IQ=0 | DEF=0 | POW=11 | DEX=0 | MIND=-10
+ITEM=Trimate | SYNCHRO=0 | IQ=1 | DEF=4 | POW=14 | DEX=0 | MIND=-15
+ITEM=Monofluid | SYNCHRO=2 | IQ=-1 | DEF=-5 | POW=0 | DEX=-6 | MIND=10
+ITEM=Difluid | SYNCHRO=2 | IQ=0 | DEF=0 | POW=-10 | DEX=0 | MIND=11
+ITEM=Trifluid | SYNCHRO=0 | IQ=1 | DEF=4 | POW=-15 | DEX=0 | MIND=15
+ITEM=Antidote | SYNCHRO=2 | IQ=-1 | DEF=-5 | POW=-5 | DEX=16 | MIND=-5
+ITEM=Antiparalysis | SYNCHRO=-2 | IQ=3 | DEF=7 | POW=-3 | DEX=0 | MIND=-3
+ITEM=Sol Atomizer | SYNCHRO=4 | IQ=-2 | DEF=5 | POW=21 | DEX=-5 | MIND=-20
+ITEM=Moon Atomizer | SYNCHRO=3 | IQ=0 | DEF=-5 | POW=-20 | DEX=5 | MIND=21
+ITEM=Star Atomizer | SYNCHRO=3 | IQ=2 | DEF=4 | POW=6 | DEX=8 | MIND=5
+END_FEEDING_TABLE
+
+FEEDING_TABLE_ID: 5
+ITEM=Monomate | SYNCHRO=2 | IQ=-1 | DEF=-4 | POW=13 | DEX=-5 | MIND=-5
+ITEM=Dimate | SYNCHRO=0 | IQ=1 | DEF=0 | POW=16 | DEX=0 | MIND=-15
+ITEM=Trimate | SYNCHRO=2 | IQ=0 | DEF=3 | POW=19 | DEX=-2 | MIND=-18
+ITEM=Monofluid | SYNCHRO=2 | IQ=-1 | DEF=-4 | POW=-5 | DEX=-5 | MIND=13
+ITEM=Difluid | SYNCHRO=0 | IQ=1 | DEF=0 | POW=-15 | DEX=0 | MIND=16
+ITEM=Trifluid | SYNCHRO=2 | IQ=0 | DEF=3 | POW=-20 | DEX=0 | MIND=19
+ITEM=Antidote | SYNCHRO=0 | IQ=1 | DEF=5 | POW=-6 | DEX=6 | MIND=-5
+ITEM=Antiparalysis | SYNCHRO=-1 | IQ=1 | DEF=0 | POW=-4 | DEX=14 | MIND=-10
+ITEM=Sol Atomizer | SYNCHRO=4 | IQ=-1 | DEF=4 | POW=17 | DEX=-5 | MIND=-15
+ITEM=Moon Atomizer | SYNCHRO=2 | IQ=0 | DEF=-10 | POW=-15 | DEX=5 | MIND=21
+ITEM=Star Atomizer | SYNCHRO=3 | IQ=2 | DEF=2 | POW=8 | DEX=3 | MIND=6
+END_FEEDING_TABLE
+
+FEEDING_TABLE_ID: 6
+ITEM=Monomate | SYNCHRO=-1 | IQ=1 | DEF=-3 | POW=9 | DEX=-3 | MIND=-4
+ITEM=Dimate | SYNCHRO=2 | IQ=0 | DEF=0 | POW=11 | DEX=0 | MIND=-10
+ITEM=Trimate | SYNCHRO=2 | IQ=0 | DEF=2 | POW=15 | DEX=0 | MIND=-16
+ITEM=Monofluid | SYNCHRO=-1 | IQ=1 | DEF=-3 | POW=-4 | DEX=-3 | MIND=9
+ITEM=Difluid | SYNCHRO=2 | IQ=0 | DEF=0 | POW=-10 | DEX=0 | MIND=11
+ITEM=Trifluid | SYNCHRO=2 | IQ=0 | DEF=-2 | POW=-15 | DEX=0 | MIND=19
+ITEM=Antidote | SYNCHRO=2 | IQ=-1 | DEF=0 | POW=6 | DEX=9 | MIND=-15
+ITEM=Antiparalysis | SYNCHRO=-2 | IQ=3 | DEF=0 | POW=-15 | DEX=9 | MIND=6
+ITEM=Sol Atomizer | SYNCHRO=3 | IQ=-1 | DEF=9 | POW=-20 | DEX=-5 | MIND=17
+ITEM=Moon Atomizer | SYNCHRO=0 | IQ=2 | DEF=-5 | POW=20 | DEX=5 | MIND=-20
+ITEM=Star Atomizer | SYNCHRO=3 | IQ=2 | DEF=0 | POW=11 | DEX=0 | MIND=11
+END_FEEDING_TABLE
+
+FEEDING_TABLE_ID: 7
+ITEM=Monomate | SYNCHRO=-1 | IQ=0 | DEF=-4 | POW=21 | DEX=-15 | MIND=-5
+ITEM=Dimate | SYNCHRO=0 | IQ=1 | DEF=-1 | POW=27 | DEX=-10 | MIND=-16
+ITEM=Trimate | SYNCHRO=2 | IQ=0 | DEF=5 | POW=29 | DEX=-7 | MIND=-25
+ITEM=Monofluid | SYNCHRO=-1 | IQ=0 | DEF=-10 | POW=-5 | DEX=-10 | MIND=21
+ITEM=Difluid | SYNCHRO=0 | IQ=1 | DEF=-5 | POW=-16 | DEX=-5 | MIND=25
+ITEM=Trifluid | SYNCHRO=2 | IQ=0 | DEF=-7 | POW=-25 | DEX=6 | MIND=29
+ITEM=Antidote | SYNCHRO=-1 | IQ=1 | DEF=-10 | POW=-10 | DEX=28 | MIND=-10
+ITEM=Antiparalysis | SYNCHRO=2 | IQ=-1 | DEF=9 | POW=-18 | DEX=24 | MIND=-15
+ITEM=Sol Atomizer | SYNCHRO=2 | IQ=1 | DEF=19 | POW=18 | DEX=-15 | MIND=-20
+ITEM=Moon Atomizer | SYNCHRO=2 | IQ=1 | DEF=-15 | POW=-20 | DEX=19 | MIND=18
+ITEM=Star Atomizer | SYNCHRO=4 | IQ=2 | DEF=3 | POW=7 | DEX=3 | MIND=3
+END_FEEDING_TABLE

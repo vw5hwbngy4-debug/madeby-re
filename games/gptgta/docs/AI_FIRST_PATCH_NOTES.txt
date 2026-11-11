@@ -1,0 +1,8 @@
+GPTGTA BUILD PATCH NOTES
+AI-first structure added under /ai/.
+Shared asset root added: /assets/gptgta/.
+Duplicated asset folders removed from /version/v1 through /version/v4.2 demos.
+Demos now load relative game assets through /assets/gptgta/.
+Player walking speed: 1.45 -> 1.6675 (+15%).
+Vehicle accel/reverse/max/reverseMax multiplied by 1.3 (+30%).
+Removed loose v4.2 backup/test files that were not public routes.

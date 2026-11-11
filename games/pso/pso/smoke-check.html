@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><base href="/pso/"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RICO Intelligence v0.5.2 + Ragol Link Alpha 2 Smoke Check</title><style>body{font:16px system-ui;background:#071523;color:#eaf6ff;max-width:850px;margin:40px auto;padding:0 18px}h1{color:#ff79b7}.row{padding:10px 12px;margin:8px 0;border:1px solid #31506b;border-radius:8px}.ok{border-color:#3b8f65}.bad{border-color:#a84a5d}.wait{opacity:.7}code{color:#9ee8ff}</style></head><body><h1>JRPG.WORLD · /pso/ · RICO Intelligence v0.5.2 + Ragol Link Alpha 2</h1><p>This checks the upgraded <code>jrpg.world/pso/</code> brain before you link an Original Xbox save.</p><div id="out"></div><script>
+const tests=[
+ ['Local V0.5 data.js',()=>load('data.js').then(()=>!!window.PSO_BUNDLE)],
+ ['Local V0.5 engine.js',()=>load('engine.js').then(()=>!!window.PSO_ENGINE)],
+ ['Shared PSO RICO asset',()=>fetch('/pso/assets/pso/personality/rico.jpg').then(r=>r.ok)],
+ ['Local drop database',()=>fetch('source-data/pso-drops-full.json').then(r=>r.ok)],
+ ['Local Xbox gear canon',()=>fetch('source-data/xbox-v3-gear-canon-v0.5.json').then(r=>r.ok)],
+ ['Local RICO API exists',()=>fetch('api/pso.php').then(r=>r.status===405)],
+ ['Parent JRPG.WORLD config available',()=>fetch('api/install-health.php').then(r=>r.json()).then(j=>j.ok===true)],
+ ['Original Xbox character decoder',()=>import('./pso-character-link.js').then(m=>typeof m.decodeXboxPSOInput==='function')],
+ ['Gear intelligence engine',()=>import('./gear-progression-core.js').then(m=>typeof m.buildGearProgression==='function')],
+ ['MAG fourth-evolution matrix engine',async()=>{await load('mag-data.js');await load('mag-engine.js');return typeof window.PSO_MAG_ENGINE?.endpointRouteMatrixFromSave==='function'&&typeof window.PSO_MAG_ENGINE?.deterministicEndpointMatrixFacts==='function'}],
+ ['Ragol Link localhost bridge',()=>fetch('ragol-link-bridge.js?smoke='+Date.now()).then(r=>r.ok)]
+];
+function load(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src+'?smoke='+Date.now();s.onload=res;s.onerror=rej;document.head.appendChild(s)})}
+const out=document.getElementById('out');(async()=>{let pass=0;for(const [name,fn] of tests){const d=document.createElement('div');d.className='row wait';d.textContent='… '+name;out.appendChild(d);try{const ok=await fn();d.className='row '+(ok?'ok':'bad');d.textContent=(ok?'✓ ':'✗ ')+name;if(ok)pass++}catch(e){d.className='row bad';d.textContent='✗ '+name+' — '+(e?.message||e)}}const h=document.createElement('h2');h.textContent=`${pass}/${tests.length} checks passed`;out.prepend(h)})();</script></body></html>

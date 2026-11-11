@@ -1,0 +1,13 @@
+JRPG.WORLD Emerald v0.1.24.2 — SAVE VAULT IMPORT VISIBILITY
+
+Fixes a risky iOS import ordering issue: the delegated file input was cleared before importSav() read File.arrayBuffer(). The input is now cleared only after the read/upload finishes.
+
+Adds persistent per-slot import progress and exact failure text so an upload cannot fail silently behind Safari chrome. On mobile the toast is moved to the top safe area.
+
+Expected stages:
+READING <file>…
+READ 131,072 BYTES · VALIDATING…
+VALID · <trainer> · <playtime> · UPLOADING TO SAVE N…
+IMPORTED · <trainer> · 131,072 BYTES
+
+If the server rejects the upload, the exact mapped reason remains visible inside the slot card.

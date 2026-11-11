@@ -1,0 +1,3469 @@
+{
+  "format": "gtagpt-asset-manifest-1.0",
+  "basePath": "./",
+  "categories": {
+    "ui": [
+      {
+        "id": "ammo_counter",
+        "path": "ui/ammo_counter.png",
+        "name": "ammo counter"
+      },
+      {
+        "id": "busted_screen",
+        "path": "ui/busted_screen.png",
+        "name": "busted screen"
+      },
+      {
+        "id": "health_bar",
+        "path": "ui/health_bar.png",
+        "name": "health bar"
+      },
+      {
+        "id": "minimap",
+        "path": "ui/minimap.png",
+        "name": "minimap"
+      },
+      {
+        "id": "mission_complete",
+        "path": "ui/mission_complete.png",
+        "name": "mission complete"
+      },
+      {
+        "id": "money_counter",
+        "path": "ui/money_counter.png",
+        "name": "money counter"
+      },
+      {
+        "id": "wanted_stars",
+        "path": "ui/wanted_stars.png",
+        "name": "wanted stars"
+      },
+      {
+        "id": "wasted_screen",
+        "path": "ui/wasted_screen.png",
+        "name": "wasted screen"
+      }
+    ],
+    "characters": [
+      {
+        "id": "characters_spritesheet",
+        "path": "gta_topdown_characters/characters_spritesheet.png",
+        "name": "characters spritesheet"
+      },
+      {
+        "id": "civilians_death",
+        "path": "gta_topdown_characters/civilians/civilians_death.png",
+        "name": "civilians death"
+      },
+      {
+        "id": "civilians_idle",
+        "path": "gta_topdown_characters/civilians/civilians_idle.png",
+        "name": "civilians idle"
+      },
+      {
+        "id": "civilians_punch",
+        "path": "gta_topdown_characters/civilians/civilians_punch.png",
+        "name": "civilians punch"
+      },
+      {
+        "id": "civilians_run",
+        "path": "gta_topdown_characters/civilians/civilians_run.png",
+        "name": "civilians run"
+      },
+      {
+        "id": "civilians_shoot",
+        "path": "gta_topdown_characters/civilians/civilians_shoot.png",
+        "name": "civilians shoot"
+      },
+      {
+        "id": "civilians_walk",
+        "path": "gta_topdown_characters/civilians/civilians_walk.png",
+        "name": "civilians walk"
+      },
+      {
+        "id": "gangs_death",
+        "path": "gta_topdown_characters/gangs/gangs_death.png",
+        "name": "gangs death"
+      },
+      {
+        "id": "gangs_idle",
+        "path": "gta_topdown_characters/gangs/gangs_idle.png",
+        "name": "gangs idle"
+      },
+      {
+        "id": "gangs_punch",
+        "path": "gta_topdown_characters/gangs/gangs_punch.png",
+        "name": "gangs punch"
+      },
+      {
+        "id": "gangs_run",
+        "path": "gta_topdown_characters/gangs/gangs_run.png",
+        "name": "gangs run"
+      },
+      {
+        "id": "gangs_shoot",
+        "path": "gta_topdown_characters/gangs/gangs_shoot.png",
+        "name": "gangs shoot"
+      },
+      {
+        "id": "gangs_walk",
+        "path": "gta_topdown_characters/gangs/gangs_walk.png",
+        "name": "gangs walk"
+      },
+      {
+        "id": "medics_death",
+        "path": "gta_topdown_characters/medics/medics_death.png",
+        "name": "medics death"
+      },
+      {
+        "id": "medics_idle",
+        "path": "gta_topdown_characters/medics/medics_idle.png",
+        "name": "medics idle"
+      },
+      {
+        "id": "medics_punch",
+        "path": "gta_topdown_characters/medics/medics_punch.png",
+        "name": "medics punch"
+      },
+      {
+        "id": "medics_run",
+        "path": "gta_topdown_characters/medics/medics_run.png",
+        "name": "medics run"
+      },
+      {
+        "id": "medics_shoot",
+        "path": "gta_topdown_characters/medics/medics_shoot.png",
+        "name": "medics shoot"
+      },
+      {
+        "id": "medics_walk",
+        "path": "gta_topdown_characters/medics/medics_walk.png",
+        "name": "medics walk"
+      },
+      {
+        "id": "player_death",
+        "path": "gta_topdown_characters/player/player_death.png",
+        "name": "player death"
+      },
+      {
+        "id": "player_idle",
+        "path": "gta_topdown_characters/player/player_idle.png",
+        "name": "player idle"
+      },
+      {
+        "id": "player_punch",
+        "path": "gta_topdown_characters/player/player_punch.png",
+        "name": "player punch"
+      },
+      {
+        "id": "player_run",
+        "path": "gta_topdown_characters/player/player_run.png",
+        "name": "player run"
+      },
+      {
+        "id": "player_shoot",
+        "path": "gta_topdown_characters/player/player_shoot.png",
+        "name": "player shoot"
+      },
+      {
+        "id": "player_walk",
+        "path": "gta_topdown_characters/player/player_walk.png",
+        "name": "player walk"
+      },
+      {
+        "id": "police_death",
+        "path": "gta_topdown_characters/police/police_death.png",
+        "name": "police death"
+      },
+      {
+        "id": "police_idle",
+        "path": "gta_topdown_characters/police/police_idle.png",
+        "name": "police idle"
+      },
+      {
+        "id": "police_punch",
+        "path": "gta_topdown_characters/police/police_punch.png",
+        "name": "police punch"
+      },
+      {
+        "id": "police_run",
+        "path": "gta_topdown_characters/police/police_run.png",
+        "name": "police run"
+      },
+      {
+        "id": "police_shoot",
+        "path": "gta_topdown_characters/police/police_shoot.png",
+        "name": "police shoot"
+      },
+      {
+        "id": "police_walk",
+        "path": "gta_topdown_characters/police/police_walk.png",
+        "name": "police walk"
+      },
+      {
+        "id": "swat_death",
+        "path": "gta_topdown_characters/swat/swat_death.png",
+        "name": "swat death"
+      },
+      {
+        "id": "swat_idle",
+        "path": "gta_topdown_characters/swat/swat_idle.png",
+        "name": "swat idle"
+      },
+      {
+        "id": "swat_punch",
+        "path": "gta_topdown_characters/swat/swat_punch.png",
+        "name": "swat punch"
+      },
+      {
+        "id": "swat_run",
+        "path": "gta_topdown_characters/swat/swat_run.png",
+        "name": "swat run"
+      },
+      {
+        "id": "swat_shoot",
+        "path": "gta_topdown_characters/swat/swat_shoot.png",
+        "name": "swat shoot"
+      },
+      {
+        "id": "swat_walk",
+        "path": "gta_topdown_characters/swat/swat_walk.png",
+        "name": "swat walk"
+      }
+    ],
+    "overlays": [
+      {
+        "id": "blood_stains",
+        "path": "micro_detail_overlays/blood_stains.png",
+        "name": "blood stains"
+      },
+      {
+        "id": "broken_glass",
+        "path": "micro_detail_overlays/broken_glass.png",
+        "name": "broken glass"
+      },
+      {
+        "id": "chewing_gum",
+        "path": "micro_detail_overlays/chewing_gum.png",
+        "name": "chewing gum"
+      },
+      {
+        "id": "cigarette_litter",
+        "path": "micro_detail_overlays/cigarette_litter.png",
+        "name": "cigarette litter"
+      },
+      {
+        "id": "cracks",
+        "path": "micro_detail_overlays/cracks.png",
+        "name": "cracks"
+      },
+      {
+        "id": "leaves",
+        "path": "micro_detail_overlays/leaves.png",
+        "name": "leaves"
+      },
+      {
+        "id": "oil_stains",
+        "path": "micro_detail_overlays/oil_stains.png",
+        "name": "oil stains"
+      },
+      {
+        "id": "paper_trash",
+        "path": "micro_detail_overlays/paper_trash.png",
+        "name": "paper trash"
+      },
+      {
+        "id": "puddles",
+        "path": "micro_detail_overlays/puddles.png",
+        "name": "puddles"
+      },
+      {
+        "id": "sewer_grime",
+        "path": "micro_detail_overlays/sewer_grime.png",
+        "name": "sewer grime"
+      },
+      {
+        "id": "skid_marks",
+        "path": "micro_detail_overlays/skid_marks.png",
+        "name": "skid marks"
+      },
+      {
+        "id": "urban_decals_spritesheet",
+        "path": "micro_detail_overlays/urban_decals_spritesheet.png",
+        "name": "urban decals spritesheet"
+      },
+      {
+        "id": "water_leaks",
+        "path": "micro_detail_overlays/water_leaks.png",
+        "name": "water leaks"
+      }
+    ],
+    "roads": [
+      {
+        "id": "cracked_road",
+        "path": "roads/cracked_road.png",
+        "name": "cracked road"
+      },
+      {
+        "id": "dirty_asphalt",
+        "path": "roads/dirty_asphalt.png",
+        "name": "dirty asphalt"
+      },
+      {
+        "id": "intersection",
+        "path": "roads/intersection.png",
+        "name": "intersection"
+      },
+      {
+        "id": "road_horizontal",
+        "path": "roads/road_horizontal.png",
+        "name": "road horizontal"
+      },
+      {
+        "id": "road_vertical",
+        "path": "roads/road_vertical.png",
+        "name": "road vertical"
+      },
+      {
+        "id": "roads_spritesheet",
+        "path": "roads/roads_spritesheet.png",
+        "name": "roads spritesheet"
+      },
+      {
+        "id": "sewer_drain",
+        "path": "roads/sewer_drain.png",
+        "name": "sewer drain"
+      },
+      {
+        "id": "skidmark_overlay",
+        "path": "roads/skidmark_overlay.png",
+        "name": "skidmark overlay"
+      },
+      {
+        "id": "wet_asphalt",
+        "path": "roads/wet_asphalt.png",
+        "name": "wet asphalt"
+      }
+    ],
+    "effects": [
+      {
+        "id": "blood_splatter_0",
+        "path": "gta_combat_effects/blood_splatter/blood_splatter_0.png",
+        "name": "blood splatter 0"
+      },
+      {
+        "id": "blood_splatter_1",
+        "path": "gta_combat_effects/blood_splatter/blood_splatter_1.png",
+        "name": "blood splatter 1"
+      },
+      {
+        "id": "blood_splatter_2",
+        "path": "gta_combat_effects/blood_splatter/blood_splatter_2.png",
+        "name": "blood splatter 2"
+      },
+      {
+        "id": "blood_splatter_3",
+        "path": "gta_combat_effects/blood_splatter/blood_splatter_3.png",
+        "name": "blood splatter 3"
+      },
+      {
+        "id": "combat_effects_spritesheet",
+        "path": "gta_combat_effects/combat_effects_spritesheet.png",
+        "name": "combat effects spritesheet"
+      },
+      {
+        "id": "explosion_large_0",
+        "path": "gta_combat_effects/explosion_large/explosion_large_0.png",
+        "name": "explosion large 0"
+      },
+      {
+        "id": "explosion_large_1",
+        "path": "gta_combat_effects/explosion_large/explosion_large_1.png",
+        "name": "explosion large 1"
+      },
+      {
+        "id": "explosion_large_2",
+        "path": "gta_combat_effects/explosion_large/explosion_large_2.png",
+        "name": "explosion large 2"
+      },
+      {
+        "id": "explosion_large_3",
+        "path": "gta_combat_effects/explosion_large/explosion_large_3.png",
+        "name": "explosion large 3"
+      },
+      {
+        "id": "explosion_small_0",
+        "path": "gta_combat_effects/explosion_small/explosion_small_0.png",
+        "name": "explosion small 0"
+      },
+      {
+        "id": "explosion_small_1",
+        "path": "gta_combat_effects/explosion_small/explosion_small_1.png",
+        "name": "explosion small 1"
+      },
+      {
+        "id": "explosion_small_2",
+        "path": "gta_combat_effects/explosion_small/explosion_small_2.png",
+        "name": "explosion small 2"
+      },
+      {
+        "id": "explosion_small_3",
+        "path": "gta_combat_effects/explosion_small/explosion_small_3.png",
+        "name": "explosion small 3"
+      },
+      {
+        "id": "fire_0",
+        "path": "gta_combat_effects/fire/fire_0.png",
+        "name": "fire 0"
+      },
+      {
+        "id": "fire_1",
+        "path": "gta_combat_effects/fire/fire_1.png",
+        "name": "fire 1"
+      },
+      {
+        "id": "fire_2",
+        "path": "gta_combat_effects/fire/fire_2.png",
+        "name": "fire 2"
+      },
+      {
+        "id": "fire_3",
+        "path": "gta_combat_effects/fire/fire_3.png",
+        "name": "fire 3"
+      },
+      {
+        "id": "muzzle_flash_0",
+        "path": "gta_combat_effects/muzzle_flash/muzzle_flash_0.png",
+        "name": "muzzle flash 0"
+      },
+      {
+        "id": "muzzle_flash_1",
+        "path": "gta_combat_effects/muzzle_flash/muzzle_flash_1.png",
+        "name": "muzzle flash 1"
+      },
+      {
+        "id": "muzzle_flash_2",
+        "path": "gta_combat_effects/muzzle_flash/muzzle_flash_2.png",
+        "name": "muzzle flash 2"
+      },
+      {
+        "id": "muzzle_flash_3",
+        "path": "gta_combat_effects/muzzle_flash/muzzle_flash_3.png",
+        "name": "muzzle flash 3"
+      },
+      {
+        "id": "smoke_0",
+        "path": "gta_combat_effects/smoke/smoke_0.png",
+        "name": "smoke 0"
+      },
+      {
+        "id": "smoke_1",
+        "path": "gta_combat_effects/smoke/smoke_1.png",
+        "name": "smoke 1"
+      },
+      {
+        "id": "smoke_2",
+        "path": "gta_combat_effects/smoke/smoke_2.png",
+        "name": "smoke 2"
+      },
+      {
+        "id": "smoke_3",
+        "path": "gta_combat_effects/smoke/smoke_3.png",
+        "name": "smoke 3"
+      },
+      {
+        "id": "sparks_0",
+        "path": "gta_combat_effects/sparks/sparks_0.png",
+        "name": "sparks 0"
+      },
+      {
+        "id": "sparks_1",
+        "path": "gta_combat_effects/sparks/sparks_1.png",
+        "name": "sparks 1"
+      },
+      {
+        "id": "sparks_2",
+        "path": "gta_combat_effects/sparks/sparks_2.png",
+        "name": "sparks 2"
+      },
+      {
+        "id": "sparks_3",
+        "path": "gta_combat_effects/sparks/sparks_3.png",
+        "name": "sparks 3"
+      },
+      {
+        "id": "tire_smoke_0",
+        "path": "gta_combat_effects/tire_smoke/tire_smoke_0.png",
+        "name": "tire smoke 0"
+      },
+      {
+        "id": "tire_smoke_1",
+        "path": "gta_combat_effects/tire_smoke/tire_smoke_1.png",
+        "name": "tire smoke 1"
+      },
+      {
+        "id": "tire_smoke_2",
+        "path": "gta_combat_effects/tire_smoke/tire_smoke_2.png",
+        "name": "tire smoke 2"
+      },
+      {
+        "id": "tire_smoke_3",
+        "path": "gta_combat_effects/tire_smoke/tire_smoke_3.png",
+        "name": "tire smoke 3"
+      }
+    ],
+    "base_tiles": [
+      {
+        "id": "alley_dark_plain",
+        "path": "gtagpt_plain_base_tiles/alley_dark_plain.png",
+        "name": "alley dark plain"
+      },
+      {
+        "id": "brick_pavement",
+        "path": "gtagpt_plain_base_tiles/brick_pavement.png",
+        "name": "brick pavement"
+      },
+      {
+        "id": "dark_asphalt",
+        "path": "gtagpt_plain_base_tiles/dark_asphalt.png",
+        "name": "dark asphalt"
+      },
+      {
+        "id": "dark_grass",
+        "path": "gtagpt_plain_base_tiles/dark_grass.png",
+        "name": "dark grass"
+      },
+      {
+        "id": "dry_dirt",
+        "path": "gtagpt_plain_base_tiles/dry_dirt.png",
+        "name": "dry dirt"
+      },
+      {
+        "id": "grass_plain",
+        "path": "gtagpt_plain_base_tiles/grass_plain.png",
+        "name": "grass plain"
+      },
+      {
+        "id": "harbor_ground",
+        "path": "gtagpt_plain_base_tiles/harbor_ground.png",
+        "name": "harbor ground"
+      },
+      {
+        "id": "industrial_concrete",
+        "path": "gtagpt_plain_base_tiles/industrial_concrete.png",
+        "name": "industrial concrete"
+      },
+      {
+        "id": "light_asphalt",
+        "path": "gtagpt_plain_base_tiles/light_asphalt.png",
+        "name": "light asphalt"
+      },
+      {
+        "id": "mud",
+        "path": "gtagpt_plain_base_tiles/mud.png",
+        "name": "mud"
+      },
+      {
+        "id": "park_lawn",
+        "path": "gtagpt_plain_base_tiles/park_lawn.png",
+        "name": "park lawn"
+      },
+      {
+        "id": "plain_asphalt",
+        "path": "gtagpt_plain_base_tiles/plain_asphalt.png",
+        "name": "plain asphalt"
+      },
+      {
+        "id": "plain_base_tiles_spritesheet",
+        "path": "gtagpt_plain_base_tiles/plain_base_tiles_spritesheet.png",
+        "name": "plain base tiles spritesheet"
+      },
+      {
+        "id": "plain_concrete",
+        "path": "gtagpt_plain_base_tiles/plain_concrete.png",
+        "name": "plain concrete"
+      },
+      {
+        "id": "plaza_stone",
+        "path": "gtagpt_plain_base_tiles/plaza_stone.png",
+        "name": "plaza stone"
+      },
+      {
+        "id": "roof_flat_gray",
+        "path": "gtagpt_plain_base_tiles/roof_flat_gray.png",
+        "name": "roof flat gray"
+      },
+      {
+        "id": "roof_flat_red",
+        "path": "gtagpt_plain_base_tiles/roof_flat_red.png",
+        "name": "roof flat red"
+      },
+      {
+        "id": "roof_flat_teal",
+        "path": "gtagpt_plain_base_tiles/roof_flat_teal.png",
+        "name": "roof flat teal"
+      },
+      {
+        "id": "sand",
+        "path": "gtagpt_plain_base_tiles/sand.png",
+        "name": "sand"
+      },
+      {
+        "id": "sidewalk_plain",
+        "path": "gtagpt_plain_base_tiles/sidewalk_plain.png",
+        "name": "sidewalk plain"
+      },
+      {
+        "id": "wet_asphalt_plain",
+        "path": "gtagpt_plain_base_tiles/wet_asphalt_plain.png",
+        "name": "wet asphalt plain"
+      }
+    ],
+    "ambient_life": [
+      {
+        "id": "ambient_life_spritesheet",
+        "path": "gta_ambient_life/ambient_life_spritesheet.png",
+        "name": "ambient life spritesheet"
+      },
+      {
+        "id": "animated_signs_0",
+        "path": "gta_ambient_life/animated_signs/animated_signs_0.png",
+        "name": "animated signs 0"
+      },
+      {
+        "id": "animated_signs_1",
+        "path": "gta_ambient_life/animated_signs/animated_signs_1.png",
+        "name": "animated signs 1"
+      },
+      {
+        "id": "animated_signs_2",
+        "path": "gta_ambient_life/animated_signs/animated_signs_2.png",
+        "name": "animated signs 2"
+      },
+      {
+        "id": "animated_signs_3",
+        "path": "gta_ambient_life/animated_signs/animated_signs_3.png",
+        "name": "animated signs 3"
+      },
+      {
+        "id": "blinking_lights_0",
+        "path": "gta_ambient_life/blinking_lights/blinking_lights_0.png",
+        "name": "blinking lights 0"
+      },
+      {
+        "id": "blinking_lights_1",
+        "path": "gta_ambient_life/blinking_lights/blinking_lights_1.png",
+        "name": "blinking lights 1"
+      },
+      {
+        "id": "blinking_lights_2",
+        "path": "gta_ambient_life/blinking_lights/blinking_lights_2.png",
+        "name": "blinking lights 2"
+      },
+      {
+        "id": "blinking_lights_3",
+        "path": "gta_ambient_life/blinking_lights/blinking_lights_3.png",
+        "name": "blinking lights 3"
+      },
+      {
+        "id": "cats_0",
+        "path": "gta_ambient_life/cats/cats_0.png",
+        "name": "cats 0"
+      },
+      {
+        "id": "cats_1",
+        "path": "gta_ambient_life/cats/cats_1.png",
+        "name": "cats 1"
+      },
+      {
+        "id": "cats_2",
+        "path": "gta_ambient_life/cats/cats_2.png",
+        "name": "cats 2"
+      },
+      {
+        "id": "cats_3",
+        "path": "gta_ambient_life/cats/cats_3.png",
+        "name": "cats 3"
+      },
+      {
+        "id": "flickering_neon_0",
+        "path": "gta_ambient_life/flickering_neon/flickering_neon_0.png",
+        "name": "flickering neon 0"
+      },
+      {
+        "id": "flickering_neon_1",
+        "path": "gta_ambient_life/flickering_neon/flickering_neon_1.png",
+        "name": "flickering neon 1"
+      },
+      {
+        "id": "flickering_neon_2",
+        "path": "gta_ambient_life/flickering_neon/flickering_neon_2.png",
+        "name": "flickering neon 2"
+      },
+      {
+        "id": "flickering_neon_3",
+        "path": "gta_ambient_life/flickering_neon/flickering_neon_3.png",
+        "name": "flickering neon 3"
+      },
+      {
+        "id": "moving_newspapers_0",
+        "path": "gta_ambient_life/moving_newspapers/moving_newspapers_0.png",
+        "name": "moving newspapers 0"
+      },
+      {
+        "id": "moving_newspapers_1",
+        "path": "gta_ambient_life/moving_newspapers/moving_newspapers_1.png",
+        "name": "moving newspapers 1"
+      },
+      {
+        "id": "moving_newspapers_2",
+        "path": "gta_ambient_life/moving_newspapers/moving_newspapers_2.png",
+        "name": "moving newspapers 2"
+      },
+      {
+        "id": "moving_newspapers_3",
+        "path": "gta_ambient_life/moving_newspapers/moving_newspapers_3.png",
+        "name": "moving newspapers 3"
+      },
+      {
+        "id": "pigeons_0",
+        "path": "gta_ambient_life/pigeons/pigeons_0.png",
+        "name": "pigeons 0"
+      },
+      {
+        "id": "pigeons_1",
+        "path": "gta_ambient_life/pigeons/pigeons_1.png",
+        "name": "pigeons 1"
+      },
+      {
+        "id": "pigeons_2",
+        "path": "gta_ambient_life/pigeons/pigeons_2.png",
+        "name": "pigeons 2"
+      },
+      {
+        "id": "pigeons_3",
+        "path": "gta_ambient_life/pigeons/pigeons_3.png",
+        "name": "pigeons 3"
+      },
+      {
+        "id": "rats_0",
+        "path": "gta_ambient_life/rats/rats_0.png",
+        "name": "rats 0"
+      },
+      {
+        "id": "rats_1",
+        "path": "gta_ambient_life/rats/rats_1.png",
+        "name": "rats 1"
+      },
+      {
+        "id": "rats_2",
+        "path": "gta_ambient_life/rats/rats_2.png",
+        "name": "rats 2"
+      },
+      {
+        "id": "rats_3",
+        "path": "gta_ambient_life/rats/rats_3.png",
+        "name": "rats 3"
+      },
+      {
+        "id": "seagulls_0",
+        "path": "gta_ambient_life/seagulls/seagulls_0.png",
+        "name": "seagulls 0"
+      },
+      {
+        "id": "seagulls_1",
+        "path": "gta_ambient_life/seagulls/seagulls_1.png",
+        "name": "seagulls 1"
+      },
+      {
+        "id": "seagulls_2",
+        "path": "gta_ambient_life/seagulls/seagulls_2.png",
+        "name": "seagulls 2"
+      },
+      {
+        "id": "seagulls_3",
+        "path": "gta_ambient_life/seagulls/seagulls_3.png",
+        "name": "seagulls 3"
+      },
+      {
+        "id": "steam_0",
+        "path": "gta_ambient_life/steam/steam_0.png",
+        "name": "steam 0"
+      },
+      {
+        "id": "steam_1",
+        "path": "gta_ambient_life/steam/steam_1.png",
+        "name": "steam 1"
+      },
+      {
+        "id": "steam_2",
+        "path": "gta_ambient_life/steam/steam_2.png",
+        "name": "steam 2"
+      },
+      {
+        "id": "steam_3",
+        "path": "gta_ambient_life/steam/steam_3.png",
+        "name": "steam 3"
+      },
+      {
+        "id": "stray_dogs_0",
+        "path": "gta_ambient_life/stray_dogs/stray_dogs_0.png",
+        "name": "stray dogs 0"
+      },
+      {
+        "id": "stray_dogs_1",
+        "path": "gta_ambient_life/stray_dogs/stray_dogs_1.png",
+        "name": "stray dogs 1"
+      },
+      {
+        "id": "stray_dogs_2",
+        "path": "gta_ambient_life/stray_dogs/stray_dogs_2.png",
+        "name": "stray dogs 2"
+      },
+      {
+        "id": "stray_dogs_3",
+        "path": "gta_ambient_life/stray_dogs/stray_dogs_3.png",
+        "name": "stray dogs 3"
+      }
+    ],
+    "vehicles": [
+      {
+        "id": "ambulance_burned",
+        "path": "vehicles/ambulance/ambulance_burned.png",
+        "name": "ambulance burned"
+      },
+      {
+        "id": "ambulance_clean",
+        "path": "vehicles/ambulance/ambulance_clean.png",
+        "name": "ambulance clean"
+      },
+      {
+        "id": "ambulance_damaged",
+        "path": "vehicles/ambulance/ambulance_damaged.png",
+        "name": "ambulance damaged"
+      },
+      {
+        "id": "ambulance_destroyed",
+        "path": "vehicles/ambulance/ambulance_destroyed.png",
+        "name": "ambulance destroyed"
+      },
+      {
+        "id": "bus_burned",
+        "path": "vehicles/bus/bus_burned.png",
+        "name": "bus burned"
+      },
+      {
+        "id": "bus_clean",
+        "path": "vehicles/bus/bus_clean.png",
+        "name": "bus clean"
+      },
+      {
+        "id": "bus_damaged",
+        "path": "vehicles/bus/bus_damaged.png",
+        "name": "bus damaged"
+      },
+      {
+        "id": "bus_destroyed",
+        "path": "vehicles/bus/bus_destroyed.png",
+        "name": "bus destroyed"
+      },
+      {
+        "id": "helicopter_burned",
+        "path": "vehicles/helicopter/helicopter_burned.png",
+        "name": "helicopter burned"
+      },
+      {
+        "id": "helicopter_clean",
+        "path": "vehicles/helicopter/helicopter_clean.png",
+        "name": "helicopter clean"
+      },
+      {
+        "id": "helicopter_damaged",
+        "path": "vehicles/helicopter/helicopter_damaged.png",
+        "name": "helicopter damaged"
+      },
+      {
+        "id": "helicopter_destroyed",
+        "path": "vehicles/helicopter/helicopter_destroyed.png",
+        "name": "helicopter destroyed"
+      },
+      {
+        "id": "motorcycle_burned",
+        "path": "vehicles/motorcycle/motorcycle_burned.png",
+        "name": "motorcycle burned"
+      },
+      {
+        "id": "motorcycle_clean",
+        "path": "vehicles/motorcycle/motorcycle_clean.png",
+        "name": "motorcycle clean"
+      },
+      {
+        "id": "motorcycle_damaged",
+        "path": "vehicles/motorcycle/motorcycle_damaged.png",
+        "name": "motorcycle damaged"
+      },
+      {
+        "id": "motorcycle_destroyed",
+        "path": "vehicles/motorcycle/motorcycle_destroyed.png",
+        "name": "motorcycle destroyed"
+      },
+      {
+        "id": "police_car_burned",
+        "path": "vehicles/police_car/police_car_burned.png",
+        "name": "police car burned"
+      },
+      {
+        "id": "police_car_clean",
+        "path": "vehicles/police_car/police_car_clean.png",
+        "name": "police car clean"
+      },
+      {
+        "id": "police_car_damaged",
+        "path": "vehicles/police_car/police_car_damaged.png",
+        "name": "police car damaged"
+      },
+      {
+        "id": "police_car_destroyed",
+        "path": "vehicles/police_car/police_car_destroyed.png",
+        "name": "police car destroyed"
+      },
+      {
+        "id": "sedan_burned",
+        "path": "vehicles/sedan/sedan_burned.png",
+        "name": "sedan burned"
+      },
+      {
+        "id": "sedan_clean",
+        "path": "vehicles/sedan/sedan_clean.png",
+        "name": "sedan clean"
+      },
+      {
+        "id": "sedan_damaged",
+        "path": "vehicles/sedan/sedan_damaged.png",
+        "name": "sedan damaged"
+      },
+      {
+        "id": "sedan_destroyed",
+        "path": "vehicles/sedan/sedan_destroyed.png",
+        "name": "sedan destroyed"
+      },
+      {
+        "id": "taxi_burned",
+        "path": "vehicles/taxi/taxi_burned.png",
+        "name": "taxi burned"
+      },
+      {
+        "id": "taxi_clean",
+        "path": "vehicles/taxi/taxi_clean.png",
+        "name": "taxi clean"
+      },
+      {
+        "id": "taxi_damaged",
+        "path": "vehicles/taxi/taxi_damaged.png",
+        "name": "taxi damaged"
+      },
+      {
+        "id": "taxi_destroyed",
+        "path": "vehicles/taxi/taxi_destroyed.png",
+        "name": "taxi destroyed"
+      },
+      {
+        "id": "van_burned",
+        "path": "vehicles/van/van_burned.png",
+        "name": "van burned"
+      },
+      {
+        "id": "van_clean",
+        "path": "vehicles/van/van_clean.png",
+        "name": "van clean"
+      },
+      {
+        "id": "van_damaged",
+        "path": "vehicles/van/van_damaged.png",
+        "name": "van damaged"
+      },
+      {
+        "id": "van_destroyed",
+        "path": "vehicles/van/van_destroyed.png",
+        "name": "van destroyed"
+      }
+    ],
+    "buildings": [
+      {
+        "id": "building_edges_spritesheet",
+        "path": "buildings/building_edges/building_edges_spritesheet.png",
+        "name": "building edges spritesheet"
+      },
+      {
+        "id": "corner_inner_bl",
+        "path": "buildings/building_edges/corner_inner_bl.png",
+        "name": "corner inner bl"
+      },
+      {
+        "id": "corner_inner_br",
+        "path": "buildings/building_edges/corner_inner_br.png",
+        "name": "corner inner br"
+      },
+      {
+        "id": "corner_inner_tl",
+        "path": "buildings/building_edges/corner_inner_tl.png",
+        "name": "corner inner tl"
+      },
+      {
+        "id": "corner_inner_tr",
+        "path": "buildings/building_edges/corner_inner_tr.png",
+        "name": "corner inner tr"
+      },
+      {
+        "id": "corner_outer_bl",
+        "path": "buildings/building_edges/corner_outer_bl.png",
+        "name": "corner outer bl"
+      },
+      {
+        "id": "corner_outer_br",
+        "path": "buildings/building_edges/corner_outer_br.png",
+        "name": "corner outer br"
+      },
+      {
+        "id": "corner_outer_tl",
+        "path": "buildings/building_edges/corner_outer_tl.png",
+        "name": "corner outer tl"
+      },
+      {
+        "id": "corner_outer_tr",
+        "path": "buildings/building_edges/corner_outer_tr.png",
+        "name": "corner outer tr"
+      },
+      {
+        "id": "entrance_shadow_large",
+        "path": "buildings/building_edges/entrance_shadow_large.png",
+        "name": "entrance shadow large"
+      },
+      {
+        "id": "entrance_shadow_small",
+        "path": "buildings/building_edges/entrance_shadow_small.png",
+        "name": "entrance shadow small"
+      },
+      {
+        "id": "roof_lip_shadow_h",
+        "path": "buildings/building_edges/roof_lip_shadow_h.png",
+        "name": "roof lip shadow h"
+      },
+      {
+        "id": "roof_lip_shadow_v",
+        "path": "buildings/building_edges/roof_lip_shadow_v.png",
+        "name": "roof lip shadow v"
+      },
+      {
+        "id": "shadow_gradient_h",
+        "path": "buildings/building_edges/shadow_gradient_h.png",
+        "name": "shadow gradient h"
+      },
+      {
+        "id": "shadow_gradient_v",
+        "path": "buildings/building_edges/shadow_gradient_v.png",
+        "name": "shadow gradient v"
+      },
+      {
+        "id": "wall_edge_horizontal",
+        "path": "buildings/building_edges/wall_edge_horizontal.png",
+        "name": "wall edge horizontal"
+      },
+      {
+        "id": "wall_edge_vertical",
+        "path": "buildings/building_edges/wall_edge_vertical.png",
+        "name": "wall edge vertical"
+      },
+      {
+        "id": "dirty_roof_128x128",
+        "path": "buildings/roof_types/chunks/dirty_roof_128x128.png",
+        "name": "dirty roof 128x128"
+      },
+      {
+        "id": "gravel_roof_128x128",
+        "path": "buildings/roof_types/chunks/gravel_roof_128x128.png",
+        "name": "gravel roof 128x128"
+      },
+      {
+        "id": "industrial_roof_128x128",
+        "path": "buildings/roof_types/chunks/industrial_roof_128x128.png",
+        "name": "industrial roof 128x128"
+      },
+      {
+        "id": "luxury_roof_128x128",
+        "path": "buildings/roof_types/chunks/luxury_roof_128x128.png",
+        "name": "luxury roof 128x128"
+      },
+      {
+        "id": "rooftop_ac_128x128",
+        "path": "buildings/roof_types/chunks/rooftop_ac_128x128.png",
+        "name": "rooftop ac 128x128"
+      },
+      {
+        "id": "rooftop_clutter_128x128",
+        "path": "buildings/roof_types/chunks/rooftop_clutter_128x128.png",
+        "name": "rooftop clutter 128x128"
+      },
+      {
+        "id": "skylight_layout_128x128",
+        "path": "buildings/roof_types/chunks/skylight_layout_128x128.png",
+        "name": "skylight layout 128x128"
+      },
+      {
+        "id": "tar_roof_128x128",
+        "path": "buildings/roof_types/chunks/tar_roof_128x128.png",
+        "name": "tar roof 128x128"
+      },
+      {
+        "id": "dirty_roof",
+        "path": "buildings/roof_types/tiles/dirty_roof.png",
+        "name": "dirty roof"
+      },
+      {
+        "id": "gravel_roof",
+        "path": "buildings/roof_types/tiles/gravel_roof.png",
+        "name": "gravel roof"
+      },
+      {
+        "id": "industrial_roof",
+        "path": "buildings/roof_types/tiles/industrial_roof.png",
+        "name": "industrial roof"
+      },
+      {
+        "id": "luxury_roof",
+        "path": "buildings/roof_types/tiles/luxury_roof.png",
+        "name": "luxury roof"
+      },
+      {
+        "id": "rooftop_ac",
+        "path": "buildings/roof_types/tiles/rooftop_ac.png",
+        "name": "rooftop ac"
+      },
+      {
+        "id": "rooftop_clutter",
+        "path": "buildings/roof_types/tiles/rooftop_clutter.png",
+        "name": "rooftop clutter"
+      },
+      {
+        "id": "skylight_layout",
+        "path": "buildings/roof_types/tiles/skylight_layout.png",
+        "name": "skylight layout"
+      },
+      {
+        "id": "tar_roof",
+        "path": "buildings/roof_types/tiles/tar_roof.png",
+        "name": "tar roof"
+      },
+      {
+        "id": "arcade_closed",
+        "path": "buildings/storefronts/arcade/arcade_closed.png",
+        "name": "arcade closed"
+      },
+      {
+        "id": "arcade_damaged",
+        "path": "buildings/storefronts/arcade/arcade_damaged.png",
+        "name": "arcade damaged"
+      },
+      {
+        "id": "arcade_open",
+        "path": "buildings/storefronts/arcade/arcade_open.png",
+        "name": "arcade open"
+      },
+      {
+        "id": "convenience_store_closed",
+        "path": "buildings/storefronts/convenience_store/convenience_store_closed.png",
+        "name": "convenience store closed"
+      },
+      {
+        "id": "convenience_store_damaged",
+        "path": "buildings/storefronts/convenience_store/convenience_store_damaged.png",
+        "name": "convenience store damaged"
+      },
+      {
+        "id": "convenience_store_open",
+        "path": "buildings/storefronts/convenience_store/convenience_store_open.png",
+        "name": "convenience store open"
+      },
+      {
+        "id": "diner_closed",
+        "path": "buildings/storefronts/diner/diner_closed.png",
+        "name": "diner closed"
+      },
+      {
+        "id": "diner_damaged",
+        "path": "buildings/storefronts/diner/diner_damaged.png",
+        "name": "diner damaged"
+      },
+      {
+        "id": "diner_open",
+        "path": "buildings/storefronts/diner/diner_open.png",
+        "name": "diner open"
+      },
+      {
+        "id": "gun_shop_closed",
+        "path": "buildings/storefronts/gun_shop/gun_shop_closed.png",
+        "name": "gun shop closed"
+      },
+      {
+        "id": "gun_shop_damaged",
+        "path": "buildings/storefronts/gun_shop/gun_shop_damaged.png",
+        "name": "gun shop damaged"
+      },
+      {
+        "id": "gun_shop_open",
+        "path": "buildings/storefronts/gun_shop/gun_shop_open.png",
+        "name": "gun shop open"
+      },
+      {
+        "id": "laundromat_closed",
+        "path": "buildings/storefronts/laundromat/laundromat_closed.png",
+        "name": "laundromat closed"
+      },
+      {
+        "id": "laundromat_damaged",
+        "path": "buildings/storefronts/laundromat/laundromat_damaged.png",
+        "name": "laundromat damaged"
+      },
+      {
+        "id": "laundromat_open",
+        "path": "buildings/storefronts/laundromat/laundromat_open.png",
+        "name": "laundromat open"
+      },
+      {
+        "id": "liquor_store_closed",
+        "path": "buildings/storefronts/liquor_store/liquor_store_closed.png",
+        "name": "liquor store closed"
+      },
+      {
+        "id": "liquor_store_damaged",
+        "path": "buildings/storefronts/liquor_store/liquor_store_damaged.png",
+        "name": "liquor store damaged"
+      },
+      {
+        "id": "liquor_store_open",
+        "path": "buildings/storefronts/liquor_store/liquor_store_open.png",
+        "name": "liquor store open"
+      },
+      {
+        "id": "pawn_shop_closed",
+        "path": "buildings/storefronts/pawn_shop/pawn_shop_closed.png",
+        "name": "pawn shop closed"
+      },
+      {
+        "id": "pawn_shop_damaged",
+        "path": "buildings/storefronts/pawn_shop/pawn_shop_damaged.png",
+        "name": "pawn shop damaged"
+      },
+      {
+        "id": "pawn_shop_open",
+        "path": "buildings/storefronts/pawn_shop/pawn_shop_open.png",
+        "name": "pawn shop open"
+      },
+      {
+        "id": "pizza_shop_closed",
+        "path": "buildings/storefronts/pizza_shop/pizza_shop_closed.png",
+        "name": "pizza shop closed"
+      },
+      {
+        "id": "pizza_shop_damaged",
+        "path": "buildings/storefronts/pizza_shop/pizza_shop_damaged.png",
+        "name": "pizza shop damaged"
+      },
+      {
+        "id": "pizza_shop_open",
+        "path": "buildings/storefronts/pizza_shop/pizza_shop_open.png",
+        "name": "pizza shop open"
+      },
+      {
+        "id": "storefronts_spritesheet",
+        "path": "buildings/storefronts/storefronts_spritesheet.png",
+        "name": "storefronts spritesheet"
+      },
+      {
+        "id": "tattoo_parlor_closed",
+        "path": "buildings/storefronts/tattoo_parlor/tattoo_parlor_closed.png",
+        "name": "tattoo parlor closed"
+      },
+      {
+        "id": "tattoo_parlor_damaged",
+        "path": "buildings/storefronts/tattoo_parlor/tattoo_parlor_damaged.png",
+        "name": "tattoo parlor damaged"
+      },
+      {
+        "id": "tattoo_parlor_open",
+        "path": "buildings/storefronts/tattoo_parlor/tattoo_parlor_open.png",
+        "name": "tattoo parlor open"
+      },
+      {
+        "id": "apartment_window_clean",
+        "path": "buildings/window_system/apartment_window/apartment_window_clean.png",
+        "name": "apartment window clean"
+      },
+      {
+        "id": "apartment_window_damaged",
+        "path": "buildings/window_system/apartment_window/apartment_window_damaged.png",
+        "name": "apartment window damaged"
+      },
+      {
+        "id": "apartment_window_dirty",
+        "path": "buildings/window_system/apartment_window/apartment_window_dirty.png",
+        "name": "apartment window dirty"
+      },
+      {
+        "id": "apartment_window_wet",
+        "path": "buildings/window_system/apartment_window/apartment_window_wet.png",
+        "name": "apartment window wet"
+      },
+      {
+        "id": "barred_window_clean",
+        "path": "buildings/window_system/barred_window/barred_window_clean.png",
+        "name": "barred window clean"
+      },
+      {
+        "id": "barred_window_damaged",
+        "path": "buildings/window_system/barred_window/barred_window_damaged.png",
+        "name": "barred window damaged"
+      },
+      {
+        "id": "barred_window_dirty",
+        "path": "buildings/window_system/barred_window/barred_window_dirty.png",
+        "name": "barred window dirty"
+      },
+      {
+        "id": "barred_window_wet",
+        "path": "buildings/window_system/barred_window/barred_window_wet.png",
+        "name": "barred window wet"
+      },
+      {
+        "id": "broken_window_clean",
+        "path": "buildings/window_system/broken_window/broken_window_clean.png",
+        "name": "broken window clean"
+      },
+      {
+        "id": "broken_window_damaged",
+        "path": "buildings/window_system/broken_window/broken_window_damaged.png",
+        "name": "broken window damaged"
+      },
+      {
+        "id": "broken_window_dirty",
+        "path": "buildings/window_system/broken_window/broken_window_dirty.png",
+        "name": "broken window dirty"
+      },
+      {
+        "id": "broken_window_wet",
+        "path": "buildings/window_system/broken_window/broken_window_wet.png",
+        "name": "broken window wet"
+      },
+      {
+        "id": "dark_window_clean",
+        "path": "buildings/window_system/dark_window/dark_window_clean.png",
+        "name": "dark window clean"
+      },
+      {
+        "id": "dark_window_damaged",
+        "path": "buildings/window_system/dark_window/dark_window_damaged.png",
+        "name": "dark window damaged"
+      },
+      {
+        "id": "dark_window_dirty",
+        "path": "buildings/window_system/dark_window/dark_window_dirty.png",
+        "name": "dark window dirty"
+      },
+      {
+        "id": "dark_window_wet",
+        "path": "buildings/window_system/dark_window/dark_window_wet.png",
+        "name": "dark window wet"
+      },
+      {
+        "id": "lit_window_clean",
+        "path": "buildings/window_system/lit_window/lit_window_clean.png",
+        "name": "lit window clean"
+      },
+      {
+        "id": "lit_window_damaged",
+        "path": "buildings/window_system/lit_window/lit_window_damaged.png",
+        "name": "lit window damaged"
+      },
+      {
+        "id": "lit_window_dirty",
+        "path": "buildings/window_system/lit_window/lit_window_dirty.png",
+        "name": "lit window dirty"
+      },
+      {
+        "id": "lit_window_wet",
+        "path": "buildings/window_system/lit_window/lit_window_wet.png",
+        "name": "lit window wet"
+      },
+      {
+        "id": "neon_window_clean",
+        "path": "buildings/window_system/neon_window/neon_window_clean.png",
+        "name": "neon window clean"
+      },
+      {
+        "id": "neon_window_damaged",
+        "path": "buildings/window_system/neon_window/neon_window_damaged.png",
+        "name": "neon window damaged"
+      },
+      {
+        "id": "neon_window_dirty",
+        "path": "buildings/window_system/neon_window/neon_window_dirty.png",
+        "name": "neon window dirty"
+      },
+      {
+        "id": "neon_window_wet",
+        "path": "buildings/window_system/neon_window/neon_window_wet.png",
+        "name": "neon window wet"
+      },
+      {
+        "id": "office_window_clean",
+        "path": "buildings/window_system/office_window/office_window_clean.png",
+        "name": "office window clean"
+      },
+      {
+        "id": "office_window_damaged",
+        "path": "buildings/window_system/office_window/office_window_damaged.png",
+        "name": "office window damaged"
+      },
+      {
+        "id": "office_window_dirty",
+        "path": "buildings/window_system/office_window/office_window_dirty.png",
+        "name": "office window dirty"
+      },
+      {
+        "id": "office_window_wet",
+        "path": "buildings/window_system/office_window/office_window_wet.png",
+        "name": "office window wet"
+      },
+      {
+        "id": "window_system_spritesheet",
+        "path": "buildings/window_system/window_system_spritesheet.png",
+        "name": "window system spritesheet"
+      }
+    ],
+    "industrial": [
+      {
+        "id": "electrical_box_clean",
+        "path": "environmental_props/gta_industrial_props/32x32/electrical_box_clean.png",
+        "name": "electrical box clean"
+      },
+      {
+        "id": "electrical_box_damaged",
+        "path": "environmental_props/gta_industrial_props/32x32/electrical_box_damaged.png",
+        "name": "electrical box damaged"
+      },
+      {
+        "id": "electrical_box_oil",
+        "path": "environmental_props/gta_industrial_props/32x32/electrical_box_oil.png",
+        "name": "electrical box oil"
+      },
+      {
+        "id": "electrical_box_rust",
+        "path": "environmental_props/gta_industrial_props/32x32/electrical_box_rust.png",
+        "name": "electrical box rust"
+      },
+      {
+        "id": "forklift_clean",
+        "path": "environmental_props/gta_industrial_props/32x32/forklift_clean.png",
+        "name": "forklift clean"
+      },
+      {
+        "id": "forklift_damaged",
+        "path": "environmental_props/gta_industrial_props/32x32/forklift_damaged.png",
+        "name": "forklift damaged"
+      },
+      {
+        "id": "forklift_oil",
+        "path": "environmental_props/gta_industrial_props/32x32/forklift_oil.png",
+        "name": "forklift oil"
+      },
+      {
+        "id": "forklift_rust",
+        "path": "environmental_props/gta_industrial_props/32x32/forklift_rust.png",
+        "name": "forklift rust"
+      },
+      {
+        "id": "industrial_fan_clean",
+        "path": "environmental_props/gta_industrial_props/32x32/industrial_fan_clean.png",
+        "name": "industrial fan clean"
+      },
+      {
+        "id": "industrial_fan_damaged",
+        "path": "environmental_props/gta_industrial_props/32x32/industrial_fan_damaged.png",
+        "name": "industrial fan damaged"
+      },
+      {
+        "id": "industrial_fan_oil",
+        "path": "environmental_props/gta_industrial_props/32x32/industrial_fan_oil.png",
+        "name": "industrial fan oil"
+      },
+      {
+        "id": "industrial_fan_rust",
+        "path": "environmental_props/gta_industrial_props/32x32/industrial_fan_rust.png",
+        "name": "industrial fan rust"
+      },
+      {
+        "id": "industrial_pipe_clean",
+        "path": "environmental_props/gta_industrial_props/32x32/industrial_pipe_clean.png",
+        "name": "industrial pipe clean"
+      },
+      {
+        "id": "industrial_pipe_damaged",
+        "path": "environmental_props/gta_industrial_props/32x32/industrial_pipe_damaged.png",
+        "name": "industrial pipe damaged"
+      },
+      {
+        "id": "industrial_pipe_oil",
+        "path": "environmental_props/gta_industrial_props/32x32/industrial_pipe_oil.png",
+        "name": "industrial pipe oil"
+      },
+      {
+        "id": "industrial_pipe_rust",
+        "path": "environmental_props/gta_industrial_props/32x32/industrial_pipe_rust.png",
+        "name": "industrial pipe rust"
+      },
+      {
+        "id": "steam_vent_clean",
+        "path": "environmental_props/gta_industrial_props/32x32/steam_vent_clean.png",
+        "name": "steam vent clean"
+      },
+      {
+        "id": "steam_vent_damaged",
+        "path": "environmental_props/gta_industrial_props/32x32/steam_vent_damaged.png",
+        "name": "steam vent damaged"
+      },
+      {
+        "id": "steam_vent_oil",
+        "path": "environmental_props/gta_industrial_props/32x32/steam_vent_oil.png",
+        "name": "steam vent oil"
+      },
+      {
+        "id": "steam_vent_rust",
+        "path": "environmental_props/gta_industrial_props/32x32/steam_vent_rust.png",
+        "name": "steam vent rust"
+      },
+      {
+        "id": "transformer_clean",
+        "path": "environmental_props/gta_industrial_props/32x32/transformer_clean.png",
+        "name": "transformer clean"
+      },
+      {
+        "id": "transformer_damaged",
+        "path": "environmental_props/gta_industrial_props/32x32/transformer_damaged.png",
+        "name": "transformer damaged"
+      },
+      {
+        "id": "transformer_oil",
+        "path": "environmental_props/gta_industrial_props/32x32/transformer_oil.png",
+        "name": "transformer oil"
+      },
+      {
+        "id": "transformer_rust",
+        "path": "environmental_props/gta_industrial_props/32x32/transformer_rust.png",
+        "name": "transformer rust"
+      },
+      {
+        "id": "warning_barrier_clean",
+        "path": "environmental_props/gta_industrial_props/32x32/warning_barrier_clean.png",
+        "name": "warning barrier clean"
+      },
+      {
+        "id": "warning_barrier_damaged",
+        "path": "environmental_props/gta_industrial_props/32x32/warning_barrier_damaged.png",
+        "name": "warning barrier damaged"
+      },
+      {
+        "id": "warning_barrier_oil",
+        "path": "environmental_props/gta_industrial_props/32x32/warning_barrier_oil.png",
+        "name": "warning barrier oil"
+      },
+      {
+        "id": "warning_barrier_rust",
+        "path": "environmental_props/gta_industrial_props/32x32/warning_barrier_rust.png",
+        "name": "warning barrier rust"
+      },
+      {
+        "id": "chainlink_fencing_clean",
+        "path": "environmental_props/gta_industrial_props/64x64/chainlink_fencing_clean.png",
+        "name": "chainlink fencing clean"
+      },
+      {
+        "id": "chainlink_fencing_damaged",
+        "path": "environmental_props/gta_industrial_props/64x64/chainlink_fencing_damaged.png",
+        "name": "chainlink fencing damaged"
+      },
+      {
+        "id": "chainlink_fencing_oil",
+        "path": "environmental_props/gta_industrial_props/64x64/chainlink_fencing_oil.png",
+        "name": "chainlink fencing oil"
+      },
+      {
+        "id": "chainlink_fencing_rust",
+        "path": "environmental_props/gta_industrial_props/64x64/chainlink_fencing_rust.png",
+        "name": "chainlink fencing rust"
+      },
+      {
+        "id": "fuel_tank_clean",
+        "path": "environmental_props/gta_industrial_props/64x64/fuel_tank_clean.png",
+        "name": "fuel tank clean"
+      },
+      {
+        "id": "fuel_tank_damaged",
+        "path": "environmental_props/gta_industrial_props/64x64/fuel_tank_damaged.png",
+        "name": "fuel tank damaged"
+      },
+      {
+        "id": "fuel_tank_oil",
+        "path": "environmental_props/gta_industrial_props/64x64/fuel_tank_oil.png",
+        "name": "fuel tank oil"
+      },
+      {
+        "id": "fuel_tank_rust",
+        "path": "environmental_props/gta_industrial_props/64x64/fuel_tank_rust.png",
+        "name": "fuel tank rust"
+      },
+      {
+        "id": "loading_dock_clean",
+        "path": "environmental_props/gta_industrial_props/64x64/loading_dock_clean.png",
+        "name": "loading dock clean"
+      },
+      {
+        "id": "loading_dock_damaged",
+        "path": "environmental_props/gta_industrial_props/64x64/loading_dock_damaged.png",
+        "name": "loading dock damaged"
+      },
+      {
+        "id": "loading_dock_oil",
+        "path": "environmental_props/gta_industrial_props/64x64/loading_dock_oil.png",
+        "name": "loading dock oil"
+      },
+      {
+        "id": "loading_dock_rust",
+        "path": "environmental_props/gta_industrial_props/64x64/loading_dock_rust.png",
+        "name": "loading dock rust"
+      },
+      {
+        "id": "shipping_container_clean",
+        "path": "environmental_props/gta_industrial_props/64x64/shipping_container_clean.png",
+        "name": "shipping container clean"
+      },
+      {
+        "id": "shipping_container_damaged",
+        "path": "environmental_props/gta_industrial_props/64x64/shipping_container_damaged.png",
+        "name": "shipping container damaged"
+      },
+      {
+        "id": "shipping_container_oil",
+        "path": "environmental_props/gta_industrial_props/64x64/shipping_container_oil.png",
+        "name": "shipping container oil"
+      },
+      {
+        "id": "shipping_container_rust",
+        "path": "environmental_props/gta_industrial_props/64x64/shipping_container_rust.png",
+        "name": "shipping container rust"
+      },
+      {
+        "id": "train_crates_clean",
+        "path": "environmental_props/gta_industrial_props/64x64/train_crates_clean.png",
+        "name": "train crates clean"
+      },
+      {
+        "id": "train_crates_damaged",
+        "path": "environmental_props/gta_industrial_props/64x64/train_crates_damaged.png",
+        "name": "train crates damaged"
+      },
+      {
+        "id": "train_crates_oil",
+        "path": "environmental_props/gta_industrial_props/64x64/train_crates_oil.png",
+        "name": "train crates oil"
+      },
+      {
+        "id": "train_crates_rust",
+        "path": "environmental_props/gta_industrial_props/64x64/train_crates_rust.png",
+        "name": "train crates rust"
+      },
+      {
+        "id": "warehouse_shelves_clean",
+        "path": "environmental_props/gta_industrial_props/64x64/warehouse_shelves_clean.png",
+        "name": "warehouse shelves clean"
+      },
+      {
+        "id": "warehouse_shelves_damaged",
+        "path": "environmental_props/gta_industrial_props/64x64/warehouse_shelves_damaged.png",
+        "name": "warehouse shelves damaged"
+      },
+      {
+        "id": "warehouse_shelves_oil",
+        "path": "environmental_props/gta_industrial_props/64x64/warehouse_shelves_oil.png",
+        "name": "warehouse shelves oil"
+      },
+      {
+        "id": "warehouse_shelves_rust",
+        "path": "environmental_props/gta_industrial_props/64x64/warehouse_shelves_rust.png",
+        "name": "warehouse shelves rust"
+      },
+      {
+        "id": "industrial_32_spritesheet",
+        "path": "environmental_props/gta_industrial_props/industrial_32_spritesheet.png",
+        "name": "industrial 32 spritesheet"
+      },
+      {
+        "id": "industrial_64_spritesheet",
+        "path": "environmental_props/gta_industrial_props/industrial_64_spritesheet.png",
+        "name": "industrial 64 spritesheet"
+      }
+    ],
+    "props": [
+      {
+        "id": "air_conditioner_clean",
+        "path": "environmental_props/gta_rooftop_detail_props/air_conditioner/air_conditioner_clean.png",
+        "name": "air conditioner clean"
+      },
+      {
+        "id": "air_conditioner_damaged",
+        "path": "environmental_props/gta_rooftop_detail_props/air_conditioner/air_conditioner_damaged.png",
+        "name": "air conditioner damaged"
+      },
+      {
+        "id": "antenna_tower_clean",
+        "path": "environmental_props/gta_rooftop_detail_props/antenna_tower/antenna_tower_clean.png",
+        "name": "antenna tower clean"
+      },
+      {
+        "id": "antenna_tower_damaged",
+        "path": "environmental_props/gta_rooftop_detail_props/antenna_tower/antenna_tower_damaged.png",
+        "name": "antenna tower damaged"
+      },
+      {
+        "id": "duct_clean",
+        "path": "environmental_props/gta_rooftop_detail_props/duct/duct_clean.png",
+        "name": "duct clean"
+      },
+      {
+        "id": "duct_damaged",
+        "path": "environmental_props/gta_rooftop_detail_props/duct/duct_damaged.png",
+        "name": "duct damaged"
+      },
+      {
+        "id": "ladder_clean",
+        "path": "environmental_props/gta_rooftop_detail_props/ladder/ladder_clean.png",
+        "name": "ladder clean"
+      },
+      {
+        "id": "ladder_damaged",
+        "path": "environmental_props/gta_rooftop_detail_props/ladder/ladder_damaged.png",
+        "name": "ladder damaged"
+      },
+      {
+        "id": "maintenance_shed_clean",
+        "path": "environmental_props/gta_rooftop_detail_props/maintenance_shed/maintenance_shed_clean.png",
+        "name": "maintenance shed clean"
+      },
+      {
+        "id": "maintenance_shed_damaged",
+        "path": "environmental_props/gta_rooftop_detail_props/maintenance_shed/maintenance_shed_damaged.png",
+        "name": "maintenance shed damaged"
+      },
+      {
+        "id": "rooftop_billboard_clean",
+        "path": "environmental_props/gta_rooftop_detail_props/rooftop_billboard/rooftop_billboard_clean.png",
+        "name": "rooftop billboard clean"
+      },
+      {
+        "id": "rooftop_billboard_damaged",
+        "path": "environmental_props/gta_rooftop_detail_props/rooftop_billboard/rooftop_billboard_damaged.png",
+        "name": "rooftop billboard damaged"
+      },
+      {
+        "id": "rooftop_detail_props_spritesheet",
+        "path": "environmental_props/gta_rooftop_detail_props/rooftop_detail_props_spritesheet.png",
+        "name": "rooftop detail props spritesheet"
+      },
+      {
+        "id": "rooftop_fence_clean",
+        "path": "environmental_props/gta_rooftop_detail_props/rooftop_fence/rooftop_fence_clean.png",
+        "name": "rooftop fence clean"
+      },
+      {
+        "id": "rooftop_fence_damaged",
+        "path": "environmental_props/gta_rooftop_detail_props/rooftop_fence/rooftop_fence_damaged.png",
+        "name": "rooftop fence damaged"
+      },
+      {
+        "id": "rooftop_water_tower_clean",
+        "path": "environmental_props/gta_rooftop_detail_props/rooftop_water_tower/rooftop_water_tower_clean.png",
+        "name": "rooftop water tower clean"
+      },
+      {
+        "id": "rooftop_water_tower_damaged",
+        "path": "environmental_props/gta_rooftop_detail_props/rooftop_water_tower/rooftop_water_tower_damaged.png",
+        "name": "rooftop water tower damaged"
+      },
+      {
+        "id": "satellite_dish_clean",
+        "path": "environmental_props/gta_rooftop_detail_props/satellite_dish/satellite_dish_clean.png",
+        "name": "satellite dish clean"
+      },
+      {
+        "id": "satellite_dish_damaged",
+        "path": "environmental_props/gta_rooftop_detail_props/satellite_dish/satellite_dish_damaged.png",
+        "name": "satellite dish damaged"
+      },
+      {
+        "id": "skylight_clean",
+        "path": "environmental_props/gta_rooftop_detail_props/skylight/skylight_clean.png",
+        "name": "skylight clean"
+      },
+      {
+        "id": "skylight_damaged",
+        "path": "environmental_props/gta_rooftop_detail_props/skylight/skylight_damaged.png",
+        "name": "skylight damaged"
+      },
+      {
+        "id": "vent_clean",
+        "path": "environmental_props/gta_rooftop_detail_props/vent/vent_clean.png",
+        "name": "vent clean"
+      },
+      {
+        "id": "vent_damaged",
+        "path": "environmental_props/gta_rooftop_detail_props/vent/vent_damaged.png",
+        "name": "vent damaged"
+      }
+    ],
+    "slum": [
+      {
+        "id": "abandoned_couch",
+        "path": "environmental_props/slum_ghetto_detail/abandoned_couch.png",
+        "name": "abandoned couch"
+      },
+      {
+        "id": "alley_junk",
+        "path": "environmental_props/slum_ghetto_detail/alley_junk.png",
+        "name": "alley junk"
+      },
+      {
+        "id": "boarded_window",
+        "path": "environmental_props/slum_ghetto_detail/boarded_window.png",
+        "name": "boarded window"
+      },
+      {
+        "id": "broken_fencing",
+        "path": "environmental_props/slum_ghetto_detail/broken_fencing.png",
+        "name": "broken fencing"
+      },
+      {
+        "id": "broken_tv",
+        "path": "environmental_props/slum_ghetto_detail/broken_tv.png",
+        "name": "broken tv"
+      },
+      {
+        "id": "burning_barrel",
+        "path": "environmental_props/slum_ghetto_detail/burning_barrel.png",
+        "name": "burning barrel"
+      },
+      {
+        "id": "gang_graffiti",
+        "path": "environmental_props/slum_ghetto_detail/gang_graffiti.png",
+        "name": "gang graffiti"
+      },
+      {
+        "id": "graffiti_wall_chunk",
+        "path": "environmental_props/slum_ghetto_detail/graffiti_wall_chunk.png",
+        "name": "graffiti wall chunk"
+      },
+      {
+        "id": "loose_trash",
+        "path": "environmental_props/slum_ghetto_detail/loose_trash.png",
+        "name": "loose trash"
+      },
+      {
+        "id": "mattress_pile",
+        "path": "environmental_props/slum_ghetto_detail/mattress_pile.png",
+        "name": "mattress pile"
+      },
+      {
+        "id": "shopping_cart",
+        "path": "environmental_props/slum_ghetto_detail/shopping_cart.png",
+        "name": "shopping cart"
+      },
+      {
+        "id": "slum_detail_spritesheet",
+        "path": "environmental_props/slum_ghetto_detail/slum_detail_spritesheet.png",
+        "name": "slum detail spritesheet"
+      },
+      {
+        "id": "spray_paint_zone",
+        "path": "environmental_props/slum_ghetto_detail/spray_paint_zone.png",
+        "name": "spray paint zone"
+      }
+    ],
+    "nature": [
+      {
+        "id": "autumn_grass_autumn",
+        "path": "environmental_props/gta_park_nature_props/32x32/autumn_grass_autumn.png",
+        "name": "autumn grass autumn"
+      },
+      {
+        "id": "autumn_grass_dead",
+        "path": "environmental_props/gta_park_nature_props/32x32/autumn_grass_dead.png",
+        "name": "autumn grass dead"
+      },
+      {
+        "id": "autumn_grass_spring",
+        "path": "environmental_props/gta_park_nature_props/32x32/autumn_grass_spring.png",
+        "name": "autumn grass spring"
+      },
+      {
+        "id": "autumn_grass_summer",
+        "path": "environmental_props/gta_park_nature_props/32x32/autumn_grass_summer.png",
+        "name": "autumn grass summer"
+      },
+      {
+        "id": "bush_autumn",
+        "path": "environmental_props/gta_park_nature_props/32x32/bush_autumn.png",
+        "name": "bush autumn"
+      },
+      {
+        "id": "bush_dead",
+        "path": "environmental_props/gta_park_nature_props/32x32/bush_dead.png",
+        "name": "bush dead"
+      },
+      {
+        "id": "bush_spring",
+        "path": "environmental_props/gta_park_nature_props/32x32/bush_spring.png",
+        "name": "bush spring"
+      },
+      {
+        "id": "bush_summer",
+        "path": "environmental_props/gta_park_nature_props/32x32/bush_summer.png",
+        "name": "bush summer"
+      },
+      {
+        "id": "dead_grass_autumn",
+        "path": "environmental_props/gta_park_nature_props/32x32/dead_grass_autumn.png",
+        "name": "dead grass autumn"
+      },
+      {
+        "id": "dead_grass_dead",
+        "path": "environmental_props/gta_park_nature_props/32x32/dead_grass_dead.png",
+        "name": "dead grass dead"
+      },
+      {
+        "id": "dead_grass_spring",
+        "path": "environmental_props/gta_park_nature_props/32x32/dead_grass_spring.png",
+        "name": "dead grass spring"
+      },
+      {
+        "id": "dead_grass_summer",
+        "path": "environmental_props/gta_park_nature_props/32x32/dead_grass_summer.png",
+        "name": "dead grass summer"
+      },
+      {
+        "id": "flower_planter_autumn",
+        "path": "environmental_props/gta_park_nature_props/32x32/flower_planter_autumn.png",
+        "name": "flower planter autumn"
+      },
+      {
+        "id": "flower_planter_dead",
+        "path": "environmental_props/gta_park_nature_props/32x32/flower_planter_dead.png",
+        "name": "flower planter dead"
+      },
+      {
+        "id": "flower_planter_spring",
+        "path": "environmental_props/gta_park_nature_props/32x32/flower_planter_spring.png",
+        "name": "flower planter spring"
+      },
+      {
+        "id": "flower_planter_summer",
+        "path": "environmental_props/gta_park_nature_props/32x32/flower_planter_summer.png",
+        "name": "flower planter summer"
+      },
+      {
+        "id": "overgrown_bush_autumn",
+        "path": "environmental_props/gta_park_nature_props/32x32/overgrown_bush_autumn.png",
+        "name": "overgrown bush autumn"
+      },
+      {
+        "id": "overgrown_bush_dead",
+        "path": "environmental_props/gta_park_nature_props/32x32/overgrown_bush_dead.png",
+        "name": "overgrown bush dead"
+      },
+      {
+        "id": "overgrown_bush_spring",
+        "path": "environmental_props/gta_park_nature_props/32x32/overgrown_bush_spring.png",
+        "name": "overgrown bush spring"
+      },
+      {
+        "id": "overgrown_bush_summer",
+        "path": "environmental_props/gta_park_nature_props/32x32/overgrown_bush_summer.png",
+        "name": "overgrown bush summer"
+      },
+      {
+        "id": "park_bench_autumn",
+        "path": "environmental_props/gta_park_nature_props/32x32/park_bench_autumn.png",
+        "name": "park bench autumn"
+      },
+      {
+        "id": "park_bench_dead",
+        "path": "environmental_props/gta_park_nature_props/32x32/park_bench_dead.png",
+        "name": "park bench dead"
+      },
+      {
+        "id": "park_bench_spring",
+        "path": "environmental_props/gta_park_nature_props/32x32/park_bench_spring.png",
+        "name": "park bench spring"
+      },
+      {
+        "id": "park_bench_summer",
+        "path": "environmental_props/gta_park_nature_props/32x32/park_bench_summer.png",
+        "name": "park bench summer"
+      },
+      {
+        "id": "park_lamp_autumn",
+        "path": "environmental_props/gta_park_nature_props/32x32/park_lamp_autumn.png",
+        "name": "park lamp autumn"
+      },
+      {
+        "id": "park_lamp_dead",
+        "path": "environmental_props/gta_park_nature_props/32x32/park_lamp_dead.png",
+        "name": "park lamp dead"
+      },
+      {
+        "id": "park_lamp_spring",
+        "path": "environmental_props/gta_park_nature_props/32x32/park_lamp_spring.png",
+        "name": "park lamp spring"
+      },
+      {
+        "id": "park_lamp_summer",
+        "path": "environmental_props/gta_park_nature_props/32x32/park_lamp_summer.png",
+        "name": "park lamp summer"
+      },
+      {
+        "id": "park_trash_bin_autumn",
+        "path": "environmental_props/gta_park_nature_props/32x32/park_trash_bin_autumn.png",
+        "name": "park trash bin autumn"
+      },
+      {
+        "id": "park_trash_bin_dead",
+        "path": "environmental_props/gta_park_nature_props/32x32/park_trash_bin_dead.png",
+        "name": "park trash bin dead"
+      },
+      {
+        "id": "park_trash_bin_spring",
+        "path": "environmental_props/gta_park_nature_props/32x32/park_trash_bin_spring.png",
+        "name": "park trash bin spring"
+      },
+      {
+        "id": "park_trash_bin_summer",
+        "path": "environmental_props/gta_park_nature_props/32x32/park_trash_bin_summer.png",
+        "name": "park trash bin summer"
+      },
+      {
+        "id": "public_grill_autumn",
+        "path": "environmental_props/gta_park_nature_props/32x32/public_grill_autumn.png",
+        "name": "public grill autumn"
+      },
+      {
+        "id": "public_grill_dead",
+        "path": "environmental_props/gta_park_nature_props/32x32/public_grill_dead.png",
+        "name": "public grill dead"
+      },
+      {
+        "id": "public_grill_spring",
+        "path": "environmental_props/gta_park_nature_props/32x32/public_grill_spring.png",
+        "name": "public grill spring"
+      },
+      {
+        "id": "public_grill_summer",
+        "path": "environmental_props/gta_park_nature_props/32x32/public_grill_summer.png",
+        "name": "public grill summer"
+      },
+      {
+        "id": "tree_base_autumn",
+        "path": "environmental_props/gta_park_nature_props/32x32/tree_base_autumn.png",
+        "name": "tree base autumn"
+      },
+      {
+        "id": "tree_base_dead",
+        "path": "environmental_props/gta_park_nature_props/32x32/tree_base_dead.png",
+        "name": "tree base dead"
+      },
+      {
+        "id": "tree_base_spring",
+        "path": "environmental_props/gta_park_nature_props/32x32/tree_base_spring.png",
+        "name": "tree base spring"
+      },
+      {
+        "id": "tree_base_summer",
+        "path": "environmental_props/gta_park_nature_props/32x32/tree_base_summer.png",
+        "name": "tree base summer"
+      },
+      {
+        "id": "trimmed_bush_autumn",
+        "path": "environmental_props/gta_park_nature_props/32x32/trimmed_bush_autumn.png",
+        "name": "trimmed bush autumn"
+      },
+      {
+        "id": "trimmed_bush_dead",
+        "path": "environmental_props/gta_park_nature_props/32x32/trimmed_bush_dead.png",
+        "name": "trimmed bush dead"
+      },
+      {
+        "id": "trimmed_bush_spring",
+        "path": "environmental_props/gta_park_nature_props/32x32/trimmed_bush_spring.png",
+        "name": "trimmed bush spring"
+      },
+      {
+        "id": "trimmed_bush_summer",
+        "path": "environmental_props/gta_park_nature_props/32x32/trimmed_bush_summer.png",
+        "name": "trimmed bush summer"
+      },
+      {
+        "id": "dead_tree_autumn",
+        "path": "environmental_props/gta_park_nature_props/64x64/dead_tree_autumn.png",
+        "name": "dead tree autumn"
+      },
+      {
+        "id": "dead_tree_dead",
+        "path": "environmental_props/gta_park_nature_props/64x64/dead_tree_dead.png",
+        "name": "dead tree dead"
+      },
+      {
+        "id": "dead_tree_spring",
+        "path": "environmental_props/gta_park_nature_props/64x64/dead_tree_spring.png",
+        "name": "dead tree spring"
+      },
+      {
+        "id": "dead_tree_summer",
+        "path": "environmental_props/gta_park_nature_props/64x64/dead_tree_summer.png",
+        "name": "dead tree summer"
+      },
+      {
+        "id": "fountain_autumn",
+        "path": "environmental_props/gta_park_nature_props/64x64/fountain_autumn.png",
+        "name": "fountain autumn"
+      },
+      {
+        "id": "fountain_dead",
+        "path": "environmental_props/gta_park_nature_props/64x64/fountain_dead.png",
+        "name": "fountain dead"
+      },
+      {
+        "id": "fountain_spring",
+        "path": "environmental_props/gta_park_nature_props/64x64/fountain_spring.png",
+        "name": "fountain spring"
+      },
+      {
+        "id": "fountain_summer",
+        "path": "environmental_props/gta_park_nature_props/64x64/fountain_summer.png",
+        "name": "fountain summer"
+      },
+      {
+        "id": "large_tree_autumn",
+        "path": "environmental_props/gta_park_nature_props/64x64/large_tree_autumn.png",
+        "name": "large tree autumn"
+      },
+      {
+        "id": "large_tree_dead",
+        "path": "environmental_props/gta_park_nature_props/64x64/large_tree_dead.png",
+        "name": "large tree dead"
+      },
+      {
+        "id": "large_tree_spring",
+        "path": "environmental_props/gta_park_nature_props/64x64/large_tree_spring.png",
+        "name": "large tree spring"
+      },
+      {
+        "id": "large_tree_summer",
+        "path": "environmental_props/gta_park_nature_props/64x64/large_tree_summer.png",
+        "name": "large tree summer"
+      },
+      {
+        "id": "picnic_zone_autumn",
+        "path": "environmental_props/gta_park_nature_props/64x64/picnic_zone_autumn.png",
+        "name": "picnic zone autumn"
+      },
+      {
+        "id": "picnic_zone_dead",
+        "path": "environmental_props/gta_park_nature_props/64x64/picnic_zone_dead.png",
+        "name": "picnic zone dead"
+      },
+      {
+        "id": "picnic_zone_spring",
+        "path": "environmental_props/gta_park_nature_props/64x64/picnic_zone_spring.png",
+        "name": "picnic zone spring"
+      },
+      {
+        "id": "picnic_zone_summer",
+        "path": "environmental_props/gta_park_nature_props/64x64/picnic_zone_summer.png",
+        "name": "picnic zone summer"
+      },
+      {
+        "id": "playground_slide_autumn",
+        "path": "environmental_props/gta_park_nature_props/64x64/playground_slide_autumn.png",
+        "name": "playground slide autumn"
+      },
+      {
+        "id": "playground_slide_dead",
+        "path": "environmental_props/gta_park_nature_props/64x64/playground_slide_dead.png",
+        "name": "playground slide dead"
+      },
+      {
+        "id": "playground_slide_spring",
+        "path": "environmental_props/gta_park_nature_props/64x64/playground_slide_spring.png",
+        "name": "playground slide spring"
+      },
+      {
+        "id": "playground_slide_summer",
+        "path": "environmental_props/gta_park_nature_props/64x64/playground_slide_summer.png",
+        "name": "playground slide summer"
+      },
+      {
+        "id": "playground_swings_autumn",
+        "path": "environmental_props/gta_park_nature_props/64x64/playground_swings_autumn.png",
+        "name": "playground swings autumn"
+      },
+      {
+        "id": "playground_swings_dead",
+        "path": "environmental_props/gta_park_nature_props/64x64/playground_swings_dead.png",
+        "name": "playground swings dead"
+      },
+      {
+        "id": "playground_swings_spring",
+        "path": "environmental_props/gta_park_nature_props/64x64/playground_swings_spring.png",
+        "name": "playground swings spring"
+      },
+      {
+        "id": "playground_swings_summer",
+        "path": "environmental_props/gta_park_nature_props/64x64/playground_swings_summer.png",
+        "name": "playground swings summer"
+      },
+      {
+        "id": "sandbox_autumn",
+        "path": "environmental_props/gta_park_nature_props/64x64/sandbox_autumn.png",
+        "name": "sandbox autumn"
+      },
+      {
+        "id": "sandbox_dead",
+        "path": "environmental_props/gta_park_nature_props/64x64/sandbox_dead.png",
+        "name": "sandbox dead"
+      },
+      {
+        "id": "sandbox_spring",
+        "path": "environmental_props/gta_park_nature_props/64x64/sandbox_spring.png",
+        "name": "sandbox spring"
+      },
+      {
+        "id": "sandbox_summer",
+        "path": "environmental_props/gta_park_nature_props/64x64/sandbox_summer.png",
+        "name": "sandbox summer"
+      },
+      {
+        "id": "park_props_32_spritesheet",
+        "path": "environmental_props/gta_park_nature_props/park_props_32_spritesheet.png",
+        "name": "park props 32 spritesheet"
+      },
+      {
+        "id": "park_props_64_spritesheet",
+        "path": "environmental_props/gta_park_nature_props/park_props_64_spritesheet.png",
+        "name": "park props 64 spritesheet"
+      },
+      {
+        "id": "parking_meter_clean",
+        "path": "environmental_props/gta_street_furniture/parking_meter/parking_meter_clean.png",
+        "name": "parking meter clean"
+      },
+      {
+        "id": "parking_meter_damaged",
+        "path": "environmental_props/gta_street_furniture/parking_meter/parking_meter_damaged.png",
+        "name": "parking meter damaged"
+      },
+      {
+        "id": "parking_meter_graffiti",
+        "path": "environmental_props/gta_street_furniture/parking_meter/parking_meter_graffiti.png",
+        "name": "parking meter graffiti"
+      },
+      {
+        "id": "parked_bicycle",
+        "path": "environmental_props/gta_transport_props/32x32/parked_bicycle.png",
+        "name": "parked bicycle"
+      },
+      {
+        "id": "parked_motorcycle",
+        "path": "environmental_props/gta_transport_props/32x32/parked_motorcycle.png",
+        "name": "parked motorcycle"
+      },
+      {
+        "id": "parking_garage_gate",
+        "path": "environmental_props/gta_transport_props/64x64/parking_garage_gate.png",
+        "name": "parking garage gate"
+      },
+      {
+        "id": "illegal_parking_prop",
+        "path": "environmental_props/slum_ghetto_detail/illegal_parking_prop.png",
+        "name": "illegal parking prop"
+      }
+    ],
+    "transport": [
+      {
+        "id": "gas_pump",
+        "path": "environmental_props/gta_transport_props/32x32/gas_pump.png",
+        "name": "gas pump"
+      },
+      {
+        "id": "railway_barrier",
+        "path": "environmental_props/gta_transport_props/32x32/railway_barrier.png",
+        "name": "railway barrier"
+      },
+      {
+        "id": "taxi_stand",
+        "path": "environmental_props/gta_transport_props/32x32/taxi_stand.png",
+        "name": "taxi stand"
+      },
+      {
+        "id": "train_tracks",
+        "path": "environmental_props/gta_transport_props/32x32/train_tracks.png",
+        "name": "train tracks"
+      },
+      {
+        "id": "bus_stop_shelter",
+        "path": "environmental_props/gta_transport_props/64x64/bus_stop_shelter.png",
+        "name": "bus stop shelter"
+      },
+      {
+        "id": "toll_booth",
+        "path": "environmental_props/gta_transport_props/64x64/toll_booth.png",
+        "name": "toll booth"
+      },
+      {
+        "id": "tunnel_entrance",
+        "path": "environmental_props/gta_transport_props/64x64/tunnel_entrance.png",
+        "name": "tunnel entrance"
+      },
+      {
+        "id": "transport_32_spritesheet",
+        "path": "environmental_props/gta_transport_props/transport_32_spritesheet.png",
+        "name": "transport 32 spritesheet"
+      },
+      {
+        "id": "transport_64_spritesheet",
+        "path": "environmental_props/gta_transport_props/transport_64_spritesheet.png",
+        "name": "transport 64 spritesheet"
+      }
+    ],
+    "signage": [
+      {
+        "id": "gang_tag_broken",
+        "path": "environmental_props/gta_retro_signage/32x32/gang_tag/gang_tag_broken.png",
+        "name": "gang tag broken"
+      },
+      {
+        "id": "gang_tag_clean",
+        "path": "environmental_props/gta_retro_signage/32x32/gang_tag/gang_tag_clean.png",
+        "name": "gang tag clean"
+      },
+      {
+        "id": "gang_tag_neon_0",
+        "path": "environmental_props/gta_retro_signage/32x32/gang_tag/gang_tag_neon_0.png",
+        "name": "gang tag neon 0"
+      },
+      {
+        "id": "gang_tag_neon_1",
+        "path": "environmental_props/gta_retro_signage/32x32/gang_tag/gang_tag_neon_1.png",
+        "name": "gang tag neon 1"
+      },
+      {
+        "id": "gang_tag_neon_2",
+        "path": "environmental_props/gta_retro_signage/32x32/gang_tag/gang_tag_neon_2.png",
+        "name": "gang tag neon 2"
+      },
+      {
+        "id": "gang_tag_neon_3",
+        "path": "environmental_props/gta_retro_signage/32x32/gang_tag/gang_tag_neon_3.png",
+        "name": "gang tag neon 3"
+      },
+      {
+        "id": "warning_sign_broken",
+        "path": "environmental_props/gta_retro_signage/32x32/warning_sign/warning_sign_broken.png",
+        "name": "warning sign broken"
+      },
+      {
+        "id": "warning_sign_clean",
+        "path": "environmental_props/gta_retro_signage/32x32/warning_sign/warning_sign_clean.png",
+        "name": "warning sign clean"
+      },
+      {
+        "id": "warning_sign_neon_0",
+        "path": "environmental_props/gta_retro_signage/32x32/warning_sign/warning_sign_neon_0.png",
+        "name": "warning sign neon 0"
+      },
+      {
+        "id": "warning_sign_neon_1",
+        "path": "environmental_props/gta_retro_signage/32x32/warning_sign/warning_sign_neon_1.png",
+        "name": "warning sign neon 1"
+      },
+      {
+        "id": "warning_sign_neon_2",
+        "path": "environmental_props/gta_retro_signage/32x32/warning_sign/warning_sign_neon_2.png",
+        "name": "warning sign neon 2"
+      },
+      {
+        "id": "warning_sign_neon_3",
+        "path": "environmental_props/gta_retro_signage/32x32/warning_sign/warning_sign_neon_3.png",
+        "name": "warning sign neon 3"
+      },
+      {
+        "id": "fast_food_sign_broken",
+        "path": "environmental_props/gta_retro_signage/64x32/fast_food_sign/fast_food_sign_broken.png",
+        "name": "fast food sign broken"
+      },
+      {
+        "id": "fast_food_sign_clean",
+        "path": "environmental_props/gta_retro_signage/64x32/fast_food_sign/fast_food_sign_clean.png",
+        "name": "fast food sign clean"
+      },
+      {
+        "id": "fast_food_sign_neon_0",
+        "path": "environmental_props/gta_retro_signage/64x32/fast_food_sign/fast_food_sign_neon_0.png",
+        "name": "fast food sign neon 0"
+      },
+      {
+        "id": "fast_food_sign_neon_1",
+        "path": "environmental_props/gta_retro_signage/64x32/fast_food_sign/fast_food_sign_neon_1.png",
+        "name": "fast food sign neon 1"
+      },
+      {
+        "id": "fast_food_sign_neon_2",
+        "path": "environmental_props/gta_retro_signage/64x32/fast_food_sign/fast_food_sign_neon_2.png",
+        "name": "fast food sign neon 2"
+      },
+      {
+        "id": "fast_food_sign_neon_3",
+        "path": "environmental_props/gta_retro_signage/64x32/fast_food_sign/fast_food_sign_neon_3.png",
+        "name": "fast food sign neon 3"
+      },
+      {
+        "id": "neon_sign_broken",
+        "path": "environmental_props/gta_retro_signage/64x32/neon_sign/neon_sign_broken.png",
+        "name": "neon sign broken"
+      },
+      {
+        "id": "neon_sign_clean",
+        "path": "environmental_props/gta_retro_signage/64x32/neon_sign/neon_sign_clean.png",
+        "name": "neon sign clean"
+      },
+      {
+        "id": "neon_sign_neon_0",
+        "path": "environmental_props/gta_retro_signage/64x32/neon_sign/neon_sign_neon_0.png",
+        "name": "neon sign neon 0"
+      },
+      {
+        "id": "neon_sign_neon_1",
+        "path": "environmental_props/gta_retro_signage/64x32/neon_sign/neon_sign_neon_1.png",
+        "name": "neon sign neon 1"
+      },
+      {
+        "id": "neon_sign_neon_2",
+        "path": "environmental_props/gta_retro_signage/64x32/neon_sign/neon_sign_neon_2.png",
+        "name": "neon sign neon 2"
+      },
+      {
+        "id": "neon_sign_neon_3",
+        "path": "environmental_props/gta_retro_signage/64x32/neon_sign/neon_sign_neon_3.png",
+        "name": "neon sign neon 3"
+      },
+      {
+        "id": "police_warning_sign_broken",
+        "path": "environmental_props/gta_retro_signage/64x32/police_warning_sign/police_warning_sign_broken.png",
+        "name": "police warning sign broken"
+      },
+      {
+        "id": "police_warning_sign_clean",
+        "path": "environmental_props/gta_retro_signage/64x32/police_warning_sign/police_warning_sign_clean.png",
+        "name": "police warning sign clean"
+      },
+      {
+        "id": "police_warning_sign_neon_0",
+        "path": "environmental_props/gta_retro_signage/64x32/police_warning_sign/police_warning_sign_neon_0.png",
+        "name": "police warning sign neon 0"
+      },
+      {
+        "id": "police_warning_sign_neon_1",
+        "path": "environmental_props/gta_retro_signage/64x32/police_warning_sign/police_warning_sign_neon_1.png",
+        "name": "police warning sign neon 1"
+      },
+      {
+        "id": "police_warning_sign_neon_2",
+        "path": "environmental_props/gta_retro_signage/64x32/police_warning_sign/police_warning_sign_neon_2.png",
+        "name": "police warning sign neon 2"
+      },
+      {
+        "id": "police_warning_sign_neon_3",
+        "path": "environmental_props/gta_retro_signage/64x32/police_warning_sign/police_warning_sign_neon_3.png",
+        "name": "police warning sign neon 3"
+      },
+      {
+        "id": "subway_sign_broken",
+        "path": "environmental_props/gta_retro_signage/64x32/subway_sign/subway_sign_broken.png",
+        "name": "subway sign broken"
+      },
+      {
+        "id": "subway_sign_clean",
+        "path": "environmental_props/gta_retro_signage/64x32/subway_sign/subway_sign_clean.png",
+        "name": "subway sign clean"
+      },
+      {
+        "id": "subway_sign_neon_0",
+        "path": "environmental_props/gta_retro_signage/64x32/subway_sign/subway_sign_neon_0.png",
+        "name": "subway sign neon 0"
+      },
+      {
+        "id": "subway_sign_neon_1",
+        "path": "environmental_props/gta_retro_signage/64x32/subway_sign/subway_sign_neon_1.png",
+        "name": "subway sign neon 1"
+      },
+      {
+        "id": "subway_sign_neon_2",
+        "path": "environmental_props/gta_retro_signage/64x32/subway_sign/subway_sign_neon_2.png",
+        "name": "subway sign neon 2"
+      },
+      {
+        "id": "subway_sign_neon_3",
+        "path": "environmental_props/gta_retro_signage/64x32/subway_sign/subway_sign_neon_3.png",
+        "name": "subway sign neon 3"
+      },
+      {
+        "id": "casino_sign_broken",
+        "path": "environmental_props/gta_retro_signage/64x64/casino_sign/casino_sign_broken.png",
+        "name": "casino sign broken"
+      },
+      {
+        "id": "casino_sign_clean",
+        "path": "environmental_props/gta_retro_signage/64x64/casino_sign/casino_sign_clean.png",
+        "name": "casino sign clean"
+      },
+      {
+        "id": "casino_sign_neon_0",
+        "path": "environmental_props/gta_retro_signage/64x64/casino_sign/casino_sign_neon_0.png",
+        "name": "casino sign neon 0"
+      },
+      {
+        "id": "casino_sign_neon_1",
+        "path": "environmental_props/gta_retro_signage/64x64/casino_sign/casino_sign_neon_1.png",
+        "name": "casino sign neon 1"
+      },
+      {
+        "id": "casino_sign_neon_2",
+        "path": "environmental_props/gta_retro_signage/64x64/casino_sign/casino_sign_neon_2.png",
+        "name": "casino sign neon 2"
+      },
+      {
+        "id": "casino_sign_neon_3",
+        "path": "environmental_props/gta_retro_signage/64x64/casino_sign/casino_sign_neon_3.png",
+        "name": "casino sign neon 3"
+      },
+      {
+        "id": "gas_station_sign_broken",
+        "path": "environmental_props/gta_retro_signage/64x64/gas_station_sign/gas_station_sign_broken.png",
+        "name": "gas station sign broken"
+      },
+      {
+        "id": "gas_station_sign_clean",
+        "path": "environmental_props/gta_retro_signage/64x64/gas_station_sign/gas_station_sign_clean.png",
+        "name": "gas station sign clean"
+      },
+      {
+        "id": "gas_station_sign_neon_0",
+        "path": "environmental_props/gta_retro_signage/64x64/gas_station_sign/gas_station_sign_neon_0.png",
+        "name": "gas station sign neon 0"
+      },
+      {
+        "id": "gas_station_sign_neon_1",
+        "path": "environmental_props/gta_retro_signage/64x64/gas_station_sign/gas_station_sign_neon_1.png",
+        "name": "gas station sign neon 1"
+      },
+      {
+        "id": "gas_station_sign_neon_2",
+        "path": "environmental_props/gta_retro_signage/64x64/gas_station_sign/gas_station_sign_neon_2.png",
+        "name": "gas station sign neon 2"
+      },
+      {
+        "id": "gas_station_sign_neon_3",
+        "path": "environmental_props/gta_retro_signage/64x64/gas_station_sign/gas_station_sign_neon_3.png",
+        "name": "gas station sign neon 3"
+      },
+      {
+        "id": "graffiti_mural_broken",
+        "path": "environmental_props/gta_retro_signage/64x64/graffiti_mural/graffiti_mural_broken.png",
+        "name": "graffiti mural broken"
+      },
+      {
+        "id": "graffiti_mural_clean",
+        "path": "environmental_props/gta_retro_signage/64x64/graffiti_mural/graffiti_mural_clean.png",
+        "name": "graffiti mural clean"
+      },
+      {
+        "id": "graffiti_mural_neon_0",
+        "path": "environmental_props/gta_retro_signage/64x64/graffiti_mural/graffiti_mural_neon_0.png",
+        "name": "graffiti mural neon 0"
+      },
+      {
+        "id": "graffiti_mural_neon_1",
+        "path": "environmental_props/gta_retro_signage/64x64/graffiti_mural/graffiti_mural_neon_1.png",
+        "name": "graffiti mural neon 1"
+      },
+      {
+        "id": "graffiti_mural_neon_2",
+        "path": "environmental_props/gta_retro_signage/64x64/graffiti_mural/graffiti_mural_neon_2.png",
+        "name": "graffiti mural neon 2"
+      },
+      {
+        "id": "graffiti_mural_neon_3",
+        "path": "environmental_props/gta_retro_signage/64x64/graffiti_mural/graffiti_mural_neon_3.png",
+        "name": "graffiti mural neon 3"
+      },
+      {
+        "id": "motel_sign_broken",
+        "path": "environmental_props/gta_retro_signage/64x64/motel_sign/motel_sign_broken.png",
+        "name": "motel sign broken"
+      },
+      {
+        "id": "motel_sign_clean",
+        "path": "environmental_props/gta_retro_signage/64x64/motel_sign/motel_sign_clean.png",
+        "name": "motel sign clean"
+      },
+      {
+        "id": "motel_sign_neon_0",
+        "path": "environmental_props/gta_retro_signage/64x64/motel_sign/motel_sign_neon_0.png",
+        "name": "motel sign neon 0"
+      },
+      {
+        "id": "motel_sign_neon_1",
+        "path": "environmental_props/gta_retro_signage/64x64/motel_sign/motel_sign_neon_1.png",
+        "name": "motel sign neon 1"
+      },
+      {
+        "id": "motel_sign_neon_2",
+        "path": "environmental_props/gta_retro_signage/64x64/motel_sign/motel_sign_neon_2.png",
+        "name": "motel sign neon 2"
+      },
+      {
+        "id": "motel_sign_neon_3",
+        "path": "environmental_props/gta_retro_signage/64x64/motel_sign/motel_sign_neon_3.png",
+        "name": "motel sign neon 3"
+      },
+      {
+        "id": "retro_billboard_broken",
+        "path": "environmental_props/gta_retro_signage/64x64/retro_billboard/retro_billboard_broken.png",
+        "name": "retro billboard broken"
+      },
+      {
+        "id": "retro_billboard_clean",
+        "path": "environmental_props/gta_retro_signage/64x64/retro_billboard/retro_billboard_clean.png",
+        "name": "retro billboard clean"
+      },
+      {
+        "id": "retro_billboard_neon_0",
+        "path": "environmental_props/gta_retro_signage/64x64/retro_billboard/retro_billboard_neon_0.png",
+        "name": "retro billboard neon 0"
+      },
+      {
+        "id": "retro_billboard_neon_1",
+        "path": "environmental_props/gta_retro_signage/64x64/retro_billboard/retro_billboard_neon_1.png",
+        "name": "retro billboard neon 1"
+      },
+      {
+        "id": "retro_billboard_neon_2",
+        "path": "environmental_props/gta_retro_signage/64x64/retro_billboard/retro_billboard_neon_2.png",
+        "name": "retro billboard neon 2"
+      },
+      {
+        "id": "retro_billboard_neon_3",
+        "path": "environmental_props/gta_retro_signage/64x64/retro_billboard/retro_billboard_neon_3.png",
+        "name": "retro billboard neon 3"
+      },
+      {
+        "id": "signage_spritesheet_32x32",
+        "path": "environmental_props/gta_retro_signage/signage_spritesheet_32x32.png",
+        "name": "signage spritesheet 32x32"
+      },
+      {
+        "id": "signage_spritesheet_64x32",
+        "path": "environmental_props/gta_retro_signage/signage_spritesheet_64x32.png",
+        "name": "signage spritesheet 64x32"
+      },
+      {
+        "id": "signage_spritesheet_64x64",
+        "path": "environmental_props/gta_retro_signage/signage_spritesheet_64x64.png",
+        "name": "signage spritesheet 64x64"
+      }
+    ],
+    "construction": [
+      {
+        "id": "cement_blocks",
+        "path": "environmental_props/construction_zone/cement_blocks.png",
+        "name": "cement blocks"
+      },
+      {
+        "id": "cement_mixers",
+        "path": "environmental_props/construction_zone/cement_mixers.png",
+        "name": "cement mixers"
+      },
+      {
+        "id": "construction_fencing",
+        "path": "environmental_props/construction_zone/construction_fencing.png",
+        "name": "construction fencing"
+      },
+      {
+        "id": "construction_lights",
+        "path": "environmental_props/construction_zone/construction_lights.png",
+        "name": "construction lights"
+      },
+      {
+        "id": "construction_zone_spritesheet",
+        "path": "environmental_props/construction_zone/construction_zone_spritesheet.png",
+        "name": "construction zone spritesheet"
+      },
+      {
+        "id": "generators",
+        "path": "environmental_props/construction_zone/generators.png",
+        "name": "generators"
+      },
+      {
+        "id": "piles_of_dirt",
+        "path": "environmental_props/construction_zone/piles_of_dirt.png",
+        "name": "piles of dirt"
+      },
+      {
+        "id": "portable_toilets",
+        "path": "environmental_props/construction_zone/portable_toilets.png",
+        "name": "portable toilets"
+      },
+      {
+        "id": "rebar_stacks",
+        "path": "environmental_props/construction_zone/rebar_stacks.png",
+        "name": "rebar stacks"
+      },
+      {
+        "id": "scaffolding",
+        "path": "environmental_props/construction_zone/scaffolding.png",
+        "name": "scaffolding"
+      },
+      {
+        "id": "striped_barriers",
+        "path": "environmental_props/construction_zone/striped_barriers.png",
+        "name": "striped barriers"
+      },
+      {
+        "id": "traffic_cones",
+        "path": "environmental_props/construction_zone/traffic_cones.png",
+        "name": "traffic cones"
+      },
+      {
+        "id": "warning_signs",
+        "path": "environmental_props/construction_zone/warning_signs.png",
+        "name": "warning signs"
+      }
+    ],
+    "street_furniture": [
+      {
+        "id": "atm_machine_clean",
+        "path": "environmental_props/gta_street_furniture/atm_machine/atm_machine_clean.png",
+        "name": "atm machine clean"
+      },
+      {
+        "id": "atm_machine_damaged",
+        "path": "environmental_props/gta_street_furniture/atm_machine/atm_machine_damaged.png",
+        "name": "atm machine damaged"
+      },
+      {
+        "id": "atm_machine_graffiti",
+        "path": "environmental_props/gta_street_furniture/atm_machine/atm_machine_graffiti.png",
+        "name": "atm machine graffiti"
+      },
+      {
+        "id": "broken_bench_clean",
+        "path": "environmental_props/gta_street_furniture/broken_bench/broken_bench_clean.png",
+        "name": "broken bench clean"
+      },
+      {
+        "id": "broken_bench_damaged",
+        "path": "environmental_props/gta_street_furniture/broken_bench/broken_bench_damaged.png",
+        "name": "broken bench damaged"
+      },
+      {
+        "id": "broken_bench_graffiti",
+        "path": "environmental_props/gta_street_furniture/broken_bench/broken_bench_graffiti.png",
+        "name": "broken bench graffiti"
+      },
+      {
+        "id": "bus_stop_bench_clean",
+        "path": "environmental_props/gta_street_furniture/bus_stop_bench/bus_stop_bench_clean.png",
+        "name": "bus stop bench clean"
+      },
+      {
+        "id": "bus_stop_bench_damaged",
+        "path": "environmental_props/gta_street_furniture/bus_stop_bench/bus_stop_bench_damaged.png",
+        "name": "bus stop bench damaged"
+      },
+      {
+        "id": "bus_stop_bench_graffiti",
+        "path": "environmental_props/gta_street_furniture/bus_stop_bench/bus_stop_bench_graffiti.png",
+        "name": "bus stop bench graffiti"
+      },
+      {
+        "id": "cigarette_machine_clean",
+        "path": "environmental_props/gta_street_furniture/cigarette_machine/cigarette_machine_clean.png",
+        "name": "cigarette machine clean"
+      },
+      {
+        "id": "cigarette_machine_damaged",
+        "path": "environmental_props/gta_street_furniture/cigarette_machine/cigarette_machine_damaged.png",
+        "name": "cigarette machine damaged"
+      },
+      {
+        "id": "cigarette_machine_graffiti",
+        "path": "environmental_props/gta_street_furniture/cigarette_machine/cigarette_machine_graffiti.png",
+        "name": "cigarette machine graffiti"
+      },
+      {
+        "id": "crosswalk_button_clean",
+        "path": "environmental_props/gta_street_furniture/crosswalk_button/crosswalk_button_clean.png",
+        "name": "crosswalk button clean"
+      },
+      {
+        "id": "crosswalk_button_damaged",
+        "path": "environmental_props/gta_street_furniture/crosswalk_button/crosswalk_button_damaged.png",
+        "name": "crosswalk button damaged"
+      },
+      {
+        "id": "crosswalk_button_graffiti",
+        "path": "environmental_props/gta_street_furniture/crosswalk_button/crosswalk_button_graffiti.png",
+        "name": "crosswalk button graffiti"
+      },
+      {
+        "id": "fire_hydrant_clean",
+        "path": "environmental_props/gta_street_furniture/fire_hydrant/fire_hydrant_clean.png",
+        "name": "fire hydrant clean"
+      },
+      {
+        "id": "fire_hydrant_damaged",
+        "path": "environmental_props/gta_street_furniture/fire_hydrant/fire_hydrant_damaged.png",
+        "name": "fire hydrant damaged"
+      },
+      {
+        "id": "fire_hydrant_graffiti",
+        "path": "environmental_props/gta_street_furniture/fire_hydrant/fire_hydrant_graffiti.png",
+        "name": "fire hydrant graffiti"
+      },
+      {
+        "id": "hanging_traffic_light_clean",
+        "path": "environmental_props/gta_street_furniture/hanging_traffic_light/hanging_traffic_light_clean.png",
+        "name": "hanging traffic light clean"
+      },
+      {
+        "id": "hanging_traffic_light_damaged",
+        "path": "environmental_props/gta_street_furniture/hanging_traffic_light/hanging_traffic_light_damaged.png",
+        "name": "hanging traffic light damaged"
+      },
+      {
+        "id": "hanging_traffic_light_graffiti",
+        "path": "environmental_props/gta_street_furniture/hanging_traffic_light/hanging_traffic_light_graffiti.png",
+        "name": "hanging traffic light graffiti"
+      },
+      {
+        "id": "mailbox_clean",
+        "path": "environmental_props/gta_street_furniture/mailbox/mailbox_clean.png",
+        "name": "mailbox clean"
+      },
+      {
+        "id": "mailbox_damaged",
+        "path": "environmental_props/gta_street_furniture/mailbox/mailbox_damaged.png",
+        "name": "mailbox damaged"
+      },
+      {
+        "id": "mailbox_graffiti",
+        "path": "environmental_props/gta_street_furniture/mailbox/mailbox_graffiti.png",
+        "name": "mailbox graffiti"
+      },
+      {
+        "id": "metal_bench_clean",
+        "path": "environmental_props/gta_street_furniture/metal_bench/metal_bench_clean.png",
+        "name": "metal bench clean"
+      },
+      {
+        "id": "metal_bench_damaged",
+        "path": "environmental_props/gta_street_furniture/metal_bench/metal_bench_damaged.png",
+        "name": "metal bench damaged"
+      },
+      {
+        "id": "metal_bench_graffiti",
+        "path": "environmental_props/gta_street_furniture/metal_bench/metal_bench_graffiti.png",
+        "name": "metal bench graffiti"
+      },
+      {
+        "id": "modern_streetlight_clean",
+        "path": "environmental_props/gta_street_furniture/modern_streetlight/modern_streetlight_clean.png",
+        "name": "modern streetlight clean"
+      },
+      {
+        "id": "modern_streetlight_damaged",
+        "path": "environmental_props/gta_street_furniture/modern_streetlight/modern_streetlight_damaged.png",
+        "name": "modern streetlight damaged"
+      },
+      {
+        "id": "modern_streetlight_graffiti",
+        "path": "environmental_props/gta_street_furniture/modern_streetlight/modern_streetlight_graffiti.png",
+        "name": "modern streetlight graffiti"
+      },
+      {
+        "id": "newspaper_box_clean",
+        "path": "environmental_props/gta_street_furniture/newspaper_box/newspaper_box_clean.png",
+        "name": "newspaper box clean"
+      },
+      {
+        "id": "newspaper_box_damaged",
+        "path": "environmental_props/gta_street_furniture/newspaper_box/newspaper_box_damaged.png",
+        "name": "newspaper box damaged"
+      },
+      {
+        "id": "newspaper_box_graffiti",
+        "path": "environmental_props/gta_street_furniture/newspaper_box/newspaper_box_graffiti.png",
+        "name": "newspaper box graffiti"
+      },
+      {
+        "id": "payphone_clean",
+        "path": "environmental_props/gta_street_furniture/payphone/payphone_clean.png",
+        "name": "payphone clean"
+      },
+      {
+        "id": "payphone_damaged",
+        "path": "environmental_props/gta_street_furniture/payphone/payphone_damaged.png",
+        "name": "payphone damaged"
+      },
+      {
+        "id": "payphone_graffiti",
+        "path": "environmental_props/gta_street_furniture/payphone/payphone_graffiti.png",
+        "name": "payphone graffiti"
+      },
+      {
+        "id": "phone_booth_clean",
+        "path": "environmental_props/gta_street_furniture/phone_booth/phone_booth_clean.png",
+        "name": "phone booth clean"
+      },
+      {
+        "id": "phone_booth_damaged",
+        "path": "environmental_props/gta_street_furniture/phone_booth/phone_booth_damaged.png",
+        "name": "phone booth damaged"
+      },
+      {
+        "id": "phone_booth_graffiti",
+        "path": "environmental_props/gta_street_furniture/phone_booth/phone_booth_graffiti.png",
+        "name": "phone booth graffiti"
+      },
+      {
+        "id": "picnic_table_clean",
+        "path": "environmental_props/gta_street_furniture/picnic_table/picnic_table_clean.png",
+        "name": "picnic table clean"
+      },
+      {
+        "id": "picnic_table_damaged",
+        "path": "environmental_props/gta_street_furniture/picnic_table/picnic_table_damaged.png",
+        "name": "picnic table damaged"
+      },
+      {
+        "id": "picnic_table_graffiti",
+        "path": "environmental_props/gta_street_furniture/picnic_table/picnic_table_graffiti.png",
+        "name": "picnic table graffiti"
+      },
+      {
+        "id": "rusty_streetlight_clean",
+        "path": "environmental_props/gta_street_furniture/rusty_streetlight/rusty_streetlight_clean.png",
+        "name": "rusty streetlight clean"
+      },
+      {
+        "id": "rusty_streetlight_damaged",
+        "path": "environmental_props/gta_street_furniture/rusty_streetlight/rusty_streetlight_damaged.png",
+        "name": "rusty streetlight damaged"
+      },
+      {
+        "id": "rusty_streetlight_graffiti",
+        "path": "environmental_props/gta_street_furniture/rusty_streetlight/rusty_streetlight_graffiti.png",
+        "name": "rusty streetlight graffiti"
+      },
+      {
+        "id": "street_furniture_spritesheet",
+        "path": "environmental_props/gta_street_furniture/street_furniture_spritesheet.png",
+        "name": "street furniture spritesheet"
+      },
+      {
+        "id": "streetlight_clean",
+        "path": "environmental_props/gta_street_furniture/streetlight/streetlight_clean.png",
+        "name": "streetlight clean"
+      },
+      {
+        "id": "streetlight_damaged",
+        "path": "environmental_props/gta_street_furniture/streetlight/streetlight_damaged.png",
+        "name": "streetlight damaged"
+      },
+      {
+        "id": "streetlight_graffiti",
+        "path": "environmental_props/gta_street_furniture/streetlight/streetlight_graffiti.png",
+        "name": "streetlight graffiti"
+      },
+      {
+        "id": "traffic_light_clean",
+        "path": "environmental_props/gta_street_furniture/traffic_light/traffic_light_clean.png",
+        "name": "traffic light clean"
+      },
+      {
+        "id": "traffic_light_damaged",
+        "path": "environmental_props/gta_street_furniture/traffic_light/traffic_light_damaged.png",
+        "name": "traffic light damaged"
+      },
+      {
+        "id": "traffic_light_graffiti",
+        "path": "environmental_props/gta_street_furniture/traffic_light/traffic_light_graffiti.png",
+        "name": "traffic light graffiti"
+      },
+      {
+        "id": "utility_pole_clean",
+        "path": "environmental_props/gta_street_furniture/utility_pole/utility_pole_clean.png",
+        "name": "utility pole clean"
+      },
+      {
+        "id": "utility_pole_damaged",
+        "path": "environmental_props/gta_street_furniture/utility_pole/utility_pole_damaged.png",
+        "name": "utility pole damaged"
+      },
+      {
+        "id": "utility_pole_graffiti",
+        "path": "environmental_props/gta_street_furniture/utility_pole/utility_pole_graffiti.png",
+        "name": "utility pole graffiti"
+      },
+      {
+        "id": "vending_machine_clean",
+        "path": "environmental_props/gta_street_furniture/vending_machine/vending_machine_clean.png",
+        "name": "vending machine clean"
+      },
+      {
+        "id": "vending_machine_damaged",
+        "path": "environmental_props/gta_street_furniture/vending_machine/vending_machine_damaged.png",
+        "name": "vending machine damaged"
+      },
+      {
+        "id": "vending_machine_graffiti",
+        "path": "environmental_props/gta_street_furniture/vending_machine/vending_machine_graffiti.png",
+        "name": "vending machine graffiti"
+      },
+      {
+        "id": "wooden_bench_clean",
+        "path": "environmental_props/gta_street_furniture/wooden_bench/wooden_bench_clean.png",
+        "name": "wooden bench clean"
+      },
+      {
+        "id": "wooden_bench_damaged",
+        "path": "environmental_props/gta_street_furniture/wooden_bench/wooden_bench_damaged.png",
+        "name": "wooden bench damaged"
+      },
+      {
+        "id": "wooden_bench_graffiti",
+        "path": "environmental_props/gta_street_furniture/wooden_bench/wooden_bench_graffiti.png",
+        "name": "wooden bench graffiti"
+      }
+    ],
+    "luxury": [
+      {
+        "id": "business_sign",
+        "path": "environmental_props/gta_luxury_props/32x32/business_sign.png",
+        "name": "business sign"
+      },
+      {
+        "id": "decorative_tree",
+        "path": "environmental_props/gta_luxury_props/32x32/decorative_tree.png",
+        "name": "decorative tree"
+      },
+      {
+        "id": "financial_decoration",
+        "path": "environmental_props/gta_luxury_props/32x32/financial_decoration.png",
+        "name": "financial decoration"
+      },
+      {
+        "id": "luxury_lighting",
+        "path": "environmental_props/gta_luxury_props/32x32/luxury_lighting.png",
+        "name": "luxury lighting"
+      },
+      {
+        "id": "marble_planter",
+        "path": "environmental_props/gta_luxury_props/32x32/marble_planter.png",
+        "name": "marble planter"
+      },
+      {
+        "id": "valet_zone",
+        "path": "environmental_props/gta_luxury_props/32x32/valet_zone.png",
+        "name": "valet zone"
+      },
+      {
+        "id": "corporate_sculpture",
+        "path": "environmental_props/gta_luxury_props/64x64/corporate_sculpture.png",
+        "name": "corporate sculpture"
+      },
+      {
+        "id": "hotel_entrance",
+        "path": "environmental_props/gta_luxury_props/64x64/hotel_entrance.png",
+        "name": "hotel entrance"
+      },
+      {
+        "id": "luxury_fountain",
+        "path": "environmental_props/gta_luxury_props/64x64/luxury_fountain.png",
+        "name": "luxury fountain"
+      },
+      {
+        "id": "rooftop_bar",
+        "path": "environmental_props/gta_luxury_props/64x64/rooftop_bar.png",
+        "name": "rooftop bar"
+      },
+      {
+        "id": "rooftop_pool",
+        "path": "environmental_props/gta_luxury_props/64x64/rooftop_pool.png",
+        "name": "rooftop pool"
+      },
+      {
+        "id": "luxury_props_32_spritesheet",
+        "path": "environmental_props/gta_luxury_props/luxury_props_32_spritesheet.png",
+        "name": "luxury props 32 spritesheet"
+      },
+      {
+        "id": "luxury_props_64_spritesheet",
+        "path": "environmental_props/gta_luxury_props/luxury_props_64_spritesheet.png",
+        "name": "luxury props 64 spritesheet"
+      }
+    ],
+    "clutter": [
+      {
+        "id": "barrel_burned",
+        "path": "environmental_props/trash_urban_clutter/barrel_burned.png",
+        "name": "barrel burned"
+      },
+      {
+        "id": "barrel_clean",
+        "path": "environmental_props/trash_urban_clutter/barrel_clean.png",
+        "name": "barrel clean"
+      },
+      {
+        "id": "barrel_damaged",
+        "path": "environmental_props/trash_urban_clutter/barrel_damaged.png",
+        "name": "barrel damaged"
+      },
+      {
+        "id": "barrel_rusty",
+        "path": "environmental_props/trash_urban_clutter/barrel_rusty.png",
+        "name": "barrel rusty"
+      },
+      {
+        "id": "barrel_wet",
+        "path": "environmental_props/trash_urban_clutter/barrel_wet.png",
+        "name": "barrel wet"
+      },
+      {
+        "id": "broken_cardboard_burned",
+        "path": "environmental_props/trash_urban_clutter/broken_cardboard_burned.png",
+        "name": "broken cardboard burned"
+      },
+      {
+        "id": "broken_cardboard_clean",
+        "path": "environmental_props/trash_urban_clutter/broken_cardboard_clean.png",
+        "name": "broken cardboard clean"
+      },
+      {
+        "id": "broken_cardboard_damaged",
+        "path": "environmental_props/trash_urban_clutter/broken_cardboard_damaged.png",
+        "name": "broken cardboard damaged"
+      },
+      {
+        "id": "broken_cardboard_rusty",
+        "path": "environmental_props/trash_urban_clutter/broken_cardboard_rusty.png",
+        "name": "broken cardboard rusty"
+      },
+      {
+        "id": "broken_cardboard_wet",
+        "path": "environmental_props/trash_urban_clutter/broken_cardboard_wet.png",
+        "name": "broken cardboard wet"
+      },
+      {
+        "id": "cardboard_box_burned",
+        "path": "environmental_props/trash_urban_clutter/cardboard_box_burned.png",
+        "name": "cardboard box burned"
+      },
+      {
+        "id": "cardboard_box_clean",
+        "path": "environmental_props/trash_urban_clutter/cardboard_box_clean.png",
+        "name": "cardboard box clean"
+      },
+      {
+        "id": "cardboard_box_damaged",
+        "path": "environmental_props/trash_urban_clutter/cardboard_box_damaged.png",
+        "name": "cardboard box damaged"
+      },
+      {
+        "id": "cardboard_box_rusty",
+        "path": "environmental_props/trash_urban_clutter/cardboard_box_rusty.png",
+        "name": "cardboard box rusty"
+      },
+      {
+        "id": "cardboard_box_wet",
+        "path": "environmental_props/trash_urban_clutter/cardboard_box_wet.png",
+        "name": "cardboard box wet"
+      },
+      {
+        "id": "dumpster_burned",
+        "path": "environmental_props/trash_urban_clutter/dumpster_burned.png",
+        "name": "dumpster burned"
+      },
+      {
+        "id": "dumpster_clean",
+        "path": "environmental_props/trash_urban_clutter/dumpster_clean.png",
+        "name": "dumpster clean"
+      },
+      {
+        "id": "dumpster_damaged",
+        "path": "environmental_props/trash_urban_clutter/dumpster_damaged.png",
+        "name": "dumpster damaged"
+      },
+      {
+        "id": "dumpster_rusty",
+        "path": "environmental_props/trash_urban_clutter/dumpster_rusty.png",
+        "name": "dumpster rusty"
+      },
+      {
+        "id": "dumpster_wet",
+        "path": "environmental_props/trash_urban_clutter/dumpster_wet.png",
+        "name": "dumpster wet"
+      },
+      {
+        "id": "garbage_bags_burned",
+        "path": "environmental_props/trash_urban_clutter/garbage_bags_burned.png",
+        "name": "garbage bags burned"
+      },
+      {
+        "id": "garbage_bags_clean",
+        "path": "environmental_props/trash_urban_clutter/garbage_bags_clean.png",
+        "name": "garbage bags clean"
+      },
+      {
+        "id": "garbage_bags_damaged",
+        "path": "environmental_props/trash_urban_clutter/garbage_bags_damaged.png",
+        "name": "garbage bags damaged"
+      },
+      {
+        "id": "garbage_bags_rusty",
+        "path": "environmental_props/trash_urban_clutter/garbage_bags_rusty.png",
+        "name": "garbage bags rusty"
+      },
+      {
+        "id": "garbage_bags_wet",
+        "path": "environmental_props/trash_urban_clutter/garbage_bags_wet.png",
+        "name": "garbage bags wet"
+      },
+      {
+        "id": "metal_crate_burned",
+        "path": "environmental_props/trash_urban_clutter/metal_crate_burned.png",
+        "name": "metal crate burned"
+      },
+      {
+        "id": "metal_crate_clean",
+        "path": "environmental_props/trash_urban_clutter/metal_crate_clean.png",
+        "name": "metal crate clean"
+      },
+      {
+        "id": "metal_crate_damaged",
+        "path": "environmental_props/trash_urban_clutter/metal_crate_damaged.png",
+        "name": "metal crate damaged"
+      },
+      {
+        "id": "metal_crate_rusty",
+        "path": "environmental_props/trash_urban_clutter/metal_crate_rusty.png",
+        "name": "metal crate rusty"
+      },
+      {
+        "id": "metal_crate_wet",
+        "path": "environmental_props/trash_urban_clutter/metal_crate_wet.png",
+        "name": "metal crate wet"
+      },
+      {
+        "id": "oil_barrel_burned",
+        "path": "environmental_props/trash_urban_clutter/oil_barrel_burned.png",
+        "name": "oil barrel burned"
+      },
+      {
+        "id": "oil_barrel_clean",
+        "path": "environmental_props/trash_urban_clutter/oil_barrel_clean.png",
+        "name": "oil barrel clean"
+      },
+      {
+        "id": "oil_barrel_damaged",
+        "path": "environmental_props/trash_urban_clutter/oil_barrel_damaged.png",
+        "name": "oil barrel damaged"
+      },
+      {
+        "id": "oil_barrel_rusty",
+        "path": "environmental_props/trash_urban_clutter/oil_barrel_rusty.png",
+        "name": "oil barrel rusty"
+      },
+      {
+        "id": "oil_barrel_wet",
+        "path": "environmental_props/trash_urban_clutter/oil_barrel_wet.png",
+        "name": "oil barrel wet"
+      },
+      {
+        "id": "pallet_burned",
+        "path": "environmental_props/trash_urban_clutter/pallet_burned.png",
+        "name": "pallet burned"
+      },
+      {
+        "id": "pallet_clean",
+        "path": "environmental_props/trash_urban_clutter/pallet_clean.png",
+        "name": "pallet clean"
+      },
+      {
+        "id": "pallet_damaged",
+        "path": "environmental_props/trash_urban_clutter/pallet_damaged.png",
+        "name": "pallet damaged"
+      },
+      {
+        "id": "pallet_rusty",
+        "path": "environmental_props/trash_urban_clutter/pallet_rusty.png",
+        "name": "pallet rusty"
+      },
+      {
+        "id": "pallet_wet",
+        "path": "environmental_props/trash_urban_clutter/pallet_wet.png",
+        "name": "pallet wet"
+      },
+      {
+        "id": "stacked_tires_burned",
+        "path": "environmental_props/trash_urban_clutter/stacked_tires_burned.png",
+        "name": "stacked tires burned"
+      },
+      {
+        "id": "stacked_tires_clean",
+        "path": "environmental_props/trash_urban_clutter/stacked_tires_clean.png",
+        "name": "stacked tires clean"
+      },
+      {
+        "id": "stacked_tires_damaged",
+        "path": "environmental_props/trash_urban_clutter/stacked_tires_damaged.png",
+        "name": "stacked tires damaged"
+      },
+      {
+        "id": "stacked_tires_wet",
+        "path": "environmental_props/trash_urban_clutter/stacked_tires_wet.png",
+        "name": "stacked tires wet"
+      },
+      {
+        "id": "tire_burned",
+        "path": "environmental_props/trash_urban_clutter/tire_burned.png",
+        "name": "tire burned"
+      },
+      {
+        "id": "tire_clean",
+        "path": "environmental_props/trash_urban_clutter/tire_clean.png",
+        "name": "tire clean"
+      },
+      {
+        "id": "tire_damaged",
+        "path": "environmental_props/trash_urban_clutter/tire_damaged.png",
+        "name": "tire damaged"
+      },
+      {
+        "id": "tire_rusty",
+        "path": "environmental_props/trash_urban_clutter/tire_rusty.png",
+        "name": "tire rusty"
+      },
+      {
+        "id": "tire_wet",
+        "path": "environmental_props/trash_urban_clutter/tire_wet.png",
+        "name": "tire wet"
+      },
+      {
+        "id": "toxic_barrel_burned",
+        "path": "environmental_props/trash_urban_clutter/toxic_barrel_burned.png",
+        "name": "toxic barrel burned"
+      },
+      {
+        "id": "toxic_barrel_clean",
+        "path": "environmental_props/trash_urban_clutter/toxic_barrel_clean.png",
+        "name": "toxic barrel clean"
+      },
+      {
+        "id": "toxic_barrel_damaged",
+        "path": "environmental_props/trash_urban_clutter/toxic_barrel_damaged.png",
+        "name": "toxic barrel damaged"
+      },
+      {
+        "id": "toxic_barrel_rusty",
+        "path": "environmental_props/trash_urban_clutter/toxic_barrel_rusty.png",
+        "name": "toxic barrel rusty"
+      },
+      {
+        "id": "toxic_barrel_wet",
+        "path": "environmental_props/trash_urban_clutter/toxic_barrel_wet.png",
+        "name": "toxic barrel wet"
+      },
+      {
+        "id": "trash_can_burned",
+        "path": "environmental_props/trash_urban_clutter/trash_can_burned.png",
+        "name": "trash can burned"
+      },
+      {
+        "id": "trash_can_clean",
+        "path": "environmental_props/trash_urban_clutter/trash_can_clean.png",
+        "name": "trash can clean"
+      },
+      {
+        "id": "trash_can_damaged",
+        "path": "environmental_props/trash_urban_clutter/trash_can_damaged.png",
+        "name": "trash can damaged"
+      },
+      {
+        "id": "trash_can_rusty",
+        "path": "environmental_props/trash_urban_clutter/trash_can_rusty.png",
+        "name": "trash can rusty"
+      },
+      {
+        "id": "trash_can_wet",
+        "path": "environmental_props/trash_urban_clutter/trash_can_wet.png",
+        "name": "trash can wet"
+      },
+      {
+        "id": "urban_clutter_spritesheet",
+        "path": "environmental_props/trash_urban_clutter/urban_clutter_spritesheet.png",
+        "name": "urban clutter spritesheet"
+      },
+      {
+        "id": "wooden_crate_burned",
+        "path": "environmental_props/trash_urban_clutter/wooden_crate_burned.png",
+        "name": "wooden crate burned"
+      },
+      {
+        "id": "wooden_crate_clean",
+        "path": "environmental_props/trash_urban_clutter/wooden_crate_clean.png",
+        "name": "wooden crate clean"
+      },
+      {
+        "id": "wooden_crate_damaged",
+        "path": "environmental_props/trash_urban_clutter/wooden_crate_damaged.png",
+        "name": "wooden crate damaged"
+      },
+      {
+        "id": "wooden_crate_rusty",
+        "path": "environmental_props/trash_urban_clutter/wooden_crate_rusty.png",
+        "name": "wooden crate rusty"
+      },
+      {
+        "id": "wooden_crate_wet",
+        "path": "environmental_props/trash_urban_clutter/wooden_crate_wet.png",
+        "name": "wooden crate wet"
+      }
+    ]
+  }
+}

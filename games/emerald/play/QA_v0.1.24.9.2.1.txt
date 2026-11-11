@@ -1,0 +1,33 @@
+EMERALD v0.1.24.9.2.1 — SPRITE COVERAGE MATRIX QA
+Date: 2026-09-12
+
+PASS
+- true-pokefield-v0.1.24.9.2.1.js parses with node --check.
+- pokefield-live-v0.1.24.9.2.1.js parses with node --check.
+- teamlab-engine-v0.1.24.9.2.js parses with node --check.
+- teamlab-v0.1.24.9.2.js parses with node --check.
+- Sprite Coverage Matrix regression test PASS.
+- Practical move expectations preserved: Milotic Surf; Lugia Aeroblast/Psychic; Claydol Earthquake/Psychic.
+- Matrix retains all-types coverage engine and current-party move basis.
+- Full-screen overlay includes safe-area-aware sticky header and explicit FIELD back button.
+- Every party member is represented per type in both DEFENSE and OFFENSE cells using sprite-state symbols.
+- Type-row DEFENSE/OFFENSE drill-down still calls the existing openTeamCoverageType handoff.
+- index.html local src/href existence check: 34 references, 0 missing.
+- VERSION.txt = 0.1.24.9.2.1.
+
+UNCHANGED CORE HASHES
+- teamlab-engine-v0.1.24.9.2.js
+  781bbb816a30299511402847de0d5f039d436fe2b03c698e9a8d281dd411be2f
+- teamlab-v0.1.24.9.2.js
+  a42c2d5f2e3b567925cf1e9fd4bd93aad3fca3a5d00971c8016de3b21f82ac4f
+
+NEW ACTIVE SURFACE HASHES
+- true-pokefield-v0.1.24.9.2.1.js
+  a37087f504ab4eb869240462cf9532945e27a44db7b13dfe5795984702db1408
+- true-pokefield-v0.1.24.9.2.1.css
+  ddfa3de76589287c24cb794ceb52483efaab1ca48031b20339d48241fe51f4f9
+- pokefield-live-v0.1.24.9.2.1.js
+  1d4c1ab367f382853534d0ba87f6c4acd039d8f6a58c04539e64f677ef0e189b
+
+NOTE
+This pass is deliberately presentation-focused. It does not alter save writes, emulator behavior, ROM handling, Team Lab mechanics, or the v0.1.24.9.2 practical move model.

@@ -1,0 +1,25 @@
+EMERALD v0.1.13 — PUBLIC SAVE VAULT POLISH
+Date: 2026-09-08
+
+Purpose
+-------
+Make the public Save Vault read like a finished player-facing product instead of a developer console.
+
+Public UI changes
+-----------------
+- SERVER SAVE VAULT -> SAVE VAULT
+- SERVER VERIFIED -> SAVED
+- Removed infrastructure/provider/database copy from the player UI.
+- Removed WHERE IS MY SAVE? from the player UI.
+- Removed Refresh Database and raw-local-save plumbing buttons from the normal footer.
+- CAPTURE SAVE NOW -> SAVE NOW.
+- Save cards now show only Play Time, Trainer ID and Last Saved.
+- Removed save counter, byte count and SHA-256 from public cards.
+- Save history no longer exposes snapshot hashes/counter internals.
+- Local save diagnostics are available only with ?debug=1 (or localStorage pokefield-debug=1).
+- Login wallpaper and human auth copy from v0.1.12 are retained unchanged.
+
+Save architecture
+-----------------
+No save-routing change. v0.1.13 keeps the proven v0.1.11 native mGBA save ownership/mirror architecture and v0.1.12 RTC handling.
+The Save Vault backend remains v0.1.2.

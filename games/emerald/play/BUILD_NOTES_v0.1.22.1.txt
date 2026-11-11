@@ -1,0 +1,20 @@
+EMERALD v0.1.22.1 — REGULAR / DEX MODE UX HOTFIX
+Date: 2026-09-09
+
+PURPOSE
+- Restore the previous v0.1.21.1 interface as the DEFAULT / REGULAR mode.
+- Keep v0.1.22 Strategy Pokédex as an explicit opt-in DEX mode instead of replacing regular play.
+- Put a visible DEX switch on the indigo page background at the upper-right.
+
+ROUTES
+- index.html = REGULAR mode (previous v0.1.21.1 presentation / My Field / TeamLab behavior)
+- dex.html   = DEX mode (v0.1.22 Shared Context / Strategy Pokédex presentation)
+
+SWITCH
+- REGULAR: upper-right control reads DEX / STRATEGY MODE and opens dex.html.
+- DEX: the same upper-right control remains branded DEX and offers ← REGULAR MODE.
+- No generated imagery or new visual asset dependency.
+
+IMPORTANT
+The switch changes page mode, not save data. Save Vault / IndexedDB / server saves remain shared.
+DEX is now a presentation/workspace mode, not the default Emerald interface.

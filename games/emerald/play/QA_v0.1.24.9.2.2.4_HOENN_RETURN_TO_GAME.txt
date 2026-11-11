@@ -1,0 +1,36 @@
+QA — EMERALD v0.1.24.9.2.2.4 HOENN RETURN TO GAME
+2026-09-12
+
+STATIC CHECKS
+PASS: hoenn-online-v0.1.4.js parses with node --check.
+PASS: index.html points to hoenn-online-v0.1.4.js with cache-bust v0.1.24.9.2.2.4.
+PASS: index.html cache-busts hoenn-online-v0.1.css to v0.1.24.9.2.2.4.
+PASS: Hoenn panel contains a persistent BACK TO GAME close control in authenticated and unauthenticated views.
+PASS: Header X remains a second close path and is sticky while Hoenn panel scrolls.
+PASS: all [data-close] buttons share the same closeHoenn() handler.
+PASS: no MutationObserver introduced.
+
+REGRESSION BOUNDARY AGAINST v0.1.24.9.2.2.3
+Only existing files changed:
+- index.html
+- hoenn-online-v0.1.css
+
+Only files added:
+- hoenn-online-v0.1.4.js
+- BUILD_NOTES_v0.1.24.9.2.2.4_HOENN_RETURN_TO_GAME.txt
+- QA_v0.1.24.9.2.2.4_HOENN_RETURN_TO_GAME.txt
+
+Critical runtime files byte-identical to the known-good v0.1.24.9.2.2.3 base:
+- save-vault-v0.1.13.7.js SHA-256 86fb564752be461e803e327f0be59ebae63fcb4a136b79747f61aa84c32c33fe
+- assets/mgba-9Quf3WhR.js SHA-256 c86f29ec983e4a4fdc42bb0f17a4e468a91e4959b7b38d312ee063b4f46342f9
+- assets/mgba-2tQpynw2.wasm SHA-256 546a99648d2ef52cb04e34e19a4d0ad2d5dc6bcf0f6749bbaba7d5771226f002
+- pokefield-live-v0.1.24.9.2.1.1.js SHA-256 653388c0bb80da949e655074d53ebd0c22ca65139e8b3477af1289f05ab6921d
+- true-pokefield-v0.1.24.9.2.1.2.js SHA-256 d5ad411dc89e1b5af269141c1ed5d4057d9d78a9cb7b0c18a3a301844a76826d
+
+MANUAL MOBILE EXPECTATION
+1. Load existing Save Vault save and start Emerald.
+2. Tap the center HOENN button between SELECT and START.
+3. Emerald · MadeBy panel opens over the game controls.
+4. Tap BACK TO GAME at the bottom of the panel, or the X in the sticky header.
+5. Panel closes immediately and the same live emulator session/controller is visible again.
+6. Save/emulator startup behavior should remain identical to v0.1.24.9.2.2.3.

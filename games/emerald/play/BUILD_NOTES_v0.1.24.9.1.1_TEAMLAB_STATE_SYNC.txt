@@ -1,0 +1,13 @@
+EMERALD v0.1.24.9.1.1 — TEAM LAB STATE SYNC
+
+Fixes a Team Lab regression where LIVE could show the loaded party while Team Lab rendered the empty "Load Emerald" state.
+
+Root cause / hardening:
+- Team Lab previously relied on its cached `state` plus the `jrpg:emerald-state` event stream.
+- If that cached reference was stale or the relevant event was missed during a view/focus transition, Team Lab could render an empty state while the canonical `globalThis.JRPGWorldEmeraldState` was already populated.
+
+Fix:
+- Team Lab now synchronizes from `globalThis.JRPGWorldEmeraldState` before reading owned specimens.
+- It synchronizes again when Team Lab opens and before resolving the current specimen.
+- Existing state events remain in place.
+- No changes to True PokéField, Coverage, Focus Chain, Save Vault, Transfer, or Trainer Card mechanics.

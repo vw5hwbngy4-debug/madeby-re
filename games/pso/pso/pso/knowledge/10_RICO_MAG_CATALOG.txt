@@ -1,0 +1,4965 @@
+RICO KNOWLEDGE MODULE
+SOURCE MODULE: 10_PSO_MAG_CATALOG.txt
+MOVE ROUTING: See 18_RICO_KNOWLEDGE_INDEX_QUERY_MAP.txt
+
+PSO MAG CATALOG AND FORM REFERENCE
+==================================
+
+PURPOSE
+All 76 packaged MAG forms with stages, feeding-table IDs, Photon Blast mapping, activation chance, support triggers, and name/id mappings.
+
+SOURCE BASIS
+MagatamaBeta9 truth export via magatama-truth-v1.8.json and pso-mag-core.json.
+
+RETRIEVAL RULE
+Treat explicit platform labels, verification/status fields, source labels, and warnings as part of the fact. Never silently remove them.
+
+MAG_COUNT: 76
+
+MAG: Mag
+{
+  "id": 0,
+  "key": "mag",
+  "name": "Mag",
+  "stage": "0",
+  "gameVersion": "Ep1",
+  "feedingTableId": 0,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "0",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "0",
+      "desc": ""
+    },
+    "LowHP": {
+      "ID": "0",
+      "desc": ""
+    },
+    "Boss": {
+      "ID": "0",
+      "desc": ""
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Varuna
+{
+  "id": 1,
+  "key": "varuna",
+  "name": "Varuna",
+  "stage": "1",
+  "gameVersion": null,
+  "feedingTableId": 1,
+  "photonBlast": {
+    "id": "1",
+    "name": "Farlla"
+  },
+  "activationChance": "40",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "0",
+      "desc": ""
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Kalki
+{
+  "id": 2,
+  "key": "kalki",
+  "name": "Kalki",
+  "stage": "1",
+  "gameVersion": null,
+  "feedingTableId": 1,
+  "photonBlast": {
+    "id": "2",
+    "name": "Estlla"
+  },
+  "activationChance": "40",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "0",
+      "desc": ""
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Vritra
+{
+  "id": 3,
+  "key": "vritra",
+  "name": "Vritra",
+  "stage": "1",
+  "gameVersion": null,
+  "feedingTableId": 1,
+  "photonBlast": {
+    "id": "3",
+    "name": "Leilla"
+  },
+  "activationChance": "40",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "0",
+      "desc": ""
+    },
+    "Boss": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Rudra
+{
+  "id": 4,
+  "key": "rudra",
+  "name": "Rudra",
+  "stage": "2",
+  "gameVersion": null,
+  "feedingTableId": 2,
+  "photonBlast": {
+    "id": "4",
+    "name": "Golla"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Marutah
+{
+  "id": 5,
+  "key": "marutah",
+  "name": "Marutah",
+  "stage": "2",
+  "gameVersion": null,
+  "feedingTableId": 2,
+  "photonBlast": {
+    "id": "5",
+    "name": "Pilla"
+  },
+  "activationChance": "40",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Boss": {
+      "ID": "0",
+      "desc": ""
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Vayu
+{
+  "id": 6,
+  "key": "vayu",
+  "name": "Vayu",
+  "stage": "2",
+  "gameVersion": null,
+  "feedingTableId": 4,
+  "photonBlast": {
+    "id": "6",
+    "name": "Mylla & Youlla"
+  },
+  "activationChance": "45",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Surya
+{
+  "id": 7,
+  "key": "surya",
+  "name": "Surya",
+  "stage": "2",
+  "gameVersion": null,
+  "feedingTableId": 3,
+  "photonBlast": {
+    "id": "4",
+    "name": "Golla"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Mitra
+{
+  "id": 8,
+  "key": "mitra",
+  "name": "Mitra",
+  "stage": "2",
+  "gameVersion": null,
+  "feedingTableId": 3,
+  "photonBlast": {
+    "id": "5",
+    "name": "Pilla"
+  },
+  "activationChance": "40",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Boss": {
+      "ID": "0",
+      "desc": ""
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Tapas
+{
+  "id": 9,
+  "key": "tapas",
+  "name": "Tapas",
+  "stage": "2",
+  "gameVersion": null,
+  "feedingTableId": 3,
+  "photonBlast": {
+    "id": "6",
+    "name": "Mylla & Youlla"
+  },
+  "activationChance": "45",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Sumba
+{
+  "id": 10,
+  "key": "sumba",
+  "name": "Sumba",
+  "stage": "2",
+  "gameVersion": null,
+  "feedingTableId": 2,
+  "photonBlast": {
+    "id": "4",
+    "name": "Golla"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Ashvinau
+{
+  "id": 11,
+  "key": "ashvinau",
+  "name": "Ashvinau",
+  "stage": "2",
+  "gameVersion": null,
+  "feedingTableId": 2,
+  "photonBlast": {
+    "id": "5",
+    "name": "Pilla"
+  },
+  "activationChance": "40",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Boss": {
+      "ID": "0",
+      "desc": ""
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Namuci
+{
+  "id": 12,
+  "key": "namuci",
+  "name": "Namuci",
+  "stage": "2",
+  "gameVersion": null,
+  "feedingTableId": 2,
+  "photonBlast": {
+    "id": "6",
+    "name": "Mylla & Youlla"
+  },
+  "activationChance": "45",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Varaha
+{
+  "id": 13,
+  "key": "varaha",
+  "name": "Varaha",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 4,
+  "photonBlast": {
+    "id": "4",
+    "name": "Golla"
+  },
+  "activationChance": "30",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Kama
+{
+  "id": 14,
+  "key": "kama",
+  "name": "Kama",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 4,
+  "photonBlast": {
+    "id": "5",
+    "name": "Pilla"
+  },
+  "activationChance": "25",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "0",
+      "desc": ""
+    },
+    "LowHP": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Bhirava
+{
+  "id": 15,
+  "key": "bhirava",
+  "name": "Bhirava",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 4,
+  "photonBlast": {
+    "id": "5",
+    "name": "Pilla"
+  },
+  "activationChance": "30",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Apsaras
+{
+  "id": 16,
+  "key": "apsaras",
+  "name": "Apsaras",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 4,
+  "photonBlast": {
+    "id": "2",
+    "name": "Estlla"
+  },
+  "activationChance": "25",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Ila
+{
+  "id": 17,
+  "key": "ila",
+  "name": "Ila",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 5,
+  "photonBlast": {
+    "id": "6",
+    "name": "Mylla & Youlla"
+  },
+  "activationChance": "25",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "0",
+      "desc": ""
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Garuda
+{
+  "id": 18,
+  "key": "garuda",
+  "name": "Garuda",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 5,
+  "photonBlast": {
+    "id": "5",
+    "name": "Pilla"
+  },
+  "activationChance": "30",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Nandin
+{
+  "id": 19,
+  "key": "nandin",
+  "name": "Nandin",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 5,
+  "photonBlast": {
+    "id": "2",
+    "name": "Estlla"
+  },
+  "activationChance": "25",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Yaksa
+{
+  "id": 20,
+  "key": "yaksa",
+  "name": "Yaksa",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 5,
+  "photonBlast": {
+    "id": "4",
+    "name": "Golla"
+  },
+  "activationChance": "35",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Kabanda
+{
+  "id": 21,
+  "key": "kabanda",
+  "name": "Kabanda",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 6,
+  "photonBlast": {
+    "id": "6",
+    "name": "Mylla & Youlla"
+  },
+  "activationChance": "25",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Durga
+{
+  "id": 22,
+  "key": "durga",
+  "name": "Durga",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 5,
+  "photonBlast": {
+    "id": "2",
+    "name": "Estlla"
+  },
+  "activationChance": "25",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Ushasu
+{
+  "id": 23,
+  "key": "ushasu",
+  "name": "Ushasu",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 4,
+  "photonBlast": {
+    "id": "4",
+    "name": "Golla"
+  },
+  "activationChance": "35",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Soma
+{
+  "id": 24,
+  "key": "soma",
+  "name": "Soma",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 5,
+  "photonBlast": {
+    "id": "2",
+    "name": "Estlla"
+  },
+  "activationChance": "25",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Madhu
+{
+  "id": 25,
+  "key": "madhu",
+  "name": "Madhu",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 6,
+  "photonBlast": {
+    "id": "6",
+    "name": "Mylla & Youlla"
+  },
+  "activationChance": "20",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Kaitabha
+{
+  "id": 26,
+  "key": "kaitabha",
+  "name": "Kaitabha",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 4,
+  "photonBlast": {
+    "id": "6",
+    "name": "Mylla & Youlla"
+  },
+  "activationChance": "30",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Naraka
+{
+  "id": 27,
+  "key": "naraka",
+  "name": "Naraka",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 6,
+  "photonBlast": {
+    "id": "4",
+    "name": "Golla"
+  },
+  "activationChance": "30",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Marica
+{
+  "id": 28,
+  "key": "marica",
+  "name": "Marica",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 6,
+  "photonBlast": {
+    "id": "5",
+    "name": "Pilla"
+  },
+  "activationChance": "30",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Ravana
+{
+  "id": 29,
+  "key": "ravana",
+  "name": "Ravana",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 6,
+  "photonBlast": {
+    "id": "1",
+    "name": "Farlla"
+  },
+  "activationChance": "25",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Naga
+{
+  "id": 30,
+  "key": "naga",
+  "name": "Naga",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 6,
+  "photonBlast": {
+    "id": "6",
+    "name": "Mylla & Youlla"
+  },
+  "activationChance": "20",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "0",
+      "desc": ""
+    },
+    "LowHP": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Ribhava
+{
+  "id": 31,
+  "key": "ribhava",
+  "name": "Ribhava",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 5,
+  "photonBlast": {
+    "id": "1",
+    "name": "Farlla"
+  },
+  "activationChance": "25",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Sita
+{
+  "id": 32,
+  "key": "sita",
+  "name": "Sita",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 5,
+  "photonBlast": {
+    "id": "5",
+    "name": "Pilla"
+  },
+  "activationChance": "30",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Kumara
+{
+  "id": 33,
+  "key": "kumara",
+  "name": "Kumara",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 4,
+  "photonBlast": {
+    "id": "4",
+    "name": "Golla"
+  },
+  "activationChance": "35",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Andhaka
+{
+  "id": 34,
+  "key": "andhaka",
+  "name": "Andhaka",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 6,
+  "photonBlast": {
+    "id": "2",
+    "name": "Estlla"
+  },
+  "activationChance": "25",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Bana
+{
+  "id": 35,
+  "key": "bana",
+  "name": "Bana",
+  "stage": "3",
+  "gameVersion": null,
+  "feedingTableId": 6,
+  "photonBlast": {
+    "id": "2",
+    "name": "Estlla"
+  },
+  "activationChance": "20",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Preta
+{
+  "id": 36,
+  "key": "preta",
+  "name": "Preta",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "LowHP": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Churel
+{
+  "id": 37,
+  "key": "churel",
+  "name": "Churel",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Pitri
+{
+  "id": 38,
+  "key": "pitri",
+  "name": "Pitri",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Soniti
+{
+  "id": 39,
+  "key": "soniti",
+  "name": "Soniti",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Chao
+{
+  "id": 40,
+  "key": "chao",
+  "name": "Chao",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Robochao
+{
+  "id": 41,
+  "key": "robochao",
+  "name": "Robochao",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Pian
+{
+  "id": 42,
+  "key": "pian",
+  "name": "Pian",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Opa Opa
+{
+  "id": 43,
+  "key": "opa_opa",
+  "name": "Opa Opa",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Chu Chu
+{
+  "id": 44,
+  "key": "chu_chu",
+  "name": "Chu Chu",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Kapu Kapu
+{
+  "id": 45,
+  "key": "kapu_kapu",
+  "name": "Kapu Kapu",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Angel's Wings
+{
+  "id": 46,
+  "key": "angel_s_wings",
+  "name": "Angel's Wings",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Devil's Wings
+{
+  "id": 47,
+  "key": "devil_s_wings",
+  "name": "Devil's Wings",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Devil's Tail
+{
+  "id": 48,
+  "key": "devil_s_tail",
+  "name": "Devil's Tail",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Panzer's Tail
+{
+  "id": 49,
+  "key": "panzer_s_tail",
+  "name": "Panzer's Tail",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Hamburger
+{
+  "id": 50,
+  "key": "hamburger",
+  "name": "Hamburger",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Mark III
+{
+  "id": 51,
+  "key": "mark_iii",
+  "name": "Mark III",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "0",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "0",
+      "desc": ""
+    },
+    "LowHP": {
+      "ID": "0",
+      "desc": ""
+    },
+    "Boss": {
+      "ID": "0",
+      "desc": ""
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Master System
+{
+  "id": 52,
+  "key": "master_system",
+  "name": "Master System",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "15",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "0",
+      "desc": ""
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Genesis
+{
+  "id": 53,
+  "key": "genesis",
+  "name": "Genesis",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "30",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+MAG: Saturn
+{
+  "id": 54,
+  "key": "saturn",
+  "name": "Saturn",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Dreamcast
+{
+  "id": 55,
+  "key": "dreamcast",
+  "name": "Dreamcast",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "70",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Elenor
+{
+  "id": 56,
+  "key": "elenor",
+  "name": "Elenor",
+  "stage": "4",
+  "gameVersion": null,
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Deva
+{
+  "id": 57,
+  "key": "deva",
+  "name": "Deva",
+  "stage": "4",
+  "gameVersion": "Ep2",
+  "feedingTableId": 5,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Rati
+{
+  "id": 58,
+  "key": "rati",
+  "name": "Rati",
+  "stage": "4",
+  "gameVersion": "Ep2",
+  "feedingTableId": 6,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Savitri
+{
+  "id": 59,
+  "key": "savitri",
+  "name": "Savitri",
+  "stage": "4",
+  "gameVersion": "Ep2",
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Pushan
+{
+  "id": 60,
+  "key": "pushan",
+  "name": "Pushan",
+  "stage": "4",
+  "gameVersion": "Ep2",
+  "feedingTableId": 6,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Rukmin
+{
+  "id": 61,
+  "key": "rukmin",
+  "name": "Rukmin",
+  "stage": "4",
+  "gameVersion": "Ep2",
+  "feedingTableId": 5,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Diwari
+{
+  "id": 62,
+  "key": "diwari",
+  "name": "Diwari",
+  "stage": "4",
+  "gameVersion": "Ep2",
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Nidra
+{
+  "id": 63,
+  "key": "nidra",
+  "name": "Nidra",
+  "stage": "4",
+  "gameVersion": "Ep2",
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Sato
+{
+  "id": 64,
+  "key": "sato",
+  "name": "Sato",
+  "stage": "4",
+  "gameVersion": "Ep2",
+  "feedingTableId": 5,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Bhima
+{
+  "id": 65,
+  "key": "bhima",
+  "name": "Bhima",
+  "stage": "4",
+  "gameVersion": "Ep2",
+  "feedingTableId": 6,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Agastya
+{
+  "id": 66,
+  "key": "agastya",
+  "name": "Agastya",
+  "stage": "4",
+  "gameVersion": "Ep4",
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Gael-Giel
+{
+  "id": 67,
+  "key": "gael_giel",
+  "name": "Gael-Giel",
+  "stage": "4",
+  "gameVersion": "Ep4",
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Geung-si
+{
+  "id": 68,
+  "key": "geung_si",
+  "name": "Geung-si",
+  "stage": "4",
+  "gameVersion": "Ep4",
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Morolian
+{
+  "id": 69,
+  "key": "morolian",
+  "name": "Morolian",
+  "stage": "4",
+  "gameVersion": "Ep4",
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Pioneer 2
+{
+  "id": 70,
+  "key": "pioneer_2",
+  "name": "Pioneer 2",
+  "stage": "4",
+  "gameVersion": "Ep4",
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Puyo
+{
+  "id": 71,
+  "key": "puyo",
+  "name": "Puyo",
+  "stage": "4",
+  "gameVersion": "Ep4",
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "LowHP": {
+      "ID": "2",
+      "desc": "Shifta / Deband"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Rappy
+{
+  "id": 72,
+  "key": "rappy",
+  "name": "Rappy",
+  "stage": "4",
+  "gameVersion": "Ep4",
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Striker Unit
+{
+  "id": 73,
+  "key": "striker_unit",
+  "name": "Striker Unit",
+  "stage": "4",
+  "gameVersion": "Ep4",
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "55",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "LowHP": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Boss": {
+      "ID": "3",
+      "desc": "Resta"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Tellusis
+{
+  "id": 74,
+  "key": "tellusis",
+  "name": "Tellusis",
+  "stage": "4",
+  "gameVersion": "Ep4",
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "55",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "1",
+      "desc": "Reverser"
+    }
+  }
+}
+END_MAG
+
+MAG: Yahoo!
+{
+  "id": 75,
+  "key": "yahoo",
+  "name": "Yahoo!",
+  "stage": "4",
+  "gameVersion": "Ep4",
+  "feedingTableId": 7,
+  "photonBlast": {
+    "id": "0",
+    "name": "None"
+  },
+  "activationChance": "50",
+  "triggers": {
+    "PB_Filled": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "LowHP": {
+      "ID": "0",
+      "desc": ""
+    },
+    "Boss": {
+      "ID": "1",
+      "desc": "Invulnerability"
+    },
+    "Death": {
+      "ID": "0",
+      "desc": ""
+    }
+  }
+}
+END_MAG
+
+RAW MAG ID MAP FROM TRUTH EXPORT
+{
+  "0": {
+    "id": 0,
+    "name": "Mag",
+    "table": 0,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "0",
+    "gameVer": "Ep1",
+    "activation": 0,
+    "actions": {
+      "PB_Filled": {
+        "ID": "0",
+        "desc": ""
+      },
+      "LowHP": {
+        "ID": "0",
+        "desc": ""
+      },
+      "Boss": {
+        "ID": "0",
+        "desc": ""
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "1": {
+    "id": 1,
+    "name": "Varuna",
+    "table": 1,
+    "pb": {
+      "id": 1,
+      "name": "Farlla"
+    },
+    "stage": "1",
+    "gameVer": null,
+    "activation": 40,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "0",
+        "desc": ""
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "2": {
+    "id": 2,
+    "name": "Kalki",
+    "table": 1,
+    "pb": {
+      "id": 2,
+      "name": "Estlla"
+    },
+    "stage": "1",
+    "gameVer": null,
+    "activation": 40,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "0",
+        "desc": ""
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "3": {
+    "id": 3,
+    "name": "Vritra",
+    "table": 1,
+    "pb": {
+      "id": 3,
+      "name": "Leilla"
+    },
+    "stage": "1",
+    "gameVer": null,
+    "activation": 40,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "0",
+        "desc": ""
+      },
+      "Boss": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "4": {
+    "id": 4,
+    "name": "Rudra",
+    "table": 2,
+    "pb": {
+      "id": 4,
+      "name": "Golla"
+    },
+    "stage": "2",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "5": {
+    "id": 5,
+    "name": "Marutah",
+    "table": 2,
+    "pb": {
+      "id": 5,
+      "name": "Pilla"
+    },
+    "stage": "2",
+    "gameVer": null,
+    "activation": 40,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Boss": {
+        "ID": "0",
+        "desc": ""
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "6": {
+    "id": 6,
+    "name": "Vayu",
+    "table": 4,
+    "pb": {
+      "id": 6,
+      "name": "Mylla"
+    },
+    "stage": "2",
+    "gameVer": null,
+    "activation": 45,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "7": {
+    "id": 7,
+    "name": "Surya",
+    "table": 3,
+    "pb": {
+      "id": 4,
+      "name": "Golla"
+    },
+    "stage": "2",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "8": {
+    "id": 8,
+    "name": "Mitra",
+    "table": 3,
+    "pb": {
+      "id": 5,
+      "name": "Pilla"
+    },
+    "stage": "2",
+    "gameVer": null,
+    "activation": 40,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Boss": {
+        "ID": "0",
+        "desc": ""
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "9": {
+    "id": 9,
+    "name": "Tapas",
+    "table": 3,
+    "pb": {
+      "id": 6,
+      "name": "Mylla"
+    },
+    "stage": "2",
+    "gameVer": null,
+    "activation": 45,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "10": {
+    "id": 10,
+    "name": "Sumba",
+    "table": 2,
+    "pb": {
+      "id": 4,
+      "name": "Golla"
+    },
+    "stage": "2",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "11": {
+    "id": 11,
+    "name": "Ashvinau",
+    "table": 2,
+    "pb": {
+      "id": 5,
+      "name": "Pilla"
+    },
+    "stage": "2",
+    "gameVer": null,
+    "activation": 40,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Boss": {
+        "ID": "0",
+        "desc": ""
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "12": {
+    "id": 12,
+    "name": "Namuci",
+    "table": 2,
+    "pb": {
+      "id": 6,
+      "name": "Mylla"
+    },
+    "stage": "2",
+    "gameVer": null,
+    "activation": 45,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "13": {
+    "id": 13,
+    "name": "Varaha",
+    "table": 4,
+    "pb": {
+      "id": 4,
+      "name": "Golla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 30,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "14": {
+    "id": 14,
+    "name": "Kama",
+    "table": 4,
+    "pb": {
+      "id": 5,
+      "name": "Pilla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 25,
+    "actions": {
+      "PB_Filled": {
+        "ID": "0",
+        "desc": ""
+      },
+      "LowHP": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "15": {
+    "id": 15,
+    "name": "Bhirava",
+    "table": 4,
+    "pb": {
+      "id": 5,
+      "name": "Pilla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 30,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "16": {
+    "id": 16,
+    "name": "Apsaras",
+    "table": 4,
+    "pb": {
+      "id": 2,
+      "name": "Estlla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 25,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "17": {
+    "id": 17,
+    "name": "Ila",
+    "table": 5,
+    "pb": {
+      "id": 6,
+      "name": "Mylla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 25,
+    "actions": {
+      "PB_Filled": {
+        "ID": "0",
+        "desc": ""
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "18": {
+    "id": 18,
+    "name": "Garuda",
+    "table": 5,
+    "pb": {
+      "id": 5,
+      "name": "Pilla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 30,
+    "actions": {
+      "PB_Filled": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "19": {
+    "id": 19,
+    "name": "Nandin",
+    "table": 5,
+    "pb": {
+      "id": 2,
+      "name": "Estlla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 25,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "20": {
+    "id": 20,
+    "name": "Yaksa",
+    "table": 5,
+    "pb": {
+      "id": 4,
+      "name": "Golla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 35,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "21": {
+    "id": 21,
+    "name": "Kabanda",
+    "table": 6,
+    "pb": {
+      "id": 6,
+      "name": "Mylla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 25,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "22": {
+    "id": 22,
+    "name": "Durga",
+    "table": 5,
+    "pb": {
+      "id": 2,
+      "name": "Estlla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 25,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "23": {
+    "id": 23,
+    "name": "Ushasu",
+    "table": 4,
+    "pb": {
+      "id": 4,
+      "name": "Golla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 35,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "24": {
+    "id": 24,
+    "name": "Soma",
+    "table": 5,
+    "pb": {
+      "id": 2,
+      "name": "Estlla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 25,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "25": {
+    "id": 25,
+    "name": "Madhu",
+    "table": 6,
+    "pb": {
+      "id": 6,
+      "name": "Mylla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 20,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "26": {
+    "id": 26,
+    "name": "Kaitabha",
+    "table": 4,
+    "pb": {
+      "id": 6,
+      "name": "Mylla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 30,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "27": {
+    "id": 27,
+    "name": "Naraka",
+    "table": 6,
+    "pb": {
+      "id": 4,
+      "name": "Golla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 30,
+    "actions": {
+      "PB_Filled": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "28": {
+    "id": 28,
+    "name": "Marica",
+    "table": 6,
+    "pb": {
+      "id": 5,
+      "name": "Pilla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 30,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "29": {
+    "id": 29,
+    "name": "Ravana",
+    "table": 6,
+    "pb": {
+      "id": 1,
+      "name": "Farlla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 25,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "30": {
+    "id": 30,
+    "name": "Naga",
+    "table": 6,
+    "pb": {
+      "id": 6,
+      "name": "Mylla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 20,
+    "actions": {
+      "PB_Filled": {
+        "ID": "0",
+        "desc": ""
+      },
+      "LowHP": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "31": {
+    "id": 31,
+    "name": "Ribhava",
+    "table": 5,
+    "pb": {
+      "id": 1,
+      "name": "Farlla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 25,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "32": {
+    "id": 32,
+    "name": "Sita",
+    "table": 5,
+    "pb": {
+      "id": 5,
+      "name": "Pilla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 30,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "33": {
+    "id": 33,
+    "name": "Kumara",
+    "table": 4,
+    "pb": {
+      "id": 4,
+      "name": "Golla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 35,
+    "actions": {
+      "PB_Filled": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "34": {
+    "id": 34,
+    "name": "Andhaka",
+    "table": 6,
+    "pb": {
+      "id": 2,
+      "name": "Estlla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 25,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "35": {
+    "id": 35,
+    "name": "Bana",
+    "table": 6,
+    "pb": {
+      "id": 2,
+      "name": "Estlla"
+    },
+    "stage": "3",
+    "gameVer": null,
+    "activation": 20,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "36": {
+    "id": 36,
+    "name": "Preta",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "LowHP": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "37": {
+    "id": 37,
+    "name": "Churel",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "38": {
+    "id": 38,
+    "name": "Pitri",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "39": {
+    "id": 39,
+    "name": "Soniti",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "40": {
+    "id": 40,
+    "name": "Chao",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "41": {
+    "id": 41,
+    "name": "Robochao",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "42": {
+    "id": 42,
+    "name": "Pian",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "43": {
+    "id": 43,
+    "name": "Opa Opa",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "44": {
+    "id": 44,
+    "name": "Chu Chu",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "45": {
+    "id": 45,
+    "name": "Kapu Kapu",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "46": {
+    "id": 46,
+    "name": "Angel's Wings",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "47": {
+    "id": 47,
+    "name": "Devil's Wings",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "48": {
+    "id": 48,
+    "name": "Devil's Tail",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "49": {
+    "id": 49,
+    "name": "Panzer's Tail",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "50": {
+    "id": 50,
+    "name": "Hamburger",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "51": {
+    "id": 51,
+    "name": "Mark III",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 0,
+    "actions": {
+      "PB_Filled": {
+        "ID": "0",
+        "desc": ""
+      },
+      "LowHP": {
+        "ID": "0",
+        "desc": ""
+      },
+      "Boss": {
+        "ID": "0",
+        "desc": ""
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "52": {
+    "id": 52,
+    "name": "Master System",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 15,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "0",
+        "desc": ""
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "53": {
+    "id": 53,
+    "name": "Genesis",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 30,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  },
+  "54": {
+    "id": 54,
+    "name": "Saturn",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "55": {
+    "id": 55,
+    "name": "Dreamcast",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 70,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "56": {
+    "id": 56,
+    "name": "Elenor",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": null,
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "57": {
+    "id": 57,
+    "name": "Deva",
+    "table": 5,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep2",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "58": {
+    "id": 58,
+    "name": "Rati",
+    "table": 6,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep2",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "59": {
+    "id": 59,
+    "name": "Savitri",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep2",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "60": {
+    "id": 60,
+    "name": "Pushan",
+    "table": 6,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep2",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "61": {
+    "id": 61,
+    "name": "Rukmin",
+    "table": 5,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep2",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "62": {
+    "id": 62,
+    "name": "Diwari",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep2",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "63": {
+    "id": 63,
+    "name": "Nidra",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep2",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "64": {
+    "id": 64,
+    "name": "Sato",
+    "table": 5,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep2",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "65": {
+    "id": 65,
+    "name": "Bhima",
+    "table": 6,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep2",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "66": {
+    "id": 66,
+    "name": "Agastya",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep4",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "67": {
+    "id": 67,
+    "name": "Gael-Giel",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep4",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "68": {
+    "id": 68,
+    "name": "Geung-si",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep4",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "69": {
+    "id": 69,
+    "name": "Morolian",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep4",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "70": {
+    "id": 70,
+    "name": "Pioneer 2",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep4",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "71": {
+    "id": 71,
+    "name": "Puyo",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep4",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "LowHP": {
+        "ID": "2",
+        "desc": "Shifta / Deband"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "72": {
+    "id": 72,
+    "name": "Rappy",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep4",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "73": {
+    "id": 73,
+    "name": "Striker Unit",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep4",
+    "activation": 55,
+    "actions": {
+      "PB_Filled": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "LowHP": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Boss": {
+        "ID": "3",
+        "desc": "Resta"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "74": {
+    "id": 74,
+    "name": "Tellusis",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep4",
+    "activation": 55,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "1",
+        "desc": "Reverser"
+      }
+    }
+  },
+  "75": {
+    "id": 75,
+    "name": "Yahoo!",
+    "table": 7,
+    "pb": {
+      "id": 0,
+      "name": "None"
+    },
+    "stage": "4",
+    "gameVer": "Ep4",
+    "activation": 50,
+    "actions": {
+      "PB_Filled": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "LowHP": {
+        "ID": "0",
+        "desc": ""
+      },
+      "Boss": {
+        "ID": "1",
+        "desc": "Invulnerability"
+      },
+      "Death": {
+        "ID": "0",
+        "desc": ""
+      }
+    }
+  }
+}
+
+MAG NAME MAP
+{
+  "0": "Mag",
+  "1": "Varuna",
+  "2": "Kalki",
+  "3": "Vritra",
+  "4": "Rudra",
+  "5": "Marutah",
+  "6": "Vayu",
+  "7": "Surya",
+  "8": "Mitra",
+  "9": "Tapas",
+  "10": "Sumba",
+  "11": "Ashvinau",
+  "12": "Namuci",
+  "13": "Varaha",
+  "14": "Kama",
+  "15": "Bhirava",
+  "16": "Apsaras",
+  "17": "Ila",
+  "18": "Garuda",
+  "19": "Nandin",
+  "20": "Yaksa",
+  "21": "Kabanda",
+  "22": "Durga",
+  "23": "Ushasu",
+  "24": "Soma",
+  "25": "Madhu",
+  "26": "Kaitabha",
+  "27": "Naraka",
+  "28": "Marica",
+  "29": "Ravana",
+  "30": "Naga",
+  "31": "Ribhava",
+  "32": "Sita",
+  "33": "Kumara",
+  "34": "Andhaka",
+  "35": "Bana",
+  "36": "Preta",
+  "37": "Churel",
+  "38": "Pitri",
+  "39": "Soniti",
+  "40": "Chao",
+  "41": "Robochao",
+  "42": "Pian",
+  "43": "Opa Opa",
+  "44": "Chu Chu",
+  "45": "Kapu Kapu",
+  "46": "Angel's Wings",
+  "47": "Devil's Wings",
+  "48": "Devil's Tail",
+  "49": "Panzer's Tail",
+  "50": "Hamburger",
+  "51": "Mark III",
+  "52": "Master System",
+  "53": "Genesis",
+  "54": "Saturn",
+  "55": "Dreamcast",
+  "56": "Elenor",
+  "57": "Deva",
+  "58": "Rati",
+  "59": "Savitri",
+  "60": "Pushan",
+  "61": "Rukmin",
+  "62": "Diwari",
+  "63": "Nidra",
+  "64": "Sato",
+  "65": "Bhima",
+  "66": "Agastya",
+  "67": "Gael-Giel",
+  "68": "Geung-si",
+  "69": "Morolian",
+  "70": "Pioneer 2",
+  "71": "Puyo",
+  "72": "Rappy",
+  "73": "Striker Unit",
+  "74": "Tellusis",
+  "75": "Yahoo!"
+}

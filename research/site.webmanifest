@@ -1,0 +1,16 @@
+{
+  "name": "Raynor Eissens | Research and Work",
+  "short_name": "Raynor Eissens",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f5f0",
+  "theme_color": "#f6f5f0",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ]
+}

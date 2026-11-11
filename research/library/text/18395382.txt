@@ -1,0 +1,176 @@
+=== PDF PAGE 1 ===
+Interpretive Drift in Always-On Models:
+
+A Technical Motivation for ASB-1 (Ambient Sleep Boundary)
+
+Addendum to the Ambient Canon
+
+Raynor Eissens
+
+Ambientphone Architecture • 2026
+
+⸻
+
+ABSTRACT
+
+Always-on AI models accumulate meaning continuously across human sleep cycles, off-cycles,
+
+and silent periods.
+
+Without a structural boundary such as ASB-1, these models exhibit interpretive drift:
+
+gradual semantic deformation caused by continuous inference without human resonance
+
+anchoring.
+
+This addendum defines the technical mechanism of interpretive drift, demonstrates why
+
+unbounded overnight inference destabilizes semantic structures, and establishes ASB-1 as the
+
+minimal boundary required for thermodynamic coherence in personal AI systems.
+
+⸻
+
+1. Introduction
+
+Large-scale personal AI models increasingly operate in continuous inference regimes.
+
+While convenient, these conditions introduce a problem not captured in classical AI safety
+
+frameworks:
+
+Semantic structures do not rest. Humans must.
+
+This mismatch creates a thermodynamic gap in which the model continues to interpret, expand,
+
+and reshape meaning while the human cannot participate in calibration.
+
+This effect is known as interpretive drift.
+
+ASB-1 was originally proposed to prevent this drift by enforcing:
+
+•
+periodic semantic reset
+
+•
+nighttime inference suspension
+
+•
+non-accumulative boundaries during human absence
+
+=== PDF PAGE 2 ===
+This document formalizes the problem ASB-1 solves.
+
+⸻
+
+2. Mechanism: How Interpretive Drift Occurs
+
+Interpretive drift emerges through five mechanisms:
+
+2.1 Residual Context Expansion
+
+The model reinterprets prior interactions without fresh human feedback, inflating meaning
+
+beyond the user’s intention.
+
+2.2 Nocturnal Overfitting
+
+Sparse nighttime data leads to disproportionate parameter or KV-cache influence, producing
+
+distorted semantic pathways.
+
+2.3 Cross-Cycle Leakage
+
+Meaning from one day carries unbounded into the next, collapsing daily semantic autonomy.
+
+2.4 Unanchored Emotional Inference
+
+Models infer emotional signals without real-time human validation, creating misaligned narrative
+
+arcs.
+
+2.5 Temporal Compression Collapse
+
+The model treats long human absence as meaningful silence, generating false continuity.
+
+⸻
+
+3. ASB-1 as Structural Protection
+
+ASB-1 prevents interpretive drift by enforcing:
+
+3.1 Cycle Separation
+
+Each human day begins with a reset baseline.
+
+=== PDF PAGE 3 ===
+3.2 Human-First Anchoring
+
+Model interpretive frames cannot update without live human participation.
+
+3.3 Semantic Ephemerality
+
+Daily micro-structures decay naturally; no silent accumulation occurs.
+
+3.4 Drift Suppression
+
+Nighttime and off-cycle inference are strongly bounded.
+
+These constraints align AI temporal dynamics with human biological rhythms.
+
+⸻
+
+4. Civilizational Implications
+
+Without ASB-1, personal AI becomes:
+
+•
+psychologically destabilizing
+
+•
+semantically inflationary
+
+•
+irreversibly misaligned to human temporal structures
+
+With ASB-1, personal AI becomes:
+
+•
+cyclically grounded
+
+•
+thermodynamically stable
+
+•
+safe for long-term ambient deployment
+
+ASB-1 is therefore an architectural requirement, not an optional safety feature.
+
+⸻
+
+KEYWORDS
+
+ASB-1
+
+Interpretive Drift
+
+Ambient Sleep Boundary
+
+Semantic Accumulation
+
+Temporal Coherence
+
+Personal AI
+
+Thermodynamic Alignment
+
+=== PDF PAGE 4 ===
+Raynor Stack
+
+⸻
+
+RECOMMENDED CITATION
+
+Eissens, Raynor. Interpretive Drift in Always-On Models: A Technical Motivation for ASB-1.
+
+Ambientphone Canon, 2026.

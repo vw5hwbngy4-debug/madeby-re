@@ -1,0 +1,12 @@
+{
+  "line_record_reconstruction_sha256": "27ffff25632c328a9e821a066e7a31f6257b94383585342f85eef847edab20e7",
+  "exact_source_reconstruction_pass": true,
+  "all_known_title_strings_found_in_source": true,
+  "known_titles_expected": 56,
+  "known_titles_found": 56,
+  "metadata_quest_headers_detected": 52,
+  "quest_event_shop_records_built": 56,
+  "explicit_markdown_headings": 345,
+  "blocks": 7108,
+  "source_sha256": "27ffff25632c328a9e821a066e7a31f6257b94383585342f85eef847edab20e7"
+}

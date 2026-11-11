@@ -1,0 +1,14 @@
+EMERALD v0.1.24.9.2.1.2 · MATRIX EXIT BUTTON
+
+Purpose
+- Final navigation hotfix for the full-screen Sprite Coverage Matrix.
+- Mobile Safari can let the sticky matrix header scroll away, making its original FIELD back control inaccessible.
+
+Changes
+- Added an independent fixed ‹ FIELD button above the matrix at all scroll positions.
+- Back event binds to every matrix back control.
+- Matrix scroll position resets to the top on each open.
+- No coverage math, Practical Moves logic, TeamLab, PokéField grammar, emulator, save, DEX or Trainer Card behavior changed.
+
+Baseline
+- Built directly from v0.1.24.9.2.1.1 MATRIX FOREGROUND HOTFIX.

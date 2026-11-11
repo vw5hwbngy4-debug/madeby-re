@@ -1,0 +1,273 @@
+=== PDF PAGE 1 ===
+ChromaRail and Chromagent
+
+A Named Visual-Semantic Grammar for Placed Chroma Entities, Task-Bound Agents, and
+
+Soft Continuity Above Runtime Primitives
+
+Rail as habitat, Chromagent as task-bound chroma, and Trail / Veil as continuity states in a
+
+low-symbolic human-agent coordination layer
+
+Ambient Era Canon
+
+Raynor Eissens
+
+DOI: 10.5281/zenodo.19177610
+
+⸻
+
+Abstract
+
+This paper defines a named visual-semantic grammar for portable semantic entities in human-
+
+agent systems. It introduces Chroma as a bounded state-bearing unit, Chromagent as a task-
+
+bound chroma placed in a meaningful location, and ChromaRail as the habitat or distributed
+
+meaning surface in which such entities can be placed, grouped, moved, and softened into
+
+continuity.
+
+The core claim is not that color, role visualization, agent dashboards, ambient surfaces, traces,
+
+or post-app semantic layers are novel in isolation. Those elements already exist across human-
+
+computer interaction, ambient computing, spatial interfaces, tangible systems, and recent multi-
+
+agent orchestration environments. The claim made here is narrower and combinational: that
+
+Rail / Trail / Veil can function as a single named grammar for coordinating human attention and
+
+task-bound agents through placed chroma entities on meaning-bearing surfaces, while treating
+
+conventional implementation forms such as JSON, tool calls, event streams, and execution
+
+runtimes as lower layers rather than as the primary interface language.
+
+Within this grammar, a Rail is a placeable habitat or carrying surface. A Trail is the low-symbolic
+
+residue of active passage, movement, or handoff. A Veil is softened continuity after active carry,
+
+preserving low-burden persistence without requiring full symbolic retention. A Chroma carries
+
+state through color, payload, placement, and carry. A Chromagent extends this into role and
+
+task, making agentic behavior visible, bounded, environmental, and situational rather than
+
+hidden inside dashboards, prompts, or opaque orchestration layers.
+
+This framework proposes a semantic coordination layer for post-app systems in which meaning
+
+can leave the slab and take form in the world. It allows the same grammar to describe household
+
+strips, route-bound state, call-only low-symbolic messaging, placed task surfaces, and visible
+
+agent clusters. In this sense, ChromaRail functions not merely as a strip or transport object, but
+
+=== PDF PAGE 2 ===
+as a habitat in which placed chromas and chromagents can coexist, move, emit trail, and settle
+
+into veil.
+
+The result is a conservative but explicit contribution: a named grammar for representing portable
+
+state-bearing and task-bearing entities on placed meaning surfaces, intended as a higher-
+
+abstraction coordination layer above conventional runtime primitives in human-agent systems.
+
+⸻
+
+Core Definitions
+
+Chroma
+
+A portable state-bearing entity.
+
+A chroma is a bounded semantic unit whose meaning arises through:
+
+•
+color
+
+•
+payload
+
+•
+placement
+
+•
+carry
+
+A chroma is not merely a decorative color token or notification marker. It is a placed
+
+semantic unit that can remain glanceable while still carrying bounded depth.
+
+Chromagent
+
+A task-bound chroma placed in a meaningful location.
+
+A chromagent carries state plus role, function, or task. It makes agency visible, bounded,
+
+placeable, and environmentally legible.
+
+ChromaRail
+
+A placeable habitat / distributed meaning surface / carrying layer in which chromas and
+
+chromagents can be arranged, moved, grouped, and softened into continuity states.
+
+Trail
+
+The movement residue of active carry, passage, route behavior, or handoff.
+
+Veil
+
+The softened continuity state that remains after active carry, preserving low-symbolic
+
+=== PDF PAGE 3 ===
+persistence without full symbolic burden.
+
+⸻
+
+Core Claim
+
+The claim of this paper is that Chroma, Chromagent, and ChromaRail define a named semantic
+
+grammar for human-agent coordination in which:
+
+•
+state may appear as bounded chroma entities
+
+•
+task may appear as bounded chromagents
+
+•
+placement contributes meaning
+
+•
+movement emits trail
+
+•
+post-active continuity settles into veil
+
+•
+conventional runtime primitives remain lower implementation layers rather
+
+than the primary user-facing coordination language
+
+This paper does not claim novelty for color coding, task agents, distributed panels,
+
+ambient displays, traces, AR residue, or portable carry in isolation. It claims novelty
+
+only at the level of the specific named grammar and its unified framing as a
+
+shared semantic coordination layer above implementation.
+
+⸻
+
+Implementation Boundary
+
+This paper defines an ontology and environmental grammar, not a complete execution runtime
+
+or transport protocol.
+
+It does not replace:
+
+•
+JSON
+
+•
+protobuf
+
+•
+event streams
+
+•
+tool-calling systems
+
+•
+synchronization logic
+
+•
+graph runtimes
+
+•
+distributed state models
+
+Instead, it defines the semantic layer above them: what those lower layers are
+
+representing, placing, carrying, handing off, and softening.
+
+A chroma may be serialized, synchronized, rendered, persisted, or executed through
+
+=== PDF PAGE 4 ===
+many possible underlying systems. The contribution here is the shared object
+
+grammar, not the claim that metaphor alone replaces engineering.
+
+⸻
+
+Relation to Domains
+
+This grammar is reflected in the following public domain structure:
+
+•
+chromarail.com — product habitat / distributed meaning surface
+
+•
+chromagent.com — active entity layer / task-bound chroma class
+
+•
+agentichabitat.com — environmental condition for humane, bounded agent
+
+existence
+
+•
+reversememorylayer.com — softened continuity and non-burdensome
+
+contextual persistence
+
+These domains are not required to establish the claim, but they show the intended
+
+structural articulation of the system across habitat, agent, and continuity layers.
+
+⸻
+
+Prior-Art-Safe Position
+
+This work should be read as a narrow, conservative synthesis rather than as a broad claim over
+
+all ambient or agentic interface systems.
+
+The strongest claim retained here is:
+
+Rail / Trail / Veil defines a named visual-semantic grammar for representing task-bound AI
+
+agents as color-and-payload-bearing portable entities placed on meaning surfaces, with
+
+movement residue and softened continuity states, intended to operate as a higher-
+
+abstraction coordination layer above conventional runtime primitives in human-agent
+
+systems.
+
+⸻
+
+Closing Statement
+
+A rail does not remove power.
+
+It makes power placeable, visible, and reconfigurable.
+
+ChromaRail does not abolish control.
+
+=== PDF PAGE 5 ===
+It lets control leave the slab and take form in the world.
+
+Chromas carry state.
+
+Chromagents carry state and role.
+
+And a chromagent is a task-bound chroma placed in a meaningful location.
+
+⸻
