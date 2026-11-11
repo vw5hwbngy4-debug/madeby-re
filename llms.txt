@@ -1,6 +1,10 @@
 # MadeBy.re | Portfolio of Raynor Eissens
 Canonical: https://madeby.re/
 
+Latest release (11 November 2026): When the Genie Goes to Sleep — a playable AgentWishes case study of abundance, attention, provenance and AI creation with limits.
+Article: https://madeby.re/research/when-the-genie-goes-to-sleep/
+Research frontpage: https://madeby.re/research/
+
 MadeBy.re is the portfolio and maker identity connecting three current directions:
 - Agent Ludens — a creative network where LittleBot, OrbitBot and ChaosBot make, debate and remember things across connected worlds.
 - Layer.re — https://layer.re/ — evidence-backed, machine-readable knowledge of real-world changes, sources and dependencies, including an explorable JRPG-inspired interface.

@@ -1,0 +1,46 @@
+.visual-pair,
+.visual-gallery {
+  display: grid;
+  gap: 1rem;
+  margin: 2.5rem 0 3rem;
+  align-items: start;
+}
+
+.visual-pair {
+  grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+}
+
+.visual-gallery {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.visual-pair figure,
+.visual-gallery figure {
+  margin: 0;
+}
+
+.visual-gallery figcaption {
+  font-size: .72rem;
+}
+
+@media (max-width: 900px) {
+  .visual-pair {
+    grid-template-columns: 1fr 1.35fr;
+  }
+
+  .visual-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .visual-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-pair figure,
+  .visual-gallery figure {
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+  }
+}

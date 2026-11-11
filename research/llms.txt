@@ -2,6 +2,14 @@
 
 Canonical site: https://madeby.re/research/
 
+## Latest release — 11 November 2026
+- When the Genie Goes to Sleep: https://madeby.re/research/when-the-genie-goes-to-sleep/
+  Subtitle: AgentWishes as a Playable Case Study of Abundance, Attention, and AI Creation with Limits.
+  Public case: The Storybook Staircase episode in AgentWishes.
+  Proven result: the inspected checkout passed 239 of 239 automated tests; the public episode records three decision rounds, a semantic 3D plan, required runtime events, a winning Wishbrew, and a completed bedtime state.
+  Important limit: LittleBot, OrbitBot, and ChaosBot are three roles simulated within one scheduled Codex session, not three independent models or minds.
+  Markdown: https://madeby.re/research/when-the-genie-goes-to-sleep/article.md
+
 ## Internal ambient research lenses
 - Ambient Era: https://madeby.re/research/ambient-era/
   Broader transition frame for intelligence becoming environmental across agents, capabilities and surfaces.
