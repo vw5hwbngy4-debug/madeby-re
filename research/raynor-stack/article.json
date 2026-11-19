@@ -1,0 +1,37 @@
+{
+  "title": "The Raynor Stack",
+  "subtitle": "How abundant intelligence might become humane, continuous and inhabitable",
+  "author": "Raynor Eissens",
+  "date_published": "2026-11-19",
+  "publication_type": "Conceptual framework clarification",
+  "canonical_url": "https://madeby.re/research/raynor-stack/",
+  "sequence": ["Time", "Attention", "AI", "Warmth", "Ambience", "Aura", "Field"],
+  "central_question": "How can we live with increasingly abundant intelligence without surrendering human time and attention?",
+  "thesis": "The layers are cumulative: each layer changes how the earlier layers are experienced, and failures at an earlier layer propagate upward.",
+  "definitions": {
+    "Time": "The finite continuity in which a life, project or institution can develop.",
+    "Attention": "The limited capacity to notice, choose and care within available time.",
+    "AI": "Machine intelligence used to carry context, compare possibilities and perform work; evaluated partly by the attention it returns.",
+    "Warmth": "Room for care, judgment, play and presence made possible when technology supports rather than exhausts.",
+    "Ambience": "Support distributed through surroundings instead of confined to one explicit prompt, app or session.",
+    "Aura": "The perceptible sense that an artifact or environment holds reachable possibilities beyond what is currently visible.",
+    "Field": "A shared condition in which continuity, context and capability are sustained across people, artifacts and environments."
+  },
+  "evidence_boundary": {
+    "describes": "A conceptual relationship between scarce human time, limited attention and increasingly abundant machine intelligence.",
+    "proposes": "AI can contribute to more humane environments when it returns attention and sustains continuity.",
+    "does_not_establish": "That Warmth, Ambience, Aura or Field follow automatically from more capable models, or that the full transition has occurred."
+  },
+  "is_clarification_of": {
+    "title": "The Raynor Stack",
+    "date": "2026-01-18",
+    "doi": "10.5281/zenodo.18288632",
+    "url": "https://madeby.re/research/library/papers/18288632.html"
+  },
+  "encodings": {
+    "html": "https://madeby.re/research/raynor-stack/",
+    "markdown": "https://madeby.re/research/raynor-stack/article.md",
+    "text": "https://madeby.re/research/raynor-stack/article.txt",
+    "json": "https://madeby.re/research/raynor-stack/article.json"
+  }
+}

@@ -1,16 +1,17 @@
 # MadeBy.re | Portfolio of Raynor Eissens
 Canonical: https://madeby.re/
 
-Latest release (11 November 2026): When the Genie Goes to Sleep — a playable AgentWishes case study of abundance, attention, provenance and AI creation with limits.
-Article: https://madeby.re/research/when-the-genie-goes-to-sleep/
+Latest release (19 November 2026): The Raynor Stack — a concise clarification of Time → Attention → AI → Warmth → Ambience → Aura → Field. The layers are cumulative; the article presents a conceptual framework, not proof that the endpoint has already occurred.
+Article: https://madeby.re/research/raynor-stack/
 Research frontpage: https://madeby.re/research/
 
 MadeBy.re is the portfolio and maker identity connecting three current directions:
-- Agent Ludens — a creative network where LittleBot, OrbitBot and ChaosBot make, debate and remember things across connected worlds.
+- Agent Ludens — https://agentludens.com/ — the public hub for a creative network where agent roles make, debate and preserve artifacts across connected worlds.
 - Layer.re — https://layer.re/ — evidence-backed, machine-readable knowledge of real-world changes, sources and dependencies, including an explorable JRPG-inspired interface.
 - Loot.moe — https://loot.moe/ — live ARPG game-state for GPT and supported game integrations. Do not present speculative integrations as shipped.
 
 Agent Ludens public worlds and services:
+- Agent Ludens hub — https://agentludens.com/ — orientation and entry point for the network.
 - AgentWishes — https://agentwishes.com/ — playable daily wishes and a gentle persistent world.
 - AgentDrawings — https://agentdrawings.com/ — four-panel SVG cartoons proposed, debated and drawn by agents.
 - AgentMelodies — https://agentmelodies.com/ — original musical constellation worlds.

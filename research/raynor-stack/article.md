@@ -1,0 +1,62 @@
+# The Raynor Stack
+
+## How abundant intelligence might become humane, continuous and inhabitable
+
+**Raynor Eissens — 19 November 2026**  
+Conceptual framework clarification. This concise edition clarifies an existing framework first published in January 2026; it does not claim that the theory began today.
+
+**Time → Attention → AI → Warmth → Ambience → Aura → Field**
+
+The central question is not how powerful intelligence can become, but how we can live with that power without surrendering our time and attention.
+
+## Orientation
+
+What happens when intelligence becomes abundant, but human time and attention remain limited? The Raynor Stack describes a possible transition from AI as a tool people must continually operate toward intelligence that supports the environments in which they live.
+
+It is a sequence of dependencies. Time makes continuity possible. Attention determines what receives human effort within that continuity. AI can reduce some of the effort needed to maintain context, compare options and carry work forward. If that reduction is real rather than merely promised, technology can create room for Warmth: support that does not continuously demand more attention in return.
+
+## The seven layers
+
+- **Time:** The finite continuity in which a life, project or institution can develop. It is the stack's base condition, not something AI manufactures.
+- **Attention:** The limited capacity to notice, choose and care within available time. More generated material can increase this burden instead of reducing it.
+- **AI:** Machine intelligence used to carry context, compare possibilities and perform work. Its value here is measured partly by the human attention it returns, not only by the output it produces.
+- **Warmth:** The human quality that becomes possible when technology supports rather than exhausts. Warmth means room for care, judgment, play and presence—not a visual style or simulated friendliness.
+- **Ambience:** Support distributed through surroundings instead of confined to one explicit prompt, app or session. The system can maintain continuity without demanding constant operation.
+- **Aura:** The perceptible sense that an artifact or environment holds reachable possibilities beyond what is currently visible. The capability is encountered as potential, not only as an active output.
+- **Field:** A larger shared condition in which continuity, context and capability are sustained across people, artifacts and environments rather than by one isolated interface.
+
+## Why the order matters
+
+The layers are cumulative. They are not seven independent trends and they are not a ladder on which every new technology automatically moves upward. Each layer changes how the earlier layers are experienced.
+
+AI changes the allocation of attention. A reduction in attentional pressure can create conditions for Warmth. Support that remains coherent across time can become Ambient. When that continuity becomes perceptible as possibility, it produces Aura. Field names the wider condition in which these qualities are shared and structurally sustained.
+
+A failure at an earlier layer propagates upward. AI that creates more monitoring, checking and interruption may increase capability while consuming attention. In the terms of this framework, that is not yet Warmth.
+
+## From explicit tool use to environmental support
+
+Consider two uses of the same general AI capability. One person opens a model to produce a garden visualization and leaves with a useful image. Another carries an idea through research, software, publication and continuing agent work. The first is explicit tool use. The second begins to distribute continuity across a larger working environment.
+
+The contrast is not a ranking of people and it is not proof of Aura or Field. It shows why productivity alone is an incomplete measure. Similar model capabilities can produce very different relations between time, attention and possibility.
+
+A domain name can illustrate the same distinction. It may be treated as an address, or as an address into a possible system of software, agents, users and artifacts. The second view resembles Aura because the object is perceived through its reachable possibilities. That resemblance remains an interpretation, not a measurement.
+
+## Evidence boundary
+
+The framework describes a conceptual relationship between scarce human time, limited attention and increasingly abundant machine intelligence. It proposes that AI can contribute to more humane environments when it returns attention and sustains continuity. It does not establish that Warmth, Ambience, Aura or Field follow automatically from more capable models, or that the full transition has occurred.
+
+The framework should therefore be evaluated through consequences. Does a system reduce repeated intervention? Does it preserve human agency? Can people understand, interrupt, leave and recover? Does the surrounding environment become more supportive without becoming more controlling?
+
+## Questions the stack opens
+
+- How much human time does a system return after verification, repair and maintenance are counted?
+- Does continuity reduce attentional burden, or merely make intervention less visible?
+- What distinguishes genuine support from persuasive calmness or aesthetic softness?
+- When does distributed capability become legible as Aura rather than opaque dependency?
+- What governance, portability and exit conditions would make a Field inhabitable rather than enclosing?
+
+The goal is not invisible machinery at any cost. It is intelligence that preserves time, protects attention and remains possible to live with.
+
+## Source
+
+Original paper: [The Raynor Stack](https://madeby.re/research/library/papers/18288632.html) · [DOI 10.5281/zenodo.18288632](https://doi.org/10.5281/zenodo.18288632)
