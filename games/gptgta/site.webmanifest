@@ -3,17 +3,17 @@
   "short_name": "GPTGTA",
   "icons": [
     {
-      "src": "/gptgta/android-chrome-192x192.png",
+      "src": "/games/gptgta/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/gptgta/android-chrome-512x512.png",
+      "src": "/games/gptgta/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/gptgta/maskable-icon-512x512.png",
+      "src": "/games/gptgta/maskable-icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

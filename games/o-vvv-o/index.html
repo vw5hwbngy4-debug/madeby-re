@@ -2785,7 +2785,7 @@ function mergeBurialLists(localList, ownServerList, friendList){
 }
 async function loadCurrentUser(){
   try{
-    const data=await fetchJSON("/o-vvv-o/me.php");
+    const data=await fetchJSON("/games/o-vvv-o/me.php");
     currentUser=data.user || null;
     serverMode=!!currentUser;
   }catch(e){
@@ -2861,14 +2861,14 @@ async function syncServerBurials(){
   let own=[];
   let friend=[];
   try{
-    const data=await fetchJSON("/o-vvv-o/load_burials.php");
+    const data=await fetchJSON("/games/o-vvv-o/load_burials.php");
     own=(data.burials||[]).map(normalizeServerBurial).filter(Boolean);
   }catch(e){
     say("Server burials unavailable.");
   }
 
   try{
-    const data=await fetchJSON("/o-vvv-o/get_field.php");
+    const data=await fetchJSON("/games/o-vvv-o/get_field.php");
     const rows=data.messages || data.buried_messages || data.burials || [];
     friend=rows.map(normalizeFriendMessage).filter(Boolean).filter(b=>!Number.isNaN(b.x)&&!Number.isNaN(b.y));
   }catch(e){
@@ -2933,7 +2933,7 @@ async function saveServerBurialPayload(x,y,artifact){
     };
   }
 
-  const data=await postJSON("/o-vvv-o/save_burial.php", payload);
+  const data=await postJSON("/games/o-vvv-o/save_burial.php", payload);
   const row={
     id:data.burial?.id,
     x,y,
@@ -2963,7 +2963,7 @@ function titleFromBody(body){
 async function markFriendMessageFound(b){
   if(!b || b.source!=="friend" || !b.messageId || b.found) return;
   try{
-    await postJSON("/o-vvv-o/mark_found.php",{id:b.messageId, message_id:b.messageId});
+    await postJSON("/games/o-vvv-o/mark_found.php",{id:b.messageId, message_id:b.messageId});
     b.found = true;
     b.markedFound = true;
     b.artifact = markArtifactRed(b.artifact || {});
@@ -3073,7 +3073,7 @@ async function loadServerChest(){
   if(!serverMode || !currentUser) return;
   try{
     const localSnapshot=chestState ? JSON.parse(JSON.stringify(chestState)) : normalizeChestState(null);
-    const data=await fetchJSON("/o-vvv-o/load_chest.php");
+    const data=await fetchJSON("/games/o-vvv-o/load_chest.php");
     const serverChest=await e2eeDecryptChestFromServer(data.chest || null);
     chestState=mergeChestStates(localSnapshot, serverChest);
     chestServerLoaded=true;
@@ -3090,7 +3090,7 @@ function scheduleServerChestSave(){
   chestSaveTimer=setTimeout(async ()=>{
     try{
       const chestPayload=OVVVO_E2EE_ENABLED && e2eeHasCrypto() ? await e2eeEncryptChestForServer(chestState) : chestState;
-      await postJSON("/o-vvv-o/save_chest.php", {chest:chestPayload});
+      await postJSON("/games/o-vvv-o/save_chest.php", {chest:chestPayload});
     }catch(e){}
   }, 350);
 }
@@ -3374,11 +3374,11 @@ async function storeActiveBurialInChest(){
 
   // Try to remove the live/server copy first so account fields do not refill with old messages.
   if(b.serverId && b.source==="own"){
-    try{await postJSON("/o-vvv-o/delete_burial.php",{id:b.serverId});}
+    try{await postJSON("/games/o-vvv-o/delete_burial.php",{id:b.serverId});}
     catch(e){toast("Could not store yet"); return;}
   }
   if(b.messageId && b.source==="friend"){
-    try{await postJSON("/o-vvv-o/delete_message.php",{id:b.messageId, message_id:b.messageId});}
+    try{await postJSON("/games/o-vvv-o/delete_message.php",{id:b.messageId, message_id:b.messageId});}
     catch(e){toast("Could not store yet"); return;}
   }
 
@@ -3683,7 +3683,7 @@ async function unburyFromTile(x,y){
   playLockedPlayerFrames(retrieveFramesForTile(x,y), 160, async ()=>{
     if(b.serverId && b.source === "own"){
       try{
-        await postJSON("/o-vvv-o/delete_burial.php", {id:b.serverId});
+        await postJSON("/games/o-vvv-o/delete_burial.php", {id:b.serverId});
       }catch(e){
         say("Server pickup failed.");
         toast("Not picked up");
@@ -3693,7 +3693,7 @@ async function unburyFromTile(x,y){
 
     if(b.messageId && b.source === "friend"){
       try{
-        await postJSON("/o-vvv-o/delete_message.php", {id:b.messageId, message_id:b.messageId});
+        await postJSON("/games/o-vvv-o/delete_message.php", {id:b.messageId, message_id:b.messageId});
       }catch(e){
         say("Server pickup failed.");
         toast("Not picked up");
@@ -3961,7 +3961,7 @@ function renderAuraPicker(b){
 
     if(b.serverId && b.source==="own"){
       try{
-        await postJSON("/o-vvv-o/update_burial_aura.php", {id:b.serverId, aura});
+        await postJSON("/games/o-vvv-o/update_burial_aura.php", {id:b.serverId, aura});
         syncBurialAura(b, aura);
       }catch(e){
         toast("Aura saved locally");
@@ -4067,7 +4067,7 @@ async function deleteBurial(){
 
   if(b.serverId && b.source==="own"){
     try{
-      await postJSON("/o-vvv-o/delete_burial.php",{id:b.serverId});
+      await postJSON("/games/o-vvv-o/delete_burial.php",{id:b.serverId});
     }catch(e){
       say("Server delete failed.");
       toast("Not deleted");
@@ -4077,7 +4077,7 @@ async function deleteBurial(){
 
   if(b.messageId && b.source==="friend"){
     try{
-      await postJSON("/o-vvv-o/delete_message.php",{id:b.messageId, message_id:b.messageId});
+      await postJSON("/games/o-vvv-o/delete_message.php",{id:b.messageId, message_id:b.messageId});
     }catch(e){
       say("Server delete failed.");
       toast("Not deleted");
@@ -5068,7 +5068,7 @@ window.BuriedChat = (function(){
 
   async function init(){
     try{
-      const data = await api('/o-vvv-o/friends_api.php');
+      const data = await api('/games/o-vvv-o/friends_api.php');
       state.me = data.user;
       state.friends = data.friends || [];
       document.body.classList.toggle('buried-chat-logged-in', !!state.me);
@@ -5130,7 +5130,7 @@ window.BuriedChat = (function(){
   async function loadThread(){
     if(!state.selected) return;
     try{
-      const data = await api('/o-vvv-o/get_thread.php?friend_id=' + encodeURIComponent(state.selected.id));
+      const data = await api('/games/o-vvv-o/get_thread.php?friend_id=' + encodeURIComponent(state.selected.id));
       state.thread = data.messages || [];
       renderThread();
       updateRailFromThread();
@@ -5152,7 +5152,7 @@ window.BuriedChat = (function(){
     }
 
     try{
-      const data = await api('/o-vvv-o/send_message.php', {
+      const data = await api('/games/o-vvv-o/send_message.php', {
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
@@ -5187,7 +5187,7 @@ window.BuriedChat = (function(){
     if(!text) return;
 
     try{
-      await api('/o-vvv-o/reply_message.php', {
+      await api('/games/o-vvv-o/reply_message.php', {
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({

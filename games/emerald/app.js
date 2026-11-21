@@ -1,7 +1,7 @@
 const CONFIG = window.HOENN_CONFIG || {
   version: '0.4.5',
   apiBase: 'https://emerald-api.madeby.re/api/hoenn-public',
-  playUrl: '/emerald/play/',
+  playUrl: '/games/emerald/play/',
   siteUrl: 'https://madeby.re/games/emerald'
 };
 
@@ -9,7 +9,7 @@ const main = document.getElementById('main');
 const metaDescription = document.querySelector('meta[name="description"]');
 const canonical = document.querySelector('link[rel="canonical"]');
 const wireState = document.getElementById('wire-state');
-const MAP_MANIFEST_URL = '/emerald/assets/data/map-manifest.json';
+const MAP_MANIFEST_URL = '/games/emerald/assets/data/map-manifest.json';
 const TRAINER_COUNT = 106;
 let mapManifestPromise = null;
 
@@ -22,6 +22,7 @@ const esc = (value) => String(value ?? '')
 
 function pathParts() {
   const parts = location.pathname.replace(/\/+$/, '').split('/').filter(Boolean);
+  if (parts[0] === 'games') parts.shift();
   if (parts[0] === 'emerald') parts.shift();
   return parts;
 }
@@ -29,7 +30,10 @@ function pathParts() {
 function setMeta(title, description, path = location.pathname) {
   document.title = title;
   metaDescription?.setAttribute('content', description);
-  canonical?.setAttribute('href', `${CONFIG.siteUrl}${path === '/' ? '/' : path}`);
+  const route = path
+    .replace(/^\/games\/emerald\/?/, '/')
+    .replace(/^\/emerald\/?/, '/');
+  canonical?.setAttribute('href', `${CONFIG.siteUrl}${route === '/' ? '/' : route}`);
 }
 
 function setCurrent(section) {
@@ -159,7 +163,7 @@ async function sceneAsset(placeOrLocation, shape = 'card', options = {}) {
     const locationObj = typeof placeOrLocation === 'string' ? { route: placeOrLocation } : (placeOrLocation || {});
     const place = locationObj.route || locationObj.name || locationObj.map_key || 'Route 120';
     const item = await findMap(place);
-    if (!item) return { url: '/emerald/assets/maps/hero-16x9/311-route-120.webp', scene_id: null, map: null };
+    if (!item) return { url: '/games/emerald/assets/maps/hero-16x9/311-route-120.webp', scene_id: null, map: null };
     const cropKey = shape === 'hero' ? 'hero-16x9' : shape === 'mobile' ? 'mobile-9x16' : 'card-4x3';
     const scenes = Array.isArray(item.scenes) ? item.scenes : [];
     let scene = null;
@@ -183,12 +187,12 @@ async function sceneAsset(placeOrLocation, shape = 'card', options = {}) {
       scene = pool[hash(options.seed || `${place}:${options.eventType || tag}`) % pool.length];
     }
     const scenePath = scene?.assets?.[cropKey];
-    if (scenePath) return { url: `/emerald/assets/maps/${scenePath}`, scene_id: scene.id, map: item, scene };
+    if (scenePath) return { url: `/games/emerald/assets/maps/${scenePath}`, scene_id: scene.id, map: item, scene };
     const crop = item.crops?.[cropKey]?.path;
-    if (crop) return { url: `/emerald/assets/maps/${crop}`, scene_id: 'canonical', map: item, scene: null };
-    return { url: `/emerald/assets/maps/${item.full_webp}`, scene_id: 'full-map', map: item, scene: null };
+    if (crop) return { url: `/games/emerald/assets/maps/${crop}`, scene_id: 'canonical', map: item, scene: null };
+    return { url: `/games/emerald/assets/maps/${item.full_webp}`, scene_id: 'full-map', map: item, scene: null };
   } catch {
-    return { url: '/emerald/assets/maps/hero-16x9/311-route-120.webp', scene_id: null, map: null };
+    return { url: '/games/emerald/assets/maps/hero-16x9/311-route-120.webp', scene_id: null, map: null };
   }
 }
 
@@ -207,19 +211,19 @@ function hash(value) {
 
 function trainerSprite(key) {
   const i = hash(key) % TRAINER_COUNT;
-  return `/emerald/assets/trainers/trainer-${String(i).padStart(3, '0')}.png`;
+  return `/games/emerald/assets/trainers/trainer-${String(i).padStart(3, '0')}.png`;
 }
 
 function trainerSpriteForGender(gender, key = '') {
   const n = Number(gender);
-  if (n === 0) return '/emerald/assets/trainers/trainer-096.png';
-  if (n === 1) return '/emerald/assets/trainers/trainer-027.png';
+  if (n === 0) return '/games/emerald/assets/trainers/trainer-096.png';
+  if (n === 1) return '/games/emerald/assets/trainers/trainer-027.png';
   return trainerSprite(key);
 }
 
 function pokemonSprite(mon) {
   const dex = Math.max(1, Math.min(386, Number(mon?.dex_no || 0)));
-  return `/emerald/assets/${mon?.shiny ? 'pokemon-shiny' : 'pokemon'}/${dex}.png`;
+  return `/games/emerald/assets/${mon?.shiny ? 'pokemon-shiny' : 'pokemon'}/${dex}.png`;
 }
 
 function relativeTime(value) {
@@ -390,14 +394,14 @@ async function eventCard(event, lookup) {
     const content = socialTrainerCard(event.card, { time: relativeTime(event.created_at), headline: event.text || 'Trainer Card updated.' });
     const scene = await sceneAsset(locationObj || place || 'Route 120', 'card', { eventType: event.type, seed });
     const inner = `${place ? `<div class="card-location-scene" style="background-image:url('${esc(scene.url)}')"><span>UPDATED FROM ${esc(place)}</span></div>` : ''}${content}`;
-    return ownerId ? `<a class="social-card-link" href="/trainer/${encodeURIComponent(ownerId)}" data-nav>${inner}</a>` : `<div class="social-card-link">${inner}</div>`;
+    return ownerId ? `<a class="social-card-link" href="/games/emerald/trainer/${encodeURIComponent(ownerId)}" data-nav>${inner}</a>` : `<div class="social-card-link">${inner}</div>`;
   }
   const scene = await sceneAsset(locationObj || place || 'Route 120', 'card', { eventType: event.type, seed });
   const [kind, glyph] = eventKind(event.type);
   const ownerId = eventOwnerId(event);
   const sprite = trainerSprite(eventIdentity(event));
   const trainerMedia = ownerId
-    ? `<a class="event-trainer-link" href="/trainer/${encodeURIComponent(ownerId)}" data-nav aria-label="Open trainer"><img class="trainer-sprite" src="${esc(sprite)}" alt="" aria-hidden="true"></a>`
+    ? `<a class="event-trainer-link" href="/games/emerald/trainer/${encodeURIComponent(ownerId)}" data-nav aria-label="Open trainer"><img class="trainer-sprite" src="${esc(sprite)}" alt="" aria-hidden="true"></a>`
     : `<img class="trainer-sprite" src="${esc(sprite)}" alt="" aria-hidden="true">`;
   return `<article class="event-card" data-scene="${esc(scene.scene_id || '')}">
     <div class="event-bg" style="background-image:url('${esc(scene.url)}')"></div>
@@ -405,7 +409,7 @@ async function eventCard(event, lookup) {
       <div class="event-top"><span class="event-kind"><span class="glyph">${esc(glyph)}</span>${esc(kind)}</span><time class="event-time" datetime="${esc(event.created_at || '')}">${esc(relativeTime(event.created_at))}</time></div>
       <div class="event-bottom">
         ${trainerMedia}
-        <div class="event-copy"><h3>${esc(event.text || String(event.type || 'World event').replaceAll('_', ' '))}</h3><div class="event-meta">${place ? `<a class="event-place" href="/place/${encodeURIComponent(placeSlug(place))}" data-nav>${esc(place)}</a>` : ''}<span>CANONICAL GAME EVENT</span></div></div>
+        <div class="event-copy"><h3>${esc(event.text || String(event.type || 'World event').replaceAll('_', ' '))}</h3><div class="event-meta">${place ? `<a class="event-place" href="/games/emerald/place/${encodeURIComponent(placeSlug(place))}" data-nav>${esc(place)}</a>` : ''}<span>CANONICAL GAME EVENT</span></div></div>
       </div>
     </div>
   </article>`;
@@ -427,14 +431,14 @@ function channels() {
 function liveShell(mode = 'all') {
   return `<div class="live-page">
     <section class="live-hero" id="live-hero">
-      <div class="live-hero-media" id="hero-media" style="background-image:url('/emerald/assets/maps/hero-16x9/311-route-120.webp')"></div>
+      <div class="live-hero-media" id="hero-media" style="background-image:url('/games/emerald/assets/maps/hero-16x9/311-route-120.webp')"></div>
       <div class="live-hero-inner">
         <div class="kicker"><i></i> AI-NATIVE GAME-WORLD SOCIAL NETWORK</div>
         <div class="hero-copy">
           <h1>LIVE FROM HOENN.</h1>
           <p>The game posts. Emerald · MadeBy turns real Emerald events into a living social wire: Trainer Cards, Secret Bases, battles, rare discoveries and everything the world already knows.</p>
           <div class="hero-statusline" id="hero-stats"><span class="hero-chip"><b>...</b> reading the world</span></div>
-          <div class="hero-actions"><a class="btn primary" href="/emerald/play/">▶ PLAY EMERALD</a><button class="btn ghost" type="button" data-to-feed>SEE THE WIRE ↓</button></div>
+          <div class="hero-actions"><a class="btn primary" href="/games/emerald/play/">▶ PLAY EMERALD</a><button class="btn ghost" type="button" data-to-feed>SEE THE WIRE ↓</button></div>
         </div>
       </div>
     </section>
@@ -447,7 +451,7 @@ function liveShell(mode = 'all') {
     <div id="world-now-slot"></div>
     <section id="wire">
       <div class="section-head"><div><h2>${mode === 'cards' ? 'TRAINER CARD WIRE' : mode === 'world' ? 'WORLD EVENTS' : mode === 'tv' ? 'HOENN TV' : 'THE LIVE WIRE'}</h2><p>${mode === 'cards' ? 'Real trainers updating the six Pokémon they want Hoenn to see.' : mode === 'tv' ? 'Native Emerald broadcasts generated by real game activity.' : 'Game events, not user-authored status posts.'}</p></div><span class="count" id="wire-count">CONNECTING</span></div>
-      <nav class="wire-filters" aria-label="Live feed filter"><a href="/emerald/" data-nav ${mode === 'all' ? 'aria-current="page"' : ''}>ALL</a><a href="/cards" data-nav ${mode === 'cards' ? 'aria-current="page"' : ''}>TRAINER CARDS</a><a href="/world" data-nav ${mode === 'world' ? 'aria-current="page"' : ''}>WORLD EVENTS</a><a href="/tv" data-nav ${mode === 'tv' ? 'aria-current="page"' : ''}>TV</a></nav>
+      <nav class="wire-filters" aria-label="Live feed filter"><a href="/games/emerald/" data-nav ${mode === 'all' ? 'aria-current="page"' : ''}>ALL</a><a href="/games/emerald/cards" data-nav ${mode === 'cards' ? 'aria-current="page"' : ''}>TRAINER CARDS</a><a href="/games/emerald/world" data-nav ${mode === 'world' ? 'aria-current="page"' : ''}>WORLD EVENTS</a><a href="/games/emerald/tv" data-nav ${mode === 'tv' ? 'aria-current="page"' : ''}>TV</a></nav>
       <div class="feed" id="feed">${loadingState()}</div>
     </section>
     ${channels()}
@@ -459,8 +463,8 @@ async function presenceCard(trainer) {
   const place = loc.route || 'Hoenn';
   const hasMappedScene = Boolean(loc.map_key);
   const href = hasMappedScene
-    ? `/place/${encodeURIComponent(placeSlug(place))}`
-    : `/trainer/${encodeURIComponent(trainer.public_id || '')}`;
+    ? `/games/emerald/place/${encodeURIComponent(placeSlug(place))}`
+    : `/games/emerald/trainer/${encodeURIComponent(trainer.public_id || '')}`;
   let background = `<div class="presence-world-bg presence-world-bg--unknown" aria-hidden="true"></div>`;
   if (hasMappedScene) {
     const scene = await sceneAsset(loc, 'card', {
@@ -484,7 +488,7 @@ async function presenceStrip(presence) {
 
 async function renderLive(mode = 'all') {
   setCurrent('live');
-  setMeta(mode === 'cards' ? 'Trainer Cards · EMERALD · MADEBY.RE' : mode === 'tv' ? 'Hoenn TV · EMERALD · MADEBY.RE' : 'EMERALD · MADEBY.RE · Live from Hoenn', mode === 'cards' ? 'A live feed of save-backed Emerald Trainer Cards.' : mode === 'tv' ? 'Native Pokémon Emerald TV broadcasts carried by Emerald · MadeBy.' : 'The live social feed of events happening inside Pokémon Emerald. The game posts. The network finds the story.', mode === 'cards' ? '/cards' : mode === 'world' ? '/world' : mode === 'tv' ? '/tv' : '/');
+  setMeta(mode === 'cards' ? 'Trainer Cards · EMERALD · MADEBY.RE' : mode === 'tv' ? 'Hoenn TV · EMERALD · MADEBY.RE' : 'EMERALD · MADEBY.RE · Live from Hoenn', mode === 'cards' ? 'A live feed of save-backed Emerald Trainer Cards.' : mode === 'tv' ? 'Native Pokémon Emerald TV broadcasts carried by Emerald · MadeBy.' : 'The live social feed of events happening inside Pokémon Emerald. The game posts. The network finds the story.', mode === 'cards' ? '/games/emerald/cards' : mode === 'world' ? '/games/emerald/world' : mode === 'tv' ? '/games/emerald/tv' : '/');
   main.innerHTML = liveShell(mode);
   bindNavigation(main);
   document.querySelector('[data-to-feed]')?.addEventListener('click', () => document.getElementById('wire')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
@@ -515,14 +519,14 @@ async function renderLive(mode = 'all') {
     const heroStats = document.getElementById('hero-stats');
     const publishedCards = Number(counts.published_cards ?? world.cards?.length ?? 0);
     const onlineNow = Number(presence?.counts?.online_now || 0);
-    if (heroStats) heroStats.innerHTML = `<span class="hero-chip live-chip"><b>${onlineNow}</b> online now</span><span class="hero-chip"><b>${eventCount}</b> public events</span><span class="hero-chip"><b>${publishedTrainers}</b> trainers</span><span class="hero-chip"><b>${publishedCards}</b> Trainer Cards</span><span class="hero-chip"><b>${publishedBases}</b> Secret Bases</span>${firstPlace ? `<a class="hero-chip place-chip" href="/place/${encodeURIComponent(placeSlug(firstPlace))}" data-nav><b>${esc(firstPlace)}</b> ${liveTrainer?'live now':'latest place'}</a>` : ''}`;
+    if (heroStats) heroStats.innerHTML = `<span class="hero-chip live-chip"><b>${onlineNow}</b> online now</span><span class="hero-chip"><b>${eventCount}</b> public events</span><span class="hero-chip"><b>${publishedTrainers}</b> trainers</span><span class="hero-chip"><b>${publishedCards}</b> Trainer Cards</span><span class="hero-chip"><b>${publishedBases}</b> Secret Bases</span>${firstPlace ? `<a class="hero-chip place-chip" href="/games/emerald/place/${encodeURIComponent(placeSlug(firstPlace))}" data-nav><b>${esc(firstPlace)}</b> ${liveTrainer?'live now':'latest place'}</a>` : ''}`;
     const nowSlot=document.getElementById('world-now-slot');if(nowSlot){nowSlot.innerHTML=await presenceStrip(presence);bindNavigation(nowSlot)}
 
     document.getElementById('desk-headline').textContent = editorial.headline;
     document.getElementById('desk-deck').textContent = editorial.deck;
     document.getElementById('desk-proof').innerHTML = editorial.proof.map((item) => `<span class="proof">${esc(item)}</span>`).join('');
     const [topRoute, topRouteCount] = editorial.stats.topRoute;
-    document.getElementById('desk-stats').innerHTML = `<div class="statrow"><span>EVENTS IN WINDOW</span><b>${editorial.stats.events}</b></div><div class="statrow"><span>PUBLIC TRAINERS</span><b>${editorial.stats.people}</b></div><div class="statrow"><span>BUSIEST PLACE</span><b class="route">${topRoute ? `<a href="/place/${encodeURIComponent(placeSlug(topRoute))}" data-nav>${esc(topRoute)} · ${topRouteCount}</a>` : 'QUIET'}</b></div>`;
+    document.getElementById('desk-stats').innerHTML = `<div class="statrow"><span>EVENTS IN WINDOW</span><b>${editorial.stats.events}</b></div><div class="statrow"><span>PUBLIC TRAINERS</span><b>${editorial.stats.people}</b></div><div class="statrow"><span>BUSIEST PLACE</span><b class="route">${topRoute ? `<a href="/games/emerald/place/${encodeURIComponent(placeSlug(topRoute))}" data-nav>${esc(topRoute)} · ${topRouteCount}</a>` : 'QUIET'}</b></div>`;
 
     const feed = document.getElementById('feed');
     const wireCount = document.getElementById('wire-count');
@@ -548,12 +552,12 @@ async function renderLive(mode = 'all') {
 function renderPlay() {
   // v0.4.4: /play/ is a real directory containing Emerald Live.
   // Hard-navigate so the emulator owns its document and relative assets.
-  location.replace('/play/');
+  location.replace('/games/emerald/play/');
 }
 
 function renderYou() {
   setCurrent('you');
-  setMeta('You in Hoenn · EMERALD · MADEBY.RE', 'Your Emerald save is your identity in Emerald · MadeBy.', '/you');
+  setMeta('You in Hoenn · EMERALD · MADEBY.RE', 'Your Emerald save is your identity in Emerald · MadeBy.', '/games/emerald/you');
   setWire('live', 'SAVE = IDENTITY');
   main.innerHTML = `<div class="you-grid">
     <section class="trainer-pass">
@@ -561,7 +565,7 @@ function renderYou() {
       <h1>YOUR SAVE IS YOU.</h1>
       <p>Emerald · MadeBy does not ask you to manufacture a second social profile. Your Trainer Card, six-Pokémon showcase, Secret Base and world history come from Emerald.</p>
       <span class="badge">SAVE-BACKED IDENTITY</span>
-      <div class="hero-actions"><a class="btn primary" href="/emerald/play/">▶ OPEN YOUR EMERALD</a></div>
+      <div class="hero-actions"><a class="btn primary" href="/games/emerald/play/">▶ OPEN YOUR EMERALD</a></div>
     </section>
     <section class="you-story">
       <div class="desk-label">YOUR SOCIAL GRAMMAR <span>EMERALD NATIVE</span></div>
@@ -596,7 +600,7 @@ async function renderTrainer(publicId) {
     setWire('live', 'LIVE TRAINER');
     setMeta(`${trainer.trainer_name} · EMERALD · MADEBY.RE`, `${trainer.trainer_name} is a public trainer in the live Hoenn world.`, location.pathname);
     main.innerHTML = `<div class="profile-page">
-      <section class="profile-hero"><div class="profile-bg" style="background-image:url('${esc(bg)}')"></div><div class="profile-content"><div class="profile-card"><img src="${esc(sprite)}" alt=""><div><div class="kicker"><i></i> RESIDENT OF HOENN</div><h1>${esc(trainer.trainer_name)}</h1><p>${trainer.secret_base ? `<a class="profile-place-link" href="/place/${encodeURIComponent(placeSlug(place))}" data-nav>${esc(place)} · Native Secret Base ↗</a>` : 'Hoenn Trainer'}</p><div class="meta"><span>${Number(stats.visits || 0)} VISITS</span><span>${Number(stats.challenges || 0)} CHALLENGES</span>${trainer.secret_base?.updated_at ? `<span>BASE ${esc(relativeTime(trainer.secret_base.updated_at))}</span>` : ''}${trainer.trainer_card?.updated_at ? `<span>CARD ${esc(relativeTime(trainer.trainer_card.updated_at))}</span>` : ''}</div></div></div></div></section>
+      <section class="profile-hero"><div class="profile-bg" style="background-image:url('${esc(bg)}')"></div><div class="profile-content"><div class="profile-card"><img src="${esc(sprite)}" alt=""><div><div class="kicker"><i></i> RESIDENT OF HOENN</div><h1>${esc(trainer.trainer_name)}</h1><p>${trainer.secret_base ? `<a class="profile-place-link" href="/games/emerald/place/${encodeURIComponent(placeSlug(place))}" data-nav>${esc(place)} · Native Secret Base ↗</a>` : 'Hoenn Trainer'}</p><div class="meta"><span>${Number(stats.visits || 0)} VISITS</span><span>${Number(stats.challenges || 0)} CHALLENGES</span>${trainer.secret_base?.updated_at ? `<span>BASE ${esc(relativeTime(trainer.secret_base.updated_at))}</span>` : ''}${trainer.trainer_card?.updated_at ? `<span>CARD ${esc(relativeTime(trainer.trainer_card.updated_at))}</span>` : ''}</div></div></div></div></section>
       ${trainer.trainer_card ? `<section class="profile-social-card"><div class="section-head"><div><h2>CURRENT TRAINER CARD</h2><p>Updated from this trainer's active Emerald showcase.</p></div><span class="count">SAVE-BACKED</span></div>${socialTrainerCard(trainer.trainer_card)}</section>` : ''}
       <section class="profile-history"><div class="section-head"><div><h2>WORLD HISTORY</h2><p>Canonical public events involving this trainer.</p></div><span class="count">${history.length} EVENTS</span></div>${history.length ? history.map((event) => `<article class="history-row"><i class="history-dot"></i><p>${esc(event.text || event.type)}</p><time datetime="${esc(event.created_at || '')}">${esc(relativeTime(event.created_at))}</time></article>`).join('') : `<div class="feed-empty"><b>NO PUBLIC HISTORY YET.</b><p>Only real public events will appear here.</p></div>`}</section>
     </div>`;
@@ -625,13 +629,13 @@ async function renderPlace(slug) {
     const hero = await sceneAsset(focusLocation, 'hero', { eventType: activity[0]?.type || 'presence', seed: place });
     const scenes = Array.isArray(map.scenes) ? map.scenes : [];
     setWire('live', 'PLACE ONLINE');
-    setMeta(`${place} · EMERALD · MADEBY.RE`, `Live social activity, Secret Bases and world scenes from ${place} in Pokémon Emerald.`, `/place/${placeSlug(place)}`);
+    setMeta(`${place} · EMERALD · MADEBY.RE`, `Live social activity, Secret Bases and world scenes from ${place} in Pokémon Emerald.`, `/games/emerald/place/${placeSlug(place)}`);
     const baseCards = bases.length ? bases.map((base) => {
       const trainer = base.trainer || {};
       const point = firstLocationPoint(base.location);
-      return `<a class="place-base-card" href="/trainer/${encodeURIComponent(trainer.public_id || '')}" data-nav><img src="${esc(trainerSpriteForGender(trainer.gender, trainer.public_id || trainer.trainer_name))}" alt=""><div><small>SECRET BASE${point ? ` · ${point.x},${point.y}` : ''}</small><b>${esc(trainer.trainer_name || 'TRAINER')}</b><span>${esc(relativeTime(base.updated_at))}</span></div></a>`;
+      return `<a class="place-base-card" href="/games/emerald/trainer/${encodeURIComponent(trainer.public_id || '')}" data-nav><img src="${esc(trainerSpriteForGender(trainer.gender, trainer.public_id || trainer.trainer_name))}" alt=""><div><small>SECRET BASE${point ? ` · ${point.x},${point.y}` : ''}</small><b>${esc(trainer.trainer_name || 'TRAINER')}</b><span>${esc(relativeTime(base.updated_at))}</span></div></a>`;
     }).join('') : `<div class="feed-empty"><b>NO PUBLIC BASES HERE YET.</b><p>The place still exists. Emerald · MadeBy does not invent residents.</p></div>`;
-    const sceneCards = scenes.length ? scenes.map((scene) => `<div class="place-scene-card" style="background-image:url('/emerald/assets/maps/${esc(scene.assets?.['card-4x3'] || map.full_webp)}')"><span>${esc(scene.label || place)}</span></div>`).join('') : `<div class="place-scene-card full" style="background-image:url('/emerald/assets/maps/${esc(map.crops?.['card-4x3']?.path || map.full_webp)}')"><span>${esc(place)}</span></div>`;
+    const sceneCards = scenes.length ? scenes.map((scene) => `<div class="place-scene-card" style="background-image:url('/games/emerald/assets/maps/${esc(scene.assets?.['card-4x3'] || map.full_webp)}')"><span>${esc(scene.label || place)}</span></div>`).join('') : `<div class="place-scene-card full" style="background-image:url('/games/emerald/assets/maps/${esc(map.crops?.['card-4x3']?.path || map.full_webp)}')"><span>${esc(place)}</span></div>`;
     const liveCards = liveHere.length ? (await Promise.all(liveHere.map(presenceCard))).join('') : `<div class="feed-empty"><b>QUIET RIGHT NOW.</b><p>No public trainer is currently broadcasting live presence from ${esc(place)}.</p></div>`;
     main.innerHTML = `<div class="place-page">
       <section class="place-hero"><div class="place-hero-bg" style="background-image:url('${esc(hero.url)}')"></div><div class="place-hero-content"><div class="kicker"><i></i> REAL HOENN LOCATION</div><div><h1>${esc(place)}</h1><p>Social activity anchored to the actual Hoenn world, not an abstract feed.</p><div class="place-stats"><span><b>${bases.length}</b> public bases</span><span><b>${activity.length}</b> recent events</span><span><b>${scenes.length || 1}</b> location scenes</span></div></div></div></section>
@@ -650,7 +654,7 @@ async function renderPlace(slug) {
 function renderNotFound() {
   setCurrent('live');
   setMeta('Off the map · EMERALD · MADEBY.RE', 'This route is not part of Emerald · MadeBy.', location.pathname);
-  main.innerHTML = `<div class="state-box"><b>OFF THE MAP.</b><p>This path is not part of the current Emerald · MadeBy world.</p><p><a class="btn small" href="/emerald/" data-nav>BACK TO LIVE</a></p></div>`;
+  main.innerHTML = `<div class="state-box"><b>OFF THE MAP.</b><p>This path is not part of the current Emerald · MadeBy world.</p><p><a class="btn small" href="/games/emerald/" data-nav>BACK TO LIVE</a></p></div>`;
   bindNavigation(main);
 }
 

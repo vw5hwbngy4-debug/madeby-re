@@ -2,7 +2,7 @@
 const E=window.PSO_ENGINE,B=window.PSO_BUNDLE,M=window.PSO_MAG_ENGINE;
 const $=s=>document.querySelector(s);
 const surface=$('#surface'),input=$('#prompt'),form=$('#askForm'),banner=$('#memoryImg'),audio=$('#bgAudio'),audioBtn=$('#audioBtn');
-const PERSONALITY='/pso/assets/pso/personality/';
+const PERSONALITY='/games/pso/assets/pso/personality/';
 const RICO_IMG=PERSONALITY+'rico.jpg';
 const RAPPY_GIF=PERSONALITY+'rappy-dance.gif';
 const TELEPIPE_GIF=PERSONALITY+'telepipe-loading.gif';
@@ -73,7 +73,7 @@ function loadingSurface(question){
 let bannerIndex=Math.floor(Math.random()*Math.max(1,B.banners.length));
 function rotateBanner(){if(!B.banners.length)return;banner.style.opacity='.12';setTimeout(()=>{banner.src=B.banners[bannerIndex%B.banners.length];bannerIndex++;banner.style.opacity='.68'},220)}
 rotateBanner();setInterval(rotateBanner,6500);
-function playSfx(name){try{const a=new Audio('/pso/assets/pso/sfx/'+name);a.volume=.28;a.play().catch(()=>{})}catch(e){}}
+function playSfx(name){try{const a=new Audio('/games/pso/assets/pso/sfx/'+name);a.volume=.28;a.play().catch(()=>{})}catch(e){}}
 function chip(t,cls=''){return `<span class="chip ${cls}">${E.esc(t)}</span>`}
 function shell(intent,title,lead,body,chips='',source=''){return `<section class="surfaceShell"><header class="surfaceHead"><div><div class="eyebrow">PSO · GENERATED SURFACE</div><h1>${E.esc(title)}</h1></div><span class="intent">${E.esc(intent)}</span></header>${lead?`<div class="lead">${lead}</div>`:''}${chips?`<div class="chips">${chips}</div>`:''}${body}${source?`<div class="sourceNote">${E.esc(source)}</div>`:''}</section>`}
 function resultCard(r){const img=r.monsterImage?`<div class="resultImage"><img src="${E.esc(r.monsterImage)}" alt="${E.esc(r.monster)}"></div>`:'';return `<article class="resultCard">${img}<div class="resultBody"><h3>${E.esc(r.monster)}</h3><div class="itemName">${E.esc(r.item)}</div><div class="meta">${E.esc(r.episode)} · ${E.esc(r.difficulty)} · ${E.esc(r.area)}<br>${E.esc(r.sectionId)} · ${E.esc(r.platform)}</div><div class="bigRate">${E.esc(r.rate)}</div><div class="prob">Expected kills ≈ ${Number(r.expectedKills||0).toLocaleString(undefined,{maximumFractionDigits:1})}</div></div></article>`}

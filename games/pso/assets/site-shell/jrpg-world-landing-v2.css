@@ -25,7 +25,7 @@ body.jw-landing-v2{
 body.jw-landing-v2::before{
   content:"";
   position:fixed;inset:0;z-index:-2;pointer-events:none;
-  background:url('/pso/assets/landing-banners/kossmos-space.jpg') center top/cover no-repeat;
+  background:url('/games/pso/assets/landing-banners/kossmos-space.jpg') center top/cover no-repeat;
   opacity:.055;
   filter:saturate(.7);
 }
@@ -126,7 +126,7 @@ body.jw-landing-v2 .jw-site-main{
 
 /* PSO feature */
 .jwv2-pso{position:relative;overflow:hidden;display:grid;grid-template-columns:300px minmax(0,1fr);min-height:440px;border:1px solid rgba(255,122,183,.24);border-radius:30px;background:radial-gradient(circle at 8% 100%,rgba(65,176,128,.16),transparent 26rem),radial-gradient(circle at 87% 14%,rgba(255,102,173,.12),transparent 28rem),linear-gradient(135deg,#071720,#120b16);box-shadow:0 24px 80px rgba(0,0,0,.28)}
-.jwv2-pso-art{position:relative;min-height:440px;overflow:hidden;background:linear-gradient(180deg,rgba(10,31,30,.1),rgba(5,14,18,.82)),url('/pso/assets/pso/rotating_banner/extra_68.png') center/cover;image-rendering:auto}
+.jwv2-pso-art{position:relative;min-height:440px;overflow:hidden;background:linear-gradient(180deg,rgba(10,31,30,.1),rgba(5,14,18,.82)),url('/games/pso/assets/pso/rotating_banner/extra_68.png') center/cover;image-rendering:auto}
 .jwv2-pso-art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 48%,#0b1015 100%),linear-gradient(180deg,transparent 46%,rgba(3,10,13,.9) 100%)}
 .jwv2-pso-portrait{position:absolute;left:26px;bottom:-8px;z-index:2;width:245px;max-width:82%;border-radius:50% 50% 12% 12%;filter:drop-shadow(0 25px 32px rgba(0,0,0,.5))}
 .jwv2-pso-copy{padding:clamp(28px,4vw,54px);align-self:center;min-width:0}

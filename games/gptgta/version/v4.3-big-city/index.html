@@ -38,7 +38,7 @@ html,body{margin:0;width:100%;height:100%;background:#090909;overflow:hidden;tou
 <div id="title">GPTGTA v4.3.1 · Big City + ordered traffic</div>
 <div id="pcControls"><b>PC CONTROLS</b><br/>Move: WASD / Arrow keys<br/>Context / enter / exit / shove cart: Enter<br/>Punch / fire: Space<br/>Boost: Q<br/>Chopper altitude / dive/surface: H</div>
 <script>
-const GPTGTA_ASSET_BASE='/gptgta/assets/gptgta/';
+const GPTGTA_ASSET_BASE='/games/gptgta/assets/gptgta/';
 const ASSETS = {"player": "gta_topdown_characters/player/player_idle.png", "sedan": "vehicles/sedan/sedan_clean.png", "taxi": "vehicles/taxi/taxi_clean.png", "police": "vehicles/police_car/police_car_clean.png", "van": "vehicles/van/van_clean.png", "ambulance": "vehicles/ambulance/ambulance_clean.png", "motorcycle": "vehicles/motorcycle/motorcycle_clean.png", "chopper":"vehicles/helicopter/helicopter_body_clean.png", "chopperDamaged":"vehicles/helicopter/helicopter_body_damaged.png", "chopperDestroyed":"vehicles/helicopter/helicopter_body_destroyed.png", "chopperBurned":"vehicles/helicopter/helicopter_body_burned.png", "explosion0":"gta_combat_effects/explosion_large/explosion_large_0.png", "explosion1":"gta_combat_effects/explosion_large/explosion_large_1.png", "explosion2":"gta_combat_effects/explosion_large/explosion_large_2.png", "explosion3":"gta_combat_effects/explosion_large/explosion_large_3.png", "smoke0":"gta_combat_effects/smoke/smoke_0.png", "smoke1":"gta_combat_effects/smoke/smoke_1.png", "firepit":"environmental_props/slum_ghetto_detail/burning_barrel.png", "cart":"environmental_props/slum_ghetto_detail/shopping_cart.png", "bird":"gta_ambient_life/pigeons/pigeons_0.png", "cat":"gta_ambient_life/cats/cats_0.png", "dog":"gta_ambient_life/stray_dogs/stray_dogs_0.png", "brokenTv":"environmental_props/slum_ghetto_detail/broken_tv.png", "fence":"environmental_props/gta_rooftop_detail_props/rooftop_fence/rooftop_fence_clean.png"};
 const canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
 ctx.imageSmoothingEnabled=false;
@@ -348,7 +348,7 @@ function applyDamage(c,amount,source="impact"){
   addEffect("smoke",c.x+c.w/2-24,c.y+c.h/2-24);
   if(activeCar===c){player.inCar=false;activeCar=null;player.x=c.x+c.w+10;player.y=c.y+4;}
   msg=(handling[c.type]?.name||"CAR")+" exploded. Black wreck = undriveable.";
- } else if(source==="uzi") msg="UZI is damaging the car: HP "+c.hp+"/gptgta/"+c.maxHp;
+ } else if(source==="uzi") msg="UZI is damaging the car: HP "+c.hp+"/games/gptgta/"+c.maxHp;
 }
 
 function sidewalkPoint(seed){let tries=0,tx=4,ty=4;while(tries<300){tx=2+(rnd(seed+tries*5)*(MW-4)|0);ty=2+(rnd(seed+tries*7)*(MH-4)|0);let c=tileAt(tx,ty);if(isWalkCode(c))break;tries++}return {x:tx*TILE+8,y:ty*TILE+8}}
@@ -1243,7 +1243,7 @@ function update(){
  let target=player.inCar?activeCar:player;cam.x+=((target.x+target.w/2-W/2)-cam.x)*.12;cam.y+=((target.y+target.h/2-H/2)-cam.y)*.12;
  cam.x=Math.max(0,Math.min(cam.x,MW*TILE-W));cam.y=Math.max(0,Math.min(cam.y,MH*TILE-H));
  let code=tileAt(Math.floor(target.x/TILE),Math.floor(target.y/TILE)), zone=inScrapYard(target)?"harbor_scrap":(LEGEND[code]||"city");
- let carLine=player.inCar?handling[activeCar.type].name+" HP "+activeCar.hp+"/gptgta/"+activeCar.maxHp:"none";
+ let carLine=player.inCar?handling[activeCar.type].name+" HP "+activeCar.hp+"/games/gptgta/"+activeCar.maxHp:"none";
  const now=performance.now();
  if(now-lastHudUpdate>180){
   document.getElementById('stats').innerHTML='$'+String(player.money).padStart(6,'0')+'<br>HP: '+player.health+'<br>CAR: '+carLine+'<br>WEAPON: '+(player.hasUzi?'UZI '+player.ammo:'FISTS')+(isActiveChopper()?'<br>ALT: '+chopperAltitude.toUpperCase():'')+(player.heldCart?'<br>CART: HELD':'')+'<br>ZONE: '+zone+(player.onRoof?'<br>ROOF MODE':'')+(player.swimming?'<br>SWIMMING '+(player.swimHeadUp?'HEAD UP':(playerInDiveTunnel()?'TUNNEL':'SUBMERGED')):'')+(player.inCar&&activeCar&&inScrapYard(activeCar)?'<br>ENTER: SCRAP CAR':'');

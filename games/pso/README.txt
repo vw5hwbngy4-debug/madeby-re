@@ -2,7 +2,7 @@ PSO UI + runtime asset fix
 ==========================
 
 Cause:
-After fixing <base href="/pso/">, the page correctly uses /pso/ as its root.
+After fixing <base href="/games/pso/">, the page correctly uses /pso/ as its root.
 However, several newer RICO/Ragol assets only existed in the old nested /pso/pso/ folder.
 
 Most visibly:

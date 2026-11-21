@@ -1,10 +1,10 @@
 
 (()=>{
   const images=[
-    "/pso/assets/world-footers/world-footer-01.png",
-    "/pso/assets/world-footers/world-footer-02.png",
-    "/pso/assets/world-footers/world-footer-03.png",
-    "/pso/assets/world-footers/world-footer-04.png"
+    "/games/pso/assets/world-footers/world-footer-01.png",
+    "/games/pso/assets/world-footers/world-footer-02.png",
+    "/games/pso/assets/world-footers/world-footer-03.png",
+    "/games/pso/assets/world-footers/world-footer-04.png"
   ];
   document.querySelectorAll("[data-jw-random-footer]").forEach(img=>{
     const start=Math.floor(Math.random()*images.length);

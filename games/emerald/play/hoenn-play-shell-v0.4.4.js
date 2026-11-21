@@ -9,7 +9,7 @@
 
   const shell=document.createElement('header');
   shell.id='hoenn-play-shell';
-  shell.innerHTML=`<a class="hps-brand" href="/"><span class="hps-orb" aria-hidden="true"></span><b>EMERALD · MADEBY.RE <small>EMERALD</small></b></a><nav aria-label="Emerald · MadeBy"><a href="/"><i>●</i><span>LIVE</span></a><a href="/play/" aria-current="page"><i>▶</i><span>PLAY</span></a><a href="/you"><i>◆</i><span>YOU</span></a></nav>`;
+  shell.innerHTML=`<a class="hps-brand" href="/games/emerald/"><span class="hps-orb" aria-hidden="true"></span><b>EMERALD · MADEBY.RE <small>EMERALD</small></b></a><nav aria-label="Emerald · MadeBy"><a href="/games/emerald/"><i>●</i><span>LIVE</span></a><a href="/games/emerald/play/" aria-current="page"><i>▶</i><span>PLAY</span></a><a href="/games/emerald/you"><i>◆</i><span>YOU</span></a></nav>`;
   document.body.appendChild(shell);
 
   const transfer=document.createElement('aside');

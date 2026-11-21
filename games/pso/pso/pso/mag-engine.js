@@ -8,7 +8,7 @@ const STAT_KEYS=['DEF','POW','DEX','MIND'];
 const STAGE4_NAMES=[...new Set(Object.values(C.evolution.stage4).flat().flatMap(r=>[r.M.mag,r.F.mag]))];
 const CLASS_NAMES=C.classes.map(x=>x.name).sort((a,b)=>b.length-a.length);
 const SECTION_IDS=C.sectionIds;
-const ASSET='/pso/assets/pso/maglab/';
+const ASSET='/games/pso/assets/pso/maglab/';
 const COST_RANK={Monomate:1,Monofluid:1,Antidote:1,Antiparalysis:1,Dimate:2,Difluid:2,Trimate:3,Trifluid:3,SolAtomizer:3,MoonAtomizer:3,StarAtomizer:4};
 
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));

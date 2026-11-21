@@ -69,8 +69,8 @@ function sectionStrategyFacts(p){
   }
   return result;
 }
-function sidLogo(s){s=sidTitle(s);return s?'/pso/assets/pso/secids/'+SID_LOGOS[s]:''}
-function areaImage(a){const rel=AREA_IMAGES[a];return rel?'/pso/assets/pso/location_assets/'+rel:''}
+function sidLogo(s){s=sidTitle(s);return s?'/games/pso/assets/pso/secids/'+SID_LOGOS[s]:''}
+function areaImage(a){const rel=AREA_IMAGES[a];return rel?'/games/pso/assets/pso/location_assets/'+rel:''}
 function calcSectionId(name,className='',blueBurst=false){const mod=blueBurst?(CLASS_MOD[className]??-1):5;if(name===''||mod===-1)return'';let flag=0,sum=mod;for(let i=0;i<name.length;i++){const added=name.charCodeAt(i);sum+=added;if(added>=0x0100&&added<0xff61){if(flag!==2){flag=2;sum+=45}}else if(added<=0xff91){if(flag!==1){flag=1;sum+=45}}}return SID_UP[sum%10]||''}
 function titleUpper(s){return SIDS[SID_UP.indexOf(s)]||s}
 function extractSids(q){const l=q.toLowerCase();return SIDS.filter(s=>new RegExp('\\b'+s.toLowerCase()+'\\b','i').test(l))}

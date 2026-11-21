@@ -40,18 +40,18 @@ if(!out)return;
 if(q&&c.placeholder)q.placeholder=c.placeholder;
 
 const XENO_READER_ASSETS=[
-  '/pso/assets/xenosaga/expert/kosmos-new-world.jpg',
-  '/pso/assets/xenosaga/expert/kosmos-sophia.jpg',
-  '/pso/assets/xenosaga/expert/kosmos-drift.jpg',
-  '/pso/assets/xenosaga/expert/kosmos-orbit.webp'
+  '/games/pso/assets/xenosaga/expert/kosmos-new-world.jpg',
+  '/games/pso/assets/xenosaga/expert/kosmos-sophia.jpg',
+  '/games/pso/assets/xenosaga/expert/kosmos-drift.jpg',
+  '/games/pso/assets/xenosaga/expert/kosmos-orbit.webp'
 ];
-const XENO_DIVIDER_GIF='/pso/assets/xenosaga/expert/kosmos-drift.gif';
-const XENO_QUERY_GIF='/pso/assets/xenosaga/expert/kosmos-query-loading.gif';
-const GLORIA_QUERY_GIF='/pso/assets/gloria/companion/pinger-loading.gif';
+const XENO_DIVIDER_GIF='/games/pso/assets/xenosaga/expert/kosmos-drift.gif';
+const XENO_QUERY_GIF='/games/pso/assets/xenosaga/expert/kosmos-query-loading.gif';
+const GLORIA_QUERY_GIF='/games/pso/assets/gloria/companion/pinger-loading.gif';
 const GLORIA_READER_ASSETS=[
-  '/pso/assets/gloria/companion/chapter-one.jpg',
-  '/pso/assets/gloria/companion/pirate-character.jpg',
-  '/pso/assets/gloria/companion/yggdra.webp'
+  '/games/pso/assets/gloria/companion/chapter-one.jpg',
+  '/games/pso/assets/gloria/companion/pirate-character.jpg',
+  '/games/pso/assets/gloria/companion/yggdra.webp'
 ];
 const isXeno=id.startsWith('xenosaga');
 const isGloria=id==='gloria';
@@ -180,7 +180,7 @@ function xenoResponderCard(){
   const aside=document.createElement('aside');
   aside.className='jw-xeno-responder';
   aside.innerHTML=`
-    <div class="jw-xeno-responder-art"><img src="/pso/assets/xenosaga/expert/kosmos-orbit.webp" alt="KOS-MOS"></div>
+    <div class="jw-xeno-responder-art"><img src="/games/pso/assets/xenosaga/expert/kosmos-orbit.webp" alt="KOS-MOS"></div>
     <div class="jw-xeno-responder-name">KOS-MOS</div>
     <div class="jw-xeno-responder-role">XENOSAGA I+II · GAME EXPERT</div>
     <div class="jw-xeno-responder-signal"><span>● CANON LINK ACTIVE</span><br>LORE · GUIDE · TRANSLATION / ROM</div>`;
@@ -226,7 +226,7 @@ function gloriaResponderCard(){
   const aside=document.createElement('aside');
   aside.className='jw-xeno-responder jw-gloria-responder';
   aside.innerHTML=`
-    <div class="jw-xeno-responder-art"><img src="/pso/assets/gloria/companion/blue-ocean-crew.png" alt="" loading="lazy"></div>
+    <div class="jw-xeno-responder-art"><img src="/games/pso/assets/gloria/companion/blue-ocean-crew.png" alt="" loading="lazy"></div>
     <div class="jw-xeno-responder-name">BLUE OCEAN COMPANION</div>
     <div class="jw-xeno-responder-role">STORY · BATTLES · CHARACTERS</div>
     <div class="jw-xeno-responder-signal"><span>● PINGER ON DECK</span><br>Ask another question whenever you like.</div>`;
@@ -290,7 +290,7 @@ async function ask(query,options={}){
     await new Promise(resolve=>setTimeout(resolve,120));
     emitState('loading',c.loading,text);
     try{
-      const res=await fetch('/pso/api/world-expert.php',{
+      const res=await fetch('/games/pso/api/world-expert.php',{
         method:'POST',
         headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify({world:id,query:text,intent:root.dataset.expertIntent||'general',context:currentPlayerContext(options)})

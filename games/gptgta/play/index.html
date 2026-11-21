@@ -68,7 +68,7 @@ html,body{margin:0;width:100%;height:100%;background:#08090a;overflow:hidden;tou
 <button aria-label="Close laptop" class="laptop-close" id="laptopClose" type="button">×</button>
 </div>
 <div id="laptopBrowser">
-<iframe id="laptopFrame" src="/gptgta/laptop.html" title="GPTGTA frontpage on apartment laptop"></iframe>
+<iframe id="laptopFrame" src="/games/gptgta/laptop.html" title="GPTGTA frontpage on apartment laptop"></iframe>
 </div>
 <div id="laptopBottom">
 <span>Scroll the GPTGTA first-mover/frontpage here. Close to stand in your bedroom.</span>
@@ -90,7 +90,7 @@ const DEBUG_TRAFFIC=false;
 const DEBUG_ROAD_GRAPH=false;
 const DEBUG_SPAWN=false;
 
-const ASSET_BASE='/gptgta/assets/gptgta/';
+const ASSET_BASE='/games/gptgta/assets/gptgta/';
 const A={
   playerIdle:'gta_topdown_characters/player/player_idle.png',
   playerWalk:'gta_topdown_characters/player/player_walk.png',
@@ -1871,7 +1871,7 @@ function laptopPreviousPage(ev){
        return false;
      }
    }catch(e){}
-   fr.src='/gptgta/laptop.html';
+   fr.src='/games/gptgta/laptop.html';
  }
  setLaptopBrowserMode('home');
  return false;
@@ -1920,7 +1920,7 @@ function bindLaptopButtons(){
  if(fr)fr.addEventListener('load',()=>{
    try{
      const u=fr.contentWindow.location.pathname||'';
-     if(u.endsWith('/gptgta/laptop.html')||u==='/gptgta/'||u.endsWith('/gptgta/index.html'))setLaptopBrowserMode('home');
+     if(u.endsWith('/games/gptgta/laptop.html')||u==='/games/gptgta/'||u.endsWith('/games/gptgta/index.html'))setLaptopBrowserMode('home');
      else setLaptopBrowserMode('page');
    }catch(e){}
  });

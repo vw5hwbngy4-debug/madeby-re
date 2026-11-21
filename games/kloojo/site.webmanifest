@@ -3,17 +3,17 @@
   "short_name": "KLOOJO",
   "icons": [
     {
-      "src": "/kloojo/android-chrome-192x192.png",
+      "src": "/games/kloojo/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/kloojo/android-chrome-512x512.png",
+      "src": "/games/kloojo/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/kloojo/maskable-icon-512x512.png",
+      "src": "/games/kloojo/maskable-icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"

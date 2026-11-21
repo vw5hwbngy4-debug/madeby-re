@@ -6,14 +6,14 @@
       title:'JRPG.WORLD · Original games, live state, real saves',
       heading:'The game is still the game. Now the web can read it.',
       description:'Play original games, bring real state with you, and let the web understand what is actually happening.',
-      image:'/pso/assets/landing-banners/kossmos-space.jpg',
+      image:'/games/pso/assets/landing-banners/kossmos-space.jpg',
       landing:true
     },
     '/about/': {
       title:'JRPG.WORLD · Platform Blueprint',
       heading:'Explore JRPG.WORLD.',
       description:'Choose a world, open an expert, or browse what’s here.',
-      image:'/pso/assets/landing-banners/mecha-cathedral.jpg',
+      image:'/games/pso/assets/landing-banners/mecha-cathedral.jpg',
       landing:true
     },
     '/xenosaga/': {
@@ -21,10 +21,10 @@
       title:'Xenosaga I+II DS · Localization',
       heading:'Ask anything about Xenosaga I+II.',
       description:'Story, mechanics, translation, patching or technical details. Just type it in.',
-      image:'/pso/assets/landing-banners/xenosaga-en-ask-banner.jpg',
+      image:'/games/pso/assets/landing-banners/xenosaga-en-ask-banner.jpg',
       imagePosition:'center 46%',
       bannerClass:'jw-master-memory--xeno',
-      portrait:'/pso/assets/landing-banners/xenosaga-en-ask-banner.jpg',
+      portrait:'/games/pso/assets/landing-banners/xenosaga-en-ask-banner.jpg',
       expertName:'KOS-MOS',
       status:'XENOSAGA LINK ACTIVE · KOS-MOS ONLINE · CANON + GUIDE + ROM READY',
       placeholder:'Ask about lore, mechanics, enemies, maps, or the JP / EN / NL localization…',
@@ -41,10 +41,10 @@
       title:'Xenosaga I+II DS · Localization',
       heading:'Vraag alles over Xenosaga I+II.',
       description:'Verhaal, gameplay, vertaling, patching of technische details. Typ gewoon je vraag.',
-      image:'/pso/assets/landing-banners/xenosaga-nl-ask-banner.jpg',
+      image:'/games/pso/assets/landing-banners/xenosaga-nl-ask-banner.jpg',
       imagePosition:'center 44%',
       bannerClass:'jw-master-memory--xeno',
-      portrait:'/pso/assets/landing-banners/xenosaga-nl-ask-banner.jpg',
+      portrait:'/games/pso/assets/landing-banners/xenosaga-nl-ask-banner.jpg',
       expertName:'KOS-MOS',
       status:'XENOSAGA LINK ACTIVE · KOS-MOS ONLINE · CANON + GUIDE + ROM READY',
       placeholder:'Vraag over lore, mechanics, vijanden, maps of de JP / EN / NL-localisatie…',
@@ -61,10 +61,10 @@
       title:'Gloria Union · Story & Battle Companion',
       heading:'Need a hand on the Blue Ocean?',
       description:'Battles, cards, characters and translation help, with the story kept safely behind your current position.',
-      image:'/pso/assets/gloria/companion/chapter-one.jpg',
+      image:'/games/pso/assets/gloria/companion/chapter-one.jpg',
       imagePosition:'center 48%',
       bannerClass:'jw-master-memory--gloria',
-      portrait:'/pso/assets/gloria/companion/pinger-wave.png',
+      portrait:'/games/pso/assets/gloria/companion/pinger-wave.png',
       expertName:'PINGER',
       openerTitle:'Pinger’s on deck.',
       openerIntro:'Fresh voyage, rough battle, strange line? Pick a question or ask your own.',
@@ -90,7 +90,7 @@
       title:'Phantasy Star Nova · English Localization',
       heading:'Phantasy Star Nova in English.',
       description:'Complete English text build, runtime proof, local builder and technical record.',
-      image:'/pso/assets/world-nav/app-icons/nova.jpg',
+      image:'/games/pso/assets/world-nav/app-icons/nova.jpg',
       expertDisabled:true
     }
   };
@@ -105,7 +105,7 @@
   if (!tabs) return;
 
   // Landing/About are already complete semantic pages; PSO has its own canonical shell.
-  if (cfg.landing || path === '/pso/') return;
+  if (cfg.landing || path === '/games/pso/') return;
 
   const stack = document.createElement('div');
   stack.className = 'jw-master-stack';

@@ -9,8 +9,8 @@ const WORLDS=[
     category:'Save + Strategy',
     type:'SAVE-AWARE',
     expert:true,
-    path:'/pso/',
-    icon:'/pso/assets/pso/ui/class_portraits/HUmar_pressed.png',
+    path:'/games/pso/',
+    icon:'/games/pso/assets/pso/ui/class_portraits/HUmar_pressed.png',
     sub:'RICO · saves · MAGs · hunts · gear'
   },
   {
@@ -20,8 +20,8 @@ const WORLDS=[
     category:'Play + Live',
     type:'LIVE',
     expert:false,
-    path:'/emerald/',
-    icon:'/pso/assets/world-nav/app-icons/emerald-live.svg',
+    path:'/games/emerald/',
+    icon:'/games/pso/assets/world-nav/app-icons/emerald-live.svg',
     sub:'Play your own ROM · live competitive data'
   },
   {
@@ -32,7 +32,7 @@ const WORLDS=[
     type:'LOCALIZATION',
     expert:true,
     path:'/xenosaga/',
-    icon:'/pso/assets/world-nav/app-icons/xeno-en.jpg',
+    icon:'/games/pso/assets/world-nav/app-icons/xeno-en.jpg',
     sub:'English fan translation',
     lang:'EN'
   },
@@ -44,7 +44,7 @@ const WORLDS=[
     type:'LOCALIZATION',
     expert:true,
     path:'/xenosaga-nederlands/',
-    icon:'/pso/assets/world-nav/app-icons/xeno-nl.jpg',
+    icon:'/games/pso/assets/world-nav/app-icons/xeno-nl.jpg',
     sub:'Nederlandse vertaling',
     lang:'NL'
   },
@@ -56,7 +56,7 @@ const WORLDS=[
     type:'LOCALIZATION',
     expert:true,
     path:'/gloria/',
-    icon:'/pso/assets/world-nav/app-icons/gloria.jpg',
+    icon:'/games/pso/assets/world-nav/app-icons/gloria.jpg',
     sub:'English fan translation',
     lang:'EN'
   },
@@ -68,7 +68,7 @@ const WORLDS=[
     type:'LOCALIZATION',
     expert:true,
     path:'/phantasy-star-nova/',
-    icon:'/pso/assets/world-nav/app-icons/nova.jpg',
+    icon:'/games/pso/assets/world-nav/app-icons/nova.jpg',
     sub:'Complete English text build',
     lang:'EN'
   },
@@ -80,7 +80,7 @@ const WORLDS=[
     type:'GAME',
     expert:true,
     path:'/games/zero-hunt/index.html',
-    icon:'/pso/assets/world-nav/app-icons/zero-hunt.jpg',
+    icon:'/games/pso/assets/world-nav/app-icons/zero-hunt.jpg',
     sub:'Playable experiment · September 2026',
     requiresUnlock:false
   }
@@ -100,9 +100,9 @@ if(!document.querySelector('.jw-site-nav')){
   const nav=document.createElement('nav');
   nav.className='jw-site-nav';
   nav.setAttribute('aria-label','JRPG.WORLD');
-  const items=[['WORLD','/landing/'],['GAMES','/landing/#worlds'],['RELEASES','/pso/releases/'],['ABOUT','/about/']];
+  const items=[['WORLD','/landing/'],['GAMES','/landing/#worlds'],['RELEASES','/games/pso/releases/'],['ABOUT','/about/']];
   nav.innerHTML=items.map(([label,url])=>{
-    const current=(url==='/landing/'&&(p==='/landing/'||p==='/'))||(url==='/pso/releases/'&&p.startsWith('/pso/releases/'))||(url==='/about/'&&p.startsWith('/about/'));
+    const current=(url==='/landing/'&&(p==='/landing/'||p==='/'))||(url==='/games/pso/releases/'&&p.startsWith('/games/pso/releases/'))||(url==='/about/'&&p.startsWith('/about/'));
     return `<a href="${url}"${current?' aria-current="page"':''}>${label}</a>`;
   }).join('');
   hosts[0].insertAdjacentElement('beforebegin',nav);
@@ -112,7 +112,7 @@ function currentId(){
   const p=(location.pathname.replace(/\/+$/,'/')||'/');
   if(p.startsWith('/games/zero-hunt/'))return 'zero-hunt';
   if(p.startsWith('/landing/') && location.hash==='#game-of-month' && gotmUnlocked())return 'zero-hunt';
-  if(p.startsWith('/landing/')||p.startsWith('/about/')||p.startsWith('/pso/releases/'))return null;
+  if(p.startsWith('/landing/')||p.startsWith('/about/')||p.startsWith('/games/pso/releases/'))return null;
   return [...WORLDS].sort((a,b)=>b.path.length-a.path.length)
     .find(w=>w.path==='/'?p==='/':p.startsWith(w.path))?.id || null;
 }
@@ -256,7 +256,7 @@ function renderHost(host){
   const hidden=ordered.slice(cap);
   host.innerHTML=`<div class="jw-tabbar">
     <a class="jw-home-app" href="/landing/" aria-label="JRPG.WORLD landing">
-      <img src="/pso/assets/world-nav/app-icons/jrpg.jpg" alt="JRPG.WORLD">
+      <img src="/games/pso/assets/world-nav/app-icons/jrpg.jpg" alt="JRPG.WORLD">
     </a>
     <div class="jw-tabs-viewport" aria-label="Open worlds">
       <div class="jw-tabs-ribbon">${visible.map(tab).join('')}${stackMarkup(hidden)}${plusSlot()}</div>
@@ -417,10 +417,10 @@ window.addEventListener('resize',()=>{
 
 /* translation-world footer: one random supplied JRPG.WORLD banner */
 const FOOTERS=[
-  '/pso/assets/world-footers/world-footer-01.png',
-  '/pso/assets/world-footers/world-footer-02.png',
-  '/pso/assets/world-footers/world-footer-03.png',
-  '/pso/assets/world-footers/world-footer-04.png'
+  '/games/pso/assets/world-footers/world-footer-01.png',
+  '/games/pso/assets/world-footers/world-footer-02.png',
+  '/games/pso/assets/world-footers/world-footer-03.png',
+  '/games/pso/assets/world-footers/world-footer-04.png'
 ];
 document.querySelectorAll('[data-jw-random-footer]').forEach(img=>{
   const order=[...FOOTERS].sort(()=>Math.random()-.5);

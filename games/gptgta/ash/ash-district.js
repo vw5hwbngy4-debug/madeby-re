@@ -1069,7 +1069,7 @@ function vendorGoodCell(g,i){
   const it=g.item; const rar=it?it.rarity:'common'; const name=it?it.name:g.name;
   const detail=it?`Power ${itemScore(it)} · ${itemPowerText(it)} · ${affixText(it)}`:g.desc;
   const round=g.type==='service'?' round':'';
-  return `<div class="vendorCell ${rar}${round}" data-buy="${i}" title="${name}\n$${g.price}\n${detail.replace(/"/gptgta/g,'&quot;')}"><span>${vendorGlyph(g)}</span><small>$${g.price}</small></div>`;
+  return `<div class="vendorCell ${rar}${round}" data-buy="${i}" title="${name}\n$${g.price}\n${detail.replace(/"/g,'&quot;')}"><span>${vendorGlyph(g)}</span><small>$${g.price}</small></div>`;
 }
 function renderVendor(){
   const title=$('vendorTitle'), body=$('vendorGoods'); if(!title||!body) return;
@@ -1372,7 +1372,7 @@ function itemGlyph(it){
 function gridItemCell(it, origin){
   const title = it ? `${it.name}\n${slotLabel(it.slot||it.kind)} · Power ${itemScore(it)}\n${itemPowerText(it)}\n${affixText(it)}` : '';
   const shape = it?.kind==='accessory' || it?.type==='money' ? ' round' : '';
-  return `<div class="item itemTile ${rarityClass(it)}${shape}" draggable="true" data-origin="${origin}" data-id="${it.id}" title="${title.replace(/"/gptgta/g,'&quot;')}"><span>${itemGlyph(it)}</span></div>`;
+  return `<div class="item itemTile ${rarityClass(it)}${shape}" draggable="true" data-origin="${origin}" data-id="${it.id}" title="${title.replace(/"/g,'&quot;')}"><span>${itemGlyph(it)}</span></div>`;
 }
 function emptyCell(origin){ return `<div class="itemCell emptyCell" data-origin="${origin}"></div>`; }
 function renderGrid(items, origin, slots){
